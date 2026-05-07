@@ -1,0 +1,57 @@
+---
+title: Managing Cast & Crew
+lastUpdated: 2026-04-22
+description: "Add roles and departments, manage workspace contacts, and control access with intent toggles. Crew data flows directly into CineLog call sheets."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+CineLog's Cast & Crew module acts as both your production directory and your security gateway. It strictly separates global contacts from active project members to ensure robust access control.
+
+## 1. The Unified Directory Structure
+
+CineLog manages your team using two distinct layers:
+- **Workspace Contacts:** This is your master rolodex. Anyone you ever add to any project is saved here automatically.
+- **Project Cast & Crew:** This is the roster for your *current* project. It links people from your Workspace Contacts to specific job roles on this project.
+
+## 2. Adding Team Members
+
+You can easily add new members directly to your project. CineLog uses a unified dialog that handles both creating the contact and assigning their role in one seamless step.
+
+<Steps>
+1. **Open Cast & Crew:** Navigate to the Cast & Crew module using the left sidebar. Make sure you are on the "Project" tab.
+2. **Add a Role:** Click the **"+ Add Role"** button.
+3. **Select or Create:** The unified dialog will open. You can either search and select an existing person from your Workspace Contacts, or simply type a new name to instantly create a brand new contact.
+4. **Choose a Role:** Select an industry-standard role from the dropdown (e.g., *1st Assistant Director*, *Gaffer*, *Lead Actor*). 
+5. **Contact Details:** Enter the person's email and phone number. While optional, these are highly recommended if you plan to send them Call Sheets or invite them to the app.
+</Steps>
+
+You can assign multiple roles to a single person if they are wearing many hats on your production!
+
+---
+
+## 3. Access Control & Invitations
+
+Assigning a role to a contact does *not* automatically invite them to log into CineLog. It simply adds them to your internal project roster. 
+
+If you want a team member to actually log into the app and collaborate, you must formally grant them access.
+
+### The "Intent Toggle"
+
+Click on any person's role in the Project Cast & Crew list to open their **Role Details Dialog**. Inside, you will find the **Access Control Form**.
+
+At the top of this form is the **Access Intent Toggle**.
+
+- **OFF (Disallowed):** The person is on your roster, but they cannot log into the project. This is the default state.
+- **ON (Granted/Pending):** The system will verify their email. If they have a CineLog account, they will be instantly added to the project. If they don't, CineLog will automatically send them an invitation email to join.
+
+<Aside type="note">
+**Team Management:** Anyone who has **Edit** permission for the Cast & Crew module can toggle access intents and modify the ACL for other team members. This allows you to delegate onboarding and security tasks to your Production Managers or Coordinators!
+</Aside>
+
+### Role-Based Access Control (RBAC)
+
+When you grant a user access to your project, what can they actually *do*?
+
+CineLog uses **Role-Based Access Control (RBAC)**. A user's permissions are influenced by the industry role you assigned them, with sensible defaults applied based on their department and position in the hierarchy.
+
+As the Project Owner, you can override default permissions within the Role Details Dialog, adjusting View/Edit access for individual modules for that specific person.

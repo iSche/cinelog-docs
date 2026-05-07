@@ -1,0 +1,68 @@
+---
+title: Generating Call Sheets
+lastUpdated: 2026-04-22
+description: "Create call sheets with schedules, weather forecasts, and location details. Email them to your team with one click and track confirmations in CineLog."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Call Sheets are the daily itinerary for your production. CineLog allows you to generate professional, industry-standard call sheets populated directly from your database.
+
+## 1. Creation & The Header Section
+
+Call Sheets in CineLog are deeply integrated with your **Production Shot List**. The schedule you build for a specific Production Day act as the foundation for your call sheet.
+
+<Steps>
+1. **From the Shot List:** The most efficient way to generate a call sheet is directly from your schedule. Any Production Day in your shot list acts as the state for a corresponding call sheet, automatically pulling in the scheduled scenes.
+2. **Standalone Creation:** You can also create call sheets manually. Navigate to the **Call Sheets** module via the left sidebar and click the **"+ New Call Sheet"** button.
+3. **The Header Details:** The top of your call sheet is automatically populated with your company profile, project logo, and project name. You then set the specific calendar date, the **General Call Time** (when the majority of the crew is expected), the weather forecast, key crew contacts, and general logistics.
+4. **Locations & Places API:** Configure your set location, shooting locations, and the nearest hospital. CineLog integrates directly with the **Google Places API**, allowing you to easily search and auto-complete highly accurate addresses and place names right into the call sheet.
+</Steps>
+
+---
+
+## 2. Managing the Schedule
+
+Because the call sheet is intrinsically linked to the Production Shot List, the schedule section is incredibly powerful.
+
+- **Bi-directional Sync:** The scenes and estimated shooting times on your call sheet are synced with that specific day's Production Shot List via CineSync.
+- **Direct Reordering:** You don't have to go back to the Shot List to fix your shoot order. You can drag, drop, and rearrange the scene schedule *directly* within the Call Sheet editor, and those changes will sync back to your Production Shot List.
+
+---
+
+## 3. Attaching the Team
+
+A call sheet is useless without knowing *who* is supposed to show up. CineLog pulls directly from your [Project Cast & Crew](/guides/managing-cast-crew) to populate the call sheet.
+
+<Steps>
+1. **Add Cast & Crew:** In the Call Sheet editor, navigate to the Talent or Crew sections to add team members.
+2. **Select or Create:** You can select pre-existing team members, or you can create entirely new contacts and assign them new roles right there inside the Call Sheet dialog. Anyone you create here will automatically be added to your project's master Cast & Crew directory.
+3. **Set Specific Call Times:** While the "General Call Time" applies to everyone by default, you can edit individual call times for specific departments. For example, you can set the Make-up department's call time to an hour earlier than the rest of the crew.
+</Steps>
+
+---
+
+## 4. Customization & Visibility Flags
+
+Before you distribute the call sheet, you may want to tailor what information is visible. CineLog provides powerful **Visibility Flags** that allow you to show or hide entire sections of the generated document.
+
+In the Call Sheet settings panel, you can toggle the visibility of:
+- **Locations:** Hide sensitive location addresses until the last minute.
+- **Clients/Executives:** Remove the VIP section if no executives are visiting set.
+- **Talent/Cast:** Hide the cast list for privacy.
+- **Crew:** Simplify the document by hiding the massive crew directory.
+- **Extras:** Hide background actor calls.
+
+<Aside type="tip">
+When you toggle a visibility flag OFF, that entire section is seamlessly removed from the final generated PDF, and the layout automatically adjusts to fill the empty space!
+</Aside>
+
+---
+
+## 5. Distribution
+
+Once your call sheet is perfect, it's time to send it to the team.
+
+Click the **"Send"** button in the top menu bar to open your options:
+
+1. **Email Sendout:** CineLog integrates securely with MailerSend to distribute the call sheet directly to the inboxes of all attached Cast & Crew members. The email includes a personalized PDF, a custom message and a link to confirm receipt of the document.
+2. **PDF Export:** If you prefer to send the call sheet via a different method (like a WhatsApp group or a direct Dropbox link), you can simply export the call sheet as a high-quality PDF to your local computer.

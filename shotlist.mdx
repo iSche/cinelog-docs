@@ -1,0 +1,129 @@
+---
+title: Shot List
+lastUpdated: 2026-04-22
+description: "Plan and organize your shots with detailed information including camera angles, lens choices, and scene requirements."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+The shot list system is CineLog's most comprehensive feature, offering three distinct viewing modes and sophisticated data management for film production workflows. Organize shots sequentially, schedule by production days, or focus on specific scenes with powerful editing capabilities.
+
+## Three Primary Views
+
+### Linear Shot List
+
+The primary view for building your shot list. Shots are organized in sequential order with a hierarchical scene → shot structure, identified as `1A`, `1B`, `2A`. Perfect for initial shot planning and script breakdown. **Scene and shot numbering updates automatically** as you make changes.
+
+### Production Days
+
+Organize your shots by filming schedule rather than story order. Each production day shows only the shots you need to capture that day, with a dedicated sidebar for quick navigation between days. The system intelligently handles complex scheduling scenarios while maintaining **scene relationships and shot organization automatically**.
+
+### Focus Mode
+
+Filter your shot list to display only selected scenes, allowing concentrated editing and review without distractions. Choose specific scenes from the scene selector dialog or select multiple scenes to focus on related sequences—perfect for detailed script breakdown sessions or location-specific reviews.
+
+## How to Use Linear Shot List
+
+Linear view is your starting point for building the shot list. Use it to add scenes and shots, edit shot details, and establish the basic structure of your production.
+
+Add Scenes and Shots
+
+Create new scenes and shots in sequential order. Each shot automatically gets numbered (1A, 1B, 2A) based on its scene and position.
+
+Edit Shot Details
+
+On Desktop and Tablet devices, the shot list behaves like a professional spreadsheet—simply **single-tap** any cell to edit it directly in place. On Mobile phones, tap a shot to expand its details, and then **double-tap** any specific property.
+
+Reorder with Drag-and-Drop
+
+Drag shots to reorder them within or between scenes. The system automatically handles scene numbering and shot lettering updates.
+
+Assign Production Days
+
+Tap any shot's production day field to schedule it. Use "Apply to all shots in scene" to quickly schedule entire scenes together.
+
+## How to Use Production Days
+
+Production Days view transforms your sequential shot list into a filming schedule, with sophisticated tools for handling the complexity of real-world production constraints.
+
+Navigate Between Days
+
+Use the sidebar to switch between different production days. Each day shows only the shots scheduled for that specific day.
+
+Reorder Within Day
+
+Drag shots within the same production day to set your filming order. Move shots between scenes or split scenes across different times of day as needed.
+
+Multi-Select for Bulk Operations
+
+Long press any shot to enter selection mode, then tap additional shots to select multiple shots. Long press scene headers to select entire scenes.
+
+Smart Scene Splitting
+
+When you move some shots from a scene to different positions within the same production day, the system automatically creates separate scene sections. This allows you to schedule parts of the same scene at different times of day while maintaining clear organization.
+
+### Production Day Operations
+
+#### Within Scene Operations
+
+Drag shots within a scene to reorder them—**scene and shot numbers persist**.
+
+#### Partial Scene Operations
+
+When you move some shots from a scene to different positions within the same production day, the system automatically creates separate scene sections. This allows you to schedule parts of the same scene at different times of day while maintaining clear organization.
+
+#### Whole Scene Operations
+
+Select a scene header to move all shots in that scene together to a different position within the same production day.
+
+#### Production Days Banner
+
+Add breaks and scheduling information to any production day with custom banners. Include lunch breaks, equipment changes, location moves, or any scheduling notes that help organize your shooting day timeline.
+
+## How to Use Focus Mode
+
+Focus Mode allows you to concentrate on specific scenes without distractions from the rest of your shot list, while maintaining all editing capabilities.
+
+Select Scenes to Focus On
+
+Choose specific scenes from the scene selector dialog, or select multiple scenes to focus on related sequences simultaneously.
+
+Edit Without Distractions
+
+Work on shot details, reordering, and production planning with only your selected scenes visible. All editing features remain available.
+
+Switch Focus as Needed
+
+Change your scene selection at any time to focus on different parts of your production, or return to full view when needed.
+
+### Common Focus Mode Uses
+
+-   Detailed script breakdown sessions for specific scenes
+-   Working on action sequences that span multiple scenes
+-   Reviewing shots for a particular location
+-   Isolating scenes with specific equipment or talent requirements
+
+## Additional Features
+
+### Shot List Display & Customization
+
+Customize your shot list view with **compact/expanded display modes** for information density control. Choose between **fit layout** (all columns visible) or **scroll layout** (horizontal scrolling for more columns). **Toggle column visibility** for any built-in field, and add your own **custom columns** to track your production-specific information.
+
+### Share & Export
+
+Generate professional, production-ready documents directly from your shot list. Create paginated **PDF Action Plans** for the whole crew with coverage organized by script order or production schedule. Customize exports by filtering columns and selecting distinct image layouts.
+
+### Local-First Sync
+
+CineLog works **offline-first** with automatic real-time synchronization across all your devices and team members when connected. Make changes anywhere, anytime—everything stays in sync without missing a beat. Perfect for on-set adjustments and collaborative planning where internet connectivity may be unreliable.
+
+### Custom Production Values
+
+Define your own options for **Shot Types**, **Camera Angles**, **Equipment**, **Movement**, **Frame Rate**, and **Aspect Ratio**. Create standardized dropdown menus that match your production's specific needs and workflow, ensuring consistency across your entire team.
+
+### Keyboard Shortcuts
+
+Work faster with comprehensive keyboard shortcuts for navigation, shot creation, view switching, and bulk operations. **[See complete shortcuts reference](/keyboardshortcuts)** for the full list of time-saving commands. Streamline your workflow with quick access to all major functions without reaching for the mouse.
+
+### Visual Organization
+
+Organize visually with **assignable colors for scenes**, individual **shot cells**, and **banner backgrounds**. Create visual coding systems for locations, equipment needs, complexity levels, or any categorization that helps your production team quickly identify and organize shots. Build custom color schemes that match your production workflow.

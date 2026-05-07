@@ -1,0 +1,76 @@
+---
+title: Media Explorer
+lastUpdated: 2026-04-22
+description: "Upload, organize, and manage previs images and reference media for your production shots."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Handling gigabytes of location photos, reference videos, and storyboard frames is crucial for film production. The CineLog Media Explorer provides comprehensive file management capabilities, powered by an intelligent upload engine designed to keep you working smoothly even when your internet connection is poor.
+
+## Core Capabilities
+
+<CardGrid>
+<Card title="Dual-Screen Approach">
+  Access your media either through the comprehensive project-wide Full Media Explorer or the contextual Simplified Feature Media Screen.
+</Card>
+
+<Card title="Instant Local Processing">
+  Before sending anything to the cloud, images are beautifully thumbnailed locally on your device, ensuring you have immediate visual reference without waiting for uploads to complete.
+</Card>
+
+<Card title="Resilient Background Uploads">
+  File transfers happen entirely in the background. If you lose your Wi-Fi, the system intelligently pauses and automatically resumes uploading the next time you open the app.
+</Card>
+
+<Card title="Storage Analytics">
+  Real-time calculation of used storage space per project with breakdowns by feature and file type.
+</Card>
+</CardGrid>
+
+## Detailed Usage & Workflows
+
+### Intelligent File Uploads
+
+Instant Availability (Previs)
+
+Because CineLog favors your local device, the app instantly generates an optimized local thumbnail so you can continue sorting, viewing, and organizing your Shots immediately. You never have to wait for an upload to finish to keep working.
+
+Background Sync
+
+The app securely streams the heavy original file directly to cloud storage in the background.
+
+Recovery
+
+If you lose connection mid-upload, CineLog queues the file. A specialized background service automatically recovers stalled transfers silently across sessions.
+
+### Operating the Interfaces
+
+#### Full Media Explorer
+
+Accessed via the "MORE" menu in the main project navigation. This is your comprehensive, project-wide file management interface. It includes global filtering (by feature or status), bulk operations (multi-select delete), and overarching storage analytics limits.
+
+#### Simplified Feature Media Screen
+
+Accessed directly from individual features (e.g., clicking the previs button on a shot). This is a lightweight, focused view pre-filtered to that specific element. You can upload, reorder, or delete files specifically associated with that item without losing context.
+
+## Visual States & Offline Awareness
+
+Each media thumbnail always shows a status badge in the bottom-right corner with two icons that indicate availability:
+
+#### Offline Pin
+
+Always visible in the bottom-right badge. Appears bright when the file is available on your device, dimmed when it is not stored locally.
+
+#### Cloud Done
+
+Always visible in the bottom-right badge, next to the offline pin. Appears bright when synced to the cloud CDN, dimmed when not yet uploaded.
+
+## Pro-Tips & Platform Specifics
+
+### Offline Scouting
+
+If you take location scouting photos without an internet connection, you can upload them entirely within CineLog. The app stores them locally, links them to your scenes, and will automatically queue the background upload once you reach an area with cell service.
+
+### Multi-Select Filtering
+
+When managing large numbers of rejected assets in the Full Media Explorer, use the multi-select capability to batch delete unused files in one sweep to free up your storage quota.

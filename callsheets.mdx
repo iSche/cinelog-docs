@@ -1,0 +1,78 @@
+---
+title: Call Sheets
+lastUpdated: 2026-04-22
+description: "Generate and manage call sheets for cast and crew with scheduling and location details."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Transform CineLog from a shot planning utility into a complete production office. It automatically aggregates Cast, Crew, Schedule, and Location details into industry-standard PDFs ready for immediate distribution, saving you hours of transcription.
+
+## Core Features
+
+<CardGrid>
+<Card title="Live Schedule Engine">
+  Generate time-accurate schedules automatically based on your estimated scene times. Entering a "Crew Call" cascades out times for your entire day, intelligently warning you of bottlenecks.
+</Card>
+
+<Card title="Global Multi-Language PDFs">
+  Pixel-perfect export of Tier-1 industry call sheets featuring automatic font fallbacks for **Arabic, Chinese, Japanese, Hebrew, Hindi, Ukrainian**, and more.
+</Card>
+
+<Card title="Automated Logistics">
+  Securely fetch your nearest hospital details via Google Places and inject an accurate weather forecast via Google Weather API with up to 10 days of coverage.
+</Card>
+
+<Card title="One-Tap Confirmations">
+  Blast call sheets to your entire roster via email with built-in anti-threading tech. Crew confirm receipt with a single tap, updating your live dashboard.
+</Card>
+
+<Card title="Mobile Workspace Controls">
+  Keyboard-aware overlays ensure you can easily make quick set changes from your smartphone without ever obscuring the actual document text.
+</Card>
+</CardGrid>
+
+## Detailed Usage & Workflows
+
+<Aside type="tip">
+Call Sheets automatically pull data from your Shot List and Cast & Crew rosters, meaning you'll spend less time manually configuring the document, and more time getting ready for framing your shots.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Generating a Daily Schedule**
+
+Instead of typing every single shot time manually, CineLog's schedule engine does the math for you. Add a crew call, and the engine immediately cascades this time downwards, automatically plotting the exact start times for all subsequent scenes and breaks based on their estimated times.
+
+</li>
+<li>
+
+**Managing Talent & Crew Times**
+
+Click into the Talent or Crew sections to prune the list down to exactly who is required that day. Set individualized Call Times, Hair & Make-Up, and Wardrobe times per individual, then drag-and-drop to reorder them by expected arrival.
+
+</li>
+<li>
+
+**PDF Export and Email Sendouts**
+
+Ensure everyone knows exactly what's going on. Click **Export** to format an industry-standard PDF bearing your company's logo, or hit **Send** to blast tracked email sendouts right into your team's pocket.
+
+</li>
+
+</ol>
+</Steps>
+
+## Integrated Data Ecosystem
+
+<Aside type="tip">
+The Call Sheets schedule acts as a bidirectional viewport of your Shot List. Editing a scene order or estimate in the Call Sheet _instantaneously_ updates your underlying Shot List layout via CineSync.
+</Aside>
+
+<Aside type="tip" title="Data Routing Benefits">
+-   **Cast and Crew Flows**: Talent names, crew roles, and contact details flow strictly from your central Cast and Crew hub. Assigning an actor dynamically populates their data.
+-   **Error Handling Guarantees**: Any invalid schedule bottleneck displays stark yellow/red UI alerts preventing timeline clashes.
+-   **Global Access Routing**: Anyone receiving a Call Sheet link is intelligently funneled to create an account, gaining access strictly to what their role dictates.
+</Aside>

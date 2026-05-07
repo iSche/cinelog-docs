@@ -1,0 +1,172 @@
+---
+title: Script Editor
+lastUpdated: 2026-04-22
+description: "Professional screenplay editing with real-time Fountain formatting, multi-format import, live analytics, and shot list integration."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+CineLog's Script Editor is a professional screenplay editing system built for modern film production workflows. Import scripts from multiple formats, edit with real-time Fountain syntax support, track analytics, and seamlessly integrate with your shot list—all with industry-standard formatting and collaborative features.
+
+## Core Features
+
+<CardGrid>
+<Card title="Continuous Persistent Saving">
+  Say goodbye to the "Save" button. The Script Editor continuously and silently saves every single keystroke to your local device the moment you make it, then syncs to the cloud in the background—ensuring you never lose a word of inspiration.
+</Card>
+
+<Card title="Real-time Fountain Formatting">
+  Live formatting as you type. Automatic element classification for scene headings, character names, dialogue, and action with manual override hotkeys for precise control.
+</Card>
+
+<Card title="Multi-Format Import">
+  Import scripts from **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT**, and **RTF** formats with intelligent parsing and format preservation.
+</Card>
+
+<Card title="Live Analytics">
+  Real-time script analytics. Track page counts, character stats, scene analysis, word counts, and professional metrics as you write.
+</Card>
+
+<Card title="Shot List Integration">
+  **Populate shot lists directly from script content** with intelligent coverage estimation, content-aware descriptions, and smart shot placement near source material.
+</Card>
+
+</CardGrid>
+
+## Professional Editing Experience
+
+<Aside type="tip">
+The Script Editor provides a professional screenplay editing environment with industry-standard formatting and powerful automation features that streamline your writing workflow.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Smart Element Detection**
+
+Automatic classification of scene headings (INT./EXT.), character names, dialogue, action, and transitions with real-time visual styling. Type naturally and watch your script format itself professionally.
+
+</li>
+<li>
+
+**Manual Override Controls**
+
+Precise control with hotkeys: **Cmd+1** for Scene Heading, **Cmd+2** for Character, **Cmd+3** for Dialogue, **Cmd+4** for Action, **Cmd+5** for Transition.
+
+</li>
+<li>
+
+**Complete Fountain Support**
+
+Full Fountain v1.1 specification with forced syntax elements (@Character, !Action, .Scene), text formatting (\*italics\*, \*\*bold\*\*, \_underline\_), and document structure support.
+
+</li>
+<li>
+
+**Industry Typography**
+
+Character-precise positioning with 12-point Courier Prime font, proper margins, and element-specific indentation following professional screenplay standards.
+
+</li>
+
+</ol>
+</Steps>
+
+## Import & Analytics
+
+### Multi-Format Script Import
+
+Need to bring in writing from an older app? Click the **Import** button in the Script Editor’s top menu bar (or press <kbd>Cmd</kbd> + <kbd>I</kbd>) to import and convert an existing script. Our universal parser intelligently extracts scenes, characters, and dialogue geometry from your original document, applying standard Fountain formatting automatically.
+
+<CardGrid>
+<Card title="Final Draft (.fdx)">
+  Professional XML parsing with complete metadata preservation, character formatting, and scene properties.
+</Card>
+
+<Card title="Fountain (.fountain)">
+  Native format support with full v1.1 specification, forced elements, and comment preservation.
+</Card>
+
+<Card title="PDF Scripts">
+  Advanced text extraction with layout preservation using platform-specific libraries and Unicode support.
+</Card>
+
+<Card title="Plain Text (.txt)">
+  Intelligent heuristic detection using scene patterns, character recognition, and context clues.
+</Card>
+
+<Card title="Rich Text (.rtf)">
+  RTF parsing with style extraction and clean text conversion for screenplay formatting.
+</Card>
+</CardGrid>
+
+### Real-Time Script Analytics
+
+Professional script metrics updated live as you edit, with industry-standard calculations for accurate production planning.
+
+<CardGrid>
+<Card title="Page Estimation">
+  Industry-standard page calculation formulas with real-time updates and professional accuracy.
+</Card>
+
+<Card title="Scene & Character Counts">
+  Live tracking of scenes, unique characters, dialogue distribution, and speaking time estimation.
+</Card>
+
+<Card title="Element Analysis">
+  Count and analyze action blocks, dialogue lines, transitions, and other script elements for structure review.
+</Card>
+
+<Card title="Word & Character Metrics">
+  Professional writing metrics including total word count, character count, and reading time estimation.
+</Card>
+</CardGrid>
+
+## Shot List Integration
+
+<Aside type="tip">
+Bridge the gap between script and production with intelligent shot list population that analyzes your script content and creates comprehensive coverage automatically.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Content Analysis**
+
+The system analyzes your script content to understand scenes, character interactions, action sequences, and dialogue moments.
+
+</li>
+<li>
+
+**Intelligent Shot Estimation**
+
+Creates coverage shots based on content type—action coverage for sequences, dialogue coverage for conversations, and reaction shots for character moments.
+
+</li>
+<li>
+
+**Smart Placement**
+
+Shots are placed near their source content with descriptions that include actual script text, helping directors understand WHY each shot is needed.
+
+</li>
+<li>
+
+**Flexible Population**
+
+Choose from Replace or Merge modes to integrate with existing shot lists while preserving your manual customizations.
+
+</li>
+
+</ol>
+</Steps>
+
+<Aside type="tip" title="Population Benefits">
+-   **Content-Aware Descriptions**: Shot descriptions include actual script content instead of generic text
+-   **Element-Type Based Coverage**: Different shot types based on whether content is action, dialogue, or reactions
+-   **Smart Shot Placement**: Coverage shots intelligently placed near source content, not dumped at scene end
+-   **Actionable Direction**: Help directors understand the purpose of each shot with content context
+</Aside>

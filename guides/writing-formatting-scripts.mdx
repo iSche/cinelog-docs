@@ -1,0 +1,103 @@
+---
+title: Writing & Formatting Scripts
+lastUpdated: 2026-04-22
+description: "Import FDX, Fountain, PDF, TXT, and RTF scripts into CineLog's editor. Format with Fountain syntax, track analytics, export to PDF, and populate your shot list."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+CineLog's Script Editor is a powerful, professional-grade writing environment built natively into the platform. It supports real-time Fountain formatting, live analytics, and seamless data syncing to the cloud.
+
+Whether you're writing a new script from scratch or importing an existing screenplay, CineLog ensures your formatting always adheres to industry standards.
+
+## Importing an Existing Script
+
+If you've already started writing your screenplay in another software, you can easily import it into CineLog without losing your formatting.
+
+<Steps>
+1. **Open the Script Editor:** Navigate to the Script Editor using the left sidebar.
+2. **Import Document:** Click the **Import** button in the top menu bar (or press <kbd>Cmd</kbd> + <kbd>I</kbd>) and select your script file.
+3. **Automatic Parsing:** CineLog's universal parser will automatically process the file, extract the scenes, and convert the formatting.
+</Steps>
+
+<CardGrid>
+  <Card title="Supported Formats">
+    - **Final Draft (.fdx)**
+    - **Fountain (.fountain)**
+    - **PDF** (Text extraction)
+    - **Plain Text (.txt)**
+    - **Rich Text (.rtf)**
+  </Card>
+</CardGrid>
+
+---
+
+## Live Editing & Formatting
+
+CineLog uses the **Fountain** markup language under the hood. However, you don't need to know Fountain to write—the editor automatically formats your text as you type.
+
+### Supported Fountain Elements
+
+CineLog currently supports the core Fountain specification required for professional screenplay editing. You can either type naturally to let the smart detection do the work, or force formatting using Fountain's syntax characters.
+
+- **Scene Headings**: Start a line with standard prefixes (`INT.`, `EXT.`, etc.), or force it by starting the line with a period (`.`).
+- **Action**: Standard text is treated as action. Force it by starting a line with an exclamation point (`!`).
+- **Characters**: Type entirely in UPPERCASE (e.g., `JOHN`), or force it by starting the line with an at-symbol (`@`).
+- **Dialogue**: Simply type immediately following a Character line.
+- **Parentheticals**: Wrap text in parentheses `(like this)`.
+- **Transitions**: Use standard UPPERCASE endings like `CUT TO:`, or force it by starting the line with a right-angle bracket (`>`).
+- **Centered Text**: Wrap text with angle brackets: `> Center this text <`.
+- **Emphasis**: Support for standard markdown-style emphasis:
+  - `*Italics*`
+  - `**Bold**`
+  - `_Underline_`
+
+### Currently Unsupported Elements
+We are constantly expanding our Fountain support. At this time, the following advanced Fountain features are **not yet supported** in the live editor:
+- Dual Dialogue (`^`)
+- Boneyards (`/* */`)
+- Sections (`#`) and Synopses (`=`)
+- Inline Notes (`[[ ]]`)
+
+### Manual Override Hotkeys
+If the smart detection guesses incorrectly, or if you want to force a specific formatting style, use the manual override hotkeys:
+
+- <kbd>Cmd</kbd> + <kbd>1</kbd>: Scene Heading
+- <kbd>Cmd</kbd> + <kbd>2</kbd>: Character
+- <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialogue
+- <kbd>Cmd</kbd> + <kbd>4</kbd>: Action
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transition
+
+<Aside type="tip">
+**Continuous Saving:** There is no "Save" button in the Script Editor. Every keystroke is silently and continuously saved to your local device and securely synced to the cloud in the background.
+</Aside>
+
+---
+
+## Live Analytics
+
+As you write, CineLog calculates professional metrics in real-time, allowing you to gauge the scope and pacing of your script without ever leaving the editor.
+
+Look for the analytics panel to see live updates on:
+- **Page Estimation:** Industry-standard page calculation formulas accurate to professional standards.
+- **Scene & Character Counts:** Total number of scenes and unique speaking characters.
+- **Word Metrics:** Total word count and estimated reading time.
+
+---
+
+## Preview & Export
+
+When you are ready to review your final script or share it with others, you can seamlessly transition from the editor to a standardized PDF.
+
+<Steps>
+1. **Preview Mode:** Click the **"Preview & Export"** button in the top menu bar to switch from the continuous scrolling editor to a paginated, print-ready view. The preview mode renders a standard Title Page and accurate page breaks.
+2. **Export:** While in Preview Mode, click the **"Export"** icon.
+3. **Select Format:** Choose the file format you need.
+</Steps>
+
+CineLog currently supports exporting your script in the following formats:
+- **PDF (.pdf):** High-quality, paginated, and industry-formatted document perfect for printing or emailing.
+- **Final Draft (.fdx):** Industry standard XML format, allowing you to seamlessly move your script into Final Draft or other production software.
+- **Fountain (.fountain):** Raw plaintext markup for maximum compatibility.
+- **Plain Text (.txt):** Basic text export for simple reading.
+- **JSON (.json):** Structured data export for integrations and custom tooling.
+- **CSV (.csv):** Tabular breakdown export for spreadsheets and reporting.

@@ -1,0 +1,152 @@
+---
+title: Building a Shot List
+lastUpdated: 2026-04-22
+description: "Build and organize your shot list with scenes, production days, and Focus Mode. Customize columns, export PDF, and sync across devices with CineLog's local-first engine."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+The Shot List is the beating heart of CineLog. It is where you plan your coverage, organize your shooting schedule, and track progress on set. 
+
+You can build a shot list entirely from scratch, or you can use CineLog's intelligent population engine to generate it directly from your script.
+
+---
+
+## 1. Population from Script
+
+If you have already imported your screenplay using the [Script Editor](/guides/writing-formatting-scripts), you can automatically generate your entire shot list infrastructure in seconds.
+
+<Steps>
+1. **Open the Shot List:** Navigate to the Shot List module using the left sidebar.
+2. **Trigger Population:** Click the **"Populate from Script"** button in the top menu bar (or press <kbd>Shift</kbd> + <kbd>P</kbd> from the Script Editor).
+3. **Automatic Generation:** CineLog will scan your script, identify every scene heading (e.g., *INT. KITCHEN - DAY*), and automatically create a corresponding **Scene Block** in your shot list.
+</Steps>
+
+<Aside type="tip">
+When populating from a script, CineLog intelligently analyzes the dialogue and action lines to estimate the necessary coverage. It will automatically generate basic shots (like Wide Shots and Close-Ups) and place them directly beneath the relevant scene blocks, saving you hours of manual data entry!
+</Aside>
+
+---
+
+## 2. View Architectures & Reordering
+
+As your shot list grows, you need flexible ways to view and organize the data. CineLog offers two distinct ways to look at your shot list, which dictate how reordering constraints are handled.
+
+### Linear View (Chronological Order)
+Organizes your shots in exact chronological script order (Scene 1, Scene 2, Scene 3). This is perfect for pre-production when you are figuring out your coverage relative to the story.
+
+- **Reordering Constraints:** Linear view strictly enforces absolute script order. If you drag a shot to reorder it within a scene, it maintains its scene association but updates its sequence. If you drag a shot *across* a scene boundary, the system automatically recalculates the shot's scene association. If the shot had a production day assigned, the system will attempt to sync that day with the destination scene to maintain consistency.
+
+### Production View (Scheduling Order)
+Reorganizes your shots based on logistical efficiency, grouping them by **Production Days** (e.g., shooting all *INT. KITCHEN* scenes on Day 1, regardless of where they happen in the story).
+
+- **Reordering Constraints:** Ordered chronologically by the shooting schedule rather than the script. Moving a shot within a scene block updates its position. If you drop a partial selection of shots out of a scene, the system will split the scene header to maintain accurate shot groupings. Dragging an entire scene block moves all child shots without altering their script-level sequence.
+
+### Focus Mode (Isolated View)
+Sometimes you only need to look at what you are shooting *right now*. Focus Mode allows you to isolate one or multiple scenes on screen, hiding everything else.
+
+- **Triggering Focus Mode:** Press <kbd>Cmd</kbd> + <kbd>F</kbd> to open the scene selector dialog.
+- **Select vs Add:** In the dialog, typing a scene number and clicking **"Select"** (or pressing Enter) will replace your current view with *only* that scene. Clicking **"Add"** will append the scene to your currently focused list, allowing you to view multiple non-sequential scenes side-by-side.
+- **Navigation:** Once in Focus Mode, press <kbd>Arrow Left</kbd> or <kbd>Arrow Right</kbd> to replace the current focused scene with the previous or next scene. Use <kbd>Cmd</kbd> + <kbd>Arrow Left</kbd> or <kbd>Arrow Right</kbd> to add adjacent scenes to your focus selection without replacing the current one.
+
+### The Script Sidebar
+To maintain context while shot-listing, you can open the **Script Sidebar** directly within the Shot List by pressing <kbd>Shift</kbd> + <kbd>S</kbd> (in linear view). This opens a split-screen view showing your screenplay alongside your shots. As you scroll through the shot list, the script sidebar automatically syncs its scroll position to keep the relevant scene text in view. Note: in Focus Mode, <kbd>Shift</kbd> + <kbd>S</kbd> opens the scene selector dialog instead.
+
+---
+
+## 3. Desktop vs Mobile Mechanics
+
+Because on-set execution differs drastically from desktop pre-production, the interaction methods adapt to your device.
+
+### Desktop (Mouse/Keyboard)
+- **Adding Shots:** Inside any Scene Block, click the **"+ Add Shot"** button at the bottom of the list.
+- **Inline Editing:** Click directly into any cell (like *Shot Size*, *Angle*, or *Movement*) to edit the value immediately.
+- **Selection:** To select rows, use <kbd>Cmd</kbd> + Click (or <kbd>Ctrl</kbd> + Click) to select individual shots, or use <kbd>Shift</kbd> + Click to select a continuous range.
+- **Reordering:** Click and hold anywhere on a shot row (or on your active selection) to pick it up, then drag it to its new position.
+
+### Mobile (Touch Display)
+- **Selection Mode:** Long-press any shot to enter "Selection Mode." Once active, you can tap to select multiple items. The top app bar will transition into an action menu, allowing you to delete selections or clear your current selection state.
+- **Reordering:** In the edit dialogs or specific phone layouts, press and hold the shot card until it lifts up, then drag it to its new location.
+- **Collapsed vs. Expanded Views:** To save vertical space, mobile rows default to a **Collapsed View** showing only key information.
+  - **Expanded View:** Tap a collapsed shot to expand it and reveal all metadata columns. 
+  - **Double-Tap to Edit:** While in the expanded view, **double-tap** any specific field to open the full-screen **Edit Overlay** focused directly on that property, ensuring all dropdowns and text inputs are touch-friendly.
+
+---
+
+## 4. Media & Previs Integration
+
+CineLog allows you to attach reference imagery, storyboards, or location scouts directly to individual shots using the **Previs** column.
+
+- **Uploading Media:** Click the Previs cell (or open the Edit Overlay) to launch the Media Explorer and upload images.
+- **The Carousel:** If you upload multiple images to a single shot, they are automatically organized into an interactive **Carousel**. You can navigate through the images using the on-screen left/right arrows, or by swiping on touch devices.
+- **Aspect Ratios:** Different projects have different framing requirements. You can customize the display aspect ratio for your previs thumbnails (e.g., `16:9`, `2.35:1`, `4:3`) in the Display Settings or directly in the Previs overlay to ensure your reference images match your intended camera framing exactly.
+
+---
+
+## 5. Display Settings & Customization
+
+You can heavily customize how data is presented using the **Display Settings** menu (the gear icon).
+
+<CardGrid>
+  <Card title="Shot Number Formats">
+    Define how shot IDs are rendered globally:
+    - **Alphanumeric:** The raw shot name (e.g., `1A`, `2C`).
+    - **Decimal:** The scene and setup number combined (e.g., `1.1`, `2.3`).
+    - **Sequential:** A global, 1-based sequential counter representing absolute script order (e.g., `1`, `2`, `47`).
+  </Card>
+  <Card title="Custom Columns & Ordering">
+    Add entirely new metadata columns specific to your production needs. You can reorder columns by dragging their titles in the Display Settings panel. **Any custom column you create will automatically appear as a field in the Mobile Edit Overlay.**
+  </Card>
+</CardGrid>
+
+<Aside>
+**Note:** Display settings are applied at the project level and sync across the project via CineSync. When you customize the view, those settings will propagate to your team members as they sync, ensuring consistent layout and formatting across your production.
+</Aside>
+
+- **Row Heights:** You can adjust the row height to fit more information on screen, or expand it for a more relaxed, touch-friendly interface.
+- **Column Visibility:** Toggle specific columns on and off. If you don't need *Sound* notes for a specific project, hide that column to save screen real estate. You can also press <kbd>1</kbd> through <kbd>9</kbd> to quickly toggle the first 9 columns, or use <kbd>Shift</kbd> + <kbd>D</kbd> to open the Display Settings overlay.
+
+---
+
+## 6. Keyboard Shortcuts & Hotkeys
+
+Power users can navigate and manage the shot list entirely via the keyboard.
+
+### Global Actions
+- <kbd>Cmd</kbd> + <kbd>N</kbd> (or <kbd>Ctrl</kbd> + <kbd>N</kbd>): Create a new shot (or a new Banner in Production View).
+- <kbd>Cmd</kbd> + <kbd>P</kbd>: Export the current view to PDF.
+- <kbd>Esc</kbd>: Clear current selection or exit Focus Mode.
+- <kbd>Delete</kbd>: Delete selected items.
+
+### Navigation & Views
+- <kbd>Cmd</kbd> + <kbd>F</kbd>: Enter Focus Mode (Isolate specific scenes).
+- <kbd>Arrow Left/Right</kbd>: Navigate between scenes in Focus Mode (replaces current scene).
+- <kbd>Cmd</kbd> + <kbd>Arrow Left/Right</kbd>: Add adjacent scenes to your focus selection.
+- <kbd>Shift</kbd> + <kbd>L</kbd>: Toggle columns layout (Scroll vs Fit-to-screen).
+- <kbd>Shift</kbd> + <kbd>M</kbd>: Toggle display mode (Compact vs Expanded rows).
+- <kbd>Shift</kbd> + <kbd>D</kbd>: Toggle the Display Settings overlay.
+- <kbd>Shift</kbd> + <kbd>S</kbd>: Toggle the Script Panel (linear view) or open Focus Scene selector (focus mode).
+- <kbd>1</kbd> through <kbd>9</kbd>: Quickly toggle visibility for the first 9 columns.
+
+---
+
+## 7. PDF Exports & Reports
+
+While CineLog is designed as a cloud-synced digital platform, filmmaking still often requires physical documents on set. CineLog features a robust, isolated PDF rendering engine that allows you to export high-quality, print-ready documents.
+
+You can export your entire shot list to a PDF at any time. The format of the export will dynamically change depending on which **View** you currently have active.
+
+<Steps>
+1. **Navigate to the Shot List:** Open your shot list and ensure the data you want to export is visible.
+2. **Select your View:** Toggle between Linear View or Production View in the top menu bar.
+3. **Export:** Click the **"Export PDF"** button (printer icon) in the top right corner (or press <kbd>Cmd</kbd> + <kbd>P</kbd>).
+</Steps>
+
+### Linear Mode Exports
+If you export while in **Linear View**, the PDF will group your shots chronologically by Scene Number. This is the traditional "Script Order" export, ideal for the Director and Script Supervisor to ensure narrative coverage.
+
+### Production Mode Exports
+If you export while in **Production View**, the PDF will group your shots by logistical efficiency (e.g., all shots at *Location A*, regardless of scene order). This export is highly structured and serves as the primary scheduling document for the 1st Assistant Director and Producer.
+
+<Aside>
+**Offline Rendering:** The PDF export engine runs entirely locally on your device using a background isolate. This means you can generate PDFs instantly, even if you are completely offline on a remote set!
+</Aside>

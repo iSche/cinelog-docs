@@ -1,0 +1,72 @@
+---
+title: Storyboards
+lastUpdated: 2026-04-22
+description: "Visual planning tools to help you map out scenes and visualize your creative vision."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+The CineLog Storyboard feature is a visual extension of your Linear Shot List. It provides a dedicated workspace for planning, sequencing, and reviewing the visual composition of your production through intuitive layouts. Storyboards are not a separate set of data—they are a visual-first presentation of the exact same shot data. Every panel on the storyboard is tied 1:1 with a shot in your Linear Shot List.
+
+## Core Capabilities
+
+<CardGrid>
+<Card title="Multiple Perspective Layouts">
+  View your storyboard horizontally (Linear View), grouped by scene (Scene/Grid View), or full-screen on mobile devices.
+</Card>
+
+<Card title="Rich Media Panels">
+  Support for multiple image uploads per shot panel. Define a primary image while keeping alternatives a swipe away.
+</Card>
+
+<Card title="Drag-and-Drop Sequencing">
+  Reorder shots visually. Changes immediately sync back to your Shot List.
+</Card>
+
+<Card title="Customizable Presentation">
+  Using the Display Settings, deeply customize how panels render. In Grid mode, explicitly adjust the column count (1 to 10 up). In Linear mode, define the exact panel width. You can also adjust the spacing between panels globally.
+</Card>
+</CardGrid>
+
+## Detailed Usage & Workflows
+
+### Uploading & Managing Content
+
+Tap to Upload
+
+Tap the image area of a panel to upload media (or double-tap on mobile to open the Media Explorer).
+
+Scrub through Sequences
+
+If you upload multiple images to a single panel, you can use the on-panel slider to scrub through the sequence.
+
+Set Primary Images
+
+The "Primary" image is the one that will be displayed in the Grid view and included in PDF exports.
+
+### Working with Views
+
+#### Linear View (Desktop/Tablet)
+
+A horizontal timeline. You can adjust the zoom to see ~2 large panels or ~4 smaller panels on screen. Shots can be reordered chronologically here, and the system handles scene association updates automatically.
+
+#### Scene / Grid View
+
+Opens a vertical grid (up to 10-up) focused purely on a single scene. This provides an excellent high-level overview of an entire sequence's coverage.
+
+## Pro-Tips & Platform Specifics
+
+### Mobile Phone Linear Carousel
+
+On phones, the Linear view transforms into a full-page swipeable carousel. Swiping directly on the **image area** cycles through multiple images uploaded to that specific shot. Swiping on the **metadata area** at the bottom navigates to the next or previous shot entirely.
+
+### Double-Tap to Edit (Mobile)
+
+On phones, all tappable fields require a **double-tap** to edit to prevent accidental changes while swiping. Tablets and Desktops rely on a single tap.
+
+### PreVis Aspect Ratios
+
+Storyboard views automatically render your images in their true user-selected aspect ratio, including tall vertical formats like 9:16 (TikTok/Reels format) without cropping.
+
+### Professional PDF Export
+
+Generate clean, production-ready PDF sheets directly from your storyboard views. Hit `Cmd+P` to configure a PDF Export, selecting between Clean mode (visuals only) or Detailed mode (visuals + metadata).

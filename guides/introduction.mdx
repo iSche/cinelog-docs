@@ -1,0 +1,85 @@
+---
+title: Introduction to CineLog
+lastUpdated: 2026-04-22
+description: "Get started with CineLog — a local-first film pre-production app for macOS, iOS, and Android. Learn the architecture, create your first project, and explore the ecosystem."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Welcome to CineLog, the comprehensive pre-production and on-set management platform built for modern filmmakers.
+
+Whether you're writing a script in pre-production or checking off shots on set, CineLog is designed to keep your entire production team perfectly synchronized.
+
+## The CineLog Ecosystem
+
+CineLog operates across multiple platforms, ensuring you always have the right tool for the job depending on your current environment:
+
+<CardGrid>
+  <Card title="Desktop App (macOS)" icon="laptop">
+    The command center for your production. The desktop app is optimized for heavy-duty pre-production work: writing scripts, mass-uploading storyboards, configuring complex call sheets, and managing your crew directories.
+  </Card>
+  <Card title="Mobile App (iOS & Android)" icon="apple">
+    Your on-set companion. The mobile app is designed to be fast, touch-friendly, and reliable. Use it to quickly reference call sheets, check off completed shots, and update notes while standing by the camera.
+  </Card>
+</CardGrid>
+
+> [!NOTE]
+> All platforms share the exact same underlying database and architecture, meaning anything you do on the desktop is instantly available on mobile, and vice versa.
+
+---
+
+## The CineSync Philosophy
+
+CineLog uses a custom synchronization engine called **CineSync** to manage your data. It is critical to understand how this system works, especially when you are out in the field on set where internet connectivity might be poor.
+
+### 1. Local-First Responsiveness
+Every time you perform an action in CineLog (like creating a shot or updating a scene status), the change is **immediately saved to a local database** on your device. The UI updates instantly without waiting for a server response. This ensures the app always feels lightning-fast and never "spins" while waiting for a connection.
+
+### 2. The Server is the Ultimate Source of Truth
+While the UI updates immediately based on your local database, those changes are technically placed into a background "Outbox Queue." Behind the scenes, CineLog securely transmits these actions to the cloud server. The server validates the action, applies the changes to the master database, and sends an acknowledgment back to your device. 
+
+<Aside type="caution">
+**Conflicts and Security:** If two people edit the exact same shot at the exact same time, the server determines the final outcome. The server is the ultimate source of truth—if an action is rejected due to permissions or a conflict, your local UI will revert to match the server's true state.
+</Aside>
+
+### 3. Working Offline
+Because of this local-first outbox system, **CineLog works completely offline**. 
+
+If you are filming in a remote location with zero cell service, you can still open the app, view your entire shot list, and check off shots as you film them. The app will simply queue these actions in your local outbox. The moment your phone reconnects to Wi-Fi or cellular data, the outbox will automatically drain and sync all your progress back to the cloud and to the rest of your team.
+
+<Aside type="tip">
+**Keep the App Open:** When you finally get back to a hotel or an area with cell service after a long day of shooting offline, just open the app for a few seconds to let the Outbox clear completely before closing it.
+</Aside>
+
+---
+
+## Getting Started
+
+Before you can start writing scripts or scheduling your crew, you need to set up a project within your workspace. Every film, commercial, or music video you work on should exist as its own distinct **Project** within CineLog.
+
+<Steps>
+1. **Open the Project Selector:** When you first log in to CineLog, you will land on the Home screen. In the top-left corner of the app, click on the current project name to open the **Project Selector** dialog.
+2. **Create New Project:** Inside the Project Selector dialog, click the **"New Project"** button.
+3. **Project Details:** Enter the core metadata for your production.
+   - **Title:** The working title of your project.
+   - **Description:** A brief logline or description of the project.
+4. **Initialize:** Click "Create" to initialize the project database. CineLog will automatically switch you into your new, empty project.
+</Steps>
+
+---
+
+## Next Steps
+
+<CardGrid>
+  <Card title="Upload a Script" icon="document">
+    Head over to the [Writing & Formatting Scripts](/guides/writing-formatting-scripts) guide to learn how to import your screenplay.
+  </Card>
+  <Card title="Build a Shot List" icon="list-format">
+    Learn how to plan your coverage in the [Building a Shot List](/guides/building-shot-list) guide.
+  </Card>
+  <Card title="Invite Your Team" icon="setting">
+    Add collaborators in the [Managing Cast & Crew](/guides/managing-cast-crew) guide.
+  </Card>
+  <Card title="Keyboard Shortcuts" icon="laptop">
+    Master the hotkey system with the [Keyboard Shortcuts](/keyboardshortcuts) reference.
+  </Card>
+</CardGrid>
