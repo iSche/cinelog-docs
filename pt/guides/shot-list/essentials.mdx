@@ -1,0 +1,65 @@
+---
+title: Decupagem essencial
+lastUpdated: 2026-05-23
+description: "Construa uma decupagem do zero — três maneiras de adicionar planos, como funciona a numeração, como reordenar e o que é apagado quando você remove um plano ou uma cena."
+---
+
+A decupagem é onde a pré-produção vive: cada plano do roteiro, na ordem em que você planeja filmá-los. Este artigo cobre os blocos de construção — adicionar planos, o esquema de numeração, reordenação e o que acontece quando você apaga coisas.
+
+Este guia assume [O básico](/pt/guides/introduction). O vocabulário de clicar-tocar-arrastar na decupagem é o mesmo de qualquer outra lista no app.
+
+## Três formas de popular
+
+Um projeto novo te dá uma decupagem vazia. Há três formas de preenchê-la:
+
+- **Manualmente, um plano por vez.** Clique no botão `+ Adicionar Plano` no final de qualquer bloco de cena.
+- **Atalho.** `Cmd / Ctrl + N` adiciona um novo plano no final da cena em foco no momento.
+- **Popular a partir do Roteiro.** `Shift + P` (ou o botão da barra de ferramentas) escaneia os cabeçalhos de cena do roteiro importado (linhas como `INT. COZINHA - DIA`) e cria automaticamente um bloco de cena por cabeçalho, cada um com um plano padrão. A saída é tão limpa quanto seu roteiro — cabeçalhos malformados geram cenas malformadas.
+
+A maioria dos projetos começa com Popular a partir do Roteiro como uma primeira passada bruta e depois refina manualmente.
+
+## Numeração de planos
+
+Os planos são numerados automaticamente. Três formatos estão disponíveis nas [Configurações de Exibição](/pt/guides/shot-list/display-settings):
+
+- **Alfanumérico** — `1A`, `1B`, `2A`. Número da cena + letra por plano dentro da cena. Padrão.
+- **Decimal** — `1.1`, `1.2`, `2.1`.
+- **Sequencial** — `1`, `2`, `3`, `47`. Contínuo ao longo do projeto.
+
+Números e letras atualizam ao reordenar. Se você move `1C` para o topo da cena, a lista lê brevemente C, A, B antes de recomputar para A, B, C. Não anote a letra de um plano esperando que ela seja estável entre movimentos.
+
+Alterar o formato renumera o projeto inteiro. Em um projeto já lined isso é destrutivo — confirme antes de fazer.
+
+## Reordenando planos
+
+Arraste qualquer plano para movê-lo. O gesto é o arrastar universal de [O básico](/pt/guides/introduction#4-dragging-to-reorder):
+
+- **Dentro de uma cena** — arraste para cima ou para baixo. As letras se recompactam.
+- **Entre cenas** — arraste passando do limite da cena. O número de cena do plano muda para corresponder ao destino; as letras se recompactam tanto na cena de origem quanto na de destino.
+- **No espaço vazio entre duas cenas** — o CineLog cria uma nova cena ali.
+
+A visualização Produção adiciona uma regra de escopo de cena para multi-seleções; veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production).
+
+## Editando campos do plano
+
+Clique em uma célula (desktop) ou toque para expandir a linha e toque em um campo (celular). Os campos são conscientes do tipo: o número do plano abre um input de texto, dia e lente são dropdowns, status e pré-visualização são toggles ou botões picker. Todas as edições têm autosave — sem botão Salvar. Veja [O básico](/pt/guides/introduction#2-editing-fields) para os atalhos de teclado dentro do editor e as ressalvas do autosave.
+
+Colunas personalizadas que você adiciona nas [Configurações de Exibição](/pt/guides/shot-list/display-settings) aparecem automaticamente ao lado das embutidas.
+
+## Apagando
+
+Botão direito em um plano → Apagar (desktop), ou swipe / menu overflow (celular). A cascata depende do que você apaga e onde:
+
+- **Um único plano na visualização Linear** — remove do projeto. Se era o último plano da cena, a cena também vai (não existe estado de cena vazia).
+- **Um único plano na visualização Produção** — remove do cronograma apenas daquele dia. O plano continua existindo na Linear e pode ser reagendado.
+- **Uma cena** (botão direito no cabeçalho da cena) — remove a cena e todos os planos dela, em todo lugar.
+
+O diálogo de confirmação sempre detalha o que está prestes a desaparecer antes de commitar. As semânticas completas de exclusão entre visualizações estão em [Linear vs Produção](/pt/guides/shot-list/linear-vs-production).
+
+## Se isso não estiver funcionando
+
+*"Minhas letras de plano mudaram depois que arrastei."* Esperado — as letras são recomputadas após cada reordenação para ficarem em ordem de exibição.
+
+*"Popular a partir do Roteiro me deu uma bagunça de cenas."* Abra o roteiro e limpe os cabeçalhos de cena (`INT. / EXT. LOCAÇÃO - HORÁRIO`), depois rode de novo.
+
+*"Apaguei o último plano de uma cena e a cena inteira sumiu."* Também esperado — não existe estado de cena vazia. Para manter a cena, deixe um plano placeholder nela.

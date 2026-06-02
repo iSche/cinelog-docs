@@ -1,0 +1,57 @@
+---
+title: Gerenciando Elenco e Equipe
+lastUpdated: 2026-04-22
+description: "Adicione funções e departamentos, gerencie contatos do workspace e controle acesso com toggles de intenção. Os dados de equipe fluem diretamente para as ordens do dia do CineLog."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+O módulo de Elenco e Equipe do CineLog atua tanto como seu diretório de produção quanto como sua porta de segurança. Ele separa estritamente os contatos globais dos membros ativos do projeto para garantir um controle de acesso robusto.
+
+## 1. A estrutura unificada do diretório
+
+O CineLog gerencia sua equipe usando duas camadas distintas:
+- **Contatos do Workspace:** este é seu rolodex mestre. Qualquer pessoa que você adicione a qualquer projeto é salva aqui automaticamente.
+- **Elenco e Equipe do Projeto:** este é o roster do seu *projeto atual*. Ele vincula pessoas dos seus Contatos do Workspace a funções específicas neste projeto.
+
+## 2. Adicionando membros à equipe
+
+Você pode adicionar facilmente novos membros diretamente ao seu projeto. O CineLog usa um diálogo unificado que cuida da criação do contato e da atribuição da função em uma única etapa perfeita.
+
+<Steps>
+1. **Abra Elenco e Equipe:** navegue até o módulo de Elenco e Equipe pela barra lateral esquerda. Certifique-se de estar na aba "Projeto".
+2. **Adicionar uma Função:** clique no botão **"+ Adicionar Função"**.
+3. **Selecionar ou Criar:** o diálogo unificado abre. Você pode buscar e selecionar uma pessoa existente nos seus Contatos do Workspace, ou simplesmente digitar um novo nome para criar instantaneamente um contato novo.
+4. **Escolha uma Função:** selecione uma função padrão da indústria no dropdown (ex.: *1º Assistente de Direção*, *Gaffer*, *Ator Principal*).
+5. **Detalhes de Contato:** insira o e-mail e o telefone da pessoa. Embora opcional, eles são altamente recomendados se você pretende enviar Ordens do Dia ou convidá-la para o app.
+</Steps>
+
+Você pode atribuir múltiplas funções a uma única pessoa caso ela esteja usando muitos chapéus na sua produção!
+
+---
+
+## 3. Controle de acesso e convites
+
+Atribuir uma função a um contato *não* o convida automaticamente para entrar no CineLog. Apenas o adiciona ao seu roster interno do projeto.
+
+Se você quer que um membro da equipe realmente entre no app e colabore, precisa conceder acesso formalmente.
+
+### O "Toggle de Intenção"
+
+Clique na função de qualquer pessoa na lista de Elenco e Equipe do Projeto para abrir o **Diálogo de Detalhes da Função**. Dentro dele, você encontrará o **Formulário de Controle de Acesso**.
+
+No topo desse formulário está o **Toggle de Intenção de Acesso**.
+
+- **OFF (Não Permitido):** a pessoa está no seu roster, mas não pode entrar no projeto. Esse é o estado padrão.
+- **ON (Concedido/Pendente):** o sistema verifica o e-mail dela. Se ela tem uma conta no CineLog, é adicionada ao projeto instantaneamente. Se não tem, o CineLog envia automaticamente um e-mail de convite para participar.
+
+<Aside type="note">
+**Gerenciamento de equipe:** qualquer pessoa com permissão de **Editar** no módulo de Elenco e Equipe pode alternar as intenções de acesso e modificar a ACL para outros membros da equipe. Isso permite delegar tarefas de onboarding e segurança aos seus Gerentes ou Coordenadores de Produção!
+</Aside>
+
+### Controle de Acesso Baseado em Função (RBAC)
+
+Quando você concede acesso a um usuário ao seu projeto, o que ele pode realmente *fazer*?
+
+O CineLog usa **Controle de Acesso Baseado em Função (RBAC)**. As permissões de um usuário são influenciadas pela função da indústria que você atribuiu a ele, com padrões sensatos aplicados com base em seu departamento e posição na hierarquia.
+
+Como Proprietário do Projeto, você pode sobrescrever as permissões padrão dentro do Diálogo de Detalhes da Função, ajustando o acesso de Visualização/Edição para módulos individuais daquela pessoa específica.

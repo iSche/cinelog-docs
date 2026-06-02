@@ -1,0 +1,129 @@
+---
+title: Découpage Technique
+lastUpdated: 2026-04-22
+description: "Planifie et organise tes plans avec des informations détaillées incluant angles de caméra, choix d'objectifs et exigences de scène."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Le système de découpage technique est la fonctionnalité la plus complète de CineLog, offrant trois modes de visualisation distincts et une gestion sophistiquée des données pour les flux de travail de production cinématographique. Organise les plans de manière séquentielle, planifie par jours de tournage ou concentre-toi sur des scènes spécifiques avec de puissantes capacités d'édition.
+
+## Trois vues principales
+
+### Découpage Technique Linéaire
+
+La vue principale pour construire ton découpage technique. Les plans sont organisés dans un ordre séquentiel avec une structure hiérarchique scène → plan, identifiés comme `1A`, `1B`, `2A`. Parfait pour la planification initiale des plans et le dépouillement de scénario. **La numérotation des scènes et des plans se met à jour automatiquement** au fur et à mesure de tes modifications.
+
+### Jours de production
+
+Organise tes plans par planning de tournage plutôt que par ordre narratif. Chaque jour de production affiche uniquement les plans à capturer ce jour-là, avec une barre latérale dédiée pour une navigation rapide entre les jours. Le système gère intelligemment les scénarios de planning complexes tout en maintenant **les relations entre scènes et l'organisation des plans automatiquement**.
+
+### Mode Focus
+
+Filtre ton découpage technique pour n'afficher que les scènes sélectionnées, permettant une édition et une révision concentrées sans distractions. Choisis des scènes spécifiques dans le sélecteur de scènes ou sélectionnes-en plusieurs pour te concentrer sur des séquences liées — parfait pour des sessions de dépouillement détaillé ou des revues spécifiques à un lieu.
+
+## Comment utiliser le Découpage Technique Linéaire
+
+La vue Linéaire est ton point de départ pour construire le découpage technique. Utilise-la pour ajouter des scènes et des plans, modifier les détails des plans et établir la structure de base de ta production.
+
+Ajouter scènes et plans
+
+Crée de nouvelles scènes et de nouveaux plans dans l'ordre séquentiel. Chaque plan est automatiquement numéroté (1A, 1B, 2A) selon sa scène et sa position.
+
+Modifier les détails des plans
+
+Sur les ordinateurs et tablettes, le découpage technique se comporte comme un tableur professionnel — il suffit de **toucher une fois** n'importe quelle cellule pour l'éditer directement sur place. Sur les téléphones, touche un plan pour étendre ses détails, puis **double-tape** sur une propriété spécifique.
+
+Réorganiser par glisser-déposer
+
+Fais glisser les plans pour les réorganiser au sein d'une scène ou entre les scènes. Le système gère automatiquement la mise à jour de la numérotation des scènes et du lettrage des plans.
+
+Attribuer des jours de production
+
+Touche le champ jour de production de n'importe quel plan pour le planifier. Utilise « Appliquer à tous les plans de la scène » pour planifier rapidement des scènes entières ensemble.
+
+## Comment utiliser les Jours de production
+
+La vue Jours de production transforme ton découpage technique séquentiel en un planning de tournage, avec des outils sophistiqués pour gérer la complexité des contraintes réelles de production.
+
+Naviguer entre les jours
+
+Utilise la barre latérale pour basculer entre les différents jours de production. Chaque jour n'affiche que les plans planifiés pour ce jour spécifique.
+
+Réorganiser au sein d'une journée
+
+Fais glisser les plans à l'intérieur du même jour de production pour définir ton ordre de tournage. Déplace les plans entre les scènes ou divise des scènes à différents moments de la journée selon les besoins.
+
+Multi-sélection pour opérations groupées
+
+Maintiens un appui long sur n'importe quel plan pour entrer en mode sélection, puis touche d'autres plans pour en sélectionner plusieurs. Maintiens un appui long sur les en-têtes de scène pour sélectionner des scènes entières.
+
+Division intelligente des scènes
+
+Lorsque tu déplaces certains plans d'une scène vers différentes positions au sein du même jour de production, le système crée automatiquement des sections de scène séparées. Cela te permet de planifier des parties de la même scène à différents moments de la journée tout en maintenant une organisation claire.
+
+### Opérations sur les Jours de production
+
+#### Opérations au sein d'une scène
+
+Fais glisser les plans dans une scène pour les réorganiser — **les numéros de scènes et plans persistent**.
+
+#### Opérations partielles de scène
+
+Lorsque tu déplaces certains plans d'une scène vers différentes positions au sein du même jour de production, le système crée automatiquement des sections de scène séparées. Cela te permet de planifier des parties de la même scène à différents moments de la journée tout en maintenant une organisation claire.
+
+#### Opérations sur scène entière
+
+Sélectionne un en-tête de scène pour déplacer tous les plans de cette scène ensemble vers une position différente au sein du même jour de production.
+
+#### Bannières des Jours de production
+
+Ajoute des pauses et des informations de planning à n'importe quel jour de production avec des bannières personnalisées. Inclus des pauses déjeuner, des changements d'équipement, des déplacements de lieux ou toute note de planning qui aide à organiser la chronologie de ta journée de tournage.
+
+## Comment utiliser le Mode Focus
+
+Le Mode Focus te permet de te concentrer sur des scènes spécifiques sans distractions du reste de ton découpage technique, tout en maintenant toutes les capacités d'édition.
+
+Sélectionne les scènes sur lesquelles te concentrer
+
+Choisis des scènes spécifiques dans la boîte de dialogue du sélecteur de scènes, ou sélectionnes-en plusieurs pour te concentrer simultanément sur des séquences liées.
+
+Édite sans distractions
+
+Travaille sur les détails des plans, la réorganisation et la planification de production avec uniquement tes scènes sélectionnées visibles. Toutes les fonctionnalités d'édition restent disponibles.
+
+Change de focus selon les besoins
+
+Change ta sélection de scènes à tout moment pour te concentrer sur différentes parties de ta production, ou reviens à la vue complète si nécessaire.
+
+### Usages courants du Mode Focus
+
+-   Sessions détaillées de dépouillement pour des scènes spécifiques
+-   Travail sur des séquences d'action couvrant plusieurs scènes
+-   Révision des plans pour un lieu particulier
+-   Isolement des scènes nécessitant des équipements ou des talents spécifiques
+
+## Fonctionnalités supplémentaires
+
+### Affichage et personnalisation du Découpage Technique
+
+Personnalise ton affichage de découpage technique avec des **modes d'affichage compact/étendu** pour le contrôle de la densité d'information. Choisis entre la **mise en page ajustée** (toutes les colonnes visibles) ou la **mise en page défilante** (défilement horizontal pour plus de colonnes). **Bascule la visibilité des colonnes** pour n'importe quel champ intégré, et ajoute tes propres **colonnes personnalisées** pour suivre les informations spécifiques à ta production.
+
+### Partage et export
+
+Génère des documents professionnels prêts pour la production directement depuis ton découpage technique. Crée des **Plans d'action PDF** paginés pour toute l'équipe avec une couverture organisée par ordre de scénario ou par planning de production. Personnalise les exports en filtrant les colonnes et en sélectionnant des dispositions d'image distinctes.
+
+### Synchronisation local-first
+
+CineLog fonctionne **hors ligne d'abord** avec une synchronisation automatique en temps réel sur tous tes appareils et avec les membres de ton équipe lorsque tu es connecté. Effectue des modifications n'importe où, n'importe quand — tout reste synchronisé sans manquer un battement. Parfait pour les ajustements sur le plateau et la planification collaborative lorsque la connectivité Internet peut être peu fiable.
+
+### Valeurs de production personnalisées
+
+Définis tes propres options pour les **Types de plans**, **Angles de caméra**, **Équipement**, **Mouvement**, **Fréquence d'images** et **Format d'image**. Crée des menus déroulants standardisés qui correspondent aux besoins spécifiques de ta production et à ton flux de travail, garantissant la cohérence dans toute ton équipe.
+
+### Raccourcis clavier
+
+Travaille plus rapidement grâce à des raccourcis clavier complets pour la navigation, la création de plans, le changement de vue et les opérations groupées. **[Voir la référence complète des raccourcis](/fr/keyboardshortcuts)** pour la liste complète des commandes pour gagner du temps. Fluidifie ton flux de travail avec un accès rapide à toutes les fonctions principales sans toucher à la souris.
+
+### Organisation visuelle
+
+Organise visuellement avec des **couleurs assignables aux scènes**, des **cellules de plans** individuelles et des **arrière-plans de bannières**. Crée des systèmes de codage visuel pour les lieux, les besoins en équipement, les niveaux de complexité ou toute catégorisation qui aide ton équipe de production à identifier et organiser rapidement les plans. Construis des schémas de couleurs personnalisés qui correspondent à ton flux de travail de production.

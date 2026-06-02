@@ -1,0 +1,254 @@
+---
+title: Ordini del giorno
+lastUpdated: 2026-05-23
+description: "Ordini del giorno giornalieri in CineLog — intestazione e orario di call, location, programmazione con cascata temporale, meteo, sezioni personale, messaggio rich-text alla troupe, invio e tracciamento conferme, esportazione PDF."
+---
+
+Un ordine del giorno in CineLog è il piano di produzione giornaliero: la programmazione, la location, le persone, il meteo e il messaggio che viene inviato con l'email. È strettamente accoppiato al resto del progetto — la programmazione è la stessa data di vista Produzione per quel giorno, e il personale viene direttamente da Cast & Troupe. **Ordini del Giorno (O.d.G.)** è il termine italiano standard.
+
+Questa guida assume [Le basi](/it/guides/introduction) e [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production).
+
+## Creare un ordine del giorno
+
+Gli ordini del giorno sono basati sul giorno — uno per ogni Giorno di Produzione. Appaiono automaticamente come sub-entry sotto **Ordini del Giorno** nella sidebar; clicca un giorno per aprire il suo ordine del giorno.
+
+Quando crei un nuovo ordine del giorno, CineLog lo inizializza dai tuoi giorni precedenti invece di partire vuoto:
+
+- Se un giorno precedente ha usato **la stessa location**, il tuo nuovo ordine del giorno inizia con la troupe e gli indirizzi di quella location già compilati.
+- Altrimenti, se hai **tre o più ordini del giorno precedenti** che condividono la stessa troupe, quelle assegnazioni di troupe vengono riportate.
+- Altrimenti, l'ordine del giorno **clona dal giorno immediatamente precedente**.
+- Se nessuno di questi casi si applica (primo giorno del progetto), ottieni un ordine del giorno vuoto.
+
+Puoi cambiare qualsiasi cosa sia stata inizializzata; è solo un punto di partenza.
+
+## L'intestazione
+
+L'intestazione si estende in alto e porta le informazioni chiave del giorno a colpo d'occhio.
+
+### Orario di call generale
+
+Il singolo campo più importante. Imposta l'orario base di inizio della giornata (es. 08:00). Cliccalo per modificarlo. Questo orario ancora la cascata temporale della programmazione (sotto) ed è l'orario di default inviato a ogni destinatario salvo che non abbia un orario di call personale impostato (vedi [Personale](#personnel-sections)).
+
+### Data
+
+La data di produzione. Opzionale — viene presa dal Giorno di Produzione della lista delle inquadrature, ma puoi impostarla o sovrascriverla manualmente. Mostrata nell'intestazione e nel PDF esportato.
+
+### Branding aziendale
+
+Il lato sinistro dell'intestazione porta il profilo della tua compagnia (nome, indirizzo, telefono) e il logo. Carica il logo una volta a livello di workspace tramite la finestra del profilo aziendale; apparirà poi nell'intestazione di ogni ordine del giorno e sui PDF inviati via email.
+
+### Nome del progetto
+
+Lato destro dell'intestazione. Preso dall'entità progetto — qui non c'è modifica separata.
+
+### Impostazioni di visualizzazione (comportamento dell'intestazione)
+
+Apri il popup delle impostazioni di visualizzazione dal menu in alto dell'ordine del giorno per attivare:
+
+- **Formato ora** — 12 ore (`8:00 AM`) o 24 ore (`08:00`).
+- **Unità di temperatura** — °F o °C.
+
+Entrambe le scelte sono per utente e persistono attraverso le sessioni.
+
+## Location
+
+Una lista riordinabile di location di ripresa nominate per la giornata. Ogni location ha questi campi:
+
+- **Nome del set e indirizzo.** Nota opzionale a fianco.
+- **Parcheggio.** Un campo nome + dettaglio del parcheggio (dove vanno i camion, dove parcheggia la troupe).
+- **Ospedale.** Nome e indirizzo dell'ospedale più vicino — importante per logistica di sicurezza/emergenza.
+
+Aggiungi e modifica tramite l'overlay della location. Su desktop puoi fare long-press su una riga location e trascinare per riordinare; su telefono, doppio tap su una riga per aprire l'overlay di modifica.
+
+L'**autocompletamento Google Places** è integrato in ogni campo indirizzo. Inizia a digitare e vedrai i posti suggeriti; sceglierne uno popola l'indirizzo e memorizza le coordinate in modo che la ricerca meteo (sotto) abbia una location su cui lavorare.
+
+Per nascondere l'intera sezione location dall'ordine del giorno (es. quando la location non è ancora confermata), usa il toggle di visibilità della sezione nelle impostazioni di visualizzazione.
+
+## Programmazione
+
+La programmazione è la vista Produzione filtrata su questo giorno. Le inquadrature e i banner sull'ordine del giorno sono gli **stessi oggetti** che in Produzione — riordinarli o modificarli qui è lo stesso che riordinarli o modificarli là. La grammatica dei gesti è identica a ovunque nell'app.
+
+Tre colonne: **orario di inizio** | **scena + inquadratura** | **durata stimata**.
+
+### Banner
+
+I banner sono righe non-inquadratura che marcano pause pasto, spostamenti di compagnia, wrap o altri marcatori di programmazione. Esistono solo in vista Produzione e nella programmazione. Aggiungi un banner dalla toolbar (o `Cmd / Ctrl + N` in Produzione); dagli un nome ("Pranzo", "Spostamento compagnia"), imposta la sua durata.
+
+Inserire un banner a metà scena suddivide la scena circostante al banner — vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production) per il comportamento completo di suddivisione e fusione.
+
+### La cascata temporale
+
+Non inserisci un orario di inizio per ogni riga. La programmazione ha un motore di tempo a cascata: legge l'orario di call generale, poi scorre la lista sommando la durata stimata di ogni riga per calcolare l'orario di inizio della riga successiva.
+
+Se l'orario di inizio esplicito di una riga è in conflitto con quello che la cascata avrebbe prodotto (hai sovra-programmato), l'orario viene evidenziato in **rosso**. Se c'è uno spazio tra le righe (la cascata ha slack), viene mostrato in **giallo**. In entrambi i casi, è la durata stimata della riga stessa a controllare la riga successiva, non lo spazio.
+
+### Riordinare la programmazione
+
+Desktop: long-press su un banner o riga inquadratura e trascina. Mobile: doppio tap su una riga per aprire l'overlay di modifica (nessun drag inline). I riordini persistono di nuovo alla vista Produzione, poiché sono gli stessi oggetti.
+
+La sezione programmazione non può essere nascosta — è sempre mostrata.
+
+## Meteo
+
+Se l'ordine del giorno ha una location con coordinate, CineLog recupera automaticamente il meteo del giorno quando apri l'ordine del giorno per la prima volta. La visualizzazione mostra:
+
+- Temperatura attuale e "percepita"
+- Minima giornaliera
+- Alba e tramonto
+- Condizioni, umidità, velocità del vento
+
+L'unità di temperatura segue l'impostazione di visualizzazione (°F / °C). Per sovrascrivere o inserire manualmente il meteo (la previsione non è stata recuperata, o vuoi usare una fonte diversa), tocca il blocco meteo e modifica. L'override è memorizzato sull'ordine del giorno e riutilizzato a ogni ricaricamento.
+
+## Sezioni personale
+
+Cinque sezioni distinte, ognuna con il proprio ruolo e layout. Le persone vengono dal [Cast & Troupe](/it/guides/managing-cast-crew) del progetto; l'ordine del giorno le referenzia, non le copia.
+
+### Troupe Chiave (riga intestazione)
+
+Una lista di riferimento rapido nella seconda riga dell'intestazione che mostra i ruoli chiave del giorno (Regista, DOP, Aiuto Regista, Produttore, ecc.) con nomi e numeri di telefono. Fino a circa sei slot. Clicca il pulsante di modifica per scegliere quali ruoli appaiono.
+
+### Talent
+
+Tabella a tre colonne — avatar, nome, ruolo. Aggiungi talent dai contatti del progetto. Clicca qualsiasi riga per aggiungere note o impostare un orario di call. Long-press su una riga per riordinare.
+
+### Troupe
+
+La sezione più grande, raggruppata per dipartimento. Su desktop, una griglia multi-colonna; su telefono, una lista verticale di card. Ogni membro della troupe mostra avatar, nome, ruolo e (se impostato) orario di call e telefono. Stesso pattern di modifica di Talent.
+
+### Clienti / Agenzia
+
+Tabella a tre colonne per rappresentanti del cliente, producer dell'agenzia, dirigenti — chiunque al di fuori del team di produzione che debba essere sull'ordine del giorno. Stesso pattern di modifica di Talent.
+
+### Comparse / Background
+
+Griglia o lista espandibile di interpreti di background. Nessun avatar in questa sezione (intenzionale — mantiene il layout compatto quando ci sono molte comparse).
+
+### Note per persona
+
+Ogni riga persona in Talent, Troupe o Clienti può portare note private. Queste note sono visibili al producer nell'UI dell'ordine del giorno, ma sul PDF inviato via email appaiono **solo sulla copia di quella persona** — non su quella di nessun altro. Utile per istruzioni individuali ("parcheggia all'entrata laterale", "prova costume prima del call").
+
+### Orario di call per persona
+
+Ogni persona può anche avere un orario di call personale che sovrascrive l'orario di call generale. Quando invii l'ordine del giorno, l'email e il PDF di ogni destinatario evidenziano il suo orario personale. Le persone senza un orario personale ottengono l'orario di call generale.
+
+### Foto profilo
+
+Ogni persona controlla la propria foto profilo dalla propria schermata Account — il proprietario del progetto non può caricarne una per conto di un contatto. Finché qualcuno non carica la propria foto, viene mostrato con un avatar di iniziali color-coded (deterministico dal suo user ID, in modo che la stessa persona ottenga sempre lo stesso colore su ogni ordine del giorno).
+
+Per i contatti che non si sono ancora iscritti a CineLog (li hai aggiunti a Cast & Troupe ma non hanno accettato l'invito), l'avatar di iniziali è l'unica opzione. Una volta che si loggano e caricano la propria foto, questa si propaga ovunque siano referenziati — inclusi gli ordini del giorno passati a cui erano presenti.
+
+Attiva "Foto Profilo" off nelle impostazioni di visualizzazione se vuoi avatar tutti a iniziali a prescindere.
+
+### Visibilità delle sezioni
+
+Ogni sezione (Location, Clienti, Talent, Troupe, Comparse) può essere nascosta dall'ordine del giorno tramite il popup delle impostazioni di visualizzazione. Il toggle nasconde la sezione sia dall'UI che dal PDF esportato.
+
+## Messaggio alla troupe
+
+Un blocco rich-text per il messaggio che esce insieme al PDF dell'ordine del giorno. Stesso messaggio per tutti i destinatari — per istruzioni individuali usa le note per persona sopra.
+
+La toolbar dell'editor supporta:
+
+- **Grassetto, corsivo, sottolineato.**
+- **Colore.** Otto campioni curati (Bianco, Oro, Rame, Rosa, Lavanda, Vetro di Mare, Salvia, Pergamena).
+- **Embed di immagine.** Clicca il pulsante immagine, scegli un'immagine. Si carica sul CDN di CineLog, fino a 2 MB, solo JPEG / PNG / WebP. L'URL dell'immagine viene incorporato nel messaggio e appare nel corpo dell'email.
+- **Cancella formattazione.**
+
+L'email renderizzata applica la stessa formattazione lato destinatario. Il server sanifica il messaggio prima di inviarlo — solo i tag di formattazione nella allowlist passano.
+
+## Note di produzione
+
+Un campo footer per note a livello produzione, promemoria di sicurezza, protocolli COVID, o qualsiasi cosa tu voglia in fondo al PDF di ogni destinatario. Appare centrato, in maiuscolo.
+
+## Invio e tracciamento conferme
+
+Quando l'ordine del giorno è pronto, **Invia** nella barra in alto apre la finestra di invio.
+
+### Scelta dei destinatari
+
+Due passaggi:
+
+1. **Destinatari.** Una lista raggruppata per sezione (Talent, Troupe, Comparse, Clienti), ordinata per dipartimento e ruolo. Chiunque abbia un orario di call sull'ordine del giorno è preselezionato di default. Toggle in blocco ti permettono di selezionare o deselezionare un'intera sezione in una sola volta.
+2. **Messaggio.** Messaggio aggiuntivo opzionale specifico per questo invio, sovrapposto al messaggio della troupe.
+
+### Cosa ricevono i destinatari
+
+Ogni destinatario riceve:
+
+- Un PDF personalizzato con il suo orario di call evidenziato.
+- Il messaggio della troupe (rich text) più qualsiasi messaggio opzionale che hai aggiunto.
+- Le sue note per persona, se ce ne sono (aggiunte al corpo dell'email, non sul PDF visibile ad altri).
+- Un **link di conferma** — un URL univoco protetto da token a `links.cinelog.com/confirm-call-sheet/<token>`. Cliccando il link si apre un portale CineLog-brandizzato dove toccano "Conferma" per riconoscere la ricezione.
+
+### Pagina Invii
+
+Apri la pagina **Invii** dal menu in alto dell'ordine del giorno (o naviga a `…/call-sheets/<day>/sendouts`) per vedere chi è stato inviato l'ordine del giorno. I destinatari sono raggruppati per **batch di invio** — ogni pressione di Invia crea un nuovo batch, quindi reinviare dopo modifiche preserva l'intera cronologia. Ogni intestazione di batch mostra un conteggio "N / M confermati".
+
+Ogni riga destinatario mostra:
+
+- **Stato di consegna** — uno tra:
+  - **in coda** — passato al provider di posta, non ancora inviato.
+  - **consegnato** — accettato dal server email del destinatario.
+  - **aperto** — il client email del destinatario ha aperto il messaggio.
+  - **bounced** — il server email del destinatario lo ha rifiutato (indirizzo errato, casella piena).
+  - **fallito** — il provider di posta non ha potuto inviare.
+- **Timestamp di conferma** — una volta che clicca il suo link.
+
+Consegna e conferma sono indipendenti: un'email può essere consegnata senza essere confermata (il destinatario non l'ha aperta o non ha cliccato ancora), o confermata rapidamente (era sull'email quando è arrivata).
+
+### Limiti di frequenza
+
+Per prevenire invii fuori controllo, CineLog applica due limiti massimi:
+
+- **Per ordine del giorno:** fino a 10 invii all'ora.
+- **Per workspace:** fino a 1000 email al mese.
+
+Questi sono generosi per uso normale; li raggiungerai solo se qualcosa entra in loop o stai gestendo un'operazione insolitamente grande.
+
+### Reinvii e modifiche
+
+Puoi reinviare lo stesso ordine del giorno dopo averlo modificato (un cambio nel copione, uno scambio di troupe, una nota costume). Il nuovo invio crea un batch fresco sulla pagina Invii; i batch precedenti restano intatti per la cronologia di audit.
+
+## Esportazione PDF
+
+Due modi per ottenere un PDF, a seconda dell'uso:
+
+### Esportazione locale dalla toolbar
+
+`Cmd / Ctrl + P` o il pulsante di esportazione nel menu in alto apre la finestra di esportazione. Puoi impostare i margini della pagina (alto, basso, sinistro, destro in punti), poi esportare. Il rendering è locale — nessun upload, nessun render lato server — quindi funziona offline. Utile quando vuoi un PDF da distribuire fuori dal flusso email (Slack, WhatsApp, consegna a mano).
+
+### PDF per destinatario al momento dell'invio
+
+Quando premi Invia, il server genera un PDF personalizzato per ogni destinatario con il suo orario di call evidenziato e le sue note per persona allegate. Non li attivi direttamente — sono un effetto collaterale dell'invio.
+
+Entrambi i percorsi di esportazione rispettano le impostazioni di visualizzazione: le sezioni nascoste rimangono nascoste, l'unità di temperatura e il formato ora vengono applicati. I media grandi vengono ridimensionati.
+
+Le scritture internazionali (Arabo, Ebraico, Devanagari, CJK, Thai) si renderizzano correttamente via font fallback.
+
+## Permessi
+
+Modificare e inviare ordini del giorno sono gestiti dalla risorsa ACL `call_sheets` del progetto. I viewer possono vedere gli ordini del giorno a cui hanno accesso; solo i ruoli con permesso di modifica possono modificare la programmazione, le persone o il messaggio; l'invio richiede lo stesso permesso di modifica.
+
+## Comportamento offline
+
+Modificare gli ordini del giorno funziona offline — le modifiche si salvano sul database locale e si sincronizzano quando ti riconnetti, come tutto il resto in CineLog. **Inviare** richiede connettività (è un flusso email in uscita). L'**esportazione PDF locale** funziona offline.
+
+## Se non funziona
+
+*"Il mio nuovo ordine del giorno si è pre-compilato con roba che non ho chiesto."* È il comportamento di smart-seeding. CineLog copia da un ordine del giorno precedente che corrisponde (stessa location → stessa troupe + location, altrimenti il giorno immediatamente precedente) in modo che non parti da un foglio vuoto ogni giorno. Modifica o cancella quello che non vuoi.
+
+*"L'ordine della mia programmazione non corrisponde alla vista Produzione."* Dovrebbe — sono gli stessi dati. Se differiscono, l'indicatore di sincronizzazione probabilmente ha modifiche in sospeso. Aspetta che si svuoti.
+
+*"Come cambio la foto profilo di un membro della troupe?"* Non puoi — le foto profilo sono controllate da ogni utente dalla propria schermata Account. Come proprietario del progetto non puoi caricarne una per conto suo. Le persone che non si sono ancora iscritte a CineLog mostrano l'avatar di iniziali; una volta che si loggano e caricano, la loro foto appare su ogni ordine del giorno a cui sono presenti.
+
+*"L'orario della programmazione è evidenziato in rosso / giallo."* Rosso significa che hai sovra-programmato — l'orario di inizio esplicito su quella riga contraddice quello che la cascata temporale ha calcolato. Giallo significa che c'è uno spazio tra le righe che la cascata ha lasciato non riempito. Aggiusta le durate o l'orario di inizio per riconciliare.
+
+*"Il meteo non si è caricato."* L'auto-fetch ha bisogno di una location con coordinate. Imposta una location tramite l'autocompletamento Google Places (in modo che lat/lng venga catturata), poi ricarica l'ordine del giorno. Puoi anche inserire il meteo manualmente.
+
+*"Un membro della troupe dice che non ha ricevuto l'ordine del giorno."* Apri la pagina Invii per quel giorno e trova la sua riga. **consegnato** o **aperto** significa che è uscito da CineLog ed è stato accettato dal suo provider di posta — il problema è a valle (cartella spam, regole della casella, eliminato per errore). **bounced** o **fallito** significa che l'email non l'ha mai raggiunto; controlla l'indirizzo in Cast & Troupe e reinvia. **in coda** significa che è ancora in arrivo; dagli un minuto.
+
+*"Il conteggio confermati non sale."* La conferma richiede che il destinatario clicchi il link nell'email. La consegna da sola non basta.
+
+*"Ho raggiunto un limite di invio."* Hai superato 10 invii nell'ultima ora per questo ordine del giorno, o 1000 email negli ultimi 30 giorni per il workspace. Aspetta o contattaci se hai bisogno di un limite più alto.
+
+*"L'immagine del messaggio della troupe non si è caricata."* Controlla il file: sotto i 2 MB, JPEG / PNG / WebP. Altri formati e file fuori misura vengono rifiutati.

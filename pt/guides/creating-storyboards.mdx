@@ -1,0 +1,46 @@
+---
+title: Storyboards
+lastUpdated: 2026-05-23
+description: "Planejamento visual de uma cena por vez — frames de pré-visualização por plano, layout linear ou em grade, exportação para PDF. Reordenar um storyboard reordena os planos subjacentes."
+---
+
+Um storyboard no CineLog é uma visualização visual dos planos de uma cena, com frames de pré-visualização anexados. Não é uma cópia separada dos dados — ele fica em cima da decupagem, então reordenar um storyboard reordena os planos subjacentes.
+
+Este guia assume [O básico](/pt/guides/introduction).
+
+## O que é um storyboard
+
+Uma visualização dos planos de uma única cena, mostrando frames de pré-visualização e alguns campos-chave do plano. Não duplica planos; é uma camada sobre a decupagem. Visualizações de Storyboard (layouts salvos) aparecem como sub-entradas sob Storyboard na barra lateral.
+
+## Layouts
+
+Dois modos de exibição:
+
+- **Linear** — estilo carrossel, um plano por vez. Bom para apresentações de revisão.
+- **Grade** — múltiplos planos lado a lado. Bom para referência rápida.
+
+Alterne pela barra de ferramentas.
+
+## Adicionando frames de pré-visualização
+
+Toque na célula de pré-visualização de um plano. O seletor de mídia abre — mesma gramática de gestos da edição de células em [O básico](/pt/guides/introduction#2-editing-fields). Escolha uma imagem ou frame de vídeo da biblioteca de mídia do projeto.
+
+Cada frame é uma referência a um arquivo na biblioteca de mídia, não uma cópia. Substituir o arquivo na biblioteca substitui em todos os lugares onde ele é usado.
+
+## Reordenando frames
+
+Arraste planos no storyboard para reordenar. A reordenação se aplica aos planos subjacentes na cena pai — não existe "ordem de storyboard" separada que diverge da ordem dos planos. As letras de plano são atualizadas conforme isso.
+
+## Configurações de exibição (por storyboard)
+
+Colunas da grade, espaçamento, aspect ratio (16:9, 2.35:1, 4:3). Ajuste pela barra de ferramentas.
+
+## Exportar
+
+`Cmd / Ctrl + P` exporta o storyboard para PDF, renderizado localmente.
+
+## Se isso não estiver funcionando
+
+*"Eu reordenei meu storyboard e agora minhas letras de plano mudaram."* Esperado. Reordenar um storyboard reordena os planos subjacentes; não há ordem separada de storyboard.
+
+*"Substituí um frame de pré-visualização e ele mudou em outro plano."* Os frames de pré-visualização são referências a arquivos na biblioteca de mídia. Substituir o arquivo substitui em todos os lugares onde ele é usado. Para usar um arquivo diferente, escolha um novo da biblioteca em vez de substituir o conteúdo do arquivo.

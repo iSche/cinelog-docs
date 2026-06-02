@@ -1,0 +1,46 @@
+---
+title: Storyboards
+lastUpdated: 2026-05-23
+description: "Planification visuelle d'une scène à la fois — cadres de prévisualisation par plan, disposition linéaire ou en grille, export en PDF. Réorganiser un storyboard réorganise les plans sous-jacents."
+---
+
+Un storyboard dans CineLog est une vue visuelle des plans d'une scène, avec des cadres de prévisualisation attachés. Ce n'est pas une copie distincte des données — il se superpose au découpage technique, donc réorganiser un storyboard réorganise les plans sous-jacents.
+
+Ce guide suppose [Les bases](/fr/guides/introduction).
+
+## Ce qu'est un storyboard
+
+Une vue des plans d'une seule scène, montrant les cadres de prévisualisation et quelques champs clés des plans. Il ne duplique pas les plans ; c'est une couche au-dessus du découpage technique. Les Vues Storyboard (dispositions enregistrées) apparaissent comme sous-entrées sous Storyboard dans la barre latérale.
+
+## Dispositions
+
+Deux modes d'affichage :
+
+- **Linéaire** — style carrousel, un plan à la fois. Idéal pour les présentations de révision.
+- **Grille** — plusieurs plans côte à côte. Idéal pour une référence d'un coup d'œil.
+
+Bascule depuis la barre d'outils.
+
+## Ajouter des cadres de prévisualisation
+
+Touche la cellule de prévisualisation sur un plan. Le sélecteur de médias s'ouvre — même grammaire de geste que l'édition de cellule dans [Les bases](/fr/guides/introduction#2-editing-fields). Choisis une image ou un cadre vidéo de la bibliothèque de médias du projet.
+
+Chaque cadre est une référence à un fichier de la bibliothèque de médias, pas une copie. Remplacer le fichier dans la bibliothèque le remplace partout où il est utilisé.
+
+## Réorganiser les cadres
+
+Fais glisser les plans dans le storyboard pour réorganiser. La réorganisation s'applique aux plans sous-jacents de la scène parente — il n'y a pas d'« ordre du storyboard » séparé qui divergerait de l'ordre des plans. Les lettres de plan se mettent à jour en conséquence.
+
+## Paramètres d'affichage (par storyboard)
+
+Colonnes de grille, espacement, format d'image (16:9, 2,35:1, 4:3). Ajuste depuis la barre d'outils.
+
+## Export
+
+`Cmd / Ctrl + P` exporte le storyboard en PDF, rendu localement.
+
+## Si ça ne marche pas
+
+*« J'ai réorganisé mon storyboard et maintenant les lettres de mes plans ont changé. »* Attendu. Réorganiser un storyboard réorganise les plans sous-jacents ; il n'y a pas d'ordre de storyboard séparé.
+
+*« J'ai remplacé un cadre de prévisualisation et il a changé sur un autre plan. »* Les cadres de prévisualisation sont des références à des fichiers de la bibliothèque de médias. Remplacer le fichier le remplace partout où il est utilisé. Pour utiliser un fichier différent, choisis-en un nouveau dans la bibliothèque au lieu de remplacer le contenu du fichier.

@@ -1,0 +1,78 @@
+---
+title: Órdenes de Rodaje
+lastUpdated: 2026-04-22
+description: "Genera y gestiona órdenes de rodaje para elenco y equipo con detalles de programación y localización."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Transforma CineLog de una herramienta de planificación de planos en una oficina de producción completa. Agrega automáticamente detalles de Elenco, Equipo, Horario y Localización en PDFs estándar de la industria listos para distribución inmediata, ahorrándote horas de transcripción.
+
+## Funcionalidades principales
+
+<CardGrid>
+<Card title="Motor de horario en vivo">
+  Genera horarios precisos automáticamente basados en los tiempos estimados de tus escenas. Introducir una "Hora de Convocatoria del Equipo" propaga las horas para toda tu jornada, avisándote inteligentemente de los cuellos de botella.
+</Card>
+
+<Card title="PDFs multilingües globales">
+  Exportación con precisión absoluta de órdenes de rodaje de nivel-1 de la industria, con fuentes alternativas automáticas para **árabe, chino, japonés, hebreo, hindi, ucraniano** y muchos más.
+</Card>
+
+<Card title="Logística automatizada">
+  Obtén de forma segura los detalles del hospital más cercano mediante Google Places e inyecta una previsión meteorológica precisa mediante la API de Google Weather con hasta 10 días de cobertura.
+</Card>
+
+<Card title="Confirmaciones con un toque">
+  Envía órdenes de rodaje masivamente a toda tu plantilla por correo electrónico con tecnología anti-hilos integrada. El equipo confirma la recepción con un solo toque, actualizando tu panel en vivo.
+</Card>
+
+<Card title="Controles para móvil">
+  Las superposiciones conscientes del teclado garantizan que puedas hacer cambios rápidos en set desde tu smartphone sin ocultar nunca el texto real del documento.
+</Card>
+</CardGrid>
+
+## Uso detallado y flujos de trabajo
+
+<Aside type="tip">
+Las Órdenes de Rodaje extraen automáticamente datos de tu Lista de Planos y de tu plantilla de Elenco y Equipo, lo que significa que pasarás menos tiempo configurando manualmente el documento y más tiempo preparándote para encuadrar tus planos.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Generando un horario diario**
+
+En lugar de escribir cada hora de plano manualmente, el motor de horario de CineLog hace los cálculos por ti. Añade una hora de convocatoria del equipo y el motor propaga inmediatamente esta hora hacia abajo, trazando automáticamente las horas exactas de inicio para todas las escenas y descansos siguientes según sus tiempos estimados.
+
+</li>
+<li>
+
+**Gestionando horas de talento y equipo**
+
+Entra en las secciones de Talento o Equipo para reducir la lista a exactamente quién es necesario ese día. Establece Horas de Convocatoria, Maquillaje y Peluquería, y Vestuario individualizadas por persona, y luego arrastra y suelta para reordenarlos por hora de llegada prevista.
+
+</li>
+<li>
+
+**Exportación a PDF y envíos por correo**
+
+Asegúrate de que todos sepan exactamente qué está pasando. Haz clic en **Exportar** para formatear un PDF estándar de la industria con el logo de tu empresa, o pulsa **Enviar** para lanzar envíos de correo con seguimiento directamente al bolsillo de tu equipo.
+
+</li>
+
+</ol>
+</Steps>
+
+## Ecosistema de datos integrado
+
+<Aside type="tip">
+El horario de las Órdenes de Rodaje actúa como una ventana bidireccional a tu Lista de Planos. Editar el orden de una escena o una estimación en la Orden de Rodaje _actualiza instantáneamente_ el diseño subyacente de tu Lista de Planos mediante CineSync.
+</Aside>
+
+<Aside type="tip" title="Beneficios del enrutamiento de datos">
+-   **Flujo de Elenco y Equipo**: Los nombres del talento, los roles del equipo y los detalles de contacto fluyen estrictamente desde tu hub central de Elenco y Equipo. Asignar a un actor rellena dinámicamente sus datos.
+-   **Garantías de manejo de errores**: Cualquier cuello de botella inválido en el horario muestra avisos visuales nítidos en amarillo/rojo previniendo conflictos en la línea temporal.
+-   **Enrutamiento de acceso global**: Cualquier persona que reciba un enlace de Orden de Rodaje es dirigida inteligentemente a crear una cuenta, obteniendo acceso estrictamente a lo que su rol dicta.
+</Aside>

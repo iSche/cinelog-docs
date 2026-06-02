@@ -1,124 +1,51 @@
 ---
-title: Keyboard Shortcuts
-lastUpdated: 2026-04-22
-description: "Master CineLog with keyboard shortcuts for navigation, editing, shot management, and more."
+title: Keyboard shortcuts
+lastUpdated: 2026-05-23
+description: "Every keyboard shortcut in CineLog, grouped by context. The in-app dialog (Cmd / Ctrl + K) shows the same list, generated from the same source."
 ---
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Speed up your workflow with CineLog's comprehensive keyboard shortcuts. Master these hotkeys to navigate, edit, and manage your film projects efficiently.
+Mac users see `Cmd`; Windows users substitute `Ctrl`. The in-app dialog opened with `Cmd / Ctrl + K` is generated from the same reference; both stay in sync.
 
-## How to Use Shortcuts
+Phone doesn't surface a hotkeys reference — there's no in-app dialog for phone, since phone usage doesn't typically involve keyboard shortcuts. Tablet users with a hardware keyboard can use every shortcut listed here.
 
-CineLog includes a powerful hotkey system. Press ⌘ + K anywhere in the app to open the keyboard shortcuts help panel, or use this reference guide to learn the most important combinations.
+## Global
 
-### General Navigation
+- `[` — toggle the left sidebar (expanded ↔ collapsed)
+- `Cmd / Ctrl + K` — open the keyboard shortcuts dialog
+- `Cmd / Ctrl + Shift + M` — toggle theme (light / dark)
 
-Basic app navigation and interface controls
+## Shot list (Linear and Production)
 
-⌘ + K
+- `Cmd / Ctrl + N` — add a shot (or a banner if in Production view)
+- `Cmd / Ctrl + F` — enter [Focus mode](/guides/shot-list/focus-mode)
+- `Shift + D` — toggle [Display Settings](/guides/shot-list/display-settings)
+- `Shift + L` — toggle column layout (fit ↔ scroll)
+- `Shift + M` — toggle compact ↔ expanded row height
+- `Shift + S` — toggle the script sidebar in Linear view (or open the scene picker in Focus mode)
+- `Shift + P` — Populate from Script
+- `1` through `9` — toggle visibility of columns 1 through 9
+- `Esc` — clear current selection
+- `Delete` / `Backspace` — bulk delete selected items
 
-Hotkeys Menu Open the keyboard shortcuts help panel
+## Focus mode
 
-\[
+- `Cmd / Ctrl + N` — add a shot to the focused scene
+- `Cmd / Ctrl + F` or `Cmd / Ctrl + B` — exit Focus mode
+- `Shift + S` — open the scene picker dialog
+- `→` / `←` — replace focus with the next / previous scene
+- `Cmd + →` / `Cmd + ←` — add the next / previous scene to focus (multi-scene)
 
-Toggle Sidebar Show or hide the left navigation sidebar
+## Script editor
 
-⌘ + ⇧ + M
+- `Cmd / Ctrl + 1` through `7` — set the current paragraph's type (scene heading, action, dialogue, …)
+- `Cmd / Ctrl + B` / `I` / `U` — bold / italic / underline
+- `Cmd / Ctrl + E` — centre-align
 
-Toggle Theme Switch between light and dark mode
+## Exports
 
-### Shot List Management
+- `Cmd / Ctrl + P` — export the current view to PDF (shot list, storyboard, or call sheet — adapts to whichever you're in)
 
-Core functionality for managing shots and scenes
+## Notes
 
-⌘ + N
-
-New Shot Create a new shot (opens dialog in list view, adds directly in focus mode)
-
-⌘ + F
-
-Enter Focus Mode Navigate to Focus Mode for scene-focused editing
-
-⌘ + P
-
-Export PDF Generate a PDF export of the current view
-
-⇧ + D
-
-Display Settings Open the display and layout configuration overlay
-
-⇧ + L
-
-Layout Toggle Switch between scroll and fit-to-screen column layout
-
-⇧ + M
-
-Display Mode Toggle between compact and expanded row display
-
-⇧ + S
-
-Script Panel / Scene Selector Toggle the split-screen Script Panel (in linear view) or open the Focus Scene selector (in focus mode)
-
-⇧ + P
-
-Populate from Script Open the populate shot list from script dialog
-
-1 - 9
-
-Column Visibility Show or hide the first 9 columns after the day column
-
-### Focus Mode
-
-Scene-focused editing and navigation
-
-⎋
-
-Exit Focus Mode Return to the main shot list view
-
-← →
-
-Navigate Scenes Replace the current focused scene with the previous or next scene
-
-⌘ + ← →
-
-Add Scene Add the previous or next scene to the current focus selection
-
-⇧ + S
-
-Select Scene Open the scene selector dialog to choose specific scenes
-
-### New Shot Dialog
-
-When creating shots through the dialog interface
-
-↑ ↓
-
-Scene Selection Navigate through available scene numbers
-
-⏎
-
-Confirm Create the shot with selected scene
-
-⎋
-
-Cancel Close dialog without creating shot
-
-## Pro Tips
-
-#### Keyboard Shortcuts Help
-
-The ⌘ + K hotkey opens the shortcuts help panel from anywhere in the app. Use it as a quick reference while learning the system.
-
-#### Muscle Memory
-
-Start with the most common shortcuts like **⌘+N** for new shots and **⌘+F** for focus mode, then gradually learn others.
-
-#### Efficiency Boost
-
-Using keyboard shortcuts can **significantly speed up** your workflow, especially when managing large shot lists.
-
-## Platform Notes
-
-#### macOS
-
-Uses the ⌘ (Command) key for most shortcuts as shown above.
+- Some shortcuts are context-sensitive — `Shift + S` and `Cmd + N` do different things depending on the active view. The lists above note both behaviours.
+- The in-app dialog (`Cmd / Ctrl + K`) is the single source of truth and stays current with each release.

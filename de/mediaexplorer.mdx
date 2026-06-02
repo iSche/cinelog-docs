@@ -1,0 +1,76 @@
+---
+title: Medien-Explorer
+lastUpdated: 2026-04-22
+description: "Lade Previsualisierungs-Bilder und Referenzmaterial für deine Produktions-Shots hoch, organisiere und verwalte sie."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Der Umgang mit Gigabytes an Location-Fotos, Referenzvideos und Storyboard-Frames ist entscheidend für die Filmproduktion. Der CineLog Medien-Explorer bietet umfassende Dateiverwaltungs-Funktionen, angetrieben durch eine intelligente Upload-Engine, die dafür sorgt, dass du auch bei schlechter Internetverbindung reibungslos weiterarbeiten kannst.
+
+## Kern-Fähigkeiten
+
+<CardGrid>
+<Card title="Dual-Screen-Ansatz">
+  Greife auf deine Medien entweder über den umfassenden, projektweiten Vollständigen Medien-Explorer oder die kontextuelle, vereinfachte Feature-Medien-Ansicht zu.
+</Card>
+
+<Card title="Sofortige lokale Verarbeitung">
+  Bevor irgendetwas in die Cloud geschickt wird, werden Bilder lokal auf deinem Gerät hübsch als Thumbnails erstellt, sodass du sofortige visuelle Referenz hast, ohne auf den Upload zu warten.
+</Card>
+
+<Card title="Robuste Hintergrund-Uploads">
+  Dateitransfers passieren vollständig im Hintergrund. Wenn dein WLAN abreißt, pausiert das System intelligent und nimmt den Upload beim nächsten Öffnen der App automatisch wieder auf.
+</Card>
+
+<Card title="Speicheranalytik">
+  Echtzeit-Berechnung des belegten Speicherplatzes pro Projekt mit Aufschlüsselung nach Funktion und Dateityp.
+</Card>
+</CardGrid>
+
+## Detaillierte Nutzung & Workflows
+
+### Intelligente Datei-Uploads
+
+Sofortige Verfügbarkeit (Previs)
+
+Weil CineLog dein lokales Gerät bevorzugt, generiert die App sofort ein optimiertes lokales Thumbnail, damit du deine Einstellungen sofort weiter sortieren, ansehen und organisieren kannst. Du musst nie auf den Abschluss eines Uploads warten, um weiterzuarbeiten.
+
+Hintergrund-Sync
+
+Die App streamt die schwere Originaldatei sicher und direkt im Hintergrund in den Cloud-Speicher.
+
+Wiederherstellung
+
+Wenn du mitten im Upload die Verbindung verlierst, stellt CineLog die Datei in eine Warteschlange. Ein spezialisierter Hintergrunddienst stellt blockierte Transfers automatisch und unbemerkt über Sessions hinweg wieder her.
+
+### Die Oberflächen bedienen
+
+#### Vollständiger Medien-Explorer
+
+Aufgerufen über das "MEHR"-Menü in der Haupt-Projektnavigation. Das ist deine umfassende, projektweite Dateiverwaltungs-Oberfläche. Sie enthält globale Filter (nach Funktion oder Status), Massenoperationen (Multi-Select-Löschen) und übergeordnete Speicheranalytik-Limits.
+
+#### Vereinfachte Feature-Medien-Ansicht
+
+Aufgerufen direkt aus einzelnen Funktionen (z.B. Klick auf den Previs-Button einer Einstellung). Das ist eine leichte, fokussierte Ansicht, die auf dieses spezifische Element vorgefiltert ist. Du kannst Dateien, die mit diesem Element verknüpft sind, hochladen, umordnen oder löschen, ohne den Kontext zu verlieren.
+
+## Visuelle Statusanzeigen & Offline-Bewusstsein
+
+Jedes Medien-Thumbnail zeigt immer ein Status-Badge unten rechts mit zwei Symbolen, die die Verfügbarkeit anzeigen:
+
+#### Offline-Pin
+
+Immer im Badge unten rechts sichtbar. Erscheint hell, wenn die Datei auf deinem Gerät verfügbar ist, gedimmt, wenn sie nicht lokal gespeichert ist.
+
+#### Cloud Done
+
+Immer im Badge unten rechts neben dem Offline-Pin sichtbar. Erscheint hell, wenn die Datei mit dem Cloud-CDN synchronisiert ist, gedimmt, wenn noch nicht hochgeladen.
+
+## Profi-Tipps & Plattform-Spezifika
+
+### Offline-Location-Scouting
+
+Wenn du Location-Scouting-Fotos ohne Internetverbindung machst, kannst du sie komplett innerhalb von CineLog hochladen. Die App speichert sie lokal, verknüpft sie mit deinen Szenen und stellt den Hintergrund-Upload automatisch in die Warteschlange, sobald du einen Bereich mit Empfang erreichst.
+
+### Multi-Select-Filtern
+
+Wenn du große Mengen abgelehnter Assets im Vollständigen Medien-Explorer verwaltest, nutze die Multi-Select-Funktion, um ungenutzte Dateien in einem Rutsch zu löschen und deinen Speicherplatz freizugeben.

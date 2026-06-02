@@ -1,0 +1,47 @@
+---
+title: Modo Foco
+lastUpdated: 2026-05-23
+description: "Filtre a decupagem para uma ou mais cenas. Cobre entrar no Foco, modo multi-cena, comportamento de auto-criação ao ultrapassar e a barra lateral do roteiro."
+---
+
+O Modo Foco é a decupagem filtrada para uma ou mais cenas. Útil para trabalhar a cobertura cena por cena sem rolar por tudo mais.
+
+## Entrando no Foco
+
+- `Cmd / Ctrl + F` entra no Foco na cena que você está vendo atualmente.
+- `Shift + S` abre o diálogo de seleção de cena — digite um número de cena para saltar.
+
+No seletor, **Selecionar** substitui seu foco pela cena digitada; **Adicionar** anexa ao conjunto de foco atual.
+
+## Navegando entre cenas
+
+Uma vez focado:
+
+- `←` / `→` — substitui o foco pela cena anterior / próxima.
+- `Cmd + ←` / `Cmd + →` — **adiciona** a cena anterior / próxima ao foco (modo multi-cena).
+
+O foco multi-cena mostra planos de várias cenas juntos, em ordem de roteiro.
+
+## Adicionando planos enquanto focado
+
+`Cmd / Ctrl + N` adiciona um novo plano à *primeira* cena focada.
+
+## Auto-criação ao ultrapassar
+
+Se você pressionar `→` passando da última cena do projeto, o CineLog cria uma nova cena vazia no final e a foca. O mesmo com `←` antes da primeira cena. Útil para trabalho estilo outline; surpreendente se você passou da tecla por engano. Para limpar, saia do Foco e apague a cena vazia da Linear se não quiser.
+
+## A barra lateral do roteiro
+
+Na visualização Linear (não no Foco), `Shift + S` alterna uma barra lateral do roteiro lado a lado. O roteiro e a decupagem rolam em sincronia — útil para planejamento de planos linha por linha.
+
+O mesmo atalho significa algo diferente no Modo Foco: ali abre o seletor de cena (acima). Mesma tecla, dois contextos.
+
+## Saindo
+
+`Cmd / Ctrl + F` ou `Cmd / Ctrl + B` retorna para a visualização Linear.
+
+## Se isso não estiver funcionando
+
+*"Pressionei `→` e ganhei uma cena vazia que eu não queria."* Você passou da última cena. Saia do Foco (`Cmd + F`) e apague a cena vazia da Linear.
+
+*"`Shift + S` está fazendo coisas diferentes em telas diferentes."* Está, por design. Na Linear alterna a barra lateral do roteiro; no Modo Foco abre o seletor de cena.

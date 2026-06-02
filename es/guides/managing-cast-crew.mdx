@@ -1,0 +1,57 @@
+---
+title: Gestionar Elenco y Equipo
+lastUpdated: 2026-04-22
+description: "Añade roles y departamentos, gestiona contactos del espacio de trabajo y controla el acceso con selectores de intención. Los datos del equipo fluyen directamente a las órdenes de rodaje de CineLog."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+El módulo de Elenco y Equipo de CineLog actúa tanto como tu directorio de producción como tu pasarela de seguridad. Separa estrictamente los contactos globales de los miembros activos del proyecto para asegurar un control de acceso robusto.
+
+## 1. La estructura unificada del directorio
+
+CineLog gestiona tu equipo usando dos capas distintas:
+- **Contactos del espacio de trabajo:** Este es tu directorio maestro. Cualquiera que añadas a cualquier proyecto se guarda aquí automáticamente.
+- **Elenco y Equipo del proyecto:** Esta es la plantilla para tu proyecto *actual*. Vincula a las personas de tus Contactos del espacio de trabajo con roles específicos del proyecto.
+
+## 2. Añadir miembros del equipo
+
+Puedes añadir fácilmente nuevos miembros directamente a tu proyecto. CineLog usa un diálogo unificado que gestiona tanto la creación del contacto como la asignación de su rol en un solo paso fluido.
+
+<Steps>
+1. **Abre Elenco y Equipo:** Navega al módulo de Elenco y Equipo usando la barra lateral izquierda. Asegúrate de estar en la pestaña "Proyecto".
+2. **Añadir un rol:** Haz clic en el botón **"+ Añadir Rol"**.
+3. **Seleccionar o crear:** Se abrirá el diálogo unificado. Puedes buscar y seleccionar a una persona existente de tus Contactos del espacio de trabajo, o simplemente escribir un nuevo nombre para crear al instante un contacto nuevo.
+4. **Elige un rol:** Selecciona un rol estándar de la industria del desplegable (p. ej., *1er Ayudante de Dirección*, *Gaffer*, *Actor Principal*).
+5. **Detalles de contacto:** Introduce el correo electrónico y el teléfono de la persona. Aunque opcionales, son altamente recomendados si planeas enviarles Órdenes de Rodaje o invitarlos a la app.
+</Steps>
+
+¡Puedes asignar múltiples roles a una sola persona si llevan muchos sombreros en tu producción!
+
+---
+
+## 3. Control de acceso e invitaciones
+
+Asignar un rol a un contacto *no* lo invita automáticamente a iniciar sesión en CineLog. Simplemente lo añade a tu plantilla interna del proyecto.
+
+Si quieres que un miembro del equipo realmente inicie sesión en la app y colabore, debes concederle acceso formalmente.
+
+### El "Selector de intención"
+
+Haz clic en el rol de cualquier persona en la lista de Elenco y Equipo del Proyecto para abrir su **Diálogo de Detalles del Rol**. Dentro, encontrarás el **Formulario de Control de Acceso**.
+
+En la parte superior de este formulario está el **Selector de Intención de Acceso**.
+
+- **OFF (No permitido):** La persona está en tu plantilla, pero no puede iniciar sesión en el proyecto. Este es el estado por defecto.
+- **ON (Concedido/Pendiente):** El sistema verificará su correo electrónico. Si tienen una cuenta de CineLog, serán añadidos al instante al proyecto. Si no, CineLog les enviará automáticamente un correo de invitación para unirse.
+
+<Aside type="note">
+**Gestión del equipo:** Cualquiera que tenga permiso de **Edición** para el módulo de Elenco y Equipo puede alternar las intenciones de acceso y modificar la ACL para otros miembros del equipo. ¡Esto te permite delegar las tareas de incorporación y seguridad a tus Gerentes de Producción o Coordinadores!
+</Aside>
+
+### Control de acceso basado en roles (RBAC)
+
+Cuando concedes a un usuario acceso a tu proyecto, ¿qué pueden *hacer* realmente?
+
+CineLog usa **Control de Acceso Basado en Roles (RBAC)**. Los permisos de un usuario están influenciados por el rol de la industria que le asignaste, con valores por defecto sensatos aplicados según su departamento y posición en la jerarquía.
+
+Como Propietario del Proyecto, puedes anular los permisos por defecto dentro del Diálogo de Detalles del Rol, ajustando el acceso de Ver/Editar para módulos individuales para esa persona específica.

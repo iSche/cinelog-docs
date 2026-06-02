@@ -1,0 +1,72 @@
+---
+title: Storyboards
+lastUpdated: 2026-04-22
+description: "Visuelle Planungswerkzeuge, mit denen du Szenen entwerfen und deine kreative Vision visualisieren kannst."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Die Storyboard-Funktion von CineLog ist eine visuelle Erweiterung deiner linearen Einstellungsliste. Sie bietet einen dedizierten Arbeitsbereich zum Planen, Sequenzieren und Reviewen der visuellen Komposition deiner Produktion über intuitive Layouts. Storyboards sind kein separater Datensatz – sie sind eine visuelle Darstellung derselben Einstellungs-Daten. Jedes Panel im Storyboard ist 1:1 mit einer Einstellung in deiner linearen Einstellungsliste verknüpft.
+
+## Kern-Fähigkeiten
+
+<CardGrid>
+<Card title="Mehrere Perspektiv-Layouts">
+  Betrachte dein Storyboard horizontal (lineare Ansicht), nach Szene gruppiert (Szenen-/Rasteransicht) oder im Vollbild auf Mobilgeräten.
+</Card>
+
+<Card title="Medienreiche Panels">
+  Unterstützung für mehrere Bild-Uploads pro Einstellungs-Panel. Lege ein Hauptbild fest und halte Alternativen einen Wischer entfernt.
+</Card>
+
+<Card title="Drag-and-Drop-Sequenzierung">
+  Ordne Einstellungen visuell um. Änderungen werden sofort zurück in deine Einstellungsliste synchronisiert.
+</Card>
+
+<Card title="Anpassbare Präsentation">
+  Über die Anzeige-Einstellungen kannst du tiefgreifend anpassen, wie Panels gerendert werden. Im Rasteransicht-Modus lässt sich die Spaltenanzahl explizit einstellen (1 bis 10). Im linearen Modus definierst du die exakte Panel-Breite. Du kannst außerdem den Abstand zwischen Panels global anpassen.
+</Card>
+</CardGrid>
+
+## Detaillierte Nutzung & Workflows
+
+### Inhalte hochladen & verwalten
+
+Antippen zum Hochladen
+
+Tippe auf den Bildbereich eines Panels, um Medien hochzuladen (oder doppeltippe auf dem Handy, um den Medien-Explorer zu öffnen).
+
+Durch Sequenzen scrubben
+
+Wenn du mehrere Bilder zu einem einzigen Panel hochlädst, kannst du den Slider am Panel verwenden, um durch die Sequenz zu scrubben.
+
+Hauptbilder festlegen
+
+Das "Hauptbild" ist das Bild, das in der Rasteransicht angezeigt und in PDF-Exporte aufgenommen wird.
+
+### Mit den Ansichten arbeiten
+
+#### Lineare Ansicht (Desktop/Tablet)
+
+Eine horizontale Zeitleiste. Du kannst den Zoom anpassen, um ~2 große Panels oder ~4 kleinere Panels auf dem Bildschirm zu sehen. Einstellungen können hier chronologisch umgeordnet werden, und das System aktualisiert die Szenen-Zuordnung automatisch.
+
+#### Szenen-/Rasteransicht
+
+Öffnet ein vertikales Raster (bis zu 10 Spalten), das sich rein auf eine einzelne Szene konzentriert. Das bietet einen exzellenten Überblick über die Coverage einer gesamten Sequenz.
+
+## Profi-Tipps & Plattform-Spezifika
+
+### Lineares Karussell auf dem Smartphone
+
+Auf dem Smartphone verwandelt sich die lineare Ansicht in ein vollseitiges, wischbares Karussell. Direkt auf dem **Bildbereich** zu wischen, wechselt durch mehrere Bilder, die zu dieser spezifischen Einstellung hochgeladen wurden. Im **Metadatenbereich** unten zu wischen, navigiert komplett zur nächsten oder vorherigen Einstellung.
+
+### Doppeltippen zum Bearbeiten (Mobil)
+
+Auf Smartphones benötigen alle tippbaren Felder ein **Doppeltippen** zum Bearbeiten, um versehentliche Änderungen beim Wischen zu vermeiden. Tablets und Desktops verlassen sich auf einen einzelnen Tipp.
+
+### Previsualisierungs-Seitenverhältnisse
+
+Storyboard-Ansichten rendern deine Bilder automatisch in ihrem tatsächlichen, vom Nutzer gewählten Seitenverhältnis, einschließlich hoher vertikaler Formate wie 9:16 (TikTok/Reels-Format), ohne zu beschneiden.
+
+### Professioneller PDF-Export
+
+Erstelle saubere, produktionsfertige PDF-Bögen direkt aus deinen Storyboard-Ansichten. Drücke `Cmd+P`, um einen PDF-Export zu konfigurieren, und wähle zwischen Clean-Modus (nur Visuals) oder Detailed-Modus (Visuals + Metadaten).

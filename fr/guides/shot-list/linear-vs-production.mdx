@@ -1,0 +1,86 @@
+---
+title: Vue Linéaire vs vue Production
+lastUpdated: 2026-05-23
+description: "Deux vues sur les mêmes plans — ordre du scénario vs ordre des jours de tournage. Couvre la règle de division de scène partielle, les bannières, la sélection à portée de scène, l'auto-sélection des en-têtes de scène, la synchronisation entre vues et comment la suppression diffère entre les deux vues."
+---
+
+Linéaire et Production sont deux vues des mêmes plans. Linéaire est dans l'ordre du scénario — la façon dont le réalisateur et le superviseur de scénario le lisent. Production est dans l'ordre des jours de tournage — la façon dont le 1er AR planifie le planning. Tout le reste de ce guide concerne les différences.
+
+Ce guide suppose [Les bases](/fr/guides/introduction) et [Les bases du découpage technique](/fr/guides/shot-list/essentials).
+
+## Changer de vue
+
+Bascule dans l'en-tête de vue au-dessus de la liste. `Shift + L` bascule la disposition des colonnes (ajustée ↔ défilante) — utile quand tu veux voir plus de colonnes à la fois.
+
+Les deux vues montrent les mêmes plans. Les modifications faites dans l'une apparaissent dans l'autre immédiatement.
+
+## La règle de division de scène partielle (Production seulement)
+
+En vue Production, tu réorganiseras les plans par jour de tournage. La plupart du temps, tu déplaceras des blocs de scène entiers. Mais si tu déplaces *une partie* d'une scène vers un jour différent, CineLog divise la scène à la source : les plans déplacés deviennent un segment séparé à la destination, et les plans non déplacés restent où ils étaient sous un en-tête séparé. Les deux segments appartiennent toujours à la même scène narrativement, mais ils sont planifiés indépendamment.
+
+C'est la seule façon dont le planning peut représenter « nous avons tourné la moitié de la scène 14 mardi et l'autre moitié vendredi ». Cela peut ressembler à un bug la première fois que ça arrive ; ce n'en est pas un.
+
+## Sélectionner en vue Production
+
+La vue Production applique une règle de portée de scène sur la multi-sélection pour protéger le regroupement des jours de tournage :
+
+- Tu peux sélectionner n'importe quel sous-ensemble de plans **dans une seule scène**.
+- Tu peux sélectionner un ou plusieurs **blocs de scène entiers** (avec leurs en-têtes).
+- Tu **ne peux pas** mélanger des sélections partielles de scènes différentes.
+
+Si ta sélection est invalide, la cible de dépôt n'ouvrira pas d'espace quand tu fais glisser — la ligne reviendra à sa position d'origine au relâchement.
+
+**La vue Linéaire n'a pas de telle restriction.** Mélange librement.
+
+### Sélectionner une scène entière (en-tête auto-sélectionné)
+
+Tu n'attrapes pas directement l'en-tête de scène. Sélectionne tous les plans en dessous — une fois qu'ils sont tous sélectionnés, l'en-tête est ajouté à la sélection automatiquement. Désélectionne n'importe quel plan et l'en-tête se désélectionne aussi. Fais glisser n'importe quelle ligne sélectionnée et tout le bloc de scène se déplace ensemble.
+
+C'est le mécanisme par lequel « déplacer une scène entière » fonctionne dans l'une ou l'autre vue.
+
+## Bannières
+
+Les bannières sont des lignes non-plan qui marquent les pauses repas, les déplacements d'équipe, les fins de journée ou d'autres marqueurs de planning. Elles n'existent qu'en vue Production.
+
+- **Ajouter une bannière.** En Production, `Cmd / Ctrl + N` ajoute une bannière au lieu d'un plan. Ou utilise la barre d'outils.
+- **Déplacer une bannière.** Même mécanisme de glissement que les plans.
+- **Supprimer une bannière.** Clic droit → Supprimer.
+
+Insérer une bannière en milieu de scène divise la scène environnante à la bannière : les plans au-dessus restent sous l'en-tête original, les plans en dessous obtiennent un nouvel en-tête inséré au-dessus d'eux. Supprimer une bannière qui se trouve entre deux segments de la même scène les fusionne à nouveau en un seul.
+
+## Synchronisation entre vues
+
+Les modifications et réorganisations sont immédiates et bidirectionnelles au sein de la même vue, mais les deux vues se mettent à jour mutuellement un peu différemment :
+
+- Modifier la description d'un plan en Linéaire → la même modification est visible en Production.
+- Ajouter un plan en Linéaire → il apparaît en Production une fois assigné à un jour.
+- Réorganiser en Linéaire → ne change **pas** le planning de Production ; le planning a son propre ordre.
+- Réorganiser en Production → change seulement le planning, pas l'ordre du scénario en Linéaire.
+
+## La suppression diffère entre les vues
+
+Cela trompe les nouveaux utilisateurs :
+
+- **Supprimer en Linéaire** retire entièrement le plan du projet. Il disparaît aussi de chaque jour de Production.
+- **Supprimer en Production** retire le plan du planning de ce jour seulement. Le plan existe toujours en Linéaire et peut être replanifié plus tard.
+
+Donc « supprimer en Linéaire » signifie *retirer* ; « supprimer en Production » signifie *déprogrammer*.
+
+## L'export PDF s'adapte à la vue
+
+`Cmd / Ctrl + P` exporte la vue active en PDF. Le rendu est local — pas de téléversement, pas de rendu côté serveur.
+
+- **Depuis Linéaire** — groupé par scène, dans l'ordre du scénario. Utile pour le superviseur de scénario.
+- **Depuis Production** — groupé par jour de tournage, dans l'ordre planifié. Utile pour le 1er AR.
+
+Les médias volumineux sur les plans sont sous-échantillonnés avant l'export.
+
+## Si ça ne marche pas
+
+*« Ma scène s'est divisée quand j'en ai replanifié une partie. »* C'est la règle de division de scène partielle. Déplace tout le bloc de scène pour éviter la division.
+
+*« Je ne peux pas faire glisser ma multi-sélection en vue Production. »* Ta sélection croise probablement des scènes. Soit réduis-la à une seule scène, soit sélectionne des blocs de scène entiers (avec leurs en-têtes).
+
+*« J'ai supprimé un plan en Production mais il est revenu. »* Tu le vois en Linéaire, où il existe toujours. Supprimer en Production signifie déprogrammer, pas retirer.
+
+*« Ma bannière a supprimé un en-tête de scène quand je l'ai retirée. »* Quand une bannière se trouve entre deux segments de la même scène et que tu supprimes la bannière, les segments fusionnent à nouveau. L'en-tête que tu voyais était celui du deuxième segment ; c'est attendu.

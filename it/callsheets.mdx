@@ -1,0 +1,78 @@
+---
+title: Ordini del Giorno
+lastUpdated: 2026-04-22
+description: "Genera e gestisci ordini del giorno per cast e troupe con dettagli su pianificazione e location."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Trasforma CineLog da utility di pianificazione delle inquadrature a un completo ufficio di produzione. Aggrega automaticamente Cast, Troupe, Programmazione e dettagli delle Location in PDF standard del settore pronti per la distribuzione immediata, facendoti risparmiare ore di trascrizione. Gli **Ordini del Giorno (O.d.G.)** sono il documento di riferimento giornaliero di ogni produzione.
+
+## Funzionalità principali
+
+<CardGrid>
+<Card title="Motore di pianificazione live">
+  Genera automaticamente programmi accurati in termini di tempo in base ai tempi stimati delle scene. Inserire un "Crew Call" propaga gli orari a cascata su tutta la giornata, segnalandoti in modo intelligente i colli di bottiglia.
+</Card>
+
+<Card title="PDF globali multilingua">
+  Esportazione pixel-perfect di ordini del giorno Tier-1 standard del settore, con font fallback automatici per **Arabo, Cinese, Giapponese, Ebraico, Hindi, Ucraino** e altri.
+</Card>
+
+<Card title="Logistica automatizzata">
+  Recupera in modo sicuro i dettagli dell'ospedale più vicino tramite Google Places e inserisce previsioni meteo accurate via Google Weather API con copertura fino a 10 giorni.
+</Card>
+
+<Card title="Conferme con un tap">
+  Invia gli ordini del giorno a tutto il tuo roster via email con tecnologia anti-threading integrata. La troupe conferma la ricezione con un singolo tap, aggiornando la tua dashboard live.
+</Card>
+
+<Card title="Controlli per workspace mobile">
+  Overlay keyboard-aware ti assicurano di poter fare modifiche rapide al set dal tuo smartphone senza mai oscurare il testo effettivo del documento.
+</Card>
+</CardGrid>
+
+## Utilizzo dettagliato e flussi di lavoro
+
+<Aside type="tip">
+Gli Ordini del Giorno estraggono automaticamente i dati dalla tua Lista delle Inquadrature e dal Cast & Troupe, quindi spenderai meno tempo a configurare manualmente il documento e più tempo a prepararti per le tue inquadrature.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Generare una programmazione giornaliera**
+
+Invece di digitare manualmente ogni singolo orario di ripresa, il motore di pianificazione di CineLog fa i calcoli per te. Aggiungi un crew call e il motore propaga immediatamente questo orario a cascata verso il basso, tracciando automaticamente gli orari di inizio esatti per tutte le scene successive e le pause in base ai loro tempi stimati.
+
+</li>
+<li>
+
+**Gestire orari di talent & troupe**
+
+Clicca nelle sezioni Talent o Troupe per ridurre la lista esattamente a chi è necessario quel giorno. Imposta orari di Call individualizzati, orari di Acconciatura & Trucco e Costume per singolo individuo, poi usa drag-and-drop per riordinarli per arrivo previsto.
+
+</li>
+<li>
+
+**Esportazione PDF e invio email**
+
+Assicurati che tutti sappiano esattamente cosa sta succedendo. Clicca **Esporta** per formattare un PDF standard del settore con il logo della tua compagnia, oppure premi **Invia** per inviare email tracciate direttamente al team.
+
+</li>
+
+</ol>
+</Steps>
+
+## Ecosistema dati integrato
+
+<Aside type="tip">
+La programmazione degli Ordini del Giorno funge da viewport bidirezionale della tua Lista delle Inquadrature. Modificare l'ordine di una scena o una stima nell'Ordine del Giorno aggiorna _istantaneamente_ il layout sottostante della tua Lista delle Inquadrature via CineSync.
+</Aside>
+
+<Aside type="tip" title="Vantaggi del routing dei dati">
+-   **Flussi Cast e Troupe**: Nomi dei talent, ruoli della troupe e dettagli di contatto fluiscono rigorosamente dal tuo hub centrale Cast & Troupe. Assegnare un attore popola dinamicamente i suoi dati.
+-   **Garanzie di gestione errori**: Qualsiasi collo di bottiglia di pianificazione non valido mostra avvisi UI giallo/rosso netti che prevengono conflitti di timeline.
+-   **Routing globale degli accessi**: Chiunque riceva un link di un Ordine del Giorno viene indirizzato in modo intelligente alla creazione di un account, ottenendo accesso strettamente a ciò che il suo ruolo prevede.
+</Aside>

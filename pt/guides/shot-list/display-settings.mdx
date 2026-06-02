@@ -1,0 +1,49 @@
+---
+title: Configurações de Exibição
+lastUpdated: 2026-05-23
+description: "Visibilidade e ordem de colunas, colunas personalizadas, formato de numeração de planos, altura de linha — tudo que controla como a decupagem aparece na tela."
+---
+
+As Configurações de Exibição controlam como a decupagem aparece — quais colunas são visíveis, em que ordem, como os planos são numerados. As configurações são em nível de projeto e se propagam via CineSync, então ajustes feitos no desktop aparecem no app mobile em segundos.
+
+`Shift + D` alterna a sobreposição de Configurações de Exibição.
+
+## Visibilidade de colunas
+
+Alterne qualquer coluna ligando ou desligando pela sobreposição de Configurações de Exibição. Para alterações rápidas sem abrir as Configurações de Exibição, as teclas numéricas `1` a `9` alternam as primeiras nove colunas diretamente na visualização da lista.
+
+## Reordenando colunas
+
+Arraste uma linha de coluna dentro da sobreposição de Configurações de Exibição para reordenar. A reordenação não acontece arrastando o cabeçalho de coluna na lista principal — essa é uma expectativa frequente que não se aplica aqui.
+
+Colunas do sistema — Plano, Cena, Dia — estão travadas nas posições mais à esquerda e recusam soltas que as deslocariam.
+
+## Colunas personalizadas
+
+Adicione suas próprias colunas pelas Configurações de Exibição. Especifique um nome e um tipo: texto, dropdown, checkbox ou qualquer outro tipo de campo suportado. Uma vez adicionada, a coluna aparece automaticamente na lista do desktop e na visualização expandida do mobile — sem setup por plataforma. Colunas personalizadas participam da exportação em PDF.
+
+## Formato de numeração de planos
+
+Três formatos são suportados:
+
+- **Alfanumérico** — `1A`, `2C`. Cena + letra.
+- **Decimal** — `1.1`, `2.3`.
+- **Sequencial** — `1`, `2`, `47`. Contínuo ao longo do projeto.
+
+Alterar o formato renumera cada plano. Se o roteiro já foi lined sob um formato e você troca, vai ter que re-line — não há desfazer. Confirme com qualquer outra pessoa trabalhando no projeto antes de alterar.
+
+## Altura de linha e modo de exibição
+
+`Shift + M` alterna entre alturas de linha compacta e expandida. As Configurações de Exibição têm um slider mais fino se quiser um tamanho intermediário.
+
+## Sincronização entre dispositivos
+
+Todas as Configurações de Exibição são em nível de projeto e se propagam via CineSync. Um produtor ajustando colunas no desktop verá o mesmo conjunto de colunas no iPad em segundos.
+
+## Se isso não estiver funcionando
+
+*"Tentei arrastar um cabeçalho de coluna na lista principal para reordenar, mas nada acontece."* A reordenação acontece dentro das Configurações de Exibição (`Shift + D`), não no cabeçalho da lista principal.
+
+*"Mudei o formato de número de plano e agora meus números antigos sumiram."* A alteração é destrutiva e não tem desfazer. Entre em contato com o suporte — o histórico do lado do servidor às vezes pode ajudar.
+
+*"Minha coluna personalizada está no desktop mas não no mobile."* Ela deveria aparecer automaticamente. Tente forçar o fechamento e reabrir o app mobile. Se o indicador de sincronização mostra alterações pendentes, a nova coluna ainda não se propagou.

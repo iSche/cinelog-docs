@@ -1,0 +1,72 @@
+---
+title: Storyboards
+lastUpdated: 2026-04-22
+description: "Outils de planification visuelle pour t'aider à cartographier les scènes et à visualiser ta vision créative."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+La fonctionnalité Storyboard de CineLog est une extension visuelle de ton Découpage Technique Linéaire. Elle offre un espace de travail dédié pour planifier, séquencer et réviser la composition visuelle de ta production grâce à des mises en page intuitives. Les storyboards ne sont pas un ensemble de données séparé — ce sont une présentation visuelle des mêmes données de plans. Chaque panneau du storyboard est lié 1:1 à un plan de ton Découpage Technique Linéaire.
+
+## Capacités principales
+
+<CardGrid>
+<Card title="Multiples mises en page">
+  Visualise ton storyboard horizontalement (vue Linéaire), groupé par scène (vue Scène/Grille), ou en plein écran sur les appareils mobiles.
+</Card>
+
+<Card title="Panneaux médias riches">
+  Support de plusieurs téléversements d'images par panneau de plan. Définis une image principale tout en gardant les alternatives à portée de glissement.
+</Card>
+
+<Card title="Séquencement par glisser-déposer">
+  Réorganise les plans visuellement. Les changements se synchronisent immédiatement avec ton Découpage Technique.
+</Card>
+
+<Card title="Présentation personnalisable">
+  Grâce aux Paramètres d'affichage, personnalise en profondeur le rendu des panneaux. En mode Grille, ajuste explicitement le nombre de colonnes (de 1 à 10). En mode Linéaire, définis la largeur exacte des panneaux. Tu peux également ajuster globalement l'espacement entre les panneaux.
+</Card>
+</CardGrid>
+
+## Utilisation détaillée et flux de travail
+
+### Téléverser et gérer le contenu
+
+Toucher pour téléverser
+
+Touche la zone image d'un panneau pour téléverser un média (ou double-tape sur mobile pour ouvrir l'Explorateur de Médias).
+
+Faire défiler les séquences
+
+Si tu téléverses plusieurs images dans un seul panneau, tu peux utiliser le curseur du panneau pour faire défiler la séquence.
+
+Définir les images principales
+
+L'image « Principale » est celle qui sera affichée dans la vue Grille et incluse dans les exports PDF.
+
+### Travailler avec les vues
+
+#### Vue Linéaire (Ordinateur/Tablette)
+
+Une chronologie horizontale. Tu peux ajuster le zoom pour voir environ 2 grands panneaux ou environ 4 panneaux plus petits à l'écran. Les plans peuvent être réorganisés chronologiquement ici, et le système gère automatiquement les mises à jour des associations de scènes.
+
+#### Vue Scène / Grille
+
+Ouvre une grille verticale (jusqu'à 10 colonnes) concentrée uniquement sur une seule scène. Cela fournit une excellente vue d'ensemble de haut niveau de la couverture d'une séquence entière.
+
+## Astuces de pro et spécificités de plateforme
+
+### Carrousel Linéaire sur téléphone
+
+Sur téléphone, la vue Linéaire se transforme en un carrousel défilable pleine page. Glisser directement sur la **zone image** parcourt les multiples images téléversées sur ce plan spécifique. Glisser sur la **zone métadonnées** en bas navigue entièrement vers le plan suivant ou précédent.
+
+### Double-tap pour éditer (mobile)
+
+Sur téléphone, tous les champs cliquables nécessitent un **double-tap** pour éditer afin d'éviter les changements accidentels lors du glissement. Les tablettes et ordinateurs reposent sur un seul tap.
+
+### Formats de prévisualisation
+
+Les vues du storyboard rendent automatiquement tes images dans leur format réel sélectionné par l'utilisateur, y compris les formats verticaux longs comme 9:16 (format TikTok/Reels) sans recadrage.
+
+### Export PDF professionnel
+
+Génère des fiches PDF propres et prêtes pour la production directement depuis tes vues storyboard. Appuie sur `Cmd+P` pour configurer un export PDF, en sélectionnant entre le mode Propre (visuels seulement) ou le mode Détaillé (visuels + métadonnées).

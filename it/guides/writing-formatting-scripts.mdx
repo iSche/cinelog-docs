@@ -1,0 +1,103 @@
+---
+title: Scrivere e Formattare Sceneggiature
+lastUpdated: 2026-04-22
+description: "Importa sceneggiature FDX, Fountain, PDF, TXT e RTF nell'Editor di CineLog. Formatta con la sintassi Fountain, traccia le analytics, esporta in PDF e popola la tua Lista delle Inquadrature."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+L'Editor di Sceneggiatura di CineLog è un ambiente di scrittura potente, di livello professionale, costruito nativamente nella piattaforma. Supporta formattazione Fountain in tempo reale, analytics live e sincronizzazione fluida dei dati in cloud.
+
+Che tu stia scrivendo una nuova sceneggiatura da zero o importando un copione esistente, CineLog garantisce che la tua formattazione aderisca sempre agli standard del settore.
+
+## Importare una sceneggiatura esistente
+
+Se hai già iniziato a scrivere il tuo copione in un altro software per sceneggiatura, puoi facilmente importarlo in CineLog senza perdere la formattazione.
+
+<Steps>
+1. **Apri l'Editor di Sceneggiatura:** Naviga all'Editor di Sceneggiatura usando la sidebar sinistra.
+2. **Importa Documento:** Clicca il pulsante **Import** nella barra in alto (o premi <kbd>Cmd</kbd> + <kbd>I</kbd>) e seleziona il file della tua sceneggiatura.
+3. **Parsing automatico:** Il parser universale di CineLog elaborerà automaticamente il file, estrarrà le scene e convertirà la formattazione.
+</Steps>
+
+<CardGrid>
+  <Card title="Formati supportati">
+    - **Final Draft (.fdx)**
+    - **Fountain (.fountain)**
+    - **PDF** (Estrazione testo)
+    - **Testo semplice (.txt)**
+    - **Rich Text (.rtf)**
+  </Card>
+</CardGrid>
+
+---
+
+## Editing e formattazione live
+
+CineLog usa il linguaggio di markup **Fountain** sotto il cofano. Tuttavia, non devi conoscere Fountain per scrivere—l'editor formatta automaticamente il tuo testo mentre lo digiti.
+
+### Elementi Fountain supportati
+
+CineLog attualmente supporta la specifica core di Fountain necessaria per l'editing professionale della sceneggiatura. Puoi scrivere naturalmente per lasciare che il rilevamento intelligente faccia il lavoro, oppure forzare la formattazione usando i caratteri di sintassi di Fountain.
+
+- **Intestazioni di Scena**: Inizia una riga con i prefissi standard (`INT.`, `EXT.`, ecc.), oppure forzala iniziando la riga con un punto (`.`).
+- **Azione**: Il testo standard viene trattato come azione. Forzala iniziando una riga con un punto esclamativo (`!`).
+- **Personaggi**: Scrivi interamente in MAIUSCOLO (es. `JOHN`), oppure forzalo iniziando la riga con una chiocciola (`@`).
+- **Dialogo**: Scrivi semplicemente subito dopo una riga di Personaggio.
+- **Parentetiche**: Avvolgi il testo tra parentesi `(come questo)`.
+- **Transizioni**: Usa terminazioni MAIUSCOLE standard come `CUT TO:`, oppure forzale iniziando la riga con una parentesi angolare destra (`>`).
+- **Testo centrato**: Avvolgi il testo con parentesi angolari: `> Centra questo testo <`.
+- **Enfasi**: Supporto per l'enfasi in stile markdown standard:
+  - `*Corsivo*`
+  - `**Grassetto**`
+  - `_Sottolineato_`
+
+### Elementi attualmente non supportati
+Stiamo costantemente espandendo il nostro supporto a Fountain. In questo momento, le seguenti funzionalità avanzate di Fountain **non sono ancora supportate** nell'editor live:
+- Dialogo Duale (`^`)
+- Boneyard (`/* */`)
+- Sezioni (`#`) e Sinossi (`=`)
+- Note inline (`[[ ]]`)
+
+### Scorciatoie di override manuale
+Se il rilevamento intelligente sbaglia, o se vuoi forzare uno stile di formattazione specifico, usa le scorciatoie di override manuale:
+
+- <kbd>Cmd</kbd> + <kbd>1</kbd>: Intestazione di Scena
+- <kbd>Cmd</kbd> + <kbd>2</kbd>: Personaggio
+- <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialogo
+- <kbd>Cmd</kbd> + <kbd>4</kbd>: Azione
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transizione
+
+<Aside type="tip">
+**Salvataggio continuo:** Non c'è alcun pulsante "Salva" nell'Editor di Sceneggiatura. Ogni battitura viene salvata silenziosamente e continuamente sul tuo dispositivo locale e sincronizzata in modo sicuro in cloud in background.
+</Aside>
+
+---
+
+## Analytics Live
+
+Mentre scrivi, CineLog calcola metriche professionali in tempo reale, permettendoti di valutare la portata e il ritmo della tua sceneggiatura senza mai lasciare l'editor.
+
+Cerca il pannello analytics per vedere aggiornamenti live su:
+- **Stima delle pagine:** Formule di calcolo pagine standard del settore accurate agli standard professionali.
+- **Conteggio scene & personaggi:** Numero totale di scene e personaggi parlanti unici.
+- **Metriche di parole:** Conteggio totale parole e tempo di lettura stimato.
+
+---
+
+## Anteprima ed Esportazione
+
+Quando sei pronto a rivedere la tua sceneggiatura finale o a condividerla con altri, puoi passare senza soluzione di continuità dall'editor a un PDF standardizzato.
+
+<Steps>
+1. **Modalità Anteprima:** Clicca il pulsante **"Anteprima & Esporta"** nella barra in alto per passare dall'editor a scorrimento continuo a una vista paginata e pronta per la stampa. La modalità anteprima rende una Pagina Titolo standard e interruzioni di pagina accurate.
+2. **Esporta:** Mentre sei in Modalità Anteprima, clicca l'icona **"Esporta"**.
+3. **Seleziona Formato:** Scegli il formato file di cui hai bisogno.
+</Steps>
+
+CineLog attualmente supporta l'esportazione della tua sceneggiatura nei seguenti formati:
+- **PDF (.pdf):** Documento di alta qualità, paginato e formattato secondo gli standard del settore, perfetto per la stampa o l'invio via email.
+- **Final Draft (.fdx):** Formato XML standard del settore, che ti permette di trasferire la tua sceneggiatura senza problemi in Final Draft o in altri software di produzione.
+- **Fountain (.fountain):** Markup plaintext raw per la massima compatibilità.
+- **Testo semplice (.txt):** Esportazione testo di base per la semplice lettura.
+- **JSON (.json):** Esportazione dati strutturata per integrazioni e tooling personalizzato.
+- **CSV (.csv):** Esportazione tabellare per fogli di calcolo e reportistica.

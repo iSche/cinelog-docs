@@ -1,0 +1,76 @@
+---
+title: Explorateur de Médias
+lastUpdated: 2026-04-22
+description: "Téléverse, organise et gère les images de prévisualisation et les médias de référence pour les plans de ta production."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Gérer des gigaoctets de photos de lieux, vidéos de référence et images de storyboard est crucial pour la production cinématographique. L'Explorateur de Médias de CineLog offre des capacités complètes de gestion de fichiers, propulsées par un moteur de téléversement intelligent conçu pour te permettre de continuer à travailler en douceur même lorsque ta connexion Internet est mauvaise.
+
+## Capacités principales
+
+<CardGrid>
+<Card title="Approche à deux écrans">
+  Accède à tes médias soit via l'Explorateur de Médias complet à l'échelle du projet, soit via l'écran simplifié des médias contextuel d'une fonctionnalité.
+</Card>
+
+<Card title="Traitement local instantané">
+  Avant d'envoyer quoi que ce soit vers le cloud, les images sont magnifiquement miniaturisées localement sur ton appareil, garantissant que tu as une référence visuelle immédiate sans attendre la fin des téléversements.
+</Card>
+
+<Card title="Téléversements résilients en arrière-plan">
+  Les transferts de fichiers se déroulent entièrement en arrière-plan. Si tu perds ta connexion Wi-Fi, le système met intelligemment en pause et reprend automatiquement le téléversement la prochaine fois que tu ouvres l'application.
+</Card>
+
+<Card title="Analyses de stockage">
+  Calcul en temps réel de l'espace de stockage utilisé par projet avec des répartitions par fonctionnalité et type de fichier.
+</Card>
+</CardGrid>
+
+## Utilisation détaillée et flux de travail
+
+### Téléversements intelligents de fichiers
+
+Disponibilité instantanée (prévisualisations)
+
+Parce que CineLog favorise ton appareil local, l'application génère instantanément une miniature locale optimisée afin que tu puisses continuer à trier, visualiser et organiser tes plans immédiatement. Tu n'as jamais à attendre qu'un téléversement soit terminé pour continuer à travailler.
+
+Synchronisation en arrière-plan
+
+L'application diffuse en toute sécurité le fichier original lourd directement vers le stockage cloud en arrière-plan.
+
+Récupération
+
+Si tu perds la connexion en cours de téléversement, CineLog met le fichier en file d'attente. Un service en arrière-plan spécialisé récupère automatiquement les transferts bloqués silencieusement entre les sessions.
+
+### Utiliser les interfaces
+
+#### Explorateur de Médias complet
+
+Accessible via le menu « PLUS » dans la navigation principale du projet. C'est ton interface complète de gestion de fichiers à l'échelle du projet. Il inclut un filtrage global (par fonctionnalité ou statut), des opérations groupées (suppression multi-sélection) et des limites d'analyse de stockage globales.
+
+#### Écran simplifié des médias d'une fonctionnalité
+
+Accessible directement depuis des fonctionnalités individuelles (par exemple, en cliquant sur le bouton de prévisualisation d'un plan). C'est une vue légère et concentrée, pré-filtrée sur cet élément spécifique. Tu peux téléverser, réorganiser ou supprimer des fichiers spécifiquement associés à cet élément sans perdre le contexte.
+
+## États visuels et conscience hors-ligne
+
+Chaque miniature média affiche toujours un badge de statut dans le coin inférieur droit avec deux icônes qui indiquent la disponibilité :
+
+#### Épingle hors-ligne
+
+Toujours visible dans le badge en bas à droite. Apparaît en clair lorsque le fichier est disponible sur ton appareil, atténuée lorsqu'il n'est pas stocké localement.
+
+#### Cloud terminé
+
+Toujours visible dans le badge en bas à droite, à côté de l'épingle hors-ligne. Apparaît en clair lorsque synchronisé vers le CDN cloud, atténuée lorsque pas encore téléversé.
+
+## Astuces de pro et spécificités de plateforme
+
+### Repérage hors-ligne
+
+Si tu prends des photos de repérage de lieux sans connexion Internet, tu peux les téléverser entièrement dans CineLog. L'application les stocke localement, les lie à tes scènes et mettra automatiquement le téléversement en file d'attente en arrière-plan une fois que tu arrives dans une zone avec du service cellulaire.
+
+### Filtrage multi-sélection
+
+Lors de la gestion d'un grand nombre d'éléments rejetés dans l'Explorateur de Médias complet, utilise la capacité multi-sélection pour supprimer par lot les fichiers inutilisés en un seul balayage pour libérer ton quota de stockage.

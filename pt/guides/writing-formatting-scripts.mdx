@@ -1,0 +1,103 @@
+---
+title: Escrevendo e formatando roteiros
+lastUpdated: 2026-04-22
+description: "Importe roteiros FDX, Fountain, PDF, TXT e RTF para o editor do CineLog. Formate com sintaxe Fountain, acompanhe analytics, exporte para PDF e popule sua decupagem."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+O Editor de Roteiro do CineLog é um ambiente de escrita poderoso e de nível profissional, construído nativamente na plataforma. Ele suporta formatação Fountain em tempo real, analytics ao vivo e sincronização perfeita de dados com a nuvem.
+
+Seja escrevendo um novo roteiro do zero ou importando um já existente, o CineLog garante que sua formatação sempre siga os padrões da indústria.
+
+## Importando um roteiro existente
+
+Se você já começou a escrever seu roteiro em outro software, pode facilmente importá-lo para o CineLog sem perder a formatação.
+
+<Steps>
+1. **Abra o Editor de Roteiro:** navegue até o Editor de Roteiro pela barra lateral esquerda.
+2. **Importar Documento:** clique no botão **Importar** na barra superior (ou pressione <kbd>Cmd</kbd> + <kbd>I</kbd>) e selecione seu arquivo de roteiro.
+3. **Parsing automático:** o parser universal do CineLog processa o arquivo automaticamente, extrai as cenas e converte a formatação.
+</Steps>
+
+<CardGrid>
+  <Card title="Formatos suportados">
+    - **Final Draft (.fdx)**
+    - **Fountain (.fountain)**
+    - **PDF** (extração de texto)
+    - **Texto Simples (.txt)**
+    - **Rich Text (.rtf)**
+  </Card>
+</CardGrid>
+
+---
+
+## Edição e formatação ao vivo
+
+O CineLog usa a linguagem de marcação **Fountain** internamente. Mas você não precisa conhecer Fountain para escrever — o editor formata seu texto automaticamente conforme você digita.
+
+### Elementos Fountain suportados
+
+O CineLog atualmente suporta a especificação Fountain principal necessária para edição profissional de roteiros. Você pode digitar naturalmente para deixar a detecção inteligente fazer o trabalho, ou forçar a formatação usando os caracteres de sintaxe do Fountain.
+
+- **Cabeçalhos de cena**: inicie uma linha com prefixos padrão (`INT.`, `EXT.`, etc.), ou force começando a linha com um ponto (`.`).
+- **Ação**: o texto padrão é tratado como ação. Force começando a linha com um ponto de exclamação (`!`).
+- **Personagens**: digite inteiramente em MAIÚSCULAS (ex.: `JOHN`), ou force começando a linha com um arroba (`@`).
+- **Diálogo**: simplesmente digite logo após uma linha de Personagem.
+- **Parênteses**: envolva o texto com parênteses `(assim)`.
+- **Transições**: use finais MAIÚSCULOS padrão como `CUT TO:`, ou force começando a linha com um sinal de maior (`>`).
+- **Texto centralizado**: envolva o texto com sinais de maior e menor: `> Centralizar este texto <`.
+- **Ênfase**: suporte a ênfase no estilo markdown padrão:
+  - `*Itálico*`
+  - `**Negrito**`
+  - `_Sublinhado_`
+
+### Elementos ainda não suportados
+Estamos expandindo continuamente nosso suporte ao Fountain. No momento, os seguintes recursos avançados do Fountain **ainda não são suportados** no editor ao vivo:
+- Dual Dialogue (`^`)
+- Boneyards (`/* */`)
+- Sections (`#`) e Synopses (`=`)
+- Notas inline (`[[ ]]`)
+
+### Atalhos de substituição manual
+Se a detecção inteligente errar, ou se você quiser forçar um estilo específico de formatação, use os atalhos de substituição manual:
+
+- <kbd>Cmd</kbd> + <kbd>1</kbd>: Cabeçalho de Cena
+- <kbd>Cmd</kbd> + <kbd>2</kbd>: Personagem
+- <kbd>Cmd</kbd> + <kbd>3</kbd>: Diálogo
+- <kbd>Cmd</kbd> + <kbd>4</kbd>: Ação
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transição
+
+<Aside type="tip">
+**Salvamento contínuo:** não há botão "Salvar" no Editor de Roteiro. Cada tecla é salva silenciosa e continuamente no seu dispositivo local e sincronizada com segurança na nuvem em segundo plano.
+</Aside>
+
+---
+
+## Analytics ao vivo
+
+Enquanto você escreve, o CineLog calcula métricas profissionais em tempo real, permitindo que você avalie o escopo e o ritmo do seu roteiro sem nunca sair do editor.
+
+Procure pelo painel de analytics para ver atualizações ao vivo sobre:
+- **Estimativa de páginas:** fórmulas padrão da indústria para cálculo de páginas, com precisão profissional.
+- **Contagem de cenas e personagens:** número total de cenas e personagens únicos falados.
+- **Métricas de palavras:** contagem total de palavras e tempo estimado de leitura.
+
+---
+
+## Pré-visualização e exportação
+
+Quando estiver pronto para revisar seu roteiro final ou compartilhá-lo com outras pessoas, você pode fazer a transição perfeita do editor para um PDF padronizado.
+
+<Steps>
+1. **Modo de Pré-visualização:** clique no botão **"Pré-visualizar e Exportar"** na barra superior para alternar do editor de rolagem contínua para uma visualização paginada e pronta para impressão. O modo de pré-visualização renderiza uma Página de Título padrão e quebras de página precisas.
+2. **Exportar:** no Modo de Pré-visualização, clique no ícone **"Exportar"**.
+3. **Selecione o Formato:** escolha o formato de arquivo que precisar.
+</Steps>
+
+O CineLog atualmente suporta exportar seu roteiro nos seguintes formatos:
+- **PDF (.pdf):** documento paginado de alta qualidade, com formatação da indústria, perfeito para imprimir ou enviar por e-mail.
+- **Final Draft (.fdx):** formato XML padrão da indústria, permitindo mover seu roteiro perfeitamente para o Final Draft ou outros softwares de produção.
+- **Fountain (.fountain):** markup plaintext bruto para máxima compatibilidade.
+- **Texto Simples (.txt):** exportação de texto básica para leitura simples.
+- **JSON (.json):** exportação de dados estruturados para integrações e ferramentas personalizadas.
+- **CSV (.csv):** exportação tabular de breakdown para planilhas e relatórios.

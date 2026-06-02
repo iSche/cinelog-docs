@@ -1,0 +1,254 @@
+---
+title: Dispositionen (Dispo)
+lastUpdated: 2026-05-23
+description: "Tägliche Dispositionen (Dispo) in CineLog – Header und Call-Time, Drehorte, Plan mit Zeit-Kaskade, Wetter, Personensektionen, Rich-Text-Crew-Message, Versand und Bestätigungs-Tracking, PDF-Export."
+---
+
+Eine Disposition (Dispo) in CineLog ist der tägliche Produktionsplan: der Drehplan, der Drehort, die Personen, das Wetter und die Nachricht, die mit der E-Mail rausgeht. Sie ist eng mit dem Rest des Projekts verknüpft – der Plan ist dieselben Daten wie die Drehtage-Ansicht für diesen Tag, und das Personal kommt direkt aus Cast & Crew.
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) und [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) voraus.
+
+## Eine Disposition erstellen
+
+Dispositionen sind tagesbasiert – eine pro Drehtag. Sie erscheinen automatisch als Untereinträge unter **Dispositionen** in der Seitenleiste; klicke auf einen Tag, um seine Dispo zu öffnen.
+
+Wenn du eine neue Disposition erstellst, befüllt CineLog sie aus deinen vorherigen Tagen, anstatt blank zu starten:
+
+- Wenn ein vorheriger Tag **denselben Drehort** verwendet hat, startet deine neue Disposition mit der Crew und den Adressen dieses Drehorts bereits ausgefüllt.
+- Andernfalls, wenn du **drei oder mehr vorherige Dispositionen** mit derselben Crew hast, werden diese Crew-Zuweisungen übernommen.
+- Andernfalls **klont** die Disposition vom unmittelbar vorhergehenden Tag.
+- Wenn nichts davon zutrifft (erster Tag des Projekts), bekommst du eine leere Disposition.
+
+Du kannst alles ändern, was vorbefüllt wurde; es ist nur ein Ausgangspunkt.
+
+## Der Header
+
+Der Header läuft über die Oberseite und trägt die wichtigsten Informationen des Tages auf einen Blick.
+
+### Allgemeine Call-Time
+
+Das wichtigste einzelne Feld. Setzt die Basis-Startzeit für den Tag (z.B. 08:00). Klicke darauf, um es zu bearbeiten. Diese Zeit verankert die Zeit-Kaskade des Plans (unten) und ist die Standardzeit, die jedem Empfänger gemailt wird, es sei denn, er hat eine persönliche Call-Time gesetzt (siehe [Personal](#personnel-sections)).
+
+### Datum
+
+Das Produktionsdatum. Optional – wird vom Drehtag der Einstellungsliste übernommen, du kannst es aber manuell setzen oder überschreiben. Wird im Header und in der exportierten PDF angezeigt.
+
+### Firmen-Branding
+
+Die linke Seite des Headers trägt dein Firmenprofil (Name, Adresse, Telefon) und Logo. Lade das Logo einmal auf Workspace-Ebene über den Firmenprofil-Dialog hoch; es erscheint dann im Header jeder Dispo und auf gemailten PDFs.
+
+### Projektname
+
+Rechte Seite des Headers. Wird aus der Projekt-Entität übernommen – keine separate Bearbeitung hier.
+
+### Anzeige-Einstellungen (Header-Verhalten)
+
+Öffne das Anzeige-Einstellungen-Popup über das obere Menü der Disposition, um umzuschalten:
+
+- **Zeitformat** — 12-Stunden (`8:00 AM`) oder 24-Stunden (`08:00`).
+- **Temperatureinheit** — °F oder °C.
+
+Beide Optionen sind pro Nutzer und bleiben über Sessions bestehen.
+
+## Drehorte
+
+Eine umordnungsfähige Liste benannter Drehorte für den Tag. Jeder Drehort hat diese Felder:
+
+- **Set-Name und Adresse.** Optionale Notiz daneben.
+- **Parken.** Ein Parkname + Detail-Feld (wo die Trucks hinkommen, wo die Crew parkt).
+- **Krankenhaus.** Nächstes Krankenhaus mit Name und Adresse – wichtig für Sicherheits-/Notfall-Logistik.
+
+Hinzufügen und Bearbeiten über das Drehort-Overlay. Auf dem Desktop kannst du eine Drehort-Zeile lang drücken und ziehen, um umzuordnen; auf dem Smartphone doppeltippst du eine Zeile, um das Bearbeitungs-Overlay zu öffnen.
+
+**Google Places Autocomplete** ist in jedes Adressfeld eingebaut. Fang an zu tippen und du siehst vorgeschlagene Orte; das Auswählen eines füllt die Adresse aus und speichert die Koordinaten, damit die Wettersuche (unten) einen Ort hat, mit dem sie arbeiten kann.
+
+Um den gesamten Drehort-Bereich aus der Disposition auszublenden (z.B. wenn der Drehort noch nicht feststeht), nutze den Sichtbarkeits-Toggle in den Anzeige-Einstellungen.
+
+## Plan
+
+Der Plan ist die Drehtage-Ansicht, gefiltert auf diesen Tag. Die Einstellungen und Banner in der Disposition sind die **selben Objekte** wie in der Drehtage-Ansicht – sie hier umzuordnen oder zu bearbeiten ist dasselbe wie sie dort umzuordnen oder zu bearbeiten. Die Gesten-Grammatik ist identisch wie überall sonst in der App.
+
+Drei Spalten: **Startzeit** | **Szene + Einstellung** | **geschätzte Dauer**.
+
+### Banner
+
+Banner sind Nicht-Einstellungs-Zeilen, die Essenspausen, Company Moves, Wraps oder andere Plan-Markierungen anzeigen. Sie existieren nur in der Drehtage-Ansicht und im Plan. Füge einen Banner über die Werkzeugleiste hinzu (oder `Cmd / Ctrl + N` in der Drehtage-Ansicht); benenne ihn ("Lunch", "Company Move"), setze seine Dauer.
+
+Einen Banner mitten in einer Szene einzufügen, teilt die umgebende Szene am Banner auf – siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) für das vollständige Split-and-Merge-Verhalten.
+
+### Die Zeit-Kaskade
+
+Du gibst nicht für jede Zeile eine Startzeit ein. Der Plan hat eine kaskadierende Zeit-Engine: Sie liest die allgemeine Call-Time, dann läuft sie durch die Liste und addiert die geschätzte Dauer jeder Zeile, um die Startzeit der nächsten Zeile zu berechnen.
+
+Wenn die explizite Startzeit einer Zeile mit dem kollidiert, was die Kaskade produziert hätte (du hast überplant), wird die Zeit **rot** hervorgehoben. Wenn es eine Lücke zwischen Zeilen gibt (die Kaskade hat Slack), wird sie **gelb** angezeigt. So oder so – die geschätzte Dauer der Zeile selbst steuert die nächste Zeile, nicht die Lücke.
+
+### Plan umordnen
+
+Desktop: Lange auf einen Banner oder eine Einstellungs-Zeile drücken und ziehen. Mobil: Eine Zeile doppeltippen, um das Bearbeitungs-Overlay zu öffnen (kein Inline-Drag). Umordnungen werden zurück in die Drehtage-Ansicht persistiert, da das dieselben Objekte sind.
+
+Der Plan-Bereich kann nicht ausgeblendet werden – er wird immer angezeigt.
+
+## Wetter
+
+Wenn die Disposition einen Drehort mit Koordinaten hat, holt CineLog das Wetter des Tages automatisch, wenn du die Disposition zum ersten Mal öffnest. Die Anzeige zeigt:
+
+- Aktuelle und "gefühlte" Temperatur
+- Tagestief
+- Sonnenauf- und Sonnenuntergang
+- Bedingungen, Luftfeuchtigkeit, Windgeschwindigkeit
+
+Die Temperatureinheit folgt der Anzeige-Einstellung (°F / °C). Um sie zu überschreiben oder Wetter manuell einzugeben (Vorhersage wurde nicht geholt, oder du willst eine andere Quelle nutzen), tippe auf den Wetter-Block und bearbeite ihn. Die Überschreibung wird auf der Disposition gespeichert und bei jedem Reload wiederverwendet.
+
+## Personensektionen
+
+Fünf verschiedene Sektionen, jede mit eigener Rolle und eigenem Layout. Personen kommen aus [Cast & Crew](/de/guides/managing-cast-crew) des Projekts; die Disposition referenziert sie, kopiert sie nicht.
+
+### Key Crew (Header-Zeile)
+
+Eine Schnellreferenz-Liste in der zweiten Header-Zeile, die die wichtigsten Rollen des Tages zeigt (Director, DP, 1st AD, Producer, etc.) mit Namen und Telefonnummern. Bis zu etwa sechs Slots. Klicke auf den Bearbeiten-Button, um auszuwählen, welche Rollen erscheinen.
+
+### Talent
+
+Drei-Spalten-Tabelle – Avatar, Name, Rolle. Füge Talent aus den Kontakten des Projekts hinzu. Klicke in eine beliebige Zeile, um Notizen hinzuzufügen oder eine Call-Time zu setzen. Lange drücken auf eine Zeile, um umzuordnen.
+
+### Crew
+
+Die größte Sektion, gruppiert nach Abteilung. Auf dem Desktop ein Multi-Spalten-Raster; auf dem Smartphone eine vertikale Kartenliste. Jedes Crew-Mitglied zeigt Avatar, Name, Rolle und (falls gesetzt) Call-Time und Telefonnummer. Gleiches Bearbeitungsmuster wie bei Talent.
+
+### Clients / Agency
+
+Drei-Spalten-Tabelle für Client Reps, Agency Producers, Executives – jeder außerhalb des Produktionsteams, der auf der Dispo stehen muss. Gleiches Bearbeitungsmuster wie bei Talent.
+
+### Extras / Background
+
+Raster oder ausklappbare Liste von Background-Darstellern. Keine Avatare in dieser Sektion (absichtlich – hält das Layout schlank bei vielen Extras).
+
+### Personenbezogene Notizen
+
+Jede Personenzeile in Talent, Crew oder Clients kann private Notizen tragen. Diese Notizen sind für den Producer in der Dispo-UI sichtbar, aber in der gemailten PDF erscheinen sie **nur in der Kopie dieser Person** – nicht in der von anderen. Nützlich für individuelle Anweisungen ("Am Seiteneingang parken", "Garderobenanprobe vor dem Call").
+
+### Personenbezogene Call-Time
+
+Jede Person kann auch eine persönliche Call-Time haben, die die allgemeine Call-Time überschreibt. Wenn du die Disposition versendest, hebt die E-Mail und PDF jedes Empfängers seine persönliche Zeit hervor. Personen ohne persönliche Zeit bekommen die allgemeine Call-Time.
+
+### Profilbilder
+
+Jede Person steuert ihr eigenes Profilbild über ihren Konto-Screen – der Projekteigentümer kann keines im Namen eines Kontakts hochladen. Bis jemand sein eigenes Bild hochlädt, wird er mit einem farbcodierten Initialen-Avatar angezeigt (deterministisch aus seiner User-ID, sodass dieselbe Person über jede Disposition dieselbe Farbe bekommt).
+
+Für Kontakte, die CineLog noch nicht beigetreten sind (du hast sie zu Cast & Crew hinzugefügt, aber sie haben die Einladung noch nicht akzeptiert), ist der Initialen-Avatar die einzige Option. Sobald sie sich einloggen und ihr eigenes Bild hochladen, verbreitet es sich überall, wo sie referenziert werden – inklusive vergangener Dispositionen, in denen sie waren.
+
+Schalte "Profilbilder" in den Anzeige-Einstellungen aus, wenn du unabhängig davon nur Initialen-Avatare willst.
+
+### Sektions-Sichtbarkeit
+
+Jede Sektion (Drehorte, Clients, Talent, Crew, Extras) kann über das Anzeige-Einstellungen-Popup aus der Disposition ausgeblendet werden. Der Toggle blendet die Sektion sowohl in der UI als auch in der exportierten PDF aus.
+
+## Crew-Message
+
+Ein Rich-Text-Block für die Nachricht, die zusammen mit der Dispositions-PDF rausgeht. Dieselbe Nachricht für alle Empfänger – für individuelle Anweisungen nutze die personenbezogenen Notizen oben.
+
+Die Editor-Werkzeugleiste unterstützt:
+
+- **Fett, kursiv, unterstrichen.**
+- **Farbe.** Acht kuratierte Farbpaletten (Weiß, Gold, Kupfer, Rosé, Lavendel, Sea Glass, Salbei, Pergament).
+- **Bild einbetten.** Klicke auf den Bild-Button, wähle ein Bild. Hochladen ins CineLog-CDN, bis zu 2 MB, nur JPEG / PNG / WebP. Die Bild-URL wird in die Nachricht eingebettet und erscheint im E-Mail-Body.
+- **Formatierung löschen.**
+
+Die gerenderte E-Mail wendet auf der Empfängerseite dieselbe Formatierung an. Der Server bereinigt die Nachricht vor dem Versand – nur die in der Allowlist enthaltenen Formatierungs-Tags kommen durch.
+
+## Produktions-Notizen
+
+Ein Fußnotenfeld für produktionsweite Notizen, Sicherheitserinnerungen, COVID-Protokolle oder alles, was du am unteren Rand der PDF jedes Empfängers haben willst. Erscheint zentriert, in Großbuchstaben.
+
+## Versand und Bestätigungs-Tracking
+
+Wenn die Disposition fertig ist, öffnet **Senden** in der oberen Menüleiste den Versanddialog.
+
+### Empfänger auswählen
+
+Zwei Schritte:
+
+1. **Empfänger.** Eine nach Sektion gruppierte Liste (Talent, Crew, Extras, Clients), sortiert nach Abteilung und Rolle. Jeder mit einer Call-Time auf der Dispo ist standardmäßig vorausgewählt. Mengen-Toggles erlauben dir, eine ganze Sektion auf einmal aus- oder abzuwählen.
+2. **Nachricht.** Optionale zusätzliche Nachricht spezifisch für diesen Versand, oberhalb der Crew-Message geschichtet.
+
+### Was Empfänger erhalten
+
+Jeder Empfänger erhält:
+
+- Eine personalisierte PDF mit hervorgehobener Call-Time.
+- Die Crew-Message (Rich-Text) plus jede optionale Nachricht, die du hinzugefügt hast.
+- Ihre personenbezogenen Notizen, falls vorhanden (an den E-Mail-Body angehängt, nicht auf der PDF sichtbar für andere).
+- Einen **Bestätigungs-Link** — eine eindeutige, token-geschützte URL unter `links.cinelog.com/confirm-call-sheet/<token>`. Beim Klicken öffnet sich ein CineLog-gebrandetes Portal, in dem sie "Bestätigen" antippen, um den Empfang zu bestätigen.
+
+### Sendouts-Seite
+
+Öffne die **Sendouts**-Seite über das obere Menü der Disposition (oder navigiere zu `…/call-sheets/<day>/sendouts`), um zu sehen, an wen die Disposition gesendet wurde. Empfänger sind nach **Sende-Batch** gruppiert – jedes Drücken von Senden erstellt einen neuen Batch, sodass das erneute Senden nach Änderungen die volle Historie erhält. Jeder Batch-Header zeigt eine "N / M bestätigt"-Zählung.
+
+Jede Empfängerzeile zeigt:
+
+- **Liefer-Status** — einer von:
+  - **queued** — an den Mail-Provider übergeben, noch nicht gesendet.
+  - **delivered** — vom Mail-Server des Empfängers akzeptiert.
+  - **opened** — der Mail-Client des Empfängers hat die Nachricht geöffnet.
+  - **bounced** — der Mail-Server des Empfängers hat sie abgelehnt (falsche Adresse, volles Postfach).
+  - **failed** — der Mail-Provider konnte nicht senden.
+- **Bestätigungs-Zeitstempel** — sobald sie ihren Link klicken.
+
+Lieferung und Bestätigung sind unabhängig: Eine E-Mail kann geliefert werden, ohne bestätigt zu sein (der Empfänger hat nicht geöffnet oder nicht geklickt), oder schnell bestätigt sein (sie waren in der Mail, als sie ankam).
+
+### Rate-Limits
+
+Um Runaway-Sends zu verhindern, erzwingt CineLog zwei Obergrenzen:
+
+- **Pro Disposition:** bis zu 10 Sends pro Stunde.
+- **Pro Workspace:** bis zu 1000 E-Mails pro Monat.
+
+Diese sind großzügig für normale Nutzung; du erreichst sie nur, wenn etwas loopt oder du eine ungewöhnlich große Operation fährst.
+
+### Erneutes Senden und Bearbeitungen
+
+Du kannst dieselbe Disposition nach dem Bearbeiten erneut senden (eine Drehbuchänderung, ein Crew-Tausch, eine Garderobennotiz). Das neue Senden erstellt einen neuen Batch auf der Sendouts-Seite; vorherige Batches bleiben für den Audit-Trail intakt.
+
+## PDF-Export
+
+Zwei Wege, eine PDF zu bekommen, je nach Anwendungsfall:
+
+### Lokaler Export aus der Werkzeugleiste
+
+`Cmd / Ctrl + P` oder der Export-Button im oberen Menü öffnet den Export-Dialog. Du kannst Seitenränder einstellen (oben, unten, links, rechts in Punkten) und dann exportieren. Das Rendering ist lokal – kein Upload, kein serverseitiges Rendering – also funktioniert es offline. Nützlich, wenn du eine PDF außerhalb des E-Mail-Flows verteilen willst (Slack, WhatsApp, persönliche Übergabe).
+
+### Personenbezogene PDFs beim Senden
+
+Wenn du Senden drückst, generiert der Server eine personalisierte PDF für jeden Empfänger mit hervorgehobener Call-Time und angehängten personenbezogenen Notizen. Du triggerst diese nicht direkt – sie sind ein Nebeneffekt des Sendens.
+
+Beide Export-Pfade respektieren Anzeige-Einstellungen: Ausgeblendete Sektionen bleiben ausgeblendet, die Temperatureinheit und das Zeitformat werden angewendet. Große Medien werden downsampelt.
+
+Internationale Schriften (Arabisch, Hebräisch, Devanagari, CJK, Thai) werden über Font-Fallbacks korrekt gerendert.
+
+## Berechtigungen
+
+Bearbeiten und Senden von Dispositionen sind durch die `call_sheets`-ACL-Ressource des Projekts geschützt. Viewer können Dispositionen sehen, zu denen sie Zugriff haben; nur Rollen mit Edit-Berechtigung können den Plan, die Personen oder die Nachricht ändern; Senden erfordert dieselbe Edit-Berechtigung.
+
+## Offline-Verhalten
+
+Das Bearbeiten von Dispositionen funktioniert offline – Änderungen werden in der lokalen Datenbank gespeichert und synchronisieren sich, wenn du wieder verbunden bist, wie alles andere in CineLog. **Senden** benötigt Verbindung (es ist ein ausgehender E-Mail-Flow). **Lokaler PDF-Export** funktioniert offline.
+
+## Falls das nicht funktioniert
+
+*"Meine neue Disposition wurde mit Zeug vorbefüllt, das ich nicht angefordert habe."* Das ist das Smart-Seeding-Verhalten. CineLog kopiert von einer passenden vorherigen Disposition (gleicher Drehort → gleiche Crew + Drehorte, sonst der unmittelbar vorhergehende Tag), damit du nicht jeden Tag mit einer leeren Dispo startest. Bearbeite oder lösche, was du nicht willst.
+
+*"Meine Planreihenfolge passt nicht zur Drehtage-Ansicht."* Sie sollte – sie sind dieselben Daten. Wenn sie sich unterscheiden, hat die Sync-Anzeige wahrscheinlich ausstehende Änderungen. Warte, bis sie geleert ist.
+
+*"Wie ändere ich das Profilfoto eines Crew-Mitglieds?"* Kannst du nicht – Profilbilder werden von jedem Nutzer über seinen eigenen Konto-Screen gesteuert. Als Projekteigentümer kannst du keines in seinem Namen hochladen. Personen, die CineLog noch nicht beigetreten sind, zeigen den Initialen-Avatar; sobald sie sich einloggen und hochladen, erscheint ihr Bild in jeder Disposition, in der sie sind.
+
+*"Die Planzeit ist rot / gelb hervorgehoben."* Rot heißt, du hast überplant – die explizite Startzeit in dieser Zeile widerspricht dem, was die Zeit-Kaskade berechnet hat. Gelb heißt, es gibt eine Lücke zwischen Zeilen, die die Kaskade nicht gefüllt hat. Passe die Dauern oder die Startzeit an, um sie aufzulösen.
+
+*"Wetter wurde nicht geladen."* Das Auto-Fetch braucht einen Drehort mit Koordinaten. Setze einen Drehort über Google Places Autocomplete (damit Lat/Lng erfasst wird), dann lade die Disposition neu. Du kannst Wetter auch manuell eingeben.
+
+*"Ein Crew-Mitglied sagt, sie haben die Disposition nicht erhalten."* Öffne die Sendouts-Seite für diesen Tag und finde ihre Zeile. **delivered** oder **opened** heißt, sie hat CineLog verlassen und wurde von ihrem Mail-Provider akzeptiert – das Problem ist nachgelagert (Spam-Ordner, Mailbox-Regeln, versehentlich gelöscht). **bounced** oder **failed** heißt, die E-Mail hat sie nie erreicht; prüfe die Adresse in Cast & Crew und sende erneut. **queued** heißt, sie ist noch unterwegs; gib ihr eine Minute.
+
+*"Der Bestätigt-Zähler steigt nicht."* Bestätigung erfordert, dass der Empfänger den Link in der E-Mail klickt. Lieferung allein reicht nicht.
+
+*"Ich habe ein Send-Limit erreicht."* Du hast in der letzten Stunde 10 Sends für diese Disposition überschritten oder 1000 E-Mails im letzten Monat für den Workspace. Warte ab oder melde dich, wenn du ein höheres Limit brauchst.
+
+*"Mein Crew-Message-Bild wurde nicht hochgeladen."* Prüfe die Datei: unter 2 MB, JPEG / PNG / WebP. Andere Formate und überdimensionierte Dateien werden abgelehnt.

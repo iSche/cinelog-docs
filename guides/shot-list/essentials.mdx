@@ -1,0 +1,65 @@
+---
+title: Shot list essentials
+lastUpdated: 2026-05-23
+description: "Build a shot list from scratch — three ways to add shots, how numbering works, how to reorder, and what gets deleted when you remove a shot or a scene."
+---
+
+The shot list is where pre-production lives: every shot in the script, in the order you plan to shoot them. This article covers the building blocks — adding shots, the numbering scheme, reordering, and what happens when you delete things.
+
+This guide assumes [The basics](/guides/introduction). The click-tap-drag vocabulary in the shot list is the same as every other list in the app.
+
+## Three ways to populate
+
+A new project gives you an empty shot list. There are three ways to fill it:
+
+- **Manually, one shot at a time.** Click the `+ Add Shot` button at the bottom of any scene block.
+- **Hotkey.** `Cmd / Ctrl + N` adds a new shot at the bottom of the currently focused scene.
+- **Populate from Script.** `Shift + P` (or the toolbar button) scans the imported script's scene headings (lines like `INT. KITCHEN - DAY`) and auto-creates one scene block per heading, each with a default shot. The output is only as clean as your script — malformed headings yield malformed scenes.
+
+Most projects start with Populate from Script as a rough first pass, then refine manually.
+
+## Shot numbering
+
+Shots are numbered automatically. Three formats are available in [Display Settings](/guides/shot-list/display-settings):
+
+- **Alphanumeric** — `1A`, `1B`, `2A`. Scene number + letter per shot within the scene. Default.
+- **Decimal** — `1.1`, `1.2`, `2.1`.
+- **Sequential** — `1`, `2`, `3`, `47`. Continuous through the project.
+
+Numbers and letters update on reorder. If you move `1C` to the top of its scene, the list briefly reads C, A, B before recomputing to A, B, C. Don't write down a shot's letter and expect it to be stable across moves.
+
+Changing format renumbers the entire project. On a lined project that's destructive — confirm before doing it.
+
+## Reordering shots
+
+Drag any shot to move it. The gesture is the universal drag from [The basics](/guides/introduction#4-dragging-to-reorder):
+
+- **Within a scene** — drag up or down. Letters recompact.
+- **Across scenes** — drag past a scene boundary. The shot's scene number changes to match the destination; letters recompact in both source and destination scenes.
+- **Into the empty space between two scenes** — CineLog creates a new scene there.
+
+Production view adds a scene-scope rule for multi-selections; see [Linear vs Production](/guides/shot-list/linear-vs-production).
+
+## Editing shot fields
+
+Click a cell (desktop) or tap to expand the row and tap a field (mobile). Fields are field-aware: the shot number opens a text input, day and lens are dropdowns, status and previs are toggles or picker buttons. All edits autosave — no Save button. See [The basics](/guides/introduction#2-editing-fields) for the keyboard shortcuts inside the editor and the autosave caveats.
+
+Custom columns you add in [Display Settings](/guides/shot-list/display-settings) appear automatically alongside the built-in ones.
+
+## Deleting
+
+Right-click a shot → Delete (desktop), or swipe / overflow menu (mobile). The cascade depends on what you delete and where:
+
+- **A single shot in Linear view** — removes it from the project. If it was the last shot in its scene, the scene goes too (there's no empty-scene state).
+- **A single shot in Production view** — removes it from the schedule for that day only. The shot still exists in Linear and can be rescheduled.
+- **A scene** (right-click the scene header) — removes the scene and every shot in it, everywhere.
+
+The confirmation dialog always spells out what's about to disappear before you commit. Full delete semantics across views are in [Linear vs Production](/guides/shot-list/linear-vs-production).
+
+## If this isn't working
+
+*"My shot letters changed after I dragged."* Expected — letters are recomputed after every reorder so they stay in display order.
+
+*"Populate from Script gave me a mess of scenes."* Open the script and clean up the scene headings (`INT. / EXT. LOCATION - TIME`), then re-run.
+
+*"I deleted the last shot in a scene and the whole scene disappeared."* Also expected — there's no empty-scene state. To keep the scene around, leave a placeholder shot in it.

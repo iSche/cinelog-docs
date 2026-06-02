@@ -1,0 +1,129 @@
+---
+title: Lista de Planos
+lastUpdated: 2026-04-22
+description: "Planifica y organiza tus planos con información detallada que incluye ángulos de cámara, elección de lentes y requisitos de escena."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+El sistema de lista de planos es la funcionalidad más completa de CineLog, ofreciendo tres modos de visualización distintos y una gestión de datos sofisticada para los flujos de producción cinematográfica. Organiza los planos secuencialmente, programa por días de rodaje o céntrate en escenas específicas con potentes capacidades de edición.
+
+## Tres vistas principales
+
+### Lista de Planos Lineal
+
+La vista principal para construir tu lista de planos. Los planos se organizan en orden secuencial con una estructura jerárquica escena → plano, identificados como `1A`, `1B`, `2A`. Perfecto para la planificación inicial de planos y el desglose del guion. **La numeración de escenas y planos se actualiza automáticamente** a medida que haces cambios.
+
+### Días de Producción
+
+Organiza tus planos por programación de rodaje en lugar de por orden narrativo. Cada día de producción muestra solo los planos que necesitas capturar ese día, con una barra lateral dedicada para navegar rápidamente entre días. El sistema gestiona de forma inteligente escenarios complejos de programación manteniendo **las relaciones entre escenas y la organización de planos automáticamente**.
+
+### Modo Focus
+
+Filtra tu lista de planos para mostrar solo las escenas seleccionadas, permitiendo edición y revisión concentradas sin distracciones. Elige escenas específicas desde el diálogo selector de escenas o selecciona varias escenas para centrarte en secuencias relacionadas — perfecto para sesiones detalladas de desglose de guion o revisiones específicas por localización.
+
+## Cómo usar la Lista de Planos Lineal
+
+La vista Lineal es tu punto de partida para construir la lista de planos. Úsala para añadir escenas y planos, editar detalles de planos y establecer la estructura básica de tu producción.
+
+Añadir escenas y planos
+
+Crea nuevas escenas y planos en orden secuencial. Cada plano se numera automáticamente (1A, 1B, 2A) según su escena y posición.
+
+Editar detalles del plano
+
+En dispositivos de escritorio y tablet, la lista de planos se comporta como una hoja de cálculo profesional: simplemente **toca una vez** cualquier celda para editarla directamente en su sitio. En móviles, toca un plano para expandir sus detalles y luego **toca dos veces** cualquier propiedad específica.
+
+Reordenar con arrastrar y soltar
+
+Arrastra planos para reordenarlos dentro o entre escenas. El sistema gestiona automáticamente las actualizaciones de numeración de escenas y letras de planos.
+
+Asignar Días de Producción
+
+Toca el campo de día de producción de cualquier plano para programarlo. Usa "Aplicar a todos los planos de la escena" para programar rápidamente escenas enteras a la vez.
+
+## Cómo usar los Días de Producción
+
+La vista Días de Producción transforma tu lista de planos secuencial en una programación de rodaje, con herramientas sofisticadas para gestionar la complejidad de las restricciones de producción del mundo real.
+
+Navegar entre días
+
+Usa la barra lateral para cambiar entre diferentes días de producción. Cada día muestra solo los planos programados para ese día específico.
+
+Reordenar dentro del día
+
+Arrastra planos dentro del mismo día de producción para fijar tu orden de rodaje. Mueve planos entre escenas o divide escenas en diferentes momentos del día según sea necesario.
+
+Selección múltiple para operaciones por lotes
+
+Mantén pulsado cualquier plano para entrar en modo selección, luego toca planos adicionales para seleccionar varios planos. Mantén pulsado los encabezados de escena para seleccionar escenas enteras.
+
+División inteligente de escenas
+
+Cuando mueves algunos planos de una escena a diferentes posiciones dentro del mismo día de producción, el sistema crea automáticamente secciones de escena separadas. Esto te permite programar partes de la misma escena en distintos momentos del día manteniendo una organización clara.
+
+### Operaciones de Día de Producción
+
+#### Operaciones dentro de la escena
+
+Arrastra planos dentro de una escena para reordenarlos — **los números de escena y plano persisten**.
+
+#### Operaciones parciales de escena
+
+Cuando mueves algunos planos de una escena a diferentes posiciones dentro del mismo día de producción, el sistema crea automáticamente secciones de escena separadas. Esto te permite programar partes de la misma escena en distintos momentos del día manteniendo una organización clara.
+
+#### Operaciones de escena completa
+
+Selecciona un encabezado de escena para mover todos los planos de esa escena juntos a una posición diferente dentro del mismo día de producción.
+
+#### Banners de Días de Producción
+
+Añade descansos e información de programación a cualquier día de producción con banners personalizados. Incluye pausas para comer, cambios de equipo, traslados de localización o cualquier nota de programación que ayude a organizar la línea temporal de tu jornada de rodaje.
+
+## Cómo usar el Modo Focus
+
+El Modo Focus te permite concentrarte en escenas específicas sin distracciones del resto de tu lista de planos, manteniendo todas las capacidades de edición.
+
+Seleccionar escenas en las que enfocarte
+
+Elige escenas específicas desde el diálogo selector de escenas, o selecciona varias escenas para enfocarte en secuencias relacionadas simultáneamente.
+
+Editar sin distracciones
+
+Trabaja en detalles de planos, reordenamientos y planificación de producción con solo las escenas seleccionadas visibles. Todas las funciones de edición siguen disponibles.
+
+Cambiar el foco según necesites
+
+Cambia tu selección de escenas en cualquier momento para enfocarte en diferentes partes de tu producción, o vuelve a la vista completa cuando lo necesites.
+
+### Usos comunes del Modo Focus
+
+-   Sesiones detalladas de desglose de guion para escenas específicas
+-   Trabajar en secuencias de acción que abarcan varias escenas
+-   Revisar planos para una localización concreta
+-   Aislar escenas con requisitos específicos de equipo o talento
+
+## Funcionalidades adicionales
+
+### Visualización y personalización de la Lista de Planos
+
+Personaliza la vista de tu lista de planos con **modos de visualización compacto/expandido** para controlar la densidad de información. Elige entre **diseño ajustado** (todas las columnas visibles) o **diseño con desplazamiento** (desplazamiento horizontal para más columnas). **Activa o desactiva la visibilidad de columnas** para cualquier campo incorporado, y añade tus propias **columnas personalizadas** para seguir información específica de tu producción.
+
+### Compartir y exportar
+
+Genera documentos profesionales listos para producción directamente desde tu lista de planos. Crea **Planes de Acción en PDF** paginados para todo el equipo con cobertura organizada por orden de guion o por programación de rodaje. Personaliza las exportaciones filtrando columnas y seleccionando diseños de imagen distintos.
+
+### Sincronización local-first
+
+CineLog funciona **primero offline** con sincronización automática en tiempo real entre todos tus dispositivos y miembros del equipo cuando está conectado. Haz cambios en cualquier sitio y en cualquier momento — todo permanece sincronizado sin perder el ritmo. Perfecto para ajustes en set y planificación colaborativa donde la conectividad a internet puede ser poco fiable.
+
+### Valores de producción personalizados
+
+Define tus propias opciones para **Tipos de Plano**, **Ángulos de Cámara**, **Equipo**, **Movimiento**, **Tasa de Fotogramas** y **Relación de Aspecto**. Crea menús desplegables estandarizados que se ajusten a las necesidades específicas y al flujo de trabajo de tu producción, garantizando consistencia en todo tu equipo.
+
+### Atajos de teclado
+
+Trabaja más rápido con atajos de teclado completos para navegación, creación de planos, cambio de vistas y operaciones por lotes. **[Consulta la referencia completa de atajos](/es/keyboardshortcuts)** para la lista completa de comandos que te ahorran tiempo. Agiliza tu flujo de trabajo con acceso rápido a todas las funciones principales sin tener que tocar el ratón.
+
+### Organización visual
+
+Organiza visualmente con **colores asignables a escenas**, **celdas de plano** individuales y **fondos de banners**. Crea sistemas de codificación visual para localizaciones, necesidades de equipo, niveles de complejidad o cualquier categorización que ayude a tu equipo de producción a identificar y organizar planos rápidamente. Construye esquemas de color personalizados que se ajusten al flujo de trabajo de tu producción.

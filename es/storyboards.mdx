@@ -1,0 +1,72 @@
+---
+title: Storyboards
+lastUpdated: 2026-04-22
+description: "Herramientas de planificación visual que te ayudan a mapear escenas y visualizar tu visión creativa."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+La funcionalidad de Storyboard de CineLog es una extensión visual de tu Lista de Planos Lineal. Proporciona un espacio de trabajo dedicado para planificar, secuenciar y revisar la composición visual de tu producción mediante diseños intuitivos. Los storyboards no son un conjunto de datos separado: son una presentación visual primaria de exactamente los mismos datos de planos. Cada panel del storyboard está vinculado 1:1 con un plano en tu Lista de Planos Lineal.
+
+## Capacidades principales
+
+<CardGrid>
+<Card title="Múltiples diseños de perspectiva">
+  Visualiza tu storyboard horizontalmente (Vista Lineal), agrupado por escena (Vista Escena/Cuadrícula), o a pantalla completa en dispositivos móviles.
+</Card>
+
+<Card title="Paneles de medios enriquecidos">
+  Soporte para múltiples subidas de imagen por panel de plano. Define una imagen principal manteniendo las alternativas a un deslizamiento de distancia.
+</Card>
+
+<Card title="Secuenciación con arrastrar y soltar">
+  Reordena planos visualmente. Los cambios se sincronizan inmediatamente con tu Lista de Planos.
+</Card>
+
+<Card title="Presentación personalizable">
+  Usando los Ajustes de Visualización, personaliza profundamente cómo se renderizan los paneles. En modo Cuadrícula, ajusta explícitamente el número de columnas (de 1 a 10). En modo Lineal, define el ancho exacto del panel. También puedes ajustar el espaciado entre paneles globalmente.
+</Card>
+</CardGrid>
+
+## Uso detallado y flujos de trabajo
+
+### Subir y gestionar contenido
+
+Toca para subir
+
+Toca el área de imagen de un panel para subir medios (o toca dos veces en móvil para abrir el Explorador de Medios).
+
+Desplázate por secuencias
+
+Si subes varias imágenes a un solo panel, puedes usar el deslizador del panel para desplazarte por la secuencia.
+
+Establecer imágenes principales
+
+La imagen "Principal" es la que se mostrará en la vista Cuadrícula y se incluirá en las exportaciones a PDF.
+
+### Trabajar con vistas
+
+#### Vista Lineal (Escritorio/Tablet)
+
+Una línea temporal horizontal. Puedes ajustar el zoom para ver ~2 paneles grandes o ~4 paneles más pequeños en pantalla. Los planos se pueden reordenar cronológicamente aquí, y el sistema gestiona las actualizaciones de asociación de escenas automáticamente.
+
+#### Vista Escena / Cuadrícula
+
+Abre una cuadrícula vertical (hasta 10 columnas) enfocada exclusivamente en una sola escena. Esto proporciona una excelente vista general de alto nivel de la cobertura de toda una secuencia.
+
+## Consejos avanzados y particularidades por plataforma
+
+### Carrusel Lineal en móvil
+
+En teléfonos, la vista Lineal se transforma en un carrusel deslizable a página completa. Deslizar directamente sobre el **área de imagen** alterna entre las múltiples imágenes subidas a ese plano específico. Deslizar sobre el **área de metadatos** en la parte inferior navega al plano siguiente o anterior por completo.
+
+### Doble toque para editar (móvil)
+
+En teléfonos, todos los campos tocables requieren un **doble toque** para editar y así prevenir cambios accidentales al deslizar. Tablets y escritorios funcionan con un solo toque.
+
+### Relaciones de aspecto de previsualización
+
+Las vistas de storyboard renderizan automáticamente tus imágenes en la relación de aspecto real seleccionada por el usuario, incluidos formatos verticales altos como 9:16 (formato TikTok/Reels) sin recortes.
+
+### Exportación profesional a PDF
+
+Genera hojas en PDF limpias y listas para producción directamente desde tus vistas de storyboard. Pulsa `Cmd+P` para configurar una exportación a PDF, eligiendo entre modo Limpio (solo visuales) o modo Detallado (visuales + metadatos).

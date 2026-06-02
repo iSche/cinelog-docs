@@ -1,0 +1,86 @@
+---
+title: Vista Lineal vs Vista Producción
+lastUpdated: 2026-05-23
+description: "Dos vistas sobre los mismos planos: orden de guion vs orden de día de rodaje. Cubre la regla de división de escena parcial, los banners, la selección con alcance de escena, la auto-selección del encabezado de escena, la sincronización entre vistas, y cómo difiere eliminar entre las dos vistas."
+---
+
+Lineal y Producción son dos vistas de los mismos planos. Lineal está en orden de guion: la forma en que lo leen el director y el supervisor de guion. Producción está en orden de día de rodaje: la forma en que el 1er AD planifica el horario. Todo lo demás en esta guía es sobre las diferencias.
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction) y [Lo esencial de la lista de planos](/es/guides/shot-list/essentials).
+
+## Cambiar entre vistas
+
+Alterna en el encabezado de vista sobre la lista. `Shift + L` alterna el diseño de columna (ajustado ↔ desplazamiento), útil cuando quieres ver más columnas a la vez.
+
+Ambas vistas muestran los mismos planos. Las ediciones hechas en una aparecen en la otra inmediatamente.
+
+## La regla de división de escena parcial (solo Producción)
+
+En la vista Producción reorganizarás planos por día de rodaje. La mayor parte del tiempo moverás bloques de escena enteros. Pero si mueves *parte* de una escena a un día diferente, CineLog divide la escena en el origen: los planos movidos se convierten en un segmento separado en el destino, y los planos no movidos se quedan donde estaban bajo un encabezado separado. Ambos segmentos siguen perteneciendo a la misma escena narrativamente, pero se programan independientemente.
+
+Esta es la única forma en que el horario puede representar "rodamos la mitad de la escena 14 el martes y la otra mitad el viernes". Puede parecer un bug la primera vez que pasa; no lo es.
+
+## Seleccionar en la vista Producción
+
+La vista Producción impone una regla de alcance de escena en la multi-selección para proteger la agrupación por día de rodaje:
+
+- Puedes seleccionar cualquier subconjunto de planos **dentro de una sola escena**.
+- Puedes seleccionar uno o más **bloques de escena enteros** (con sus encabezados).
+- **No** puedes mezclar selecciones parciales de diferentes escenas.
+
+Si tu selección es inválida, el destino del drop no abrirá un hueco al arrastrar — la fila volverá a su posición original al soltar.
+
+**La vista Lineal no tiene tal restricción.** Mezcla libremente.
+
+### Seleccionar una escena entera (encabezado auto-seleccionado)
+
+No agarras el encabezado de escena directamente. Selecciona todos los planos bajo él — una vez que todos estén seleccionados, el encabezado se añade a la selección automáticamente. Deselecciona cualquier plano y el encabezado se deselecciona también. Arrastra cualquier fila seleccionada y el bloque de escena entero se mueve junto.
+
+Este es el mecanismo por el cual "mover una escena entera" funciona en cualquiera de las vistas.
+
+## Banners
+
+Los banners son filas que no son planos y que marcan pausas para comer, traslados de compañía, cierres u otros marcadores de horario. Existen solo en la vista Producción.
+
+- **Añadir un banner.** En Producción, `Cmd / Ctrl + N` añade un banner en lugar de un plano. O usa la barra de herramientas.
+- **Mover un banner.** El mismo mecanismo de arrastre que los planos.
+- **Eliminar un banner.** Clic derecho → Eliminar.
+
+Insertar un banner en mitad de una escena divide la escena circundante en el banner: los planos de arriba se quedan bajo el encabezado original, los planos de abajo reciben un nuevo encabezado insertado encima. Eliminar un banner que está entre dos segmentos de la misma escena los fusiona de vuelta en uno solo.
+
+## Sincronización entre vistas
+
+Las ediciones y reordenamientos son inmediatos y bidireccionales dentro de la misma vista, pero las dos vistas se actualizan entre sí de forma un poco diferente:
+
+- Editar la descripción de un plano en Lineal → la misma edición es visible en Producción.
+- Añadir un plano en Lineal → aparece en Producción una vez que lo asignes a un día.
+- Reordenar en Lineal → **no** cambia el horario de Producción; el horario tiene su propio orden.
+- Reordenar en Producción → cambia solo el horario, no el orden de guion en Lineal.
+
+## Eliminar difiere entre vistas
+
+Esto despista a los usuarios nuevos:
+
+- **Eliminar en Lineal** elimina el plano del proyecto por completo. Desaparece de todos los días de Producción también.
+- **Eliminar en Producción** elimina el plano del horario solo para ese día. El plano sigue existiendo en Lineal y se puede reprogramar más tarde.
+
+Así que "eliminar en Lineal" significa *eliminar*; "eliminar en Producción" significa *desprogramar*.
+
+## La exportación a PDF se adapta a la vista
+
+`Cmd / Ctrl + P` exporta la vista activa a PDF. El renderizado es local — sin subida, sin renderizado del lado del servidor.
+
+- **Desde Lineal** — agrupado por escena, en orden de guion. Útil para el supervisor de guion.
+- **Desde Producción** — agrupado por día de rodaje, en orden programado. Útil para el 1er AD.
+
+Los medios grandes en los planos se reducen de calidad antes de exportar.
+
+## Si esto no funciona
+
+*"Mi escena se dividió cuando reprogramé parte de ella."* Es la regla de división de escena parcial. Mueve el bloque de escena entero para evitar la división.
+
+*"No puedo arrastrar mi multi-selección en la vista Producción."* Tu selección probablemente cruza escenas. Redúcela a una sola escena, o selecciona bloques de escena enteros (con sus encabezados).
+
+*"Eliminé un plano en Producción pero volvió."* Lo estás viendo en Lineal, donde sigue existiendo. Eliminar en Producción significa desprogramar, no eliminar.
+
+*"Mi banner eliminó un encabezado de escena cuando lo quité."* Cuando un banner está entre dos segmentos de la misma escena y eliminas el banner, los segmentos se fusionan de vuelta. El encabezado que veías era el del segundo segmento; eso es esperado.

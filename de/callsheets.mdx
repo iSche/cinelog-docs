@@ -1,0 +1,78 @@
+---
+title: Dispositionen (Dispo)
+lastUpdated: 2026-04-22
+description: "Erstelle und verwalte Dispositionen (Dispo) für Cast und Crew mit Terminierung und Ortsdetails."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Verwandle CineLog von einem Einstellungsplanungs-Tool in ein komplettes Produktionsbüro. Es aggregiert automatisch Cast-, Crew-, Zeit- und Ortsdetails in branchenübliche Dispositionen (Dispo) als PDFs, die sofort versandfertig sind und dir Stunden an Abschreibarbeit ersparen.
+
+## Kernfunktionen
+
+<CardGrid>
+<Card title="Live-Planungs-Engine">
+  Generiert zeitgenaue Pläne automatisch basierend auf deinen geschätzten Szenenzeiten. Wenn du einen "Crew Call" eingibst, kaskadieren die Zeiten für deinen ganzen Tag und das System warnt dich intelligent vor Engpässen.
+</Card>
+
+<Card title="Globale mehrsprachige PDFs">
+  Pixel-perfekter Export von Tier-1-Branchen-Dispos mit automatischen Font-Fallbacks für **Arabisch, Chinesisch, Japanisch, Hebräisch, Hindi, Ukrainisch** und mehr.
+</Card>
+
+<Card title="Automatisierte Logistik">
+  Hole sicher die nächsten Krankenhaus-Details über Google Places und ergänze eine genaue Wettervorhersage über die Google Weather API mit bis zu 10 Tagen Coverage.
+</Card>
+
+<Card title="One-Tap-Bestätigungen">
+  Schicke Dispositionen per E-Mail an dein ganzes Team mit eingebauter Anti-Threading-Technik. Die Crew bestätigt den Empfang mit einem einzigen Tipp und aktualisiert dein Live-Dashboard.
+</Card>
+
+<Card title="Mobile Workspace-Steuerung">
+  Tastatur-bewusste Overlays sorgen dafür, dass du schnelle Änderungen am Set vom Smartphone aus machen kannst, ohne den eigentlichen Dokumenttext zu verdecken.
+</Card>
+</CardGrid>
+
+## Detaillierte Nutzung & Workflows
+
+<Aside type="tip">
+Dispositionen ziehen automatisch Daten aus deiner Einstellungsliste und Cast & Crew, sodass du weniger Zeit mit dem manuellen Konfigurieren des Dokuments verbringst und mehr Zeit dafür hast, deine Einstellungen vorzubereiten.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Tagesplan generieren**
+
+Statt jede einzelne Einstellungszeit manuell einzutippen, rechnet die Planungs-Engine von CineLog für dich. Trage einen Crew Call ein und die Engine kaskadiert diese Zeit sofort nach unten und plottet automatisch die exakten Startzeiten für alle folgenden Szenen und Pausen basierend auf ihren geschätzten Zeiten.
+
+</li>
+<li>
+
+**Talent- & Crew-Zeiten verwalten**
+
+Klicke in die Talent- oder Crew-Bereiche, um die Liste auf genau die Personen zu reduzieren, die an diesem Tag gebraucht werden. Setze individuelle Call-Zeiten, Hair & Make-up sowie Wardrobe-Zeiten pro Person und ordne sie per Drag-and-Drop nach erwarteter Ankunft an.
+
+</li>
+<li>
+
+**PDF-Export und E-Mail-Versand**
+
+Sorge dafür, dass jeder weiß, was läuft. Klicke auf **Export**, um eine branchenübliche PDF mit deinem Firmenlogo zu erstellen, oder drücke **Senden**, um getrackte E-Mail-Sendungen direkt in die Tasche deines Teams zu schicken.
+
+</li>
+
+</ol>
+</Steps>
+
+## Integriertes Daten-Ökosystem
+
+<Aside type="tip">
+Der Plan in der Disposition ist ein bidirektionaler Viewport auf deine Einstellungsliste. Eine Szenenreihenfolge oder Schätzung in der Disposition zu bearbeiten, aktualisiert _augenblicklich_ dein zugrundeliegendes Einstellungslisten-Layout via CineSync.
+</Aside>
+
+<Aside type="tip" title="Vorteile der Daten-Routing">
+-   **Cast & Crew-Flüsse**: Talent-Namen, Crew-Rollen und Kontaktdetails fließen strikt aus deinem zentralen Cast & Crew-Hub. Einen Schauspieler zuzuweisen, füllt seine Daten dynamisch ein.
+-   **Garantien beim Fehler-Handling**: Jeder ungültige Planengpass zeigt deutliche gelbe/rote UI-Warnungen, die Timeline-Konflikte verhindern.
+-   **Globales Zugriffs-Routing**: Jeder, der einen Dispositions-Link erhält, wird intelligent zur Kontoerstellung geleitet und erhält strikt nur den Zugriff, den seine Rolle erlaubt.
+</Aside>

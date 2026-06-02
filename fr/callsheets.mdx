@@ -1,0 +1,78 @@
+---
+title: Feuilles de Service
+lastUpdated: 2026-04-22
+description: "Génère et gère les feuilles de service pour le casting et l'équipe avec planification et détails de localisation."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Transforme CineLog d'un utilitaire de planification de plans en un bureau de production complet. Il agrège automatiquement les détails du Casting, de l'Équipe, du Planning et des Lieux dans des PDF aux normes de l'industrie, prêts pour une distribution immédiate, te faisant gagner des heures de transcription.
+
+## Fonctionnalités principales
+
+<CardGrid>
+<Card title="Moteur de planning en direct">
+  Génère automatiquement des plannings précis à la minute basés sur tes durées estimées de scènes. Saisir un « appel équipe » fait cascader les heures de toute ta journée, t'avertissant intelligemment des goulots d'étranglement.
+</Card>
+
+<Card title="PDF multilingues globaux">
+  Export pixel-perfect de feuilles de service de premier rang avec des replis de police automatiques pour **l'arabe, le chinois, le japonais, l'hébreu, l'hindi, l'ukrainien**, et plus encore.
+</Card>
+
+<Card title="Logistique automatisée">
+  Récupère en toute sécurité les détails de l'hôpital le plus proche via Google Places et injecte une prévision météo précise via l'API Google Weather avec jusqu'à 10 jours de couverture.
+</Card>
+
+<Card title="Confirmations en un clic">
+  Envoie les feuilles de service à toute ton équipe par e-mail avec une technologie anti-thread intégrée. L'équipe confirme la réception en un clic, mettant à jour ton tableau de bord en direct.
+</Card>
+
+<Card title="Contrôles mobiles">
+  Les superpositions adaptées au clavier garantissent que tu peux facilement effectuer des modifications rapides depuis ton smartphone sans jamais masquer le texte du document.
+</Card>
+</CardGrid>
+
+## Utilisation détaillée et flux de travail
+
+<Aside type="tip">
+Les Feuilles de Service tirent automatiquement les données de ton Découpage Technique et de tes listes Casting et Équipe, ce qui veut dire que tu passeras moins de temps à configurer manuellement le document et plus de temps à te préparer à cadrer tes plans.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Générer un planning quotidien**
+
+Au lieu de taper manuellement chaque heure de plan, le moteur de planning de CineLog fait les calculs pour toi. Ajoute un appel équipe et le moteur fait immédiatement cascader cette heure vers le bas, traçant automatiquement les heures de début exactes pour toutes les scènes et pauses suivantes en fonction de leurs durées estimées.
+
+</li>
+<li>
+
+**Gérer les horaires des talents et de l'équipe**
+
+Clique dans les sections Talents ou Équipe pour réduire la liste à exactement qui est requis ce jour-là. Définis des heures d'appel individuelles, des heures de Coiffure et Maquillage et des heures de Costumes par personne, puis utilise le glisser-déposer pour les réorganiser par ordre d'arrivée prévu.
+
+</li>
+<li>
+
+**Export PDF et envois par e-mail**
+
+Assure-toi que tout le monde sait exactement ce qui se passe. Clique sur **Exporter** pour formater un PDF aux normes de l'industrie portant le logo de ton entreprise, ou clique sur **Envoyer** pour expédier des envois d'e-mails suivis directement dans la poche de ton équipe.
+
+</li>
+
+</ol>
+</Steps>
+
+## Écosystème de données intégré
+
+<Aside type="tip">
+Le planning des Feuilles de Service agit comme une vue bidirectionnelle de ton Découpage Technique. Modifier l'ordre des scènes ou une estimation dans la Feuille de Service met à jour _instantanément_ la mise en page sous-jacente de ton Découpage Technique via CineSync.
+</Aside>
+
+<Aside type="tip" title="Avantages du routage de données">
+-   **Flux Casting et Équipe** : Les noms des talents, les rôles de l'équipe et les détails de contact proviennent strictement de ton hub central Casting et Équipe. Assigner un acteur remplit dynamiquement ses données.
+-   **Garanties de gestion des erreurs** : Tout goulot d'étranglement de planning invalide affiche des alertes UI jaunes/rouges marquées empêchant les conflits de chronologie.
+-   **Routage d'accès global** : Toute personne recevant un lien de Feuille de Service est intelligemment dirigée vers la création d'un compte, gagnant accès strictement à ce que son rôle dicte.
+</Aside>

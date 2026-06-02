@@ -1,0 +1,47 @@
+---
+title: Focus mode
+lastUpdated: 2026-05-23
+description: "Filter the shot list to one or more scenes. Covers entering Focus, multi-scene mode, the auto-create behaviour on overflow, and the script sidebar."
+---
+
+Focus mode is the shot list filtered to one or more scenes. Useful for working through coverage scene by scene without scrolling through everything else.
+
+## Entering Focus
+
+- `Cmd / Ctrl + F` enters Focus on the scene you're currently looking at.
+- `Shift + S` opens the scene picker dialog — type a scene number to jump.
+
+In the picker, **Select** replaces your focus with the typed scene; **Add** appends it to the current focus set.
+
+## Navigating between scenes
+
+Once focused:
+
+- `←` / `→` — replace the focus with the previous / next scene.
+- `Cmd + ←` / `Cmd + →` — **add** the previous / next scene to the focus (multi-scene mode).
+
+Multi-scene focus shows several scenes' shots together, in script order.
+
+## Adding shots while focused
+
+`Cmd / Ctrl + N` adds a new shot to the *first* focused scene.
+
+## Auto-create on overflow
+
+If you press `→` past the last scene in the project, CineLog creates a new empty scene at the end and focuses it. Same with `←` before the first scene. Useful for outline-style work; surprising if you over-pressed the arrow key. To clean up, exit Focus and delete the empty scene from Linear if you didn't want it.
+
+## The script sidebar
+
+In Linear view (not Focus), `Shift + S` toggles a side-by-side script sidebar. The script and the shot list scroll in sync — useful for line-by-line shot planning.
+
+The same shortcut means something different in Focus mode: there it opens the scene picker (above). Same key, two contexts.
+
+## Exiting
+
+`Cmd / Ctrl + F` or `Cmd / Ctrl + B` returns to Linear view.
+
+## If this isn't working
+
+*"I pressed `→` and got a new empty scene I didn't want."* You went past the last scene. Exit Focus (`Cmd + F`) and delete the empty scene from Linear.
+
+*"`Shift + S` is doing different things on different screens."* It is, by design. In Linear it toggles the script sidebar; in Focus mode it opens the scene picker.

@@ -1,0 +1,254 @@
+---
+title: Feuilles de service
+lastUpdated: 2026-05-23
+description: "Feuilles de service quotidiennes dans CineLog — en-tête et heure d'appel, lieux, planning avec cascade temporelle, météo, sections personnel, message équipe en texte riche, envoi et suivi de confirmation, export PDF."
+---
+
+Une feuille de service dans CineLog est le plan de production quotidien : le planning, le lieu, les personnes, la météo et le message qui part avec l'e-mail. Elle est étroitement couplée au reste du projet — le planning sont les mêmes données que la vue Production pour ce jour-là, et le personnel vient directement du Casting et Équipe.
+
+Ce guide suppose [Les bases](/fr/guides/introduction) et [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production).
+
+## Créer une feuille de service
+
+Les feuilles de service sont basées sur le jour — une par Jour de production. Elles apparaissent automatiquement comme sous-entrées sous **Feuilles de Service** dans la barre latérale ; clique sur un jour pour ouvrir sa feuille de service.
+
+Lorsque tu crées une nouvelle feuille de service, CineLog l'amorce à partir de tes jours précédents plutôt que de partir d'une page blanche :
+
+- Si un jour précédent a utilisé **le même lieu**, ta nouvelle feuille de service commence avec l'équipe et les adresses de ce lieu déjà remplies.
+- Sinon, si tu as **trois feuilles de service précédentes ou plus** qui partagent la même équipe, ces affectations d'équipe sont reportées.
+- Sinon, la feuille de service **clone du jour immédiatement précédent**.
+- Si aucune de ces conditions ne s'applique (premier jour du projet), tu obtiens une feuille de service vide.
+
+Tu peux modifier tout ce qui a été amorcé ; c'est juste un point de départ.
+
+## L'en-tête
+
+L'en-tête s'étend en haut et porte les informations clés du jour en un coup d'œil.
+
+### Heure d'appel générale
+
+Le champ le plus important. Définit l'heure de début de base pour la journée (par exemple, 08:00). Clique pour l'éditer. Cette heure ancre la cascade temporelle du planning (ci-dessous) et est l'heure par défaut envoyée par e-mail à chaque destinataire, sauf s'il a une heure d'appel personnelle définie (voir [Personnel](#personnel-sections)).
+
+### Date
+
+La date de production. Optionnelle — elle est tirée du Jour de production du découpage technique, mais tu peux la définir ou la remplacer manuellement. Affichée dans l'en-tête et sur le PDF exporté.
+
+### Branding de l'entreprise
+
+Le côté gauche de l'en-tête porte le profil de ton entreprise (nom, adresse, téléphone) et le logo. Téléverse le logo une fois au niveau de l'espace de travail via la boîte de dialogue du profil d'entreprise ; il apparaît ensuite dans l'en-tête de chaque feuille de service et sur les PDF envoyés par e-mail.
+
+### Nom du projet
+
+Côté droit de l'en-tête. Tiré de l'entité projet — pas d'édition séparée ici.
+
+### Paramètres d'affichage (comportement de l'en-tête)
+
+Ouvre la fenêtre des paramètres d'affichage depuis le menu supérieur de la feuille de service pour basculer :
+
+- **Format de l'heure** — 12 heures (`8:00 AM`) ou 24 heures (`08:00`).
+- **Unité de température** — °F ou °C.
+
+Les deux choix sont par utilisateur et persistent à travers les sessions.
+
+## Lieux
+
+Une liste réorganisable de lieux de tournage nommés pour la journée. Chaque lieu a les champs suivants :
+
+- **Nom du décor et adresse.** Note optionnelle à côté.
+- **Stationnement.** Un nom de stationnement + champ de détail (où vont les camions, où l'équipe se gare).
+- **Hôpital.** Nom et adresse de l'hôpital le plus proche — important pour la sécurité/la logistique d'urgence.
+
+Ajoute et modifie via la superposition de lieu. Sur bureau, tu peux maintenir l'appui sur une ligne de lieu et faire glisser pour réorganiser ; sur téléphone, double-tape une ligne pour ouvrir la superposition d'édition.
+
+**L'autocomplétion Google Places** est câblée dans chaque champ d'adresse. Commence à taper et tu verras des lieux suggérés ; en choisir un remplit l'adresse et stocke les coordonnées afin que la recherche météo (ci-dessous) ait un lieu sur lequel travailler.
+
+Pour masquer toute la section des lieux de la feuille de service (par exemple, quand le lieu n'est pas encore verrouillé), utilise la bascule de visibilité de section dans les paramètres d'affichage.
+
+## Planning
+
+Le planning est la vue Production filtrée à ce jour. Les plans et bannières sur la feuille de service sont les **mêmes objets** que dans Production — les réorganiser ou les éditer ici revient à les réorganiser ou les éditer là-bas. La grammaire des gestes est identique à celle de n'importe où ailleurs dans l'application.
+
+Trois colonnes : **heure de début** | **scène + plan** | **durée estimée**.
+
+### Bannières
+
+Les bannières sont des lignes non-plan qui marquent les pauses repas, les déplacements d'équipe, les fins de journée ou d'autres marqueurs de planning. Elles n'existent qu'en vue Production et sur le planning. Ajoute une bannière depuis la barre d'outils (ou `Cmd / Ctrl + N` en Production) ; nomme-la (« Déjeuner », « Déplacement d'équipe »), définis sa durée.
+
+Insérer une bannière en milieu de scène divise la scène environnante à la bannière — voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production) pour le comportement complet de division-et-fusion.
+
+### La cascade temporelle
+
+Tu n'entres pas une heure de début pour chaque ligne. Le planning a un moteur temporel en cascade : il lit l'heure d'appel générale, puis descend la liste en ajoutant la durée estimée de chaque ligne pour calculer l'heure de début de la ligne suivante.
+
+Si l'heure de début explicite d'une ligne entre en conflit avec ce que la cascade aurait produit (tu as sur-planifié), l'heure est mise en surbrillance **rouge**. S'il y a un écart entre les lignes (la cascade a du mou), elle s'affiche en **jaune**. Dans les deux cas, la propre durée estimée de la ligne est ce qui contrôle la suivante, pas l'écart.
+
+### Réorganiser le planning
+
+Bureau : maintiens l'appui sur une bannière ou une ligne de plan et fais glisser. Mobile : double-tape sur une ligne pour ouvrir la superposition d'édition (pas de glissement en ligne). Les réorganisations persistent jusque dans la vue Production, puisque ce sont les mêmes objets.
+
+La section planning ne peut pas être masquée — elle est toujours affichée.
+
+## Météo
+
+Si la feuille de service a un lieu avec des coordonnées, CineLog récupère automatiquement la météo du jour lorsque tu ouvres la feuille de service pour la première fois. L'affichage montre :
+
+- Température actuelle et « ressentie »
+- Température basse quotidienne
+- Lever et coucher du soleil
+- Conditions, humidité, vitesse du vent
+
+L'unité de température suit le paramètre d'affichage (°F / °C). Pour remplacer ou saisir manuellement la météo (la prévision n'a pas été récupérée, ou tu veux utiliser une source différente), touche le bloc météo et édite. Le remplacement est stocké sur la feuille de service et réutilisé à chaque rechargement.
+
+## Sections Personnel
+
+Cinq sections distinctes, chacune avec son propre rôle et sa propre disposition. Les personnes viennent du [Casting et Équipe](/fr/guides/managing-cast-crew) du projet ; la feuille de service les référence, ne les copie pas.
+
+### Équipe clé (ligne d'en-tête)
+
+Une liste de référence rapide dans la deuxième ligne de l'en-tête montrant les rôles clés du jour (Réalisateur, Directeur Photo, 1er AR, Producteur, etc.) avec noms et numéros de téléphone. Jusqu'à environ six emplacements. Clique sur le bouton d'édition pour choisir quels rôles apparaissent.
+
+### Talents
+
+Tableau à trois colonnes — avatar, nom, rôle. Ajoute des talents depuis les contacts du projet. Clique sur n'importe quelle ligne pour ajouter des notes ou définir une heure d'appel. Maintiens l'appui sur une ligne pour réorganiser.
+
+### Équipe
+
+La plus grande section, groupée par département. Sur bureau, une grille multi-colonnes ; sur téléphone, une liste verticale de cartes. Chaque membre de l'équipe affiche avatar, nom, rôle et (si défini) heure d'appel et téléphone. Même modèle d'édition que Talents.
+
+### Clients / Agence
+
+Tableau à trois colonnes pour les représentants clients, les producteurs d'agence, les cadres — toute personne extérieure à l'équipe de production qui doit être sur la feuille. Même modèle d'édition que Talents.
+
+### Figurants
+
+Grille ou liste extensible d'interprètes d'arrière-plan. Pas d'avatars dans cette section (intentionnel — garde la mise en page serrée quand il y a beaucoup de figurants).
+
+### Notes par personne
+
+Chaque ligne de personne dans Talents, Équipe ou Clients peut porter des notes privées. Ces notes sont visibles au producteur dans l'UI de la feuille de service, mais sur le PDF envoyé par e-mail, elles n'apparaissent **que sur la copie de cette personne** — pas sur celle de quelqu'un d'autre. Utile pour les instructions individuelles (« se garer à l'entrée latérale », « essayage de costumes avant l'appel »).
+
+### Heure d'appel par personne
+
+Chaque personne peut aussi avoir une heure d'appel personnelle qui remplace l'heure d'appel générale. Lorsque tu envoies la feuille de service, l'e-mail et le PDF de chaque destinataire mettent en surbrillance leur heure personnelle. Les personnes sans heure personnelle obtiennent l'heure d'appel générale.
+
+### Photos de profil
+
+Chaque personne contrôle sa propre photo de profil depuis son écran Compte — le propriétaire du projet ne peut pas en téléverser une au nom d'un contact. Jusqu'à ce que quelqu'un téléverse sa propre photo, il est affiché avec un avatar d'initiales codé par couleur (déterministe à partir de son ID utilisateur, donc la même personne obtient toujours la même couleur sur chaque feuille de service).
+
+Pour les contacts qui n'ont pas encore rejoint CineLog (tu les as ajoutés à Casting et Équipe mais ils n'ont pas accepté l'invitation), l'avatar d'initiales est la seule option. Une fois qu'ils se connectent et téléversent leur propre photo, elle se propage partout où ils sont référencés — y compris sur les feuilles de service passées sur lesquelles ils figuraient.
+
+Désactive « Photos de profil » dans les paramètres d'affichage si tu veux des avatars d'initiales uniquement, peu importe.
+
+### Visibilité des sections
+
+Chaque section (Lieux, Clients, Talents, Équipe, Figurants) peut être masquée de la feuille de service via la fenêtre des paramètres d'affichage. La bascule masque la section à la fois de l'UI et du PDF exporté.
+
+## Message équipe
+
+Un bloc en texte enrichi pour le message qui part aux côtés du PDF de la feuille de service. Même message pour tous les destinataires — pour les instructions individuelles, utilise les notes par personne ci-dessus.
+
+La barre d'outils de l'éditeur prend en charge :
+
+- **Gras, italique, souligné.**
+- **Couleur.** Huit échantillons soignés (Blanc, Or, Cuivre, Rose, Lavande, Verre marin, Sauge, Parchemin).
+- **Intégration d'image.** Clique sur le bouton image, choisis une image. Téléverse vers le CDN de CineLog, jusqu'à 2 Mo, JPEG / PNG / WebP uniquement. L'URL de l'image est intégrée dans le message et apparaît dans le corps de l'e-mail.
+- **Effacer la mise en forme.**
+
+L'e-mail rendu applique le même formatage côté destinataire. Le serveur assainit le message avant l'envoi — seules les balises de formatage autorisées passent.
+
+## Notes de production
+
+Un champ en pied de page pour les notes à l'échelle de la production, les rappels de sécurité, les protocoles COVID ou tout ce que tu veux en bas du PDF de chaque destinataire. Apparaît centré, en majuscules.
+
+## Envoyer et suivre les confirmations
+
+Lorsque la feuille de service est prête, **Envoyer** dans la barre de menu supérieure ouvre la boîte de dialogue d'envoi.
+
+### Choisir les destinataires
+
+Deux étapes :
+
+1. **Destinataires.** Une liste groupée par section (Talents, Équipe, Figurants, Clients), triée par département et rôle. Toute personne avec une heure d'appel sur la feuille est présélectionnée par défaut. Des bascules en masse permettent de sélectionner ou désélectionner toute une section à la fois.
+2. **Message.** Message optionnel supplémentaire spécifique à cet envoi, superposé au message équipe.
+
+### Ce que les destinataires reçoivent
+
+Chaque destinataire reçoit :
+
+- Un PDF personnalisé avec son heure d'appel mise en surbrillance.
+- Le message équipe (texte enrichi) plus tout message optionnel que tu as ajouté.
+- Ses notes personnelles, le cas échéant (ajoutées au corps de l'e-mail, pas sur le PDF visible aux autres).
+- Un **lien de confirmation** — une URL unique protégée par jeton à `links.cinelog.com/confirm-call-sheet/<token>`. Cliquer sur le lien ouvre un portail aux couleurs de CineLog où il touche « Confirmer » pour accuser réception.
+
+### Page Envois
+
+Ouvre la page **Envois** depuis le menu supérieur de la feuille de service (ou navigue vers `…/call-sheets/<day>/sendouts`) pour voir à qui la feuille de service a été envoyée. Les destinataires sont groupés par **lot d'envoi** — chaque pression sur Envoyer crée un nouveau lot, donc renvoyer après modifications préserve l'historique complet. Chaque en-tête de lot affiche un décompte « N / M confirmés ».
+
+Chaque ligne de destinataire affiche :
+
+- **Statut de livraison** — l'un de :
+  - **en file** — remis au fournisseur de messagerie, pas encore envoyé.
+  - **livré** — accepté par le serveur de messagerie du destinataire.
+  - **ouvert** — le client de messagerie du destinataire a ouvert le message.
+  - **rejeté** — le serveur de messagerie du destinataire l'a rejeté (mauvaise adresse, boîte aux lettres pleine).
+  - **échec** — le fournisseur de messagerie n'a pas pu envoyer.
+- **Horodatage de confirmation** — une fois qu'il clique sur son lien.
+
+La livraison et la confirmation sont indépendantes : un e-mail peut être livré sans être confirmé (le destinataire ne l'a pas ouvert ou n'a pas encore cliqué), ou confirmé rapidement (il était sur sa messagerie quand il est arrivé).
+
+### Limites de débit
+
+Pour prévenir les envois incontrôlés, CineLog applique deux plafonds :
+
+- **Par feuille de service :** jusqu'à 10 envois par heure.
+- **Par espace de travail :** jusqu'à 1000 e-mails par mois.
+
+Ce sont des limites généreuses pour un usage normal ; tu ne les atteindras que si quelque chose boucle ou si tu fais une opération inhabituellement grande.
+
+### Renvois et modifications
+
+Tu peux renvoyer la même feuille de service après l'avoir modifiée (un changement de scénario, un changement d'équipe, une note de costumes). Le nouvel envoi crée un lot frais sur la page Envois ; les lots précédents restent intacts pour la traçabilité.
+
+## Export PDF
+
+Deux façons d'obtenir un PDF, selon le cas d'usage :
+
+### Export local depuis la barre d'outils
+
+`Cmd / Ctrl + P` ou le bouton d'export dans le menu supérieur ouvre la boîte de dialogue d'export. Tu peux définir les marges de page (haut, bas, gauche, droite en points), puis exporter. Le rendu est local — pas de téléversement, pas de rendu côté serveur — donc fonctionne hors-ligne. Utile quand tu veux un PDF à distribuer en dehors du flux e-mail (Slack, WhatsApp, remise en main propre).
+
+### PDF par destinataire au moment de l'envoi
+
+Lorsque tu appuies sur Envoyer, le serveur génère un PDF personnalisé pour chaque destinataire avec son heure d'appel mise en surbrillance et ses notes personnelles attachées. Tu ne les déclenches pas directement — c'est un effet secondaire de l'envoi.
+
+Les deux voies d'export respectent les paramètres d'affichage : les sections masquées restent masquées, l'unité de température et le format de l'heure sont appliqués. Les médias volumineux sont sous-échantillonnés.
+
+Les scripts internationaux (arabe, hébreu, devanagari, CJK, thaï) sont rendus correctement via les replis de police.
+
+## Permissions
+
+L'édition et l'envoi des feuilles de service sont régis par la ressource ACL `call_sheets` du projet. Les visualiseurs peuvent voir les feuilles de service auxquelles ils ont accès ; seuls les rôles avec permission d'édition peuvent modifier le planning, les personnes ou le message ; l'envoi requiert la même permission d'édition.
+
+## Comportement hors-ligne
+
+L'édition des feuilles de service fonctionne hors-ligne — les modifications sont enregistrées dans la base de données locale et synchronisées à la reconnexion, comme tout le reste dans CineLog. L'**envoi** requiert la connectivité (c'est un flux d'e-mail sortant). L'**export PDF local** fonctionne hors-ligne.
+
+## Si ça ne marche pas
+
+*« Ma nouvelle feuille de service s'est pré-remplie avec des choses que je n'ai pas demandées. »* C'est le comportement d'amorçage intelligent. CineLog copie depuis une feuille de service précédente correspondante (même lieu → même équipe + lieux, sinon le jour immédiatement précédent) pour que tu ne commences pas avec une page blanche chaque jour. Modifie ou efface ce que tu ne veux pas.
+
+*« L'ordre de mon planning ne correspond pas à la vue Production. »* Il devrait — ce sont les mêmes données. S'ils diffèrent, l'indicateur de synchronisation a probablement des changements en attente. Attends qu'il se vide.
+
+*« Comment changer la photo de profil d'un membre d'équipe ? »* Tu ne peux pas — les photos de profil sont contrôlées par chaque utilisateur depuis son propre écran Compte. En tant que propriétaire de projet, tu ne peux pas en téléverser une en son nom. Les personnes qui n'ont pas encore rejoint CineLog affichent l'avatar d'initiales ; une fois qu'elles se connectent et téléversent, leur photo apparaît sur chaque feuille de service sur laquelle elles figurent.
+
+*« L'heure du planning est mise en surbrillance rouge / jaune. »* Rouge signifie que tu as sur-planifié — l'heure de début explicite sur cette ligne contredit ce que la cascade temporelle a calculé. Jaune signifie qu'il y a un écart entre les lignes que la cascade a laissé non comblé. Ajuste les durées ou l'heure de début pour réconcilier.
+
+*« La météo ne s'est pas chargée. »* L'auto-récupération a besoin d'un lieu avec coordonnées. Définis un lieu via l'autocomplétion Google Places (pour que la lat/lng soit capturée), puis recharge la feuille de service. Tu peux aussi saisir la météo manuellement.
+
+*« Un membre d'équipe dit qu'il n'a pas reçu la feuille de service. »* Ouvre la page Envois pour ce jour et trouve sa ligne. **livré** ou **ouvert** signifie qu'elle a quitté CineLog et a été acceptée par son fournisseur de messagerie — le problème est en aval (dossier spam, règles de boîte aux lettres, supprimé par accident). **rejeté** ou **échec** signifie que l'e-mail ne lui est jamais parvenu ; vérifie l'adresse dans Casting et Équipe et renvoie. **en file** signifie qu'il est encore en route ; attends une minute.
+
+*« Le décompte des confirmés n'augmente pas. »* La confirmation requiert que le destinataire clique sur le lien dans l'e-mail. La livraison seule ne suffit pas.
+
+*« J'ai atteint une limite d'envoi. »* Tu as dépassé 10 envois dans la dernière heure pour cette feuille de service, ou 1000 e-mails dans le dernier mois pour l'espace de travail. Attends ou contacte-nous si tu as besoin d'une limite plus élevée.
+
+*« L'image de mon message équipe ne s'est pas téléversée. »* Vérifie le fichier : moins de 2 Mo, JPEG / PNG / WebP. Les autres formats et les fichiers surdimensionnés sont rejetés.

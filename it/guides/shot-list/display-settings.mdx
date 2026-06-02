@@ -1,0 +1,49 @@
+---
+title: Impostazioni di Visualizzazione
+lastUpdated: 2026-05-23
+description: "Visibilità e ordine delle colonne, colonne personalizzate, formato di numerazione inquadrature, altezza riga — tutto ciò che controlla come la lista delle inquadrature appare sullo schermo."
+---
+
+Le Impostazioni di Visualizzazione controllano come appare la lista delle inquadrature — quali colonne sono visibili, in che ordine, come sono numerate le inquadrature. Le impostazioni sono a livello di progetto e si propagano via CineSync, quindi le modifiche fatte su desktop appaiono sull'app mobile in pochi secondi.
+
+`Shift + D` attiva/disattiva l'overlay delle Impostazioni di Visualizzazione.
+
+## Visibilità delle colonne
+
+Attiva/disattiva qualsiasi colonna dall'overlay delle Impostazioni di Visualizzazione. Per modifiche veloci senza aprire le Impostazioni di Visualizzazione, i tasti numero `1` fino a `9` attivano/disattivano le prime nove colonne direttamente dalla vista lista.
+
+## Riordinare le colonne
+
+Trascina una riga colonna all'interno dell'overlay delle Impostazioni di Visualizzazione per riordinare. Il riordino non avviene trascinando l'intestazione della colonna sulla lista principale — è un'aspettativa comune che qui non si applica.
+
+Le colonne di sistema — Inquadratura, Scena, Giorno — sono bloccate nelle posizioni più a sinistra e rifiutano rilasci che le sposterebbero.
+
+## Colonne personalizzate
+
+Aggiungi le tue colonne dalle Impostazioni di Visualizzazione. Specifica un nome e un tipo: testo, dropdown, checkbox, o qualsiasi altro tipo di campo supportato. Una volta aggiunta, la colonna appare nella lista desktop e nella vista espansa mobile automaticamente — nessun setup per piattaforma. Le colonne personalizzate partecipano all'esportazione PDF.
+
+## Formato di numerazione delle inquadrature
+
+Sono supportati tre formati:
+
+- **Alfanumerico** — `1A`, `2C`. Scena + lettera.
+- **Decimale** — `1.1`, `2.3`.
+- **Sequenziale** — `1`, `2`, `47`. Continuo attraverso il progetto.
+
+Cambiare il formato rinumera ogni inquadratura. Se il copione è già stato allineato in un formato e cambi, dovrai riallineare — non c'è undo. Conferma con chiunque altro stia lavorando sul progetto prima di cambiare.
+
+## Altezza riga e modalità di visualizzazione
+
+`Shift + M` alterna tra altezze riga compatta ed espansa. Le Impostazioni di Visualizzazione hanno uno slider più fine se vuoi una dimensione intermedia.
+
+## Sincronizzazione tra dispositivi
+
+Tutte le Impostazioni di Visualizzazione sono a livello di progetto e si propagano via CineSync. Un producer che regola le colonne sul suo desktop vedrà lo stesso set di colonne sul suo iPad in pochi secondi.
+
+## Se non funziona
+
+*"Ho provato a trascinare un'intestazione di colonna sulla lista principale per riordinare, ma non succede nulla."* Il riordino avviene all'interno delle Impostazioni di Visualizzazione (`Shift + D`), non sull'intestazione della lista principale.
+
+*"Ho cambiato il formato del numero di inquadratura e ora i miei vecchi numeri sono spariti."* Il cambiamento è distruttivo e non ha undo. Contatta il supporto — la cronologia lato server può a volte aiutare.
+
+*"La mia colonna personalizzata è su desktop ma non su mobile."* Dovrebbe apparire automaticamente. Prova a forzare la chiusura e riapri l'app mobile. Se l'indicatore di sincronizzazione mostra modifiche in sospeso, la nuova colonna non si è ancora propagata.

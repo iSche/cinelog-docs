@@ -1,71 +1,46 @@
 ---
-title: Creating Storyboards
-lastUpdated: 2026-04-22
-description: "Upload previs images, map them to shots, and create storyboard panels in linear or grid layouts. Export production-ready PDF storyboards from CineLog."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-Storyboards allow you to visually pre-plan your film. In CineLog, the Storyboard module is directly integrated with your Shot List, meaning every image you upload is mapped to a specific, actionable shot.
-
-## 1. Uploading Media
-
-Before you can build a storyboard, you need visual assets. This could be hand-drawn sketches, reference photos from location scouting, or 3D previs renders.
-
-<Steps>
-1. **Open Media Explorer:** Click the **Media** icon in the left sidebar to open the Media Explorer.
-2. **Upload Files:** Drag and drop your image files into the upload zone, or click the upload button to select files from your computer.
-3. **Wait for Sync:** CineLog will upload your images to our secure cloud storage (GCS) and automatically compress them for fast loading.
-</Steps>
-
-<Aside type="caution">
-**Supported Formats:** Currently, the Media Explorer supports `.jpg`, `.png`, and `.webp` image formats. Video files are not supported for storyboard panels at this time.
-</Aside>
-
+title: Storyboards
+lastUpdated: 2026-05-23
+description: "Visual planning for one scene at a time — previs frames per shot, linear or grid layout, export to PDF. Reordering a storyboard reorders the underlying shots."
 ---
 
-## 2. Mapping Media to Shots
+A storyboard in CineLog is a visual view of one scene's shots, with previs frames attached. It isn't a separate copy of the data — it sits on top of the shot list, so reordering a storyboard reorders the underlying shots.
 
-Once your images are uploaded, you can start assigning them to the shots you created in your [Shot List](/guides/building-shot-list).
+This guide assumes [The basics](/guides/introduction).
 
-<Steps>
-1. **Navigate to Storyboards:** Open the Storyboards module using the left sidebar.
-2. **Select a Shot Panel:** Click the image placeholder area on any shot's storyboard panel.
-3. **Upload or Select:** The Media Explorer will open, allowing you to upload a new image or select an existing one from your media library to assign it to that shot.
-</Steps>
+## What a storyboard is
 
-When an image is mapped to a shot, any updates you make to the shot's description or camera angle in the Shot List will automatically reflect below the image in the Storyboard view!
+A view of a single scene's shots, showing previs frames and a few key shot fields. It doesn't duplicate shots; it's a layer over the shot list. Storyboard Views (saved layouts) appear as sub-entries under Storyboard in the sidebar.
 
----
+## Layouts
 
-## 3. Visual Layouts
+Two display modes:
 
-Depending on how you prefer to review your boards, CineLog offers two different visual layouts. You can toggle between them using the layout buttons in the top menu bar.
+- **Linear** — carousel-style, one shot at a time. Good for review presentations.
+- **Grid** — multiple shots side-by-side. Good for at-a-glance reference.
 
-<CardGrid>
-  <Card title="Linear Layout" icon="list-format">
-    Displays your storyboard panels in a horizontal timeline. This layout provides ample space below each image, displaying the full shot description, camera notes, and lens data in large, readable text. You can adjust the zoom to control how many panels are visible on screen.
-  </Card>
-  <Card title="Grid Layout" icon="app-window">
-    Displays your storyboard panels in a dense, multi-column grid (up to 10 columns) similar to a traditional printed storyboard page. Shot metadata is displayed below each panel for quick reference.
-  </Card>
-</CardGrid>
+Switch from the toolbar.
 
-<Aside type="tip">
-**Reordering via Grid:** If you need to quickly shuffle the sequence of a scene, switch to the Grid Layout. You can click and drag the actual image panels to rearrange the order of your shots visually!
-</Aside>
+## Adding previs frames
 
----
+Tap the previs cell on a shot. The media picker opens — same gesture grammar as cell editing in [The basics](/guides/introduction#2-editing-fields). Pick an image or video frame from the project's media library.
 
-## 4. Exporting Storyboards
+Each frame is a reference to a file in the media library, not a copy. Replacing the file in the library replaces it everywhere it's used.
 
-Storyboard exports require slightly different formatting than standard data tables, as they prioritize visual space over text density.
+## Reordering frames
 
-<Steps>
-1. **Navigate to Storyboards:** Open the Storyboards module.
-2. **Export:** Click the **"Export PDF"** button (printer icon) in the top right corner.
-3. **Format Selection:** A dialog will appear asking you to choose your layout preferences (e.g., 3 panels per page, 6 panels per page) to optimize for paper size and visibility.
-</Steps>
+Drag shots in the storyboard to reorder. The reorder applies to the underlying shots in the parent scene — there is no separate "storyboard order" that diverges from shot order. Shot letters update accordingly.
 
-<Aside>
-**Offline Rendering:** The PDF export engine runs entirely locally on your device using a background isolate. This means you can generate PDFs instantly, even if you are completely offline on a remote set!
-</Aside>
+## Display settings (per storyboard)
+
+Grid columns, spacing, aspect ratio (16:9, 2.35:1, 4:3). Adjust from the toolbar.
+
+## Export
+
+`Cmd / Ctrl + P` exports the storyboard to PDF, rendered locally.
+
+## If this isn't working
+
+*"I reordered my storyboard and now my shot letters changed."* Expected. Reordering a storyboard reorders the underlying shots; there's no separate storyboard order.
+
+*"I replaced a previs frame and it changed on another shot."* Previs frames are references to media library files. Replacing the file replaces it everywhere it's used. To use a different file, pick a new one from the library instead of replacing the file's contents.

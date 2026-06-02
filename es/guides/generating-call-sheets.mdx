@@ -1,0 +1,254 @@
+---
+title: Órdenes de rodaje
+lastUpdated: 2026-05-23
+description: "Órdenes de rodaje diarias en CineLog: encabezado y hora de convocatoria, localizaciones, horario con cascada de tiempos, meteorología, secciones de personal, mensaje de equipo con texto enriquecido, envío y seguimiento de confirmaciones, exportación a PDF."
+---
+
+Una orden de rodaje en CineLog es el plan de producción por día: el horario, la localización, las personas, el clima y el mensaje que sale con el correo. Está estrechamente acoplada al resto del proyecto: el horario son los mismos datos que la vista Producción para ese día, y el personal viene directamente de Elenco y Equipo.
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction) y [Lineal vs Producción](/es/guides/shot-list/linear-vs-production).
+
+## Crear una orden de rodaje
+
+Las órdenes de rodaje son por día: una por Día de Producción. Aparecen automáticamente como sub-entradas bajo **Órdenes de Rodaje** en la barra lateral; haz clic en un día para abrir su orden de rodaje.
+
+Cuando creas una nueva orden de rodaje, CineLog la prepara a partir de tus días anteriores en lugar de empezar en blanco:
+
+- Si un día anterior usó **la misma localización**, tu nueva orden de rodaje empieza con el equipo y las direcciones de esa localización ya rellenados.
+- Si no, si tienes **tres o más órdenes de rodaje anteriores** que comparten el mismo equipo, esas asignaciones de equipo se trasladan.
+- Si no, la orden de rodaje **se clona del día inmediatamente anterior**.
+- Si no se aplica ninguno de los anteriores (primer día del proyecto), obtienes una orden de rodaje en blanco.
+
+Puedes cambiar cualquier cosa que se haya prerrellenado; es solo un punto de partida.
+
+## El encabezado
+
+El encabezado recorre la parte superior y lleva la información clave del día de un vistazo.
+
+### Hora general de convocatoria
+
+El campo más importante. Establece la hora base de inicio del día (p. ej., 08:00). Haz clic para editar. Esta hora ancla la cascada de tiempos del horario (más abajo) y es la hora por defecto enviada por correo a cada destinatario a menos que tengan una hora de convocatoria personal establecida (ver [Personal](#personnel-sections)).
+
+### Fecha
+
+La fecha de producción. Opcional: se obtiene del Día de Producción de la lista de planos, pero puedes establecerla o anularla manualmente. Se muestra en el encabezado y en el PDF exportado.
+
+### Marca de la empresa
+
+El lado izquierdo del encabezado lleva tu perfil de empresa (nombre, dirección, teléfono) y el logo. Sube el logo una sola vez a nivel de espacio de trabajo mediante el diálogo de perfil de empresa; luego aparece en cada encabezado de orden de rodaje y en los PDFs enviados por correo.
+
+### Nombre del proyecto
+
+Lado derecho del encabezado. Se obtiene de la entidad de proyecto, sin edición separada aquí.
+
+### Ajustes de visualización (comportamiento del encabezado)
+
+Abre el popup de ajustes de visualización desde el menú superior de la orden de rodaje para alternar:
+
+- **Formato de hora** — 12 horas (`8:00 AM`) o 24 horas (`08:00`).
+- **Unidad de temperatura** — °F o °C.
+
+Ambas opciones son por usuario y persisten entre sesiones.
+
+## Localizaciones
+
+Una lista reordenable de localizaciones de rodaje nombradas para el día. Cada localización tiene estos campos:
+
+- **Nombre del set y dirección.** Nota opcional al lado.
+- **Aparcamiento.** Un campo de nombre y detalle de aparcamiento (dónde van los camiones, dónde aparca el equipo).
+- **Hospital.** Nombre y dirección del hospital más cercano: importante para la logística de seguridad/emergencia.
+
+Añade y edita a través de la superposición de localización. En escritorio, puedes mantener pulsada una fila de localización y arrastrarla para reordenar; en teléfono, toca dos veces una fila para abrir la superposición de edición.
+
+El **autocompletado de Google Places** está cableado en cada campo de dirección. Empieza a escribir y verás lugares sugeridos; al elegir uno se rellena la dirección y se almacenan las coordenadas para que la búsqueda meteorológica (abajo) tenga una localización con la que trabajar.
+
+Para ocultar toda la sección de localizaciones de la orden de rodaje (p. ej., cuando la localización aún no está fijada), usa el selector de visibilidad de sección en los ajustes de visualización.
+
+## Horario
+
+El horario es la vista Producción filtrada a este día. Los planos y banners en la orden de rodaje son los **mismos objetos** que en Producción: reordenarlos o editarlos aquí es lo mismo que reordenarlos o editarlos allí. La gramática de gestos es idéntica a cualquier otra parte de la app.
+
+Tres columnas: **hora de inicio** | **escena + plano** | **duración estimada**.
+
+### Banners
+
+Los banners son filas que no son planos y que marcan pausas para comer, traslados de compañía, cierres u otros marcadores de horario. Existen solo en la vista Producción y en el horario. Añade un banner desde la barra de herramientas (o `Cmd / Ctrl + N` en Producción); ponle un nombre ("Comida", "Traslado de compañía"), establece su duración.
+
+Insertar un banner en mitad de una escena divide la escena circundante en el banner — ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production) para el comportamiento completo de división y fusión.
+
+### La cascada de tiempos
+
+No introduces una hora de inicio para cada fila. El horario tiene un motor en cascada: lee la hora general de convocatoria, luego baja por la lista sumando la duración estimada de cada fila para calcular la hora de inicio de la siguiente.
+
+Si la hora de inicio explícita de una fila entra en conflicto con lo que habría producido la cascada (te has pasado de programación), la hora se resalta en **rojo**. Si hay un hueco entre filas (la cascada tiene holgura), se muestra en **amarillo**. En cualquier caso, la propia duración estimada de la fila es lo que controla la siguiente fila, no el hueco.
+
+### Reordenar el horario
+
+Escritorio: mantén pulsado un banner o una fila de plano y arrástralo. Móvil: toca dos veces una fila para abrir la superposición de edición (no hay arrastre en línea). Los reordenamientos persisten en la vista Producción, ya que son los mismos objetos.
+
+La sección de horario no se puede ocultar: siempre se muestra.
+
+## Meteorología
+
+Si la orden de rodaje tiene una localización con coordenadas, CineLog obtiene el clima del día automáticamente cuando abres la orden de rodaje por primera vez. La visualización muestra:
+
+- Temperatura actual y "sensación térmica"
+- Mínima diaria
+- Amanecer y atardecer
+- Condiciones, humedad, velocidad del viento
+
+La unidad de temperatura sigue el ajuste de visualización (°F / °C). Para anular o introducir el clima manualmente (no se obtuvo la previsión, o quieres usar otra fuente), toca el bloque del clima y edita. La anulación se almacena en la orden de rodaje y se reutiliza en cada recarga.
+
+## Secciones de personal
+
+Cinco secciones distintas, cada una con su propio rol y diseño. Las personas vienen del [Elenco y Equipo](/es/guides/managing-cast-crew) del proyecto; la orden de rodaje las referencia, no las copia.
+
+### Equipo Clave (fila del encabezado)
+
+Una lista de referencia rápida en la segunda fila del encabezado mostrando los roles clave del día (Director, DP, 1er AD, Productor, etc.) con nombres y números de teléfono. Hasta unas seis ranuras. Haz clic en el botón de edición para elegir qué roles aparecen.
+
+### Talento
+
+Tabla de tres columnas: avatar, nombre, rol. Añade talento desde los contactos del proyecto. Haz clic en cualquier fila para añadir notas o establecer una hora de convocatoria. Mantén pulsada una fila para reordenar.
+
+### Equipo
+
+La sección más grande, agrupada por departamento. En escritorio, una cuadrícula multi-columna; en teléfono, una lista vertical de tarjetas. Cada miembro del equipo muestra avatar, nombre, rol y (si está fijada) hora de convocatoria y teléfono. El mismo patrón de edición que el Talento.
+
+### Clientes / Agencia
+
+Tabla de tres columnas para representantes del cliente, productores de agencia, ejecutivos: cualquiera fuera del equipo de producción que necesite estar en la orden. El mismo patrón de edición que el Talento.
+
+### Extras / Figuración
+
+Cuadrícula o lista expandible de figurantes. Sin avatares en esta sección (intencional: mantiene el diseño compacto cuando hay muchos extras).
+
+### Notas por persona
+
+Cada fila de persona en Talento, Equipo o Clientes puede llevar notas privadas. Estas notas son visibles para el productor en la interfaz de la orden de rodaje, pero en el PDF enviado por correo aparecen **solo en la copia de esa persona**, no en la de nadie más. Útil para instrucciones individuales ("aparca en la entrada lateral", "prueba de vestuario antes de la convocatoria").
+
+### Hora de convocatoria por persona
+
+Cada persona también puede tener una hora de convocatoria personal que anula la hora general de convocatoria. Cuando envías la orden de rodaje, el correo y PDF de cada destinatario resalta su hora personal. Las personas sin hora personal reciben la hora general.
+
+### Fotos de perfil
+
+Cada persona controla su propia foto de perfil desde su pantalla de Cuenta — el propietario del proyecto no puede subir una en nombre de un contacto. Hasta que alguien suba su propia foto, se muestra con un avatar de iniciales con código de color (determinístico desde su ID de usuario, así que la misma persona siempre obtiene el mismo color en cada orden de rodaje).
+
+Para contactos que aún no se han unido a CineLog (los has añadido a Elenco y Equipo pero no han aceptado la invitación), el avatar de iniciales es la única opción. Una vez que inicien sesión y suban su propia foto, se propaga a todas partes donde se les referencia, incluyendo órdenes de rodaje anteriores en las que estaban.
+
+Desactiva "Fotos de perfil" en los ajustes de visualización si quieres avatares todo-iniciales independientemente.
+
+### Visibilidad de secciones
+
+Cada sección (Localizaciones, Clientes, Talento, Equipo, Extras) se puede ocultar de la orden de rodaje mediante el popup de ajustes de visualización. El selector oculta la sección tanto de la interfaz como del PDF exportado.
+
+## Mensaje del equipo
+
+Un bloque de texto enriquecido para el mensaje que sale junto con el PDF de la orden de rodaje. Mismo mensaje para todos los destinatarios — para instrucciones individuales usa las notas por persona de arriba.
+
+La barra de herramientas del editor soporta:
+
+- **Negrita, cursiva, subrayado.**
+- **Color.** Ocho colores curados (Blanco, Oro, Cobre, Rosa, Lavanda, Cristal de Mar, Salvia, Pergamino).
+- **Incrustar imagen.** Haz clic en el botón de imagen, elige una imagen. Se sube al CDN de CineLog, hasta 2 MB, solo JPEG / PNG / WebP. La URL de la imagen se incrusta en el mensaje y aparece en el cuerpo del correo.
+- **Borrar formato.**
+
+El correo renderizado aplica el mismo formato en el lado del destinatario. El servidor sanea el mensaje antes de enviarlo: solo pasan las etiquetas de formato en lista permitida.
+
+## Notas de producción
+
+Un campo de pie de página para notas a nivel de producción, recordatorios de seguridad, protocolos COVID o cualquier cosa que quieras al final del PDF de cada destinatario. Aparece centrado, en mayúsculas.
+
+## Envío y seguimiento de confirmaciones
+
+Cuando la orden de rodaje esté lista, **Enviar** en la barra de menú superior abre el diálogo de envío.
+
+### Elegir destinatarios
+
+Dos pasos:
+
+1. **Destinatarios.** Una lista agrupada por sección (Talento, Equipo, Extras, Clientes), ordenada por departamento y rol. Todos los que tienen una hora de convocatoria en la orden están preseleccionados por defecto. Selectores masivos te permiten seleccionar o deseleccionar una sección entera de una vez.
+2. **Mensaje.** Mensaje adicional opcional específico de este envío, en capas sobre el mensaje del equipo.
+
+### Qué reciben los destinatarios
+
+Cada destinatario recibe:
+
+- Un PDF personalizado con su hora de convocatoria resaltada.
+- El mensaje del equipo (texto enriquecido) más cualquier mensaje opcional que añadiste.
+- Sus notas personales, si las hay (añadidas al cuerpo del correo, no en el PDF visible para otros).
+- Un **enlace de confirmación** — una URL única protegida por token en `links.cinelog.com/confirm-call-sheet/<token>`. Al hacer clic en el enlace se abre un portal con la marca de CineLog donde tocan "Confirmar" para acusar recibo.
+
+### Página de Envíos
+
+Abre la página de **Envíos** desde el menú superior de la orden de rodaje (o navega a `…/call-sheets/<day>/sendouts`) para ver a quién se le ha enviado la orden de rodaje. Los destinatarios se agrupan por **lote de envío** — cada pulsación de Enviar crea un nuevo lote, así que reenviar después de ediciones preserva todo el historial. Cada encabezado de lote muestra un contador "N / M confirmados".
+
+Cada fila de destinatario muestra:
+
+- **Estado de entrega** — uno de:
+  - **en cola** — entregado al proveedor de correo, aún no enviado.
+  - **entregado** — aceptado por el servidor de correo del destinatario.
+  - **abierto** — el cliente de correo del destinatario abrió el mensaje.
+  - **rebotado** — el servidor de correo del destinatario lo rechazó (dirección incorrecta, buzón lleno).
+  - **fallido** — el proveedor de correo no pudo enviarlo.
+- **Marca de tiempo de confirmación** — una vez que hagan clic en su enlace.
+
+Entrega y confirmación son independientes: un correo se puede entregar sin ser confirmado (el destinatario no ha abierto o no ha hecho clic todavía), o confirmar rápidamente (estaba en el correo cuando llegó).
+
+### Límites de frecuencia
+
+Para prevenir envíos descontrolados, CineLog impone dos topes:
+
+- **Por orden de rodaje:** hasta 10 envíos por hora.
+- **Por espacio de trabajo:** hasta 1000 correos por mes.
+
+Son generosos para el uso normal; solo los alcanzarás si algo está en bucle o estás llevando una operación inusualmente grande.
+
+### Reenvíos y ediciones
+
+Puedes reenviar la misma orden de rodaje después de editarla (un cambio de guion, un cambio de equipo, una nota de vestuario). El nuevo envío crea un lote fresco en la página de Envíos; los lotes anteriores quedan intactos para el rastro de auditoría.
+
+## Exportación a PDF
+
+Dos formas de obtener un PDF, según el caso de uso:
+
+### Exportación local desde la barra de herramientas
+
+`Cmd / Ctrl + P` o el botón de exportación en el menú superior abre el diálogo de exportación. Puedes establecer los márgenes de página (superior, inferior, izquierdo, derecho en puntos), y luego exportar. El renderizado es local — sin subida, sin renderizado del lado del servidor — así que funciona sin conexión. Útil cuando quieres un PDF para distribuir fuera del flujo de correo (Slack, WhatsApp, entrega en persona).
+
+### PDFs por destinatario al momento del envío
+
+Cuando pulsas Enviar, el servidor genera un PDF personalizado para cada destinatario con su hora de convocatoria resaltada y sus notas personales adjuntas. No los disparas directamente: son un efecto secundario del envío.
+
+Ambas rutas de exportación respetan los ajustes de visualización: las secciones ocultas siguen ocultas, se aplica la unidad de temperatura y el formato de hora. Los medios grandes se reducen de calidad.
+
+Los guiones internacionales (árabe, hebreo, devanagari, CJK, tailandés) se renderizan correctamente mediante fuentes alternativas.
+
+## Permisos
+
+La edición y el envío de órdenes de rodaje se controlan mediante el recurso ACL `call_sheets` del proyecto. Los visualizadores pueden ver las órdenes de rodaje a las que tienen acceso; solo los roles con permiso de edición pueden modificar el horario, las personas o el mensaje; el envío requiere el mismo permiso de edición.
+
+## Comportamiento offline
+
+La edición de órdenes de rodaje funciona sin conexión: los cambios se guardan en la base de datos local y se sincronizan cuando reconectes, como todo lo demás en CineLog. **Enviar** requiere conectividad (es un flujo de correo saliente). **La exportación local a PDF** funciona sin conexión.
+
+## Si esto no funciona
+
+*"Mi nueva orden de rodaje se prerrellenó con cosas que no pedí."* Es el comportamiento de prerrellenado inteligente. CineLog copia desde una orden de rodaje anterior que coincida (misma localización → mismo equipo + localizaciones, si no el día inmediatamente anterior) para que no empieces desde una hoja en blanco cada día. Edita o limpia lo que no quieras.
+
+*"El orden de mi horario no coincide con la vista Producción."* Debería: son los mismos datos. Si difieren, el indicador de sincronización probablemente tiene cambios pendientes. Espera a que se vacíe.
+
+*"¿Cómo cambio la foto de perfil de un miembro del equipo?"* No puedes: las fotos de perfil están controladas por cada usuario desde su propia pantalla de Cuenta. Como propietario del proyecto no puedes subir una en su nombre. Las personas que aún no se han unido a CineLog muestran el avatar de iniciales; una vez que inicien sesión y suban una, su foto aparece en cada orden de rodaje en la que estén.
+
+*"La hora del horario está resaltada en rojo / amarillo."* El rojo significa que te has pasado de programación: la hora de inicio explícita en esa fila contradice lo que calculó la cascada de tiempos. El amarillo significa que hay un hueco entre filas que la cascada dejó sin rellenar. Ajusta las duraciones o la hora de inicio para reconciliar.
+
+*"El clima no se cargó."* La obtención automática necesita una localización con coordenadas. Establece una localización mediante el autocompletado de Google Places (para que se capturen lat/lng) y luego recarga la orden de rodaje. También puedes introducir el clima manualmente.
+
+*"Un miembro del equipo dice que no recibió la orden de rodaje."* Abre la página de Envíos para ese día y encuentra su fila. **entregado** o **abierto** significa que salió de CineLog y fue aceptado por su proveedor de correo: el problema está aguas abajo (carpeta de spam, reglas del buzón, eliminado por accidente). **rebotado** o **fallido** significa que el correo nunca les llegó; revisa la dirección en Elenco y Equipo y reenvía. **en cola** significa que todavía está en camino; dale un minuto.
+
+*"El recuento de confirmados no sube."* La confirmación requiere que el destinatario haga clic en el enlace del correo. La entrega sola no es suficiente.
+
+*"Llegué a un límite de envío."* Has excedido 10 envíos en la última hora para esta orden de rodaje, o 1000 correos en el último mes para el espacio de trabajo. Espera o contáctanos si necesitas un límite mayor.
+
+*"Mi imagen del mensaje del equipo no se subió."* Revisa el archivo: menos de 2 MB, JPEG / PNG / WebP. Otros formatos y archivos de tamaño excesivo son rechazados.

@@ -1,0 +1,253 @@
+---
+title: Die Grundlagen
+lastUpdated: 2026-05-23
+description: "Vier Abschnitte über die App-Tour und die drei Dinge, die du immer wieder tust – Bearbeiten, Auswählen, Ziehen. Die Basis für jedes Feature-Guide."
+---
+
+CineLog verwendet überall dieselben Muster. Dieselben Gesten verschieben Dinge, dieselbe Auswahlweise funktioniert in jeder Liste, dieselben Kürzel bearbeiten jedes Feld. Diese Muster einmal zu lernen ist der größte Sprung dabei, fließend mit der App umzugehen.
+
+Vier Abschnitte: eine Tour durch die App, dann die drei Dinge, die du immer wieder tust – Bearbeiten, Auswählen, Ziehen. Jeder Abschnitt endet mit einer kurzen "Falls das nicht funktioniert"-Liste, damit du gezielt ein bestimmtes Problem beheben kannst, ohne den Rest zu lesen.
+
+**Inhalt**
+
+1. [App-Tour: Wo alles lebt](#1-app-tour-where-everything-lives)
+2. [Felder bearbeiten](#2-editing-fields)
+3. [Zeilen auswählen](#3-selecting-rows)
+4. [Per Drag-and-Drop umordnen](#4-dragging-to-reorder)
+
+---
+
+<h2 id="1-app-tour-where-everything-lives">1. App-Tour: Wo alles lebt</h2>
+
+### Anmelden
+
+Die Anmeldung erfolgt ausschließlich per E-Mail. Du gibst deine Adresse ein, wir schicken dir einen Code, du gibst den Code ein. Kein Passwort. Wenn du dich noch nie angemeldet hast und noch keine Projekte hast, fordert dich der Projekte-Screen auf, eines zu erstellen (nur ein Name und eine Beschreibung – das Kürzel-Badge wird aus dem Namen generiert). Sonst landest du im zuletzt geöffneten Projekt.
+
+Jeder Screen in der App, außer der Anmeldung und der Projektliste, lebt innerhalb eines Projekts.
+
+### Das Desktop-Fenster
+
+Drei Bereiche, von oben nach unten:
+
+- Eine schmale **Titelleiste** mit dem Verbindungsstatus-Punkt links. Windows-Nutzer haben die Standardbuttons Minimieren / Maximieren / Schließen rechts.
+- Die **linke Seitenleiste** plus der **Inhaltsbereich** – Seitenleiste zur Navigation, Inhaltsbereich für die Arbeit.
+- Schwebende Elemente: Modals, Snackbars, der Hotkey-Dialog.
+
+### Die Seitenleiste
+
+Auf Desktop und Tablet immer präsent. Von oben nach unten: der Projekt-Umschalter, eine Liste der Funktionen, die Sync-Anzeige und der Mehr-Button.
+
+Die Funktionen:
+
+- **Drehbuch-Editor** — das Drehbuch schreiben.
+- **Einstellungsliste** — Lineare und Drehtage-Ansichten jeder Einstellung, mit jedem Drehtag als Untereintrag.
+- **Storyboard** — visuelle Planung, mit gespeicherten Ansichten als Untereinträgen.
+- **Dispositionen** — tägliche Dispositionen (Dispo), mit jedem Drehtag als Untereintrag.
+- **Cast & Crew** — das Personenverzeichnis des Projekts, mit gespeicherten Ansichten.
+
+**Updates** (Änderungsverlauf) erscheint nur, wenn deine Rolle es erlaubt. **Medien-Explorer** lebt im Mehr-Menü.
+
+### Der Projekt-Umschalter
+
+Oben in der Seitenleiste auf dem Desktop, in der oberen App-Leiste auf dem Smartphone. Zeigt Name und Badge des aktuellen Projekts. Klicke darauf, um Projekte zu wechseln – das Overlay (oder Sheet auf dem Smartphone) listet das aktuelle Projekt, alle ausstehenden Einladungen, drei zuletzt verwendete, einen "Neues Projekt"-Button und einen "Alle anzeigen"-Link.
+
+Das Wechseln von Projekten aktualisiert die gesamte Seitenleiste, sodass die Untereinträge, die du siehst, immer zum Projekt gehören, in dem du dich befindest.
+
+### Sync vs Verbindung
+
+Zwei Anzeigen, zwei verschiedene Dinge:
+
+- Der **Verbindungspunkt** in der Titelleiste ist farbcodiert – grün / orange / rot – für die Echtzeit-Verbindung zum Server.
+- Die **Sync-Anzeige** unten in der Seitenleiste ist gedämpftes Grau und informiert über deine lokale Bearbeitungswarteschlange per Symbol und Beschriftung: Häkchen + "Synced" (Warteschlange leer), drehender Sync-Pfeil + "Sync: N pending" oder "Syncing…" (Änderungen unterwegs), Cloud-Off + "Offline: N pending" (wartet auf Verbindung).
+
+Sie können sich widersprechen, und das ist okay. Roter Punkt + "Synced" = du bist offline, hattest aber nichts ausstehend. Grüner Punkt + "Sync: N pending" = du bist online und die Warteschlange wird abgearbeitet.
+
+Auf dem Smartphone sind beide Statusinformationen in das Verbindungs-Badge der oberen App-Leiste integriert.
+
+### Offline-Modus
+
+CineLog ist darauf ausgelegt, offline weiterzuarbeiten. Die erste Anmeldung braucht Internet; danach bleibt das Gerät eingeloggt. Offline gemachte Bearbeitungen werden in die lokale Datenbank des Geräts gespeichert und reihen sich in der Sync-Anzeige in die Warteschlange, bis du wieder online bist, woraufhin sie automatisch zum Server geleert werden.
+
+Deine Session ist bis zu sieben Tage gültig. Die App aktualisiert sie im Hintergrund, wenn sie sich dem Ablauf nähert – meist ein paar Stunden vorher – sodass du, solange du in diesem Moment online bist, nie eine Anmeldeaufforderung siehst. Normale gemischte Online/Offline-Nutzung sorgt dafür, dass die Aktualisierung einfach funktioniert.
+
+Wenn du das gesamte Sieben-Tage-Fenster komplett offline bleibst, läuft die Session ab. Beim nächsten Versuch der App, mit dem Server zu sprechen, erscheint ein Reauthentifizierungs-Dialog. Der Dialog ist blockierend, aber deine Daten bleiben erhalten: Melde dich mit demselben Konto wieder an und du machst genau dort weiter, wo du aufgehört hast, mit allen wartenden Bearbeitungen.
+
+### Das Mehr-Menü
+
+Unten in der Seitenleiste auf Desktop und Tablet; das rechteste Element in der unteren Navigationsleiste des Smartphones. Inhalte unterscheiden sich je nach Plattform:
+
+- **Desktop:** Hilfe & Support, Hotkeys, Roadmap, Theme-Toggle, Medien-Explorer, Konto, Abmelden.
+- **Smartphone:** Drehbuch-Editor, Updates, Hilfe & Support, Medien-Explorer, Theme-Toggle, Konto, Abmelden.
+
+Drehbuch-Editor und Updates sind im Mehr-Sheet des Smartphones, weil in der fünfteiligen unteren Leiste kein Platz dafür ist. Hotkeys und Roadmap werden auf dem Smartphone überhaupt nicht angezeigt.
+
+Das Theme-Toggle ist auf dem Desktop auch an `Cmd / Ctrl + Shift + M` gebunden.
+
+### Die Seitenleiste einklappen
+
+Drücke `[`, um die Seitenleiste auf nur Symbole einzuklappen (oder wieder auszuklappen). Untereinträge sind in beiden Zuständen sichtbar – sie zeigen sich nur in einer verkürzten Form, wenn die Seitenleiste eingeklappt ist. Die Seitenleiste verschwindet auf dem Desktop nie vollständig.
+
+Auf dem Smartphone gibt es keine Seitenleiste – die Navigation ist die untere Leiste.
+
+### Das Smartphone-Layout
+
+Fünf Slots in der unteren Navigationsleiste:
+
+1. Einstellungsliste
+2. Storyboard
+3. Dispositionen
+4. Cast & Crew
+5. Mehr
+
+Alles andere (Drehbuch-Editor, Updates, Medien-Explorer, Konto…) befindet sich im Mehr-Sheet. Die obere App-Leiste zeigt Projektname + Badge; tippe darauf, um Projekte zu wechseln.
+
+### Der Hotkey-Dialog
+
+`Cmd / Ctrl + K` auf Desktop oder Tablet öffnet ein Modal, das jedes Kürzel auflistet. Schließe es mit `Esc` oder `Cmd + K`. Nicht auf dem Smartphone verfügbar.
+
+### Snackbars
+
+Kurze Nachrichten erscheinen unten am Bildschirm, wenn etwas erfolgreich ist, fehlschlägt oder fertig wird. Sie verschwinden nach ein paar Sekunden von selbst.
+
+### Falls das nicht funktioniert
+
+*"Wo ist der Drehbuch-Editor auf meinem Smartphone hin?"* Im Mehr-Sheet, nicht auf der unteren Leiste.
+
+*"Mein Verbindungspunkt und die Sync-Anzeige widersprechen sich."* Sie messen unterschiedliche Dinge. Der Punkt ist die Netzwerkverbindung; die Sync-Anzeige ist die lokale Bearbeitungswarteschlange. Beide können einzeln ungesund sein.
+
+*"Kann ich CineLog ohne Internet nutzen?"* Ja, nach der ersten Anmeldung. Offline-Bearbeitungen speichern sich lokal und synchronisieren sich, wenn du wieder verbunden bist. Deine Session ist bis zu sieben Tage gültig; wenn sie sich dem Ablauf nähert, aktualisiert die App sie automatisch, sofern du in diesem Moment online bist – so bleibst du bei normaler gemischter Online/Offline-Nutzung angemeldet. Ein Gerät, das die vollen sieben Tage offline ist, muss sich erneut anmelden.
+
+*"Die App hat mich am Drehort erneut zur Anmeldung aufgefordert."* Das ist der Reauthentifizierungs-Dialog nach einer langen Strecke ohne Verbindung. Melde dich mit derselben E-Mail wieder an; deine ausstehenden Bearbeitungen bleiben erhalten und werden synchronisiert.
+
+---
+
+<h2 id="2-editing-fields">2. Felder bearbeiten</h2>
+
+Klicke in eine Zelle. Die Zelle öffnet sich zum Bearbeiten. Auf dem Desktop ist das alles.
+
+Die Form des Editors hängt vom Feldtyp ab – ein Texteingabefeld für Text, ein Picker für Dropdowns, ein Sofort-Toggle für Checkboxen, ein Medien-Picker für Bildzellen. Sie commit immer ohne Speichern-Button.
+
+### Auf dem Smartphone sind es zwei Taps
+
+Auf Smartphone oder Tablet bearbeitet ein einzelnes Tippen auf eine Zelle sie nicht direkt – erst tippst du auf die Zeile, um sie auszuklappen, dann tippst du auf das Feld in der ausgeklappten Ansicht. Dieser zweite Tipp öffnet ein Bottom Sheet für das Feld.
+
+Wenn du auf eine Zeile tippst und nichts editierbar wirkt, klappe sie erst auf.
+
+### Auto-Save
+
+CineLog speichert automatisch bei jedem Commit und in einem etwa 450-ms-Debounce, während du tippst. Es gibt nirgendwo einen Speichern-Button.
+
+Drücken von `Esc` schließt den Editor und verwirft Tipparbeit seit dem letzten debounce-Auto-Save. Wenn du ein paar Sekunden lang getippt hast, wurden die früheren Zeichen bereits unbemerkt gespeichert – `Esc` wirft nur die jüngste Strecke weg.
+
+### Tastatur im Editor
+
+- `Enter` committet und schließt.
+- `Esc` bricht ab und schließt (mit dem oben genannten Auto-Save-Vorbehalt).
+- Pfeiltasten bewegen sich durch Dropdown-Optionen.
+
+### Falls das nicht funktioniert
+
+*"Ich kann auf dem Smartphone nichts bearbeiten."* Tippe zuerst auf die Zeile, um sie auszuklappen, dann auf das bestimmte Feld.
+
+*"Wo ist der Speichern-Button?"* Es gibt keinen – Auto-Save bei jedem Commit, plus ein 450-ms-Debounce, während du tippst.
+
+---
+
+<h2 id="3-selecting-rows">3. Zeilen auswählen</h2>
+
+Eine Zeile auszuwählen ist die Art, sie zum Verschieben oder für eine Aktion zu markieren, die auf mehrere Zeilen gleichzeitig angewendet werden soll. Auswahl ist ein klebriger Modus, kein Hover – sobald eine Zeile ausgewählt ist, ist die Liste im Auswahlmodus, bis du ihn verlässt.
+
+### So gelangst du in den Auswahlmodus
+
+- **Desktop:** `Cmd / Ctrl + Klick` auf eine beliebige Zeile.
+- **Mobil:** Lange auf eine Zeile drücken.
+
+Die erste ausgewählte Zeile wird zum Anker für die Bereichsauswahl (nächste).
+
+### Mehr Zeilen hinzufügen
+
+Sobald du im Auswahlmodus bist:
+
+- **Desktop:** `Cmd / Ctrl + Klick` schaltet einzelne Zeilen in oder aus der Auswahl. Ein einfacher Klick ohne Modifier ersetzt die Auswahl durch nur die geklickte Zeile.
+- **Mobil:** Ein einfaches Tippen schaltet jetzt die Auswahl um (außerhalb des Auswahlmodus klappt dasselbe Tippen die Zeile aus).
+
+### Bereichsauswahl (nur Desktop)
+
+`Shift + Klick` wählt jede Zeile zwischen Anker und geklickter Zeile aus, inklusive. Der Anker wandert zur zuletzt geklickten Zeile, sodass aufeinanderfolgende `Shift + Klicks` den Bereich weiter ausdehnen.
+
+Es gibt kein mobiles Äquivalent – wähle eine Zeile nach der anderen.
+
+### Verlassen
+
+- **Desktop:** `Esc`.
+- **Mobil:** Der "Fertig"-Chip in der Auswahl-Werkzeugleiste.
+
+Beides hebt die Auswahl auf und gibt die Liste zu ihren normalen Interaktionen zurück.
+
+### Falls das nicht funktioniert
+
+*"Ich kann nicht erkennen, ob ich im Auswahlmodus bin."* Die Auswahl-Werkzeugleiste erscheint oben in der Liste, sobald eine Zeile ausgewählt ist – diese Werkzeugleiste ist der Indikator. Ausgewählte Zeilen selbst bekommen einen leichten Farbton.
+
+*"Tippen auf eine Zeile auf dem Smartphone wählt sie nicht aus."* Lange drücken, um in den Auswahlmodus zu gelangen; einfaches Tippen ist zum Ausklappen der Zeile da.
+
+---
+
+<h2 id="4-dragging-to-reorder">4. Per Drag-and-Drop umordnen</h2>
+
+Sobald du eine Zeile (oder eine Mehrfachauswahl) markiert hast, ziehe eine davon, um das Ganze zu verschieben. Drag funktioniert überall in der App gleich – das Ziel ändert nur seine Bedeutung je nach Bildschirm.
+
+### Was du ziehen kannst
+
+Jede Zeile, irgendwo am Körper. Es gibt keinen separaten Drag-Handle. Auf dem Desktop ändert sich der Cursor beim Hover auf `grab` und während des Ziehens auf `grabbing`.
+
+### Den Drag starten
+
+Ein bloßes Drücken startet noch keinen Drag – der Zeiger oder Finger muss erst eine kleine Strecke zurücklegen:
+
+- **Etwa 8 Pixel** für eine nicht-ausgewählte Zeile. Weniger wird als Klick gewertet.
+- **Etwa 3 Pixel** für eine Zeile, die bereits Teil der Auswahl ist – der niedrigere Schwellenwert macht das Bewegen einer bestehenden Auswahl reaktiv.
+
+Auf dem Smartphone gibt es zwei Wege:
+
+- **Kalter Drag:** Lange auf eine nicht-ausgewählte Zeile drücken; sie ploppt unter deinem Finger hoch, weiter bewegen zum Ziehen.
+- **Warmer Drag:** Wenn die Zeile bereits Teil einer aktiven Auswahl ist, einfach berühren und ziehen – kein zweites Langdrücken nötig.
+
+### Wo du ablegen kannst
+
+Während du ziehst, öffnet sich zwischen Zeilen an jeder gültigen Position eine Lücke. Wenn du über einen Punkt fährst und keine Lücke erscheint, ist der Drop nicht erlaubt – die Zeile springt beim Loslassen in ihre ursprüngliche Position zurück. Die Regeln, was gültig ist, variieren je nach Bildschirm (in den Feature-Guides behandelt); die Lücke ist das universelle "Hier kannst du ablegen"-Signal.
+
+### Eine Auswahl ziehen
+
+Wenn du eine Zeile ziehst, die Teil der aktuellen Auswahl ist, bewegt sich die gesamte Auswahl mit. Wenn du eine Zeile ziehst, die *nicht* Teil der Auswahl ist, reduziert der Drag die Auswahl implizit auf nur diese einzelne Zeile.
+
+Deshalb ist erst auszuwählen, dann zu ziehen, der vorhersehbare Workflow – du kannst bestätigen, was ausgewählt ist, bevor du dich festlegst.
+
+### Auto-Scroll an den Rändern
+
+Während des Ziehens scrollt die Liste auto-scrollend in Richtung des Randes, wenn du in die oberen oder unteren 100 Pixel der sichtbaren Liste fährst. Je näher am Rand, desto schneller (bis zu etwa 24 Pixel pro Frame). Zurück zur Mitte, um zu stoppen.
+
+### Die Trackpad-Falle
+
+Auf dem Desktop **startet ein Zwei-Finger-Trackpad-Scroll keinen Drag** – er scrollt die Liste. Nur ein Ein-Finger-Drag (oder eine Maus-Drück-und-Bewege-Bewegung) ordnet um. Das ist der häufigste "Drag ist kaputt"-Bericht; wenn du zwei Finger benutzt hast, wechsle auf einen.
+
+### Auto-Einklappen beim Auswahlmodus auf dem Smartphone
+
+Nur auf dem Smartphone klappen ausgeklappte Zeilen in die kompakte Ansicht zurück, sobald du in den Auswahlmodus wechselst. Das hält Zeilenhöhen einheitlich fürs Ziehen. Es geht nichts verloren; Ausklappen ist nur ein Anzeigezustand.
+
+### Abbrechen
+
+Lasse den Zeiger los oder hebe den Finger außerhalb einer gültigen Drop-Lücke und die Zeile kehrt an ihren Startpunkt zurück. Es gibt kein `Esc`-zum-Abbrechen mitten im Drag.
+
+### Falls das nicht funktioniert
+
+*"Drag tut nichts."* Entweder hast du den kleinen Bewegungsschwellenwert nicht überschritten, oder du nutzt eine Zwei-Finger-Trackpad-Geste (die scrollt, nicht zieht).
+
+*"Drag funktioniert, aber mein Drop wird abgelehnt."* Das Ziel ist kein gültiges Ziel für das, was du ziehst. Die Feature-Guides decken die Regeln ab.
+
+*"Meine Zeilen sind beim Auswählen eingeklappt."* Das ist das absichtliche Auto-Einklappen auf dem Smartphone – es macht Drag-Höhen einheitlich. Deine Daten sind intakt.
+
+---
+
+Das ist das universelle Vokabular der App. Jeder Feature-Guide baut auf diesen Mustern auf; falls du jemals unsicher bist, wie ein bestimmter Bildschirm funktioniert, ist die Antwort fast immer "genauso wie jede andere Liste."
+
+**Wo es als Nächstes hingeht:** [Einstellungslisten-Grundlagen](/de/guides/shot-list/essentials) ist der häufigste nächste Schritt. [Lineare Ansicht vs Drehtage-Ansicht](/de/guides/shot-list/linear-vs-production) behandelt die Trennung zwischen Drehbuchreihenfolge und Drehreihenfolge – die meisten neuen Producer und ADs stolpern schnell darüber. [Tastenkürzel](/de/keyboardshortcuts) ist die Referenzseite, die ein Lesezeichen wert ist.

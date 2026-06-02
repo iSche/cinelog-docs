@@ -1,68 +1,254 @@
 ---
-title: Generating Call Sheets
-lastUpdated: 2026-04-22
-description: "Create call sheets with schedules, weather forecasts, and location details. Email them to your team with one click and track confirmations in CineLog."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-Call Sheets are the daily itinerary for your production. CineLog allows you to generate professional, industry-standard call sheets populated directly from your database.
-
-## 1. Creation & The Header Section
-
-Call Sheets in CineLog are deeply integrated with your **Production Shot List**. The schedule you build for a specific Production Day act as the foundation for your call sheet.
-
-<Steps>
-1. **From the Shot List:** The most efficient way to generate a call sheet is directly from your schedule. Any Production Day in your shot list acts as the state for a corresponding call sheet, automatically pulling in the scheduled scenes.
-2. **Standalone Creation:** You can also create call sheets manually. Navigate to the **Call Sheets** module via the left sidebar and click the **"+ New Call Sheet"** button.
-3. **The Header Details:** The top of your call sheet is automatically populated with your company profile, project logo, and project name. You then set the specific calendar date, the **General Call Time** (when the majority of the crew is expected), the weather forecast, key crew contacts, and general logistics.
-4. **Locations & Places API:** Configure your set location, shooting locations, and the nearest hospital. CineLog integrates directly with the **Google Places API**, allowing you to easily search and auto-complete highly accurate addresses and place names right into the call sheet.
-</Steps>
-
+title: Call sheets
+lastUpdated: 2026-05-23
+description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, personnel sections, rich-text crew message, sending and confirmation tracking, PDF export."
 ---
 
-## 2. Managing the Schedule
+A call sheet in CineLog is the per-day production plan: the schedule, the location, the people, the weather, and the message that goes out with the email. It's tightly coupled to the rest of the project — the schedule is the same data as Production view for that day, and the personnel come straight from Cast & Crew.
 
-Because the call sheet is intrinsically linked to the Production Shot List, the schedule section is incredibly powerful.
+This guide assumes [The basics](/guides/introduction) and [Linear vs Production](/guides/shot-list/linear-vs-production).
 
-- **Bi-directional Sync:** The scenes and estimated shooting times on your call sheet are synced with that specific day's Production Shot List via CineSync.
-- **Direct Reordering:** You don't have to go back to the Shot List to fix your shoot order. You can drag, drop, and rearrange the scene schedule *directly* within the Call Sheet editor, and those changes will sync back to your Production Shot List.
+## Creating a call sheet
 
----
+Call sheets are day-based — one per Production Day. They appear automatically as sub-entries under **Call Sheets** in the sidebar; click a day to open its call sheet.
 
-## 3. Attaching the Team
+When you create a new call sheet, CineLog seeds it from your previous days rather than starting blank:
 
-A call sheet is useless without knowing *who* is supposed to show up. CineLog pulls directly from your [Project Cast & Crew](/guides/managing-cast-crew) to populate the call sheet.
+- If a previous day used **the same location**, your new call sheet starts with that location's crew and addresses already filled in.
+- Otherwise, if you have **three or more previous call sheets** that share the same crew, those crew assignments carry over.
+- Otherwise, the call sheet **clones from the immediately preceding day**.
+- If none of those apply (first day of the project), you get a blank call sheet.
 
-<Steps>
-1. **Add Cast & Crew:** In the Call Sheet editor, navigate to the Talent or Crew sections to add team members.
-2. **Select or Create:** You can select pre-existing team members, or you can create entirely new contacts and assign them new roles right there inside the Call Sheet dialog. Anyone you create here will automatically be added to your project's master Cast & Crew directory.
-3. **Set Specific Call Times:** While the "General Call Time" applies to everyone by default, you can edit individual call times for specific departments. For example, you can set the Make-up department's call time to an hour earlier than the rest of the crew.
-</Steps>
+You can change anything that was seeded; it's just a starting point.
 
----
+## The header
 
-## 4. Customization & Visibility Flags
+The header runs across the top and carries the day's key information at a glance.
 
-Before you distribute the call sheet, you may want to tailor what information is visible. CineLog provides powerful **Visibility Flags** that allow you to show or hide entire sections of the generated document.
+### General call time
 
-In the Call Sheet settings panel, you can toggle the visibility of:
-- **Locations:** Hide sensitive location addresses until the last minute.
-- **Clients/Executives:** Remove the VIP section if no executives are visiting set.
-- **Talent/Cast:** Hide the cast list for privacy.
-- **Crew:** Simplify the document by hiding the massive crew directory.
-- **Extras:** Hide background actor calls.
+The single most important field. Sets the base start time for the day (e.g., 08:00). Click it to edit. This time anchors the schedule's time cascade (below) and is the default time emailed to each recipient unless they have a personal call time set (see [Personnel](#personnel-sections)).
 
-<Aside type="tip">
-When you toggle a visibility flag OFF, that entire section is seamlessly removed from the final generated PDF, and the layout automatically adjusts to fill the empty space!
-</Aside>
+### Date
 
----
+The production date. Optional — it's pulled from the shot list's Production Day, but you can set or override it manually. Shown in the header and on the exported PDF.
 
-## 5. Distribution
+### Company branding
 
-Once your call sheet is perfect, it's time to send it to the team.
+The left side of the header carries your company profile (name, address, phone) and logo. Upload the logo once at the workspace level via the company profile dialog; it then appears in every call sheet's header and on emailed PDFs.
 
-Click the **"Send"** button in the top menu bar to open your options:
+### Project name
 
-1. **Email Sendout:** CineLog integrates securely with MailerSend to distribute the call sheet directly to the inboxes of all attached Cast & Crew members. The email includes a personalized PDF, a custom message and a link to confirm receipt of the document.
-2. **PDF Export:** If you prefer to send the call sheet via a different method (like a WhatsApp group or a direct Dropbox link), you can simply export the call sheet as a high-quality PDF to your local computer.
+Right side of the header. Pulled from the project entity — no separate edit here.
+
+### Display settings (header behavior)
+
+Open the display settings popup from the call sheet's top menu to toggle:
+
+- **Time format** — 12-hour (`8:00 AM`) or 24-hour (`08:00`).
+- **Temperature unit** — °F or °C.
+
+Both choices are per-user and persist across sessions.
+
+## Locations
+
+A reorderable list of named shooting locations for the day. Each location has these fields:
+
+- **Set name and address.** Optional note alongside.
+- **Parking.** A parking name + detail field (where the trucks go, where the crew parks).
+- **Hospital.** Nearest hospital name and address — important for safety/emergency logistics.
+
+Add and edit via the location overlay. On desktop you can long-press a location row and drag to reorder; on phone, double-tap a row to open the edit overlay.
+
+**Google Places autocomplete** is wired into every address field. Start typing and you'll see suggested places; picking one populates the address and stores the coordinates so the weather lookup (below) has a location to work with.
+
+To hide the whole locations section from the call sheet (e.g., when the location isn't locked yet), use the section visibility toggle in display settings.
+
+## Schedule
+
+The schedule is the Production view filtered to this day. The shots and banners on the call sheet are the **same objects** as in Production — reordering or editing them here is the same as reordering or editing them there. The gesture grammar is identical to anywhere else in the app.
+
+Three columns: **start time** | **scene + shot** | **estimated duration**.
+
+### Banners
+
+Banners are non-shot rows that mark meal breaks, company moves, wraps, or other schedule markers. They exist only in Production view and on the schedule. Add a banner from the toolbar (or `Cmd / Ctrl + N` in Production); name it ("Lunch", "Company move"), set its duration.
+
+Inserting a banner mid-scene splits the surrounding scene at the banner — see [Linear vs Production](/guides/shot-list/linear-vs-production) for the full split-and-merge behavior.
+
+### The time cascade
+
+You don't enter a start time for every row. The schedule has a cascading time engine: it reads the general call time, then walks down the list adding each row's estimated duration to compute the next row's start time.
+
+If a row's explicit start time conflicts with what the cascade would have produced (you've over-scheduled), the time is highlighted **red**. If there's a gap between rows (the cascade has slack), it shows **yellow**. Either way, the row's own estimated duration is what controls the next row, not the gap.
+
+### Reordering the schedule
+
+Desktop: long-press a banner or shot row and drag. Mobile: double-tap a row to open the edit overlay (no inline drag). Reorders persist back to the Production view, since these are the same objects.
+
+The schedule section can't be hidden — it's always shown.
+
+## Weather
+
+If the call sheet has a location with coordinates, CineLog fetches the day's weather automatically when you first open the call sheet. The display shows:
+
+- Current and "feels like" temperature
+- Daily low
+- Sunrise and sunset
+- Conditions, humidity, wind speed
+
+The temperature unit follows the display setting (°F / °C). To override or manually enter weather (forecast wasn't fetched, or you want to use a different source), tap the weather block and edit. The override is stored on the call sheet and reused on every reload.
+
+## Personnel sections
+
+Five distinct sections, each with its own role and layout. People come from the project's [Cast & Crew](/guides/managing-cast-crew); the call sheet references them, not copies them.
+
+### Key Crew (header row)
+
+A quick-reference list in the header's second row showing the day's key roles (Director, DP, 1st AD, Producer, etc.) with names and phone numbers. Up to about six slots. Click the edit button to pick which roles appear.
+
+### Talent
+
+Three-column table — avatar, name, role. Add talent from the project's contacts. Click any row to add notes or set a call time. Long-press a row to reorder.
+
+### Crew
+
+The largest section, grouped by department. On desktop, a multi-column grid; on phone, a vertical card list. Each crew member shows avatar, name, role, and (if set) call time and phone. Same edit pattern as Talent.
+
+### Clients / Agency
+
+Three-column table for client reps, agency producers, executives — anyone outside the production team who needs to be on the sheet. Same edit pattern as Talent.
+
+### Extras / Background
+
+Grid or expandable list of background performers. No avatars in this section (intentional — keeps the layout tight when there are many extras).
+
+### Per-person notes
+
+Every person row in Talent, Crew, or Clients can carry private notes. These notes are visible to the producer in the call sheet UI, but on the emailed PDF they appear **only on that person's copy** — not on anyone else's. Useful for individual instructions ("park at side entrance," "wardrobe fitting before call").
+
+### Per-person call time
+
+Each person can also have a personal call time that overrides the general call time. When you send the call sheet, each recipient's email and PDF highlight their personal time. People without a personal time get the general call time.
+
+### Profile pictures
+
+Each person controls their own profile picture from their Account screen — the project owner can't upload one on behalf of a contact. Until someone uploads their own picture, they're shown with a color-coded initials avatar (deterministic from their user ID, so the same person always gets the same colour across every call sheet).
+
+For contacts who haven't joined CineLog yet (you've added them to Cast & Crew but they haven't accepted the invite), the initials avatar is the only option. Once they sign in and upload their own picture, it propagates everywhere they're referenced — including past call sheets they were on.
+
+Toggle "Profile Pictures" off in display settings if you want all-initials avatars regardless.
+
+### Section visibility
+
+Each section (Locations, Clients, Talent, Crew, Extras) can be hidden from the call sheet via the display settings popup. The toggle hides the section from both the UI and the exported PDF.
+
+## Crew message
+
+A rich-text block for the message that goes out alongside the call sheet PDF. Same message for all recipients — for individual instructions use per-person notes above.
+
+The editor toolbar supports:
+
+- **Bold, italic, underline.**
+- **Color.** Eight curated swatches (White, Gold, Copper, Rose, Lavender, Sea Glass, Sage, Parchment).
+- **Image embed.** Click the image button, pick an image. Uploads to CineLog's CDN, up to 2 MB, JPEG / PNG / WebP only. The image URL is embedded in the message and appears in the email body.
+- **Clear formatting.**
+
+The rendered email applies the same formatting on the recipient side. The server sanitizes the message before sending — only the allowlisted formatting tags pass through.
+
+## Production notes
+
+A footer field for production-wide notes, safety reminders, COVID protocols, or anything you want at the bottom of every recipient's PDF. Appears centered, uppercased.
+
+## Sending and tracking confirmations
+
+When the call sheet is ready, **Send** in the top menu bar opens the send dialog.
+
+### Picking recipients
+
+Two steps:
+
+1. **Recipients.** A list grouped by section (Talent, Crew, Extras, Clients), sorted by department and role. Everyone with a call time on the sheet is preselected by default. Bulk toggles let you select or deselect a whole section at once.
+2. **Message.** Optional additional message specific to this send, layered on top of the crew message.
+
+### What recipients receive
+
+Each recipient gets:
+
+- A personalised PDF with their call time highlighted.
+- The crew message (rich text) plus any optional message you added.
+- Their per-person notes, if any (appended to the email body, not on the PDF visible to others).
+- A **confirmation link** — a unique token-protected URL at `links.cinelog.com/confirm-call-sheet/<token>`. Clicking the link opens a CineLog-branded portal where they tap "Confirm" to acknowledge receipt.
+
+### Sendouts page
+
+Open the **Sendouts** page from the call sheet's top menu (or navigate to `…/call-sheets/<day>/sendouts`) to see who's been sent the call sheet. Recipients are grouped by **send batch** — each press of Send creates a new batch, so re-sending after edits preserves the full history. Each batch header shows an "N / M confirmed" tally.
+
+Each recipient row shows:
+
+- **Delivery status** — one of:
+  - **queued** — handed to the mail provider, not yet sent.
+  - **delivered** — accepted by the recipient's mail server.
+  - **opened** — the recipient's mail client opened the message.
+  - **bounced** — the recipient's mail server rejected it (bad address, full mailbox).
+  - **failed** — the mail provider couldn't send.
+- **Confirmation timestamp** — once they click their link.
+
+Delivery and confirmation are independent: an email can be delivered without being confirmed (the recipient hasn't opened or hasn't clicked yet), or confirmed quickly (they were on email when it arrived).
+
+### Rate limits
+
+To prevent runaway sends, CineLog enforces two ceilings:
+
+- **Per call sheet:** up to 10 sends per hour.
+- **Per workspace:** up to 1000 emails per month.
+
+These are generous for normal use; you'll only hit them if something's looping or you're running an unusually large operation.
+
+### Re-sends and edits
+
+You can re-send the same call sheet after editing it (a script change, a crew swap, a wardrobe note). The new send creates a fresh batch on the Sendouts page; previous batches stay intact for the audit trail.
+
+## PDF export
+
+Two ways to get a PDF, depending on the use case:
+
+### Local export from the toolbar
+
+`Cmd / Ctrl + P` or the export button in the top menu opens the export dialog. You can set page margins (top, bottom, left, right in points), then export. Rendering is local — no upload, no server-side render — so it works offline. Useful when you want a PDF to distribute outside the email flow (Slack, WhatsApp, hand-off in person).
+
+### Per-recipient PDFs at send time
+
+When you press Send, the server generates a personalised PDF for each recipient with their call time highlighted and their per-person notes attached. You don't trigger these directly — they're a side effect of sending.
+
+Both export paths respect display settings: hidden sections stay hidden, the temperature unit and time format are applied. Large media is downsampled.
+
+International scripts (Arabic, Hebrew, Devanagari, CJK, Thai) render correctly via font fallbacks.
+
+## Permissions
+
+Editing and sending call sheets are gated by the project's `call_sheets` ACL resource. Viewers can see call sheets they have access to; only roles with edit permission can modify the schedule, people, or message; sending requires the same edit permission.
+
+## Offline behavior
+
+Editing call sheets works offline — changes save to the local database and sync when you reconnect, like everything else in CineLog. **Sending** requires connectivity (it's an outbound email flow). **Local PDF export** works offline.
+
+## If this isn't working
+
+*"My new call sheet pre-filled itself with stuff I didn't ask for."* That's the smart-seeding behavior. CineLog copies from a matching previous call sheet (same location → same crew + locations, otherwise the immediately preceding day) so you don't start from a blank sheet every day. Edit or clear whatever you don't want.
+
+*"My schedule order doesn't match Production view."* It should — they're the same data. If they differ, the sync indicator probably has pending changes. Wait for it to flush.
+
+*"How do I change a crew member's profile photo?"* You can't — profile pictures are controlled by each user from their own Account screen. As a project owner you can't upload one on their behalf. People who haven't joined CineLog yet show the initials avatar; once they sign in and upload, their picture appears across every call sheet they're on.
+
+*"The schedule time is highlighted red / yellow."* Red means you've over-scheduled — the explicit start time on that row contradicts what the time cascade computed. Yellow means there's a gap between rows that the cascade left unfilled. Adjust the durations or the start time to reconcile.
+
+*"Weather didn't load."* The auto-fetch needs a location with coordinates. Set a location via Google Places autocomplete (so the lat/lng is captured), then reload the call sheet. You can also enter weather manually.
+
+*"A crew member says they didn't get the call sheet."* Open the Sendouts page for that day and find their row. **delivered** or **opened** means it left CineLog and was accepted by their mail provider — the issue is downstream (spam folder, mailbox rules, deleted by accident). **bounced** or **failed** means the email never reached them; check the address in Cast & Crew and re-send. **queued** means it's still on the way; give it a minute.
+
+*"The confirmed count isn't going up."* Confirmation requires the recipient to click the link in the email. Delivery alone isn't enough.
+
+*"I hit a send limit."* You've exceeded 10 sends in the past hour for this call sheet, or 1000 emails in the past month for the workspace. Wait it out or get in touch if you need a higher limit.
+
+*"My crew message image didn't upload."* Check the file: under 2 MB, JPEG / PNG / WebP. Other formats and oversize files are rejected.

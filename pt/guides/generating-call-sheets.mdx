@@ -1,0 +1,254 @@
+---
+title: Ordens do Dia
+lastUpdated: 2026-05-23
+description: "Ordens do dia diárias no CineLog — cabeçalho e hora de apresentação, locações, cronograma com cascata de tempos, clima, seções de pessoal, mensagem rica para a equipe, envio e rastreamento de confirmações, exportação em PDF."
+---
+
+Uma ordem do dia no CineLog é o plano de produção por dia: o cronograma, a locação, as pessoas, o clima e a mensagem que vai junto com o e-mail. Ela é fortemente acoplada ao resto do projeto — o cronograma é o mesmo dado da visualização Produção daquele dia, e o pessoal vem direto de Elenco e Equipe.
+
+Este guia assume [O básico](/pt/guides/introduction) e [Linear vs Produção](/pt/guides/shot-list/linear-vs-production).
+
+## Criando uma ordem do dia
+
+As ordens do dia são por dia — uma por Dia de Produção. Elas aparecem automaticamente como sub-entradas em **Ordens do Dia** na barra lateral; clique em um dia para abrir sua ordem do dia.
+
+Quando você cria uma nova ordem do dia, o CineLog a inicia a partir dos seus dias anteriores em vez de começar em branco:
+
+- Se um dia anterior usou **a mesma locação**, sua nova ordem do dia começa com a equipe e os endereços daquela locação já preenchidos.
+- Caso contrário, se você tem **três ou mais ordens do dia anteriores** que compartilham a mesma equipe, essas atribuições de equipe são levadas para a nova.
+- Caso contrário, a ordem do dia **clona do dia imediatamente anterior**.
+- Se nada disso se aplicar (primeiro dia do projeto), você recebe uma ordem do dia em branco.
+
+Você pode alterar qualquer coisa que tenha sido pré-preenchida; é só um ponto de partida.
+
+## O cabeçalho
+
+O cabeçalho roda no topo e carrega as principais informações do dia em um relance.
+
+### Hora de apresentação geral
+
+O campo mais importante. Define a hora base de início do dia (ex.: 08:00). Clique para editar. Esse horário ancora a cascata de tempos do cronograma (abaixo) e é o horário padrão enviado por e-mail a cada destinatário, a menos que ele tenha uma hora de apresentação pessoal definida (veja [Pessoal](#personnel-sections)).
+
+### Data
+
+A data da produção. Opcional — é puxada do Dia de Produção da decupagem, mas você pode definir ou sobrescrever manualmente. Exibida no cabeçalho e no PDF exportado.
+
+### Identidade da empresa
+
+O lado esquerdo do cabeçalho leva o perfil da sua empresa (nome, endereço, telefone) e logotipo. Faça upload do logotipo uma vez no nível do workspace via o diálogo de perfil da empresa; ele então aparece no cabeçalho de cada ordem do dia e nos PDFs enviados por e-mail.
+
+### Nome do projeto
+
+Lado direito do cabeçalho. Puxado da entidade do projeto — sem edição separada aqui.
+
+### Configurações de exibição (comportamento do cabeçalho)
+
+Abra o popup de configurações de exibição no menu superior da ordem do dia para alternar:
+
+- **Formato de hora** — 12 horas (`8:00 AM`) ou 24 horas (`08:00`).
+- **Unidade de temperatura** — °F ou °C.
+
+Ambas as escolhas são por usuário e persistem entre sessões.
+
+## Locações
+
+Uma lista reordenável de locações de filmagem nomeadas para o dia. Cada locação tem estes campos:
+
+- **Nome do set e endereço.** Nota opcional ao lado.
+- **Estacionamento.** Um nome de estacionamento + campo de detalhe (onde os caminhões ficam, onde a equipe estaciona).
+- **Hospital.** Nome e endereço do hospital mais próximo — importante para logística de segurança/emergência.
+
+Adicione e edite via a sobreposição de locação. No desktop, você pode pressionar e segurar uma linha de locação e arrastar para reordenar; no celular, dê um toque duplo em uma linha para abrir a sobreposição de edição.
+
+O **autocompletar do Google Places** está integrado em todos os campos de endereço. Comece a digitar e você verá lugares sugeridos; escolher um popula o endereço e armazena as coordenadas, para que a busca de clima (abaixo) tenha uma locação com a qual trabalhar.
+
+Para ocultar toda a seção de locações da ordem do dia (ex.: quando a locação ainda não está fechada), use o toggle de visibilidade da seção nas configurações de exibição.
+
+## Cronograma
+
+O cronograma é a visualização Produção filtrada para este dia. Os planos e banners na ordem do dia são os **mesmos objetos** da visualização Produção — reordenar ou editá-los aqui é o mesmo que reordenar ou editá-los lá. A gramática de gestos é idêntica à de qualquer outro lugar do app.
+
+Três colunas: **hora de início** | **cena + plano** | **duração estimada**.
+
+### Banners
+
+Os banners são linhas que não são planos e que marcam intervalos para refeições, mudanças de locação, encerramentos ou outros marcadores de cronograma. Eles existem apenas na visualização Produção e no cronograma. Adicione um banner pela barra de ferramentas (ou `Cmd / Ctrl + N` na Produção); nomeie-o ("Almoço", "Mudança de locação"), defina sua duração.
+
+Inserir um banner no meio de uma cena divide a cena envolvente no banner — veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production) para o comportamento completo de divisão e mesclagem.
+
+### A cascata de tempos
+
+Você não insere uma hora de início para cada linha. O cronograma tem um motor de tempos em cascata: ele lê a hora de apresentação geral, depois percorre a lista somando a duração estimada de cada linha para calcular a hora de início da próxima.
+
+Se a hora de início explícita de uma linha entra em conflito com o que a cascata teria produzido (você passou do tempo), o horário é destacado em **vermelho**. Se houver uma lacuna entre linhas (a cascata tem folga), aparece em **amarelo**. De qualquer forma, é a duração estimada da própria linha que controla a próxima, não a lacuna.
+
+### Reordenando o cronograma
+
+Desktop: pressione e segure um banner ou linha de plano e arraste. Celular: dê um toque duplo em uma linha para abrir a sobreposição de edição (sem arrastar inline). Reordenações persistem de volta à visualização Produção, já que esses são os mesmos objetos.
+
+A seção de cronograma não pode ser ocultada — é sempre exibida.
+
+## Clima
+
+Se a ordem do dia tem uma locação com coordenadas, o CineLog busca o clima do dia automaticamente quando você abre a ordem do dia pela primeira vez. A exibição mostra:
+
+- Temperatura atual e "sensação térmica"
+- Mínima diária
+- Nascer e pôr do sol
+- Condições, umidade, velocidade do vento
+
+A unidade de temperatura segue a configuração de exibição (°F / °C). Para sobrescrever ou inserir o clima manualmente (a previsão não foi buscada, ou você quer usar uma fonte diferente), toque no bloco de clima e edite. A substituição é armazenada na ordem do dia e reutilizada a cada recarga.
+
+## Seções de pessoal
+
+Cinco seções distintas, cada uma com sua própria função e layout. As pessoas vêm do [Elenco e Equipe](/pt/guides/managing-cast-crew) do projeto; a ordem do dia as referencia, não as copia.
+
+### Equipe Principal (linha do cabeçalho)
+
+Uma lista de referência rápida na segunda linha do cabeçalho mostrando as funções-chave do dia (Diretor, DP, 1º AD, Produtor, etc.) com nomes e telefones. Até cerca de seis slots. Clique no botão de edição para escolher quais funções aparecem.
+
+### Elenco
+
+Tabela de três colunas — avatar, nome, função. Adicione elenco a partir dos contatos do projeto. Clique em qualquer linha para adicionar notas ou definir uma hora de apresentação. Pressione e segure uma linha para reordenar.
+
+### Equipe
+
+A maior seção, agrupada por departamento. No desktop, uma grade com várias colunas; no celular, uma lista vertical de cards. Cada membro da equipe mostra avatar, nome, função e (se definido) hora de apresentação e telefone. Mesmo padrão de edição do Elenco.
+
+### Clientes / Agência
+
+Tabela de três colunas para representantes de clientes, produtores de agência, executivos — qualquer pessoa fora da equipe de produção que precisa estar na ordem do dia. Mesmo padrão de edição do Elenco.
+
+### Figurantes / Background
+
+Grade ou lista expansível de figurantes. Sem avatares nesta seção (intencional — mantém o layout enxuto quando há muitos figurantes).
+
+### Notas por pessoa
+
+Toda linha de pessoa em Elenco, Equipe ou Clientes pode carregar notas privadas. Essas notas são visíveis ao produtor na UI da ordem do dia, mas no PDF enviado por e-mail elas aparecem **apenas na cópia daquela pessoa** — não na de mais ninguém. Útil para instruções individuais ("estacione na entrada lateral", "prova de figurino antes da apresentação").
+
+### Hora de apresentação por pessoa
+
+Cada pessoa também pode ter uma hora de apresentação pessoal que sobrescreve a hora geral. Quando você envia a ordem do dia, o e-mail e o PDF de cada destinatário destacam o horário pessoal. Pessoas sem horário pessoal recebem a hora de apresentação geral.
+
+### Fotos de perfil
+
+Cada pessoa controla sua própria foto de perfil pela tela de Conta — o proprietário do projeto não pode subir uma em nome de um contato. Até que alguém suba sua própria foto, ela aparece com um avatar de iniciais codificado por cor (determinístico a partir do ID do usuário, então a mesma pessoa sempre recebe a mesma cor em todas as ordens do dia).
+
+Para contatos que ainda não entraram no CineLog (você os adicionou ao Elenco e Equipe mas eles não aceitaram o convite), o avatar de iniciais é a única opção. Quando entrarem e subirem sua própria foto, ela se propaga em todos os lugares onde estão referenciados — incluindo ordens do dia passadas em que apareceram.
+
+Desative "Fotos de Perfil" nas configurações de exibição se quiser avatares de iniciais para todos, independentemente.
+
+### Visibilidade das seções
+
+Cada seção (Locações, Clientes, Elenco, Equipe, Figurantes) pode ser ocultada da ordem do dia via o popup de configurações de exibição. O toggle oculta a seção tanto da UI quanto do PDF exportado.
+
+## Mensagem para a equipe
+
+Um bloco rich-text para a mensagem que vai junto com o PDF da ordem do dia. Mesma mensagem para todos os destinatários — para instruções individuais use as notas por pessoa acima.
+
+A barra de ferramentas do editor suporta:
+
+- **Negrito, itálico, sublinhado.**
+- **Cor.** Oito amostras curadas (White, Gold, Copper, Rose, Lavender, Sea Glass, Sage, Parchment).
+- **Embed de imagem.** Clique no botão de imagem, escolha uma imagem. Faz upload para o CDN do CineLog, até 2 MB, somente JPEG / PNG / WebP. A URL da imagem é incorporada na mensagem e aparece no corpo do e-mail.
+- **Limpar formatação.**
+
+O e-mail renderizado aplica a mesma formatação no lado do destinatário. O servidor sanitiza a mensagem antes do envio — somente as tags de formatação na lista de permissões passam.
+
+## Notas de produção
+
+Um campo de rodapé para notas gerais da produção, lembretes de segurança, protocolos de COVID ou qualquer coisa que você queira no fim do PDF de cada destinatário. Aparece centralizado, em maiúsculas.
+
+## Enviando e rastreando confirmações
+
+Quando a ordem do dia estiver pronta, **Enviar** no menu superior abre o diálogo de envio.
+
+### Escolhendo destinatários
+
+Duas etapas:
+
+1. **Destinatários.** Uma lista agrupada por seção (Elenco, Equipe, Figurantes, Clientes), ordenada por departamento e função. Todos com uma hora de apresentação na ordem do dia ficam pré-selecionados por padrão. Toggles em massa permitem selecionar ou desselecionar uma seção inteira de uma vez.
+2. **Mensagem.** Mensagem adicional opcional específica deste envio, colocada sobre a mensagem para a equipe.
+
+### O que os destinatários recebem
+
+Cada destinatário recebe:
+
+- Um PDF personalizado com sua hora de apresentação destacada.
+- A mensagem para a equipe (rich text) mais qualquer mensagem opcional que você adicionou.
+- Suas notas pessoais, se houver (anexadas ao corpo do e-mail, não no PDF visível aos outros).
+- Um **link de confirmação** — uma URL única protegida por token em `links.cinelog.com/confirm-call-sheet/<token>`. Clicar no link abre um portal com a marca CineLog onde a pessoa toca em "Confirmar" para reconhecer o recebimento.
+
+### Página de Envios
+
+Abra a página de **Envios** no menu superior da ordem do dia (ou navegue até `…/call-sheets/<day>/sendouts`) para ver quem recebeu a ordem do dia. Os destinatários são agrupados por **lote de envio** — cada pressão em Enviar cria um novo lote, então reenviar depois de edições preserva o histórico completo. Cada cabeçalho de lote mostra uma contagem "N / M confirmados".
+
+Cada linha de destinatário mostra:
+
+- **Status de entrega** — um dos seguintes:
+  - **queued** — entregue ao provedor de e-mail, ainda não enviado.
+  - **delivered** — aceito pelo servidor de e-mail do destinatário.
+  - **opened** — o cliente de e-mail do destinatário abriu a mensagem.
+  - **bounced** — o servidor de e-mail do destinatário rejeitou (endereço errado, caixa cheia).
+  - **failed** — o provedor de e-mail não conseguiu enviar.
+- **Carimbo de confirmação** — quando ela clica no link.
+
+Entrega e confirmação são independentes: um e-mail pode ser entregue sem ser confirmado (o destinatário ainda não abriu ou ainda não clicou), ou confirmado rapidamente (a pessoa estava no e-mail quando chegou).
+
+### Limites de taxa
+
+Para evitar envios descontrolados, o CineLog impõe dois tetos:
+
+- **Por ordem do dia:** até 10 envios por hora.
+- **Por workspace:** até 1000 e-mails por mês.
+
+São generosos para uso normal; você só vai bater neles se algo estiver em loop ou estiver rodando uma operação fora do comum.
+
+### Reenvios e edições
+
+Você pode reenviar a mesma ordem do dia depois de editá-la (uma mudança de roteiro, troca de equipe, nota de figurino). O novo envio cria um lote novo na página de Envios; lotes anteriores ficam intactos para a trilha de auditoria.
+
+## Exportação em PDF
+
+Duas formas de obter um PDF, dependendo do caso de uso:
+
+### Exportação local pela barra de ferramentas
+
+`Cmd / Ctrl + P` ou o botão de exportar no menu superior abre o diálogo de exportação. Você pode definir as margens da página (topo, base, esquerda, direita em pontos) e exportar. A renderização é local — sem upload, sem renderização do lado do servidor — então funciona offline. Útil quando você quer um PDF para distribuir fora do fluxo de e-mail (Slack, WhatsApp, entrega pessoal).
+
+### PDFs por destinatário no momento do envio
+
+Quando você pressiona Enviar, o servidor gera um PDF personalizado para cada destinatário com sua hora de apresentação destacada e suas notas pessoais anexadas. Você não dispara isso diretamente — é um efeito colateral do envio.
+
+Ambos os caminhos de exportação respeitam as configurações de exibição: seções ocultas continuam ocultas, a unidade de temperatura e o formato de hora são aplicados. Mídia grande é reduzida.
+
+Scripts internacionais (árabe, hebraico, devanágari, CJK, tailandês) renderizam corretamente via fallbacks de fonte.
+
+## Permissões
+
+A edição e o envio de ordens do dia são controlados pelo recurso ACL `call_sheets` do projeto. Visualizadores podem ver ordens do dia às quais têm acesso; apenas funções com permissão de edição podem modificar o cronograma, as pessoas ou a mensagem; enviar requer a mesma permissão de edição.
+
+## Comportamento offline
+
+Editar ordens do dia funciona offline — as alterações são salvas no banco local e sincronizam quando você reconecta, como tudo no CineLog. **Enviar** requer conectividade (é um fluxo de e-mail de saída). **Exportação local em PDF** funciona offline.
+
+## Se isso não estiver funcionando
+
+*"Minha nova ordem do dia veio pré-preenchida com coisas que eu não pedi."* Esse é o comportamento de smart-seeding. O CineLog copia de uma ordem do dia anterior compatível (mesma locação → mesma equipe + locações, ou então o dia imediatamente anterior) para você não começar do zero todo dia. Edite ou limpe o que não quiser.
+
+*"A ordem do meu cronograma não bate com a visualização Produção."* Deveria — são os mesmos dados. Se diferem, o indicador de sincronização provavelmente tem alterações pendentes. Espere ele drenar.
+
+*"Como mudo a foto de perfil de um membro da equipe?"* Você não pode — as fotos de perfil são controladas por cada usuário na própria tela de Conta. Como proprietário do projeto você não pode subir uma em nome dele. Pessoas que ainda não entraram no CineLog aparecem com o avatar de iniciais; quando entrarem e subirem, a foto delas aparece em todas as ordens do dia em que estão.
+
+*"A hora do cronograma está destacada em vermelho / amarelo."* Vermelho significa que você passou do tempo — a hora de início explícita daquela linha contradiz o que a cascata de tempos calculou. Amarelo significa que há uma lacuna entre linhas que a cascata deixou sem preenchimento. Ajuste as durações ou a hora de início para reconciliar.
+
+*"O clima não carregou."* O auto-fetch precisa de uma locação com coordenadas. Defina uma locação via autocompletar do Google Places (para que o lat/lng seja capturado), depois recarregue a ordem do dia. Você também pode inserir o clima manualmente.
+
+*"Um membro da equipe disse que não recebeu a ordem do dia."* Abra a página de Envios daquele dia e ache a linha dele. **delivered** ou **opened** significa que saiu do CineLog e foi aceito pelo provedor de e-mail dele — o problema é downstream (pasta de spam, regras de caixa, apagado por engano). **bounced** ou **failed** significa que o e-mail nunca chegou; verifique o endereço em Elenco e Equipe e reenvie. **queued** significa que ainda está a caminho; dê um minuto.
+
+*"A contagem de confirmados não está subindo."* A confirmação exige que o destinatário clique no link do e-mail. Só a entrega não basta.
+
+*"Bati em um limite de envio."* Você excedeu 10 envios na última hora para esta ordem do dia, ou 1000 e-mails no último mês para o workspace. Espere ou entre em contato se precisar de um limite maior.
+
+*"A imagem da mensagem para a equipe não subiu."* Verifique o arquivo: abaixo de 2 MB, JPEG / PNG / WebP. Outros formatos e arquivos grandes demais são rejeitados.

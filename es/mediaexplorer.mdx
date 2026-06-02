@@ -1,0 +1,76 @@
+---
+title: Explorador de Medios
+lastUpdated: 2026-04-22
+description: "Sube, organiza y gestiona imágenes de previsualización y medios de referencia para los planos de tu producción."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Manejar gigabytes de fotos de localización, vídeos de referencia y fotogramas de storyboard es crucial para la producción cinematográfica. El Explorador de Medios de CineLog proporciona capacidades completas de gestión de archivos, impulsadas por un motor de subida inteligente diseñado para que sigas trabajando con fluidez incluso cuando tu conexión a internet es deficiente.
+
+## Capacidades principales
+
+<CardGrid>
+<Card title="Enfoque de pantalla dual">
+  Accede a tus medios a través del completo Explorador de Medios global del proyecto o de la Pantalla Simplificada de Medios contextual de cada funcionalidad.
+</Card>
+
+<Card title="Procesamiento local instantáneo">
+  Antes de enviar nada a la nube, las imágenes se procesan en miniaturas de forma local en tu dispositivo, garantizando que tengas referencia visual inmediata sin esperar a que se completen las subidas.
+</Card>
+
+<Card title="Subidas en segundo plano resistentes">
+  Las transferencias de archivos ocurren totalmente en segundo plano. Si pierdes el Wi-Fi, el sistema pausa de forma inteligente y reanuda automáticamente la subida la próxima vez que abras la app.
+</Card>
+
+<Card title="Analíticas de almacenamiento">
+  Cálculo en tiempo real del espacio de almacenamiento usado por proyecto con desgloses por funcionalidad y tipo de archivo.
+</Card>
+</CardGrid>
+
+## Uso detallado y flujos de trabajo
+
+### Subidas de archivos inteligentes
+
+Disponibilidad instantánea (Previsualización)
+
+Como CineLog prioriza tu dispositivo local, la app genera al instante una miniatura local optimizada para que puedas seguir ordenando, viendo y organizando tus Planos inmediatamente. Nunca tienes que esperar a que termine una subida para seguir trabajando.
+
+Sincronización en segundo plano
+
+La app transmite de forma segura el archivo original pesado directamente al almacenamiento en la nube en segundo plano.
+
+Recuperación
+
+Si pierdes la conexión a mitad de una subida, CineLog pone el archivo en cola. Un servicio especializado en segundo plano recupera automáticamente las transferencias interrumpidas de forma silenciosa entre sesiones.
+
+### Operando las interfaces
+
+#### Explorador de Medios completo
+
+Se accede a través del menú "MÁS" en la navegación principal del proyecto. Esta es tu interfaz completa de gestión de archivos a nivel de proyecto. Incluye filtrado global (por funcionalidad o estado), operaciones por lotes (eliminar varios seleccionados) y límites generales de analíticas de almacenamiento.
+
+#### Pantalla simplificada de medios
+
+Se accede directamente desde funcionalidades individuales (p. ej. haciendo clic en el botón de previsualización de un plano). Esta es una vista ligera y enfocada, prefiltrada a ese elemento específico. Puedes subir, reordenar o eliminar archivos específicamente asociados a ese ítem sin perder el contexto.
+
+## Estados visuales y conciencia offline
+
+Cada miniatura de medio siempre muestra una insignia de estado en la esquina inferior derecha con dos iconos que indican disponibilidad:
+
+#### Pin offline
+
+Siempre visible en la insignia de la esquina inferior derecha. Aparece brillante cuando el archivo está disponible en tu dispositivo, atenuado cuando no está almacenado localmente.
+
+#### Nube completada
+
+Siempre visible en la insignia de la esquina inferior derecha, junto al pin offline. Aparece brillante cuando está sincronizado con el CDN en la nube, atenuado cuando aún no se ha subido.
+
+## Consejos avanzados y particularidades por plataforma
+
+### Exploración offline
+
+Si tomas fotos de exploración de localizaciones sin conexión a internet, puedes subirlas completamente dentro de CineLog. La app las almacena localmente, las vincula a tus escenas y pondrá en cola la subida en segundo plano automáticamente una vez que llegues a una zona con cobertura.
+
+### Filtrado con selección múltiple
+
+Al gestionar grandes cantidades de recursos descartados en el Explorador de Medios completo, usa la capacidad de selección múltiple para eliminar por lotes los archivos no utilizados de una sola vez y liberar tu cuota de almacenamiento.

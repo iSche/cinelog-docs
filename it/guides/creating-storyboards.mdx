@@ -1,0 +1,46 @@
+---
+title: Storyboard
+lastUpdated: 2026-05-23
+description: "Pianificazione visiva di una scena alla volta — frame di pre-visualizzazione per inquadratura, layout lineare o a griglia, esportazione in PDF. Riordinare uno storyboard riordina le inquadrature sottostanti."
+---
+
+Uno storyboard in CineLog è una vista visiva delle inquadrature di una scena, con frame di pre-visualizzazione allegati. Non è una copia separata dei dati — si sovrappone alla lista delle inquadrature, quindi riordinare uno storyboard riordina le inquadrature sottostanti.
+
+Questa guida assume [Le basi](/it/guides/introduction).
+
+## Cos'è uno storyboard
+
+Una vista delle inquadrature di una singola scena, che mostra frame di pre-visualizzazione e alcuni campi chiave dell'inquadratura. Non duplica le inquadrature; è uno strato sopra la lista delle inquadrature. Le Viste Storyboard (layout salvati) appaiono come sub-entry sotto Storyboard nella sidebar.
+
+## Layout
+
+Due modalità di visualizzazione:
+
+- **Lineare** — stile carosello, un'inquadratura alla volta. Buono per le presentazioni di revisione.
+- **Griglia** — più inquadrature affiancate. Buono per il riferimento a colpo d'occhio.
+
+Cambia dalla toolbar.
+
+## Aggiungere frame di pre-visualizzazione
+
+Tocca la cella di pre-visualizzazione di un'inquadratura. Si apre il media picker — stessa grammatica di gesti dell'editing delle celle in [Le basi](/it/guides/introduction#2-editing-fields). Scegli un'immagine o un frame video dalla media library del progetto.
+
+Ogni frame è un riferimento a un file nella media library, non una copia. Sostituire il file nella library lo sostituisce ovunque venga utilizzato.
+
+## Riordinare i frame
+
+Trascina le inquadrature nello storyboard per riordinarle. Il riordino si applica alle inquadrature sottostanti nella scena di appartenenza — non c'è un "ordine storyboard" separato che diverga dall'ordine delle inquadrature. Le lettere delle inquadrature si aggiornano di conseguenza.
+
+## Impostazioni di visualizzazione (per storyboard)
+
+Colonne della griglia, spaziatura, rapporto d'aspetto (16:9, 2.35:1, 4:3). Regola dalla toolbar.
+
+## Esportazione
+
+`Cmd / Ctrl + P` esporta lo storyboard in PDF, renderizzato localmente.
+
+## Se non funziona
+
+*"Ho riordinato il mio storyboard e ora le mie lettere delle inquadrature sono cambiate."* È atteso. Riordinare uno storyboard riordina le inquadrature sottostanti; non c'è un ordine storyboard separato.
+
+*"Ho sostituito un frame di pre-visualizzazione ed è cambiato su un'altra inquadratura."* I frame di pre-visualizzazione sono riferimenti a file della media library. Sostituire il file lo sostituisce ovunque venga utilizzato. Per usare un file diverso, scegline uno nuovo dalla library invece di sostituire i contenuti del file.

@@ -1,0 +1,65 @@
+---
+title: Les bases du découpage technique
+lastUpdated: 2026-05-23
+description: "Construis un découpage technique à partir de zéro — trois façons d'ajouter des plans, comment fonctionne la numérotation, comment réorganiser et ce qui est supprimé quand tu enlèves un plan ou une scène."
+---
+
+Le découpage technique est l'endroit où vit la préproduction : chaque plan du scénario, dans l'ordre où tu prévois de les tourner. Cet article couvre les blocs de construction — ajouter des plans, le schéma de numérotation, la réorganisation et ce qui se passe quand tu supprimes des choses.
+
+Ce guide suppose [Les bases](/fr/guides/introduction). Le vocabulaire clic-tap-glissement dans le découpage technique est le même que celui de toutes les autres listes de l'application.
+
+## Trois façons de remplir
+
+Un nouveau projet te donne un découpage technique vide. Il y a trois façons de le remplir :
+
+- **Manuellement, un plan à la fois.** Clique sur le bouton `+ Ajouter un plan` en bas de n'importe quel bloc de scène.
+- **Raccourci clavier.** `Cmd / Ctrl + N` ajoute un nouveau plan en bas de la scène actuellement ciblée.
+- **Remplir depuis le scénario.** `Shift + P` (ou le bouton de la barre d'outils) scanne les en-têtes de scène du scénario importé (lignes comme `INT. CUISINE - JOUR`) et crée automatiquement un bloc de scène par en-tête, chacun avec un plan par défaut. Le résultat n'est aussi propre que ton scénario — des en-têtes mal formés donnent des scènes mal formées.
+
+La plupart des projets commencent avec Remplir depuis le scénario comme première passe approximative, puis affinent manuellement.
+
+## Numérotation des plans
+
+Les plans sont numérotés automatiquement. Trois formats sont disponibles dans les [Paramètres d'affichage](/fr/guides/shot-list/display-settings) :
+
+- **Alphanumérique** — `1A`, `1B`, `2A`. Numéro de scène + lettre par plan dans la scène. Par défaut.
+- **Décimal** — `1.1`, `1.2`, `2.1`.
+- **Séquentiel** — `1`, `2`, `3`, `47`. Continu à travers le projet.
+
+Les numéros et lettres se mettent à jour à la réorganisation. Si tu déplaces `1C` en haut de sa scène, la liste lit brièvement C, A, B avant de recalculer en A, B, C. N'écris pas la lettre d'un plan en t'attendant à ce qu'elle soit stable entre les déplacements.
+
+Changer de format renumérote tout le projet. Sur un projet déjà mis en lignes, c'est destructif — confirme avant de le faire.
+
+## Réorganiser les plans
+
+Fais glisser n'importe quel plan pour le déplacer. Le geste est le glissement universel des [Bases](/fr/guides/introduction#4-dragging-to-reorder) :
+
+- **Dans une scène** — fais glisser vers le haut ou vers le bas. Les lettres se recompactent.
+- **Entre les scènes** — fais glisser au-delà d'une limite de scène. Le numéro de scène du plan change pour correspondre à la destination ; les lettres se recompactent dans les scènes source et destination.
+- **Dans l'espace vide entre deux scènes** — CineLog crée une nouvelle scène à cet endroit.
+
+La vue Production ajoute une règle de portée de scène pour les multi-sélections ; voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production).
+
+## Éditer les champs de plan
+
+Clique sur une cellule (bureau) ou tape pour étendre la ligne et tape un champ (mobile). Les champs sont sensibles au type : le numéro de plan ouvre une saisie de texte, jour et objectif sont des listes déroulantes, statut et prévisualisation sont des bascules ou boutons sélecteurs. Toutes les modifications sont sauvegardées automatiquement — pas de bouton Sauvegarder. Voir [Les bases](/fr/guides/introduction#2-editing-fields) pour les raccourcis clavier dans l'éditeur et les mises en garde de la sauvegarde automatique.
+
+Les colonnes personnalisées que tu ajoutes dans les [Paramètres d'affichage](/fr/guides/shot-list/display-settings) apparaissent automatiquement aux côtés des colonnes intégrées.
+
+## Supprimer
+
+Clic droit sur un plan → Supprimer (bureau), ou glisser / menu de débordement (mobile). La cascade dépend de ce que tu supprimes et où :
+
+- **Un seul plan en vue Linéaire** — le retire du projet. Si c'était le dernier plan de sa scène, la scène disparaît aussi (il n'y a pas d'état scène-vide).
+- **Un seul plan en vue Production** — le retire du planning de ce jour seulement. Le plan existe toujours dans Linéaire et peut être replanifié.
+- **Une scène** (clic droit sur l'en-tête de scène) — supprime la scène et chaque plan dedans, partout.
+
+La boîte de dialogue de confirmation énonce toujours ce qui est sur le point de disparaître avant que tu valides. La sémantique complète de suppression à travers les vues est dans [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production).
+
+## Si ça ne marche pas
+
+*« Les lettres de mes plans ont changé après que j'ai fait glisser. »* Attendu — les lettres sont recalculées après chaque réorganisation pour qu'elles restent dans l'ordre d'affichage.
+
+*« Remplir depuis le scénario m'a donné un fouillis de scènes. »* Ouvre le scénario et nettoie les en-têtes de scène (`INT. / EXT. LIEU - HEURE`), puis relance.
+
+*« J'ai supprimé le dernier plan d'une scène et toute la scène a disparu. »* Aussi attendu — il n'y a pas d'état scène-vide. Pour garder la scène, laisse un plan-marqueur dedans.

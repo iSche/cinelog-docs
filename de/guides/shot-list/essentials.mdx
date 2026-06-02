@@ -1,0 +1,65 @@
+---
+title: Einstellungslisten-Grundlagen
+lastUpdated: 2026-05-23
+description: "Eine Einstellungsliste von Grund auf aufbauen – drei Wege, Einstellungen hinzuzufügen, wie die Nummerierung funktioniert, wie man umordnet und was gelöscht wird, wenn du eine Einstellung oder eine Szene entfernst."
+---
+
+Die Einstellungsliste ist, wo die Vorproduktion lebt: jede Einstellung im Drehbuch, in der Reihenfolge, in der du sie drehen willst. Dieser Artikel behandelt die Bausteine – Einstellungen hinzufügen, das Nummerierungsschema, Umordnen und was passiert, wenn du Dinge löschst.
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus. Das Klick-Tipp-Drag-Vokabular in der Einstellungsliste ist dasselbe wie in jeder anderen Liste der App.
+
+## Drei Wege zur Befüllung
+
+Ein neues Projekt gibt dir eine leere Einstellungsliste. Es gibt drei Wege, sie zu füllen:
+
+- **Manuell, eine Einstellung nach der anderen.** Klicke auf den `+ Einstellung hinzufügen`-Button unten in jedem Szenenblock.
+- **Hotkey.** `Cmd / Ctrl + N` fügt eine neue Einstellung unten in der aktuell fokussierten Szene hinzu.
+- **Aus Drehbuch befüllen.** `Shift + P` (oder der Werkzeugleisten-Button) scannt die Szenenüberschriften des importierten Drehbuchs (Zeilen wie `INT. KITCHEN - DAY`) und erstellt automatisch einen Szenenblock pro Überschrift, jeweils mit einer Default-Einstellung. Das Ergebnis ist nur so sauber wie dein Drehbuch – fehlerhafte Überschriften ergeben fehlerhafte Szenen.
+
+Die meisten Projekte starten mit "Aus Drehbuch befüllen" als grobe erste Runde und verfeinern dann manuell.
+
+## Einstellungs-Nummerierung
+
+Einstellungen werden automatisch nummeriert. Drei Formate sind in den [Anzeige-Einstellungen](/de/guides/shot-list/display-settings) verfügbar:
+
+- **Alphanumerisch** — `1A`, `1B`, `2A`. Szenennummer + Buchstabe pro Einstellung innerhalb der Szene. Standard.
+- **Dezimal** — `1.1`, `1.2`, `2.1`.
+- **Sequenziell** — `1`, `2`, `3`, `47`. Kontinuierlich durch das Projekt.
+
+Nummern und Buchstaben aktualisieren sich beim Umordnen. Wenn du `1C` an den Anfang seiner Szene verschiebst, liest die Liste kurz C, A, B, bevor sie auf A, B, C neuberechnet. Schreib nicht den Buchstaben einer Einstellung auf und erwarte, dass er über Verschiebungen hinweg stabil bleibt.
+
+Das Ändern des Formats nummeriert das gesamte Projekt neu. Bei einem geliniaten Projekt ist das destruktiv – bestätige, bevor du es machst.
+
+## Einstellungen umordnen
+
+Ziehe eine beliebige Einstellung, um sie zu verschieben. Die Geste ist das universelle Drag aus [Die Grundlagen](/de/guides/introduction#4-dragging-to-reorder):
+
+- **Innerhalb einer Szene** — nach oben oder unten ziehen. Buchstaben werden neu kompaktiert.
+- **Über Szenen hinweg** — über eine Szenengrenze ziehen. Die Szenennummer der Einstellung ändert sich passend zum Ziel; Buchstaben werden in Quell- und Zielszene neu kompaktiert.
+- **In den leeren Raum zwischen zwei Szenen** — CineLog erstellt dort eine neue Szene.
+
+Die Drehtage-Ansicht ergänzt eine Szenen-Scope-Regel für Mehrfachauswahlen; siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production).
+
+## Einstellungs-Felder bearbeiten
+
+Klicke in eine Zelle (Desktop) oder tippe, um die Zeile auszuklappen, und tippe auf ein Feld (Mobil). Felder sind feldbewusst: Die Einstellungsnummer öffnet ein Texteingabefeld, Tag und Objektiv sind Dropdowns, Status und Previs sind Toggles oder Picker-Buttons. Alle Bearbeitungen werden automatisch gespeichert – kein Speichern-Button. Siehe [Die Grundlagen](/de/guides/introduction#2-editing-fields) für die Tastenkürzel im Editor und die Auto-Save-Vorbehalte.
+
+Benutzerdefinierte Spalten, die du in den [Anzeige-Einstellungen](/de/guides/shot-list/display-settings) hinzufügst, erscheinen automatisch neben den integrierten.
+
+## Löschen
+
+Rechtsklick auf eine Einstellung → Löschen (Desktop) oder swipen / Overflow-Menü (Mobil). Die Kaskade hängt davon ab, was du wo löschst:
+
+- **Eine einzelne Einstellung in der linearen Ansicht** — entfernt sie aus dem Projekt. Wenn es die letzte Einstellung in ihrer Szene war, geht die Szene auch (es gibt keinen Leere-Szene-Zustand).
+- **Eine einzelne Einstellung in der Drehtage-Ansicht** — entfernt sie nur aus dem Plan für diesen Tag. Die Einstellung existiert noch in der linearen Ansicht und kann neu eingeplant werden.
+- **Eine Szene** (Rechtsklick auf den Szenen-Header) — entfernt die Szene und jede Einstellung darin, überall.
+
+Der Bestätigungsdialog buchstabiert immer aus, was im Begriff ist zu verschwinden, bevor du dich festlegst. Vollständige Lösch-Semantik über die Ansichten findest du in [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production).
+
+## Falls das nicht funktioniert
+
+*"Meine Einstellungs-Buchstaben haben sich nach dem Ziehen geändert."* Erwartet – Buchstaben werden nach jedem Umordnen neu berechnet, damit sie in Anzeigereihenfolge bleiben.
+
+*"Aus Drehbuch befüllen hat mir ein Chaos an Szenen geliefert."* Öffne das Drehbuch und räume die Szenenüberschriften auf (`INT. / EXT. LOCATION - TIME`), dann lass es erneut laufen.
+
+*"Ich habe die letzte Einstellung in einer Szene gelöscht und die ganze Szene ist verschwunden."* Auch erwartet – es gibt keinen Leere-Szene-Zustand. Um die Szene zu erhalten, lass einen Platzhalter-Shot darin.

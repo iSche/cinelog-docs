@@ -1,0 +1,74 @@
+---
+title: "Casting et Équipe"
+lastUpdated: 2026-04-22
+description: "Gère ton équipe de production cinématographique avec rôles, départements, contacts d'espace de travail et contrôle d'accès basé sur les rôles. S'intègre directement aux feuilles de service."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+La fonctionnalité Casting et Équipe de CineLog est conçue pour gérer la collaboration d'équipe en toute sécurité. Organise ton équipe en utilisant des hiérarchies strictes aux normes de l'industrie et contrôle dynamiquement qui a accès à tes données sensibles de projet.
+
+## Fonctionnalités principales
+
+<CardGrid>
+<Card title="Hiérarchie aux normes de l'industrie">
+  Organise tous les membres en une structure rigide à 3 niveaux (**Groupe → Département → Rôle**) reflétant les productions de grands studios.
+</Card>
+
+<Card title="Planification intelligente des rôles">
+  Commence à déléguer des **emplacements vacants** non assignés pendant la préproduction sans avoir besoin de savoir exactement qui tu embauches.
+</Card>
+
+<Card title="Contrôle d'accès basé sur les rôles">
+  Partage ta vision en toute sécurité. Contrôle ce que chaque rôle est autorisé à voir dans ton projet, garantissant que les bonnes personnes voient les bonnes informations.
+</Card>
+
+<Card title="Deux perspectives">
+  Trie rapidement ton réseau via le tableau Kanban visuel par département, ou parcours ton rolodex unifié global de Contacts.
+</Card>
+</CardGrid>
+
+## Utilisation détaillée et flux de travail
+
+<Aside type="tip">
+Gérer une équipe en croissance est chaotique. En établissant une source de vérité pour les Rôles et les Contacts, toutes les autres fonctionnalités de CineLog deviennent automatisées.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Planifier ton équipe (emplacements vacants)**
+
+Tu n'as pas besoin d'un seul contact dans ton rolodex pour commencer le recrutement. Ajoute des rôles standard de l'industrie (par exemple « Chef machiniste ») pour créer un **emplacement vacant**. Une fois que tu embauches quelqu'un, il suffit d'assigner un contact existant ou nouvellement invité à l'emplacement. Tous les paramètres par défaut du département suivront intelligemment le contact.
+
+</li>
+<li>
+
+**Deux vues des contacts**
+
+Tu travailles sur un téléphone ou un grand écran ? Choisis ta vue. La **vue Casting et Équipe** te donne un tableau de type Kanban représentant les emplacements de département (par exemple, Caméra -> Machinerie -> Chef machiniste). La **vue Contacts** agit comme un rolodex plat et simple de tes contacts, nativement étendu à tout ton espace de travail.
+
+</li>
+<li>
+
+**Accès au projet granulaire et invitations**
+
+Ajouter quelqu'un à ton Casting et Équipe ne lui donne pas automatiquement toutes les permissions de lecture. Utilise le **bouton d'intention** pour acheminer en toute sécurité une invitation par e-mail à quelqu'un, reliant son compte CineLog à ton projet. Lors de l'ajustement des permissions, CineLog résout intelligemment les remplacements individuels par rapport aux valeurs par défaut du département afin que tu puisses élargir en toute confiance la portée d'un individu.
+
+</li>
+
+</ol>
+</Steps>
+
+## Écosystème de données intégré
+
+<Aside type="tip">
+Les Contacts que tu ajoutes et les Rôles que tu organises agissent comme le système nerveux central pour la planification de tes jours de production.
+</Aside>
+
+<Aside type="tip" title="Avantages du routage de données">
+-   **Automatisation des Feuilles de Service** : Il n'y a aucune saisie manuelle dans les Feuilles de Service. Si tu places « Jane Doe » dans l'emplacement Réalisateur de ta liste Casting et Équipe, elle se remplit automatiquement en haut de chaque PDF de Feuille de Service.
+-   **Portée de compte unifiée** : Ton rolodex de Contacts couvre tout l'espace de travail. Modifier l'e-mail ou le numéro de téléphone d'un contact s'applique globalement à chaque projet dans lequel tu l'as inclus, éliminant les duplications frustrantes.
+-   **Sélection par lot** : Utilise les actions de sélection pour exécuter des modifications groupées rapides et simultanées sur toute ton équipe au lieu de répéter de simples changements encore et encore.
+</Aside>

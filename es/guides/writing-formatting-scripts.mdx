@@ -1,0 +1,103 @@
+---
+title: Escribir y formatear guiones
+lastUpdated: 2026-04-22
+description: "Importa guiones FDX, Fountain, PDF, TXT y RTF al editor de CineLog. Formatea con sintaxis Fountain, sigue las analíticas, exporta a PDF y rellena tu lista de planos."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+El Editor de Guion de CineLog es un entorno de escritura potente y de nivel profesional integrado nativamente en la plataforma. Soporta formato Fountain en tiempo real, analíticas en vivo y sincronización fluida de datos con la nube.
+
+Tanto si escribes un nuevo guion desde cero como si importas un guion existente, CineLog garantiza que tu formato siempre cumpla con los estándares de la industria.
+
+## Importar un guion existente
+
+Si ya empezaste a escribir tu guion en otro software, puedes importarlo fácilmente a CineLog sin perder el formato.
+
+<Steps>
+1. **Abre el Editor de Guion:** Navega al Editor de Guion usando la barra lateral izquierda.
+2. **Importar documento:** Haz clic en el botón **Importar** en la barra de menú superior (o pulsa <kbd>Cmd</kbd> + <kbd>I</kbd>) y selecciona tu archivo de guion.
+3. **Análisis automático:** El analizador universal de CineLog procesará automáticamente el archivo, extraerá las escenas y convertirá el formato.
+</Steps>
+
+<CardGrid>
+  <Card title="Formatos compatibles">
+    - **Final Draft (.fdx)**
+    - **Fountain (.fountain)**
+    - **PDF** (Extracción de texto)
+    - **Texto plano (.txt)**
+    - **Texto enriquecido (.rtf)**
+  </Card>
+</CardGrid>
+
+---
+
+## Edición y formato en vivo
+
+CineLog usa el lenguaje de marcado **Fountain** por debajo. Sin embargo, no necesitas saber Fountain para escribir — el editor formatea automáticamente tu texto a medida que escribes.
+
+### Elementos de Fountain compatibles
+
+CineLog actualmente soporta la especificación principal de Fountain necesaria para la edición profesional de guiones. Puedes escribir con naturalidad para dejar que la detección inteligente haga el trabajo, o forzar el formato usando los caracteres de sintaxis de Fountain.
+
+- **Encabezados de escena**: Empieza una línea con prefijos estándar (`INT.`, `EXT.`, etc.), o fuérzalo empezando la línea con un punto (`.`).
+- **Acción**: El texto estándar se trata como acción. Fuérzalo empezando una línea con un signo de exclamación (`!`).
+- **Personajes**: Escribe completamente en MAYÚSCULAS (p. ej., `JOHN`), o fuérzalo empezando la línea con una arroba (`@`).
+- **Diálogo**: Simplemente escribe inmediatamente después de una línea de Personaje.
+- **Acotaciones**: Envuelve el texto entre paréntesis `(así)`.
+- **Transiciones**: Usa terminaciones estándar en MAYÚSCULAS como `CUT TO:`, o fuérzalo empezando la línea con un símbolo mayor que (`>`).
+- **Texto centrado**: Envuelve el texto entre símbolos angulares: `> Centra este texto <`.
+- **Énfasis**: Soporte para énfasis estándar estilo markdown:
+  - `*Cursiva*`
+  - `**Negrita**`
+  - `_Subrayado_`
+
+### Elementos actualmente no compatibles
+Estamos ampliando constantemente nuestro soporte de Fountain. En este momento, las siguientes funcionalidades avanzadas de Fountain **aún no son compatibles** en el editor en vivo:
+- Diálogo dual (`^`)
+- Boneyards (`/* */`)
+- Secciones (`#`) y Sinopsis (`=`)
+- Notas en línea (`[[ ]]`)
+
+### Atajos manuales de anulación
+Si la detección inteligente acierta mal, o si quieres forzar un estilo de formato específico, usa los atajos manuales de anulación:
+
+- <kbd>Cmd</kbd> + <kbd>1</kbd>: Encabezado de Escena
+- <kbd>Cmd</kbd> + <kbd>2</kbd>: Personaje
+- <kbd>Cmd</kbd> + <kbd>3</kbd>: Diálogo
+- <kbd>Cmd</kbd> + <kbd>4</kbd>: Acción
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transición
+
+<Aside type="tip">
+**Guardado continuo:** No hay un botón "Guardar" en el Editor de Guion. Cada pulsación de tecla se guarda silenciosa y continuamente en tu dispositivo local y se sincroniza de forma segura con la nube en segundo plano.
+</Aside>
+
+---
+
+## Analíticas en vivo
+
+Mientras escribes, CineLog calcula métricas profesionales en tiempo real, permitiéndote evaluar el alcance y el ritmo de tu guion sin salir nunca del editor.
+
+Busca el panel de analíticas para ver actualizaciones en vivo sobre:
+- **Estimación de páginas:** Fórmulas estándar de la industria para el cálculo de páginas con precisión profesional.
+- **Recuento de escenas y personajes:** Número total de escenas y personajes únicos con diálogo.
+- **Métricas de palabras:** Recuento total de palabras y tiempo estimado de lectura.
+
+---
+
+## Vista previa y exportación
+
+Cuando estés listo para revisar tu guion final o compartirlo con otros, puedes pasar sin fisuras del editor a un PDF estandarizado.
+
+<Steps>
+1. **Modo Vista Previa:** Haz clic en el botón **"Vista Previa y Exportar"** en la barra de menú superior para cambiar del editor de desplazamiento continuo a una vista paginada lista para impresión. El modo Vista Previa renderiza una Portada estándar y saltos de página precisos.
+2. **Exportar:** Mientras estés en modo Vista Previa, haz clic en el icono **"Exportar"**.
+3. **Selecciona el formato:** Elige el formato de archivo que necesites.
+</Steps>
+
+CineLog actualmente soporta la exportación de tu guion en los siguientes formatos:
+- **PDF (.pdf):** Documento de alta calidad, paginado y con formato de la industria, perfecto para imprimir o enviar por correo.
+- **Final Draft (.fdx):** Formato XML estándar de la industria, te permite mover sin fisuras tu guion a Final Draft u otro software de producción.
+- **Fountain (.fountain):** Marcado en texto plano para máxima compatibilidad.
+- **Texto plano (.txt):** Exportación básica de texto para lectura simple.
+- **JSON (.json):** Exportación de datos estructurados para integraciones y herramientas personalizadas.
+- **CSV (.csv):** Exportación de desglose tabular para hojas de cálculo e informes.

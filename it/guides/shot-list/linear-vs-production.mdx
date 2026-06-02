@@ -1,0 +1,86 @@
+---
+title: Vista Lineare vs Vista Produzione
+lastUpdated: 2026-05-23
+description: "Due viste sulle stesse inquadrature — ordine di sceneggiatura vs ordine giorno di ripresa. Copre la regola di split di scena parziale, banner, selezione scene-scoped, auto-selezione di intestazione scena, sincronizzazione tra viste e come l'eliminazione differisce tra le due viste."
+---
+
+Lineare e Produzione sono due viste delle stesse inquadrature. Lineare è in ordine di sceneggiatura — il modo in cui regista e segretario di edizione la leggono. Produzione è in ordine di giorno di ripresa — il modo in cui l'Aiuto Regista pianifica il programma. Tutto il resto in questa guida riguarda le differenze.
+
+Questa guida assume [Le basi](/it/guides/introduction) e [Le basi della lista delle inquadrature](/it/guides/shot-list/essentials).
+
+## Cambiare vista
+
+Toggle nell'intestazione della vista sopra la lista. `Shift + L` alterna il layout delle colonne (fit ↔ scroll) — utile quando vuoi vedere più colonne contemporaneamente.
+
+Entrambe le viste mostrano le stesse inquadrature. Le modifiche fatte in una appaiono nell'altra immediatamente.
+
+## La regola di split di scena parziale (solo Produzione)
+
+In vista Produzione riorganizzerai le inquadrature per giorno di ripresa. La maggior parte delle volte sposterai interi blocchi di scena. Ma se sposti *parte* di una scena in un giorno diverso, CineLog suddivide la scena alla sorgente: le inquadrature spostate diventano un segmento separato alla destinazione, e le inquadrature non spostate restano dove erano sotto un'intestazione separata. Entrambi i segmenti appartengono ancora narrativamente alla stessa scena, ma sono pianificati indipendentemente.
+
+Questo è l'unico modo in cui la programmazione può rappresentare "abbiamo girato metà della scena 14 martedì e l'altra metà venerdì". Può sembrare un bug la prima volta che succede; non lo è.
+
+## Selezionare in vista Produzione
+
+La vista Produzione applica una regola di scope di scena alla selezione multipla per proteggere il raggruppamento per giorno di ripresa:
+
+- Puoi selezionare qualsiasi sottoinsieme di inquadrature **all'interno di una singola scena**.
+- Puoi selezionare uno o più **interi** blocchi di scena (con le loro intestazioni).
+- **Non puoi** mescolare selezioni parziali da scene diverse.
+
+Se la tua selezione non è valida, il target di rilascio non aprirà uno spazio quando trascini — la riga tornerà alla sua posizione originale al rilascio.
+
+**La vista Lineare non ha tale restrizione.** Mischia liberamente.
+
+### Selezionare un'intera scena (intestazione auto-selezionata)
+
+Non afferri direttamente l'intestazione di scena. Seleziona ogni inquadratura sotto di essa — una volta che sono tutte selezionate, l'intestazione viene aggiunta automaticamente alla selezione. Deseleziona una qualsiasi inquadratura e anche l'intestazione viene deselezionata. Trascina qualsiasi riga selezionata e l'intero blocco di scena si muove insieme.
+
+Questo è il meccanismo con cui "sposta un'intera scena" funziona in entrambe le viste.
+
+## Banner
+
+I banner sono righe non-inquadratura che marcano pause pasto, spostamenti di compagnia, wrap o altri marcatori di programmazione. Esistono solo in vista Produzione.
+
+- **Aggiungere un banner.** In Produzione, `Cmd / Ctrl + N` aggiunge un banner invece di un'inquadratura. O usa la toolbar.
+- **Spostare un banner.** Stesso meccanismo di drag delle inquadrature.
+- **Eliminare un banner.** Tasto destro → Elimina.
+
+Inserire un banner a metà scena suddivide la scena circostante al banner: le inquadrature sopra restano sotto l'intestazione originale, le inquadrature sotto ottengono una nuova intestazione inserita sopra di loro. Eliminare un banner che si trova tra due segmenti della stessa scena li fonde di nuovo in uno.
+
+## Sincronizzazione tra viste
+
+Le modifiche e i riordini sono immediati e bidirezionali all'interno della stessa vista, ma le due viste si aggiornano a vicenda in modo leggermente diverso:
+
+- Modifica la descrizione di un'inquadratura in Lineare → la stessa modifica è visibile in Produzione.
+- Aggiungi un'inquadratura in Lineare → appare in Produzione una volta che la assegni a un giorno.
+- Riordina in Lineare → **non** cambia la programmazione di Produzione; la programmazione ha il suo ordine.
+- Riordina in Produzione → cambia solo la programmazione, non l'ordine di sceneggiatura in Lineare.
+
+## L'eliminazione differisce tra le viste
+
+Questo confonde i nuovi utenti:
+
+- **Eliminare in Lineare** rimuove l'inquadratura dal progetto interamente. Scompare anche da ogni giorno di Produzione.
+- **Eliminare in Produzione** rimuove l'inquadratura dalla programmazione solo per quel giorno. L'inquadratura esiste ancora in Lineare e può essere ripianificata più tardi.
+
+Quindi "elimina in Lineare" significa *rimuovi*; "elimina in Produzione" significa *deprogramma*.
+
+## L'esportazione PDF si adatta alla vista
+
+`Cmd / Ctrl + P` esporta la vista attiva in PDF. Il rendering è locale — nessun upload, nessun render lato server.
+
+- **Da Lineare** — raggruppato per scena, in ordine di sceneggiatura. Utile per il segretario di edizione.
+- **Da Produzione** — raggruppato per giorno di ripresa, in ordine programmato. Utile per l'Aiuto Regista.
+
+I media grandi sulle inquadrature vengono ridimensionati prima dell'esportazione.
+
+## Se non funziona
+
+*"La mia scena si è suddivisa quando ne ho ripianificato una parte."* È la regola di split di scena parziale. Sposta l'intero blocco di scena per evitare la suddivisione.
+
+*"Non riesco a trascinare la mia selezione multipla in vista Produzione."* La tua selezione probabilmente attraversa più scene. O restringila a una singola scena, o seleziona interi blocchi di scena (con le loro intestazioni).
+
+*"Ho eliminato un'inquadratura in Produzione ma è tornata."* La stai vedendo in Lineare, dove esiste ancora. Eliminare in Produzione significa deprogrammare, non rimuovere.
+
+*"Il mio banner ha eliminato un'intestazione di scena quando l'ho rimosso."* Quando un banner si trova tra due segmenti della stessa scena e elimini il banner, i segmenti si fondono di nuovo. L'intestazione che vedevi era quella del secondo segmento; è atteso.

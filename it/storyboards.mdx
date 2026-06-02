@@ -1,0 +1,72 @@
+---
+title: Storyboard
+lastUpdated: 2026-04-22
+description: "Strumenti di pianificazione visiva per aiutarti a mappare le scene e visualizzare la tua visione creativa."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+La funzionalità Storyboard di CineLog è un'estensione visiva della tua Lista delle Inquadrature Lineare. Offre uno spazio di lavoro dedicato per pianificare, sequenziare e rivedere la composizione visiva della tua produzione attraverso layout intuitivi. Gli storyboard non sono un insieme di dati separato—sono una presentazione visiva degli stessi identici dati delle inquadrature. Ogni pannello dello storyboard è legato 1:1 a un'inquadratura della tua Lista delle Inquadrature Lineare.
+
+## Capacità principali
+
+<CardGrid>
+<Card title="Layout multi-prospettiva">
+  Visualizza il tuo storyboard orizzontalmente (Vista Lineare), raggruppato per scena (Vista Scena/Griglia), o a tutto schermo su dispositivi mobile.
+</Card>
+
+<Card title="Pannelli rich media">
+  Supporto per caricamenti multipli di immagini per pannello inquadratura. Definisci un'immagine principale mantenendo le alternative a uno swipe di distanza.
+</Card>
+
+<Card title="Sequenziamento drag-and-drop">
+  Riordina le inquadrature visivamente. Le modifiche vengono sincronizzate immediatamente alla Lista delle Inquadrature.
+</Card>
+
+<Card title="Presentazione personalizzabile">
+  Tramite le Impostazioni di Visualizzazione, personalizza in profondità il rendering dei pannelli. In modalità Griglia, regola esplicitamente il numero di colonne (da 1 a 10). In modalità Lineare, definisci la larghezza esatta del pannello. Puoi anche regolare globalmente la spaziatura tra i pannelli.
+</Card>
+</CardGrid>
+
+## Utilizzo dettagliato e flussi di lavoro
+
+### Caricare e gestire i contenuti
+
+Tap per caricare
+
+Tocca l'area immagine di un pannello per caricare media (oppure doppio tap su mobile per aprire Esplora Media).
+
+Scorri tra le sequenze
+
+Se carichi più immagini su un singolo pannello, puoi usare lo slider sul pannello per scorrere la sequenza.
+
+Imposta immagini primarie
+
+L'immagine "Primaria" è quella che verrà visualizzata nella vista Griglia e inclusa nelle esportazioni PDF.
+
+### Lavorare con le viste
+
+#### Vista Lineare (Desktop/Tablet)
+
+Una timeline orizzontale. Puoi regolare lo zoom per vedere circa 2 pannelli grandi o circa 4 pannelli più piccoli sullo schermo. Le inquadrature possono essere riordinate cronologicamente qui, e il sistema gestisce automaticamente gli aggiornamenti di associazione delle scene.
+
+#### Vista Scena / Griglia
+
+Apre una griglia verticale (fino a 10 colonne) focalizzata esclusivamente su una singola scena. Offre un'eccellente panoramica ad alto livello della copertura di un'intera sequenza.
+
+## Consigli pro e specifiche di piattaforma
+
+### Carosello Lineare su telefono
+
+Sui telefoni, la vista Lineare si trasforma in un carosello a pagina intera scorrevole con swipe. Lo swipe direttamente sull'**area immagine** scorre tra le immagini multiple caricate per quella specifica inquadratura. Lo swipe sull'**area metadati** in fondo naviga all'inquadratura successiva o precedente.
+
+### Doppio tap per modificare (Mobile)
+
+Sui telefoni, tutti i campi toccabili richiedono un **doppio tap** per essere modificati, in modo da prevenire modifiche accidentali durante lo swipe. Tablet e Desktop si affidano a un singolo tap.
+
+### Rapporti d'aspetto delle pre-visualizzazioni
+
+Le viste storyboard mostrano automaticamente le tue immagini nel loro rapporto d'aspetto effettivo selezionato dall'utente, inclusi formati verticali alti come 9:16 (formato TikTok/Reels) senza ritagli.
+
+### Esportazione PDF professionale
+
+Genera fogli PDF puliti e pronti per la produzione direttamente dalle tue viste storyboard. Premi `Cmd+P` per configurare un'esportazione PDF, scegliendo tra modalità Clean (solo visuali) o modalità Detailed (visuali + metadati).

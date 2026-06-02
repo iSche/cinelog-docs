@@ -1,0 +1,76 @@
+---
+title: Esplora Media
+lastUpdated: 2026-04-22
+description: "Carica, organizza e gestisci immagini di pre-visualizzazione e media di riferimento per le inquadrature della tua produzione."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Gestire gigabyte di foto di location, video di riferimento e frame di storyboard è cruciale per la produzione cinematografica. Esplora Media di CineLog offre capacità complete di gestione dei file, supportato da un motore di upload intelligente progettato per farti continuare a lavorare senza problemi anche quando la tua connessione internet è scarsa.
+
+## Capacità principali
+
+<CardGrid>
+<Card title="Approccio a doppio schermo">
+  Accedi ai tuoi media attraverso l'esauriente Esplora Media Completo a livello di progetto, oppure attraverso la Schermata Media Semplificata contestuale per ogni feature.
+</Card>
+
+<Card title="Elaborazione locale istantanea">
+  Prima di inviare qualsiasi cosa al cloud, le immagini vengono trasformate in miniature bellissime localmente sul tuo dispositivo, garantendoti riferimento visivo immediato senza dover attendere il completamento del caricamento.
+</Card>
+
+<Card title="Upload resilienti in background">
+  I trasferimenti di file avvengono interamente in background. Se perdi il Wi-Fi, il sistema si mette in pausa in modo intelligente e riprende automaticamente l'upload la prossima volta che apri l'app.
+</Card>
+
+<Card title="Analytics di storage">
+  Calcolo in tempo reale dello spazio di archiviazione utilizzato per progetto con suddivisioni per feature e tipo di file.
+</Card>
+</CardGrid>
+
+## Utilizzo dettagliato e flussi di lavoro
+
+### Upload intelligenti dei file
+
+Disponibilità immediata (pre-visualizzazione)
+
+Poiché CineLog privilegia il tuo dispositivo locale, l'app genera istantaneamente una miniatura locale ottimizzata in modo che tu possa continuare a ordinare, visualizzare e organizzare le tue inquadrature immediatamente. Non devi mai aspettare che un upload finisca per continuare a lavorare.
+
+Sincronizzazione in background
+
+L'app trasmette in modo sicuro il pesante file originale direttamente allo storage cloud in background.
+
+Recupero
+
+Se perdi la connessione a metà upload, CineLog mette in coda il file. Un servizio specializzato in background recupera automaticamente i trasferimenti bloccati in modo silenzioso attraverso le sessioni.
+
+### Utilizzo delle interfacce
+
+#### Esplora Media Completo
+
+Accessibile dal menu "ALTRO" nella navigazione principale del progetto. È la tua interfaccia esauriente di gestione file a livello di progetto. Include filtri globali (per feature o stato), operazioni in blocco (eliminazione multi-select) e limiti complessivi di analytics di storage.
+
+#### Schermata Media Semplificata per feature
+
+Accessibile direttamente dalle singole feature (es. cliccando il pulsante pre-visualizzazione su un'inquadratura). È una vista leggera e focalizzata, pre-filtrata su quel specifico elemento. Puoi caricare, riordinare o eliminare file specificamente associati a quell'elemento senza perdere il contesto.
+
+## Stati visivi e consapevolezza offline
+
+Ogni miniatura mostra sempre un badge di stato nell'angolo in basso a destra con due icone che indicano la disponibilità:
+
+#### Offline Pin
+
+Sempre visibile nel badge in basso a destra. Appare luminoso quando il file è disponibile sul tuo dispositivo, attenuato quando non è archiviato localmente.
+
+#### Cloud Done
+
+Sempre visibile nel badge in basso a destra, accanto all'offline pin. Appare luminoso quando sincronizzato con il CDN cloud, attenuato quando non ancora caricato.
+
+## Consigli pro e specifiche di piattaforma
+
+### Sopralluoghi offline
+
+Se scatti foto di sopralluogo senza connessione internet, puoi caricarle interamente all'interno di CineLog. L'app le memorizza localmente, le collega alle tue scene e accoderà automaticamente l'upload in background una volta che raggiungerai un'area con copertura cellulare.
+
+### Filtri multi-select
+
+Quando gestisci grandi quantità di asset scartati in Esplora Media Completo, usa la capacità multi-select per eliminare in blocco i file inutilizzati in un solo passaggio, liberando la tua quota di storage.

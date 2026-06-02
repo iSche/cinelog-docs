@@ -1,0 +1,103 @@
+---
+title: Écrire et formater des scénarios
+lastUpdated: 2026-04-22
+description: "Importe des scénarios FDX, Fountain, PDF, TXT et RTF dans le Logiciel de Scénario de CineLog. Formate avec la syntaxe Fountain, suis les analyses, exporte en PDF et remplis ton découpage technique."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Le Logiciel de Scénario de CineLog est un environnement d'écriture professionnel puissant, intégré nativement à la plateforme. Il prend en charge le formatage Fountain en temps réel, les analyses en direct et une synchronisation transparente des données vers le cloud.
+
+Que tu écrives un nouveau scénario à partir de zéro ou que tu importes un scénario existant, CineLog garantit que ton formatage adhère toujours aux normes de l'industrie.
+
+## Importer un scénario existant
+
+Si tu as déjà commencé à écrire ton scénario dans un autre logiciel, tu peux facilement l'importer dans CineLog sans perdre ton formatage.
+
+<Steps>
+1. **Ouvrir le Logiciel de Scénario :** Navigue vers le Logiciel de Scénario en utilisant la barre latérale gauche.
+2. **Importer un document :** Clique sur le bouton **Importer** dans la barre de menu supérieure (ou appuie sur <kbd>Cmd</kbd> + <kbd>I</kbd>) et sélectionne ton fichier de scénario.
+3. **Analyse automatique :** L'analyseur universel de CineLog traitera automatiquement le fichier, extraira les scènes et convertira le formatage.
+</Steps>
+
+<CardGrid>
+  <Card title="Formats pris en charge">
+    - **Final Draft (.fdx)**
+    - **Fountain (.fountain)**
+    - **PDF** (extraction de texte)
+    - **Texte brut (.txt)**
+    - **Texte enrichi (.rtf)**
+  </Card>
+</CardGrid>
+
+---
+
+## Édition et formatage en direct
+
+CineLog utilise le langage de balisage **Fountain** sous le capot. Cependant, tu n'as pas besoin de connaître Fountain pour écrire — l'éditeur formate automatiquement ton texte pendant que tu tapes.
+
+### Éléments Fountain pris en charge
+
+CineLog prend actuellement en charge les éléments de base de la spécification Fountain nécessaires à l'édition professionnelle de scénarios. Tu peux soit taper naturellement pour laisser la détection intelligente faire le travail, soit forcer le formatage en utilisant les caractères de syntaxe de Fountain.
+
+- **En-têtes de scène** : Commence une ligne avec les préfixes standard (`INT.`, `EXT.`, etc.), ou force-le en commençant la ligne par un point (`.`).
+- **Action** : Le texte standard est traité comme une action. Force-le en commençant une ligne par un point d'exclamation (`!`).
+- **Personnages** : Tape entièrement en MAJUSCULES (par exemple, `JEAN`), ou force-le en commençant la ligne par une arobase (`@`).
+- **Dialogue** : Tape simplement immédiatement après une ligne de Personnage.
+- **Parenthèses** : Enveloppe le texte entre parenthèses `(comme ceci)`.
+- **Transitions** : Utilise les terminaisons MAJUSCULES standard comme `CUT TO:`, ou force-le en commençant la ligne par un chevron droit (`>`).
+- **Texte centré** : Enveloppe le texte avec des chevrons : `> Centrer ce texte <`.
+- **Emphase** : Support pour l'emphase standard de style markdown :
+  - `*Italique*`
+  - `**Gras**`
+  - `_Souligné_`
+
+### Éléments actuellement non pris en charge
+Nous élargissons constamment notre support Fountain. Pour le moment, les fonctionnalités avancées Fountain suivantes ne sont **pas encore prises en charge** dans l'éditeur en direct :
+- Dialogue double (`^`)
+- Boneyards (`/* */`)
+- Sections (`#`) et Synopsis (`=`)
+- Notes en ligne (`[[ ]]`)
+
+### Raccourcis de remplacement manuel
+Si la détection intelligente devine mal, ou si tu veux forcer un style de formatage spécifique, utilise les raccourcis de remplacement manuel :
+
+- <kbd>Cmd</kbd> + <kbd>1</kbd> : En-tête de scène
+- <kbd>Cmd</kbd> + <kbd>2</kbd> : Personnage
+- <kbd>Cmd</kbd> + <kbd>3</kbd> : Dialogue
+- <kbd>Cmd</kbd> + <kbd>4</kbd> : Action
+- <kbd>Cmd</kbd> + <kbd>5</kbd> : Transition
+
+<Aside type="tip">
+**Sauvegarde continue :** Il n'y a pas de bouton « Sauvegarder » dans le Logiciel de Scénario. Chaque frappe est silencieusement et continuellement sauvegardée sur ton appareil local et synchronisée en toute sécurité vers le cloud en arrière-plan.
+</Aside>
+
+---
+
+## Analyses en direct
+
+Pendant que tu écris, CineLog calcule les métriques professionnelles en temps réel, te permettant d'évaluer la portée et le rythme de ton scénario sans jamais quitter l'éditeur.
+
+Cherche le panneau d'analyses pour voir les mises à jour en direct sur :
+- **Estimation des pages :** Formules de calcul de pages aux normes de l'industrie précises aux standards professionnels.
+- **Comptage de scènes et personnages :** Nombre total de scènes et de personnages parlants uniques.
+- **Métriques de mots :** Nombre total de mots et temps de lecture estimé.
+
+---
+
+## Aperçu et export
+
+Lorsque tu es prêt à réviser ton scénario final ou à le partager avec d'autres, tu peux passer de l'éditeur à un PDF standardisé de manière transparente.
+
+<Steps>
+1. **Mode Aperçu :** Clique sur le bouton **« Aperçu et Export »** dans la barre de menu supérieure pour passer de l'éditeur à défilement continu à une vue paginée prête à imprimer. Le mode aperçu rend une page de titre standard et des sauts de page précis.
+2. **Export :** En mode Aperçu, clique sur l'icône **« Export »**.
+3. **Sélectionner le format :** Choisis le format de fichier dont tu as besoin.
+</Steps>
+
+CineLog prend actuellement en charge l'export de ton scénario dans les formats suivants :
+- **PDF (.pdf) :** Document de haute qualité, paginé et formaté à l'industrie, parfait pour l'impression ou l'envoi par e-mail.
+- **Final Draft (.fdx) :** Format XML standard de l'industrie, te permettant de déplacer ton scénario vers Final Draft ou d'autres logiciels de production de manière transparente.
+- **Fountain (.fountain) :** Balisage en texte brut pour une compatibilité maximale.
+- **Texte brut (.txt) :** Export de texte basique pour une lecture simple.
+- **JSON (.json) :** Export de données structurées pour les intégrations et l'outillage personnalisé.
+- **CSV (.csv) :** Export de répartition tabulaire pour les feuilles de calcul et les rapports.

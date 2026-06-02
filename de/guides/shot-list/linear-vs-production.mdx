@@ -1,0 +1,86 @@
+---
+title: Lineare Ansicht vs Drehtage-Ansicht
+lastUpdated: 2026-05-23
+description: "Zwei Ansichten derselben Einstellungen – Drehbuchreihenfolge vs Drehtag-Reihenfolge. Behandelt die Teilszenen-Split-Regel, Banner, szenen-bezogene Auswahl, automatische Auswahl des Szenen-Headers, Cross-View-Sync und wie sich das Löschen zwischen den beiden Ansichten unterscheidet."
+---
+
+Linear und Drehtage sind zwei Ansichten derselben Einstellungen. Linear ist in Drehbuchreihenfolge – so wie Regisseur und Script Supervisor sie lesen. Drehtage ist in Drehtag-Reihenfolge – so wie der 1st AD den Plan macht. Alles andere in diesem Guide handelt von den Unterschieden.
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) und [Einstellungslisten-Grundlagen](/de/guides/shot-list/essentials) voraus.
+
+## Ansichten wechseln
+
+Umschalten im Ansicht-Header über der Liste. `Shift + L` schaltet das Spalten-Layout um (fit ↔ scroll) – nützlich, wenn du mehr Spalten auf einmal sehen willst.
+
+Beide Ansichten zeigen dieselben Einstellungen. Bearbeitungen in einer erscheinen sofort in der anderen.
+
+## Die Teilszenen-Split-Regel (nur Drehtage)
+
+In der Drehtage-Ansicht ordnest du Einstellungen nach Drehtag um. Meistens verschiebst du ganze Szenenblöcke. Aber wenn du *Teile* einer Szene auf einen anderen Tag verschiebst, splittet CineLog die Szene an der Quelle: Die verschobenen Einstellungen werden ein separates Segment am Ziel, und die unverschobenen Einstellungen bleiben unter einem separaten Header, wo sie waren. Beide Segmente gehören narrativ noch zur selben Szene, werden aber unabhängig geplant.
+
+Das ist die einzige Möglichkeit, wie der Plan "wir haben die Hälfte von Szene 14 am Dienstag und die andere Hälfte am Freitag gedreht" abbilden kann. Es kann beim ersten Mal wie ein Bug aussehen; ist es aber nicht.
+
+## Auswahl in der Drehtage-Ansicht
+
+Die Drehtage-Ansicht erzwingt eine Szenen-Scope-Regel bei Mehrfachauswahl, um die Drehtag-Gruppierung zu schützen:
+
+- Du kannst jede beliebige Teilmenge von Einstellungen **innerhalb einer einzelnen Szene** auswählen.
+- Du kannst einen oder mehrere **ganze** Szenenblöcke (mit ihren Headern) auswählen.
+- Du **kannst keine** Teilauswahlen aus verschiedenen Szenen mischen.
+
+Wenn deine Auswahl ungültig ist, öffnet sich beim Ziehen keine Lücke am Drop-Ziel – die Zeile springt beim Loslassen in ihre ursprüngliche Position zurück.
+
+**Die lineare Ansicht hat keine solche Einschränkung.** Mische frei.
+
+### Eine ganze Szene auswählen (auto-ausgewählter Header)
+
+Du greifst nicht den Szenen-Header direkt. Wähle jede Einstellung darunter aus – sobald alle ausgewählt sind, wird der Header automatisch zur Auswahl hinzugefügt. Wähle eine Einstellung ab und der Header wird auch abgewählt. Ziehe eine beliebige ausgewählte Zeile und der ganze Szenenblock bewegt sich gemeinsam.
+
+Das ist der Mechanismus, durch den "eine ganze Szene verschieben" in beiden Ansichten funktioniert.
+
+## Banner
+
+Banner sind Nicht-Einstellungs-Zeilen, die Essenspausen, Company Moves, Wraps oder andere Plan-Markierungen anzeigen. Sie existieren nur in der Drehtage-Ansicht.
+
+- **Banner hinzufügen.** In der Drehtage-Ansicht fügt `Cmd / Ctrl + N` einen Banner statt einer Einstellung hinzu. Oder nutze die Werkzeugleiste.
+- **Banner verschieben.** Gleiche Drag-Mechanik wie bei Einstellungen.
+- **Banner löschen.** Rechtsklick → Löschen.
+
+Einen Banner mitten in eine Szene einzufügen, teilt die umgebende Szene am Banner: Einstellungen darüber bleiben unter dem ursprünglichen Header, Einstellungen darunter bekommen einen neuen Header über sich eingefügt. Einen Banner zu löschen, der zwischen zwei Segmenten derselben Szene sitzt, führt sie wieder zu einem zusammen.
+
+## Cross-View-Sync
+
+Bearbeitungen und Umordnungen sind innerhalb derselben Ansicht sofortig und bidirektional, aber die beiden Ansichten aktualisieren einander etwas anders:
+
+- Die Beschreibung einer Einstellung in Linear bearbeiten → dieselbe Bearbeitung ist in Drehtage sichtbar.
+- Eine Einstellung in Linear hinzufügen → sie erscheint in Drehtage, sobald du sie einem Tag zuweist.
+- In Linear umordnen → ändert **nicht** den Drehtag-Plan; der Plan hat seine eigene Reihenfolge.
+- In Drehtage umordnen → ändert nur den Plan, nicht die Drehbuchreihenfolge in Linear.
+
+## Löschen unterscheidet sich zwischen Ansichten
+
+Das verwirrt neue Nutzer:
+
+- **Löschen in Linear** entfernt die Einstellung komplett aus dem Projekt. Sie verschwindet auch aus jedem Drehtag.
+- **Löschen in Drehtage** entfernt die Einstellung nur aus dem Plan für diesen Tag. Die Einstellung existiert noch in Linear und kann später neu eingeplant werden.
+
+Also bedeutet "Löschen in Linear" *entfernen*; "Löschen in Drehtage" bedeutet *aus dem Plan nehmen*.
+
+## PDF-Export passt sich an die Ansicht an
+
+`Cmd / Ctrl + P` exportiert die aktive Ansicht als PDF. Das Rendering ist lokal – kein Upload, kein serverseitiges Rendering.
+
+- **Aus Linear** — nach Szene gruppiert, in Drehbuchreihenfolge. Nützlich für den Script Supervisor.
+- **Aus Drehtage** — nach Drehtag gruppiert, in geplanter Reihenfolge. Nützlich für den 1st AD.
+
+Große Medien an Einstellungen werden vor dem Export downsampelt.
+
+## Falls das nicht funktioniert
+
+*"Meine Szene wurde gesplittet, als ich Teile davon neu eingeplant habe."* Das ist die Teilszenen-Split-Regel. Verschiebe den ganzen Szenenblock, um den Split zu vermeiden.
+
+*"Ich kann meine Mehrfachauswahl in der Drehtage-Ansicht nicht ziehen."* Deine Auswahl überspannt wahrscheinlich Szenen. Entweder grenze sie auf eine einzelne Szene ein oder wähle ganze Szenenblöcke (mit ihren Headern).
+
+*"Ich habe eine Einstellung in Drehtage gelöscht, aber sie kam zurück."* Du siehst sie in Linear, wo sie noch existiert. Löschen in Drehtage bedeutet aus dem Plan nehmen, nicht entfernen.
+
+*"Mein Banner hat einen Szenen-Header gelöscht, als ich ihn entfernt habe."* Wenn ein Banner zwischen zwei Segmenten derselben Szene sitzt und du den Banner löschst, führen sich die Segmente wieder zusammen. Der Header, den du gesehen hast, war der des zweiten Segments; das ist erwartet.

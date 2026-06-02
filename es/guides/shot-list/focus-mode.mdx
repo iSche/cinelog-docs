@@ -1,0 +1,47 @@
+---
+title: Modo Focus
+lastUpdated: 2026-05-23
+description: "Filtra la lista de planos a una o más escenas. Cubre cómo entrar en Focus, el modo multi-escena, el comportamiento de auto-creación al desbordarse y la barra lateral del guion."
+---
+
+El Modo Focus es la lista de planos filtrada a una o más escenas. Útil para ir avanzando por la cobertura escena a escena sin tener que desplazarte por todo lo demás.
+
+## Entrar en Focus
+
+- `Cmd / Ctrl + F` entra en Focus en la escena que estás viendo actualmente.
+- `Shift + S` abre el diálogo selector de escenas — escribe un número de escena para saltar.
+
+En el selector, **Seleccionar** reemplaza tu foco con la escena tecleada; **Añadir** la añade al conjunto de foco actual.
+
+## Navegar entre escenas
+
+Una vez enfocado:
+
+- `←` / `→` — reemplazar el foco con la escena anterior / siguiente.
+- `Cmd + ←` / `Cmd + →` — **añadir** la escena anterior / siguiente al foco (modo multi-escena).
+
+El foco multi-escena muestra los planos de varias escenas juntos, en orden de guion.
+
+## Añadir planos mientras estás enfocado
+
+`Cmd / Ctrl + N` añade un nuevo plano a la *primera* escena enfocada.
+
+## Auto-creación al desbordarse
+
+Si pulsas `→` más allá de la última escena del proyecto, CineLog crea una nueva escena vacía al final y la enfoca. Lo mismo con `←` antes de la primera escena. Útil para trabajo de tipo esquema; sorprendente si pulsaste la tecla de flecha de más. Para limpiar, sal de Focus y elimina la escena vacía desde Lineal si no la querías.
+
+## La barra lateral del guion
+
+En la vista Lineal (no Focus), `Shift + S` alterna una barra lateral con el guion lado a lado. El guion y la lista de planos se desplazan en sincronía: útil para planificar planos línea a línea.
+
+El mismo atajo significa algo diferente en Modo Focus: ahí abre el selector de escenas (arriba). Misma tecla, dos contextos.
+
+## Salir
+
+`Cmd / Ctrl + F` o `Cmd / Ctrl + B` te devuelve a la vista Lineal.
+
+## Si esto no funciona
+
+*"Pulsé `→` y obtuve una nueva escena vacía que no quería."* Te pasaste de la última escena. Sal de Focus (`Cmd + F`) y elimina la escena vacía desde Lineal.
+
+*"`Shift + S` hace cosas distintas en diferentes pantallas."* Es así por diseño. En Lineal alterna la barra lateral del guion; en Modo Focus abre el selector de escenas.

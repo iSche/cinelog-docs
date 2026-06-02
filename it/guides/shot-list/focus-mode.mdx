@@ -1,0 +1,47 @@
+---
+title: Modalità Focus
+lastUpdated: 2026-05-23
+description: "Filtra la lista delle inquadrature su una o più scene. Copre l'ingresso in Focus, la modalità multi-scena, il comportamento di auto-creazione in overflow e la sidebar della sceneggiatura."
+---
+
+La Modalità Focus è la lista delle inquadrature filtrata su una o più scene. Utile per lavorare attraverso la copertura scena per scena senza scorrere tutto il resto.
+
+## Entrare in Focus
+
+- `Cmd / Ctrl + F` entra in Focus sulla scena che stai attualmente guardando.
+- `Shift + S` apre la finestra di selezione scene — digita un numero di scena per saltare.
+
+Nel picker, **Seleziona** sostituisce il tuo focus con la scena digitata; **Aggiungi** la accoda al set di focus corrente.
+
+## Navigare tra le scene
+
+Una volta in focus:
+
+- `←` / `→` — sostituisci il focus con la scena precedente / successiva.
+- `Cmd + ←` / `Cmd + →` — **aggiungi** la scena precedente / successiva al focus (modalità multi-scena).
+
+Il focus multi-scena mostra le inquadrature di più scene insieme, in ordine di sceneggiatura.
+
+## Aggiungere inquadrature mentre sei in focus
+
+`Cmd / Ctrl + N` aggiunge una nuova inquadratura alla *prima* scena in focus.
+
+## Auto-creazione in overflow
+
+Se premi `→` oltre l'ultima scena del progetto, CineLog crea una nuova scena vuota alla fine e la mette in focus. Lo stesso vale per `←` prima della prima scena. Utile per lavoro in stile outline; sorprendente se hai premuto troppo il tasto freccia. Per ripulire, esci da Focus ed elimina la scena vuota da Lineare se non la volevi.
+
+## La sidebar della sceneggiatura
+
+In vista Lineare (non Focus), `Shift + S` attiva/disattiva una sidebar laterale della sceneggiatura. La sceneggiatura e la lista delle inquadrature scorrono in sincronia — utile per la pianificazione delle inquadrature riga per riga.
+
+La stessa scorciatoia significa qualcosa di diverso in Modalità Focus: lì apre il selettore di scene (sopra). Stesso tasto, due contesti.
+
+## Uscire
+
+`Cmd / Ctrl + F` o `Cmd / Ctrl + B` torna alla vista Lineare.
+
+## Se non funziona
+
+*"Ho premuto `→` e ho ottenuto una nuova scena vuota che non volevo."* Sei andato oltre l'ultima scena. Esci da Focus (`Cmd + F`) ed elimina la scena vuota da Lineare.
+
+*"`Shift + S` sta facendo cose diverse su schermate diverse."* Sì, è per design. In Lineare attiva/disattiva la sidebar della sceneggiatura; in Modalità Focus apre il selettore di scene.

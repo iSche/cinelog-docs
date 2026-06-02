@@ -1,0 +1,65 @@
+---
+title: Le basi della lista delle inquadrature
+lastUpdated: 2026-05-23
+description: "Costruisci una lista delle inquadrature da zero — tre modi per aggiungere inquadrature, come funziona la numerazione, come riordinare e cosa viene eliminato quando rimuovi un'inquadratura o una scena."
+---
+
+La lista delle inquadrature è dove vive la pre-produzione: ogni inquadratura del copione, nell'ordine in cui pianifichi di riprenderle. Questo articolo copre i mattoni di base — aggiungere inquadrature, lo schema di numerazione, il riordino e cosa succede quando elimini le cose.
+
+Questa guida assume [Le basi](/it/guides/introduction). Il vocabolario click-tap-drag nella lista delle inquadrature è lo stesso di ogni altra lista nell'app.
+
+## Tre modi per popolare
+
+Un nuovo progetto ti dà una lista delle inquadrature vuota. Ci sono tre modi per riempirla:
+
+- **Manualmente, un'inquadratura alla volta.** Clicca il pulsante `+ Aggiungi Inquadratura` in fondo a qualsiasi blocco di scena.
+- **Scorciatoia.** `Cmd / Ctrl + N` aggiunge una nuova inquadratura in fondo alla scena attualmente in focus.
+- **Popola da Sceneggiatura.** `Shift + P` (o il pulsante della toolbar) scansiona le intestazioni di scena del copione importato (righe come `INT. CUCINA - GIORNO`) e crea automaticamente un blocco di scena per ogni intestazione, ognuna con un'inquadratura di default. L'output è pulito solo quanto il tuo copione — intestazioni malformate generano scene malformate.
+
+La maggior parte dei progetti inizia con Popola da Sceneggiatura come prima passata grezza, poi rifinisce manualmente.
+
+## Numerazione delle inquadrature
+
+Le inquadrature sono numerate automaticamente. Tre formati sono disponibili nelle [Impostazioni di Visualizzazione](/it/guides/shot-list/display-settings):
+
+- **Alfanumerico** — `1A`, `1B`, `2A`. Numero scena + lettera per inquadratura all'interno della scena. Default.
+- **Decimale** — `1.1`, `1.2`, `2.1`.
+- **Sequenziale** — `1`, `2`, `3`, `47`. Continuo attraverso il progetto.
+
+Numeri e lettere si aggiornano al riordino. Se sposti `1C` in cima alla sua scena, la lista legge brevemente C, A, B prima di ricalcolare in A, B, C. Non scriverti la lettera di un'inquadratura aspettandoti che sia stabile attraverso i movimenti.
+
+Cambiare il formato rinumera l'intero progetto. Su un progetto già allineato è distruttivo — conferma prima di farlo.
+
+## Riordinare le inquadrature
+
+Trascina qualsiasi inquadratura per spostarla. Il gesto è il drag universale da [Le basi](/it/guides/introduction#4-dragging-to-reorder):
+
+- **All'interno di una scena** — trascina su o giù. Le lettere si ricompattano.
+- **Tra scene** — trascina oltre il confine di scena. Il numero di scena dell'inquadratura cambia per corrispondere alla destinazione; le lettere si ricompattano sia nella scena di origine che in quella di destinazione.
+- **Nello spazio vuoto tra due scene** — CineLog crea lì una nuova scena.
+
+La vista Produzione aggiunge una regola di scope di scena per le selezioni multiple; vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production).
+
+## Modificare i campi delle inquadrature
+
+Clicca una cella (desktop) o tocca per espandere la riga e tocca un campo (mobile). I campi sono field-aware: il numero di inquadratura apre un input di testo, giorno e obiettivo sono dropdown, stato e pre-visualizzazione sono toggle o pulsanti picker. Tutte le modifiche si salvano automaticamente — nessun pulsante Salva. Vedi [Le basi](/it/guides/introduction#2-editing-fields) per le scorciatoie da tastiera all'interno dell'editor e le note sull'autosave.
+
+Le colonne personalizzate che aggiungi nelle [Impostazioni di Visualizzazione](/it/guides/shot-list/display-settings) appaiono automaticamente accanto a quelle integrate.
+
+## Eliminare
+
+Tasto destro su un'inquadratura → Elimina (desktop), o swipe / menu overflow (mobile). La cascata dipende da cosa elimini e dove:
+
+- **Una singola inquadratura in vista Lineare** — la rimuove dal progetto. Se era l'ultima inquadratura della sua scena, anche la scena viene rimossa (non c'è uno stato di scena vuota).
+- **Una singola inquadratura in vista Produzione** — la rimuove dalla programmazione solo per quel giorno. L'inquadratura esiste ancora in Lineare e può essere ripianificata.
+- **Una scena** (tasto destro sull'intestazione di scena) — rimuove la scena e ogni inquadratura al suo interno, ovunque.
+
+La finestra di conferma esplicita sempre cosa sta per scomparire prima di committare. La semantica completa di eliminazione tra le viste è in [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production).
+
+## Se non funziona
+
+*"Le mie lettere di inquadratura sono cambiate dopo che ho trascinato."* È atteso — le lettere vengono ricalcolate dopo ogni riordino in modo che restino in ordine di visualizzazione.
+
+*"Popola da Sceneggiatura mi ha dato un casino di scene."* Apri il copione e pulisci le intestazioni di scena (`INT. / EXT. LOCATION - ORA`), poi riesegui.
+
+*"Ho eliminato l'ultima inquadratura di una scena e l'intera scena è scomparsa."* Anche questo è atteso — non c'è uno stato di scena vuota. Per mantenere la scena, lascia un'inquadratura segnaposto al suo interno.

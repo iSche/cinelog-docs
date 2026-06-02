@@ -1,0 +1,86 @@
+---
+title: Visualização Linear vs Visualização Produção
+lastUpdated: 2026-05-23
+description: "Duas visualizações dos mesmos planos — ordem de roteiro vs ordem de dia de filmagem. Cobre a regra de divisão de cena parcial, banners, seleção com escopo de cena, auto-seleção do cabeçalho de cena, sincronização entre visualizações e como o delete difere entre as duas."
+---
+
+Linear e Produção são duas visualizações dos mesmos planos. Linear está em ordem de roteiro — a forma como o diretor e o supervisor de script leem. Produção está em ordem de dia de filmagem — a forma como o 1º AD planeja o cronograma. Todo o resto deste guia é sobre as diferenças.
+
+Este guia assume [O básico](/pt/guides/introduction) e [Decupagem essencial](/pt/guides/shot-list/essentials).
+
+## Trocando de visualização
+
+Alterne no cabeçalho da visualização acima da lista. `Shift + L` alterna o layout de colunas (ajustado ↔ rolagem) — útil quando você quer ver mais colunas de uma vez.
+
+Ambas as visualizações mostram os mesmos planos. Edições feitas em uma aparecem imediatamente na outra.
+
+## A regra de divisão de cena parcial (apenas Produção)
+
+Na visualização Produção, você reorganizará os planos por dia de filmagem. Na maioria das vezes você moverá blocos de cena inteiros. Mas se você mover *parte* de uma cena para um dia diferente, o CineLog divide a cena na origem: os planos movidos viram um segmento separado no destino, e os planos não movidos ficam onde estavam sob um cabeçalho separado. Ambos os segmentos ainda pertencem à mesma cena narrativamente, mas são agendados independentemente.
+
+Essa é a única forma de o cronograma representar "filmamos metade da cena 14 na terça e a outra metade na sexta". Pode parecer um bug na primeira vez que acontece; não é.
+
+## Selecionando na visualização Produção
+
+A visualização Produção impõe uma regra de escopo de cena na multi-seleção para proteger o agrupamento por dia de filmagem:
+
+- Você pode selecionar qualquer subconjunto de planos **dentro de uma única cena**.
+- Você pode selecionar um ou mais **blocos inteiros de cena** (com seus cabeçalhos).
+- Você **não pode** misturar seleções parciais de cenas diferentes.
+
+Se sua seleção é inválida, o alvo de soltar não abre uma lacuna quando você arrasta — a linha volta para sua posição original quando você solta.
+
+**A visualização Linear não tem essa restrição.** Misture livremente.
+
+### Selecionando uma cena inteira (cabeçalho auto-selecionado)
+
+Você não pega o cabeçalho da cena diretamente. Selecione todos os planos abaixo dele — uma vez todos selecionados, o cabeçalho é adicionado à seleção automaticamente. Desselecione qualquer plano e o cabeçalho também é desselecionado. Arraste qualquer linha selecionada e o bloco de cena inteiro se move junto.
+
+Esse é o mecanismo pelo qual "mover uma cena inteira" funciona em qualquer visualização.
+
+## Banners
+
+Os banners são linhas que não são planos e que marcam intervalos para refeições, mudanças de locação, encerramentos ou outros marcadores de cronograma. Eles existem apenas na visualização Produção.
+
+- **Adicionar um banner.** Na Produção, `Cmd / Ctrl + N` adiciona um banner em vez de um plano. Ou use a barra de ferramentas.
+- **Mover um banner.** Mesma mecânica de arrastar dos planos.
+- **Apagar um banner.** Botão direito → Apagar.
+
+Inserir um banner no meio de uma cena divide a cena envolvente no banner: planos acima ficam sob o cabeçalho original, planos abaixo recebem um novo cabeçalho inserido acima deles. Apagar um banner que está entre dois segmentos da mesma cena os mescla de volta em um só.
+
+## Sincronização entre visualizações
+
+Edições e reordenações são imediatas e bidirecionais dentro da mesma visualização, mas as duas visualizações se atualizam um pouco diferente:
+
+- Editar a descrição de um plano na Linear → a mesma edição é visível na Produção.
+- Adicionar um plano na Linear → ele aparece na Produção quando você o atribuir a um dia.
+- Reordenar na Linear → **não** muda o cronograma da Produção; o cronograma tem sua própria ordem.
+- Reordenar na Produção → muda apenas o cronograma, não a ordem do roteiro na Linear.
+
+## O delete difere entre visualizações
+
+Isto pega usuários novos:
+
+- **Apagar na Linear** remove o plano do projeto inteiramente. Ele some de todos os dias de Produção também.
+- **Apagar na Produção** remove o plano do cronograma apenas daquele dia. O plano continua existindo na Linear e pode ser reagendado depois.
+
+Então "apagar na Linear" significa *remover*; "apagar na Produção" significa *desagendar*.
+
+## Exportação em PDF se adapta à visualização
+
+`Cmd / Ctrl + P` exporta a visualização ativa para PDF. A renderização é local — sem upload, sem renderização do lado do servidor.
+
+- **A partir da Linear** — agrupado por cena, em ordem de roteiro. Útil para o supervisor de script.
+- **A partir da Produção** — agrupado por dia de filmagem, em ordem agendada. Útil para o 1º AD.
+
+Mídia grande nos planos é reduzida antes da exportação.
+
+## Se isso não estiver funcionando
+
+*"Minha cena foi dividida quando reagendei parte dela."* Essa é a regra de divisão de cena parcial. Mova o bloco de cena inteiro para evitar a divisão.
+
+*"Não consigo arrastar minha multi-seleção na visualização Produção."* Sua seleção provavelmente atravessa cenas. Reduza para uma única cena, ou selecione blocos de cena inteiros (com seus cabeçalhos).
+
+*"Apaguei um plano na Produção mas ele voltou."* Você está vendo na Linear, onde ele ainda existe. Apagar na Produção significa desagendar, não remover.
+
+*"Meu banner apagou um cabeçalho de cena quando eu o removi."* Quando um banner está entre dois segmentos da mesma cena e você apaga o banner, os segmentos se mesclam de volta. O cabeçalho que você via era o do segundo segmento; isso é esperado.

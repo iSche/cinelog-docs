@@ -1,0 +1,76 @@
+---
+title: Explorador de Mídia
+lastUpdated: 2026-04-22
+description: "Envie, organize e gerencie imagens de pré-visualização e mídia de referência para os planos da sua produção."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Lidar com gigabytes de fotos de locação, vídeos de referência e frames de storyboard é crucial para a produção cinematográfica. O Explorador de Mídia do CineLog oferece recursos completos de gerenciamento de arquivos, alimentados por um motor de upload inteligente projetado para manter você trabalhando suavemente mesmo quando sua conexão está ruim.
+
+## Capacidades principais
+
+<CardGrid>
+<Card title="Abordagem em duas telas">
+  Acesse sua mídia tanto pelo Explorador de Mídia Completo, no nível do projeto inteiro, quanto pela Tela de Mídia Simplificada e contextual de cada recurso.
+</Card>
+
+<Card title="Processamento local instantâneo">
+  Antes de enviar qualquer coisa para a nuvem, as imagens são miniaturizadas localmente no seu dispositivo com qualidade, garantindo referência visual imediata sem esperar o upload terminar.
+</Card>
+
+<Card title="Uploads em background resilientes">
+  As transferências de arquivos acontecem inteiramente em segundo plano. Se você perder o Wi-Fi, o sistema pausa inteligentemente e retoma o upload automaticamente na próxima vez que abrir o app.
+</Card>
+
+<Card title="Analytics de armazenamento">
+  Cálculo em tempo real do espaço usado por projeto, com detalhamento por recurso e tipo de arquivo.
+</Card>
+</CardGrid>
+
+## Uso detalhado e fluxos de trabalho
+
+### Uploads inteligentes de arquivos
+
+Disponibilidade Instantânea (Pré-visualização)
+
+Como o CineLog favorece seu dispositivo local, o app gera instantaneamente uma miniatura local otimizada, para que você possa continuar organizando, visualizando e classificando seus planos imediatamente. Você nunca precisa esperar um upload terminar para continuar trabalhando.
+
+Sincronização em Background
+
+O app transmite com segurança o arquivo original pesado diretamente para o armazenamento em nuvem em segundo plano.
+
+Recuperação
+
+Se você perder a conexão durante um upload, o CineLog enfileira o arquivo. Um serviço especializado em segundo plano recupera automaticamente as transferências paralisadas, silenciosamente, entre sessões.
+
+### Operando as interfaces
+
+#### Explorador de Mídia Completo
+
+Acessado pelo menu "MAIS" na navegação principal do projeto. Esta é sua interface abrangente de gerenciamento de arquivos no nível do projeto inteiro. Inclui filtragem global (por recurso ou status), operações em lote (exclusão multi-seleção) e limites gerais de analytics de armazenamento.
+
+#### Tela de Mídia Simplificada
+
+Acessada diretamente de recursos individuais (ex.: clicando no botão de pré-visualização de um plano). Esta é uma visão leve e focada, pré-filtrada para aquele elemento específico. Você pode enviar, reordenar ou excluir arquivos especificamente associados àquele item sem perder o contexto.
+
+## Estados visuais e percepção offline
+
+Cada miniatura de mídia sempre mostra um selo de status no canto inferior direito, com dois ícones que indicam disponibilidade:
+
+#### Pin Offline
+
+Sempre visível no selo inferior direito. Aparece brilhante quando o arquivo está disponível no seu dispositivo, atenuado quando não está armazenado localmente.
+
+#### Nuvem Concluída
+
+Sempre visível no selo inferior direito, ao lado do pin offline. Aparece brilhante quando sincronizado com a CDN na nuvem, atenuado quando ainda não foi enviado.
+
+## Dicas e especificidades por plataforma
+
+### Reconhecimento offline
+
+Se você tirar fotos de scouting de locação sem conexão com a internet, pode enviá-las inteiramente dentro do CineLog. O app as armazena localmente, vincula às suas cenas e enfileira automaticamente o upload em segundo plano assim que você chegar a uma área com sinal.
+
+### Filtragem multi-seleção
+
+Ao gerenciar grandes quantidades de assets rejeitados no Explorador de Mídia Completo, use a multi-seleção para excluir em lote arquivos não utilizados de uma só vez e liberar sua cota de armazenamento.

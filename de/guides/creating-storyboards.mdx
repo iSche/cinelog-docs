@@ -1,0 +1,46 @@
+---
+title: Storyboards
+lastUpdated: 2026-05-23
+description: "Visuelle Planung für eine Szene nach der anderen – Previsualisierungs-Frames pro Einstellung, lineares oder Rasterlayout, Export als PDF. Das Umordnen eines Storyboards ordnet die darunterliegenden Einstellungen um."
+---
+
+Ein Storyboard in CineLog ist eine visuelle Ansicht der Einstellungen einer Szene mit angehängten Previsualisierungs-Frames. Es ist keine separate Kopie der Daten – es sitzt auf der Einstellungsliste, sodass das Umordnen eines Storyboards die darunterliegenden Einstellungen umordnet.
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus.
+
+## Was ein Storyboard ist
+
+Eine Ansicht der Einstellungen einer einzelnen Szene, die Previsualisierungs-Frames und einige wichtige Einstellungs-Felder zeigt. Es dupliziert keine Einstellungen; es ist eine Schicht über der Einstellungsliste. Storyboard-Ansichten (gespeicherte Layouts) erscheinen als Untereinträge unter Storyboard in der Seitenleiste.
+
+## Layouts
+
+Zwei Anzeigemodi:
+
+- **Linear** — karussell-artig, eine Einstellung nach der anderen. Gut für Review-Präsentationen.
+- **Raster** — mehrere Einstellungen nebeneinander. Gut als Übersichtsreferenz auf einen Blick.
+
+Wechsel über die Werkzeugleiste.
+
+## Previsualisierungs-Frames hinzufügen
+
+Tippe auf die Previs-Zelle einer Einstellung. Der Medien-Picker öffnet sich – dieselbe Gesten-Grammatik wie beim Zellen-Editing in [Die Grundlagen](/de/guides/introduction#2-editing-fields). Wähle ein Bild oder einen Video-Frame aus der Medienbibliothek des Projekts.
+
+Jeder Frame ist eine Referenz auf eine Datei in der Medienbibliothek, keine Kopie. Wenn du die Datei in der Bibliothek ersetzt, wird sie überall ersetzt, wo sie verwendet wird.
+
+## Frames umordnen
+
+Ziehe Einstellungen im Storyboard, um sie umzuordnen. Das Umordnen wendet sich auf die zugrundeliegenden Einstellungen in der übergeordneten Szene an – es gibt keine separate "Storyboard-Reihenfolge", die von der Einstellungs-Reihenfolge abweicht. Die Einstellungs-Buchstaben aktualisieren sich entsprechend.
+
+## Anzeige-Einstellungen (pro Storyboard)
+
+Raster-Spalten, Abstand, Seitenverhältnis (16:9, 2.35:1, 4:3). Über die Werkzeugleiste anpassen.
+
+## Export
+
+`Cmd / Ctrl + P` exportiert das Storyboard als PDF, lokal gerendert.
+
+## Falls das nicht funktioniert
+
+*"Ich habe mein Storyboard umgeordnet und jetzt haben sich meine Einstellungs-Buchstaben geändert."* Erwartet. Das Umordnen eines Storyboards ordnet die zugrundeliegenden Einstellungen um; es gibt keine separate Storyboard-Reihenfolge.
+
+*"Ich habe einen Previs-Frame ersetzt und er hat sich auf einer anderen Einstellung geändert."* Previs-Frames sind Referenzen auf Dateien in der Medienbibliothek. Das Ersetzen der Datei ersetzt sie überall, wo sie verwendet wird. Um eine andere Datei zu nutzen, wähle eine neue aus der Bibliothek, anstatt den Inhalt der Datei zu ersetzen.

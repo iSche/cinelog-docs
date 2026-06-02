@@ -1,0 +1,129 @@
+---
+title: Einstellungsliste
+lastUpdated: 2026-04-22
+description: "Plane und organisiere deine Einstellungen mit detaillierten Informationen wie Kamerawinkeln, Objektivwahl und Szenenanforderungen."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Das Einstellungslisten-System ist die umfangreichste Funktion von CineLog und bietet drei verschiedene Ansichtsmodi sowie ausgefeiltes Datenmanagement für Filmproduktions-Workflows. Organisiere Einstellungen sequenziell, plane sie nach Drehtagen oder konzentriere dich mit leistungsstarken Bearbeitungsfunktionen auf bestimmte Szenen.
+
+## Drei Hauptansichten
+
+### Lineare Einstellungsliste
+
+Die primäre Ansicht zum Aufbau deiner Einstellungsliste. Einstellungen sind in sequenzieller Reihenfolge mit einer hierarchischen Struktur Szene → Einstellung organisiert, identifiziert als `1A`, `1B`, `2A`. Perfekt für die initiale Planung und das Drehbuch-Breakdown. **Szenen- und Einstellungs-Nummerierung wird automatisch aktualisiert**, wenn du Änderungen vornimmst.
+
+### Drehtage
+
+Organisiere deine Einstellungen nach Drehplan statt nach Erzählreihenfolge. Jeder Drehtag zeigt nur die Einstellungen, die du an diesem Tag aufnehmen musst, mit einer dedizierten Seitenleiste zur schnellen Navigation zwischen den Tagen. Das System bewältigt intelligent komplexe Planungs-Szenarien und erhält **Szenenbeziehungen und Einstellungs-Organisation automatisch**.
+
+### Fokus-Modus
+
+Filtere deine Einstellungsliste, um nur ausgewählte Szenen anzuzeigen – so kannst du konzentriert ohne Ablenkung bearbeiten und reviewen. Wähle bestimmte Szenen aus dem Szenen-Auswahldialog oder mehrere Szenen, um dich auf zusammenhängende Sequenzen zu fokussieren – perfekt für detailliertes Drehbuch-Breakdown oder ortsbezogene Reviews.
+
+## So nutzt du die lineare Einstellungsliste
+
+Die lineare Ansicht ist dein Ausgangspunkt für den Aufbau der Einstellungsliste. Verwende sie, um Szenen und Einstellungen hinzuzufügen, Einstellungs-Details zu bearbeiten und die Grundstruktur deiner Produktion festzulegen.
+
+Szenen und Einstellungen hinzufügen
+
+Erstelle neue Szenen und Einstellungen in sequenzieller Reihenfolge. Jede Einstellung wird automatisch nummeriert (1A, 1B, 2A) basierend auf ihrer Szene und Position.
+
+Einstellungs-Details bearbeiten
+
+Auf Desktop und Tablet verhält sich die Einstellungsliste wie eine professionelle Tabelle – einfach **einmal tippen** in eine beliebige Zelle, um sie direkt zu bearbeiten. Auf Mobiltelefonen tippe auf eine Einstellung, um ihre Details auszuklappen, und dann **doppeltippe** auf eine spezifische Eigenschaft.
+
+Per Drag-and-Drop umordnen
+
+Ziehe Einstellungen, um sie innerhalb oder zwischen Szenen umzuordnen. Das System aktualisiert automatisch Szenen-Nummerierung und Einstellungs-Buchstaben.
+
+Drehtage zuweisen
+
+Tippe auf das Drehtag-Feld einer Einstellung, um sie zu planen. Nutze "Auf alle Einstellungen der Szene anwenden", um ganze Szenen schnell gemeinsam zu planen.
+
+## So nutzt du Drehtage
+
+Die Drehtage-Ansicht verwandelt deine sequenzielle Einstellungsliste in einen Drehplan, mit ausgefeilten Werkzeugen zur Bewältigung der Komplexität realer Produktionsbedingungen.
+
+Zwischen Tagen navigieren
+
+Nutze die Seitenleiste, um zwischen verschiedenen Drehtagen zu wechseln. Jeder Tag zeigt nur die für diesen Tag geplanten Einstellungen.
+
+Innerhalb eines Tages umordnen
+
+Ziehe Einstellungen innerhalb desselben Drehtages, um deine Drehreihenfolge festzulegen. Verschiebe Einstellungen zwischen Szenen oder teile Szenen auf verschiedene Tageszeiten auf, je nach Bedarf.
+
+Mehrfachauswahl für Massenoperationen
+
+Drücke lang auf eine Einstellung, um in den Auswahlmodus zu wechseln, und tippe dann auf weitere Einstellungen, um mehrere auszuwählen. Drücke lang auf Szenen-Header, um ganze Szenen auszuwählen.
+
+Smartes Szenen-Splitting
+
+Wenn du einige Einstellungen einer Szene an andere Positionen innerhalb desselben Drehtages verschiebst, erstellt das System automatisch separate Szenen-Abschnitte. So kannst du Teile derselben Szene zu unterschiedlichen Tageszeiten planen, während die Organisation klar bleibt.
+
+### Drehtag-Operationen
+
+#### Operationen innerhalb einer Szene
+
+Ziehe Einstellungen innerhalb einer Szene, um sie umzuordnen – **Szenen- und Einstellungs-Nummern bleiben bestehen**.
+
+#### Teilszenen-Operationen
+
+Wenn du einige Einstellungen einer Szene an andere Positionen innerhalb desselben Drehtages verschiebst, erstellt das System automatisch separate Szenen-Abschnitte. So kannst du Teile derselben Szene zu unterschiedlichen Tageszeiten planen, während die Organisation klar bleibt.
+
+#### Operationen auf ganze Szenen
+
+Wähle einen Szenen-Header, um alle Einstellungen dieser Szene gemeinsam an eine andere Position innerhalb desselben Drehtages zu verschieben.
+
+#### Drehtage-Banner
+
+Ergänze beliebige Drehtage mit individuellen Bannern um Pausen und Planungsinformationen. Füge Mittagspausen, Equipment-Wechsel, Ortswechsel oder beliebige Planungsnotizen hinzu, die deine Drehtag-Timeline organisieren helfen.
+
+## So nutzt du den Fokus-Modus
+
+Der Fokus-Modus lässt dich dich auf bestimmte Szenen konzentrieren, ohne Ablenkung vom Rest deiner Einstellungsliste, während alle Bearbeitungsmöglichkeiten erhalten bleiben.
+
+Szenen für den Fokus auswählen
+
+Wähle bestimmte Szenen aus dem Szenen-Auswahldialog oder mehrere Szenen, um dich gleichzeitig auf zusammenhängende Sequenzen zu fokussieren.
+
+Ohne Ablenkung bearbeiten
+
+Arbeite an Einstellungs-Details, Umordnung und Produktionsplanung, während nur deine ausgewählten Szenen sichtbar sind. Alle Bearbeitungsfunktionen bleiben verfügbar.
+
+Fokus nach Bedarf wechseln
+
+Ändere deine Szenenauswahl jederzeit, um dich auf andere Teile deiner Produktion zu konzentrieren, oder kehre zur vollen Ansicht zurück, wenn nötig.
+
+### Häufige Anwendungen des Fokus-Modus
+
+-   Detaillierte Drehbuch-Breakdown-Sessions für bestimmte Szenen
+-   Arbeit an Action-Sequenzen, die mehrere Szenen umfassen
+-   Review von Einstellungen für einen bestimmten Drehort
+-   Isolation von Szenen mit speziellen Equipment- oder Talent-Anforderungen
+
+## Weitere Funktionen
+
+### Anzeige & Anpassung der Einstellungsliste
+
+Passe deine Einstellungslisten-Ansicht mit **kompakten/erweiterten Anzeigemodi** für die Steuerung der Informationsdichte an. Wähle zwischen **Fit-Layout** (alle Spalten sichtbar) oder **Scroll-Layout** (horizontales Scrollen für mehr Spalten). **Schalte Spalten-Sichtbarkeit** für jedes integrierte Feld um und füge eigene **benutzerdefinierte Spalten** hinzu, um produktionsspezifische Informationen zu erfassen.
+
+### Teilen & Export
+
+Erstelle professionelle, produktionsfertige Dokumente direkt aus deiner Einstellungsliste. Generiere paginierte **PDF-Aktionspläne** für die gesamte Crew mit Coverage in Drehbuchreihenfolge oder Drehplan-Reihenfolge. Passe Exporte an, indem du Spalten filterst und verschiedene Bild-Layouts auswählst.
+
+### Local-First-Sync
+
+CineLog arbeitet **Offline-First** mit automatischer Echtzeit-Synchronisation über alle deine Geräte und Teammitglieder, sobald eine Verbindung besteht. Mache Änderungen wo und wann du willst – alles bleibt im Takt synchron. Perfekt für On-Set-Anpassungen und kollaborative Planung, wo die Internetverbindung unzuverlässig sein kann.
+
+### Benutzerdefinierte Produktionswerte
+
+Definiere deine eigenen Optionen für **Einstellungs-Typen**, **Kamerawinkel**, **Equipment**, **Bewegung**, **Bildrate** und **Seitenverhältnis**. Erstelle standardisierte Dropdown-Menüs, die den spezifischen Anforderungen und Workflows deiner Produktion entsprechen und sorgen für Konsistenz im gesamten Team.
+
+### Tastenkürzel
+
+Arbeite schneller mit umfangreichen Tastenkürzeln für Navigation, Einstellungs-Erstellung, Ansicht-Wechsel und Massenoperationen. **[Vollständige Tastenkürzel-Referenz ansehen](/de/keyboardshortcuts)** für die gesamte Liste zeitsparender Befehle. Optimiere deinen Workflow mit schnellem Zugriff auf alle Hauptfunktionen, ohne zur Maus zu greifen.
+
+### Visuelle Organisation
+
+Organisiere visuell mit **zuweisbaren Farben für Szenen**, einzelnen **Einstellungs-Zellen** und **Banner-Hintergründen**. Erstelle visuelle Codierungssysteme für Drehorte, Equipment-Bedarf, Komplexitätsstufen oder jede Kategorisierung, die deinem Produktionsteam hilft, Einstellungen schnell zu identifizieren und zu organisieren. Baue eigene Farbschemata auf, die zu deinem Produktions-Workflow passen.

@@ -1,0 +1,65 @@
+---
+title: Lo esencial de la lista de planos
+lastUpdated: 2026-05-23
+description: "Construir una lista de planos desde cero: tres formas de añadir planos, cómo funciona la numeración, cómo reordenar y qué se elimina cuando borras un plano o una escena."
+---
+
+La lista de planos es donde vive la preproducción: cada plano del guion, en el orden en que planeas rodarlos. Este artículo cubre los bloques básicos: añadir planos, el esquema de numeración, reordenar y qué pasa cuando borras cosas.
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction). El vocabulario click-tap-drag en la lista de planos es el mismo que el de cualquier otra lista en la app.
+
+## Tres formas de poblar
+
+Un nuevo proyecto te da una lista de planos vacía. Hay tres formas de rellenarla:
+
+- **Manualmente, un plano a la vez.** Haz clic en el botón `+ Añadir Plano` al final de cualquier bloque de escena.
+- **Atajo.** `Cmd / Ctrl + N` añade un nuevo plano al final de la escena enfocada actualmente.
+- **Poblar desde el Guion.** `Shift + P` (o el botón de la barra de herramientas) escanea los encabezados de escena del guion importado (líneas como `INT. COCINA - DÍA`) y crea automáticamente un bloque de escena por encabezado, cada uno con un plano por defecto. El resultado es tan limpio como tu guion: encabezados mal formados producen escenas mal formadas.
+
+La mayoría de proyectos empiezan con Poblar desde el Guion como una primera pasada rápida, luego refinan manualmente.
+
+## Numeración de planos
+
+Los planos se numeran automáticamente. Tres formatos están disponibles en [Ajustes de Visualización](/es/guides/shot-list/display-settings):
+
+- **Alfanumérico** — `1A`, `1B`, `2A`. Número de escena + letra por plano dentro de la escena. Por defecto.
+- **Decimal** — `1.1`, `1.2`, `2.1`.
+- **Secuencial** — `1`, `2`, `3`, `47`. Continuo a través del proyecto.
+
+Los números y letras se actualizan al reordenar. Si mueves `1C` a la parte superior de su escena, la lista brevemente lee C, A, B antes de recalcular a A, B, C. No anotes la letra de un plano y esperes que sea estable entre movimientos.
+
+Cambiar el formato renumera todo el proyecto. En un proyecto ya marcado es destructivo: confirma antes de hacerlo.
+
+## Reordenar planos
+
+Arrastra cualquier plano para moverlo. El gesto es el arrastre universal de [Lo básico](/es/guides/introduction#4-dragging-to-reorder):
+
+- **Dentro de una escena** — arrastra arriba o abajo. Las letras se recompactan.
+- **A través de escenas** — arrastra más allá de un límite de escena. El número de escena del plano cambia para coincidir con el destino; las letras se recompactan tanto en la escena origen como en la destino.
+- **En el espacio vacío entre dos escenas** — CineLog crea una nueva escena ahí.
+
+La vista Producción añade una regla de alcance de escena para multi-selecciones; ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production).
+
+## Editar campos de plano
+
+Haz clic en una celda (escritorio) o toca para expandir la fila y toca un campo (móvil). Los campos son conscientes de su tipo: el número de plano abre una entrada de texto, día y lente son desplegables, estado y previsualización son toggles o botones de selector. Todas las ediciones se autoguardan — sin botón Guardar. Ver [Lo básico](/es/guides/introduction#2-editing-fields) para los atajos de teclado dentro del editor y las salvedades del autoguardado.
+
+Las columnas personalizadas que añadas en [Ajustes de Visualización](/es/guides/shot-list/display-settings) aparecen automáticamente junto a las incorporadas.
+
+## Eliminar
+
+Clic derecho en un plano → Eliminar (escritorio), o deslizar / menú de desbordamiento (móvil). La cascada depende de qué borres y dónde:
+
+- **Un solo plano en la vista Lineal** — lo elimina del proyecto. Si era el último plano de su escena, la escena también desaparece (no hay un estado de escena vacía).
+- **Un solo plano en la vista Producción** — lo elimina del horario solo para ese día. El plano sigue existiendo en Lineal y se puede reprogramar.
+- **Una escena** (clic derecho en el encabezado de escena) — elimina la escena y todos los planos en ella, en todas partes.
+
+El diálogo de confirmación siempre detalla lo que está a punto de desaparecer antes de que lo confirmes. La semántica completa de eliminación entre vistas está en [Lineal vs Producción](/es/guides/shot-list/linear-vs-production).
+
+## Si esto no funciona
+
+*"Las letras de mi plano cambiaron después de arrastrar."* Esperado: las letras se recalculan después de cada reordenamiento para que se mantengan en orden de visualización.
+
+*"Poblar desde el Guion me dio un lío de escenas."* Abre el guion y limpia los encabezados de escena (`INT. / EXT. LOCALIZACIÓN - MOMENTO`) y luego reejecuta.
+
+*"Borré el último plano de una escena y toda la escena desapareció."* También esperado: no hay un estado de escena vacía. Para mantener la escena, deja un plano de marcador de posición en ella.

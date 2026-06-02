@@ -1,0 +1,49 @@
+---
+title: Display Settings
+lastUpdated: 2026-05-23
+description: "Column visibility and order, custom columns, shot numbering format, row height — everything that controls how the shot list looks on screen."
+---
+
+Display Settings controls how the shot list looks — which columns are visible, in what order, what the shots are numbered as. Settings are project-level and propagate via CineSync, so adjustments made on the desktop appear on the mobile app within seconds.
+
+`Shift + D` toggles the Display Settings overlay.
+
+## Column visibility
+
+Toggle any column on or off from the Display Settings overlay. For quick changes without opening Display Settings, the number keys `1` through `9` toggle the first nine columns directly from the list view.
+
+## Reordering columns
+
+Drag a column row inside the Display Settings overlay to reorder. Reordering doesn't happen by dragging the column header on the main list — that's a frequent expectation that doesn't apply here.
+
+System columns — Shot, Scene, Day — are locked to the leftmost positions and refuse drops that would displace them.
+
+## Custom columns
+
+Add your own columns from Display Settings. Specify a name and a type: text, dropdown, checkbox, or any other supported field type. Once added, the column appears in the desktop list and in the mobile expanded view automatically — no per-platform setup. Custom columns participate in PDF export.
+
+## Shot numbering format
+
+Three formats are supported:
+
+- **Alphanumeric** — `1A`, `2C`. Scene + letter.
+- **Decimal** — `1.1`, `2.3`.
+- **Sequential** — `1`, `2`, `47`. Continuous through the project.
+
+Changing format renumbers every shot. If the script has already been lined under one format and you switch, you'll have to re-line — there's no undo. Confirm with anyone else working on the project before changing.
+
+## Row height and display mode
+
+`Shift + M` toggles between compact and expanded row heights. Display Settings has a finer slider if you want an in-between size.
+
+## Sync across devices
+
+All Display Settings are project-level and propagate via CineSync. A producer adjusting columns on their desktop will see the same column set on their iPad within seconds.
+
+## If this isn't working
+
+*"I tried to drag a column header on the main list to reorder, but nothing happens."* Reordering happens inside Display Settings (`Shift + D`), not on the main list header.
+
+*"I changed the shot number format and now my old numbers are gone."* The change is destructive and has no undo. Contact support — server-side history can sometimes help.
+
+*"My custom column is on desktop but not on mobile."* It should appear automatically. Try force-quitting and reopening the mobile app. If the sync indicator shows pending changes, the new column hasn't propagated yet.

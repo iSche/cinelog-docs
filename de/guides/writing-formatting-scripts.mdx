@@ -1,0 +1,103 @@
+---
+title: Drehbücher schreiben & formatieren
+lastUpdated: 2026-04-22
+description: "Importiere FDX-, Fountain-, PDF-, TXT- und RTF-Drehbücher in den Editor von CineLog. Formatiere mit Fountain-Syntax, verfolge Analytik, exportiere als PDF und befülle deine Einstellungsliste."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Der Drehbuch-Editor von CineLog ist eine leistungsstarke, professionelle Schreibumgebung, die nativ in die Plattform integriert ist. Er unterstützt Echtzeit-Fountain-Formatierung, Live-Analytik und nahtloses Daten-Sync zur Cloud.
+
+Ob du ein neues Drehbuch von Grund auf schreibst oder ein bestehendes importierst – CineLog sorgt dafür, dass deine Formatierung immer den Branchenstandards entspricht.
+
+## Ein bestehendes Drehbuch importieren
+
+Falls du dein Drehbuch bereits in einer anderen Software begonnen hast, kannst du es einfach in CineLog importieren, ohne deine Formatierung zu verlieren.
+
+<Steps>
+1. **Drehbuch-Editor öffnen:** Navigiere über die linke Seitenleiste zum Drehbuch-Editor.
+2. **Dokument importieren:** Klicke auf den **Import**-Button in der oberen Menüleiste (oder drücke <kbd>Cmd</kbd> + <kbd>I</kbd>) und wähle deine Drehbuchdatei aus.
+3. **Automatisches Parsing:** Der universelle Parser von CineLog verarbeitet die Datei automatisch, extrahiert die Szenen und konvertiert die Formatierung.
+</Steps>
+
+<CardGrid>
+  <Card title="Unterstützte Formate">
+    - **Final Draft (.fdx)**
+    - **Fountain (.fountain)**
+    - **PDF** (Textextraktion)
+    - **Plain Text (.txt)**
+    - **Rich Text (.rtf)**
+  </Card>
+</CardGrid>
+
+---
+
+## Live-Bearbeitung & -Formatierung
+
+CineLog verwendet im Hintergrund die Markup-Sprache **Fountain**. Du musst Fountain aber nicht kennen, um zu schreiben – der Editor formatiert deinen Text automatisch beim Tippen.
+
+### Unterstützte Fountain-Elemente
+
+CineLog unterstützt aktuell die Kern-Fountain-Spezifikation für professionelle Drehbuch-Bearbeitung. Du kannst entweder natürlich schreiben und die smarte Erkennung die Arbeit machen lassen oder die Formatierung mit Fountain-Syntax-Zeichen erzwingen.
+
+- **Szenenüberschriften**: Beginne eine Zeile mit Standardpräfixen (`INT.`, `EXT.`, etc.) oder erzwinge sie, indem du die Zeile mit einem Punkt (`.`) beginnst.
+- **Action**: Standardtext wird als Action behandelt. Erzwinge sie, indem du eine Zeile mit einem Ausrufezeichen (`!`) beginnst.
+- **Figuren**: Tippe komplett in GROSSBUCHSTABEN (z.B. `JOHN`) oder erzwinge es, indem du die Zeile mit einem At-Zeichen (`@`) beginnst.
+- **Dialog**: Tippe einfach direkt nach einer Figuren-Zeile.
+- **Parenthetische**: Wickle Text in Klammern `(wie das)`.
+- **Übergänge**: Verwende standardmäßige GROSSBUCHSTABEN-Endungen wie `CUT TO:` oder erzwinge es, indem du die Zeile mit einer spitzen Klammer (`>`) beginnst.
+- **Zentrierter Text**: Wickle Text in spitze Klammern: `> Diesen Text zentrieren <`.
+- **Hervorhebung**: Unterstützung für standardmäßige Markdown-Hervorhebung:
+  - `*Kursiv*`
+  - `**Fett**`
+  - `_Unterstrichen_`
+
+### Aktuell nicht unterstützte Elemente
+Wir erweitern unsere Fountain-Unterstützung kontinuierlich. Aktuell sind die folgenden fortgeschrittenen Fountain-Features im Live-Editor **noch nicht unterstützt**:
+- Dual Dialogue (`^`)
+- Boneyards (`/* */`)
+- Sections (`#`) und Synopses (`=`)
+- Inline Notes (`[[ ]]`)
+
+### Manuelle Override-Hotkeys
+Wenn die smarte Erkennung falsch rät oder du einen bestimmten Formatierungsstil erzwingen willst, nutze die manuellen Override-Hotkeys:
+
+- <kbd>Cmd</kbd> + <kbd>1</kbd>: Szenenüberschrift
+- <kbd>Cmd</kbd> + <kbd>2</kbd>: Figur
+- <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialog
+- <kbd>Cmd</kbd> + <kbd>4</kbd>: Action
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Übergang
+
+<Aside type="tip">
+**Kontinuierliches Speichern:** Es gibt keinen "Speichern"-Button im Drehbuch-Editor. Jeder Tastenanschlag wird still und kontinuierlich auf deinem lokalen Gerät gespeichert und im Hintergrund sicher in die Cloud synchronisiert.
+</Aside>
+
+---
+
+## Live-Analytik
+
+Während du schreibst, berechnet CineLog professionelle Kennzahlen in Echtzeit, damit du Umfang und Pacing deines Drehbuchs einschätzen kannst, ohne den Editor zu verlassen.
+
+Schau im Analytik-Panel nach Live-Updates für:
+- **Seitenschätzung:** Branchenübliche Formeln zur Seitenberechnung mit professioneller Genauigkeit.
+- **Szenen- & Figurenzahlen:** Gesamtzahl der Szenen und einzigartiger Sprechfiguren.
+- **Wort-Kennzahlen:** Gesamtwortzahl und geschätzte Lesedauer.
+
+---
+
+## Vorschau & Export
+
+Wenn du bereit bist, dein endgültiges Drehbuch zu reviewen oder mit anderen zu teilen, kannst du nahtlos vom Editor zu einer standardisierten PDF wechseln.
+
+<Steps>
+1. **Vorschau-Modus:** Klicke auf den **"Vorschau & Export"**-Button in der oberen Menüleiste, um vom kontinuierlich scrollenden Editor zu einer paginierten, druckfertigen Ansicht zu wechseln. Der Vorschau-Modus rendert eine standardisierte Titelseite und akkurate Seitenumbrüche.
+2. **Export:** Klicke im Vorschau-Modus auf das **"Export"**-Symbol.
+3. **Format auswählen:** Wähle das gewünschte Dateiformat.
+</Steps>
+
+CineLog unterstützt aktuell den Export deines Drehbuchs in den folgenden Formaten:
+- **PDF (.pdf):** Hochwertiges, paginiertes und branchenformatiertes Dokument, perfekt zum Drucken oder Mailen.
+- **Final Draft (.fdx):** Branchenstandard-XML-Format, mit dem du dein Drehbuch nahtlos in Final Draft oder andere Produktionssoftware übernehmen kannst.
+- **Fountain (.fountain):** Roher Plaintext-Markup für maximale Kompatibilität.
+- **Plain Text (.txt):** Einfacher Textexport zum reinen Lesen.
+- **JSON (.json):** Strukturierter Datenexport für Integrationen und eigenes Tooling.
+- **CSV (.csv):** Tabellarischer Breakdown-Export für Spreadsheets und Reporting.

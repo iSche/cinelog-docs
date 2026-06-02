@@ -1,0 +1,78 @@
+---
+title: Ordens do Dia
+lastUpdated: 2026-04-22
+description: "Gere e gerencie ordens do dia para elenco e equipe com agendamento e detalhes de locação."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Transforme o CineLog de um utilitário de planejamento de planos em um escritório de produção completo. Ele agrega automaticamente Elenco, Equipe, Cronograma e detalhes de Locação em PDFs padrão da indústria, prontos para distribuição imediata, economizando horas de transcrição.
+
+## Recursos principais
+
+<CardGrid>
+<Card title="Motor de cronograma ao vivo">
+  Gere cronogramas com horários precisos automaticamente com base nos tempos estimados das suas cenas. Inserir uma "Hora de Apresentação" propaga horários para todo o dia, alertando inteligentemente sobre gargalos.
+</Card>
+
+<Card title="PDFs globais multi-idioma">
+  Exportação pixel-perfect de ordens do dia em padrão Tier-1 da indústria, com fallback automático de fontes para **Árabe, Chinês, Japonês, Hebraico, Hindi, Ucraniano** e mais.
+</Card>
+
+<Card title="Logística automatizada">
+  Busque com segurança detalhes do hospital mais próximo via Google Places e injete uma previsão precisa do tempo via Google Weather API, com cobertura de até 10 dias.
+</Card>
+
+<Card title="Confirmações em um toque">
+  Dispare ordens do dia para todo o seu time por e-mail com tecnologia anti-threading embutida. A equipe confirma o recebimento com um único toque, atualizando seu painel ao vivo.
+</Card>
+
+<Card title="Controles mobile no set">
+  Sobreposições conscientes do teclado garantem que você possa fazer alterações rápidas de set pelo celular sem nunca obstruir o texto real do documento.
+</Card>
+</CardGrid>
+
+## Uso detalhado e fluxos de trabalho
+
+<Aside type="tip">
+As ordens do dia puxam automaticamente os dados da sua Decupagem e dos rosters de Elenco e Equipe, o que significa que você gasta menos tempo configurando manualmente o documento e mais tempo se preparando para enquadrar seus planos.
+</Aside>
+
+<Steps>
+<ol>
+
+<li>
+
+**Gerando o cronograma diário**
+
+Em vez de digitar manualmente todos os horários de plano, o motor de cronograma do CineLog faz as contas para você. Adicione uma hora de apresentação da equipe e o motor propaga esse horário para baixo, plotando automaticamente os horários exatos de início para todas as cenas e intervalos subsequentes com base em seus tempos estimados.
+
+</li>
+<li>
+
+**Gerenciando horários de elenco e equipe**
+
+Clique nas seções de Elenco ou Equipe para limitar a lista ao pessoal necessário naquele dia. Defina horários individuais de Apresentação, Cabelo e Maquiagem e Figurino por pessoa, depois arraste e solte para reordenar pela ordem esperada de chegada.
+
+</li>
+<li>
+
+**Exportação em PDF e envios por e-mail**
+
+Garanta que todos saibam exatamente o que está acontecendo. Clique em **Exportar** para gerar um PDF padrão da indústria com o logotipo da sua produtora, ou aperte **Enviar** para disparar envios rastreados de e-mail direto para o bolso do seu time.
+
+</li>
+
+</ol>
+</Steps>
+
+## Ecossistema integrado de dados
+
+<Aside type="tip">
+O cronograma das Ordens do Dia atua como uma janela bidirecional para a sua decupagem. Editar a ordem ou estimativa de uma cena na Ordem do Dia _instantaneamente_ atualiza o layout da sua decupagem via CineSync.
+</Aside>
+
+<Aside type="tip" title="Benefícios do roteamento de dados">
+-   **Fluxos de Elenco e Equipe**: nomes de elenco, funções de equipe e detalhes de contato fluem estritamente do seu hub central de Elenco e Equipe. Escalar um ator popula seus dados dinamicamente.
+-   **Garantias de tratamento de erros**: qualquer gargalo inválido no cronograma exibe alertas amarelos/vermelhos chamativos na UI, evitando conflitos de timeline.
+-   **Roteamento de acesso global**: qualquer pessoa que receba um link de Ordem do Dia é direcionada inteligentemente a criar uma conta, ganhando acesso estritamente ao que sua função permite.
+</Aside>

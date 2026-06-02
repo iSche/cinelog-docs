@@ -1,0 +1,57 @@
+---
+title: Cast & Crew verwalten
+lastUpdated: 2026-04-22
+description: "Rollen und Abteilungen hinzufügen, Workspace-Kontakte verwalten und Zugriff mit Intent-Toggles steuern. Crew-Daten fließen direkt in CineLog-Dispositionen."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Das Cast & Crew-Modul von CineLog dient sowohl als dein Produktionsverzeichnis als auch als dein Sicherheits-Gateway. Es trennt globale Kontakte strikt von aktiven Projektmitgliedern, um eine robuste Zugriffskontrolle zu gewährleisten.
+
+## 1. Die einheitliche Verzeichnisstruktur
+
+CineLog verwaltet dein Team in zwei verschiedenen Schichten:
+- **Workspace-Kontakte:** Das ist dein Master-Rolodex. Jeder, den du irgendwann zu irgendeinem Projekt hinzufügst, wird hier automatisch gespeichert.
+- **Projekt-Cast & Crew:** Das ist die Liste für dein *aktuelles* Projekt. Sie verknüpft Personen aus deinen Workspace-Kontakten mit spezifischen Job-Rollen in diesem Projekt.
+
+## 2. Team-Mitglieder hinzufügen
+
+Du kannst neue Mitglieder einfach direkt zu deinem Projekt hinzufügen. CineLog verwendet einen einheitlichen Dialog, der das Erstellen des Kontakts und das Zuweisen der Rolle in einem nahtlosen Schritt erledigt.
+
+<Steps>
+1. **Cast & Crew öffnen:** Navigiere über die linke Seitenleiste zum Cast & Crew-Modul. Stelle sicher, dass du auf dem "Projekt"-Tab bist.
+2. **Rolle hinzufügen:** Klicke auf den **"+ Rolle hinzufügen"**-Button.
+3. **Auswählen oder erstellen:** Der einheitliche Dialog öffnet sich. Du kannst entweder eine bestehende Person aus deinen Workspace-Kontakten suchen und auswählen oder einfach einen neuen Namen eintippen, um sofort einen neuen Kontakt zu erstellen.
+4. **Rolle wählen:** Wähle eine branchenübliche Rolle aus dem Dropdown (z.B. *1st Assistant Director*, *Gaffer*, *Lead Actor*). 
+5. **Kontaktdetails:** Gib die E-Mail und Telefonnummer der Person ein. Auch wenn optional, sind sie sehr empfehlenswert, wenn du planst, ihnen Dispositionen zu schicken oder sie in die App einzuladen.
+</Steps>
+
+Du kannst einer einzelnen Person mehrere Rollen zuweisen, falls sie in deiner Produktion mehrere Hüte trägt!
+
+---
+
+## 3. Zugriffskontrolle & Einladungen
+
+Einem Kontakt eine Rolle zuzuweisen, lädt ihn *nicht* automatisch ein, sich in CineLog einzuloggen. Es fügt ihn nur deiner internen Projektliste hinzu. 
+
+Wenn du willst, dass ein Teammitglied sich tatsächlich in die App einloggt und mitarbeitet, musst du ihm den Zugriff formal gewähren.
+
+### Der "Intent-Toggle"
+
+Klicke auf die Rolle einer beliebigen Person in der Projekt-Cast & Crew-Liste, um ihren **Rollendetails-Dialog** zu öffnen. Darin findest du das **Zugriffskontroll-Formular**.
+
+Oben in diesem Formular ist der **Zugriffs-Intent-Toggle**.
+
+- **AUS (Nicht erlaubt):** Die Person ist auf deiner Liste, kann sich aber nicht ins Projekt einloggen. Das ist der Standardzustand.
+- **EIN (Gewährt/Ausstehend):** Das System verifiziert ihre E-Mail. Wenn sie ein CineLog-Konto hat, werden sie sofort dem Projekt hinzugefügt. Wenn nicht, sendet CineLog ihnen automatisch eine Einladungs-E-Mail.
+
+<Aside type="note">
+**Team-Management:** Jeder, der **Edit**-Berechtigung für das Cast & Crew-Modul hat, kann Zugriffs-Intents umschalten und die ACL für andere Teammitglieder ändern. So kannst du Onboarding- und Sicherheitsaufgaben an deine Produktionsleiter oder Koordinatoren delegieren!
+</Aside>
+
+### Rollenbasierte Zugriffskontrolle (RBAC)
+
+Wenn du einem Nutzer Zugriff auf dein Projekt gewährst, was kann er tatsächlich *tun*?
+
+CineLog verwendet **rollenbasierte Zugriffskontrolle (RBAC)**. Die Berechtigungen eines Nutzers werden von der Branchen-Rolle beeinflusst, die du ihm zugewiesen hast, mit sinnvollen Standardwerten basierend auf seiner Abteilung und Position in der Hierarchie.
+
+Als Projekteigentümer kannst du die Standard-Berechtigungen im Rollendetails-Dialog überschreiben und den Anzeigen/Bearbeiten-Zugriff für einzelne Module für diese spezifische Person anpassen.

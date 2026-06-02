@@ -1,0 +1,72 @@
+---
+title: Storyboards
+lastUpdated: 2026-04-22
+description: "Ferramentas de planejamento visual para mapear cenas e visualizar sua visão criativa."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+O recurso de Storyboard do CineLog é uma extensão visual da sua Decupagem Linear. Ele fornece um espaço de trabalho dedicado para planejar, sequenciar e revisar a composição visual da sua produção por meio de layouts intuitivos. Storyboards não são um conjunto separado de dados — eles são uma apresentação visual dos mesmos dados de planos. Cada painel no storyboard está vinculado 1:1 a um plano na sua Decupagem Linear.
+
+## Capacidades principais
+
+<CardGrid>
+<Card title="Múltiplos layouts de perspectiva">
+  Visualize seu storyboard horizontalmente (Visualização Linear), agrupado por cena (Visualização Cena/Grade) ou em tela cheia em dispositivos móveis.
+</Card>
+
+<Card title="Painéis de mídia rica">
+  Suporte para múltiplos envios de imagem por painel de plano. Defina uma imagem primária mantendo alternativas a um deslize de distância.
+</Card>
+
+<Card title="Sequenciamento por arrastar e soltar">
+  Reordene planos visualmente. As alterações são sincronizadas imediatamente com sua decupagem.
+</Card>
+
+<Card title="Apresentação personalizável">
+  Usando as Configurações de Exibição, personalize profundamente como os painéis são renderizados. No modo Grade, ajuste explicitamente a quantidade de colunas (de 1 até 10). No modo Linear, defina a largura exata do painel. Você também pode ajustar o espaçamento entre os painéis globalmente.
+</Card>
+</CardGrid>
+
+## Uso detalhado e fluxos de trabalho
+
+### Enviando e gerenciando conteúdo
+
+Toque para Enviar
+
+Toque na área de imagem de um painel para enviar mídia (ou dê um toque duplo no mobile para abrir o Explorador de Mídia).
+
+Percorrer Sequências
+
+Se você enviar várias imagens para um único painel, pode usar o controle deslizante do painel para percorrer a sequência.
+
+Definir Imagens Primárias
+
+A imagem "Primária" é a que será exibida na visualização em Grade e incluída nas exportações em PDF.
+
+### Trabalhando com visualizações
+
+#### Visualização Linear (Desktop/Tablet)
+
+Uma linha do tempo horizontal. Você pode ajustar o zoom para ver ~2 painéis grandes ou ~4 painéis menores na tela. Planos podem ser reordenados cronologicamente aqui, e o sistema lida com as atualizações de associação de cena automaticamente.
+
+#### Visualização Cena / Grade
+
+Abre uma grade vertical (até 10 colunas) focada puramente em uma única cena. Isso oferece uma excelente visão geral da cobertura de uma sequência inteira.
+
+## Dicas e especificidades por plataforma
+
+### Carrossel Linear no Celular
+
+Em celulares, a visualização Linear se transforma em um carrossel deslizável de página inteira. Deslizar diretamente na **área da imagem** percorre as múltiplas imagens enviadas para aquele plano específico. Deslizar na **área de metadados** na parte inferior navega para o próximo ou anterior plano por completo.
+
+### Toque Duplo para Editar (Mobile)
+
+Em celulares, todos os campos clicáveis exigem um **toque duplo** para edição, evitando alterações acidentais durante o deslize. Tablets e Desktops dependem de um único toque.
+
+### Aspect Ratios de pré-visualização
+
+As visualizações de storyboard renderizam automaticamente suas imagens na verdadeira proporção selecionada pelo usuário, incluindo formatos verticais altos como 9:16 (formato TikTok/Reels) sem cortes.
+
+### Exportação profissional para PDF
+
+Gere folhas de PDF limpas e prontas para produção diretamente das suas visualizações de storyboard. Pressione `Cmd+P` para configurar uma Exportação em PDF, escolhendo entre o modo Limpo (apenas visual) ou modo Detalhado (visual + metadados).

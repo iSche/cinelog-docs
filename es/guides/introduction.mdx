@@ -1,0 +1,253 @@
+---
+title: Lo básico
+lastUpdated: 2026-05-23
+description: "Cuatro secciones que cubren el recorrido por la app y las tres cosas que harás una y otra vez: editar, seleccionar, arrastrar. La base para cada guía de funcionalidad."
+---
+
+CineLog usa los mismos patrones en todas partes. Los mismos gestos mueven cosas, la misma forma de seleccionar funciona en cada lista, los mismos atajos editan cualquier campo. Aprender esos patrones una vez es el mayor salto en fluidez con la app.
+
+Cuatro secciones: un recorrido por la app y luego las tres cosas que haces una y otra vez: editar, seleccionar, arrastrar. Cada sección termina con una breve lista de "Si esto no funciona" para que puedas entrar a resolver un problema concreto sin leer el resto.
+
+**Contenidos**
+
+1. [Recorrido por la app: dónde vive cada cosa](#1-app-tour-where-everything-lives)
+2. [Editar campos](#2-editing-fields)
+3. [Seleccionar filas](#3-selecting-rows)
+4. [Arrastrar para reordenar](#4-dragging-to-reorder)
+
+---
+
+<h2 id="1-app-tour-where-everything-lives">1. Recorrido por la app: dónde vive cada cosa</h2>
+
+### Iniciar sesión
+
+El inicio de sesión es solo con correo electrónico. Introduces tu dirección, te enviamos un código, lo introduces. Sin contraseña. Si nunca antes has iniciado sesión y aún no tienes proyectos, la pantalla de Proyectos te pide que crees uno (solo un nombre y una descripción — la insignia de abreviatura se genera a partir del nombre). De lo contrario, aterrizas en el proyecto que tenías abierto la última vez.
+
+Cada pantalla de la app, excepto el inicio de sesión y la lista de proyectos, vive dentro de un proyecto.
+
+### La ventana de escritorio
+
+Tres regiones, de arriba abajo:
+
+- Una **barra de título** delgada con el punto del estado de conexión a la izquierda. Los usuarios de Windows tienen los botones estándar de minimizar / maximizar / cerrar a la derecha.
+- La **barra lateral izquierda** más el **área de contenido** — la barra lateral para navegar, el contenido para trabajar.
+- Cosas flotantes: modales, snackbars, el diálogo de atajos.
+
+### La barra lateral
+
+Siempre presente en escritorio y tablet. De arriba abajo: el conmutador de proyectos, una lista de funcionalidades, el indicador de sincronización y el botón Más.
+
+Las funcionalidades:
+
+- **Editor de Guion** — escribe el guion.
+- **Lista de Planos** — vistas Lineal y Producción de cada plano, con cada Día de Producción como sub-entrada.
+- **Storyboard** — planificación visual, con vistas guardadas como sub-entradas.
+- **Órdenes de Rodaje** — órdenes de rodaje diarias, con cada Día de Producción como sub-entrada.
+- **Elenco y Equipo** — el directorio de personas del proyecto, con vistas guardadas.
+
+**Actualizaciones** (historial de cambios) aparece solo si tu rol lo permite. **Explorador de Medios** vive en el menú Más.
+
+### El conmutador de proyectos
+
+En la parte superior de la barra lateral en escritorio, en la barra superior de la app en teléfono. Muestra el nombre y la insignia del proyecto actual. Haz clic para cambiar de proyecto — la superposición (o panel, en teléfono) lista el proyecto actual, las invitaciones pendientes, tres recientes, un botón "Nuevo Proyecto" y un enlace "Mostrar Todo".
+
+Cambiar de proyecto refresca toda la barra lateral, así que las sub-entradas que ves siempre pertenecen al proyecto en el que estás.
+
+### Sincronización vs conexión
+
+Dos indicadores, dos cosas distintas:
+
+- El **punto de conexión** en la barra de título tiene código de colores — verde / naranja / rojo — para el enlace en tiempo real con el servidor.
+- El **indicador de sincronización** en la parte inferior de la barra lateral es de un gris apagado y te informa sobre tu cola local de ediciones por icono y etiqueta: tick + "Sincronizado" (cola vacía), sync girando + "Sync: N pendientes" o "Sincronizando…" (cambios en tránsito), cloud-off + "Offline: N pendientes" (esperando conectividad).
+
+Pueden discrepar, y está bien. Punto rojo + "Sincronizado" = estás desconectado pero no tenías nada pendiente. Punto verde + "Sync: N pendientes" = estás en línea y la cola se está vaciando.
+
+En teléfono, ambos estados se pliegan en la insignia de conexión en la barra superior de la app.
+
+### Modo offline
+
+CineLog está construido para seguir funcionando sin conexión. El primer inicio de sesión necesita internet; después, el dispositivo queda registrado y permanece así. Las ediciones hechas sin conexión se guardan en la base de datos local del dispositivo y se ponen en cola en el indicador de sincronización hasta que vuelvas a estar en línea, momento en el que se descargan al servidor automáticamente.
+
+Tu sesión es válida hasta siete días. La app la refresca en segundo plano a medida que se acerca el vencimiento — normalmente un par de horas antes — así que, mientras estés en línea cuando eso ocurra, nunca verás una solicitud de inicio de sesión. El uso mixto normal en línea/offline hace que el refresco simplemente funcione.
+
+Si permaneces totalmente sin conexión durante toda la ventana de siete días, la sesión expira. La próxima vez que la app intente hablar con el servidor, mostrará un diálogo de re-autenticación. El diálogo es bloqueante pero tus datos permanecen: vuelve a iniciar sesión con la misma cuenta y retomas justo donde lo dejaste, con las ediciones en cola y todo.
+
+### El menú Más
+
+Parte inferior de la barra lateral en escritorio y tablet; el ítem más a la derecha en la barra de navegación inferior del teléfono. El contenido difiere por plataforma:
+
+- **Escritorio:** Ayuda y Soporte, Atajos, Hoja de Ruta, Cambiar tema, Explorador de Medios, Cuenta, Cerrar sesión.
+- **Teléfono:** Editor de Guion, Actualizaciones, Ayuda y Soporte, Explorador de Medios, Cambiar tema, Cuenta, Cerrar sesión.
+
+El Editor de Guion y Actualizaciones están dentro del panel Más del teléfono porque no hay espacio en la barra inferior de cinco ranuras. Atajos y Hoja de Ruta no se muestran en teléfono en absoluto.
+
+El cambio de tema también está vinculado a `Cmd / Ctrl + Shift + M` en escritorio.
+
+### Colapsar la barra lateral
+
+Pulsa `[` para colapsar la barra lateral a solo iconos (o expandirla de nuevo). Las sub-entradas siguen visibles en cualquiera de los estados — simplemente se muestran de forma abreviada cuando la barra lateral está colapsada. La barra lateral nunca desaparece por completo en escritorio.
+
+No hay barra lateral en teléfono — la navegación es la barra inferior.
+
+### El diseño del teléfono
+
+Cinco ranuras en la barra de navegación inferior:
+
+1. Lista de Planos
+2. Storyboard
+3. Órdenes de Rodaje
+4. Elenco y Equipo
+5. Más
+
+Todo lo demás (Editor de Guion, Actualizaciones, Explorador de Medios, Cuenta…) está dentro del panel Más. La barra superior de la app muestra el nombre del proyecto + insignia; tócala para cambiar de proyecto.
+
+### El diálogo de atajos
+
+`Cmd / Ctrl + K` en escritorio o tablet abre un modal que lista cada atajo. Ciérralo con `Esc` o `Cmd + K`. No se muestra en teléfono.
+
+### Snackbars
+
+Mensajes cortos aparecen en la parte inferior de la pantalla cuando algo tiene éxito, falla o finaliza. Desaparecen solos después de unos segundos.
+
+### Si esto no funciona
+
+*"¿Dónde se fue el Editor de Guion en mi teléfono?"* Dentro del panel Más, no en la barra inferior.
+
+*"Mi punto de conexión y el indicador de sincronización no coinciden."* Miden cosas distintas. El punto es el enlace de red; el indicador de sincronización es la cola local de ediciones. Cualquiera de los dos puede no estar sano por separado.
+
+*"¿Puedo usar CineLog sin internet?"* Sí, después del primer inicio de sesión. Las ediciones offline se guardan localmente y se sincronizan cuando reconectes. Tu sesión es válida hasta siete días; al acercarse el vencimiento, la app la refresca automáticamente si estás en línea en ese momento, así que el uso mixto normal en línea/offline mantiene la sesión iniciada. Un dispositivo que esté offline los siete días completos necesitará volver a iniciar sesión.
+
+*"La app me pidió iniciar sesión otra vez en la localización."* Es el diálogo de re-autenticación tras un periodo largo sin conectividad. Vuelve a iniciar sesión con el mismo correo; tus ediciones en cola permanecen y se sincronizarán.
+
+---
+
+<h2 id="2-editing-fields">2. Editar campos</h2>
+
+Haz clic en una celda. La celda se abre para edición. Eso es todo en escritorio.
+
+La forma del editor depende del tipo de campo — una entrada de texto para texto, un selector para desplegables, un toggle inmediato para casillas, un selector de medios para celdas de imagen. Siempre se confirma sin un botón Guardar.
+
+### El móvil son dos toques
+
+En teléfono o tablet, tocar una celda no la edita directamente — primero tocas la fila para expandirla, luego tocas el campo dentro de la vista expandida. Ese segundo toque abre un panel inferior para el campo.
+
+Si tocas una fila y nada parece editable, expándela primero.
+
+### Autoguardado
+
+CineLog autoguarda en cada confirmación y con un debounce de aproximadamente 450 ms mientras escribes. No hay botón Guardar en ninguna parte.
+
+Pulsar `Esc` cierra el editor y descarta lo escrito desde el último autoguardado por debounce. Si has estado escribiendo unos segundos, los caracteres anteriores ya se han guardado silenciosamente — `Esc` solo descarta el tramo más reciente.
+
+### Teclado dentro del editor
+
+- `Enter` confirma y cierra.
+- `Esc` cancela y cierra (con la salvedad del autoguardado anterior).
+- Las flechas se mueven por las opciones del desplegable.
+
+### Si esto no funciona
+
+*"No puedo editar nada en móvil."* Toca la fila para expandirla primero, luego toca el campo específico.
+
+*"¿Dónde está el botón Guardar?"* No hay ninguno — autoguardado en cada confirmación, más un debounce de 450 ms mientras escribes.
+
+---
+
+<h2 id="3-selecting-rows">3. Seleccionar filas</h2>
+
+Seleccionar una fila es como la marcas para moverla o para una acción que debería aplicarse a varias filas a la vez. La selección es un modo persistente, no un hover — una vez que una fila está seleccionada, la lista está en modo selección hasta que salgas.
+
+### Cómo entrar en modo selección
+
+- **Escritorio:** `Cmd / Ctrl + Click` en cualquier fila.
+- **Móvil:** mantén pulsada cualquier fila.
+
+La primera fila que selecciones se convierte en el ancla para la selección por rango (siguiente).
+
+### Añadir más filas
+
+Una vez que estás en modo selección:
+
+- **Escritorio:** `Cmd / Ctrl + Click` alterna filas individuales dentro o fuera. Un clic sin el modificador reemplaza la selección con solo la fila clicada.
+- **Móvil:** un toque simple ahora alterna la selección (fuera del modo selección, el mismo toque expande la fila).
+
+### Selección por rango (solo escritorio)
+
+`Shift + Click` selecciona cada fila entre el ancla y la fila clicada, inclusive. El ancla se mueve a la fila más recientemente clicada, así que sucesivos `Shift + Click` siguen extendiendo el rango.
+
+No hay equivalente móvil — selecciona una fila a la vez.
+
+### Salir
+
+- **Escritorio:** `Esc`.
+- **Móvil:** el chip "Listo" en la barra de selección.
+
+Cualquiera limpia la selección y devuelve la lista a sus interacciones normales.
+
+### Si esto no funciona
+
+*"No puedo saber si estoy en modo selección."* La barra de selección aparece en la parte superior de la lista cada vez que hay alguna fila seleccionada — esa barra es el indicador. Las propias filas seleccionadas reciben un tinte sutil.
+
+*"Tocar una fila en móvil no la selecciona."* Mantén pulsada para entrar en modo selección; un toque simple es para expandir la fila.
+
+---
+
+<h2 id="4-dragging-to-reorder">4. Arrastrar para reordenar</h2>
+
+Una vez que tienes una fila (o una multi-selección) marcada, arrastra cualquiera de ellas para mover el conjunto. Arrastrar funciona igual en toda la app — el destino simplemente cambia de significado según la pantalla.
+
+### Qué puedes arrastrar
+
+Cualquier fila, en cualquier parte de su cuerpo. No hay un asa de arrastre separada. En escritorio verás que el cursor cambia a `grab` al pasar por encima y a `grabbing` durante el arrastre.
+
+### Iniciar el arrastre
+
+Pulsar por sí solo no inicia un arrastre — el puntero o el dedo tienen que moverse una pequeña distancia primero:
+
+- **Aproximadamente 8 píxeles** para una fila no seleccionada. Menos que eso se trata como un clic.
+- **Aproximadamente 3 píxeles** para una fila que ya forma parte de la selección — el umbral más bajo hace que mover una selección existente se sienta receptivo.
+
+En móvil hay dos formas de entrar:
+
+- **Arrastre frío:** mantén pulsada una fila no seleccionada; se levanta bajo tu dedo, sigue moviéndote para arrastrar.
+- **Arrastre cálido:** si la fila ya forma parte de una selección activa, simplemente tócala y arrastra — sin un segundo mantener pulsado.
+
+### Dónde puedes soltar
+
+A medida que arrastras, se abre un hueco entre filas en cualquier posición donde soltar sea válido. Si pasas sobre un sitio y no aparece un hueco, no se permite soltar ahí — la fila vuelve a su posición original al soltar. Las reglas de qué es válido varían por pantalla (cubiertas en las guías de funcionalidad); el hueco es la señal universal de "puedes soltar aquí".
+
+### Arrastrar una selección
+
+Si arrastras una fila que forma parte de la selección actual, la selección entera se mueve junta. Si arrastras una fila que *no* forma parte de la selección, el arrastre reduce implícitamente la selección a esa única fila.
+
+Por eso seleccionar primero y luego arrastrar es el flujo predecible — puedes confirmar qué está seleccionado antes de comprometerte.
+
+### Auto-scroll en los bordes
+
+Mientras arrastras, si te mueves a los 100 píxeles superiores o inferiores de la lista visible, esta se desplaza automáticamente hacia ese borde. Cuanto más cerca del borde, más rápido (hasta unos 24 píxeles por fotograma). Muévete de vuelta hacia el centro para detenerlo.
+
+### El truco del trackpad
+
+En escritorio, **un desplazamiento con dos dedos en el trackpad no inicia un arrastre** — desplaza la lista. Solo un arrastre con un dedo (o presionar y mover con el ratón) reordena. Este es el informe más común de "el arrastre está roto"; si has estado usando dos dedos, cambia a uno.
+
+### Auto-colapso al entrar en selección en móvil
+
+Solo en móvil, las filas expandidas se colapsan de vuelta a vista compacta en el momento en que entras en modo selección. Esto mantiene las alturas de las filas uniformes para arrastrar. No se pierde nada; expandir es solo un estado de visualización.
+
+### Cancelar
+
+Suelta el puntero o levanta el dedo fuera de cualquier hueco de soltar válido y la fila vuelve a su sitio inicial. No hay `Esc` para cancelar a mitad del arrastre.
+
+### Si esto no funciona
+
+*"Arrastrar no hace nada."* O no has superado el pequeño umbral de movimiento, o estás usando un gesto de trackpad con dos dedos (que desplaza, no arrastra).
+
+*"El arrastre funciona pero mi drop es rechazado."* El destino no es un objetivo válido para lo que estás arrastrando. Las guías por funcionalidad cubren las reglas.
+
+*"Mis filas se colapsaron cuando toqué para seleccionar."* Es el auto-colapso intencional en móvil — hace que las alturas de arrastre sean uniformes. Tus datos están intactos.
+
+---
+
+Ese es el vocabulario universal de la app. Cada guía de funcionalidad se construye sobre estos patrones; si alguna vez no estás seguro de cómo funciona una pantalla en particular, la respuesta casi siempre es "igual que cualquier otra lista".
+
+**A dónde ir a continuación:** [Lo esencial de la lista de planos](/es/guides/shot-list/essentials) es la siguiente parada más común. [Vista Lineal vs Vista Producción](/es/guides/shot-list/linear-vs-production) cubre la división entre orden de guion y orden de rodaje — la mayoría de productores y ADs nuevos se topan con eso rápido. [Atajos de teclado](/es/keyboardshortcuts) es la página de referencia que vale la pena marcar.

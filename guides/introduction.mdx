@@ -1,85 +1,253 @@
 ---
-title: Introduction to CineLog
-lastUpdated: 2026-04-22
-description: "Get started with CineLog — a local-first film pre-production app for macOS, iOS, and Android. Learn the architecture, create your first project, and explore the ecosystem."
+title: The basics
+lastUpdated: 2026-05-23
+description: "Four sections covering the app tour and the three things you do over and over again — editing, selecting, dragging. The foundation for every feature guide."
 ---
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Welcome to CineLog, the comprehensive pre-production and on-set management platform built for modern filmmakers.
+CineLog uses the same patterns everywhere. The same gestures move things around, the same way of selecting works on every list, the same shortcuts edit any field. Learning those patterns once is the single biggest jump in being fluent with the app.
 
-Whether you're writing a script in pre-production or checking off shots on set, CineLog is designed to keep your entire production team perfectly synchronized.
+Four sections: a tour of the app, then the three things you do over and over again — editing, selecting, dragging. Each section ends with a short "If this isn't working" list so you can drop in to fix a specific problem without reading the rest.
 
-## The CineLog Ecosystem
+**Contents**
 
-CineLog operates across multiple platforms, ensuring you always have the right tool for the job depending on your current environment:
-
-<CardGrid>
-  <Card title="Desktop App (macOS)" icon="laptop">
-    The command center for your production. The desktop app is optimized for heavy-duty pre-production work: writing scripts, mass-uploading storyboards, configuring complex call sheets, and managing your crew directories.
-  </Card>
-  <Card title="Mobile App (iOS & Android)" icon="apple">
-    Your on-set companion. The mobile app is designed to be fast, touch-friendly, and reliable. Use it to quickly reference call sheets, check off completed shots, and update notes while standing by the camera.
-  </Card>
-</CardGrid>
-
-> [!NOTE]
-> All platforms share the exact same underlying database and architecture, meaning anything you do on the desktop is instantly available on mobile, and vice versa.
+1. [App tour: where everything lives](#1-app-tour-where-everything-lives)
+2. [Editing fields](#2-editing-fields)
+3. [Selecting rows](#3-selecting-rows)
+4. [Dragging to reorder](#4-dragging-to-reorder)
 
 ---
 
-## The CineSync Philosophy
+## 1. App tour: where everything lives
 
-CineLog uses a custom synchronization engine called **CineSync** to manage your data. It is critical to understand how this system works, especially when you are out in the field on set where internet connectivity might be poor.
+### Signing in
 
-### 1. Local-First Responsiveness
-Every time you perform an action in CineLog (like creating a shot or updating a scene status), the change is **immediately saved to a local database** on your device. The UI updates instantly without waiting for a server response. This ensures the app always feels lightning-fast and never "spins" while waiting for a connection.
+Sign-in is email-only. Enter your address, we send a code, you enter the code. No password. If you've never signed in before and don't have any projects yet, the Projects screen prompts you to create one (just a name and a description — the abbreviation badge is generated from the name). Otherwise you land in the project you last had open.
 
-### 2. The Server is the Ultimate Source of Truth
-While the UI updates immediately based on your local database, those changes are technically placed into a background "Outbox Queue." Behind the scenes, CineLog securely transmits these actions to the cloud server. The server validates the action, applies the changes to the master database, and sends an acknowledgment back to your device. 
+Every screen in the app, except sign-in and the project list, lives inside a project.
 
-<Aside type="caution">
-**Conflicts and Security:** If two people edit the exact same shot at the exact same time, the server determines the final outcome. The server is the ultimate source of truth—if an action is rejected due to permissions or a conflict, your local UI will revert to match the server's true state.
-</Aside>
+### The desktop window
 
-### 3. Working Offline
-Because of this local-first outbox system, **CineLog works completely offline**. 
+Three regions, top to bottom:
 
-If you are filming in a remote location with zero cell service, you can still open the app, view your entire shot list, and check off shots as you film them. The app will simply queue these actions in your local outbox. The moment your phone reconnects to Wi-Fi or cellular data, the outbox will automatically drain and sync all your progress back to the cloud and to the rest of your team.
+- A thin **title bar** with the connection status dot on the left. Windows users get the standard minimize / maximize / close on the right.
+- The **left sidebar** plus the **content area** — sidebar for navigation, content for the work.
+- Floating things: modals, snackbars, the hotkeys dialog.
 
-<Aside type="tip">
-**Keep the App Open:** When you finally get back to a hotel or an area with cell service after a long day of shooting offline, just open the app for a few seconds to let the Outbox clear completely before closing it.
-</Aside>
+### The sidebar
+
+Always present on desktop and tablet. Top to bottom: the project switcher, a list of features, the sync indicator, and the More button.
+
+The features:
+
+- **Script Editor** — write the screenplay.
+- **Shot List** — Linear and Production views of every shot, with each Production Day as a sub-entry.
+- **Storyboard** — visual planning, with saved views as sub-entries.
+- **Call Sheets** — daily call sheets, with each Production Day as a sub-entry.
+- **Cast & Crew** — the project's people directory, with saved views.
+
+**Updates** (change history) appears only if your role allows it. **Media Explorer** lives in the More menu.
+
+### The project switcher
+
+At the top of the sidebar on desktop, in the top app bar on phone. Shows the current project's name and badge. Click it to switch projects — the overlay (or sheet, on phone) lists the current project, any pending invitations, three recents, a "New Project" button, and a "Show All" link.
+
+Switching projects refreshes the whole sidebar, so the sub-entries you see always belong to the project you're in.
+
+### Sync vs connection
+
+Two indicators, two different things:
+
+- The **connection dot** in the title bar is colour-coded — green / orange / red — for the realtime link to the server.
+- The **sync indicator** at the bottom of the sidebar is muted grey and tells you about your local edit queue by icon and label: check + "Synced" (queue empty), spinning sync + "Sync: N pending" or "Syncing…" (changes on the wire), cloud-off + "Offline: N pending" (waiting on connectivity).
+
+They can disagree, and that's fine. Red dot + "Synced" = you're disconnected but had nothing pending. Green dot + "Sync: N pending" = you're online and the queue is draining.
+
+On phone, both bits of state are folded into the connection badge in the top app bar.
+
+### Offline mode
+
+CineLog is built to keep working offline. The first sign-in needs internet; after that the device is logged in and stays that way. Edits made offline save to the device's local database and queue in the sync indicator until you're online again, at which point they drain to the server automatically.
+
+Your session is valid for up to seven days. The app refreshes it in the background as it approaches expiry — usually a couple of hours before — so as long as you're online when that happens, you never see a sign-in prompt. Normal mixed online/offline use means refresh just works.
+
+If you stay fully offline through the entire seven-day window, the session expires. The next time the app tries to talk to the server it shows a re-auth dialog. The dialog is blocking but your data stays put: sign back in as the same account and you pick up right where you left off, queued edits and all.
+
+### The More menu
+
+Bottom of the sidebar on desktop and tablet; the right-most item on phone's bottom navigation bar. Contents differ by platform:
+
+- **Desktop:** Help & Support, Hotkeys, Roadmap, Theme toggle, Media Explorer, Account, Logout.
+- **Phone:** Script Editor, Updates, Help & Support, Media Explorer, Theme toggle, Account, Logout.
+
+Script Editor and Updates are inside the phone More sheet because there's no room for them on the five-slot bottom bar. Hotkeys and Roadmap aren't surfaced on phone at all.
+
+Theme toggle is also bound to `Cmd / Ctrl + Shift + M` on desktop.
+
+### Collapsing the sidebar
+
+Press `[` to collapse the sidebar to icons only (or expand it again). Sub-entries are still visible in either state — they just show in a shortened form when the sidebar is collapsed. The sidebar never disappears completely on desktop.
+
+There is no sidebar on phone — navigation is the bottom bar.
+
+### The phone layout
+
+Five slots in the bottom navigation bar:
+
+1. Shot List
+2. Storyboard
+3. Call Sheets
+4. Cast & Crew
+5. More
+
+Everything else (Script Editor, Updates, Media Explorer, Account…) is inside the More sheet. The top app bar shows the project name + badge; tap it to switch projects.
+
+### The hotkeys dialog
+
+`Cmd / Ctrl + K` on desktop or tablet opens a modal that lists every shortcut. Dismiss with `Esc` or `Cmd + K`. Not surfaced on phone.
+
+### Snackbars
+
+Short messages appear at the bottom of the screen when something succeeds, fails, or finishes. They disappear on their own after a few seconds.
+
+### If this isn't working
+
+*"Where did Script Editor go on my phone?"* Inside the More sheet, not on the bottom bar.
+
+*"My connection dot and the sync indicator disagree."* They measure different things. The dot is the network link; the sync indicator is the local edit queue. Either can be unhealthy alone.
+
+*"Can I use CineLog without internet?"* Yes, after the first sign-in. Offline edits save locally and sync when you reconnect. Your session is valid for up to seven days; as it approaches expiry the app refreshes it automatically if you're online at that moment, so normal mixed online/offline use stays signed in. A device that's offline for the full seven days will need to sign back in.
+
+*"The app asked me to sign in again on location."* That's the re-auth dialog after a long stretch with no connectivity. Sign back in with the same email; your queued edits stay and sync up.
 
 ---
 
-## Getting Started
+## 2. Editing fields
 
-Before you can start writing scripts or scheduling your crew, you need to set up a project within your workspace. Every film, commercial, or music video you work on should exist as its own distinct **Project** within CineLog.
+Click a cell. The cell opens for editing. That's it on desktop.
 
-<Steps>
-1. **Open the Project Selector:** When you first log in to CineLog, you will land on the Home screen. In the top-left corner of the app, click on the current project name to open the **Project Selector** dialog.
-2. **Create New Project:** Inside the Project Selector dialog, click the **"New Project"** button.
-3. **Project Details:** Enter the core metadata for your production.
-   - **Title:** The working title of your project.
-   - **Description:** A brief logline or description of the project.
-4. **Initialize:** Click "Create" to initialize the project database. CineLog will automatically switch you into your new, empty project.
-</Steps>
+The editor's shape depends on the type of field — a text input for text, a picker for dropdowns, an immediate toggle for checkboxes, a media picker for image cells. It always commits without a Save button.
+
+### Mobile is two taps
+
+On phone or tablet, tapping a single cell doesn't edit it directly — first you tap the row to expand it, then you tap the field inside the expanded view. That second tap opens a bottom sheet for the field.
+
+If you tap a row and nothing seems editable, expand it first.
+
+### Autosave
+
+CineLog autosaves on every commit and on a roughly 450 ms debounce while you're typing. There is no Save button anywhere.
+
+Pressing `Esc` closes the editor and discards typing made since the last debounced autosave. If you've been typing for a few seconds, the earlier characters have already been saved silently — `Esc` only throws away the most recent stretch.
+
+### Keyboard inside the editor
+
+- `Enter` commits and closes.
+- `Esc` cancels and closes (with the autosave caveat above).
+- Arrow keys move through dropdown options.
+
+### If this isn't working
+
+*"I can't edit anything on mobile."* Tap the row to expand it first, then tap the specific field.
+
+*"Where's the Save button?"* There isn't one — autosave on every commit, plus a 450 ms debounce while you type.
 
 ---
 
-## Next Steps
+## 3. Selecting rows
 
-<CardGrid>
-  <Card title="Upload a Script" icon="document">
-    Head over to the [Writing & Formatting Scripts](/guides/writing-formatting-scripts) guide to learn how to import your screenplay.
-  </Card>
-  <Card title="Build a Shot List" icon="list-format">
-    Learn how to plan your coverage in the [Building a Shot List](/guides/building-shot-list) guide.
-  </Card>
-  <Card title="Invite Your Team" icon="setting">
-    Add collaborators in the [Managing Cast & Crew](/guides/managing-cast-crew) guide.
-  </Card>
-  <Card title="Keyboard Shortcuts" icon="laptop">
-    Master the hotkey system with the [Keyboard Shortcuts](/keyboardshortcuts) reference.
-  </Card>
-</CardGrid>
+Selecting a row is how you mark it for moving or for an action that should apply to several rows at once. Selection is a sticky mode, not a hover — once a row is selected, the list is in selection mode until you exit.
+
+### How to enter selection mode
+
+- **Desktop:** `Cmd / Ctrl + Click` on any row.
+- **Mobile:** long-press any row.
+
+The first row you select becomes the anchor for range selection (next).
+
+### Adding more rows
+
+Once you're in selection mode:
+
+- **Desktop:** `Cmd / Ctrl + Click` toggles individual rows in or out. A plain click without the modifier replaces the selection with just the clicked row.
+- **Mobile:** plain tap now toggles selection (outside selection mode, the same tap expands the row).
+
+### Range selection (desktop only)
+
+`Shift + Click` selects every row between the anchor and the clicked row, inclusive. The anchor moves to the most recently clicked row, so successive `Shift + Click`s keep extending the range.
+
+There's no mobile equivalent — select one row at a time.
+
+### Exiting
+
+- **Desktop:** `Esc`.
+- **Mobile:** the "Done" chip in the selection toolbar.
+
+Either clears the selection and returns the list to its normal interactions.
+
+### If this isn't working
+
+*"I can't tell whether I'm in selection mode."* The selection toolbar appears at the top of the list whenever any row is selected — that toolbar is the indicator. Selected rows themselves get a subtle tint.
+
+*"Tapping a row on mobile doesn't select it."* Long-press to enter selection mode; plain tap is for expanding the row.
+
+---
+
+## 4. Dragging to reorder
+
+Once you have a row (or a multi-selection) marked, drag any one of them to move the lot. Drag works the same way everywhere in the app — the destination just changes meaning depending on the screen.
+
+### What you can drag
+
+Any row, anywhere along its body. There's no separate drag handle. On desktop you'll see the cursor change to `grab` on hover and `grabbing` mid-drag.
+
+### Starting the drag
+
+A press alone doesn't start a drag — the pointer or finger has to move a small distance first:
+
+- **Roughly 8 pixels** for an unselected row. Anything less is treated as a click.
+- **Roughly 3 pixels** for a row that's already part of the selection — the lower threshold makes moving an existing selection feel responsive.
+
+On mobile there are two ways in:
+
+- **Cold drag:** long-press an unselected row; it pops up under your finger, keep moving to drag.
+- **Warm drag:** if the row is already part of an active selection, just touch and drag — no second long-press.
+
+### Where you can drop
+
+As you drag, a gap opens between rows at any position where dropping is valid. If you move over a spot and no gap appears, the drop isn't allowed — the row springs back to its original position when you release. The rules for what's valid vary by screen (covered in the feature guides); the gap is the universal "you can drop here" signal.
+
+### Dragging a selection
+
+If you drag a row that's part of the current selection, the entire selection moves together. If you drag a row that *isn't* part of the selection, the drag implicitly drops the selection down to just that single row.
+
+That's why selecting first, then dragging, is the predictable workflow — you can confirm what's selected before you commit.
+
+### Auto-scroll at the edges
+
+While dragging, if you move into the top or bottom 100 pixels of the visible list, it auto-scrolls toward that edge. The closer to the edge, the faster (up to about 24 pixels per frame). Move back toward the centre to stop.
+
+### The trackpad gotcha
+
+On desktop, a **two-finger trackpad scroll does not start a drag** — it scrolls the list. Only a single-finger drag (or a mouse press-and-move) reorders. This is the single most common "drag is broken" report; if you've been using two fingers, switch to one.
+
+### Auto-collapse on mobile selection entry
+
+On mobile only, expanded rows collapse back to compact view the moment you enter selection mode. This keeps row heights uniform for dragging. Nothing is lost; expanding is just a display state.
+
+### Cancelling
+
+Release the pointer or lift the finger outside any valid drop gap and the row returns to its starting spot. There's no `Esc`-to-cancel mid-drag.
+
+### If this isn't working
+
+*"Drag does nothing."* Either you haven't moved past the small movement threshold, or you're using a two-finger trackpad gesture (which scrolls, not drags).
+
+*"Drag works but my drop is rejected."* The destination isn't a valid target for what you're dragging. The per-feature guides cover the rules.
+
+*"My rows collapsed when I tapped to select."* That's the intentional mobile auto-collapse — it makes drag heights uniform. Your data is intact.
+
+---
+
+That's the universal vocabulary of the app. Every feature guide builds on these patterns; if you're ever unsure how a particular screen works, the answer is almost always "the same way every other list does."
+
+**Where to go next:** [Shot list essentials](/guides/shot-list/essentials) is the most common next stop. [Linear view vs Production view](/guides/shot-list/linear-vs-production) covers the split between script-order and shoot-order — most new producers and ADs run into it quickly. [Keyboard shortcuts](/keyboardshortcuts) is the reference page worth bookmarking.
