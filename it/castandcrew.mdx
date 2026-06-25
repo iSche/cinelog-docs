@@ -1,6 +1,6 @@
 ---
 title: "Cast & Troupe"
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Gestisci il tuo team di produzione cinematografica con ruoli, dipartimenti, contatti del workspace e controllo degli accessi basato sui ruoli. Si integra direttamente con gli ordini del giorno."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -40,7 +40,7 @@ Gestire una troupe in crescita è caotico. Stabilendo una fonte di verità per R
 
 **Pianifica la tua troupe (slot vacanti)**
 
-Non ti serve nemmeno un contatto nella rolodex per iniziare a fare casting. Aggiungi ruoli standard del settore (es. "Key Grip") per creare uno **slot vacante**. Una volta che assumi qualcuno, basta assegnare un contatto esistente o appena invitato allo slot. Tutti i default dipartimentali seguiranno il contatto in modo intelligente.
+Non ti serve nemmeno un contatto nella rolodex per iniziare a fare casting. Aggiungi ruoli standard del settore (es. "Key Grip") per creare uno **slot vacante**. Una volta che assumi qualcuno, basta assegnare un contatto esistente o appena invitato allo slot. Il ruolo che hai assegnato viene quindi memorizzato su quel contatto per i progetti futuri.
 
 </li>
 <li>
@@ -54,7 +54,7 @@ Stai lavorando da telefono o da monitor grande? Scegli la tua vista. La **Vista 
 
 **Accesso granulare al progetto e inviti**
 
-Aggiungere qualcuno al tuo Cast & Troupe non gli concede automaticamente i permessi di lettura completi. Usa l'**Intent Toggle** per indirizzare in modo sicuro un invito via email che colleghi il loro account CineLog al tuo progetto. Quando regoli i permessi, CineLog risolve in modo intelligente gli override individuali rispetto ai default dipartimentali, in modo da poter ampliare con sicurezza il raggio d'azione di un singolo individuo.
+Assegnare un contatto a un ruolo del progetto gli invia automaticamente un invito via email, impostando il suo accesso a in sospeso finché non accetta. Ottiene solo i permessi che il suo ruolo concede, e CineLog risolve in modo intelligente gli override individuali rispetto ai default dipartimentali, così puoi regolare con sicurezza il raggio d'azione di un singolo individuo. Usa l'**Intent Toggle** per disattivare l'accesso ai contatti che devono restare solo negli ordini del giorno.
 
 </li>
 
@@ -68,7 +68,7 @@ I Contatti che aggiungi e i Ruoli che organizzi fungono da sistema nervoso centr
 </Aside>
 
 <Aside type="tip" title="Vantaggi del routing dei dati">
--   **Automazione degli Ordini del Giorno**: Negli Ordini del Giorno (O.d.G.) non si digita nulla manualmente. Se mappi "Jane Doe" nello slot Regista del tuo Cast & Troupe, lei popola automaticamente in cima a ogni PDF di Ordine del Giorno.
+-   **Automazione degli Ordini del Giorno**: Gli Ordini del Giorno attingono dal tuo Cast & Troupe e dalle persone collegate alle inquadrature programmate di ogni giornata, e riportano in avanti la troupe ricorrente dei giorni precedenti — così non ridigiti lo stesso roster ogni giorno.
 -   **Account scope unificato**: La tua Rolodex Contatti copre l'intero workspace. Modificare l'email o il numero di telefono di un contatto si applica globalmente a ogni progetto in cui lo hai assegnato, eliminando frustranti duplicazioni.
 -   **Selezione in blocco**: Usa le azioni di selezione per eseguire rapide modifiche simultanee in blocco sull'intero roster invece di ripetere semplici cambiamenti uno alla volta.
 </Aside>

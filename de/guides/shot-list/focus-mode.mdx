@@ -1,6 +1,6 @@
 ---
 title: Fokus-Modus
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Filtere die Einstellungsliste auf eine oder mehrere Szenen. Behandelt das Starten des Fokus, den Multi-Szenen-Modus, das Auto-Create-Verhalten beim Overflow und die Drehbuch-Seitenleiste."
 ---
 
@@ -8,7 +8,7 @@ Der Fokus-Modus ist die Einstellungsliste, gefiltert auf eine oder mehrere Szene
 
 ## Fokus starten
 
-- `Cmd / Ctrl + F` startet den Fokus auf der Szene, die du gerade ansiehst.
+- `Cmd / Ctrl + F` startet den Fokus-Modus und fordert dich auf, eine Szene auszuwählen, die isoliert werden soll.
 - `Shift + S` öffnet den Szenen-Picker-Dialog – tippe eine Szenennummer, um zu springen.
 
 Im Picker **ersetzt** "Auswählen" deinen Fokus mit der getippten Szene; **"Hinzufügen"** ergänzt sie zum aktuellen Fokus-Set.
@@ -28,7 +28,7 @@ Multi-Szenen-Fokus zeigt die Einstellungen mehrerer Szenen zusammen, in Drehbuch
 
 ## Auto-Create beim Overflow
 
-Wenn du `→` über die letzte Szene des Projekts hinaus drückst, erstellt CineLog am Ende eine neue leere Szene und fokussiert sie. Dasselbe mit `←` vor der ersten Szene. Nützlich für Outline-artiges Arbeiten; überraschend, wenn du die Pfeiltaste zu oft gedrückt hast. Zum Aufräumen verlasse den Fokus und lösche die leere Szene aus Linear, falls du sie nicht wolltest.
+Wenn du `→` über die letzte Szene des Projekts hinaus drückst, erstellt CineLog am Ende eine neue Szene (mit einer ersten Einstellung) und fokussiert sie. Nützlich für Outline-artiges Arbeiten; überraschend, wenn du die Pfeiltaste zu oft gedrückt hast. `←` vor der ersten Szene zu drücken bewirkt nichts. Zum Aufräumen verlasse den Fokus und lösche die neue Szene aus Linear, falls du sie nicht wolltest.
 
 ## Die Drehbuch-Seitenleiste
 
@@ -42,6 +42,6 @@ Dasselbe Kürzel bedeutet im Fokus-Modus etwas anderes: Dort öffnet es den Szen
 
 ## Falls das nicht funktioniert
 
-*"Ich habe `→` gedrückt und eine neue leere Szene bekommen, die ich nicht wollte."* Du bist über die letzte Szene hinausgegangen. Verlasse den Fokus (`Cmd + F`) und lösche die leere Szene aus Linear.
+*"Ich habe `→` gedrückt und eine neue Szene bekommen, die ich nicht wollte."* Du bist über die letzte Szene hinausgegangen. Verlasse den Fokus (`Cmd + F`) und lösche die neue Szene aus Linear.
 
 *"`Shift + S` macht auf verschiedenen Screens unterschiedliche Dinge."* Macht es, by design. In Linear schaltet es die Drehbuch-Seitenleiste um; im Fokus-Modus öffnet es den Szenen-Picker.

@@ -1,6 +1,6 @@
 ---
 title: Die Grundlagen
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Vier Abschnitte über die App-Tour und die drei Dinge, die du immer wieder tust – Bearbeiten, Auswählen, Ziehen. Die Basis für jedes Feature-Guide."
 ---
 
@@ -68,9 +68,9 @@ Auf dem Smartphone sind beide Statusinformationen in das Verbindungs-Badge der o
 
 CineLog ist darauf ausgelegt, offline weiterzuarbeiten. Die erste Anmeldung braucht Internet; danach bleibt das Gerät eingeloggt. Offline gemachte Bearbeitungen werden in die lokale Datenbank des Geräts gespeichert und reihen sich in der Sync-Anzeige in die Warteschlange, bis du wieder online bist, woraufhin sie automatisch zum Server geleert werden.
 
-Deine Session ist bis zu sieben Tage gültig. Die App aktualisiert sie im Hintergrund, wenn sie sich dem Ablauf nähert – meist ein paar Stunden vorher – sodass du, solange du in diesem Moment online bist, nie eine Anmeldeaufforderung siehst. Normale gemischte Online/Offline-Nutzung sorgt dafür, dass die Aktualisierung einfach funktioniert.
+Deine Session aktualisiert sich im Hintergrund selbst, wenn sie sich dem Ablauf nähert – meist ein paar Stunden vorher – sodass du, solange du in diesem Moment online bist, nie eine Anmeldeaufforderung siehst. Normale gemischte Online/Offline-Nutzung sorgt dafür, dass die Aktualisierung einfach funktioniert.
 
-Wenn du das gesamte Sieben-Tage-Fenster komplett offline bleibst, läuft die Session ab. Beim nächsten Versuch der App, mit dem Server zu sprechen, erscheint ein Reauthentifizierungs-Dialog. Der Dialog ist blockierend, aber deine Daten bleiben erhalten: Melde dich mit demselben Konto wieder an und du machst genau dort weiter, wo du aufgehört hast, mit allen wartenden Bearbeitungen.
+Wenn du lange genug komplett offline bleibst, damit die Session ablaufen kann – in der Größenordnung eines Monats – läuft sie ab. Beim nächsten Versuch der App, mit dem Server zu sprechen, erscheint ein Reauthentifizierungs-Dialog. Der Dialog ist blockierend, aber deine Daten bleiben erhalten: Melde dich mit demselben Konto wieder an und du machst genau dort weiter, wo du aufgehört hast, mit allen wartenden Bearbeitungen.
 
 ### Das Mehr-Menü
 
@@ -115,7 +115,7 @@ Kurze Nachrichten erscheinen unten am Bildschirm, wenn etwas erfolgreich ist, fe
 
 *"Mein Verbindungspunkt und die Sync-Anzeige widersprechen sich."* Sie messen unterschiedliche Dinge. Der Punkt ist die Netzwerkverbindung; die Sync-Anzeige ist die lokale Bearbeitungswarteschlange. Beide können einzeln ungesund sein.
 
-*"Kann ich CineLog ohne Internet nutzen?"* Ja, nach der ersten Anmeldung. Offline-Bearbeitungen speichern sich lokal und synchronisieren sich, wenn du wieder verbunden bist. Deine Session ist bis zu sieben Tage gültig; wenn sie sich dem Ablauf nähert, aktualisiert die App sie automatisch, sofern du in diesem Moment online bist – so bleibst du bei normaler gemischter Online/Offline-Nutzung angemeldet. Ein Gerät, das die vollen sieben Tage offline ist, muss sich erneut anmelden.
+*"Kann ich CineLog ohne Internet nutzen?"* Ja, nach der ersten Anmeldung. Offline-Bearbeitungen speichern sich lokal und synchronisieren sich, wenn du wieder verbunden bist. Wenn sich deine Session dem Ablauf nähert, aktualisiert die App sie automatisch, sofern du in diesem Moment online bist – so bleibst du bei normaler gemischter Online/Offline-Nutzung angemeldet. Ein Gerät, das lange genug komplett offline bleibt – in der Größenordnung eines Monats – muss sich erneut anmelden.
 
 *"Die App hat mich am Drehort erneut zur Anmeldung aufgefordert."* Das ist der Reauthentifizierungs-Dialog nach einer langen Strecke ohne Verbindung. Melde dich mit derselben E-Mail wieder an; deine ausstehenden Bearbeitungen bleiben erhalten und werden synchronisiert.
 
@@ -137,13 +137,14 @@ Wenn du auf eine Zeile tippst und nichts editierbar wirkt, klappe sie erst auf.
 
 CineLog speichert automatisch bei jedem Commit und in einem etwa 450-ms-Debounce, während du tippst. Es gibt nirgendwo einen Speichern-Button.
 
-Drücken von `Esc` schließt den Editor und verwirft Tipparbeit seit dem letzten debounce-Auto-Save. Wenn du ein paar Sekunden lang getippt hast, wurden die früheren Zeichen bereits unbemerkt gespeichert – `Esc` wirft nur die jüngste Strecke weg.
+Alles, was du tippst, wird automatisch in einem etwa 450-ms-Debounce gespeichert, und das Schließen des Editors speichert, was darin steht. `Esc` hat in einem Textfeld kein besonderes Verwerf-Verhalten – es gibt keine "meine letzten Tastenanschläge wegwerfen"-Geste.
 
 ### Tastatur im Editor
 
 - `Enter` committet und schließt.
-- `Esc` bricht ab und schließt (mit dem oben genannten Auto-Save-Vorbehalt).
 - Pfeiltasten bewegen sich durch Dropdown-Optionen.
+
+(Es gibt kein `Esc`-zum-Verwerfen in einem Textfeld; Bearbeitungen sind bereits automatisch gespeichert.)
 
 ### Falls das nicht funktioniert
 
@@ -180,7 +181,7 @@ Es gibt kein mobiles Äquivalent – wähle eine Zeile nach der anderen.
 ### Verlassen
 
 - **Desktop:** `Esc`.
-- **Mobil:** Der "Fertig"-Chip in der Auswahl-Werkzeugleiste.
+- **Mobil:** Das Auswahl-aufheben-Steuerelement (X) in der Auswahl-Werkzeugleiste.
 
 Beides hebt die Auswahl auf und gibt die Liste zu ihren normalen Interaktionen zurück.
 

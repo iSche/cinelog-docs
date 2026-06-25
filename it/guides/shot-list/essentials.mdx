@@ -1,6 +1,6 @@
 ---
 title: Le basi della lista delle inquadrature
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Costruisci una lista delle inquadrature da zero — tre modi per aggiungere inquadrature, come funziona la numerazione, come riordinare e cosa viene eliminato quando rimuovi un'inquadratura o una scena."
 ---
 
@@ -28,7 +28,7 @@ Le inquadrature sono numerate automaticamente. Tre formati sono disponibili nell
 
 Numeri e lettere si aggiornano al riordino. Se sposti `1C` in cima alla sua scena, la lista legge brevemente C, A, B prima di ricalcolare in A, B, C. Non scriverti la lettera di un'inquadratura aspettandoti che sia stabile attraverso i movimenti.
 
-Cambiare il formato rinumera l'intero progetto. Su un progetto già allineato è distruttivo — conferma prima di farlo.
+Cambiare il formato modifica solo il modo in cui i numeri vengono mostrati — non altera le inquadrature sottostanti, e puoi tornare indietro in qualsiasi momento.
 
 ## Riordinare le inquadrature
 
@@ -36,7 +36,7 @@ Trascina qualsiasi inquadratura per spostarla. Il gesto è il drag universale da
 
 - **All'interno di una scena** — trascina su o giù. Le lettere si ricompattano.
 - **Tra scene** — trascina oltre il confine di scena. Il numero di scena dell'inquadratura cambia per corrispondere alla destinazione; le lettere si ricompattano sia nella scena di origine che in quella di destinazione.
-- **Nello spazio vuoto tra due scene** — CineLog crea lì una nuova scena.
+- **Nello spazio vuoto tra due scene** — l'inquadratura si unisce alla scena esistente più vicina. Questo non crea una nuova scena; aggiungi scene con **+ Aggiungi Inquadratura** in un nuovo blocco o tramite Popola da Sceneggiatura.
 
 La vista Produzione aggiunge una regola di scope di scena per le selezioni multiple; vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production).
 

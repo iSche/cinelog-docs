@@ -1,6 +1,6 @@
 ---
 title: Écrire et formater des scénarios
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Importe des scénarios FDX, Fountain, PDF, TXT et RTF dans le Logiciel de Scénario de CineLog. Formate avec la syntaxe Fountain, suis les analyses, exporte en PDF et remplis ton découpage technique."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ Si tu as déjà commencé à écrire ton scénario dans un autre logiciel, tu pe
 
 <Steps>
 1. **Ouvrir le Logiciel de Scénario :** Navigue vers le Logiciel de Scénario en utilisant la barre latérale gauche.
-2. **Importer un document :** Clique sur le bouton **Importer** dans la barre de menu supérieure (ou appuie sur <kbd>Cmd</kbd> + <kbd>I</kbd>) et sélectionne ton fichier de scénario.
+2. **Importer un document :** Clique sur le bouton **Importer** dans la barre de menu supérieure et sélectionne ton fichier de scénario.
 3. **Analyse automatique :** L'analyseur universel de CineLog traitera automatiquement le fichier, extraira les scènes et convertira le formatage.
 </Steps>
 
@@ -65,7 +65,10 @@ Si la détection intelligente devine mal, ou si tu veux forcer un style de forma
 - <kbd>Cmd</kbd> + <kbd>2</kbd> : Personnage
 - <kbd>Cmd</kbd> + <kbd>3</kbd> : Dialogue
 - <kbd>Cmd</kbd> + <kbd>4</kbd> : Action
-- <kbd>Cmd</kbd> + <kbd>5</kbd> : Transition
+- <kbd>Cmd</kbd> + <kbd>5</kbd> : Parenthèse
+- <kbd>Cmd</kbd> + <kbd>6</kbd> : Transition
+- <kbd>Cmd</kbd> + <kbd>7</kbd> : Paroles
+- <kbd>Cmd</kbd> + <kbd>E</kbd> : Centré
 
 <Aside type="tip">
 **Sauvegarde continue :** Il n'y a pas de bouton « Sauvegarder » dans le Logiciel de Scénario. Chaque frappe est silencieusement et continuellement sauvegardée sur ton appareil local et synchronisée en toute sécurité vers le cloud en arrière-plan.
@@ -80,7 +83,7 @@ Pendant que tu écris, CineLog calcule les métriques professionnelles en temps 
 Cherche le panneau d'analyses pour voir les mises à jour en direct sur :
 - **Estimation des pages :** Formules de calcul de pages aux normes de l'industrie précises aux standards professionnels.
 - **Comptage de scènes et personnages :** Nombre total de scènes et de personnages parlants uniques.
-- **Métriques de mots :** Nombre total de mots et temps de lecture estimé.
+- **Métriques de mots :** Nombre total de mots et nombre de caractères.
 
 ---
 

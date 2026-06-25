@@ -1,6 +1,6 @@
 ---
 title: Decupagem essencial
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Construa uma decupagem do zero — três maneiras de adicionar planos, como funciona a numeração, como reordenar e o que é apagado quando você remove um plano ou uma cena."
 ---
 
@@ -28,7 +28,7 @@ Os planos são numerados automaticamente. Três formatos estão disponíveis nas
 
 Números e letras atualizam ao reordenar. Se você move `1C` para o topo da cena, a lista lê brevemente C, A, B antes de recomputar para A, B, C. Não anote a letra de um plano esperando que ela seja estável entre movimentos.
 
-Alterar o formato renumera o projeto inteiro. Em um projeto já lined isso é destrutivo — confirme antes de fazer.
+Alterar o formato só muda como os números são exibidos — não altera os planos subjacentes, e você pode voltar a qualquer momento.
 
 ## Reordenando planos
 
@@ -36,7 +36,7 @@ Arraste qualquer plano para movê-lo. O gesto é o arrastar universal de [O bás
 
 - **Dentro de uma cena** — arraste para cima ou para baixo. As letras se recompactam.
 - **Entre cenas** — arraste passando do limite da cena. O número de cena do plano muda para corresponder ao destino; as letras se recompactam tanto na cena de origem quanto na de destino.
-- **No espaço vazio entre duas cenas** — o CineLog cria uma nova cena ali.
+- **No espaço vazio entre duas cenas** — o plano se junta à cena existente mais próxima. Isso não cria uma nova cena; adicione cenas com **+ Adicionar Plano** em um novo bloco ou via Popular a partir do Roteiro.
 
 A visualização Produção adiciona uma regra de escopo de cena para multi-seleções; veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production).
 

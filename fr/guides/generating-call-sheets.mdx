@@ -1,6 +1,6 @@
 ---
 title: Feuilles de service
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Feuilles de service quotidiennes dans CineLog — en-tête et heure d'appel, lieux, planning avec cascade temporelle, météo, sections personnel, message équipe en texte riche, envoi et suivi de confirmation, export PDF."
 ---
 
@@ -60,7 +60,7 @@ Une liste réorganisable de lieux de tournage nommés pour la journée. Chaque l
 
 Ajoute et modifie via la superposition de lieu. Sur bureau, tu peux maintenir l'appui sur une ligne de lieu et faire glisser pour réorganiser ; sur téléphone, double-tape une ligne pour ouvrir la superposition d'édition.
 
-**L'autocomplétion Google Places** est câblée dans chaque champ d'adresse. Commence à taper et tu verras des lieux suggérés ; en choisir un remplit l'adresse et stocke les coordonnées afin que la recherche météo (ci-dessous) ait un lieu sur lequel travailler.
+**L'autocomplétion Google Places** est câblée dans le champ d'adresse du lieu de tournage. Commence à taper et tu verras des lieux suggérés ; en choisir un remplit l'adresse et stocke les coordonnées afin que la recherche météo (ci-dessous) ait un lieu sur lequel travailler.
 
 Pour masquer toute la section des lieux de la feuille de service (par exemple, quand le lieu n'est pas encore verrouillé), utilise la bascule de visibilité de section dans les paramètres d'affichage.
 
@@ -80,7 +80,7 @@ Insérer une bannière en milieu de scène divise la scène environnante à la b
 
 Tu n'entres pas une heure de début pour chaque ligne. Le planning a un moteur temporel en cascade : il lit l'heure d'appel générale, puis descend la liste en ajoutant la durée estimée de chaque ligne pour calculer l'heure de début de la ligne suivante.
 
-Si l'heure de début explicite d'une ligne entre en conflit avec ce que la cascade aurait produit (tu as sur-planifié), l'heure est mise en surbrillance **rouge**. S'il y a un écart entre les lignes (la cascade a du mou), elle s'affiche en **jaune**. Dans les deux cas, la propre durée estimée de la ligne est ce qui contrôle la suivante, pas l'écart.
+Si l'heure de début explicite d'une ligne tombe plus tôt que ce que l'horloge en cours indiquerait (un chevauchement), l'heure de début est mise en surbrillance **rouge**. Une surbrillance **jaune** signale une ligne avec une estimation de durée nulle. C'est la propre durée estimée de la ligne qui contrôle l'heure de début de la ligne suivante.
 
 ### Réorganiser le planning
 
@@ -92,10 +92,9 @@ La section planning ne peut pas être masquée — elle est toujours affichée.
 
 Si la feuille de service a un lieu avec des coordonnées, CineLog récupère automatiquement la météo du jour lorsque tu ouvres la feuille de service pour la première fois. L'affichage montre :
 
-- Température actuelle et « ressentie »
-- Température basse quotidienne
+- Température, avec le maximum et le minimum du jour
 - Lever et coucher du soleil
-- Conditions, humidité, vitesse du vent
+- Conditions
 
 L'unité de température suit le paramètre d'affichage (°F / °C). Pour remplacer ou saisir manuellement la météo (la prévision n'a pas été récupérée, ou tu veux utiliser une source différente), touche le bloc météo et édite. Le remplacement est stocké sur la feuille de service et réutilisé à chaque rechargement.
 
@@ -125,7 +124,7 @@ Grille ou liste extensible d'interprètes d'arrière-plan. Pas d'avatars dans ce
 
 ### Notes par personne
 
-Chaque ligne de personne dans Talents, Équipe ou Clients peut porter des notes privées. Ces notes sont visibles au producteur dans l'UI de la feuille de service, mais sur le PDF envoyé par e-mail, elles n'apparaissent **que sur la copie de cette personne** — pas sur celle de quelqu'un d'autre. Utile pour les instructions individuelles (« se garer à l'entrée latérale », « essayage de costumes avant l'appel »).
+Chaque ligne de personne dans Talents, Équipe ou Clients peut porter des notes. Elles s'affichent sur la feuille de service ainsi que sur le PDF exporté et envoyé par e-mail, visibles par tous ceux qui reçoivent cette feuille — utilise-les donc pour des instructions partagées (« se garer à l'entrée latérale », « essayage de costumes avant l'appel »), pas pour des messages privés.
 
 ### Heure d'appel par personne
 
@@ -177,7 +176,7 @@ Chaque destinataire reçoit :
 
 - Un PDF personnalisé avec son heure d'appel mise en surbrillance.
 - Le message équipe (texte enrichi) plus tout message optionnel que tu as ajouté.
-- Ses notes personnelles, le cas échéant (ajoutées au corps de l'e-mail, pas sur le PDF visible aux autres).
+- Toutes les notes par personne présentes sur la feuille, qui s'impriment sur le PDF de la feuille de service lui-même (elles font partie de la feuille que reçoit toute personne sur cette heure d'appel).
 - Un **lien de confirmation** — une URL unique protégée par jeton à `links.cinelog.com/confirm-call-sheet/<token>`. Cliquer sur le lien ouvre un portail aux couleurs de CineLog où il touche « Confirmer » pour accuser réception.
 
 ### Page Envois
@@ -241,7 +240,7 @@ L'édition des feuilles de service fonctionne hors-ligne — les modifications s
 
 *« Comment changer la photo de profil d'un membre d'équipe ? »* Tu ne peux pas — les photos de profil sont contrôlées par chaque utilisateur depuis son propre écran Compte. En tant que propriétaire de projet, tu ne peux pas en téléverser une en son nom. Les personnes qui n'ont pas encore rejoint CineLog affichent l'avatar d'initiales ; une fois qu'elles se connectent et téléversent, leur photo apparaît sur chaque feuille de service sur laquelle elles figurent.
 
-*« L'heure du planning est mise en surbrillance rouge / jaune. »* Rouge signifie que tu as sur-planifié — l'heure de début explicite sur cette ligne contredit ce que la cascade temporelle a calculé. Jaune signifie qu'il y a un écart entre les lignes que la cascade a laissé non comblé. Ajuste les durées ou l'heure de début pour réconcilier.
+*« L'heure du planning est mise en surbrillance rouge / jaune. »* Rouge signifie que l'heure de début de la ligne tombe avant la fin de la ligne précédente (un chevauchement). Jaune signale une ligne avec une estimation de durée nulle. Ajuste les durées ou l'heure de début pour réconcilier.
 
 *« La météo ne s'est pas chargée. »* L'auto-récupération a besoin d'un lieu avec coordonnées. Définis un lieu via l'autocomplétion Google Places (pour que la lat/lng soit capturée), puis recharge la feuille de service. Tu peux aussi saisir la météo manuellement.
 

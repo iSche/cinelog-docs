@@ -1,6 +1,6 @@
 ---
 title: Paramètres d'affichage
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Visibilité et ordre des colonnes, colonnes personnalisées, format de numérotation des plans, hauteur de ligne — tout ce qui contrôle l'apparence du découpage technique à l'écran."
 ---
 
@@ -10,17 +10,17 @@ Les paramètres d'affichage contrôlent l'apparence du découpage technique — 
 
 ## Visibilité des colonnes
 
-Active ou désactive n'importe quelle colonne depuis la superposition Paramètres d'affichage. Pour des changements rapides sans ouvrir Paramètres d'affichage, les touches numériques `1` à `9` basculent les neuf premières colonnes directement depuis la vue liste.
+Active ou désactive n'importe quelle colonne depuis la superposition Paramètres d'affichage. Pour des changements rapides sans ouvrir Paramètres d'affichage, les touches numériques `1` à `9` basculent les neuf premières colonnes après les colonnes épinglées Statut, Plan et Jour, directement depuis la vue liste.
 
 ## Réorganiser les colonnes
 
-Fais glisser une ligne de colonne dans la superposition Paramètres d'affichage pour réorganiser. La réorganisation ne se fait pas en faisant glisser l'en-tête de colonne sur la liste principale — c'est une attente fréquente qui ne s'applique pas ici.
+Réorganise les colonnes en faisant glisser un en-tête de colonne vers la gauche ou la droite sur le découpage technique principal. Les trois colonnes système épinglées — Statut, Plan et Jour — restent verrouillées aux positions les plus à gauche et ne peuvent pas être déplacées.
 
-Les colonnes système — Plan, Scène, Jour — sont verrouillées aux positions les plus à gauche et refusent les dépôts qui les déplaceraient.
+La superposition Paramètres d'affichage contrôle la visibilité des colonnes et les colonnes personnalisées, pas leur ordre.
 
 ## Colonnes personnalisées
 
-Ajoute tes propres colonnes depuis Paramètres d'affichage. Spécifie un nom et un type : texte, liste déroulante, case à cocher ou tout autre type de champ pris en charge. Une fois ajoutée, la colonne apparaît dans la liste de bureau et dans la vue étendue mobile automatiquement — pas de configuration par plateforme. Les colonnes personnalisées participent à l'export PDF.
+Ajoute tes propres colonnes depuis Paramètres d'affichage en donnant un nom à chacune. Les colonnes personnalisées contiennent du texte libre. Une fois ajoutée, la colonne apparaît dans la liste de bureau et dans la vue étendue mobile automatiquement — pas de configuration par plateforme. Les colonnes personnalisées participent à l'export PDF.
 
 ## Format de numérotation des plans
 
@@ -30,7 +30,7 @@ Trois formats sont pris en charge :
 - **Décimal** — `1.1`, `2.3`.
 - **Séquentiel** — `1`, `2`, `47`. Continu à travers le projet.
 
-Changer de format renumérote chaque plan. Si le scénario a déjà été mis en lignes sous un format et que tu changes, tu devras refaire la mise en lignes — il n'y a pas d'annulation. Confirme avec toute personne travaillant sur le projet avant de changer.
+Le format est une préférence d'affichage — il change la façon dont les numéros sont présentés sans modifier les plans sous-jacents, donc tu peux passer librement d'un format à l'autre et revenir en arrière à tout moment.
 
 ## Hauteur de ligne et mode d'affichage
 
@@ -42,8 +42,8 @@ Tous les Paramètres d'affichage sont au niveau du projet et se propagent via Ci
 
 ## Si ça ne marche pas
 
-*« J'ai essayé de faire glisser un en-tête de colonne sur la liste principale pour réorganiser, mais rien ne se passe. »* La réorganisation se fait dans Paramètres d'affichage (`Shift + D`), pas sur l'en-tête de la liste principale.
+*« Comment réorganiser les colonnes ? »* Fais glisser un en-tête de colonne sur la liste principale. Les colonnes épinglées Statut, Plan et Jour ne peuvent pas être déplacées.
 
-*« J'ai changé le format des numéros de plan et maintenant mes anciens numéros ont disparu. »* Le changement est destructif et n'a pas d'annulation. Contacte le support — l'historique côté serveur peut parfois aider.
+*« J'ai changé le format des numéros de plan et les numéros ont l'air différents. »* C'est normal — c'est un réglage purement d'affichage. Reviens au format précédent et la numérotation d'origine réapparaît.
 
 *« Ma colonne personnalisée est sur bureau mais pas sur mobile. »* Elle devrait apparaître automatiquement. Essaie de forcer la fermeture et rouvrir l'application mobile. Si l'indicateur de synchronisation montre des changements en attente, la nouvelle colonne ne s'est pas encore propagée.

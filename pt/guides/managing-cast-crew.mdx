@@ -1,6 +1,6 @@
 ---
 title: Gerenciando Elenco e Equipe
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Adicione funções e departamentos, gerencie contatos do workspace e controle acesso com toggles de intenção. Os dados de equipe fluem diretamente para as ordens do dia do CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -31,9 +31,9 @@ Você pode atribuir múltiplas funções a uma única pessoa caso ela esteja usa
 
 ## 3. Controle de acesso e convites
 
-Atribuir uma função a um contato *não* o convida automaticamente para entrar no CineLog. Apenas o adiciona ao seu roster interno do projeto.
+Atribuir um contato a uma função do projeto define automaticamente o acesso dele como **pendente** e envia um e-mail de convite. Ele se torna um colaborador ativo assim que aceita, ou instantaneamente se já colabora em outro projeto do seu workspace.
 
-Se você quer que um membro da equipe realmente entre no app e colabore, precisa conceder acesso formalmente.
+Para manter alguém apenas como contato — no seu roster e nas ordens do dia, mas sem acesso ao app — deixe a vaga da função em aberto, ou desligue o acesso dele com o Toggle de Intenção abaixo.
 
 ### O "Toggle de Intenção"
 
@@ -41,8 +41,8 @@ Clique na função de qualquer pessoa na lista de Elenco e Equipe do Projeto par
 
 No topo desse formulário está o **Toggle de Intenção de Acesso**.
 
-- **OFF (Não Permitido):** a pessoa está no seu roster, mas não pode entrar no projeto. Esse é o estado padrão.
-- **ON (Concedido/Pendente):** o sistema verifica o e-mail dela. Se ela tem uma conta no CineLog, é adicionada ao projeto instantaneamente. Se não tem, o CineLog envia automaticamente um e-mail de convite para participar.
+- **ON (Concedido/Pendente):** o estado padrão no momento em que você atribui um contato a uma função. O CineLog envia a ele um e-mail de convite e ele entra assim que aceita; se já colabora em outro projeto do seu workspace, é admitido instantaneamente.
+- **OFF (Não Permitido):** a pessoa permanece no seu roster e nas ordens do dia, mas não pode entrar no projeto. Desligue para contatos que não devem ter acesso ao app.
 
 <Aside type="note">
 **Gerenciamento de equipe:** qualquer pessoa com permissão de **Editar** no módulo de Elenco e Equipe pode alternar as intenções de acesso e modificar a ACL para outros membros da equipe. Isso permite delegar tarefas de onboarding e segurança aos seus Gerentes ou Coordenadores de Produção!

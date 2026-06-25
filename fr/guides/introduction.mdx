@@ -1,6 +1,6 @@
 ---
 title: Les bases
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Quatre sections couvrant le tour de l'application et les trois choses que tu fais encore et encore — éditer, sélectionner, faire glisser. Les fondations de chaque guide de fonctionnalité."
 ---
 
@@ -68,9 +68,9 @@ Sur téléphone, ces deux éléments d'état sont repliés dans le badge de conn
 
 CineLog est conçu pour continuer à fonctionner hors-ligne. La première connexion nécessite Internet ; ensuite l'appareil est connecté et le reste. Les modifications effectuées hors-ligne sont enregistrées dans la base de données locale de l'appareil et mises en file d'attente dans l'indicateur de synchronisation jusqu'à ce que tu sois à nouveau en ligne, moment auquel elles sont automatiquement transférées vers le serveur.
 
-Ta session est valide jusqu'à sept jours. L'application la rafraîchit en arrière-plan à mesure qu'elle approche de son expiration — généralement quelques heures avant — donc tant que tu es en ligne à ce moment-là, tu ne vois jamais d'invite de connexion. Une utilisation normale mixte en ligne/hors-ligne signifie que le rafraîchissement fonctionne tout simplement.
+Ta session se rafraîchit en arrière-plan à mesure qu'elle approche de son expiration — généralement quelques heures avant — donc tant que tu es en ligne à ce moment-là, tu ne vois jamais d'invite de connexion. Une utilisation normale mixte en ligne/hors-ligne signifie que le rafraîchissement fonctionne tout simplement.
 
-Si tu restes complètement hors-ligne pendant toute la fenêtre de sept jours, la session expire. La prochaine fois que l'application essaie de parler au serveur, elle affiche une boîte de dialogue de ré-authentification. La boîte de dialogue est bloquante mais tes données restent en place : reconnecte-toi avec le même compte et tu reprends exactement où tu en étais, modifications en file d'attente comprises.
+Si tu restes complètement hors-ligne assez longtemps pour que la session expire — de l'ordre d'un mois — elle expire. La prochaine fois que l'application essaie de parler au serveur, elle affiche une boîte de dialogue de ré-authentification. La boîte de dialogue est bloquante mais tes données restent en place : reconnecte-toi avec le même compte et tu reprends exactement où tu en étais, modifications en file d'attente comprises.
 
 ### Le menu Plus
 
@@ -115,7 +115,7 @@ De courts messages apparaissent en bas de l'écran lorsque quelque chose réussi
 
 *« Mon point de connexion et l'indicateur de synchronisation sont en désaccord. »* Ils mesurent des choses différentes. Le point est la liaison réseau ; l'indicateur de synchronisation est la file d'attente d'édition locale. Soit l'un soit l'autre peut être en mauvaise santé seul.
 
-*« Puis-je utiliser CineLog sans Internet ? »* Oui, après la première connexion. Les modifications hors-ligne sont enregistrées localement et synchronisées lorsque tu te reconnectes. Ta session est valide jusqu'à sept jours ; à mesure qu'elle approche de l'expiration, l'application la rafraîchit automatiquement si tu es en ligne à ce moment-là, donc une utilisation normale mixte en ligne/hors-ligne reste connectée. Un appareil qui est hors-ligne pendant les sept jours complets devra se reconnecter.
+*« Puis-je utiliser CineLog sans Internet ? »* Oui, après la première connexion. Les modifications hors-ligne sont enregistrées localement et synchronisées lorsque tu te reconnectes. À mesure que ta session approche de l'expiration, l'application la rafraîchit automatiquement si tu es en ligne à ce moment-là, donc une utilisation normale mixte en ligne/hors-ligne reste connectée. Un appareil laissé complètement hors-ligne assez longtemps — de l'ordre d'un mois — devra se reconnecter.
 
 *« L'application m'a demandé de me reconnecter en tournage. »* C'est la boîte de dialogue de ré-authentification après une longue période sans connectivité. Reconnecte-toi avec le même e-mail ; tes modifications en file d'attente restent et se synchronisent.
 
@@ -137,13 +137,14 @@ Si tu touches une ligne et que rien ne semble modifiable, étends-la d'abord.
 
 CineLog sauvegarde automatiquement à chaque validation et selon un délai de stabilisation d'environ 450 ms pendant que tu tapes. Il n'y a aucun bouton Sauvegarder nulle part.
 
-Appuyer sur `Esc` ferme l'éditeur et abandonne la saisie effectuée depuis la dernière sauvegarde automatique stabilisée. Si tu tapes depuis quelques secondes, les caractères précédents ont déjà été enregistrés silencieusement — `Esc` ne jette que la dernière portion.
+Tout ce que tu tapes est sauvegardé automatiquement selon un délai de stabilisation d'environ 450 ms, et fermer l'éditeur enregistre ce qu'il contient. `Esc` n'a aucun comportement d'abandon particulier dans un champ de texte — il n'y a pas de geste « jeter mes dernières frappes ».
 
 ### Clavier à l'intérieur de l'éditeur
 
 - `Enter` valide et ferme.
-- `Esc` annule et ferme (avec la mise en garde de sauvegarde automatique ci-dessus).
 - Les touches fléchées se déplacent dans les options déroulantes.
+
+(Il n'y a pas d'`Esc`-pour-abandonner dans un champ de texte ; les modifications sont déjà sauvegardées automatiquement.)
 
 ### Si ça ne marche pas
 
@@ -180,7 +181,7 @@ Il n'y a pas d'équivalent mobile — sélectionne une ligne à la fois.
 ### Sortir
 
 - **Bureau :** `Esc`.
-- **Mobile :** le bouton « Terminé » dans la barre d'outils de sélection.
+- **Mobile :** le bouton d'effacement de la sélection (X) dans la barre d'outils de sélection.
 
 L'un ou l'autre efface la sélection et renvoie la liste à ses interactions normales.
 

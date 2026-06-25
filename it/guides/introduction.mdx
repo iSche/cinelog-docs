@@ -1,6 +1,6 @@
 ---
 title: Le basi
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Quattro sezioni che coprono il tour dell'app e le tre cose che fai più e più volte — modificare, selezionare, trascinare. Le fondamenta per ogni guida sulle funzionalità."
 ---
 
@@ -68,9 +68,9 @@ Su telefono, entrambi i bit di stato vengono ripiegati nel badge di connessione 
 
 CineLog è costruito per continuare a funzionare offline. Il primo accesso richiede internet; dopo, il dispositivo è loggato e resta tale. Le modifiche fatte offline vengono salvate nel database locale del dispositivo e accodate nell'indicatore di sincronizzazione finché non sarai online di nuovo, momento in cui vengono trasferite al server automaticamente.
 
-La tua sessione è valida fino a sette giorni. L'app la rinnova in background quando si avvicina la scadenza — di solito un paio d'ore prima — quindi finché sei online in quel momento, non vedi mai un prompt di accesso. Un uso misto online/offline normale significa che il refresh funziona da solo.
+La tua sessione si rinnova da sola in background quando si avvicina la scadenza — di solito un paio d'ore prima — quindi finché sei online in quel momento, non vedi mai un prompt di accesso. Un uso misto online/offline normale significa che il refresh funziona da solo.
 
-Se rimani completamente offline per tutta la finestra di sette giorni, la sessione scade. La prossima volta che l'app prova a parlare col server mostra una finestra di re-autenticazione. La finestra è bloccante ma i tuoi dati restano al loro posto: accedi di nuovo con lo stesso account e riprendi esattamente da dove avevi lasciato, modifiche in coda comprese.
+Solo se rimani completamente offline abbastanza a lungo da far decadere la sessione — nell'ordine di un mese — questa scade. La prossima volta che l'app prova a parlare col server mostra una finestra di re-autenticazione. La finestra è bloccante ma i tuoi dati restano al loro posto: accedi di nuovo con lo stesso account e riprendi esattamente da dove avevi lasciato, modifiche in coda comprese.
 
 ### Il menu Altro
 
@@ -115,7 +115,7 @@ Brevi messaggi appaiono in fondo alla schermata quando qualcosa va a buon fine, 
 
 *"Il mio punto di connessione e l'indicatore di sincronizzazione non sono d'accordo."* Misurano cose diverse. Il punto è il link di rete; l'indicatore di sincronizzazione è la coda locale di modifiche. Uno qualsiasi dei due può non essere in salute da solo.
 
-*"Posso usare CineLog senza internet?"* Sì, dopo il primo accesso. Le modifiche offline si salvano localmente e si sincronizzano quando ti riconnetti. La tua sessione è valida fino a sette giorni; man mano che si avvicina la scadenza, l'app la rinnova automaticamente se sei online in quel momento, quindi un uso misto online/offline normale rimane loggato. Un dispositivo che è offline per tutti i sette giorni dovrà rifare l'accesso.
+*"Posso usare CineLog senza internet?"* Sì, dopo il primo accesso. Le modifiche offline si salvano localmente e si sincronizzano quando ti riconnetti. Man mano che la tua sessione si avvicina alla scadenza, l'app la rinnova automaticamente se sei online in quel momento, quindi un uso misto online/offline normale rimane loggato. Un dispositivo lasciato completamente offline abbastanza a lungo — nell'ordine di un mese — dovrà rifare l'accesso.
 
 *"L'app mi ha chiesto di accedere di nuovo sul set."* Quella è la finestra di re-autenticazione dopo un lungo periodo senza connettività. Accedi di nuovo con la stessa email; le tue modifiche in coda restano e si sincronizzano.
 
@@ -137,13 +137,14 @@ Se tocchi una riga e nulla sembra modificabile, espandila prima.
 
 CineLog salva automaticamente a ogni commit e con un debounce di circa 450 ms mentre stai scrivendo. Non c'è un pulsante Salva da nessuna parte.
 
-Premere `Esc` chiude l'editor e scarta la digitazione fatta dall'ultimo salvataggio automatico debounced. Se hai scritto per qualche secondo, i caratteri precedenti sono già stati salvati silenziosamente — `Esc` butta via solo l'ultima parte.
+Tutto ciò che digiti si salva automaticamente con un debounce di circa 450 ms, e chiudere l'editor salva qualunque cosa contenga. `Esc` non ha alcun comportamento speciale di scarto in un campo di testo — non esiste un gesto per "buttare via gli ultimi caratteri".
 
 ### Tastiera all'interno dell'editor
 
 - `Enter` commita e chiude.
-- `Esc` annulla e chiude (con la nota sull'autosave qui sopra).
 - I tasti freccia muovono tra le opzioni dei dropdown.
+
+(Non c'è un `Esc`-per-scartare all'interno di un campo di testo; le modifiche sono già salvate automaticamente.)
 
 ### Se non funziona
 
@@ -180,7 +181,7 @@ Non c'è equivalente su mobile — seleziona una riga alla volta.
 ### Uscire
 
 - **Desktop:** `Esc`.
-- **Mobile:** il chip "Fatto" nella toolbar di selezione.
+- **Mobile:** il controllo per cancellare la selezione (X) nella toolbar di selezione.
 
 Entrambi cancellano la selezione e riportano la lista alle sue interazioni normali.
 

@@ -1,6 +1,6 @@
 ---
 title: Mode Focus
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Filtre le découpage technique sur une ou plusieurs scènes. Couvre l'entrée en Focus, le mode multi-scènes, le comportement d'auto-création en débordement et la barre latérale du scénario."
 ---
 
@@ -8,7 +8,7 @@ Le mode Focus est le découpage technique filtré sur une ou plusieurs scènes. 
 
 ## Entrer en Focus
 
-- `Cmd / Ctrl + F` entre en Focus sur la scène que tu regardes actuellement.
+- `Cmd / Ctrl + F` entre en mode Focus et te demande de choisir une scène à isoler.
 - `Shift + S` ouvre la boîte de dialogue du sélecteur de scènes — tape un numéro de scène pour sauter.
 
 Dans le sélecteur, **Sélectionner** remplace ton focus par la scène saisie ; **Ajouter** l'ajoute à l'ensemble de focus actuel.
@@ -28,7 +28,7 @@ Le focus multi-scènes affiche les plans de plusieurs scènes ensemble, dans l'o
 
 ## Auto-création en débordement
 
-Si tu appuies sur `→` au-delà de la dernière scène du projet, CineLog crée une nouvelle scène vide à la fin et la focalise. Pareil avec `←` avant la première scène. Utile pour le travail de type plan ; surprenant si tu as trop appuyé sur la touche fléchée. Pour nettoyer, sors du Focus et supprime la scène vide depuis Linéaire si tu n'en voulais pas.
+Si tu appuies sur `→` au-delà de la dernière scène du projet, CineLog crée une nouvelle scène (avec un plan de départ) à la fin et la focalise. Utile pour le travail de type plan ; surprenant si tu as trop appuyé sur la touche fléchée. Appuyer sur `←` avant la première scène ne fait rien. Pour nettoyer, sors du Focus et supprime la nouvelle scène depuis Linéaire si tu n'en voulais pas.
 
 ## La barre latérale du scénario
 
@@ -42,6 +42,6 @@ Le même raccourci signifie quelque chose de différent en mode Focus : là, il 
 
 ## Si ça ne marche pas
 
-*« J'ai appuyé sur `→` et j'ai obtenu une nouvelle scène vide que je ne voulais pas. »* Tu es passé au-delà de la dernière scène. Sors du Focus (`Cmd + F`) et supprime la scène vide depuis Linéaire.
+*« J'ai appuyé sur `→` et j'ai obtenu une nouvelle scène que je ne voulais pas. »* Tu es passé au-delà de la dernière scène. Sors du Focus (`Cmd + F`) et supprime la nouvelle scène depuis Linéaire.
 
 *« `Shift + S` fait des choses différentes sur différents écrans. »* C'est par conception. En Linéaire il bascule la barre latérale du scénario ; en mode Focus il ouvre le sélecteur de scènes.

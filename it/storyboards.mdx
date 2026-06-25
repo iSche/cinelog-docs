@@ -1,6 +1,6 @@
 ---
 title: Storyboard
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Strumenti di pianificazione visiva per aiutarti a mappare le scene e visualizzare la tua visione creativa."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ La funzionalità Storyboard di CineLog è un'estensione visiva della tua Lista d
 </Card>
 
 <Card title="Pannelli rich media">
-  Supporto per caricamenti multipli di immagini per pannello inquadratura. Definisci un'immagine principale mantenendo le alternative a uno swipe di distanza.
+  Supporto per caricamenti multipli di immagini per pannello inquadratura. La prima immagine funge da copertina, con le alternative a uno swipe di distanza.
 </Card>
 
 <Card title="Sequenziamento drag-and-drop">
@@ -39,9 +39,9 @@ Scorri tra le sequenze
 
 Se carichi più immagini su un singolo pannello, puoi usare lo slider sul pannello per scorrere la sequenza.
 
-Imposta immagini primarie
+Immagine di copertina
 
-L'immagine "Primaria" è quella che verrà visualizzata nella vista Griglia e inclusa nelle esportazioni PDF.
+La prima immagine nell'ordine di un pannello è la copertina mostrata nella vista Griglia e inclusa nelle esportazioni PDF. Riordina le immagini di un pannello per cambiare quale di esse fa da copertina.
 
 ### Lavorare con le viste
 
@@ -69,4 +69,4 @@ Le viste storyboard mostrano automaticamente le tue immagini nel loro rapporto d
 
 ### Esportazione PDF professionale
 
-Genera fogli PDF puliti e pronti per la produzione direttamente dalle tue viste storyboard. Premi `Cmd+P` per configurare un'esportazione PDF, scegliendo tra modalità Clean (solo visuali) o modalità Detailed (visuali + metadati).
+Genera fogli PDF puliti e pronti per la produzione direttamente dalle tue viste storyboard. Premi `Cmd+P` per configurare un'esportazione PDF, con controlli per rapporto d'aspetto, adattamento dell'immagine, colonne per pagina, formato pagina, intervallo di scene e spaziatura. Ogni pannello rende la propria immagine insieme ai suoi metadati dell'inquadratura.

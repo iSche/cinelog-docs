@@ -1,6 +1,6 @@
 ---
 title: The basics
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Four sections covering the app tour and the three things you do over and over again — editing, selecting, dragging. The foundation for every feature guide."
 ---
 
@@ -68,9 +68,9 @@ On phone, both bits of state are folded into the connection badge in the top app
 
 CineLog is built to keep working offline. The first sign-in needs internet; after that the device is logged in and stays that way. Edits made offline save to the device's local database and queue in the sync indicator until you're online again, at which point they drain to the server automatically.
 
-Your session is valid for up to seven days. The app refreshes it in the background as it approaches expiry — usually a couple of hours before — so as long as you're online when that happens, you never see a sign-in prompt. Normal mixed online/offline use means refresh just works.
+Your session refreshes itself in the background as it approaches expiry — usually a couple of hours before — so as long as you're online around then, you never see a sign-in prompt. Normal mixed online/offline use means refresh just works.
 
-If you stay fully offline through the entire seven-day window, the session expires. The next time the app tries to talk to the server it shows a re-auth dialog. The dialog is blocking but your data stays put: sign back in as the same account and you pick up right where you left off, queued edits and all.
+If you stay fully offline long enough for the session to lapse — on the order of a month — it expires. The next time the app tries to talk to the server it shows a re-auth dialog. The dialog is blocking but your data stays put: sign back in as the same account and you pick up right where you left off, queued edits and all.
 
 ### The More menu
 
@@ -115,7 +115,7 @@ Short messages appear at the bottom of the screen when something succeeds, fails
 
 *"My connection dot and the sync indicator disagree."* They measure different things. The dot is the network link; the sync indicator is the local edit queue. Either can be unhealthy alone.
 
-*"Can I use CineLog without internet?"* Yes, after the first sign-in. Offline edits save locally and sync when you reconnect. Your session is valid for up to seven days; as it approaches expiry the app refreshes it automatically if you're online at that moment, so normal mixed online/offline use stays signed in. A device that's offline for the full seven days will need to sign back in.
+*"Can I use CineLog without internet?"* Yes, after the first sign-in. Offline edits save locally and sync when you reconnect. As your session approaches expiry the app refreshes it automatically if you're online at that moment, so normal mixed online/offline use stays signed in. A device left fully offline long enough — on the order of a month — will need to sign back in.
 
 *"The app asked me to sign in again on location."* That's the re-auth dialog after a long stretch with no connectivity. Sign back in with the same email; your queued edits stay and sync up.
 
@@ -137,13 +137,14 @@ If you tap a row and nothing seems editable, expand it first.
 
 CineLog autosaves on every commit and on a roughly 450 ms debounce while you're typing. There is no Save button anywhere.
 
-Pressing `Esc` closes the editor and discards typing made since the last debounced autosave. If you've been typing for a few seconds, the earlier characters have already been saved silently — `Esc` only throws away the most recent stretch.
+Everything you type autosaves on a roughly 450 ms debounce, and closing the editor saves whatever's in it. `Esc` has no special discard behaviour in a text field — there is no "throw away my last keystrokes" gesture.
 
 ### Keyboard inside the editor
 
 - `Enter` commits and closes.
-- `Esc` cancels and closes (with the autosave caveat above).
 - Arrow keys move through dropdown options.
+
+(There is no `Esc`-to-discard inside a text field; edits are already autosaved.)
 
 ### If this isn't working
 
@@ -180,7 +181,7 @@ There's no mobile equivalent — select one row at a time.
 ### Exiting
 
 - **Desktop:** `Esc`.
-- **Mobile:** the "Done" chip in the selection toolbar.
+- **Mobile:** the clear-selection (X) control in the selection toolbar.
 
 Either clears the selection and returns the list to its normal interactions.
 

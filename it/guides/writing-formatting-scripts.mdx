@@ -1,6 +1,6 @@
 ---
 title: Scrivere e Formattare Sceneggiature
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Importa sceneggiature FDX, Fountain, PDF, TXT e RTF nell'Editor di CineLog. Formatta con la sintassi Fountain, traccia le analytics, esporta in PDF e popola la tua Lista delle Inquadrature."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ Se hai già iniziato a scrivere il tuo copione in un altro software per sceneggi
 
 <Steps>
 1. **Apri l'Editor di Sceneggiatura:** Naviga all'Editor di Sceneggiatura usando la sidebar sinistra.
-2. **Importa Documento:** Clicca il pulsante **Import** nella barra in alto (o premi <kbd>Cmd</kbd> + <kbd>I</kbd>) e seleziona il file della tua sceneggiatura.
+2. **Importa Documento:** Clicca il pulsante **Import** nella barra in alto e seleziona il file della tua sceneggiatura.
 3. **Parsing automatico:** Il parser universale di CineLog elaborerà automaticamente il file, estrarrà le scene e convertirà la formattazione.
 </Steps>
 
@@ -65,7 +65,10 @@ Se il rilevamento intelligente sbaglia, o se vuoi forzare uno stile di formattaz
 - <kbd>Cmd</kbd> + <kbd>2</kbd>: Personaggio
 - <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialogo
 - <kbd>Cmd</kbd> + <kbd>4</kbd>: Azione
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transizione
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Parentetica
+- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transizione
+- <kbd>Cmd</kbd> + <kbd>7</kbd>: Versi
+- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centrato
 
 <Aside type="tip">
 **Salvataggio continuo:** Non c'è alcun pulsante "Salva" nell'Editor di Sceneggiatura. Ogni battitura viene salvata silenziosamente e continuamente sul tuo dispositivo locale e sincronizzata in modo sicuro in cloud in background.
@@ -80,7 +83,7 @@ Mentre scrivi, CineLog calcola metriche professionali in tempo reale, permettend
 Cerca il pannello analytics per vedere aggiornamenti live su:
 - **Stima delle pagine:** Formule di calcolo pagine standard del settore accurate agli standard professionali.
 - **Conteggio scene & personaggi:** Numero totale di scene e personaggi parlanti unici.
-- **Metriche di parole:** Conteggio totale parole e tempo di lettura stimato.
+- **Metriche di parole:** Conteggio totale parole e conteggio caratteri.
 
 ---
 

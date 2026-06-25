@@ -1,6 +1,6 @@
 ---
 title: Writing & Formatting Scripts
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Import FDX, Fountain, PDF, TXT, and RTF scripts into CineLog's editor. Format with Fountain syntax, track analytics, export to PDF, and populate your shot list."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ If you've already started writing your screenplay in another software, you can e
 
 <Steps>
 1. **Open the Script Editor:** Navigate to the Script Editor using the left sidebar.
-2. **Import Document:** Click the **Import** button in the top menu bar (or press <kbd>Cmd</kbd> + <kbd>I</kbd>) and select your script file.
+2. **Import Document:** Click the **Import** button in the top menu bar and select your script file.
 3. **Automatic Parsing:** CineLog's universal parser will automatically process the file, extract the scenes, and convert the formatting.
 </Steps>
 
@@ -65,7 +65,10 @@ If the smart detection guesses incorrectly, or if you want to force a specific f
 - <kbd>Cmd</kbd> + <kbd>2</kbd>: Character
 - <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialogue
 - <kbd>Cmd</kbd> + <kbd>4</kbd>: Action
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transition
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Parenthetical
+- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transition
+- <kbd>Cmd</kbd> + <kbd>7</kbd>: Lyrics
+- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centered
 
 <Aside type="tip">
 **Continuous Saving:** There is no "Save" button in the Script Editor. Every keystroke is silently and continuously saved to your local device and securely synced to the cloud in the background.
@@ -80,7 +83,7 @@ As you write, CineLog calculates professional metrics in real-time, allowing you
 Look for the analytics panel to see live updates on:
 - **Page Estimation:** Industry-standard page calculation formulas accurate to professional standards.
 - **Scene & Character Counts:** Total number of scenes and unique speaking characters.
-- **Word Metrics:** Total word count and estimated reading time.
+- **Word Metrics:** Total word count and character count.
 
 ---
 

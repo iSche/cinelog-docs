@@ -1,6 +1,6 @@
 ---
 title: Storyboards
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Herramientas de planificación visual que te ayudan a mapear escenas y visualizar tu visión creativa."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ La funcionalidad de Storyboard de CineLog es una extensión visual de tu Lista d
 </Card>
 
 <Card title="Paneles de medios enriquecidos">
-  Soporte para múltiples subidas de imagen por panel de plano. Define una imagen principal manteniendo las alternativas a un deslizamiento de distancia.
+  Soporte para múltiples subidas de imagen por panel de plano. La primera imagen actúa como portada, con las alternativas a un deslizamiento de distancia.
 </Card>
 
 <Card title="Secuenciación con arrastrar y soltar">
@@ -39,9 +39,9 @@ Desplázate por secuencias
 
 Si subes varias imágenes a un solo panel, puedes usar el deslizador del panel para desplazarte por la secuencia.
 
-Establecer imágenes principales
+Imagen de portada
 
-La imagen "Principal" es la que se mostrará en la vista Cuadrícula y se incluirá en las exportaciones a PDF.
+La primera imagen en el orden de un panel es la portada que se muestra en la vista Cuadrícula y se incluye en las exportaciones a PDF. Reordena las imágenes de un panel para cambiar cuál es la portada.
 
 ### Trabajar con vistas
 
@@ -69,4 +69,4 @@ Las vistas de storyboard renderizan automáticamente tus imágenes en la relaci�
 
 ### Exportación profesional a PDF
 
-Genera hojas en PDF limpias y listas para producción directamente desde tus vistas de storyboard. Pulsa `Cmd+P` para configurar una exportación a PDF, eligiendo entre modo Limpio (solo visuales) o modo Detallado (visuales + metadatos).
+Genera hojas en PDF limpias y listas para producción directamente desde tus vistas de storyboard. Pulsa `Cmd+P` para configurar una exportación a PDF, con controles para la relación de aspecto, el ajuste de imagen, las columnas por página, el tamaño de página, el rango de escenas y el espaciado. Cada panel renderiza su imagen junto con los metadatos de su plano.

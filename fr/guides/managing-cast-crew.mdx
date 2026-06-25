@@ -1,6 +1,6 @@
 ---
 title: Gérer le Casting et l'Équipe
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Ajoute des rôles et des départements, gère les contacts de l'espace de travail et contrôle l'accès avec les boutons d'intention. Les données de l'équipe alimentent directement les feuilles de service de CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -31,9 +31,9 @@ Tu peux assigner plusieurs rôles à une seule personne si elle porte plusieurs 
 
 ## 3. Contrôle d'accès et invitations
 
-Assigner un rôle à un contact ne l'invite *pas* automatiquement à se connecter à CineLog. Cela l'ajoute simplement à ton équipe interne du projet. 
+Assigner un contact à un rôle de projet règle automatiquement son accès sur **en attente** et lui envoie un e-mail d'invitation. Il devient un collaborateur actif dès qu'il accepte, ou instantanément s'il collabore déjà sur un autre projet de ton espace de travail.
 
-Si tu veux qu'un membre de l'équipe se connecte réellement à l'application et collabore, tu dois lui accorder formellement l'accès.
+Pour garder quelqu'un comme simple contact — sur ton équipe et tes feuilles de service mais sans accès à l'application — laisse son emplacement de rôle vacant, ou désactive son accès avec le bouton d'intention ci-dessous.
 
 ### Le « bouton d'intention »
 
@@ -41,8 +41,8 @@ Clique sur le rôle de n'importe quelle personne dans la liste Casting et Équip
 
 En haut de ce formulaire se trouve le **bouton d'intention d'accès**.
 
-- **DÉSACTIVÉ (Interdit) :** La personne est sur ton équipe, mais ne peut pas se connecter au projet. C'est l'état par défaut.
-- **ACTIVÉ (Accordé/En attente) :** Le système vérifiera son e-mail. Si elle a un compte CineLog, elle sera ajoutée instantanément au projet. Sinon, CineLog lui enverra automatiquement un e-mail d'invitation à rejoindre.
+- **ACTIVÉ (Accordé/En attente) :** L'état par défaut dès l'instant où tu assignes un contact à un rôle. CineLog lui envoie un e-mail d'invitation et il rejoint dès qu'il accepte ; s'il collabore déjà sur un autre projet de ton espace de travail, il est admis instantanément.
+- **DÉSACTIVÉ (Interdit) :** La personne reste sur ton équipe et tes feuilles de service mais ne peut pas se connecter au projet. Désactive-le pour les contacts qui ne doivent pas avoir accès à l'application.
 
 <Aside type="note">
 **Gestion d'équipe :** Toute personne qui a la permission **Édition** pour le module Casting et Équipe peut basculer les intentions d'accès et modifier l'ACL pour d'autres membres de l'équipe. Cela te permet de déléguer les tâches d'intégration et de sécurité à tes Directeurs de production ou Coordinateurs !

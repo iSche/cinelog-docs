@@ -1,6 +1,6 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Tägliche Dispositionen (Dispo) in CineLog – Header und Call-Time, Drehorte, Plan mit Zeit-Kaskade, Wetter, Personensektionen, Rich-Text-Crew-Message, Versand und Bestätigungs-Tracking, PDF-Export."
 ---
 
@@ -60,7 +60,7 @@ Eine umordnungsfähige Liste benannter Drehorte für den Tag. Jeder Drehort hat 
 
 Hinzufügen und Bearbeiten über das Drehort-Overlay. Auf dem Desktop kannst du eine Drehort-Zeile lang drücken und ziehen, um umzuordnen; auf dem Smartphone doppeltippst du eine Zeile, um das Bearbeitungs-Overlay zu öffnen.
 
-**Google Places Autocomplete** ist in jedes Adressfeld eingebaut. Fang an zu tippen und du siehst vorgeschlagene Orte; das Auswählen eines füllt die Adresse aus und speichert die Koordinaten, damit die Wettersuche (unten) einen Ort hat, mit dem sie arbeiten kann.
+**Google Places Autocomplete** ist in das Adressfeld des Drehorts eingebaut. Fang an zu tippen und du siehst vorgeschlagene Orte; das Auswählen eines füllt die Adresse aus und speichert die Koordinaten, damit die Wettersuche (unten) einen Ort hat, mit dem sie arbeiten kann.
 
 Um den gesamten Drehort-Bereich aus der Disposition auszublenden (z.B. wenn der Drehort noch nicht feststeht), nutze den Sichtbarkeits-Toggle in den Anzeige-Einstellungen.
 
@@ -80,7 +80,7 @@ Einen Banner mitten in einer Szene einzufügen, teilt die umgebende Szene am Ban
 
 Du gibst nicht für jede Zeile eine Startzeit ein. Der Plan hat eine kaskadierende Zeit-Engine: Sie liest die allgemeine Call-Time, dann läuft sie durch die Liste und addiert die geschätzte Dauer jeder Zeile, um die Startzeit der nächsten Zeile zu berechnen.
 
-Wenn die explizite Startzeit einer Zeile mit dem kollidiert, was die Kaskade produziert hätte (du hast überplant), wird die Zeit **rot** hervorgehoben. Wenn es eine Lücke zwischen Zeilen gibt (die Kaskade hat Slack), wird sie **gelb** angezeigt. So oder so – die geschätzte Dauer der Zeile selbst steuert die nächste Zeile, nicht die Lücke.
+Wenn die explizite Startzeit einer Zeile früher liegt, als die laufende Uhr sie ansetzen würde (eine Überlappung), wird die Startzeit **rot** hervorgehoben. Eine **gelbe** Hervorhebung markiert eine Zeile mit einer Schätzung der Länge null. Die geschätzte Dauer der Zeile selbst steuert die Startzeit der nächsten Zeile.
 
 ### Plan umordnen
 
@@ -92,10 +92,9 @@ Der Plan-Bereich kann nicht ausgeblendet werden – er wird immer angezeigt.
 
 Wenn die Disposition einen Drehort mit Koordinaten hat, holt CineLog das Wetter des Tages automatisch, wenn du die Disposition zum ersten Mal öffnest. Die Anzeige zeigt:
 
-- Aktuelle und "gefühlte" Temperatur
-- Tagestief
+- Temperatur, mit Tageshöchst- und Tagestiefstwert
 - Sonnenauf- und Sonnenuntergang
-- Bedingungen, Luftfeuchtigkeit, Windgeschwindigkeit
+- Bedingungen
 
 Die Temperatureinheit folgt der Anzeige-Einstellung (°F / °C). Um sie zu überschreiben oder Wetter manuell einzugeben (Vorhersage wurde nicht geholt, oder du willst eine andere Quelle nutzen), tippe auf den Wetter-Block und bearbeite ihn. Die Überschreibung wird auf der Disposition gespeichert und bei jedem Reload wiederverwendet.
 
@@ -125,7 +124,7 @@ Raster oder ausklappbare Liste von Background-Darstellern. Keine Avatare in dies
 
 ### Personenbezogene Notizen
 
-Jede Personenzeile in Talent, Crew oder Clients kann private Notizen tragen. Diese Notizen sind für den Producer in der Dispo-UI sichtbar, aber in der gemailten PDF erscheinen sie **nur in der Kopie dieser Person** – nicht in der von anderen. Nützlich für individuelle Anweisungen ("Am Seiteneingang parken", "Garderobenanprobe vor dem Call").
+Jede Personenzeile in Talent, Crew oder Clients kann Notizen tragen. Sie erscheinen auf der Disposition sowie auf der exportierten und gemailten PDF und sind für jeden sichtbar, der diese Dispo erhält – nutze sie also für gemeinsame Anweisungen ("Am Seiteneingang parken", "Garderobenanprobe vor dem Call") und nicht für private Nachrichten.
 
 ### Personenbezogene Call-Time
 
@@ -177,7 +176,7 @@ Jeder Empfänger erhält:
 
 - Eine personalisierte PDF mit hervorgehobener Call-Time.
 - Die Crew-Message (Rich-Text) plus jede optionale Nachricht, die du hinzugefügt hast.
-- Ihre personenbezogenen Notizen, falls vorhanden (an den E-Mail-Body angehängt, nicht auf der PDF sichtbar für andere).
+- Alle personenbezogenen Notizen auf der Dispo, die auf der Dispositions-PDF selbst gedruckt werden (sie sind Teil der Dispo, die jeder mit dieser Call-Time erhält).
 - Einen **Bestätigungs-Link** — eine eindeutige, token-geschützte URL unter `links.cinelog.com/confirm-call-sheet/<token>`. Beim Klicken öffnet sich ein CineLog-gebrandetes Portal, in dem sie "Bestätigen" antippen, um den Empfang zu bestätigen.
 
 ### Sendouts-Seite
@@ -241,7 +240,7 @@ Das Bearbeiten von Dispositionen funktioniert offline – Änderungen werden in 
 
 *"Wie ändere ich das Profilfoto eines Crew-Mitglieds?"* Kannst du nicht – Profilbilder werden von jedem Nutzer über seinen eigenen Konto-Screen gesteuert. Als Projekteigentümer kannst du keines in seinem Namen hochladen. Personen, die CineLog noch nicht beigetreten sind, zeigen den Initialen-Avatar; sobald sie sich einloggen und hochladen, erscheint ihr Bild in jeder Disposition, in der sie sind.
 
-*"Die Planzeit ist rot / gelb hervorgehoben."* Rot heißt, du hast überplant – die explizite Startzeit in dieser Zeile widerspricht dem, was die Zeit-Kaskade berechnet hat. Gelb heißt, es gibt eine Lücke zwischen Zeilen, die die Kaskade nicht gefüllt hat. Passe die Dauern oder die Startzeit an, um sie aufzulösen.
+*"Die Planzeit ist rot / gelb hervorgehoben."* Rot heißt, die Startzeit der Zeile liegt, bevor die vorherige Zeile fertig ist (eine Überlappung). Gelb markiert eine Zeile mit einer Schätzung der Länge null. Passe die Dauern oder die Startzeit an, um sie aufzulösen.
 
 *"Wetter wurde nicht geladen."* Das Auto-Fetch braucht einen Drehort mit Koordinaten. Setze einen Drehort über Google Places Autocomplete (damit Lat/Lng erfasst wird), dann lade die Disposition neu. Du kannst Wetter auch manuell eingeben.
 

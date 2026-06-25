@@ -1,6 +1,6 @@
 ---
 title: Call sheets
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, personnel sections, rich-text crew message, sending and confirmation tracking, PDF export."
 ---
 
@@ -60,7 +60,7 @@ A reorderable list of named shooting locations for the day. Each location has th
 
 Add and edit via the location overlay. On desktop you can long-press a location row and drag to reorder; on phone, double-tap a row to open the edit overlay.
 
-**Google Places autocomplete** is wired into every address field. Start typing and you'll see suggested places; picking one populates the address and stores the coordinates so the weather lookup (below) has a location to work with.
+**Google Places autocomplete** is wired into the set-location address field. Start typing and you'll see suggested places; picking one populates the address and stores the coordinates so the weather lookup (below) has a location to work with.
 
 To hide the whole locations section from the call sheet (e.g., when the location isn't locked yet), use the section visibility toggle in display settings.
 
@@ -80,7 +80,7 @@ Inserting a banner mid-scene splits the surrounding scene at the banner — see 
 
 You don't enter a start time for every row. The schedule has a cascading time engine: it reads the general call time, then walks down the list adding each row's estimated duration to compute the next row's start time.
 
-If a row's explicit start time conflicts with what the cascade would have produced (you've over-scheduled), the time is highlighted **red**. If there's a gap between rows (the cascade has slack), it shows **yellow**. Either way, the row's own estimated duration is what controls the next row, not the gap.
+If a row's explicit start time lands earlier than the running clock would put it (an overlap), the start time is highlighted **red**. A **yellow** highlight flags a row with a zero-length estimate. The row's own estimated duration is what controls the next row's start time.
 
 ### Reordering the schedule
 
@@ -92,10 +92,9 @@ The schedule section can't be hidden — it's always shown.
 
 If the call sheet has a location with coordinates, CineLog fetches the day's weather automatically when you first open the call sheet. The display shows:
 
-- Current and "feels like" temperature
-- Daily low
+- Temperature, with the day's high and low
 - Sunrise and sunset
-- Conditions, humidity, wind speed
+- Conditions
 
 The temperature unit follows the display setting (°F / °C). To override or manually enter weather (forecast wasn't fetched, or you want to use a different source), tap the weather block and edit. The override is stored on the call sheet and reused on every reload.
 
@@ -125,7 +124,7 @@ Grid or expandable list of background performers. No avatars in this section (in
 
 ### Per-person notes
 
-Every person row in Talent, Crew, or Clients can carry private notes. These notes are visible to the producer in the call sheet UI, but on the emailed PDF they appear **only on that person's copy** — not on anyone else's. Useful for individual instructions ("park at side entrance," "wardrobe fitting before call").
+Every person row in Talent, Crew, or Clients can carry notes. They show on the call sheet and on the exported and emailed PDF, visible to everyone who receives that sheet — so use them for shared instructions ("park at side entrance," "wardrobe fitting before call"), not private messages.
 
 ### Per-person call time
 
@@ -177,7 +176,7 @@ Each recipient gets:
 
 - A personalised PDF with their call time highlighted.
 - The crew message (rich text) plus any optional message you added.
-- Their per-person notes, if any (appended to the email body, not on the PDF visible to others).
+- Any per-person notes on the sheet, which print on the call sheet PDF itself (they are part of the sheet everyone on that call time receives).
 - A **confirmation link** — a unique token-protected URL at `links.cinelog.com/confirm-call-sheet/<token>`. Clicking the link opens a CineLog-branded portal where they tap "Confirm" to acknowledge receipt.
 
 ### Sendouts page
@@ -241,7 +240,7 @@ Editing call sheets works offline — changes save to the local database and syn
 
 *"How do I change a crew member's profile photo?"* You can't — profile pictures are controlled by each user from their own Account screen. As a project owner you can't upload one on their behalf. People who haven't joined CineLog yet show the initials avatar; once they sign in and upload, their picture appears across every call sheet they're on.
 
-*"The schedule time is highlighted red / yellow."* Red means you've over-scheduled — the explicit start time on that row contradicts what the time cascade computed. Yellow means there's a gap between rows that the cascade left unfilled. Adjust the durations or the start time to reconcile.
+*"The schedule time is highlighted red / yellow."* Red means the row's start time lands before the previous row finishes (an overlap). Yellow flags a row with a zero-length estimate. Adjust the durations or the start time to reconcile.
 
 *"Weather didn't load."* The auto-fetch needs a location with coordinates. Set a location via Google Places autocomplete (so the lat/lng is captured), then reload the call sheet. You can also enter weather manually.
 

@@ -1,6 +1,6 @@
 ---
 title: Cast & Crew verwalten
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Rollen und Abteilungen hinzufügen, Workspace-Kontakte verwalten und Zugriff mit Intent-Toggles steuern. Crew-Daten fließen direkt in CineLog-Dispositionen."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -31,9 +31,9 @@ Du kannst einer einzelnen Person mehrere Rollen zuweisen, falls sie in deiner Pr
 
 ## 3. Zugriffskontrolle & Einladungen
 
-Einem Kontakt eine Rolle zuzuweisen, lädt ihn *nicht* automatisch ein, sich in CineLog einzuloggen. Es fügt ihn nur deiner internen Projektliste hinzu. 
+Einem Kontakt eine Projektrolle zuzuweisen, setzt seinen Zugriff automatisch auf **ausstehend** und sendet ihm eine Einladungs-E-Mail. Er wird zum aktiven Mitarbeiter, sobald er annimmt – oder sofort, falls er bereits an einem anderen Projekt in deinem Workspace mitarbeitet.
 
-Wenn du willst, dass ein Teammitglied sich tatsächlich in die App einloggt und mitarbeitet, musst du ihm den Zugriff formal gewähren.
+Wenn jemand nur Kontakt bleiben soll – auf deiner Liste und deinen Dispositionen, aber ohne App-Zugriff –, lass seinen Rollen-Slot leer oder schalte seinen Zugriff mit dem Intent-Toggle unten aus.
 
 ### Der "Intent-Toggle"
 
@@ -41,8 +41,8 @@ Klicke auf die Rolle einer beliebigen Person in der Projekt-Cast & Crew-Liste, u
 
 Oben in diesem Formular ist der **Zugriffs-Intent-Toggle**.
 
-- **AUS (Nicht erlaubt):** Die Person ist auf deiner Liste, kann sich aber nicht ins Projekt einloggen. Das ist der Standardzustand.
-- **EIN (Gewährt/Ausstehend):** Das System verifiziert ihre E-Mail. Wenn sie ein CineLog-Konto hat, werden sie sofort dem Projekt hinzugefügt. Wenn nicht, sendet CineLog ihnen automatisch eine Einladungs-E-Mail.
+- **EIN (Gewährt/Ausstehend):** Der Standard in dem Moment, in dem du einem Kontakt eine Rolle zuweist. CineLog sendet ihm eine Einladungs-E-Mail, und er tritt bei, sobald er annimmt; falls er bereits an einem anderen Projekt in deinem Workspace mitarbeitet, wird er sofort aufgenommen.
+- **AUS (Nicht erlaubt):** Die Person bleibt auf deiner Liste und deinen Dispositionen, kann sich aber nicht ins Projekt einloggen. Schalte ihn für Kontakte aus, die keinen App-Zugriff haben sollen.
 
 <Aside type="note">
 **Team-Management:** Jeder, der **Edit**-Berechtigung für das Cast & Crew-Modul hat, kann Zugriffs-Intents umschalten und die ACL für andere Teammitglieder ändern. So kannst du Onboarding- und Sicherheitsaufgaben an deine Produktionsleiter oder Koordinatoren delegieren!

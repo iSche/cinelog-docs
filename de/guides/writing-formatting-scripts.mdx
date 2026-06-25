@@ -1,6 +1,6 @@
 ---
 title: Drehbücher schreiben & formatieren
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Importiere FDX-, Fountain-, PDF-, TXT- und RTF-Drehbücher in den Editor von CineLog. Formatiere mit Fountain-Syntax, verfolge Analytik, exportiere als PDF und befülle deine Einstellungsliste."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ Falls du dein Drehbuch bereits in einer anderen Software begonnen hast, kannst d
 
 <Steps>
 1. **Drehbuch-Editor öffnen:** Navigiere über die linke Seitenleiste zum Drehbuch-Editor.
-2. **Dokument importieren:** Klicke auf den **Import**-Button in der oberen Menüleiste (oder drücke <kbd>Cmd</kbd> + <kbd>I</kbd>) und wähle deine Drehbuchdatei aus.
+2. **Dokument importieren:** Klicke auf den **Import**-Button in der oberen Menüleiste und wähle deine Drehbuchdatei aus.
 3. **Automatisches Parsing:** Der universelle Parser von CineLog verarbeitet die Datei automatisch, extrahiert die Szenen und konvertiert die Formatierung.
 </Steps>
 
@@ -65,7 +65,10 @@ Wenn die smarte Erkennung falsch rät oder du einen bestimmten Formatierungsstil
 - <kbd>Cmd</kbd> + <kbd>2</kbd>: Figur
 - <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialog
 - <kbd>Cmd</kbd> + <kbd>4</kbd>: Action
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Übergang
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Klammerzusatz
+- <kbd>Cmd</kbd> + <kbd>6</kbd>: Übergang
+- <kbd>Cmd</kbd> + <kbd>7</kbd>: Songtext
+- <kbd>Cmd</kbd> + <kbd>E</kbd>: Zentriert
 
 <Aside type="tip">
 **Kontinuierliches Speichern:** Es gibt keinen "Speichern"-Button im Drehbuch-Editor. Jeder Tastenanschlag wird still und kontinuierlich auf deinem lokalen Gerät gespeichert und im Hintergrund sicher in die Cloud synchronisiert.
@@ -80,7 +83,7 @@ Während du schreibst, berechnet CineLog professionelle Kennzahlen in Echtzeit, 
 Schau im Analytik-Panel nach Live-Updates für:
 - **Seitenschätzung:** Branchenübliche Formeln zur Seitenberechnung mit professioneller Genauigkeit.
 - **Szenen- & Figurenzahlen:** Gesamtzahl der Szenen und einzigartiger Sprechfiguren.
-- **Wort-Kennzahlen:** Gesamtwortzahl und geschätzte Lesedauer.
+- **Wort-Kennzahlen:** Gesamtwortzahl und Zeichenzahl.
 
 ---
 

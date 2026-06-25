@@ -1,6 +1,6 @@
 ---
 title: Storyboards
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Visuelle Planungswerkzeuge, mit denen du Szenen entwerfen und deine kreative Vision visualisieren kannst."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ Die Storyboard-Funktion von CineLog ist eine visuelle Erweiterung deiner lineare
 </Card>
 
 <Card title="Medienreiche Panels">
-  Unterstützung für mehrere Bild-Uploads pro Einstellungs-Panel. Lege ein Hauptbild fest und halte Alternativen einen Wischer entfernt.
+  Unterstützung für mehrere Bild-Uploads pro Einstellungs-Panel. Das erste Bild dient als Titelbild, die Alternativen sind einen Wischer entfernt.
 </Card>
 
 <Card title="Drag-and-Drop-Sequenzierung">
@@ -39,9 +39,9 @@ Durch Sequenzen scrubben
 
 Wenn du mehrere Bilder zu einem einzigen Panel hochlädst, kannst du den Slider am Panel verwenden, um durch die Sequenz zu scrubben.
 
-Hauptbilder festlegen
+Titelbild
 
-Das "Hauptbild" ist das Bild, das in der Rasteransicht angezeigt und in PDF-Exporte aufgenommen wird.
+Das erste Bild in der Reihenfolge eines Panels ist das Titelbild, das in der Rasteransicht angezeigt und in PDF-Exporte aufgenommen wird. Ordne die Bilder eines Panels um, um festzulegen, welches das Titelbild ist.
 
 ### Mit den Ansichten arbeiten
 
@@ -69,4 +69,4 @@ Storyboard-Ansichten rendern deine Bilder automatisch in ihrem tatsächlichen, v
 
 ### Professioneller PDF-Export
 
-Erstelle saubere, produktionsfertige PDF-Bögen direkt aus deinen Storyboard-Ansichten. Drücke `Cmd+P`, um einen PDF-Export zu konfigurieren, und wähle zwischen Clean-Modus (nur Visuals) oder Detailed-Modus (Visuals + Metadaten).
+Erstelle saubere, produktionsfertige PDF-Bögen direkt aus deinen Storyboard-Ansichten. Drücke `Cmd+P`, um einen PDF-Export zu konfigurieren – mit Reglern für Seitenverhältnis, Bildanpassung, Spalten pro Seite, Seitengröße, Szenenbereich und Abstand. Jedes Panel rendert sein Bild zusammen mit den Metadaten der Einstellung.

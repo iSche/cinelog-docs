@@ -1,6 +1,6 @@
 ---
 title: Ordini del giorno
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Ordini del giorno giornalieri in CineLog — intestazione e orario di call, location, programmazione con cascata temporale, meteo, sezioni personale, messaggio rich-text alla troupe, invio e tracciamento conferme, esportazione PDF."
 ---
 
@@ -60,7 +60,7 @@ Una lista riordinabile di location di ripresa nominate per la giornata. Ogni loc
 
 Aggiungi e modifica tramite l'overlay della location. Su desktop puoi fare long-press su una riga location e trascinare per riordinare; su telefono, doppio tap su una riga per aprire l'overlay di modifica.
 
-L'**autocompletamento Google Places** è integrato in ogni campo indirizzo. Inizia a digitare e vedrai i posti suggeriti; sceglierne uno popola l'indirizzo e memorizza le coordinate in modo che la ricerca meteo (sotto) abbia una location su cui lavorare.
+L'**autocompletamento Google Places** è integrato nel campo indirizzo della location del set. Inizia a digitare e vedrai i posti suggeriti; sceglierne uno popola l'indirizzo e memorizza le coordinate in modo che la ricerca meteo (sotto) abbia una location su cui lavorare.
 
 Per nascondere l'intera sezione location dall'ordine del giorno (es. quando la location non è ancora confermata), usa il toggle di visibilità della sezione nelle impostazioni di visualizzazione.
 
@@ -80,7 +80,7 @@ Inserire un banner a metà scena suddivide la scena circostante al banner — ve
 
 Non inserisci un orario di inizio per ogni riga. La programmazione ha un motore di tempo a cascata: legge l'orario di call generale, poi scorre la lista sommando la durata stimata di ogni riga per calcolare l'orario di inizio della riga successiva.
 
-Se l'orario di inizio esplicito di una riga è in conflitto con quello che la cascata avrebbe prodotto (hai sovra-programmato), l'orario viene evidenziato in **rosso**. Se c'è uno spazio tra le righe (la cascata ha slack), viene mostrato in **giallo**. In entrambi i casi, è la durata stimata della riga stessa a controllare la riga successiva, non lo spazio.
+Se l'orario di inizio esplicito di una riga cade prima di dove lo collocherebbe l'orologio progressivo (una sovrapposizione), l'orario viene evidenziato in **rosso**. Un'evidenziazione **gialla** segnala invece una riga con una stima di durata pari a zero. È la durata stimata della riga stessa a controllare l'orario di inizio della riga successiva.
 
 ### Riordinare la programmazione
 
@@ -92,10 +92,9 @@ La sezione programmazione non può essere nascosta — è sempre mostrata.
 
 Se l'ordine del giorno ha una location con coordinate, CineLog recupera automaticamente il meteo del giorno quando apri l'ordine del giorno per la prima volta. La visualizzazione mostra:
 
-- Temperatura attuale e "percepita"
-- Minima giornaliera
+- Temperatura, con la massima e la minima del giorno
 - Alba e tramonto
-- Condizioni, umidità, velocità del vento
+- Condizioni
 
 L'unità di temperatura segue l'impostazione di visualizzazione (°F / °C). Per sovrascrivere o inserire manualmente il meteo (la previsione non è stata recuperata, o vuoi usare una fonte diversa), tocca il blocco meteo e modifica. L'override è memorizzato sull'ordine del giorno e riutilizzato a ogni ricaricamento.
 
@@ -125,7 +124,7 @@ Griglia o lista espandibile di interpreti di background. Nessun avatar in questa
 
 ### Note per persona
 
-Ogni riga persona in Talent, Troupe o Clienti può portare note private. Queste note sono visibili al producer nell'UI dell'ordine del giorno, ma sul PDF inviato via email appaiono **solo sulla copia di quella persona** — non su quella di nessun altro. Utile per istruzioni individuali ("parcheggia all'entrata laterale", "prova costume prima del call").
+Ogni riga persona in Talent, Troupe o Clienti può portare note. Queste appaiono sull'ordine del giorno e sul PDF esportato e inviato via email, visibili a chiunque riceva quel foglio — quindi usale per istruzioni condivise ("parcheggia all'entrata laterale", "prova costume prima del call"), non per messaggi privati.
 
 ### Orario di call per persona
 
@@ -177,7 +176,7 @@ Ogni destinatario riceve:
 
 - Un PDF personalizzato con il suo orario di call evidenziato.
 - Il messaggio della troupe (rich text) più qualsiasi messaggio opzionale che hai aggiunto.
-- Le sue note per persona, se ce ne sono (aggiunte al corpo dell'email, non sul PDF visibile ad altri).
+- Eventuali note per persona presenti sul foglio, che vengono stampate sul PDF stesso dell'ordine del giorno (fanno parte del foglio che ricevono tutti quelli con quell'orario di call).
 - Un **link di conferma** — un URL univoco protetto da token a `links.cinelog.com/confirm-call-sheet/<token>`. Cliccando il link si apre un portale CineLog-brandizzato dove toccano "Conferma" per riconoscere la ricezione.
 
 ### Pagina Invii
@@ -241,7 +240,7 @@ Modificare gli ordini del giorno funziona offline — le modifiche si salvano su
 
 *"Come cambio la foto profilo di un membro della troupe?"* Non puoi — le foto profilo sono controllate da ogni utente dalla propria schermata Account. Come proprietario del progetto non puoi caricarne una per conto suo. Le persone che non si sono ancora iscritte a CineLog mostrano l'avatar di iniziali; una volta che si loggano e caricano, la loro foto appare su ogni ordine del giorno a cui sono presenti.
 
-*"L'orario della programmazione è evidenziato in rosso / giallo."* Rosso significa che hai sovra-programmato — l'orario di inizio esplicito su quella riga contraddice quello che la cascata temporale ha calcolato. Giallo significa che c'è uno spazio tra le righe che la cascata ha lasciato non riempito. Aggiusta le durate o l'orario di inizio per riconciliare.
+*"L'orario della programmazione è evidenziato in rosso / giallo."* Rosso significa che l'orario di inizio esplicito della riga cade prima che la riga precedente finisca (una sovrapposizione). Giallo segnala una riga con una stima di durata pari a zero. Aggiusta le durate o l'orario di inizio per riconciliare.
 
 *"Il meteo non si è caricato."* L'auto-fetch ha bisogno di una location con coordinate. Imposta una location tramite l'autocompletamento Google Places (in modo che lat/lng venga catturata), poi ricarica l'ordine del giorno. Puoi anche inserire il meteo manualmente.
 

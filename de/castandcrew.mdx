@@ -1,6 +1,6 @@
 ---
 title: "Cast & Crew"
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Verwalte dein Filmproduktions-Team mit Rollen, Abteilungen, Workspace-Kontakten und rollenbasierter Zugriffskontrolle. Integriert sich direkt mit Dispositionen (Dispo)."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -40,7 +40,7 @@ Eine wachsende Crew zu verwalten ist chaotisch. Indem du eine zentrale Wahrheit 
 
 **Crew-Planung (offene Slots)**
 
-Du brauchst keinen einzigen Kontakt in deinem Rolodex, um mit der Besetzung zu beginnen. Füge branchenübliche Rollen hinzu (z.B. "Key Grip"), um einen **offenen Slot** zu erstellen. Sobald du jemanden eingestellt hast, weise einfach einen bestehenden oder neu eingeladenen Kontakt dem Slot zu. Alle abteilungsbezogenen Voreinstellungen folgen dem Kontakt automatisch.
+Du brauchst keinen einzigen Kontakt in deinem Rolodex, um mit der Besetzung zu beginnen. Füge branchenübliche Rollen hinzu (z.B. "Key Grip"), um einen **offenen Slot** zu erstellen. Sobald du jemanden eingestellt hast, weise einfach einen bestehenden oder neu eingeladenen Kontakt dem Slot zu. Die Rolle, die du zugewiesen hast, wird dann für künftige Projekte auf diesem Kontakt gemerkt.
 
 </li>
 <li>
@@ -54,7 +54,7 @@ Arbeitest du auf einem Handy oder einem großen Monitor? Such dir deine Ansicht 
 
 **Granularer Projektzugriff & Einladungen**
 
-Jemanden zu deiner Cast & Crew hinzuzufügen, gibt ihm nicht automatisch volle Leserechte. Nutze den **Intent-Toggle**, um jemandem sicher eine E-Mail-Einladung zu schicken, die sein CineLog-Konto mit deinem Projekt verbindet. Beim Anpassen der Rechte löst CineLog intelligent individuelle Overrides gegen abteilungsbezogene Voreinstellungen auf, sodass du den Zugriffsumfang einer Einzelperson sicher erweitern kannst.
+Einem Kontakt eine Projektrolle zuzuweisen, sendet ihm automatisch eine E-Mail-Einladung und setzt seinen Zugriff auf ausstehend, bis er annimmt. Er erhält nur die Rechte, die seine Rolle gewährt, und CineLog löst individuelle Overrides intelligent gegen abteilungsbezogene Voreinstellungen auf, sodass du den Zugriffsumfang einer Einzelperson sicher anpassen kannst. Nutze den **Intent-Toggle**, um den Zugriff für Kontakte auszuschalten, die nur auf den Dispositionen bleiben sollen.
 
 </li>
 
@@ -68,7 +68,7 @@ Die Kontakte, die du hinzufügst, und die Rollen, die du organisierst, fungieren
 </Aside>
 
 <Aside type="tip" title="Vorteile der Daten-Routing">
--   **Disposition-Automatisierung**: In Dispositionen muss nichts manuell getippt werden. Wenn du "Jane Doe" in den Director-Slot deiner Cast & Crew-Liste einträgst, erscheint sie automatisch oben in jeder Disposition-PDF.
+-   **Disposition-Automatisierung**: Dispositionen ziehen aus deiner Cast & Crew und aus den Personen, die an den geplanten Einstellungen des jeweiligen Tages hängen, und übernehmen deine wiederkehrende Crew aus vorherigen Tagen – so musst du nicht jeden Tag dieselbe Liste neu eintippen.
 -   **Vereinheitlichter Konto-Scope**: Dein Kontakt-Rolodex umspannt den gesamten Workspace. Bearbeitest du E-Mail oder Telefonnummer eines Kontakts, gilt das global für jedes Projekt, in dem du ihn besetzt hast – frustrierende Duplikate entfallen.
 -   **Massenauswahl**: Nutze Selektions-Aktionen, um schnelle, gleichzeitige Bulk-Edits über deine gesamte Liste auszuführen, statt einfache Änderungen immer wieder zu wiederholen.
 </Aside>

@@ -1,6 +1,6 @@
 ---
 title: Storyboards
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Visual planning tools to help you map out scenes and visualize your creative vision."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ The CineLog Storyboard feature is a visual extension of your Linear Shot List. I
 </Card>
 
 <Card title="Rich Media Panels">
-  Support for multiple image uploads per shot panel. Define a primary image while keeping alternatives a swipe away.
+  Support for multiple image uploads per shot panel. The first image acts as the cover, with the alternatives a swipe away.
 </Card>
 
 <Card title="Drag-and-Drop Sequencing">
@@ -39,9 +39,9 @@ Scrub through Sequences
 
 If you upload multiple images to a single panel, you can use the on-panel slider to scrub through the sequence.
 
-Set Primary Images
+Cover Image
 
-The "Primary" image is the one that will be displayed in the Grid view and included in PDF exports.
+The first image in a panel's order is the cover shown in Grid view and included in PDF exports. Reorder a panel's images to change which one is the cover.
 
 ### Working with Views
 
@@ -69,4 +69,4 @@ Storyboard views automatically render your images in their true user-selected as
 
 ### Professional PDF Export
 
-Generate clean, production-ready PDF sheets directly from your storyboard views. Hit `Cmd+P` to configure a PDF Export, selecting between Clean mode (visuals only) or Detailed mode (visuals + metadata).
+Generate clean, production-ready PDF sheets directly from your storyboard views. Hit `Cmd+P` to configure a PDF export, with controls for aspect ratio, image fit, columns per page, page size, scene range, and spacing. Every panel renders its image together with its shot metadata.

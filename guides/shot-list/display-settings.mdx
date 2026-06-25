@@ -1,6 +1,6 @@
 ---
 title: Display Settings
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Column visibility and order, custom columns, shot numbering format, row height — everything that controls how the shot list looks on screen."
 ---
 
@@ -10,17 +10,17 @@ Display Settings controls how the shot list looks — which columns are visible,
 
 ## Column visibility
 
-Toggle any column on or off from the Display Settings overlay. For quick changes without opening Display Settings, the number keys `1` through `9` toggle the first nine columns directly from the list view.
+Toggle any column on or off from the Display Settings overlay. For quick changes without opening Display Settings, the number keys `1` through `9` toggle the first nine columns after the pinned Status, Shot, and Day, directly from the list view.
 
 ## Reordering columns
 
-Drag a column row inside the Display Settings overlay to reorder. Reordering doesn't happen by dragging the column header on the main list — that's a frequent expectation that doesn't apply here.
+Reorder columns by dragging a column header on the main shot list left or right. The three pinned system columns — Status, Shot, and Day — stay locked to the leftmost positions and can't be moved.
 
-System columns — Shot, Scene, Day — are locked to the leftmost positions and refuse drops that would displace them.
+The Display Settings overlay controls column visibility and custom columns, not column order.
 
 ## Custom columns
 
-Add your own columns from Display Settings. Specify a name and a type: text, dropdown, checkbox, or any other supported field type. Once added, the column appears in the desktop list and in the mobile expanded view automatically — no per-platform setup. Custom columns participate in PDF export.
+Add your own columns from Display Settings by giving each a name. Custom columns hold free text. Once added, the column appears in the desktop list and in the mobile expanded view automatically — no per-platform setup. Custom columns participate in PDF export.
 
 ## Shot numbering format
 
@@ -30,7 +30,7 @@ Three formats are supported:
 - **Decimal** — `1.1`, `2.3`.
 - **Sequential** — `1`, `2`, `47`. Continuous through the project.
 
-Changing format renumbers every shot. If the script has already been lined under one format and you switch, you'll have to re-line — there's no undo. Confirm with anyone else working on the project before changing.
+The format is a display preference — it changes how numbers are shown without altering the underlying shots, so you can switch between formats freely and switch back at any time.
 
 ## Row height and display mode
 
@@ -42,8 +42,8 @@ All Display Settings are project-level and propagate via CineSync. A producer ad
 
 ## If this isn't working
 
-*"I tried to drag a column header on the main list to reorder, but nothing happens."* Reordering happens inside Display Settings (`Shift + D`), not on the main list header.
+*"How do I reorder columns?"* Drag a column header on the main list. The pinned Status, Shot, and Day columns can't be moved.
 
-*"I changed the shot number format and now my old numbers are gone."* The change is destructive and has no undo. Contact support — server-side history can sometimes help.
+*"I changed the shot number format and the numbers look different."* That's expected — it's a display-only setting. Switch back to the previous format and the original numbering reappears.
 
 *"My custom column is on desktop but not on mobile."* It should appear automatically. Try force-quitting and reopening the mobile app. If the sync indicator shows pending changes, the new column hasn't propagated yet.

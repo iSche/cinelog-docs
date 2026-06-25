@@ -1,6 +1,6 @@
 ---
 title: "Cast & Crew"
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Manage your film production team with roles, departments, workspace contacts, and role-based access control. Integrates directly with call sheets."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -40,7 +40,7 @@ Managing a growing crew is chaotic. By establishing a source of truth for Roles 
 
 **Planning Your Crew (Vacant Slots)**
 
-You don't need a single contact in your rolodex to begin staffing. Add standard industry roles (e.g. "Key Grip") to create a **Vacant Slot**. Once you hire someone, simply assign an existing or newly-invited contact to the slot. All departmental defaults will follow the contact intelligently.
+You don't need a single contact in your rolodex to begin staffing. Add standard industry roles (e.g. "Key Grip") to create a **Vacant Slot**. Once you hire someone, simply assign an existing or newly-invited contact to the slot. The role you assigned is then remembered on that contact for future projects.
 
 </li>
 <li>
@@ -54,7 +54,7 @@ Working on a phone or a large monitor? Pick your view. The **Cast and Crew View*
 
 **Granular Project Access & Invitations**
 
-Adding someone to your Cast and Crew does not automatically give them full read permissions. Use the **Intent Toggle** to securely route someone an email invitation bridging their CineLog account to your project. When adjusting permissions, CineLog intelligently resolves individual overrides against departmental defaults so you can confidently upgrade an individual's scope.
+Assigning a contact to a project role automatically sends them an email invitation, setting their access to pending until they accept. They get only the permissions their role grants, and CineLog intelligently resolves individual overrides against departmental defaults so you can confidently adjust an individual's scope. Use the **Intent Toggle** to turn access off for contacts who should stay on call sheets only.
 
 </li>
 
@@ -68,7 +68,7 @@ The Contacts you add and Roles you organize act as the central nervous system fo
 </Aside>
 
 <Aside type="tip" title="Data Routing Benefits">
--   **Call Sheets Automation**: There is no manual typing in Call Sheets. If you map "Jane Doe" into the Director slot in your Cast and Crew list, she automatically populates at the top of every Call Sheet PDF.
+-   **Call Sheets Automation**: Call sheets draw on your Cast and Crew and on the people attached to each day's scheduled shots, and they carry your recurring crew forward from previous days — so you are not retyping the same roster every day.
 -   **Unified Account Scope**: Your Contacts Rolodex spans the entire workspace. Editing a contact's email or phone number applies globally across every project you've cast them in, removing frustrating duplications.
 -   **Batch Selection**: Use selection actions to execute rapid, simultaneous bulk edits across your entire roster instead of repeating simple changes over and over.
 </Aside>

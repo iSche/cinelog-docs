@@ -1,6 +1,6 @@
 ---
 title: Storyboards
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Outils de planification visuelle pour t'aider à cartographier les scènes et à visualiser ta vision créative."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ La fonctionnalité Storyboard de CineLog est une extension visuelle de ton Déco
 </Card>
 
 <Card title="Panneaux médias riches">
-  Support de plusieurs téléversements d'images par panneau de plan. Définis une image principale tout en gardant les alternatives à portée de glissement.
+  Support de plusieurs téléversements d'images par panneau de plan. La première image sert de couverture, les alternatives restant à portée de glissement.
 </Card>
 
 <Card title="Séquencement par glisser-déposer">
@@ -39,9 +39,9 @@ Faire défiler les séquences
 
 Si tu téléverses plusieurs images dans un seul panneau, tu peux utiliser le curseur du panneau pour faire défiler la séquence.
 
-Définir les images principales
+Image de couverture
 
-L'image « Principale » est celle qui sera affichée dans la vue Grille et incluse dans les exports PDF.
+La première image dans l'ordre d'un panneau est la couverture affichée dans la vue Grille et incluse dans les exports PDF. Réorganise les images d'un panneau pour changer laquelle sert de couverture.
 
 ### Travailler avec les vues
 
@@ -69,4 +69,4 @@ Les vues du storyboard rendent automatiquement tes images dans leur format réel
 
 ### Export PDF professionnel
 
-Génère des fiches PDF propres et prêtes pour la production directement depuis tes vues storyboard. Appuie sur `Cmd+P` pour configurer un export PDF, en sélectionnant entre le mode Propre (visuels seulement) ou le mode Détaillé (visuels + métadonnées).
+Génère des fiches PDF propres et prêtes pour la production directement depuis tes vues storyboard. Appuie sur `Cmd+P` pour configurer un export PDF, avec des contrôles pour le format d'image, l'ajustement de l'image, le nombre de colonnes par page, la taille de page, la plage de scènes et l'espacement. Chaque panneau rend son image accompagnée des métadonnées de son plan.

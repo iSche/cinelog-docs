@@ -1,6 +1,6 @@
 ---
 title: Lo básico
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Cuatro secciones que cubren el recorrido por la app y las tres cosas que harás una y otra vez: editar, seleccionar, arrastrar. La base para cada guía de funcionalidad."
 ---
 
@@ -68,9 +68,9 @@ En teléfono, ambos estados se pliegan en la insignia de conexión en la barra s
 
 CineLog está construido para seguir funcionando sin conexión. El primer inicio de sesión necesita internet; después, el dispositivo queda registrado y permanece así. Las ediciones hechas sin conexión se guardan en la base de datos local del dispositivo y se ponen en cola en el indicador de sincronización hasta que vuelvas a estar en línea, momento en el que se descargan al servidor automáticamente.
 
-Tu sesión es válida hasta siete días. La app la refresca en segundo plano a medida que se acerca el vencimiento — normalmente un par de horas antes — así que, mientras estés en línea cuando eso ocurra, nunca verás una solicitud de inicio de sesión. El uso mixto normal en línea/offline hace que el refresco simplemente funcione.
+Tu sesión se refresca sola en segundo plano a medida que se acerca el vencimiento — normalmente un par de horas antes — así que, mientras estés en línea cuando eso ocurra, nunca verás una solicitud de inicio de sesión. El uso mixto normal en línea/offline hace que el refresco simplemente funcione.
 
-Si permaneces totalmente sin conexión durante toda la ventana de siete días, la sesión expira. La próxima vez que la app intente hablar con el servidor, mostrará un diálogo de re-autenticación. El diálogo es bloqueante pero tus datos permanecen: vuelve a iniciar sesión con la misma cuenta y retomas justo donde lo dejaste, con las ediciones en cola y todo.
+Si permaneces totalmente sin conexión el tiempo suficiente para que la sesión caduque — del orden de un mes — esta expira. La próxima vez que la app intente hablar con el servidor, mostrará un diálogo de re-autenticación. El diálogo es bloqueante pero tus datos permanecen: vuelve a iniciar sesión con la misma cuenta y retomas justo donde lo dejaste, con las ediciones en cola y todo.
 
 ### El menú Más
 
@@ -115,7 +115,7 @@ Mensajes cortos aparecen en la parte inferior de la pantalla cuando algo tiene �
 
 *"Mi punto de conexión y el indicador de sincronización no coinciden."* Miden cosas distintas. El punto es el enlace de red; el indicador de sincronización es la cola local de ediciones. Cualquiera de los dos puede no estar sano por separado.
 
-*"¿Puedo usar CineLog sin internet?"* Sí, después del primer inicio de sesión. Las ediciones offline se guardan localmente y se sincronizan cuando reconectes. Tu sesión es válida hasta siete días; al acercarse el vencimiento, la app la refresca automáticamente si estás en línea en ese momento, así que el uso mixto normal en línea/offline mantiene la sesión iniciada. Un dispositivo que esté offline los siete días completos necesitará volver a iniciar sesión.
+*"¿Puedo usar CineLog sin internet?"* Sí, después del primer inicio de sesión. Las ediciones offline se guardan localmente y se sincronizan cuando reconectes. Al acercarse el vencimiento de tu sesión, la app la refresca automáticamente si estás en línea en ese momento, así que el uso mixto normal en línea/offline mantiene la sesión iniciada. Un dispositivo que se deje totalmente sin conexión el tiempo suficiente — del orden de un mes — necesitará volver a iniciar sesión.
 
 *"La app me pidió iniciar sesión otra vez en la localización."* Es el diálogo de re-autenticación tras un periodo largo sin conectividad. Vuelve a iniciar sesión con el mismo correo; tus ediciones en cola permanecen y se sincronizarán.
 
@@ -137,13 +137,14 @@ Si tocas una fila y nada parece editable, expándela primero.
 
 CineLog autoguarda en cada confirmación y con un debounce de aproximadamente 450 ms mientras escribes. No hay botón Guardar en ninguna parte.
 
-Pulsar `Esc` cierra el editor y descarta lo escrito desde el último autoguardado por debounce. Si has estado escribiendo unos segundos, los caracteres anteriores ya se han guardado silenciosamente — `Esc` solo descarta el tramo más reciente.
+Todo lo que escribes se autoguarda con un debounce de aproximadamente 450 ms, y cerrar el editor guarda lo que haya en él. `Esc` no tiene ningún comportamiento especial de descarte en un campo de texto — no existe un gesto de "tira mis últimas pulsaciones".
 
 ### Teclado dentro del editor
 
 - `Enter` confirma y cierra.
-- `Esc` cancela y cierra (con la salvedad del autoguardado anterior).
 - Las flechas se mueven por las opciones del desplegable.
+
+(No hay `Esc` para descartar dentro de un campo de texto; las ediciones ya están autoguardadas.)
 
 ### Si esto no funciona
 
@@ -180,7 +181,7 @@ No hay equivalente móvil — selecciona una fila a la vez.
 ### Salir
 
 - **Escritorio:** `Esc`.
-- **Móvil:** el chip "Listo" en la barra de selección.
+- **Móvil:** el control de limpiar selección (X) en la barra de selección.
 
 Cualquiera limpia la selección y devuelve la lista a sus interacciones normales.
 

@@ -1,6 +1,6 @@
 ---
 title: Les bases du découpage technique
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Construis un découpage technique à partir de zéro — trois façons d'ajouter des plans, comment fonctionne la numérotation, comment réorganiser et ce qui est supprimé quand tu enlèves un plan ou une scène."
 ---
 
@@ -28,7 +28,7 @@ Les plans sont numérotés automatiquement. Trois formats sont disponibles dans 
 
 Les numéros et lettres se mettent à jour à la réorganisation. Si tu déplaces `1C` en haut de sa scène, la liste lit brièvement C, A, B avant de recalculer en A, B, C. N'écris pas la lettre d'un plan en t'attendant à ce qu'elle soit stable entre les déplacements.
 
-Changer de format renumérote tout le projet. Sur un projet déjà mis en lignes, c'est destructif — confirme avant de le faire.
+Changer de format change uniquement la façon dont les numéros sont affichés — cela ne modifie pas les plans sous-jacents, et tu peux revenir en arrière à tout moment.
 
 ## Réorganiser les plans
 
@@ -36,7 +36,7 @@ Fais glisser n'importe quel plan pour le déplacer. Le geste est le glissement u
 
 - **Dans une scène** — fais glisser vers le haut ou vers le bas. Les lettres se recompactent.
 - **Entre les scènes** — fais glisser au-delà d'une limite de scène. Le numéro de scène du plan change pour correspondre à la destination ; les lettres se recompactent dans les scènes source et destination.
-- **Dans l'espace vide entre deux scènes** — CineLog crée une nouvelle scène à cet endroit.
+- **Dans l'espace vide entre deux scènes** — le plan rejoint la scène existante la plus proche. Cela ne crée pas de nouvelle scène ; ajoute des scènes avec **+ Ajouter un plan** dans un nouveau bloc ou via Remplir depuis le scénario.
 
 La vue Production ajoute une règle de portée de scène pour les multi-sélections ; voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production).
 

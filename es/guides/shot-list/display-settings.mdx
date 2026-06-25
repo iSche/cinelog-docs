@@ -1,6 +1,6 @@
 ---
 title: Ajustes de Visualización
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Visibilidad y orden de columnas, columnas personalizadas, formato de numeración de planos, altura de fila: todo lo que controla cómo se ve la lista de planos en pantalla."
 ---
 
@@ -10,17 +10,17 @@ Los Ajustes de Visualización controlan cómo se ve la lista de planos: qué col
 
 ## Visibilidad de columnas
 
-Activa o desactiva cualquier columna desde la superposición de Ajustes de Visualización. Para cambios rápidos sin abrir Ajustes de Visualización, las teclas numéricas `1` a `9` alternan las primeras nueve columnas directamente desde la vista de lista.
+Activa o desactiva cualquier columna desde la superposición de Ajustes de Visualización. Para cambios rápidos sin abrir Ajustes de Visualización, las teclas numéricas `1` a `9` alternan las primeras nueve columnas después de las columnas fijas Estado, Plano y Día, directamente desde la vista de lista.
 
 ## Reordenar columnas
 
-Arrastra una fila de columna dentro de la superposición de Ajustes de Visualización para reordenar. El reordenamiento no ocurre arrastrando el encabezado de columna en la lista principal — esa es una expectativa frecuente que no se aplica aquí.
+Reordena las columnas arrastrando el encabezado de una columna en la lista principal de planos hacia la izquierda o la derecha. Las tres columnas fijas del sistema — Estado, Plano y Día — permanecen bloqueadas en las posiciones más a la izquierda y no se pueden mover.
 
-Las columnas del sistema — Plano, Escena, Día — están bloqueadas en las posiciones más a la izquierda y rechazan drops que las desplazarían.
+La superposición de Ajustes de Visualización controla la visibilidad de columnas y las columnas personalizadas, no el orden de las columnas.
 
 ## Columnas personalizadas
 
-Añade tus propias columnas desde Ajustes de Visualización. Especifica un nombre y un tipo: texto, desplegable, casilla u otro tipo de campo soportado. Una vez añadida, la columna aparece en la lista de escritorio y en la vista expandida móvil automáticamente — sin configuración por plataforma. Las columnas personalizadas participan en la exportación a PDF.
+Añade tus propias columnas desde Ajustes de Visualización dando un nombre a cada una. Las columnas personalizadas contienen texto libre. Una vez añadida, la columna aparece en la lista de escritorio y en la vista expandida móvil automáticamente — sin configuración por plataforma. Las columnas personalizadas participan en la exportación a PDF.
 
 ## Formato de numeración de planos
 
@@ -30,7 +30,7 @@ Tres formatos son soportados:
 - **Decimal** — `1.1`, `2.3`.
 - **Secuencial** — `1`, `2`, `47`. Continuo a través del proyecto.
 
-Cambiar el formato renumera cada plano. Si el guion ya ha sido marcado bajo un formato y cambias, tendrás que volver a marcar — no hay deshacer. Confirma con cualquiera más que trabaje en el proyecto antes de cambiar.
+El formato es una preferencia de visualización: cambia cómo se muestran los números sin alterar los planos subyacentes, así que puedes cambiar entre formatos libremente y volver atrás en cualquier momento.
 
 ## Altura de fila y modo de visualización
 
@@ -42,8 +42,8 @@ Todos los Ajustes de Visualización son a nivel de proyecto y se propagan vía C
 
 ## Si esto no funciona
 
-*"Intenté arrastrar un encabezado de columna en la lista principal para reordenar, pero no pasa nada."* El reordenamiento ocurre dentro de Ajustes de Visualización (`Shift + D`), no en el encabezado de la lista principal.
+*"¿Cómo reordeno las columnas?"* Arrastra el encabezado de una columna en la lista principal. Las columnas fijas Estado, Plano y Día no se pueden mover.
 
-*"Cambié el formato de numeración de planos y ahora mis números antiguos no están."* El cambio es destructivo y no tiene deshacer. Contacta con soporte — el historial del lado del servidor a veces puede ayudar.
+*"Cambié el formato de numeración de planos y los números se ven diferentes."* Es lo esperado: es un ajuste solo de visualización. Vuelve al formato anterior y reaparecerá la numeración original.
 
 *"Mi columna personalizada está en escritorio pero no en móvil."* Debería aparecer automáticamente. Intenta forzar el cierre y reabrir la app móvil. Si el indicador de sincronización muestra cambios pendientes, la nueva columna aún no se ha propagado.

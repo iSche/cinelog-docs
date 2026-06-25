@@ -1,6 +1,6 @@
 ---
 title: Lo esencial de la lista de planos
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Construir una lista de planos desde cero: tres formas de añadir planos, cómo funciona la numeración, cómo reordenar y qué se elimina cuando borras un plano o una escena."
 ---
 
@@ -28,7 +28,7 @@ Los planos se numeran automáticamente. Tres formatos están disponibles en [Aju
 
 Los números y letras se actualizan al reordenar. Si mueves `1C` a la parte superior de su escena, la lista brevemente lee C, A, B antes de recalcular a A, B, C. No anotes la letra de un plano y esperes que sea estable entre movimientos.
 
-Cambiar el formato renumera todo el proyecto. En un proyecto ya marcado es destructivo: confirma antes de hacerlo.
+Cambiar el formato solo cambia cómo se muestran los números: no altera los planos subyacentes, y puedes volver atrás en cualquier momento.
 
 ## Reordenar planos
 
@@ -36,7 +36,7 @@ Arrastra cualquier plano para moverlo. El gesto es el arrastre universal de [Lo 
 
 - **Dentro de una escena** — arrastra arriba o abajo. Las letras se recompactan.
 - **A través de escenas** — arrastra más allá de un límite de escena. El número de escena del plano cambia para coincidir con el destino; las letras se recompactan tanto en la escena origen como en la destino.
-- **En el espacio vacío entre dos escenas** — CineLog crea una nueva escena ahí.
+- **En el espacio vacío entre dos escenas** — el plano se une a la escena existente más cercana. Esto no crea una nueva escena; añade escenas con **+ Añadir Plano** en un bloque nuevo o mediante Poblar desde el Guion.
 
 La vista Producción añade una regla de alcance de escena para multi-selecciones; ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production).
 

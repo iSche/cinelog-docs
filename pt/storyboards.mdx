@@ -1,6 +1,6 @@
 ---
 title: Storyboards
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Ferramentas de planejamento visual para mapear cenas e visualizar sua visão criativa."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ O recurso de Storyboard do CineLog é uma extensão visual da sua Decupagem Line
 </Card>
 
 <Card title="Painéis de mídia rica">
-  Suporte para múltiplos envios de imagem por painel de plano. Defina uma imagem primária mantendo alternativas a um deslize de distância.
+  Suporte para múltiplos envios de imagem por painel de plano. A primeira imagem serve como capa, com as alternativas a um deslize de distância.
 </Card>
 
 <Card title="Sequenciamento por arrastar e soltar">
@@ -39,9 +39,9 @@ Percorrer Sequências
 
 Se você enviar várias imagens para um único painel, pode usar o controle deslizante do painel para percorrer a sequência.
 
-Definir Imagens Primárias
+Imagem de Capa
 
-A imagem "Primária" é a que será exibida na visualização em Grade e incluída nas exportações em PDF.
+A primeira imagem na ordem de um painel é a capa exibida na visualização em Grade e incluída nas exportações em PDF. Reordene as imagens de um painel para mudar qual delas é a capa.
 
 ### Trabalhando com visualizações
 
@@ -69,4 +69,4 @@ As visualizações de storyboard renderizam automaticamente suas imagens na verd
 
 ### Exportação profissional para PDF
 
-Gere folhas de PDF limpas e prontas para produção diretamente das suas visualizações de storyboard. Pressione `Cmd+P` para configurar uma Exportação em PDF, escolhendo entre o modo Limpo (apenas visual) ou modo Detalhado (visual + metadados).
+Gere folhas de PDF limpas e prontas para produção diretamente das suas visualizações de storyboard. Pressione `Cmd+P` para configurar uma Exportação em PDF, com controles para proporção de tela, ajuste de imagem, colunas por página, tamanho da página, intervalo de cenas e espaçamento. Cada painel renderiza sua imagem junto com os metadados do plano.

@@ -1,6 +1,6 @@
 ---
 title: Focus mode
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Filter the shot list to one or more scenes. Covers entering Focus, multi-scene mode, the auto-create behaviour on overflow, and the script sidebar."
 ---
 
@@ -8,7 +8,7 @@ Focus mode is the shot list filtered to one or more scenes. Useful for working t
 
 ## Entering Focus
 
-- `Cmd / Ctrl + F` enters Focus on the scene you're currently looking at.
+- `Cmd / Ctrl + F` enters Focus mode and prompts you to pick a scene to isolate.
 - `Shift + S` opens the scene picker dialog — type a scene number to jump.
 
 In the picker, **Select** replaces your focus with the typed scene; **Add** appends it to the current focus set.
@@ -28,7 +28,7 @@ Multi-scene focus shows several scenes' shots together, in script order.
 
 ## Auto-create on overflow
 
-If you press `→` past the last scene in the project, CineLog creates a new empty scene at the end and focuses it. Same with `←` before the first scene. Useful for outline-style work; surprising if you over-pressed the arrow key. To clean up, exit Focus and delete the empty scene from Linear if you didn't want it.
+If you press `→` past the last scene in the project, CineLog creates a new scene (with one starter shot) at the end and focuses it. Useful for outline-style work; surprising if you over-pressed the arrow key. Pressing `←` before the first scene does nothing. To clean up, exit Focus and delete the new scene from Linear if you didn't want it.
 
 ## The script sidebar
 
@@ -42,6 +42,6 @@ The same shortcut means something different in Focus mode: there it opens the sc
 
 ## If this isn't working
 
-*"I pressed `→` and got a new empty scene I didn't want."* You went past the last scene. Exit Focus (`Cmd + F`) and delete the empty scene from Linear.
+*"I pressed `→` and got a new scene I didn't want."* You went past the last scene. Exit Focus (`Cmd + F`) and delete the new scene from Linear.
 
 *"`Shift + S` is doing different things on different screens."* It is, by design. In Linear it toggles the script sidebar; in Focus mode it opens the scene picker.

@@ -1,6 +1,6 @@
 ---
 title: Escrevendo e formatando roteiros
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Importe roteiros FDX, Fountain, PDF, TXT e RTF para o editor do CineLog. Formate com sintaxe Fountain, acompanhe analytics, exporte para PDF e popule sua decupagem."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ Se você já começou a escrever seu roteiro em outro software, pode facilmente 
 
 <Steps>
 1. **Abra o Editor de Roteiro:** navegue até o Editor de Roteiro pela barra lateral esquerda.
-2. **Importar Documento:** clique no botão **Importar** na barra superior (ou pressione <kbd>Cmd</kbd> + <kbd>I</kbd>) e selecione seu arquivo de roteiro.
+2. **Importar Documento:** clique no botão **Importar** na barra superior e selecione seu arquivo de roteiro.
 3. **Parsing automático:** o parser universal do CineLog processa o arquivo automaticamente, extrai as cenas e converte a formatação.
 </Steps>
 
@@ -65,7 +65,10 @@ Se a detecção inteligente errar, ou se você quiser forçar um estilo específ
 - <kbd>Cmd</kbd> + <kbd>2</kbd>: Personagem
 - <kbd>Cmd</kbd> + <kbd>3</kbd>: Diálogo
 - <kbd>Cmd</kbd> + <kbd>4</kbd>: Ação
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transição
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Parêntese
+- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transição
+- <kbd>Cmd</kbd> + <kbd>7</kbd>: Letra de Música
+- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centralizado
 
 <Aside type="tip">
 **Salvamento contínuo:** não há botão "Salvar" no Editor de Roteiro. Cada tecla é salva silenciosa e continuamente no seu dispositivo local e sincronizada com segurança na nuvem em segundo plano.
@@ -80,7 +83,7 @@ Enquanto você escreve, o CineLog calcula métricas profissionais em tempo real,
 Procure pelo painel de analytics para ver atualizações ao vivo sobre:
 - **Estimativa de páginas:** fórmulas padrão da indústria para cálculo de páginas, com precisão profissional.
 - **Contagem de cenas e personagens:** número total de cenas e personagens únicos falados.
-- **Métricas de palavras:** contagem total de palavras e tempo estimado de leitura.
+- **Métricas de palavras:** contagem total de palavras e contagem de caracteres.
 
 ---
 

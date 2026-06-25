@@ -1,6 +1,6 @@
 ---
 title: Modo Foco
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Filtre a decupagem para uma ou mais cenas. Cobre entrar no Foco, modo multi-cena, comportamento de auto-criação ao ultrapassar e a barra lateral do roteiro."
 ---
 
@@ -8,7 +8,7 @@ O Modo Foco é a decupagem filtrada para uma ou mais cenas. Útil para trabalhar
 
 ## Entrando no Foco
 
-- `Cmd / Ctrl + F` entra no Foco na cena que você está vendo atualmente.
+- `Cmd / Ctrl + F` entra no Modo Foco e pede que você escolha uma cena para isolar.
 - `Shift + S` abre o diálogo de seleção de cena — digite um número de cena para saltar.
 
 No seletor, **Selecionar** substitui seu foco pela cena digitada; **Adicionar** anexa ao conjunto de foco atual.
@@ -28,7 +28,7 @@ O foco multi-cena mostra planos de várias cenas juntos, em ordem de roteiro.
 
 ## Auto-criação ao ultrapassar
 
-Se você pressionar `→` passando da última cena do projeto, o CineLog cria uma nova cena vazia no final e a foca. O mesmo com `←` antes da primeira cena. Útil para trabalho estilo outline; surpreendente se você passou da tecla por engano. Para limpar, saia do Foco e apague a cena vazia da Linear se não quiser.
+Se você pressionar `→` passando da última cena do projeto, o CineLog cria uma nova cena (com um plano inicial) no final e a foca. Útil para trabalho estilo outline; surpreendente se você passou da tecla por engano. Pressionar `←` antes da primeira cena não faz nada. Para limpar, saia do Foco e apague a nova cena da Linear se não a quiser.
 
 ## A barra lateral do roteiro
 
@@ -42,6 +42,6 @@ O mesmo atalho significa algo diferente no Modo Foco: ali abre o seletor de cena
 
 ## Se isso não estiver funcionando
 
-*"Pressionei `→` e ganhei uma cena vazia que eu não queria."* Você passou da última cena. Saia do Foco (`Cmd + F`) e apague a cena vazia da Linear.
+*"Pressionei `→` e ganhei uma nova cena que eu não queria."* Você passou da última cena. Saia do Foco (`Cmd + F`) e apague a nova cena da Linear.
 
 *"`Shift + S` está fazendo coisas diferentes em telas diferentes."* Está, por design. Na Linear alterna a barra lateral do roteiro; no Modo Foco abre o seletor de cena.

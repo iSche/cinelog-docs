@@ -1,6 +1,6 @@
 ---
 title: Escribir y formatear guiones
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-22
 description: "Importa guiones FDX, Fountain, PDF, TXT y RTF al editor de CineLog. Formatea con sintaxis Fountain, sigue las analíticas, exporta a PDF y rellena tu lista de planos."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ Si ya empezaste a escribir tu guion en otro software, puedes importarlo fácilme
 
 <Steps>
 1. **Abre el Editor de Guion:** Navega al Editor de Guion usando la barra lateral izquierda.
-2. **Importar documento:** Haz clic en el botón **Importar** en la barra de menú superior (o pulsa <kbd>Cmd</kbd> + <kbd>I</kbd>) y selecciona tu archivo de guion.
+2. **Importar documento:** Haz clic en el botón **Importar** en la barra de menú superior y selecciona tu archivo de guion.
 3. **Análisis automático:** El analizador universal de CineLog procesará automáticamente el archivo, extraerá las escenas y convertirá el formato.
 </Steps>
 
@@ -65,7 +65,10 @@ Si la detección inteligente acierta mal, o si quieres forzar un estilo de forma
 - <kbd>Cmd</kbd> + <kbd>2</kbd>: Personaje
 - <kbd>Cmd</kbd> + <kbd>3</kbd>: Diálogo
 - <kbd>Cmd</kbd> + <kbd>4</kbd>: Acción
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Transición
+- <kbd>Cmd</kbd> + <kbd>5</kbd>: Acotación
+- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transición
+- <kbd>Cmd</kbd> + <kbd>7</kbd>: Letra de canción
+- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centrado
 
 <Aside type="tip">
 **Guardado continuo:** No hay un botón "Guardar" en el Editor de Guion. Cada pulsación de tecla se guarda silenciosa y continuamente en tu dispositivo local y se sincroniza de forma segura con la nube en segundo plano.
@@ -80,7 +83,7 @@ Mientras escribes, CineLog calcula métricas profesionales en tiempo real, permi
 Busca el panel de analíticas para ver actualizaciones en vivo sobre:
 - **Estimación de páginas:** Fórmulas estándar de la industria para el cálculo de páginas con precisión profesional.
 - **Recuento de escenas y personajes:** Número total de escenas y personajes únicos con diálogo.
-- **Métricas de palabras:** Recuento total de palabras y tiempo estimado de lectura.
+- **Métricas de palabras:** Recuento total de palabras y recuento de caracteres.
 
 ---
 

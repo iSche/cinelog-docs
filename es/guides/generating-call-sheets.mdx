@@ -1,6 +1,6 @@
 ---
 title: Órdenes de rodaje
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Órdenes de rodaje diarias en CineLog: encabezado y hora de convocatoria, localizaciones, horario con cascada de tiempos, meteorología, secciones de personal, mensaje de equipo con texto enriquecido, envío y seguimiento de confirmaciones, exportación a PDF."
 ---
 
@@ -60,7 +60,7 @@ Una lista reordenable de localizaciones de rodaje nombradas para el día. Cada l
 
 Añade y edita a través de la superposición de localización. En escritorio, puedes mantener pulsada una fila de localización y arrastrarla para reordenar; en teléfono, toca dos veces una fila para abrir la superposición de edición.
 
-El **autocompletado de Google Places** está cableado en cada campo de dirección. Empieza a escribir y verás lugares sugeridos; al elegir uno se rellena la dirección y se almacenan las coordenadas para que la búsqueda meteorológica (abajo) tenga una localización con la que trabajar.
+El **autocompletado de Google Places** está cableado en el campo de dirección de la localización del set. Empieza a escribir y verás lugares sugeridos; al elegir uno se rellena la dirección y se almacenan las coordenadas para que la búsqueda meteorológica (abajo) tenga una localización con la que trabajar.
 
 Para ocultar toda la sección de localizaciones de la orden de rodaje (p. ej., cuando la localización aún no está fijada), usa el selector de visibilidad de sección en los ajustes de visualización.
 
@@ -80,7 +80,7 @@ Insertar un banner en mitad de una escena divide la escena circundante en el ban
 
 No introduces una hora de inicio para cada fila. El horario tiene un motor en cascada: lee la hora general de convocatoria, luego baja por la lista sumando la duración estimada de cada fila para calcular la hora de inicio de la siguiente.
 
-Si la hora de inicio explícita de una fila entra en conflicto con lo que habría producido la cascada (te has pasado de programación), la hora se resalta en **rojo**. Si hay un hueco entre filas (la cascada tiene holgura), se muestra en **amarillo**. En cualquier caso, la propia duración estimada de la fila es lo que controla la siguiente fila, no el hueco.
+Si la hora de inicio explícita de una fila cae antes de lo que el reloj acumulado la situaría (un solapamiento), la hora se resalta en **rojo**. Un resaltado **amarillo** señala una fila con una estimación de duración cero. La propia duración estimada de la fila es lo que controla la hora de inicio de la siguiente fila.
 
 ### Reordenar el horario
 
@@ -92,10 +92,9 @@ La sección de horario no se puede ocultar: siempre se muestra.
 
 Si la orden de rodaje tiene una localización con coordenadas, CineLog obtiene el clima del día automáticamente cuando abres la orden de rodaje por primera vez. La visualización muestra:
 
-- Temperatura actual y "sensación térmica"
-- Mínima diaria
+- Temperatura, con la máxima y la mínima del día
 - Amanecer y atardecer
-- Condiciones, humedad, velocidad del viento
+- Condiciones
 
 La unidad de temperatura sigue el ajuste de visualización (°F / °C). Para anular o introducir el clima manualmente (no se obtuvo la previsión, o quieres usar otra fuente), toca el bloque del clima y edita. La anulación se almacena en la orden de rodaje y se reutiliza en cada recarga.
 
@@ -125,7 +124,7 @@ Cuadrícula o lista expandible de figurantes. Sin avatares en esta sección (int
 
 ### Notas por persona
 
-Cada fila de persona en Talento, Equipo o Clientes puede llevar notas privadas. Estas notas son visibles para el productor en la interfaz de la orden de rodaje, pero en el PDF enviado por correo aparecen **solo en la copia de esa persona**, no en la de nadie más. Útil para instrucciones individuales ("aparca en la entrada lateral", "prueba de vestuario antes de la convocatoria").
+Cada fila de persona en Talento, Equipo o Clientes puede llevar notas. Se muestran en la orden de rodaje y en el PDF exportado y enviado por correo, visibles para todos los que reciben esa orden, así que úsalas para instrucciones compartidas ("aparca en la entrada lateral", "prueba de vestuario antes de la convocatoria"), no para mensajes privados.
 
 ### Hora de convocatoria por persona
 
@@ -177,7 +176,7 @@ Cada destinatario recibe:
 
 - Un PDF personalizado con su hora de convocatoria resaltada.
 - El mensaje del equipo (texto enriquecido) más cualquier mensaje opcional que añadiste.
-- Sus notas personales, si las hay (añadidas al cuerpo del correo, no en el PDF visible para otros).
+- Cualquier nota por persona de la orden, que se imprime en el propio PDF de la orden de rodaje (forman parte de la orden que recibe todo el que está en esa hora de convocatoria).
 - Un **enlace de confirmación** — una URL única protegida por token en `links.cinelog.com/confirm-call-sheet/<token>`. Al hacer clic en el enlace se abre un portal con la marca de CineLog donde tocan "Confirmar" para acusar recibo.
 
 ### Página de Envíos
@@ -241,7 +240,7 @@ La edición de órdenes de rodaje funciona sin conexión: los cambios se guardan
 
 *"¿Cómo cambio la foto de perfil de un miembro del equipo?"* No puedes: las fotos de perfil están controladas por cada usuario desde su propia pantalla de Cuenta. Como propietario del proyecto no puedes subir una en su nombre. Las personas que aún no se han unido a CineLog muestran el avatar de iniciales; una vez que inicien sesión y suban una, su foto aparece en cada orden de rodaje en la que estén.
 
-*"La hora del horario está resaltada en rojo / amarillo."* El rojo significa que te has pasado de programación: la hora de inicio explícita en esa fila contradice lo que calculó la cascada de tiempos. El amarillo significa que hay un hueco entre filas que la cascada dejó sin rellenar. Ajusta las duraciones o la hora de inicio para reconciliar.
+*"La hora del horario está resaltada en rojo / amarillo."* El rojo significa que la hora de inicio de la fila cae antes de que termine la fila anterior (un solapamiento). El amarillo señala una fila con una estimación de duración cero. Ajusta las duraciones o la hora de inicio para reconciliar.
 
 *"El clima no se cargó."* La obtención automática necesita una localización con coordenadas. Establece una localización mediante el autocompletado de Google Places (para que se capturen lat/lng) y luego recarga la orden de rodaje. También puedes introducir el clima manualmente.
 

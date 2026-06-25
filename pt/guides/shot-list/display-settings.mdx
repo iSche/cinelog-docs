@@ -1,6 +1,6 @@
 ---
 title: Configurações de Exibição
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Visibilidade e ordem de colunas, colunas personalizadas, formato de numeração de planos, altura de linha — tudo que controla como a decupagem aparece na tela."
 ---
 
@@ -10,17 +10,17 @@ As Configurações de Exibição controlam como a decupagem aparece — quais co
 
 ## Visibilidade de colunas
 
-Alterne qualquer coluna ligando ou desligando pela sobreposição de Configurações de Exibição. Para alterações rápidas sem abrir as Configurações de Exibição, as teclas numéricas `1` a `9` alternam as primeiras nove colunas diretamente na visualização da lista.
+Alterne qualquer coluna ligando ou desligando pela sobreposição de Configurações de Exibição. Para alterações rápidas sem abrir as Configurações de Exibição, as teclas numéricas `1` a `9` alternam as primeiras nove colunas após as colunas fixas Status, Plano e Dia, diretamente na visualização da lista.
 
 ## Reordenando colunas
 
-Arraste uma linha de coluna dentro da sobreposição de Configurações de Exibição para reordenar. A reordenação não acontece arrastando o cabeçalho de coluna na lista principal — essa é uma expectativa frequente que não se aplica aqui.
+Reordene as colunas arrastando o cabeçalho de uma coluna para a esquerda ou direita na decupagem principal. As três colunas fixas do sistema — Status, Plano e Dia — permanecem travadas nas posições mais à esquerda e não podem ser movidas.
 
-Colunas do sistema — Plano, Cena, Dia — estão travadas nas posições mais à esquerda e recusam soltas que as deslocariam.
+A sobreposição de Configurações de Exibição controla a visibilidade de colunas e as colunas personalizadas, não a ordem das colunas.
 
 ## Colunas personalizadas
 
-Adicione suas próprias colunas pelas Configurações de Exibição. Especifique um nome e um tipo: texto, dropdown, checkbox ou qualquer outro tipo de campo suportado. Uma vez adicionada, a coluna aparece automaticamente na lista do desktop e na visualização expandida do mobile — sem setup por plataforma. Colunas personalizadas participam da exportação em PDF.
+Adicione suas próprias colunas pelas Configurações de Exibição dando um nome a cada uma. As colunas personalizadas armazenam texto livre. Uma vez adicionada, a coluna aparece automaticamente na lista do desktop e na visualização expandida do mobile — sem setup por plataforma. Colunas personalizadas participam da exportação em PDF.
 
 ## Formato de numeração de planos
 
@@ -30,7 +30,7 @@ Três formatos são suportados:
 - **Decimal** — `1.1`, `2.3`.
 - **Sequencial** — `1`, `2`, `47`. Contínuo ao longo do projeto.
 
-Alterar o formato renumera cada plano. Se o roteiro já foi lined sob um formato e você troca, vai ter que re-line — não há desfazer. Confirme com qualquer outra pessoa trabalhando no projeto antes de alterar.
+O formato é uma preferência de exibição — ele muda como os números são mostrados sem alterar os planos subjacentes, então você pode trocar entre os formatos livremente e voltar a qualquer momento.
 
 ## Altura de linha e modo de exibição
 
@@ -42,8 +42,8 @@ Todas as Configurações de Exibição são em nível de projeto e se propagam v
 
 ## Se isso não estiver funcionando
 
-*"Tentei arrastar um cabeçalho de coluna na lista principal para reordenar, mas nada acontece."* A reordenação acontece dentro das Configurações de Exibição (`Shift + D`), não no cabeçalho da lista principal.
+*"Como reordeno as colunas?"* Arraste o cabeçalho de uma coluna na lista principal. As colunas fixas Status, Plano e Dia não podem ser movidas.
 
-*"Mudei o formato de número de plano e agora meus números antigos sumiram."* A alteração é destrutiva e não tem desfazer. Entre em contato com o suporte — o histórico do lado do servidor às vezes pode ajudar.
+*"Mudei o formato de número de plano e os números ficaram diferentes."* Isso é esperado — é uma configuração apenas de exibição. Volte ao formato anterior e a numeração original reaparece.
 
 *"Minha coluna personalizada está no desktop mas não no mobile."* Ela deveria aparecer automaticamente. Tente forçar o fechamento e reabrir o app mobile. Se o indicador de sincronização mostra alterações pendentes, a nova coluna ainda não se propagou.

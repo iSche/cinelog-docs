@@ -1,6 +1,6 @@
 ---
 title: Gestionar Elenco y Equipo
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Añade roles y departamentos, gestiona contactos del espacio de trabajo y controla el acceso con selectores de intención. Los datos del equipo fluyen directamente a las órdenes de rodaje de CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -31,9 +31,9 @@ Puedes añadir fácilmente nuevos miembros directamente a tu proyecto. CineLog u
 
 ## 3. Control de acceso e invitaciones
 
-Asignar un rol a un contacto *no* lo invita automáticamente a iniciar sesión en CineLog. Simplemente lo añade a tu plantilla interna del proyecto.
+Asignar un contacto a un rol del proyecto establece automáticamente su acceso como **pendiente** y le envía un correo de invitación. Se convierte en colaborador activo en cuanto acepta, o al instante si ya colabora en otro proyecto de tu espacio de trabajo.
 
-Si quieres que un miembro del equipo realmente inicie sesión en la app y colabore, debes concederle acceso formalmente.
+Para mantener a alguien únicamente como contacto — en tu plantilla y órdenes de rodaje, pero sin acceso a la app — deja su puesto de rol vacante, o desactiva su acceso con el Selector de Intención de más abajo.
 
 ### El "Selector de intención"
 
@@ -41,8 +41,8 @@ Haz clic en el rol de cualquier persona en la lista de Elenco y Equipo del Proye
 
 En la parte superior de este formulario está el **Selector de Intención de Acceso**.
 
-- **OFF (No permitido):** La persona está en tu plantilla, pero no puede iniciar sesión en el proyecto. Este es el estado por defecto.
-- **ON (Concedido/Pendiente):** El sistema verificará su correo electrónico. Si tienen una cuenta de CineLog, serán añadidos al instante al proyecto. Si no, CineLog les enviará automáticamente un correo de invitación para unirse.
+- **ON (Concedido/Pendiente):** El estado por defecto en el momento en que asignas un contacto a un rol. CineLog le envía un correo de invitación y se une en cuanto acepta; si ya colabora en otro proyecto de tu espacio de trabajo, se le admite al instante.
+- **OFF (No permitido):** La persona permanece en tu plantilla y órdenes de rodaje, pero no puede iniciar sesión en el proyecto. Desactívalo para los contactos que no deban tener acceso a la app.
 
 <Aside type="note">
 **Gestión del equipo:** Cualquiera que tenga permiso de **Edición** para el módulo de Elenco y Equipo puede alternar las intenciones de acceso y modificar la ACL para otros miembros del equipo. ¡Esto te permite delegar las tareas de incorporación y seguridad a tus Gerentes de Producción o Coordinadores!

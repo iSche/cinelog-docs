@@ -1,6 +1,6 @@
 ---
 title: Managing Cast & Crew
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Add roles and departments, manage workspace contacts, and control access with intent toggles. Crew data flows directly into CineLog call sheets."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -31,9 +31,9 @@ You can assign multiple roles to a single person if they are wearing many hats o
 
 ## 3. Access Control & Invitations
 
-Assigning a role to a contact does *not* automatically invite them to log into CineLog. It simply adds them to your internal project roster. 
+Assigning a contact to a project role automatically sets their access to **pending** and sends them an invitation email. They become an active collaborator once they accept, or instantly if they already collaborate on another project in your workspace.
 
-If you want a team member to actually log into the app and collaborate, you must formally grant them access.
+To keep someone as a contact only — on your roster and call sheets but without app access — leave their role slot vacant, or turn their access off with the Intent Toggle below.
 
 ### The "Intent Toggle"
 
@@ -41,8 +41,8 @@ Click on any person's role in the Project Cast & Crew list to open their **Role 
 
 At the top of this form is the **Access Intent Toggle**.
 
-- **OFF (Disallowed):** The person is on your roster, but they cannot log into the project. This is the default state.
-- **ON (Granted/Pending):** The system will verify their email. If they have a CineLog account, they will be instantly added to the project. If they don't, CineLog will automatically send them an invitation email to join.
+- **ON (Granted/Pending):** The default the moment you assign a contact to a role. CineLog sends them an invitation email and they join once they accept; if they already collaborate on another project in your workspace, they are admitted instantly.
+- **OFF (Disallowed):** The person stays on your roster and call sheets but cannot log into the project. Turn it off for contacts who should not have app access.
 
 <Aside type="note">
 **Team Management:** Anyone who has **Edit** permission for the Cast & Crew module can toggle access intents and modify the ACL for other team members. This allows you to delegate onboarding and security tasks to your Production Managers or Coordinators!

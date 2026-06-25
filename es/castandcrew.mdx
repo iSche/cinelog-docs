@@ -1,6 +1,6 @@
 ---
 title: "Elenco y Equipo"
-lastUpdated: 2026-04-22
+lastUpdated: 2026-06-25
 description: "Gestiona tu equipo de producción cinematográfica con roles, departamentos, contactos del espacio de trabajo y control de acceso basado en roles. Se integra directamente con las órdenes de rodaje."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -40,7 +40,7 @@ Gestionar un equipo en crecimiento es caótico. Al establecer una fuente única 
 
 **Planificando tu equipo (Puestos Vacantes)**
 
-No necesitas un solo contacto en tu directorio para empezar a planificar al equipo. Añade roles estándar de la industria (p. ej. "Key Grip") para crear un **Puesto Vacante**. Una vez que contrates a alguien, simplemente asigna un contacto existente o recién invitado al puesto. Todos los valores predeterminados departamentales se aplicarán al contacto de forma inteligente.
+No necesitas un solo contacto en tu directorio para empezar a planificar al equipo. Añade roles estándar de la industria (p. ej. "Key Grip") para crear un **Puesto Vacante**. Una vez que contrates a alguien, simplemente asigna un contacto existente o recién invitado al puesto. El rol que asignaste queda entonces recordado en ese contacto para futuros proyectos.
 
 </li>
 <li>
@@ -54,7 +54,7 @@ No necesitas un solo contacto en tu directorio para empezar a planificar al equi
 
 **Acceso granular al proyecto e invitaciones**
 
-Añadir a alguien a tu Elenco y Equipo no le da automáticamente permisos completos de lectura. Usa el **Selector de Intención** para enviar de forma segura una invitación por correo que conecte su cuenta de CineLog con tu proyecto. Al ajustar permisos, CineLog resuelve inteligentemente las anulaciones individuales frente a los valores predeterminados departamentales, para que puedas ampliar con confianza el alcance de una persona.
+Asignar un contacto a un rol del proyecto le envía automáticamente una invitación por correo, estableciendo su acceso como pendiente hasta que la acepte. Solo obtiene los permisos que le concede su rol, y CineLog resuelve inteligentemente las anulaciones individuales frente a los valores predeterminados departamentales, para que puedas ajustar con confianza el alcance de una persona. Usa el **Selector de Intención** para desactivar el acceso de los contactos que deban permanecer únicamente en las órdenes de rodaje.
 
 </li>
 
@@ -68,7 +68,7 @@ Los Contactos que añades y los Roles que organizas actúan como el sistema nerv
 </Aside>
 
 <Aside type="tip" title="Beneficios del enrutamiento de datos">
--   **Automatización de Órdenes de Rodaje**: No hay tecleo manual en las Órdenes de Rodaje. Si asignas a "Jane Doe" al puesto de Director en tu lista de Elenco y Equipo, aparece automáticamente en la parte superior de cada PDF de Orden de Rodaje.
+-   **Automatización de Órdenes de Rodaje**: Las órdenes de rodaje se nutren de tu Elenco y Equipo y de las personas vinculadas a los planos programados de cada día, y arrastran a tu equipo recurrente de los días anteriores, así que no vuelves a teclear la misma plantilla cada día.
 -   **Alcance unificado de cuenta**: Tu directorio de Contactos abarca todo el espacio de trabajo. Editar el correo o teléfono de un contacto se aplica globalmente en todos los proyectos donde lo hayas asignado, eliminando duplicaciones frustrantes.
 -   **Selección por lotes**: Usa las acciones de selección para ejecutar ediciones masivas rápidas y simultáneas en toda tu plantilla en lugar de repetir cambios simples una y otra vez.
 </Aside>

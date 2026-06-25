@@ -1,6 +1,6 @@
 ---
 title: Shot list essentials
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Build a shot list from scratch — three ways to add shots, how numbering works, how to reorder, and what gets deleted when you remove a shot or a scene."
 ---
 
@@ -28,7 +28,7 @@ Shots are numbered automatically. Three formats are available in [Display Settin
 
 Numbers and letters update on reorder. If you move `1C` to the top of its scene, the list briefly reads C, A, B before recomputing to A, B, C. Don't write down a shot's letter and expect it to be stable across moves.
 
-Changing format renumbers the entire project. On a lined project that's destructive — confirm before doing it.
+Changing format only changes how numbers are displayed — it doesn't alter the underlying shots, and you can switch back anytime.
 
 ## Reordering shots
 
@@ -36,7 +36,7 @@ Drag any shot to move it. The gesture is the universal drag from [The basics](/g
 
 - **Within a scene** — drag up or down. Letters recompact.
 - **Across scenes** — drag past a scene boundary. The shot's scene number changes to match the destination; letters recompact in both source and destination scenes.
-- **Into the empty space between two scenes** — CineLog creates a new scene there.
+- **Into the gap between two scenes** — the shot joins the nearer existing scene. This does not create a new scene; add scenes with **+ Add Shot** in a new block or via Populate from Script.
 
 Production view adds a scene-scope rule for multi-selections; see [Linear vs Production](/guides/shot-list/linear-vs-production).
 

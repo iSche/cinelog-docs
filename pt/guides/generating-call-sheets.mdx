@@ -1,6 +1,6 @@
 ---
 title: Ordens do Dia
-lastUpdated: 2026-05-23
+lastUpdated: 2026-06-22
 description: "Ordens do dia diárias no CineLog — cabeçalho e hora de apresentação, locações, cronograma com cascata de tempos, clima, seções de pessoal, mensagem rica para a equipe, envio e rastreamento de confirmações, exportação em PDF."
 ---
 
@@ -60,7 +60,7 @@ Uma lista reordenável de locações de filmagem nomeadas para o dia. Cada loca�
 
 Adicione e edite via a sobreposição de locação. No desktop, você pode pressionar e segurar uma linha de locação e arrastar para reordenar; no celular, dê um toque duplo em uma linha para abrir a sobreposição de edição.
 
-O **autocompletar do Google Places** está integrado em todos os campos de endereço. Comece a digitar e você verá lugares sugeridos; escolher um popula o endereço e armazena as coordenadas, para que a busca de clima (abaixo) tenha uma locação com a qual trabalhar.
+O **autocompletar do Google Places** está integrado no campo de endereço da locação (set). Comece a digitar e você verá lugares sugeridos; escolher um popula o endereço e armazena as coordenadas, para que a busca de clima (abaixo) tenha uma locação com a qual trabalhar.
 
 Para ocultar toda a seção de locações da ordem do dia (ex.: quando a locação ainda não está fechada), use o toggle de visibilidade da seção nas configurações de exibição.
 
@@ -80,7 +80,7 @@ Inserir um banner no meio de uma cena divide a cena envolvente no banner — vej
 
 Você não insere uma hora de início para cada linha. O cronograma tem um motor de tempos em cascata: ele lê a hora de apresentação geral, depois percorre a lista somando a duração estimada de cada linha para calcular a hora de início da próxima.
 
-Se a hora de início explícita de uma linha entra em conflito com o que a cascata teria produzido (você passou do tempo), o horário é destacado em **vermelho**. Se houver uma lacuna entre linhas (a cascata tem folga), aparece em **amarelo**. De qualquer forma, é a duração estimada da própria linha que controla a próxima, não a lacuna.
+Se a hora de início explícita de uma linha cai antes do que o relógio acumulado a colocaria (uma sobreposição), o horário é destacado em **vermelho**. Um destaque **amarelo** sinaliza uma linha com estimativa de duração zero. É a duração estimada da própria linha que controla a hora de início da próxima.
 
 ### Reordenando o cronograma
 
@@ -92,10 +92,9 @@ A seção de cronograma não pode ser ocultada — é sempre exibida.
 
 Se a ordem do dia tem uma locação com coordenadas, o CineLog busca o clima do dia automaticamente quando você abre a ordem do dia pela primeira vez. A exibição mostra:
 
-- Temperatura atual e "sensação térmica"
-- Mínima diária
+- Temperatura, com a máxima e a mínima do dia
 - Nascer e pôr do sol
-- Condições, umidade, velocidade do vento
+- Condições
 
 A unidade de temperatura segue a configuração de exibição (°F / °C). Para sobrescrever ou inserir o clima manualmente (a previsão não foi buscada, ou você quer usar uma fonte diferente), toque no bloco de clima e edite. A substituição é armazenada na ordem do dia e reutilizada a cada recarga.
 
@@ -125,7 +124,7 @@ Grade ou lista expansível de figurantes. Sem avatares nesta seção (intenciona
 
 ### Notas por pessoa
 
-Toda linha de pessoa em Elenco, Equipe ou Clientes pode carregar notas privadas. Essas notas são visíveis ao produtor na UI da ordem do dia, mas no PDF enviado por e-mail elas aparecem **apenas na cópia daquela pessoa** — não na de mais ninguém. Útil para instruções individuais ("estacione na entrada lateral", "prova de figurino antes da apresentação").
+Toda linha de pessoa em Elenco, Equipe ou Clientes pode carregar notas. Elas aparecem na ordem do dia e no PDF exportado e enviado por e-mail, visíveis a todos que recebem aquela ordem do dia — então use-as para instruções compartilhadas ("estacione na entrada lateral", "prova de figurino antes da apresentação"), não para mensagens privadas.
 
 ### Hora de apresentação por pessoa
 
@@ -177,7 +176,7 @@ Cada destinatário recebe:
 
 - Um PDF personalizado com sua hora de apresentação destacada.
 - A mensagem para a equipe (rich text) mais qualquer mensagem opcional que você adicionou.
-- Suas notas pessoais, se houver (anexadas ao corpo do e-mail, não no PDF visível aos outros).
+- Quaisquer notas por pessoa na ordem do dia, que são impressas no próprio PDF da ordem do dia (fazem parte da ordem do dia que todos naquela hora de apresentação recebem).
 - Um **link de confirmação** — uma URL única protegida por token em `links.cinelog.com/confirm-call-sheet/<token>`. Clicar no link abre um portal com a marca CineLog onde a pessoa toca em "Confirmar" para reconhecer o recebimento.
 
 ### Página de Envios
@@ -241,7 +240,7 @@ Editar ordens do dia funciona offline — as alterações são salvas no banco l
 
 *"Como mudo a foto de perfil de um membro da equipe?"* Você não pode — as fotos de perfil são controladas por cada usuário na própria tela de Conta. Como proprietário do projeto você não pode subir uma em nome dele. Pessoas que ainda não entraram no CineLog aparecem com o avatar de iniciais; quando entrarem e subirem, a foto delas aparece em todas as ordens do dia em que estão.
 
-*"A hora do cronograma está destacada em vermelho / amarelo."* Vermelho significa que você passou do tempo — a hora de início explícita daquela linha contradiz o que a cascata de tempos calculou. Amarelo significa que há uma lacuna entre linhas que a cascata deixou sem preenchimento. Ajuste as durações ou a hora de início para reconciliar.
+*"A hora do cronograma está destacada em vermelho / amarelo."* Vermelho significa que a hora de início daquela linha cai antes de a linha anterior terminar (uma sobreposição). Amarelo sinaliza uma linha com estimativa de duração zero. Ajuste as durações ou a hora de início para reconciliar.
 
 *"O clima não carregou."* O auto-fetch precisa de uma locação com coordenadas. Defina uma locação via autocompletar do Google Places (para que o lat/lng seja capturado), depois recarregue a ordem do dia. Você também pode inserir o clima manualmente.
 
