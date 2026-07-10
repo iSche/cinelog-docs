@@ -113,19 +113,3 @@ Sharing is gated by the same permission that edits the script. Creating, updatin
 Editing rows and writing comments work fully offline — changes save locally and sync when you reconnect, like everything else in CineLog. Link management does not: creating, updating, revoking, and sending the link all require a connection, and the review website itself is online-only for your client.
 
 One subtlety: a comment you write offline is tagged with whichever round is **current when it syncs**. If someone on your team sends a new round while you're offline, your comment lands in that new round.
-
-## If this isn't working
-
-*"My client says the access code doesn't work."* It's probably expired — codes last 24 hours from first use. Re-send the link from the Share dialog; a fresh code is generated automatically and included in the email.
-
-*"My client can't comment or approve."* Two likely causes: the link is **View only** (check the access level in the Share dialog — changing it updates the same URL), or the document has already been approved, which locks the link read-only until the next **Send for review**.
-
-*"A row I approved went back to Rewrite."* Expected — any new comment or reply flips the row to Rewrite, and so does editing an approved row's content. Both are treated as "this row changed or needs attention after sign-off."
-
-*"I hit a limit sending for review."* The free plan includes 3 Send-for-review rounds per project. Re-emailing an existing round's link doesn't count against it; starting new rounds does. Upgrade for unlimited rounds.
-
-*"I didn't get the feedback email."* It fires once per round — if a teammate already received it for this round, it won't send again until the next **Send for review**. Also check that your role grants AV Script access; the email only goes to the project owner and members whose role includes it.
-
-*"The client says rows are missing."* The AV Script is the **Linear** Shot List. Shots that exist only on grid boards aren't AV rows and never appear on the review site.
-
-*"We sent a new round and the client's comments disappeared."* The review site shows only the current round's comments. Nothing is lost — your team sees the full history across all rounds in the app.

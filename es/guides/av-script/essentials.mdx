@@ -86,17 +86,3 @@ Los estados y los comentarios quedan deliberadamente **fuera** del PDF. Es una l
 ## Comportamiento sin conexión
 
 La edición funciona completamente sin conexión — filas, duraciones, audio, GFX, estados y comentarios se guardan localmente y se sincronizan al reconectar, como todo lo demás en CineLog. Lo que necesita conexión: crear, enviar o revocar enlaces de revisión (son operaciones de servidor), y el propio sitio web de revisión.
-
-## Si esto no funciona
-
-*"Un plano de mi proyecto no aparece como fila."* El Guion AV muestra solo la Lista de Planos Lineal. Si el plano vive solo en un tablero de cuadrícula, no aparecerá — y si la fila desapareció, comprueba si alguien eliminó el plano, ya que eliminar la fila y eliminar el plano son la misma cosa.
-
-*"Cambié INT/EXT en una fila y otras filas cambiaron también."* Esperado — INT/EXT es un campo a nivel de escena, así que todos los planos de esa escena lo siguen.
-
-*"Reescribí una descripción en el Guion AV y la Lista de Planos cambió."* También esperado — la descripción es compartida: editarla en cualquiera de las dos herramientas actualiza ambas.
-
-*"Una fila pasó a Rewrite y nadie tocó el menú de estado."* Cualquier comentario o respuesta nuevos — del cliente en el sitio de revisión o de un compañero en la app — pasa esa fila a Rewrite, incluso si estaba en Approved. Editar el contenido de una fila aprobada (duración, audio, GFX o descripción) hace lo mismo. Ver [Revisión del cliente](/es/guides/av-script/client-review) para el ciclo de vida completo de los estados.
-
-*"El total no coincide con lo que espero."* La insignia es la suma de la duración de cada fila — las filas sin duración fijada no aportan nada. Busca filas que aún marquen `00:00`. El rojo solo significa que el total supera tu objetivo.
-
-*"Al PDF exportado le faltan los estados y los comentarios."* Por diseño — el PDF lleva solo Row, Audio, Visual y PreVis. Usa un enlace de revisión cuando importe el rastro del feedback.

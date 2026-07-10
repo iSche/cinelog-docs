@@ -86,17 +86,3 @@ Status e comentários deliberadamente **não** entram no PDF. É uma leitura lim
 ## Comportamento offline
 
 A edição funciona totalmente offline — linhas, durações, áudio, GFX, status e comentários salvam localmente e sincronizam quando você reconecta, como todo o resto no CineLog. O que precisa de conexão: criar, enviar ou revogar links de revisão (são operações de servidor) e o próprio site de revisão.
-
-## Se isso não estiver funcionando
-
-*"Um plano do meu projeto não está aparecendo como linha."* O Roteiro AV mostra apenas a Decupagem Linear. Se o plano vive apenas em um quadro de grade, ele não aparece — e se a linha sumiu, verifique se alguém apagou o plano, já que apagar uma linha e apagar um plano são a mesma coisa.
-
-*"Mudei INT/EXT em uma linha e outras linhas mudaram também."* Esperado — INT/EXT é um campo em nível de cena, então todos os planos daquela cena o acompanham.
-
-*"Reescrevi uma descrição no Roteiro AV e a Decupagem mudou."* Também esperado — a descrição é compartilhada: editá-la em qualquer uma das ferramentas atualiza as duas.
-
-*"Uma linha virou Rewrite e ninguém tocou no menu de status."* Qualquer comentário ou resposta novos — do cliente no site de revisão ou de um colega no app — viram aquela linha para Rewrite, mesmo que estivesse Approved. Editar o conteúdo de uma linha Approved (duração, áudio, GFX ou descrição) faz o mesmo. Veja [Aprovação do cliente](/pt/guides/av-script/client-review) para o ciclo de vida completo dos status.
-
-*"O total não bate com o que eu espero."* O badge é a soma da duração de todas as linhas — linhas sem duração definida não contribuem em nada. Procure linhas ainda marcando `00:00`. Vermelho só significa que o total excede a sua meta.
-
-*"O PDF exportado está sem os status e comentários."* De propósito — o PDF carrega apenas Row, Audio, Visual e PreVis. Use um link de revisão quando a trilha de feedback importar.

@@ -86,17 +86,3 @@ Stati e commenti deliberatamente **non** sono nel PDF. È una lettura pulita del
 ## Comportamento offline
 
 La modifica funziona completamente offline — righe, durate, audio, GFX, stati e commenti si salvano tutti localmente e si sincronizzano quando ti riconnetti, come tutto il resto in CineLog. Cosa richiede una connessione: creare, inviare o revocare i link di revisione (sono operazioni server), e il sito di revisione stesso.
-
-## Se non funziona
-
-*"Un'inquadratura del mio progetto non appare come riga."* Lo Script AV mostra solo la Lista delle Inquadrature Lineare. Se l'inquadratura vive solo su una board a griglia, non apparirà — e se la riga è svanita, controlla se qualcuno ha eliminato l'inquadratura, dato che eliminare la riga ed eliminare l'inquadratura sono la stessa cosa.
-
-*"Ho cambiato INT/EXT su una riga e sono cambiate anche altre righe."* È atteso — INT/EXT è un campo a livello di scena, quindi ogni inquadratura di quella scena lo segue.
-
-*"Ho riformulato una descrizione nello Script AV e la Lista delle Inquadrature è cambiata."* Atteso anche questo — la descrizione è condivisa: modificarla in uno dei due strumenti la aggiorna in entrambi.
-
-*"Una riga è passata a Rewrite e nessuno ha toccato il menu di stato."* Qualsiasi nuovo commento o risposta — dal cliente sul sito di revisione o da un membro del team nell'app — porta quella riga a Rewrite, anche se era Approved. Modificare il contenuto di una riga Approved (durata, audio, GFX o descrizione) fa lo stesso. Vedi [Revisione cliente](/it/guides/av-script/client-review) per il ciclo di vita completo degli stati.
-
-*"Il totale non corrisponde a quello che mi aspetto."* Il badge è la somma delle durate di tutte le righe — le righe senza durata impostata non contribuiscono nulla. Controlla se ci sono righe ancora a `00:00`. Il rosso significa solo che il totale supera il tuo target.
-
-*"Nel PDF esportato mancano gli stati e i commenti."* È voluto — il PDF contiene solo Row, Audio, Visual e PreVis. Usa un link di revisione quando conta la traccia del feedback.

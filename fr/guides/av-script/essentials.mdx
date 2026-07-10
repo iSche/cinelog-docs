@@ -86,17 +86,3 @@ Les statuts et les commentaires sont délibérément **absents** du PDF. C'est u
 ## Comportement hors ligne
 
 L'édition fonctionne entièrement hors ligne — lignes, durées, audio, GFX, statuts et commentaires sont tous sauvegardés localement et se synchronisent à la reconnexion, comme tout le reste dans CineLog. Ce qui nécessite une connexion : créer, envoyer ou révoquer les liens de validation (ce sont des opérations serveur), et le site de validation lui-même.
-
-## Si ça ne marche pas
-
-*« Un plan de mon projet n'apparaît pas comme ligne. »* Le Script AV montre uniquement le découpage technique linéaire. Si le plan ne vit que sur un tableau grille, il n'apparaîtra pas — et si la ligne a disparu, vérifie si quelqu'un a supprimé le plan, puisque supprimer une ligne et supprimer un plan sont une seule et même chose.
-
-*« J'ai changé INT/EXT sur une ligne et d'autres lignes ont changé aussi. »* Attendu — INT/EXT est un champ au niveau de la scène, donc chaque plan de cette scène le suit.
-
-*« J'ai reformulé une description dans le Script AV et le Découpage Technique a changé. »* Attendu aussi — la description est partagée : la modifier dans l'un ou l'autre outil met à jour les deux.
-
-*« Une ligne est passée en Rewrite et personne n'a touché au menu de statut. »* Tout nouveau commentaire ou réponse — du client sur le site de validation ou d'un coéquipier dans l'application — fait passer cette ligne en Rewrite, même si elle était Approved. Modifier le contenu d'une ligne Approved (durée, audio, GFX ou description) fait la même chose. Voir [Validation client](/fr/guides/av-script/client-review) pour le cycle de vie complet des statuts.
-
-*« Le total ne correspond pas à ce que j'attends. »* Le badge est la somme des durées de chaque ligne — les lignes sans durée définie ne comptent pour rien. Cherche les lignes encore à `00:00`. Le rouge signifie simplement que le total dépasse ta cible.
-
-*« Le PDF exporté n'a ni les statuts ni les commentaires. »* C'est voulu — le PDF ne porte que Row, Audio, Visual et PreVis. Utilise un lien de validation quand la trace des retours compte.

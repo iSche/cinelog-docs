@@ -86,17 +86,3 @@ Statuses and comments are deliberately **not** in the PDF. It's a clean read of 
 ## Offline behavior
 
 Editing works fully offline — rows, durations, audio, GFX, statuses, and comments all save locally and sync when you reconnect, like everything else in CineLog. What needs a connection: creating, sending, or revoking review links (they're server operations), and the review website itself.
-
-## If this isn't working
-
-*"A shot from my project isn't showing up as a row."* The AV Script shows the Linear Shot List only. If the shot lives only on a grid board, it won't appear — and if the row vanished, check whether someone deleted the shot, since row deletion and shot deletion are the same thing.
-
-*"I changed INT/EXT on one row and other rows changed too."* Expected — INT/EXT is a scene-level field, so every shot in that scene follows it.
-
-*"I reworded a description in the AV Script and the Shot List changed."* Also expected — the description is shared: editing it in either tool updates both.
-
-*"A row flipped to Rewrite and nobody touched the status menu."* Any new comment or reply — from the client on the review site or from a teammate in the app — flips that row to Rewrite, even if it was Approved. Editing an Approved row's content (duration, audio, GFX, or description) does the same. See [Client review](/guides/av-script/client-review) for the full status lifecycle.
-
-*"The total doesn't match what I expect."* The badge is the sum of every row's duration — rows with no duration set contribute nothing. Check for rows still reading `00:00`. Red just means the total exceeds your target.
-
-*"The exported PDF is missing the statuses and comments."* By design — the PDF carries Row, Audio, Visual, and PreVis only. Use a review link when the feedback trail matters.
