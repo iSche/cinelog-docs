@@ -5,7 +5,7 @@ description: "Write two-column Audio/Visual commercial scripts, time them to the
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-The CineLog AV Script is the classic two-column commercial and advertising script: Audio on the left, Visual on the right, one row per beat. Like the Storyboard, it is not a separate dataset — every row **is** a shot in your project's Linear Shot List, kept in sync in both directions. Each project has exactly one AV Script, and the whole tool is built around the client-review loop: write, time, send, collect per-row approvals, and iterate until final sign-off.
+The CineLog AV Script is the classic two-column commercial and advertising script: Audio on the left, Visual on the right, one row per beat. Add rows directly in the script, or plan shots in your Linear Shot List — the two stay in sync in both directions, so the script always matches your shot planning. Each project has exactly one AV Script, and the whole tool is built around the client-review loop: write, time, send, collect per-row approvals, and iterate until final sign-off.
 
 ## Core Capabilities
 
@@ -84,7 +84,7 @@ When the client hits **Approve entire document**, every row is approved at once 
 
 ## Integrated Data Ecosystem
 
-The AV Script rows and the Linear Shot List are the same data viewed two ways. Add a row in the AV Script and a shot appears in the Shot List; add a shot in the Linear [Shot List](/shotlist) and a row appears in the AV Script. Reordering, descriptions, and PreVis images flow both ways instantly — the same PreVis images also power your [Storyboards](/storyboards).
+The AV Script and the Linear Shot List stay in sync in both directions. Add a row in the AV Script and a shot appears in the Shot List; add a shot in the Linear [Shot List](/shotlist) and a row appears in the AV Script. Reordering, descriptions, and PreVis images flow both ways instantly — the same PreVis images also power your [Storyboards](/storyboards).
 
 <Aside type="tip">
 Deleting an AV Script row deletes the shot from the Shot List too — the confirmation dialog reminds you before you commit.

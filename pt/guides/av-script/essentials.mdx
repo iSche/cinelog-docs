@@ -10,9 +10,9 @@ Este guia assume [O básico](/pt/guides/introduction). O vocabulário de clicar-
 
 ## De onde vêm as linhas
 
-Você não cria linhas AV separadamente — cada linha **é** um plano da Decupagem Linear do projeto, exibida em ordem linear. Cabeçalhos de cena não são renderizados como linhas; a tabela é uma sequência corrida de planos. Planos que existem apenas em um quadro de grade nunca aparecem como linhas AV — o Roteiro AV lê exclusivamente a lista Linear (veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production) para a distinção).
+Crie linhas diretamente no Roteiro AV com **Add row**, ou monte os planos na Decupagem Linear — de qualquer jeito você termina com as mesmas linhas: o Roteiro AV e a Decupagem Linear ficam em sincronia, na mesma ordem. Cabeçalhos de cena não são renderizados como linhas; a tabela é uma sequência corrida de planos. Planos que existem apenas em um quadro de grade não aparecem no Roteiro AV — ele segue a lista Linear (veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production) para a distinção).
 
-Como as linhas são os planos, as edições se propagam nas duas direções:
+Como as duas ferramentas ficam em sincronia, as edições se propagam nas duas direções:
 
 - **Add row** em uma tabela vazia cria um primeiro plano diretamente na cena 1. Em uma tabela com linhas, abre o diálogo **Add New Shot** (adicionar novo plano) da Decupagem para você escolher a cena.
 - **Arraste uma linha para reordenar** — a nova ordem persiste como a ordem linear da Decupagem.
@@ -93,7 +93,7 @@ A edição funciona totalmente offline — linhas, durações, áudio, GFX, stat
 
 *"Mudei INT/EXT em uma linha e outras linhas mudaram também."* Esperado — INT/EXT é um campo em nível de cena, então todos os planos daquela cena o acompanham.
 
-*"Reescrevi uma descrição no Roteiro AV e a Decupagem mudou."* Também esperado — é o mesmo campo. O Roteiro AV e a Decupagem são duas visualizações dos mesmos planos.
+*"Reescrevi uma descrição no Roteiro AV e a Decupagem mudou."* Também esperado — a descrição é compartilhada: editá-la em qualquer uma das ferramentas atualiza as duas.
 
 *"Uma linha virou Rewrite e ninguém tocou no menu de status."* Qualquer comentário ou resposta novos — do cliente no site de revisão ou de um colega no app — viram aquela linha para Rewrite, mesmo que estivesse Approved. Editar o conteúdo de uma linha Approved (duração, áudio, GFX ou descrição) faz o mesmo. Veja [Aprovação do cliente](/pt/guides/av-script/client-review) para o ciclo de vida completo dos status.
 

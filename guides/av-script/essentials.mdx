@@ -10,9 +10,9 @@ This guide assumes [The basics](/guides/introduction). The click-tap-drag vocabu
 
 ## Where rows come from
 
-You don't create AV rows separately — every row **is** a shot in the project's Linear Shot List, shown in linear order. Scene headers don't render as rows; the table is a flat run of shots. Shots that exist only on a grid board never appear as AV rows — the AV Script reads the Linear list exclusively (see [Linear vs Production](/guides/shot-list/linear-vs-production) for the distinction).
+Create rows right in the AV Script with **Add row**, or plan shots in the Linear Shot List — either way you end up with the same rows: the AV Script and the Linear Shot List stay in sync, in the same order. Scene headers don't render as rows; the table is a flat run of shots. Shots that exist only on a grid board don't appear in the AV Script — it follows the Linear list (see [Linear vs Production](/guides/shot-list/linear-vs-production) for the distinction).
 
-Because the rows are the shots, edits write through in both directions:
+Because the two stay in sync, edits write through in both directions:
 
 - **Add row** on an empty table creates a first shot in scene 1 directly. On a table with rows, it opens the Shot List's Add New Shot dialog so you pick the scene.
 - **Drag a row to reorder** — the new order persists as the Shot List's linear order.
@@ -93,7 +93,7 @@ Editing works fully offline — rows, durations, audio, GFX, statuses, and comme
 
 *"I changed INT/EXT on one row and other rows changed too."* Expected — INT/EXT is a scene-level field, so every shot in that scene follows it.
 
-*"I reworded a description in the AV Script and the Shot List changed."* Also expected — it's the same field. The AV Script and the Shot List are two views of the same shots.
+*"I reworded a description in the AV Script and the Shot List changed."* Also expected — the description is shared: editing it in either tool updates both.
 
 *"A row flipped to Rewrite and nobody touched the status menu."* Any new comment or reply — from the client on the review site or from a teammate in the app — flips that row to Rewrite, even if it was Approved. Editing an Approved row's content (duration, audio, GFX, or description) does the same. See [Client review](/guides/av-script/client-review) for the full status lifecycle.
 

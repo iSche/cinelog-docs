@@ -5,7 +5,7 @@ description: "Écris des scripts publicitaires Audio/Visuel à deux colonnes, ch
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Le Script AV de CineLog est le script classique de la publicité et de la communication à deux colonnes : l'Audio à gauche, le Visuel à droite, une ligne par beat. Comme le Storyboard, ce n'est pas un jeu de données séparé — chaque ligne **est** un plan du découpage technique linéaire de ton projet, synchronisé dans les deux sens. Chaque projet a exactement un Script AV, et tout l'outil est construit autour de la boucle de validation client : écrire, chronométrer, envoyer, recueillir les approbations ligne par ligne et itérer jusqu'à la validation finale.
+Le Script AV de CineLog est le script classique de la publicité et de la communication à deux colonnes : l'Audio à gauche, le Visuel à droite, une ligne par beat. Ajoute des lignes directement dans le script, ou planifie tes plans dans le découpage technique linéaire — les deux restent synchronisés dans les deux sens, donc le script correspond toujours à ta planification des plans. Chaque projet a exactement un Script AV, et tout l'outil est construit autour de la boucle de validation client : écrire, chronométrer, envoyer, recueillir les approbations ligne par ligne et itérer jusqu'à la validation finale.
 
 ## Fonctionnalités principales
 
@@ -84,7 +84,7 @@ Quand le client appuie sur **Approve entire document**, toutes les lignes sont a
 
 ## Écosystème de données intégré
 
-Les lignes du Script AV et le découpage technique linéaire sont les mêmes données vues de deux façons. Ajoute une ligne dans le Script AV et un plan apparaît dans le Découpage Technique ; ajoute un plan dans le [Découpage Technique](/fr/shotlist) linéaire et une ligne apparaît dans le Script AV. La réorganisation, les descriptions et les images PreVis circulent instantanément dans les deux sens — les mêmes images PreVis alimentent aussi tes [Storyboards](/fr/storyboards).
+Le Script AV et le découpage technique linéaire restent synchronisés dans les deux sens. Ajoute une ligne dans le Script AV et un plan apparaît dans le Découpage Technique ; ajoute un plan dans le [Découpage Technique](/fr/shotlist) linéaire et une ligne apparaît dans le Script AV. La réorganisation, les descriptions et les images PreVis circulent instantanément dans les deux sens — les mêmes images PreVis alimentent aussi tes [Storyboards](/fr/storyboards).
 
 <Aside type="tip">
 Supprimer une ligne du Script AV supprime aussi le plan du Découpage Technique — la boîte de dialogue de confirmation te le rappelle avant que tu valides.

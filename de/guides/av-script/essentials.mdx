@@ -10,9 +10,9 @@ Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus. Das Klick-T
 
 ## Woher Zeilen kommen
 
-Du erstellst AV-Zeilen nicht separat – jede Zeile **ist** eine Einstellung in der linearen Einstellungsliste des Projekts, in linearer Reihenfolge angezeigt. Szenen-Header werden nicht als Zeilen dargestellt; die Tabelle ist eine flache Abfolge von Einstellungen. Einstellungen, die nur auf einem Grid-Board existieren, erscheinen nie als AV-Zeilen – das AV-Skript liest ausschließlich die lineare Liste (siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) für den Unterschied).
+Erstelle Zeilen direkt im AV-Skript mit **Add row** oder plane Einstellungen in der linearen Einstellungsliste – so oder so landest du bei denselben Zeilen: Das AV-Skript und die lineare Einstellungsliste bleiben synchron, in derselben Reihenfolge. Szenen-Header werden nicht als Zeilen dargestellt; die Tabelle ist eine flache Abfolge von Einstellungen. Einstellungen, die nur auf einem Grid-Board existieren, erscheinen nicht im AV-Skript – es folgt der linearen Liste (siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) für den Unterschied).
 
-Weil die Zeilen die Einstellungen sind, schreiben Bearbeitungen in beide Richtungen durch:
+Weil die beiden synchron bleiben, schreiben Bearbeitungen in beide Richtungen durch:
 
 - **Add row** auf einer leeren Tabelle erstellt direkt eine erste Einstellung in Szene 1. Auf einer Tabelle mit Zeilen öffnet es den Add-New-Shot-Dialog der Einstellungsliste, damit du die Szene wählst.
 - **Ziehe eine Zeile zum Umordnen** – die neue Reihenfolge wird als lineare Reihenfolge der Einstellungsliste gespeichert.
@@ -93,7 +93,7 @@ Bearbeiten funktioniert komplett offline – Zeilen, Dauern, Audio, GFX, Status 
 
 *"Ich habe INT/EXT in einer Zeile geändert und andere Zeilen haben sich auch geändert."* Erwartet – INT/EXT ist ein szenenbezogenes Feld, jede Einstellung in dieser Szene folgt ihm.
 
-*"Ich habe eine Beschreibung im AV-Skript umformuliert und die Einstellungsliste hat sich geändert."* Auch erwartet – es ist dasselbe Feld. Das AV-Skript und die Einstellungsliste sind zwei Ansichten derselben Einstellungen.
+*"Ich habe eine Beschreibung im AV-Skript umformuliert und die Einstellungsliste hat sich geändert."* Auch erwartet – die Beschreibung ist geteilt: Sie in einem der beiden Tools zu bearbeiten, aktualisiert beide.
 
 *"Eine Zeile ist auf Rewrite gesprungen und niemand hat das Status-Menü angefasst."* Jeder neue Kommentar oder jede Antwort – vom Kunden auf der Review-Site oder von einem Teammitglied in der App – schaltet die Zeile auf Rewrite, selbst wenn sie Approved war. Den Inhalt einer Approved-Zeile zu bearbeiten (Dauer, Audio, GFX oder Beschreibung) tut dasselbe. Siehe [Kundenfreigabe](/de/guides/av-script/client-review) für den kompletten Status-Lebenszyklus.
 

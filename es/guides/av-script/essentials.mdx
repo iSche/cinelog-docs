@@ -10,9 +10,9 @@ Esta guía da por supuesto [Lo básico](/es/guides/introduction). El vocabulario
 
 ## De dónde salen las filas
 
-No creas filas AV por separado — cada fila **es** un plano de la Lista de Planos Lineal del proyecto, mostrado en orden lineal. Los encabezados de escena no se renderizan como filas; la tabla es una sucesión plana de planos. Los planos que existen solo en un tablero de cuadrícula nunca aparecen como filas AV — el Guion AV lee exclusivamente la lista Lineal (ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production) para la distinción).
+Crea filas directamente en el Guion AV con **Add row**, o planifica los planos en la Lista de Planos Lineal — de cualquiera de las dos maneras acabas con las mismas filas: el Guion AV y la Lista de Planos Lineal se mantienen sincronizados, en el mismo orden. Los encabezados de escena no se renderizan como filas; la tabla es una sucesión plana de planos. Los planos que existen solo en un tablero de cuadrícula no aparecen en el Guion AV — este sigue la lista Lineal (ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production) para la distinción).
 
-Como las filas son los planos, las ediciones se escriben en ambas direcciones:
+Como los dos se mantienen sincronizados, las ediciones se escriben en ambas direcciones:
 
 - **Add row** en una tabla vacía crea un primer plano directamente en la escena 1. En una tabla con filas, abre el diálogo Add New Shot de la Lista de Planos para que elijas la escena.
 - **Arrastra una fila para reordenar** — el nuevo orden persiste como el orden lineal de la Lista de Planos.
@@ -93,7 +93,7 @@ La edición funciona completamente sin conexión — filas, duraciones, audio, G
 
 *"Cambié INT/EXT en una fila y otras filas cambiaron también."* Esperado — INT/EXT es un campo a nivel de escena, así que todos los planos de esa escena lo siguen.
 
-*"Reescribí una descripción en el Guion AV y la Lista de Planos cambió."* También esperado — es el mismo campo. El Guion AV y la Lista de Planos son dos vistas de los mismos planos.
+*"Reescribí una descripción en el Guion AV y la Lista de Planos cambió."* También esperado — la descripción es compartida: editarla en cualquiera de las dos herramientas actualiza ambas.
 
 *"Una fila pasó a Rewrite y nadie tocó el menú de estado."* Cualquier comentario o respuesta nuevos — del cliente en el sitio de revisión o de un compañero en la app — pasa esa fila a Rewrite, incluso si estaba en Approved. Editar el contenido de una fila aprobada (duración, audio, GFX o descripción) hace lo mismo. Ver [Revisión del cliente](/es/guides/av-script/client-review) para el ciclo de vida completo de los estados.
 

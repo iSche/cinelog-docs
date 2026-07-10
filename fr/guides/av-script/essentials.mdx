@@ -10,9 +10,9 @@ Ce guide suppose [Les bases](/fr/guides/introduction). Le vocabulaire clic-tap-g
 
 ## D'où viennent les lignes
 
-Tu ne crées pas les lignes AV séparément — chaque ligne **est** un plan du découpage technique linéaire du projet, affiché dans l'ordre linéaire. Les en-têtes de scène ne s'affichent pas comme lignes ; le tableau est une suite continue de plans. Les plans qui n'existent que sur un tableau grille n'apparaissent jamais comme lignes AV — le Script AV lit exclusivement la liste Linéaire (voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production) pour la distinction).
+Crée tes lignes directement dans le Script AV avec **Add row**, ou planifie tes plans dans le découpage technique linéaire — dans les deux cas tu obtiens les mêmes lignes : le Script AV et le découpage technique linéaire restent synchronisés, dans le même ordre. Les en-têtes de scène ne s'affichent pas comme lignes ; le tableau est une suite continue de plans. Les plans qui n'existent que sur un tableau grille n'apparaissent jamais comme lignes AV — le Script AV lit exclusivement la liste Linéaire (voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production) pour la distinction).
 
-Parce que les lignes sont les plans, les modifications s'écrivent dans les deux sens :
+Parce que les deux restent synchronisés, les modifications s'écrivent dans les deux sens :
 
 - **Add row** sur un tableau vide crée directement un premier plan dans la scène 1. Sur un tableau qui contient déjà des lignes, il ouvre la boîte de dialogue Add New Shot du Découpage Technique pour que tu choisisses la scène.
 - **Fais glisser une ligne pour réorganiser** — le nouvel ordre persiste comme ordre linéaire du Découpage Technique.
@@ -93,7 +93,7 @@ L'édition fonctionne entièrement hors ligne — lignes, durées, audio, GFX, s
 
 *« J'ai changé INT/EXT sur une ligne et d'autres lignes ont changé aussi. »* Attendu — INT/EXT est un champ au niveau de la scène, donc chaque plan de cette scène le suit.
 
-*« J'ai reformulé une description dans le Script AV et le Découpage Technique a changé. »* Attendu aussi — c'est le même champ. Le Script AV et le Découpage Technique sont deux vues des mêmes plans.
+*« J'ai reformulé une description dans le Script AV et le Découpage Technique a changé. »* Attendu aussi — la description est partagée : la modifier dans l'un ou l'autre outil met à jour les deux.
 
 *« Une ligne est passée en Rewrite et personne n'a touché au menu de statut. »* Tout nouveau commentaire ou réponse — du client sur le site de validation ou d'un coéquipier dans l'application — fait passer cette ligne en Rewrite, même si elle était Approved. Modifier le contenu d'une ligne Approved (durée, audio, GFX ou description) fait la même chose. Voir [Validation client](/fr/guides/av-script/client-review) pour le cycle de vie complet des statuts.
 

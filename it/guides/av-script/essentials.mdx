@@ -10,9 +10,9 @@ Questa guida assume [Le basi](/it/guides/introduction). Il vocabolario click-tap
 
 ## Da dove vengono le righe
 
-Non crei le righe AV separatamente — ogni riga **è** un'inquadratura della Lista delle Inquadrature Lineare del progetto, mostrata in ordine lineare. Le intestazioni di scena non vengono renderizzate come righe; la tabella è una sequenza piatta di inquadrature. Le inquadrature che esistono solo su una board a griglia non appaiono mai come righe AV — lo Script AV legge esclusivamente la lista Lineare (vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production) per la distinzione).
+Crea le righe direttamente nello Script AV con **Add row** (aggiungi riga), oppure pianifica le inquadrature nella Lista delle Inquadrature Lineare — in entrambi i casi ottieni le stesse righe: lo Script AV e la Lista delle Inquadrature Lineare restano sincronizzati, nello stesso ordine. Le intestazioni di scena non vengono renderizzate come righe; la tabella è una sequenza piatta di inquadrature. Le inquadrature che esistono solo su una board a griglia non appaiono mai come righe AV — lo Script AV legge esclusivamente la lista Lineare (vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production) per la distinzione).
 
-Poiché le righe sono le inquadrature, le modifiche si propagano in entrambe le direzioni:
+Poiché i due strumenti restano sincronizzati, le modifiche si propagano in entrambe le direzioni:
 
 - **Add row** (aggiungi riga) su una tabella vuota crea direttamente una prima inquadratura nella scena 1. Su una tabella con righe, apre la finestra Add New Shot della Lista delle Inquadrature così scegli tu la scena.
 - **Trascina una riga per riordinare** — il nuovo ordine viene salvato come ordine lineare della Lista delle Inquadrature.
@@ -93,7 +93,7 @@ La modifica funziona completamente offline — righe, durate, audio, GFX, stati 
 
 *"Ho cambiato INT/EXT su una riga e sono cambiate anche altre righe."* È atteso — INT/EXT è un campo a livello di scena, quindi ogni inquadratura di quella scena lo segue.
 
-*"Ho riformulato una descrizione nello Script AV e la Lista delle Inquadrature è cambiata."* Atteso anche questo — è lo stesso campo. Lo Script AV e la Lista delle Inquadrature sono due viste delle stesse inquadrature.
+*"Ho riformulato una descrizione nello Script AV e la Lista delle Inquadrature è cambiata."* Atteso anche questo — la descrizione è condivisa: modificarla in uno dei due strumenti la aggiorna in entrambi.
 
 *"Una riga è passata a Rewrite e nessuno ha toccato il menu di stato."* Qualsiasi nuovo commento o risposta — dal cliente sul sito di revisione o da un membro del team nell'app — porta quella riga a Rewrite, anche se era Approved. Modificare il contenuto di una riga Approved (durata, audio, GFX o descrizione) fa lo stesso. Vedi [Revisione cliente](/it/guides/av-script/client-review) per il ciclo di vita completo degli stati.
 

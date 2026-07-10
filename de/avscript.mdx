@@ -5,7 +5,7 @@ description: "Schreibe zweispaltige Audio/Visual-Werbeskripte, time sie sekunden
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Das CineLog AV-Skript ist das klassische zweispaltige Skript für Werbung und Commercials: Audio links, Visual rechts, eine Zeile pro Beat. Wie das Storyboard ist es kein separater Datensatz – jede Zeile **ist** eine Einstellung in der linearen Einstellungsliste deines Projekts, in beide Richtungen synchron gehalten. Jedes Projekt hat genau ein AV-Skript, und das ganze Tool ist um den Kundenfreigabe-Loop herum gebaut: schreiben, timen, senden, Freigaben pro Zeile einsammeln und iterieren bis zum finalen Sign-off.
+Das CineLog AV-Skript ist das klassische zweispaltige Skript für Werbung und Commercials: Audio links, Visual rechts, eine Zeile pro Beat. Füge Zeilen direkt im Skript hinzu oder plane Einstellungen in deiner linearen Einstellungsliste – die beiden bleiben in beide Richtungen synchron, das Skript passt also immer zu deiner Einstellungs-Planung. Jedes Projekt hat genau ein AV-Skript, und das ganze Tool ist um den Kundenfreigabe-Loop herum gebaut: schreiben, timen, senden, Freigaben pro Zeile einsammeln und iterieren bis zum finalen Sign-off.
 
 ## Kernfunktionen
 
@@ -84,7 +84,7 @@ Wenn der Kunde **Approve entire document** drückt, wird jede Zeile auf einmal f
 
 ## Integriertes Daten-Ökosystem
 
-Die AV-Skript-Zeilen und die lineare Einstellungsliste sind dieselben Daten, auf zwei Arten betrachtet. Füge eine Zeile im AV-Skript hinzu und eine Einstellung erscheint in der Einstellungsliste; füge eine Einstellung in der linearen [Einstellungsliste](/de/shotlist) hinzu und eine Zeile erscheint im AV-Skript. Umordnen, Beschreibungen und PreVis-Bilder fließen augenblicklich in beide Richtungen – dieselben PreVis-Bilder speisen auch deine [Storyboards](/de/storyboards).
+Das AV-Skript und die lineare Einstellungsliste bleiben in beide Richtungen synchron. Füge eine Zeile im AV-Skript hinzu und eine Einstellung erscheint in der Einstellungsliste; füge eine Einstellung in der linearen [Einstellungsliste](/de/shotlist) hinzu und eine Zeile erscheint im AV-Skript. Umordnen, Beschreibungen und PreVis-Bilder fließen augenblicklich in beide Richtungen – dieselben PreVis-Bilder speisen auch deine [Storyboards](/de/storyboards).
 
 <Aside type="tip">
 Das Löschen einer AV-Skript-Zeile löscht die Einstellung auch aus der Einstellungsliste – der Bestätigungsdialog erinnert dich daran, bevor du dich festlegst.
