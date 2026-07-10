@@ -1,0 +1,131 @@
+---
+title: Validation client
+lastUpdated: 2026-07-10
+description: "Envoie un Script AV à un client pour validation — liens de partage et codes d'accès, tours de validation, statuts de ligne, ce que voit le client, les commentaires à travers les tours, l'e-mail de retours et ce qui se passe après l'approbation."
+---
+
+Le [Script AV](/fr/avscript) a un flux de validation client intégré : tu envoies un lien, le client approuve ou demande des réécritures ligne par ligne, et ses réponses reviennent dans l'application sous forme de statuts de ligne et de commentaires. Ce guide couvre toute la boucle — le lien, les tours, les statuts et ce que ton client voit réellement.
+
+Ce guide suppose [Les essentiels du Script AV](/fr/guides/av-script/essentials).
+
+## Le lien de validation
+
+Chaque projet a un Script AV et un lien de validation. Ouvre **Share** dans la barre supérieure du Script AV, passe à l'onglet **Share link**, et tu verras le flux du lien.
+
+Avant de créer le lien, choisis ses options :
+
+- **Niveau d'accès** — **View only** (le client peut lire le script mais pas répondre) ou **Comment & Approve** (le flux de validation complet : approbation/réécriture par ligne, commentaires et approbation du document).
+- **Require access code** — une barrière optionnelle ; voir la section suivante.
+
+Puis appuie sur **Create link**. Le lien est une URL stable sur `share.cinelog.com/av/…` — changer le niveau d'accès ou la bascule du code plus tard met à jour la même URL en place, donc un lien que tu as déjà envoyé par e-mail continue de fonctionner avec les nouveaux réglages. Ton client n'a pas besoin de compte CineLog ; le lien lui-même fait office d'identifiant.
+
+**Revoke link** tue l'URL — quiconque l'ouvre ensuite voit "This review link is invalid or has expired." Tu peux ensuite créer un nouveau lien (nouvelle URL).
+
+## Le code d'accès
+
+Active **Require access code** et le lien s'ouvre sur une barrière au lieu du script : le client saisit un code court pour entrer.
+
+- Le code fait **6 caractères**, insensible à la casse.
+- Quand tu envoies le lien par e-mail depuis la boîte de dialogue Share, le code est inclus **dans le même e-mail**, dans son propre bloc sous le lien — le client reçoit tout dans un seul message.
+- Le code est valable **24 heures à partir de la première utilisation**. Passé ce délai il expire, et le client voit un message de code expiré à la barrière.
+- Le client ne peut pas renouveler le code lui-même. Quand il expire, renvoie le lien depuis la boîte de dialogue Share — un code expiré est remplacé automatiquement par un nouveau avant le départ de l'e-mail, donc l'e-mail porte toujours un code valide. (Rouvrir la boîte de dialogue Share rafraîchit aussi un code expiré, mais le client ne connaît le nouveau code que lorsque tu l'envoies ou le partages.)
+
+Si tu copies le lien et l'envoies toi-même (chat, ton propre e-mail), le code n'est pas joint — transmets-le par un second canal, séparément du lien.
+
+## Lancer un tour de validation
+
+Avec un lien **Comment & Approve**, saisis l'e-mail du client dans la boîte de dialogue Share et appuie sur **Send for review**. Cela fait deux choses à la fois :
+
+1. **Envoie le lien par e-mail** (et le code d'accès, si activé) au destinataire.
+2. **Lance un nouveau tour de validation** — le statut de chaque ligne repasse à **Review**, et le compteur de tours avance. La page du client et l'e-mail de retours de l'équipe affichent tous deux ce numéro de tour.
+
+Avec un lien **View only**, le bouton affiche **Send link** et se contente de l'envoyer par e-mail — aucun tour ne démarre, aucun statut ne change.
+
+Sur l'offre gratuite, chaque projet dispose de **3 tours Send for review** ; les forfaits payants sont illimités. Seul l'appui sur **Send for review** consomme un tour — renvoyer par e-mail le lien d'un tour existant, le copier ou changer les options du lien n'en consomme jamais. Si tu atteins la limite, l'application propose une mise à niveau.
+
+## Statuts de ligne
+
+Chaque ligne porte l'un des quatre statuts, affiché dans la colonne **Status** :
+
+- **Draft** — pas encore envoyée en validation.
+- **Review** — envoyée au client, en attente de sa réponse. C'est le statut auquel chaque ligne revient quand un tour démarre.
+- **Approved** — le client (ou ton équipe) a validé la ligne.
+- **Rewrite** — des modifications sont demandées.
+
+Ce qui fait passer une ligne de l'un à l'autre :
+
+- Les boutons **Approve** et **Rewrite** du client sur le site de validation définissent directement Approved et Rewrite.
+- **Tout nouveau commentaire ou réponse — du client ou de ton équipe — fait passer la ligne en Rewrite.** Y compris les lignes déjà Approved : un commentaire est traité comme un retour à traiter, donc l'approbation est retirée.
+- **Modifier le contenu d'une ligne Approved** — sa durée, son audio, ses GFX ou sa description — retire aussi l'approbation et la fait passer en Rewrite. Le client a approuvé ce qu'il a vu ; le changer invalide cette approbation.
+- Ton équipe peut **forcer manuellement** le statut de n'importe quelle ligne depuis la cellule de statut. Une boîte de dialogue te demande de confirmer avant que le forçage prenne effet.
+
+La barre supérieure de l'application affiche un badge au niveau du document, dérivé des lignes : un seul Rewrite rend le document Rewrite, sinon un seul Review le rend Review, sinon un seul Draft le rend Draft ; il n'affiche Approved que lorsque chaque ligne est approuvée. Si chaque ligne est approuvée mais que le client n'a jamais approuvé le document entier, une icône d'avertissement ambre apparaît à côté du badge — le client a validé ligne par ligne sans approbation finale du document lui-même.
+
+## Ce que voit ton client
+
+Le site de validation est une page unique. L'en-tête affiche le **nom du projet**, le **numéro de tour** avec la **durée totale** du script, et une pastille de statut pour le document (par exemple "IN REVIEW"). En dessous, les lignes — les mêmes que ton découpage technique linéaire, avec les mêmes numéros de plan, durées, audio, visuels, GFX et images PreVis (les GFX et la PreVis partagent une colonne qui n'apparaît que lorsque **Show PreVis** est activé dans tes paramètres d'affichage).
+
+Sur un lien **Comment & Approve**, chaque ligne a :
+
+- Des bascules **Approve** et **Rewrite**. L'une ou l'autre ; taper sur celle qui est active l'annule et renvoie la ligne en Review.
+- Un **fil de commentaires**, replié par défaut derrière un déplieur "N comments". Les lignes sans commentaires montrent un lien **Add comment**. Les réponses vont à un niveau de profondeur.
+
+Le client ne voit que **les commentaires du tour en cours**. Les commentaires des tours précédents — y compris les siens — disparaissent du site quand tu lances un nouveau tour ; ton équipe garde l'historique complet dans l'application (voir la section suivante).
+
+Une ligne compte comme *traitée* dès que le client l'a approuvée, a demandé une réécriture ou l'a commentée. Quand chaque ligne est traitée, une invite **All rows reviewed** apparaît et propose l'envoi. Deux actions terminent la validation :
+
+- **Send responses** — envoie les retours du client à ton équipe. C'est bloqué tant que chaque ligne n'est pas traitée ; la boîte de dialogue liste les lignes encore en attente.
+- **Approve entire document** — disponible à tout moment, quel que soit l'état des lignes. Approuve chaque ligne et le document entier en une seule étape, et verrouille le lien de validation en lecture seule.
+
+Sur un lien **View only**, la page affiche un bandeau "This link is view-only" et aucun des contrôles — pas de bascules, pas de zones de saisie, pas de pied de page.
+
+## Commentaires et tours
+
+Chaque commentaire est étiqueté avec le tour dans lequel il a été écrit. Le site de validation ne montre au client que le tour en cours ; l'application montre à ton équipe **tous les commentaires de tous les tours**, donc rien de ce que le client a écrit n'est perdu — un nouveau tour fait simplement avancer la conversation du côté du client.
+
+L'attribution fonctionne ainsi :
+
+- Les commentaires du client affichent l'adresse e-mail à laquelle le lien a été envoyé (ou "Client" si le lien a seulement été copié, jamais envoyé par e-mail).
+- Les commentaires de l'équipe affichent le nom du membre ; les tiens s'affichent comme "You".
+
+**Resolve** est une action réservée à l'équipe dans l'application — le site de validation n'a aucun contrôle de résolution, donc utilise-la pour suivre en interne les retours que tu as traités. Seul l'auteur d'un commentaire peut le supprimer, ce qui signifie que les commentaires du client ne peuvent pas du tout être supprimés depuis l'application.
+
+## L'e-mail de retours
+
+Quand le client appuie sur **Send responses** ou **Approve entire document**, CineLog envoie un e-mail à ton équipe : *"The client finished an AV Script review."* Il part au propriétaire du projet plus à toute personne dont le rôle accorde l'accès au Script AV, et inclut le numéro de tour et le décompte approuvé/réécriture.
+
+L'e-mail part **une fois par tour**. Si le client continue de faire des changements après l'envoi, le site lui indique que l'équipe a déjà été notifiée et que ses derniers changements sont visibles — pas d'e-mails en double. Le prochain **Send for review** le réarme pour le nouveau tour.
+
+## Après l'approbation
+
+Une fois que le client a approuvé le document entier :
+
+- Le **lien de validation passe en lecture seule**. Le client peut toujours l'ouvrir et tout lire — lignes et commentaires — mais ne peut plus approuver, demander des réécritures ni commenter.
+- **Ton équipe peut continuer à éditer** dans l'application comme d'habitude ; l'approbation ne verrouille rien de ton côté.
+- Le prochain **Send for review** rouvre la validation : un nouveau tour démarre, les lignes repassent en Review, et le lien redevient modifiable.
+
+## Permissions
+
+Le partage est contrôlé par la même permission que l'édition du script. Créer, mettre à jour, envoyer et révoquer le lien de validation — et lancer des tours — exigent tous la permission **Shot List edit** (édition du découpage technique) sur le projet. Consulter le Script AV exige Shot List view, ou un droit de consultation Script AV autonome — utile pour un rôle qui doit suivre les validations client sans voir le reste du découpage technique. Les rôles et permissions vivent dans [Casting et Équipe](/fr/castandcrew).
+
+## Comportement hors ligne
+
+Éditer les lignes et écrire des commentaires fonctionnent entièrement hors ligne — les changements sont sauvegardés localement et se synchronisent à la reconnexion, comme tout le reste dans CineLog. La gestion du lien, non : créer, mettre à jour, révoquer et envoyer le lien exigent tous une connexion, et le site de validation lui-même n'est accessible qu'en ligne pour ton client.
+
+Une subtilité : un commentaire que tu écris hors ligne est étiqueté avec le tour **en cours au moment où il se synchronise**. Si quelqu'un de ton équipe envoie un nouveau tour pendant que tu es hors ligne, ton commentaire atterrit dans ce nouveau tour.
+
+## Si ça ne marche pas
+
+*« Mon client dit que le code d'accès ne fonctionne pas. »* Il a probablement expiré — les codes durent 24 heures à partir de la première utilisation. Renvoie le lien depuis la boîte de dialogue Share ; un nouveau code est généré automatiquement et inclus dans l'e-mail.
+
+*« Mon client ne peut ni commenter ni approuver. »* Deux causes probables : le lien est **View only** (vérifie le niveau d'accès dans la boîte de dialogue Share — le changer met à jour la même URL), ou le document a déjà été approuvé, ce qui verrouille le lien en lecture seule jusqu'au prochain **Send for review**.
+
+*« Une ligne que j'avais approuvée est repassée en Rewrite. »* Attendu — tout nouveau commentaire ou réponse fait passer la ligne en Rewrite, tout comme modifier le contenu d'une ligne approuvée. Les deux sont traités comme « cette ligne a changé ou demande de l'attention après la validation ».
+
+*« J'ai atteint une limite en envoyant en validation. »* L'offre gratuite inclut 3 tours Send for review par projet. Renvoyer par e-mail le lien d'un tour existant ne compte pas ; lancer de nouveaux tours, si. Passe à une offre supérieure pour des tours illimités.
+
+*« Je n'ai pas reçu l'e-mail de retours. »* Il part une fois par tour — si un coéquipier l'a déjà reçu pour ce tour, il ne repartira pas avant le prochain **Send for review**. Vérifie aussi que ton rôle accorde l'accès au Script AV ; l'e-mail ne va qu'au propriétaire du projet et aux membres dont le rôle l'inclut.
+
+*« Le client dit qu'il manque des lignes. »* Le Script AV est le découpage technique **linéaire**. Les plans qui n'existent que sur des tableaux grille ne sont pas des lignes AV et n'apparaissent jamais sur le site de validation.
+
+*« Nous avons envoyé un nouveau tour et les commentaires du client ont disparu. »* Le site de validation ne montre que les commentaires du tour en cours. Rien n'est perdu — ton équipe voit l'historique complet de tous les tours dans l'application.

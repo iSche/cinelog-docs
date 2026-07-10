@@ -1,0 +1,131 @@
+---
+title: Aprovação do cliente
+lastUpdated: 2026-07-10
+description: "Envie um Roteiro AV para o cliente revisar — links de compartilhamento e códigos de acesso, rodadas de revisão, status de linha, o que o cliente vê, comentários entre rodadas, o e-mail de feedback e o que acontece depois da aprovação."
+---
+
+O [Roteiro AV](/pt/avscript) tem um fluxo embutido de aprovação do cliente: você envia um link, o cliente aprova ou pede reescritas linha a linha, e as respostas dele voltam para o app como status de linha e comentários. Este guia cobre o ciclo inteiro — o link, as rodadas, os status e o que seu cliente realmente vê.
+
+Este guia assume [Roteiro AV essencial](/pt/guides/av-script/essentials).
+
+## O link de revisão
+
+Cada projeto tem um Roteiro AV e um link de revisão. Abra **Share** na barra superior do Roteiro AV, mude para a aba **Share link** e você verá o fluxo do link.
+
+Antes de criar o link, escolha as opções:
+
+- **Nível de acesso** — **View only** (o cliente pode ler o roteiro, mas não responder) ou **Comment & Approve** (o fluxo completo de revisão: aprovar/reescrever por linha, comentários e aprovação do documento).
+- **Require access code** (exigir código de acesso) — uma barreira opcional; veja a próxima seção.
+
+Depois aperte **Create link**. O link é uma URL estável em `share.cinelog.com/av/…` — mudar o nível de acesso ou o toggle do código depois atualiza a mesma URL no lugar, então um link que você já mandou por e-mail continua funcionando com as novas configurações. Seu cliente não precisa de conta no CineLog; o próprio link é a credencial.
+
+**Revoke link** mata a URL — quem a abrir depois vê "This review link is invalid or has expired." (este link de revisão é inválido ou expirou). Você pode criar um link novo (nova URL) em seguida.
+
+## O código de acesso
+
+Ligue **Require access code** e o link abre em uma barreira em vez do roteiro: o cliente digita um código curto para entrar.
+
+- O código tem **6 caracteres**, sem diferenciar maiúsculas de minúsculas.
+- Quando você envia o link por e-mail pelo diálogo Share, o código vai incluído **no mesmo e-mail**, em um bloco próprio abaixo do link — o cliente recebe tudo em uma única mensagem.
+- O código vale por **24 horas a partir do primeiro uso**. Depois disso ele expira, e o cliente vê uma mensagem de código expirado na barreira.
+- O cliente não consegue renovar o código sozinho. Quando ele expirar, reenvie o link pelo diálogo Share — um código expirado é substituído por um novo automaticamente antes de o e-mail sair, então o e-mail sempre carrega um código que funciona. (Reabrir o diálogo Share também renova um código expirado, mas o cliente só fica sabendo do novo código quando você o envia ou compartilha.)
+
+Se você copiar o link e enviá-lo por conta própria (chat, seu próprio e-mail), o código não vai junto — mande-o por um segundo canal, separado do link.
+
+## Iniciando uma rodada de revisão
+
+Com um link **Comment & Approve**, digite o e-mail do cliente no diálogo Share e aperte **Send for review**. Isso faz duas coisas ao mesmo tempo:
+
+1. **Envia o link por e-mail** (e o código de acesso, se ativado) para o destinatário.
+2. **Inicia uma nova rodada de revisão** — o status de todas as linhas volta para **Review**, e o contador de rodadas avança. A página do cliente e o e-mail de feedback do time mostram esse número de rodada.
+
+Com um link **View only**, o botão lê **Send link** e apenas o envia por e-mail — nenhuma rodada começa, nenhum status muda.
+
+No plano gratuito, cada projeto tem **3 rodadas de Send for review**; nos planos pagos são ilimitadas. Só apertar **Send for review** consome uma rodada — reenviar por e-mail o link de uma rodada existente, copiá-lo ou mudar as opções do link nunca consome. Se você bater no limite, o app oferece um upgrade.
+
+## Status de linha
+
+Cada linha carrega um de quatro status, exibido na coluna **Status**:
+
+- **Draft** (rascunho) — ainda não enviada para revisão.
+- **Review** (revisão) — enviada ao cliente, aguardando a resposta dele. É para este status que todas as linhas voltam quando uma rodada começa.
+- **Approved** (aprovada) — o cliente (ou seu time) deu o aval na linha.
+- **Rewrite** (reescrita) — mudanças solicitadas.
+
+O que move uma linha entre eles:
+
+- Os botões **Approve** e **Rewrite** do cliente no site de revisão definem Approved e Rewrite diretamente.
+- **Qualquer comentário ou resposta novos — do cliente ou do seu time — viram a linha para Rewrite.** Isso inclui linhas antes Approved: um comentário é tratado como feedback que precisa ser resolvido, então a aprovação é retirada.
+- **Editar o conteúdo de uma linha Approved** — a duração, o áudio, os GFX ou a descrição — também retira a aprovação e vira a linha para Rewrite. O cliente aprovou o que viu; mudar isso invalida a aprovação.
+- Seu time pode **sobrescrever manualmente** o status de qualquer linha pela célula de status. Um diálogo de confirmação pergunta antes de a sobrescrita valer.
+
+A barra superior do app mostra um badge em nível de documento derivado das linhas: qualquer Rewrite torna o documento Rewrite; senão, qualquer Review o torna Review; senão, qualquer Draft o torna Draft; ele só lê Approved quando todas as linhas estão aprovadas. Se todas as linhas estão aprovadas mas o cliente nunca aprovou o documento inteiro, um ícone de aviso âmbar aparece ao lado do badge — o cliente deu o aval linha a linha sem uma aprovação final do documento em si.
+
+## O que seu cliente vê
+
+O site de revisão é uma página única. O cabeçalho mostra o **nome do projeto**, o **número da rodada** com a **duração total** do roteiro e uma pílula de status do documento (por exemplo, "IN REVIEW"). Abaixo, as linhas — as mesmas linhas da sua Decupagem Linear, com os mesmos números de plano, durações, áudio, visuais, GFX e imagens de pré-visualização (GFX e pré-visualização dividem uma coluna que só aparece enquanto **Show PreVis** está ligado nas suas configurações de exibição).
+
+Em um link **Comment & Approve**, cada linha tem:
+
+- Botões de alternância **Approve** e **Rewrite**. Um ou outro; tocar no que está ativo desfaz a ação e devolve a linha para Review.
+- Uma **thread de comentários**, recolhida por padrão atrás de um disclosure "N comments". Linhas sem comentários mostram um link **Add comment**. As respostas vão um nível de profundidade.
+
+O cliente só vê **os comentários da rodada atual**. Comentários de rodadas anteriores — inclusive os dele próprio — somem do site quando você inicia uma nova rodada; seu time mantém o histórico completo no app (veja a próxima seção).
+
+Uma linha conta como *tratada* quando o cliente a aprovou, pediu uma reescrita ou comentou nela. Quando todas as linhas foram tratadas, um aviso **All rows reviewed** (todas as linhas revisadas) aparece, oferecendo o envio. Duas ações encerram a revisão:
+
+- **Send responses** — envia o feedback do cliente para o seu time. Fica bloqueado até todas as linhas serem tratadas; o diálogo lista as linhas ainda pendentes.
+- **Approve entire document** — disponível a qualquer momento, independentemente do estado por linha. Aprova todas as linhas e o documento inteiro em um único passo, e trava o link de revisão em somente leitura.
+
+Em um link **View only**, a página mostra um banner "This link is view-only" (este link é somente visualização) e nenhum dos controles — sem botões de alternância, sem campos de comentário, sem rodapé.
+
+## Comentários e rodadas
+
+Todo comentário é marcado com a rodada em que foi escrito. O site de revisão mostra ao cliente apenas a rodada atual; o app mostra ao seu time **todos os comentários de todas as rodadas**, então nada do que o cliente escreveu se perde — uma nova rodada apenas move a conversa adiante do lado do cliente.
+
+A atribuição funciona assim:
+
+- Comentários do cliente mostram o endereço de e-mail para o qual o link foi enviado (ou "Client" se o link só foi copiado, nunca enviado por e-mail).
+- Comentários do time mostram o nome do membro; os seus aparecem como "You".
+
+**Resolve** é uma ação exclusiva do time no app — o site de revisão não tem controle de resolução, então use-a para rastrear internamente qual feedback você já resolveu. Só o autor de um comentário pode apagá-lo, o que significa que comentários do cliente não podem ser apagados pelo app de jeito nenhum.
+
+## O e-mail de feedback
+
+Quando o cliente aperta **Send responses** ou **Approve entire document**, o CineLog envia um e-mail para o seu time: *"The client finished an AV Script review."* (o cliente concluiu uma revisão do Roteiro AV). Ele vai para o dono do projeto mais todos cuja função concede acesso ao Roteiro AV, e inclui o número da rodada e as contagens de linhas aprovadas/para reescrever.
+
+O e-mail dispara **uma vez por rodada**. Se o cliente continuar fazendo alterações depois de enviar, o site avisa a ele que o time já foi notificado e que as alterações mais recentes estão visíveis — sem e-mails duplicados. O próximo **Send for review** rearma o disparo para a nova rodada.
+
+## Depois da aprovação
+
+Quando o cliente aprova o documento inteiro:
+
+- O **link de revisão vira somente leitura**. O cliente ainda pode abri-lo e ler tudo — linhas e comentários — mas não pode mais aprovar, pedir reescritas ou comentar.
+- **Seu time pode continuar editando** no app normalmente; a aprovação não trava nada do seu lado.
+- O próximo **Send for review** reabre a revisão: uma nova rodada começa, as linhas voltam para Review e o link volta a aceitar respostas.
+
+## Permissões
+
+O compartilhamento é controlado pela mesma permissão que edita o roteiro. Criar, atualizar, enviar e revogar o link de revisão — e iniciar rodadas — exigem a permissão de **edição da Decupagem** no projeto. Visualizar o Roteiro AV exige visualização da Decupagem, ou uma concessão avulsa de visualização do Roteiro AV, útil para uma função que deve acompanhar as revisões do cliente sem ver o resto da decupagem. Funções e permissões vivem em [Elenco e Equipe](/pt/castandcrew).
+
+## Comportamento offline
+
+Editar linhas e escrever comentários funcionam totalmente offline — as alterações salvam localmente e sincronizam quando você reconecta, como todo o resto no CineLog. O gerenciamento do link, não: criar, atualizar, revogar e enviar o link exigem conexão, e o próprio site de revisão é apenas online para o seu cliente.
+
+Uma sutileza: um comentário que você escreve offline é marcado com a rodada que estiver **atual quando ele sincronizar**. Se alguém do seu time enviar uma nova rodada enquanto você está offline, seu comentário cai nessa nova rodada.
+
+## Se isso não estiver funcionando
+
+*"Meu cliente diz que o código de acesso não funciona."* Provavelmente expirou — os códigos duram 24 horas a partir do primeiro uso. Reenvie o link pelo diálogo Share; um código novo é gerado automaticamente e incluído no e-mail.
+
+*"Meu cliente não consegue comentar nem aprovar."* Duas causas prováveis: o link é **View only** (confira o nível de acesso no diálogo Share — mudá-lo atualiza a mesma URL), ou o documento já foi aprovado, o que trava o link em somente leitura até o próximo **Send for review**.
+
+*"Uma linha que eu aprovei voltou para Rewrite."* Esperado — qualquer comentário ou resposta novos viram a linha para Rewrite, e editar o conteúdo de uma linha aprovada faz o mesmo. Os dois casos são tratados como "esta linha mudou ou precisa de atenção depois do aval".
+
+*"Bati em um limite ao enviar para revisão."* O plano gratuito inclui 3 rodadas de Send for review por projeto. Reenviar o link de uma rodada existente não conta; iniciar rodadas novas conta. Faça upgrade para rodadas ilimitadas.
+
+*"Não recebi o e-mail de feedback."* Ele dispara uma vez por rodada — se um colega já o recebeu nesta rodada, ele não será enviado de novo até o próximo **Send for review**. Verifique também se a sua função concede acesso ao Roteiro AV; o e-mail vai apenas para o dono do projeto e para os membros cuja função o inclui.
+
+*"O cliente diz que faltam linhas."* O Roteiro AV é a Decupagem **Linear**. Planos que existem apenas em quadros de grade não são linhas AV e nunca aparecem no site de revisão.
+
+*"Enviamos uma nova rodada e os comentários do cliente sumiram."* O site de revisão mostra apenas os comentários da rodada atual. Nada se perdeu — seu time vê o histórico completo de todas as rodadas no app.

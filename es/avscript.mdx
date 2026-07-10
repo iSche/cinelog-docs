@@ -1,0 +1,99 @@
+---
+title: Guion AV
+lastUpdated: 2026-07-10
+description: "Escribe guiones publicitarios Audio/Visual a dos columnas, cronométralos al segundo y gestiona rondas de revisión con el cliente — todo en sincronía con tu Lista de Planos."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+El Guion AV de CineLog es el clásico guion a dos columnas para comerciales y publicidad: el Audio a la izquierda, lo Visual a la derecha, una fila por beat. Como el Storyboard, no es un conjunto de datos aparte — cada fila **es** un plano de la Lista de Planos Lineal de tu proyecto, sincronizado en ambas direcciones. Cada proyecto tiene exactamente un Guion AV, y toda la herramienta está construida alrededor del ciclo de revisión con el cliente: escribe, cronometra, envía, recoge aprobaciones fila por fila e itera hasta la firma final.
+
+## Funcionalidades principales
+
+<CardGrid>
+<Card title="Filas de guion a dos columnas">
+  La columna Audio lleva las etiquetas **VO**, **SFX**, **MX** y **DIALOGUE**, cada una con su propio texto enriquecido (negrita, cursiva y enlaces clicables). La columna Visual combina la descripción del plano — compartida con la Lista de Planos — con superposiciones GFX (**Lower Third**, **Super**, **Full Screen**, **Bug**, **End Card**) y una imagen PreVis.
+</Card>
+
+<Card title="Escritura con control del tiempo">
+  Cada fila lleva una duración MM:SS, y el encabezado muestra en vivo el total acumulado frente a tu objetivo. Elige una duración de spot preestablecida (:15, :30, :45, :60, :90) o define un objetivo personalizado — el total se pone en rojo en el momento en que te pasas.
+</Card>
+
+<Card title="Enlaces de revisión para clientes">
+  Envía el guion a un cliente como un enlace de revisión en share.cinelog.com. Elige acceso **View only** (solo lectura) o **Comment & Approve** (comentar y aprobar), protege opcionalmente el enlace con un código de acceso, y el revisor lo abre en cualquier navegador — sin necesidad de cuenta de CineLog.
+</Card>
+
+<Card title="Flujo de estados por fila">
+  Cada fila pasa por **Draft**, **Review**, **Approved** y **Rewrite** (borrador, en revisión, aprobada, reescritura). El cliente decide fila por fila — aprueba, pide una reescritura o deja un comentario — y puede aprobar el documento entero en una sola acción cuando todo está en orden.
+</Card>
+
+<Card title="Exportación profesional a PDF">
+  Pulsa `Cmd / Ctrl + P` para abrir la exportación a PDF: un diseño A4 a dos columnas con números de fila y tiempos, texto enriquecido de Audio y Visual con enlaces clicables e imágenes PreVis. Los estados internos y los comentarios quedan fuera de la exportación, así que las páginas están siempre listas para el cliente.
+</Card>
+</CardGrid>
+
+## Uso detallado y flujos de trabajo
+
+<Steps>
+<ol>
+
+<li>
+
+**Redacta tus filas**
+
+Haz clic en **Add row** para crear un beat, o abre un proyecto que ya tenga una Lista de Planos Lineal — cada plano aparece automáticamente como una fila. Activa las etiquetas de audio que necesite cada beat, escribe el texto, describe lo visual y añade los GFX encima.
+
+</li>
+<li>
+
+**Define duraciones y un objetivo**
+
+Da a cada fila una duración MM:SS y elige una duración objetivo desde la insignia del encabezado. El total acumulado se actualiza mientras escribes, así que sabes de inmediato cuándo un spot de :30 se está yendo hacia :34.
+
+</li>
+<li>
+
+**Envía a revisión**
+
+Abre **Share**, crea un enlace de revisión con acceso **Comment & Approve** y pulsa **Send for review**. Esto inicia una ronda de revisión: todas las filas se restablecen a Review y el cliente recibe el enlace — con el código de acceso en el mismo correo, si lo activaste.
+
+</li>
+<li>
+
+**El cliente revisa fila por fila**
+
+En el sitio de revisión, el cliente aprueba cada fila, pide una reescritura o deja comentarios — y cualquier comentario nuevo marca automáticamente la fila para Rewrite. Cuando todas las filas están atendidas, el cliente pulsa **Send responses** y tu equipo recibe un correo de resumen.
+
+</li>
+<li>
+
+**Atiende el feedback y envía una nueva ronda**
+
+Reescribe las filas marcadas en la app y vuelve a pulsar **Send for review**. Cada ronda le da al cliente un lienzo limpio — solo ve los comentarios de la ronda actual — mientras tu equipo conserva en la app el historial completo de comentarios de todas las rondas.
+
+</li>
+<li>
+
+**Aprobación final del documento completo**
+
+Cuando el cliente pulsa **Approve entire document**, todas las filas se aprueban a la vez y el enlace de revisión queda bloqueado en solo lectura. Esa es la firma final — el enlace de revisión permanece en solo lectura para el cliente hasta que inicies otra ronda.
+
+</li>
+
+</ol>
+</Steps>
+
+## Ecosistema de datos integrado
+
+Las filas del Guion AV y la Lista de Planos Lineal son los mismos datos vistos de dos maneras. Añade una fila en el Guion AV y aparece un plano en la Lista de Planos; añade un plano en la [Lista de Planos](/es/shotlist) Lineal y aparece una fila en el Guion AV. El reordenamiento, las descripciones y las imágenes PreVis fluyen al instante en ambas direcciones — las mismas imágenes PreVis alimentan también tus [Storyboards](/es/storyboards).
+
+<Aside type="tip">
+Eliminar una fila del Guion AV elimina el plano también de la Lista de Planos — el diálogo de confirmación te lo recuerda antes de que confirmes.
+</Aside>
+
+<Aside type="tip" title="Escritura lista para trabajar sin conexión">
+Escribir, cronometrar y comentar funcionan completamente sin conexión y se sincronizan al reconectar. Solo las acciones de compartir — crear el enlace, enviar una ronda — necesitan conexión, y el propio sitio web de revisión solo funciona en línea para tu cliente.
+</Aside>
+
+Los Ajustes de Visualización — Show PreVis, la relación de aspecto de PreVis y el formato de numeración de planos — se comparten con la Lista de Planos, así que el guion siempre coincide con el resto de tu proyecto.
+
+¿Listo para escribir? Empieza con [Fundamentos del Guion AV](/es/guides/av-script/essentials) y luego aprende el ciclo de revisión completo en [Revisión del cliente](/es/guides/av-script/client-review).

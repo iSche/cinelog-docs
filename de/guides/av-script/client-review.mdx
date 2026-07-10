@@ -1,0 +1,131 @@
+---
+title: Kundenfreigabe
+lastUpdated: 2026-07-10
+description: "Ein AV-Skript zur Kundenfreigabe senden – Share-Links und Zugangscodes, Review-Runden, Zeilen-Status, was der Kunde sieht, Kommentare über Runden hinweg, die Feedback-E-Mail und was nach der Freigabe passiert."
+---
+
+Das [AV-Skript](/de/avscript) hat einen eingebauten Kundenfreigabe-Flow: Du schickst einen Link, der Kunde gibt Zeile für Zeile frei oder fordert Rewrites an, und seine Antworten kommen als Zeilen-Status und Kommentare zurück in die App. Dieser Guide behandelt den ganzen Loop – den Link, die Runden, die Status und was dein Kunde tatsächlich sieht.
+
+Dieser Guide setzt die [AV-Skript-Grundlagen](/de/guides/av-script/essentials) voraus.
+
+## Der Review-Link
+
+Jedes Projekt hat ein AV-Skript und einen Review-Link. Öffne **Share** in der oberen Leiste des AV-Skripts, wechsle zum **Share link**-Tab und du siehst den Link-Flow.
+
+Bevor du den Link erstellst, wähle seine Optionen:
+
+- **Zugriffslevel** — **View only** (der Kunde kann das Skript lesen, aber nicht antworten) oder **Comment & Approve** (der volle Review-Flow: Freigabe/Rewrite pro Zeile, Kommentare und Dokument-Freigabe).
+- **Require access code** — eine optionale Sperre; siehe den nächsten Abschnitt.
+
+Dann drücke **Create link**. Der Link ist eine stabile URL auf `share.cinelog.com/av/…` – das Zugriffslevel oder den Code-Toggle später zu ändern, aktualisiert dieselbe URL an Ort und Stelle, ein Link, den du bereits gemailt hast, funktioniert also mit den neuen Einstellungen weiter. Dein Kunde braucht kein CineLog-Konto; der Link selbst ist der Zugangsnachweis.
+
+**Revoke link** macht die URL unbrauchbar – wer sie danach öffnet, sieht "This review link is invalid or has expired." Danach kannst du einen frischen Link (neue URL) erstellen.
+
+## Der Zugangscode
+
+Schalte **Require access code** ein und der Link öffnet sich auf eine Sperre statt auf das Skript: Der Kunde gibt einen kurzen Code ein, um hineinzukommen.
+
+- Der Code hat **6 Zeichen**, Groß-/Kleinschreibung spielt keine Rolle.
+- Wenn du den Link aus dem Share-Dialog mailst, ist der Code **in derselben E-Mail** enthalten, in einem eigenen Block unter dem Link – der Kunde bekommt alles in einer Nachricht.
+- Der Code ist **24 Stunden ab erster Verwendung** gültig. Danach läuft er ab und der Kunde sieht an der Sperre eine Abgelaufen-Meldung.
+- Der Kunde kann den Code nicht selbst erneuern. Wenn er abläuft, sende den Link erneut aus dem Share-Dialog – ein abgelaufener Code wird automatisch durch einen frischen ersetzt, bevor die E-Mail rausgeht, die E-Mail trägt also immer einen funktionierenden Code. (Auch das erneute Öffnen des Share-Dialogs erneuert einen abgelaufenen Code, aber der Kunde erfährt den neuen Code erst, wenn du ihn sendest oder teilst.)
+
+Wenn du den Link kopierst und selbst verschickst (Chat, eigene E-Mail), hängt der Code nicht dran – schick ihn über einen zweiten Kanal, getrennt vom Link.
+
+## Eine Review-Runde starten
+
+Gib mit einem **Comment & Approve**-Link die E-Mail-Adresse des Kunden im Share-Dialog ein und drücke **Send for review**. Das tut zwei Dinge auf einmal:
+
+1. **Mailt den Link** (und den Zugangscode, falls aktiviert) an den Empfänger.
+2. **Startet eine neue Review-Runde** – der Status jeder Zeile wird auf **Review** zurückgesetzt und der Runden-Zähler rückt vor. Die Seite des Kunden und die Feedback-E-Mail an dein Team zeigen beide diese Rundennummer.
+
+Mit einem **View only**-Link heißt der Button **Send link** und mailt ihn nur – keine Runde startet, keine Status ändern sich.
+
+Im Free-Plan bekommt jedes Projekt **3 Send-for-review-Runden**; bezahlte Pläne sind unbegrenzt. Nur das Drücken von **Send for review** verbraucht eine Runde – den Link einer bestehenden Runde erneut zu mailen, ihn zu kopieren oder Link-Optionen zu ändern, verbraucht nie eine. Wenn du das Limit erreichst, bietet dir die App ein Upgrade an.
+
+## Zeilen-Status
+
+Jede Zeile trägt einen von vier Status, angezeigt in der **Status**-Spalte:
+
+- **Draft** — noch nicht zum Review gesendet.
+- **Review** — an den Kunden gesendet, Antwort steht aus. Darauf wird jede Zeile zurückgesetzt, wenn eine Runde startet.
+- **Approved** — der Kunde (oder dein Team) hat die Zeile freigegeben.
+- **Rewrite** — Änderungen angefordert.
+
+Was eine Zeile zwischen ihnen bewegt:
+
+- Die **Approve**- und **Rewrite**-Buttons des Kunden auf der Review-Site setzen Approved und Rewrite direkt.
+- **Jeder neue Kommentar oder jede Antwort – vom Kunden oder aus deinem Team – schaltet die Zeile auf Rewrite.** Das schließt zuvor freigegebene Zeilen ein: Ein Kommentar gilt als Feedback, das eingearbeitet werden muss, die Freigabe wird also zurückgezogen.
+- **Den Inhalt einer freigegebenen Zeile zu bearbeiten** – ihre Dauer, Audio, GFX oder Beschreibung – zieht die Freigabe ebenfalls zurück und schaltet die Zeile auf Rewrite. Der Kunde hat freigegeben, was er gesehen hat; es zu ändern, macht das ungültig.
+- Dein Team kann den Status jeder Zeile über die Status-Zelle **manuell überschreiben**. Ein Bestätigungsdialog fragt nach, bevor die Überschreibung wirksam wird.
+
+Die obere Leiste der App zeigt ein Badge auf Dokument-Ebene, das sich aus den Zeilen ableitet: Jedes Rewrite macht das Dokument Rewrite, sonst macht jedes Review es Review, sonst macht jeder Draft es Draft; Approved zeigt es nur, wenn jede Zeile freigegeben ist. Ist jede Zeile freigegeben, aber der Kunde hat nie das ganze Dokument freigegeben, erscheint ein bernsteinfarbenes Warn-Icon neben dem Badge – der Kunde hat Zeile für Zeile abgesegnet, ohne finale Freigabe des Dokuments selbst.
+
+## Was dein Kunde sieht
+
+Die Review-Site ist eine einzelne Seite. Der Header zeigt den **Projektnamen**, die **Rundennummer** mit der **Gesamtdauer** des Skripts und eine Status-Pille für das Dokument (zum Beispiel "IN REVIEW"). Darunter die Zeilen – dieselben Zeilen wie deine lineare Einstellungsliste, mit denselben Einstellungsnummern, Dauern, Audio, Visuals, GFX und PreVis-Bildern (GFX und PreVis teilen sich eine Spalte, die nur erscheint, solange **Show PreVis** in deinen Anzeige-Einstellungen an ist).
+
+Auf einem **Comment & Approve**-Link hat jede Zeile:
+
+- **Approve**- und **Rewrite**-Toggles. Entweder–oder; ein Tipp auf den aktiven macht ihn rückgängig und setzt die Zeile zurück auf Review.
+- Einen **Kommentar-Thread**, standardmäßig hinter einer "N comments"-Aufklappung eingeklappt. Zeilen ohne Kommentare zeigen einen **Add comment**-Link. Antworten gehen eine Ebene tief.
+
+Der Kunde sieht nur **die Kommentare der aktuellen Runde**. Kommentare früherer Runden – auch seine eigenen – verschwinden von der Site, wenn du eine neue Runde startest; dein Team behält die komplette Historie in der App (siehe nächsten Abschnitt).
+
+Eine Zeile gilt als *bearbeitet*, sobald der Kunde sie freigegeben, einen Rewrite angefordert oder sie kommentiert hat. Wenn jede Zeile bearbeitet ist, erscheint ein **All rows reviewed**-Hinweis, der das Senden anbietet. Zwei Aktionen schließen das Review ab:
+
+- **Send responses** — schickt das Feedback des Kunden an dein Team. Blockiert, bis jede Zeile bearbeitet ist; der Dialog listet die noch offenen Zeilen.
+- **Approve entire document** — jederzeit verfügbar, unabhängig vom Zustand der einzelnen Zeilen. Gibt jede Zeile und das gesamte Dokument in einem Schritt frei und sperrt den Review-Link schreibgeschützt.
+
+Auf einem **View only**-Link zeigt die Seite ein "This link is view-only"-Banner und keines der Bedienelemente – keine Toggles, keine Eingabefelder, kein Footer.
+
+## Kommentare und Runden
+
+Jeder Kommentar ist mit der Runde getaggt, in der er geschrieben wurde. Die Review-Site zeigt dem Kunden nur die aktuelle Runde; die App zeigt deinem Team **alle Kommentare aus allen Runden** – nichts, was der Kunde je geschrieben hat, geht also verloren; eine neue Runde bewegt nur die Unterhaltung auf Kundenseite weiter.
+
+Die Zuordnung funktioniert so:
+
+- Kunden-Kommentare zeigen die E-Mail-Adresse, an die der Link gesendet wurde (oder "Client", wenn der Link nur kopiert und nie gemailt wurde).
+- Team-Kommentare zeigen den Namen des Mitglieds; deine eigenen erscheinen als "You".
+
+**Resolve** ist eine Team-only-Aktion in der App – die Review-Site hat kein Resolve-Bedienelement; nutze es also, um intern zu tracken, welches Feedback du erledigt hast. Nur der Autor eines Kommentars kann ihn löschen, Kunden-Kommentare lassen sich aus der App also gar nicht löschen.
+
+## Die Feedback-E-Mail
+
+Wenn der Kunde **Send responses** oder **Approve entire document** drückt, mailt CineLog deinem Team: *"The client finished an AV Script review."* Sie geht an den Projekt-Owner plus alle, deren Rolle AV-Skript-Zugriff gewährt, und enthält die Rundennummer sowie die Anzahl der freigegebenen und der Rewrite-Zeilen.
+
+Die E-Mail feuert **einmal pro Runde**. Macht der Kunde nach dem Senden weitere Änderungen, sagt ihm die Site, dass das Team bereits benachrichtigt wurde und seine neuesten Änderungen sichtbar sind – keine doppelten E-Mails. Das nächste **Send for review** aktiviert sie für die neue Runde wieder.
+
+## Nach der Freigabe
+
+Sobald der Kunde das gesamte Dokument freigibt:
+
+- Der **Review-Link wird schreibgeschützt**. Der Kunde kann ihn weiterhin öffnen und alles lesen – Zeilen und Kommentare –, aber nicht mehr freigeben, Rewrites anfordern oder kommentieren.
+- **Dein Team kann in der App weiterarbeiten** wie gewohnt; die Freigabe sperrt auf deiner Seite nichts.
+- Das nächste **Send for review** öffnet das Review wieder: Eine neue Runde startet, die Zeilen werden auf Review zurückgesetzt und der Link wird wieder beschreibbar.
+
+## Berechtigungen
+
+Das Teilen ist über dieselbe Berechtigung geregelt, die auch das Skript bearbeitet. Den Review-Link erstellen, aktualisieren, senden und widerrufen – und Runden starten – erfordert alles die **Shot List edit**-Berechtigung im Projekt. Das AV-Skript anzusehen erfordert Shot List view oder eine eigenständige AV-Skript-View-Berechtigung – nützlich für eine Rolle, die Kundenfreigaben verfolgen soll, ohne den Rest der Einstellungsliste zu sehen. Rollen und Berechtigungen leben in [Cast & Crew](/de/castandcrew).
+
+## Offline-Verhalten
+
+Zeilen bearbeiten und Kommentare schreiben funktioniert komplett offline – Änderungen werden lokal gespeichert und syncen, sobald du wieder verbunden bist, wie alles andere in CineLog. Die Link-Verwaltung nicht: Den Link erstellen, aktualisieren, widerrufen und senden erfordert alles eine Verbindung, und die Review-Website selbst ist für deinen Kunden nur online verfügbar.
+
+Eine Feinheit: Ein Kommentar, den du offline schreibst, wird mit der Runde getaggt, die **beim Syncen aktuell** ist. Sendet jemand aus deinem Team eine neue Runde, während du offline bist, landet dein Kommentar in dieser neuen Runde.
+
+## Falls das nicht funktioniert
+
+*"Mein Kunde sagt, der Zugangscode funktioniert nicht."* Wahrscheinlich abgelaufen – Codes gelten 24 Stunden ab erster Verwendung. Sende den Link erneut aus dem Share-Dialog; ein frischer Code wird automatisch generiert und in die E-Mail gepackt.
+
+*"Mein Kunde kann nicht kommentieren oder freigeben."* Zwei wahrscheinliche Ursachen: Der Link ist **View only** (prüfe das Zugriffslevel im Share-Dialog – eine Änderung aktualisiert dieselbe URL), oder das Dokument wurde bereits freigegeben, was den Link bis zum nächsten **Send for review** schreibgeschützt sperrt.
+
+*"Eine Zeile, die ich freigegeben habe, ist zurück auf Rewrite."* Erwartet – jeder neue Kommentar oder jede Antwort schaltet die Zeile auf Rewrite, ebenso das Bearbeiten des Inhalts einer freigegebenen Zeile. Beides gilt als "diese Zeile hat sich nach dem Sign-off geändert oder braucht Aufmerksamkeit".
+
+*"Ich bin beim Senden auf ein Limit gestoßen."* Der Free-Plan enthält 3 Send-for-review-Runden pro Projekt. Den Link einer bestehenden Runde erneut zu mailen zählt nicht dagegen; neue Runden zu starten schon. Upgrade für unbegrenzte Runden.
+
+*"Ich habe die Feedback-E-Mail nicht bekommen."* Sie feuert einmal pro Runde – wenn ein Teammitglied sie für diese Runde schon erhalten hat, wird sie bis zum nächsten **Send for review** nicht erneut gesendet. Prüfe außerdem, ob deine Rolle AV-Skript-Zugriff gewährt; die E-Mail geht nur an den Projekt-Owner und Mitglieder, deren Rolle ihn enthält.
+
+*"Der Kunde sagt, es fehlen Zeilen."* Das AV-Skript ist die **lineare** Einstellungsliste. Einstellungen, die nur auf Grid-Boards existieren, sind keine AV-Zeilen und erscheinen nie auf der Review-Site.
+
+*"Wir haben eine neue Runde gesendet und die Kommentare des Kunden sind verschwunden."* Die Review-Site zeigt nur die Kommentare der aktuellen Runde. Nichts geht verloren – dein Team sieht die komplette Historie über alle Runden in der App.

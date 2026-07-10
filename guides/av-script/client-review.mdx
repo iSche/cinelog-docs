@@ -1,0 +1,131 @@
+---
+title: Client review
+lastUpdated: 2026-07-10
+description: "Send an AV Script to a client for review — share links and access codes, review rounds, row statuses, what the client sees, comments across rounds, the feedback email, and what happens after approval."
+---
+
+The [AV Script](/avscript) has a built-in client review flow: you send a link, the client approves or requests rewrites row by row, and their responses come back into the app as row statuses and comments. This guide covers the whole loop — the link, the rounds, the statuses, and what your client actually sees.
+
+This guide assumes [AV Script essentials](/guides/av-script/essentials).
+
+## The review link
+
+Every project has one AV Script and one review link. Open **Share** in the AV Script's top bar, switch to the **Share link** tab, and you'll see the link flow.
+
+Before creating the link, pick its options:
+
+- **Access level** — **View only** (the client can read the script but not respond) or **Comment & Approve** (the full review flow: per-row approve/rewrite, comments, and document approval).
+- **Require access code** — an optional gate; see the next section.
+
+Then press **Create link**. The link is a stable URL at `share.cinelog.com/av/…` — changing the access level or the code toggle later updates the same URL in place, so a link you've already emailed keeps working with the new settings. Your client doesn't need a CineLog account; the link itself is the credential.
+
+**Revoke link** kills the URL — anyone who opens it afterwards sees "This review link is invalid or has expired." You can create a fresh link (new URL) afterwards.
+
+## The access code
+
+Turn on **Require access code** and the link opens to a gate instead of the script: the client enters a short code to get in.
+
+- The code is **6 characters**, case-insensitive.
+- When you email the link from the Share dialog, the code is included **in the same email**, in its own block below the link — the client gets everything in one message.
+- The code is valid for **24 hours from first use**. After that it expires, and the client sees an expired-code message at the gate.
+- The client can't refresh the code themselves. When it expires, re-send the link from the Share dialog — an expired code is replaced with a fresh one automatically before the email goes out, so the email always carries a working code. (Reopening the Share dialog also refreshes an expired code, but the client only learns the new code when you send or share it.)
+
+If you copy the link and send it yourself (chat, your own email), the code isn't attached — send it through a second channel, separately from the link.
+
+## Starting a review round
+
+With a **Comment & Approve** link, enter the client's email in the Share dialog and press **Send for review**. This does two things at once:
+
+1. **Emails the link** (and the access code, if enabled) to the recipient.
+2. **Starts a new review round** — every row's status resets to **Review**, and the round counter advances. The client's page and the team feedback email both show this round number.
+
+With a **View only** link the button reads **Send link** and just emails it — no round starts, no statuses change.
+
+On the free plan, each project gets **3 Send-for-review rounds**; paid plans are unlimited. Only pressing **Send for review** consumes a round — re-emailing an existing round's link, copying it, or changing link options never does. If you hit the cap, the app offers an upgrade.
+
+## Row statuses
+
+Each row carries one of four statuses, shown in the **Status** column:
+
+- **Draft** — not yet sent for review.
+- **Review** — sent to the client, awaiting their response. This is what every row resets to when a round starts.
+- **Approved** — the client (or your team) signed off on the row.
+- **Rewrite** — changes requested.
+
+What moves a row between them:
+
+- The client's **Approve** and **Rewrite** buttons on the review site set Approved and Rewrite directly.
+- **Any new comment or reply — from the client or from your team — flips the row to Rewrite.** That includes previously Approved rows: a comment is treated as feedback that needs addressing, so the approval is withdrawn.
+- **Editing an Approved row's content** — its duration, audio, GFX, or description — also withdraws the approval and flips it to Rewrite. The client approved what they saw; changing it invalidates that.
+- Your team can **manually override** any row's status from the status cell. A confirmation dialog asks before the override takes effect.
+
+The app's top bar shows a document-level badge derived from the rows: any Rewrite makes the document Rewrite, otherwise any Review makes it Review, otherwise any Draft makes it Draft; it only reads Approved when every row is approved. If every row is approved but the client never approved the whole document, an amber warning icon appears next to the badge — the client signed off row by row without a final approval of the document itself.
+
+## What your client sees
+
+The review site is a single page. The header shows the **project name**, the **round number** with the script's **total duration**, and a status pill for the document (for example "IN REVIEW"). Below that, the rows — the same rows as your Linear Shot List, with the same shot numbers, durations, audio, visuals, GFX, and PreVis images (GFX and PreVis share a column that appears only while **Show PreVis** is on in your display settings).
+
+On a **Comment & Approve** link, each row has:
+
+- **Approve** and **Rewrite** toggles. One or the other; tapping the active one undoes it and returns the row to Review.
+- A **comment thread**, collapsed by default behind an "N comments" disclosure. Rows without comments show an **Add comment** link. Replies go one level deep.
+
+The client only sees **the current round's comments**. Earlier rounds' comments — including their own — disappear from the site when you start a new round; your team keeps the full history in the app (see the next section).
+
+A row counts as *addressed* once the client has approved it, requested a rewrite, or commented on it. When every row is addressed, an **All rows reviewed** prompt appears, offering to send. Two actions finish the review:
+
+- **Send responses** — sends the client's feedback to your team. It's blocked until every row is addressed; the dialog lists the rows still waiting.
+- **Approve entire document** — available at any time, regardless of per-row state. It approves every row and the whole document in one step, and locks the review link read-only.
+
+On a **View only** link the page shows a "This link is view-only" banner and none of the controls — no toggles, no composers, no footer.
+
+## Comments and rounds
+
+Every comment is tagged with the round it was written in. The review site shows the client only the current round; the app shows your team **all comments from all rounds**, so nothing the client ever wrote is lost — a new round just moves the conversation forward on the client's side.
+
+Attribution works like this:
+
+- Client comments show the email address the link was sent to (or "Client" if the link was only ever copied, never emailed).
+- Team comments show the member's name; your own show as "You".
+
+**Resolve** is a team-only action in the app — the review site has no resolve control, so use it to track which feedback you've handled internally. Only a comment's author can delete it, which means client comments can't be deleted from the app at all.
+
+## The feedback email
+
+When the client presses **Send responses** or **Approve entire document**, CineLog emails your team: *"The client finished an AV Script review."* It goes to the project owner plus everyone whose role grants AV Script access, and includes the round number and the approved/rewrite counts.
+
+The email fires **once per round**. If the client keeps making changes after sending, the site tells them the team was already notified and that their latest changes are visible — no duplicate emails. The next **Send for review** re-arms it for the new round.
+
+## After approval
+
+Once the client approves the entire document:
+
+- The **review link goes read-only**. The client can still open it and read everything — rows and comments — but can no longer approve, request rewrites, or comment.
+- **Your team can keep editing** in the app as usual; approval doesn't lock anything on your side.
+- The next **Send for review** reopens the review: a new round starts, rows reset to Review, and the link becomes writable again.
+
+## Permissions
+
+Sharing is gated by the same permission that edits the script. Creating, updating, sending, and revoking the review link — and starting rounds — all require **Shot List edit** permission on the project. Viewing the AV Script requires Shot List view, or a standalone AV Script view grant, which is useful for a role that should follow client reviews without seeing the rest of the shot list. Roles and permissions live in [Cast & Crew](/castandcrew).
+
+## Offline behavior
+
+Editing rows and writing comments work fully offline — changes save locally and sync when you reconnect, like everything else in CineLog. Link management does not: creating, updating, revoking, and sending the link all require a connection, and the review website itself is online-only for your client.
+
+One subtlety: a comment you write offline is tagged with whichever round is **current when it syncs**. If someone on your team sends a new round while you're offline, your comment lands in that new round.
+
+## If this isn't working
+
+*"My client says the access code doesn't work."* It's probably expired — codes last 24 hours from first use. Re-send the link from the Share dialog; a fresh code is generated automatically and included in the email.
+
+*"My client can't comment or approve."* Two likely causes: the link is **View only** (check the access level in the Share dialog — changing it updates the same URL), or the document has already been approved, which locks the link read-only until the next **Send for review**.
+
+*"A row I approved went back to Rewrite."* Expected — any new comment or reply flips the row to Rewrite, and so does editing an approved row's content. Both are treated as "this row changed or needs attention after sign-off."
+
+*"I hit a limit sending for review."* The free plan includes 3 Send-for-review rounds per project. Re-emailing an existing round's link doesn't count against it; starting new rounds does. Upgrade for unlimited rounds.
+
+*"I didn't get the feedback email."* It fires once per round — if a teammate already received it for this round, it won't send again until the next **Send for review**. Also check that your role grants AV Script access; the email only goes to the project owner and members whose role includes it.
+
+*"The client says rows are missing."* The AV Script is the **Linear** Shot List. Shots that exist only on grid boards aren't AV rows and never appear on the review site.
+
+*"We sent a new round and the client's comments disappeared."* The review site shows only the current round's comments. Nothing is lost — your team sees the full history across all rounds in the app.

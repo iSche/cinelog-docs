@@ -1,0 +1,99 @@
+---
+title: Script AV
+lastUpdated: 2026-07-10
+description: "Écris des scripts publicitaires Audio/Visuel à deux colonnes, chronomètre-les à la seconde près et mène des tours de validation client — le tout synchronisé avec ton Découpage Technique."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Le Script AV de CineLog est le script classique de la publicité et de la communication à deux colonnes : l'Audio à gauche, le Visuel à droite, une ligne par beat. Comme le Storyboard, ce n'est pas un jeu de données séparé — chaque ligne **est** un plan du découpage technique linéaire de ton projet, synchronisé dans les deux sens. Chaque projet a exactement un Script AV, et tout l'outil est construit autour de la boucle de validation client : écrire, chronométrer, envoyer, recueillir les approbations ligne par ligne et itérer jusqu'à la validation finale.
+
+## Fonctionnalités principales
+
+<CardGrid>
+<Card title="Lignes de script à deux colonnes">
+  La colonne Audio porte les tags **VO**, **SFX**, **MX** et **DIALOGUE** (voix off, effets sonores, musique et dialogue), chacun avec son propre texte enrichi (gras, italique et liens cliquables). La colonne Visuel associe la description du plan — partagée avec le Découpage Technique — aux habillages GFX (**Lower Third**, **Super**, **Full Screen**, **Bug**, **End Card**) et à une image PreVis.
+</Card>
+
+<Card title="Écriture chronométrée">
+  Chaque ligne porte une durée MM:SS, et l'en-tête affiche le total cumulé en direct face à ta cible. Choisis une durée de spot prédéfinie (:15, :30, :45, :60, :90) ou définis une cible personnalisée — le total passe au rouge dès que tu dépasses.
+</Card>
+
+<Card title="Liens de validation client">
+  Envoie le script à un client sous forme de lien de validation sur share.cinelog.com. Choisis un accès **View only** (lecture seule) ou **Comment & Approve** (commenter et approuver), protège le lien par un code d'accès si tu le souhaites, et le relecteur l'ouvre dans n'importe quel navigateur — aucun compte CineLog requis.
+</Card>
+
+<Card title="Flux de statuts par ligne">
+  Chaque ligne passe par **Draft**, **Review**, **Approved** et **Rewrite**. Le client décide ligne par ligne — approuver, demander une réécriture ou laisser un commentaire — et peut approuver le document entier en une seule action quand tout lui convient.
+</Card>
+
+<Card title="Export PDF professionnel">
+  Appuie sur `Cmd / Ctrl + P` pour ouvrir l'export PDF : une mise en page A4 à deux colonnes avec numéros de ligne et durées, le texte enrichi Audio et Visuel avec liens cliquables, et les images PreVis. Les statuts internes et les commentaires restent hors de l'export, donc les pages sont toujours prêtes à être montrées au client.
+</Card>
+</CardGrid>
+
+## Utilisation détaillée et flux de travail
+
+<Steps>
+<ol>
+
+<li>
+
+**Rédige tes lignes**
+
+Clique sur **Add row** pour créer un beat, ou ouvre un projet qui a déjà un découpage technique linéaire — chaque plan apparaît automatiquement comme une ligne. Active les tags audio dont chaque beat a besoin, écris le texte, décris le visuel et ajoute les GFX.
+
+</li>
+<li>
+
+**Règle les durées et une cible**
+
+Donne à chaque ligne une durée MM:SS et choisis une durée cible depuis le badge de l'en-tête. Le total cumulé se met à jour pendant que tu écris, donc tu sais immédiatement quand un spot de :30 dérive vers :34.
+
+</li>
+<li>
+
+**Envoie en validation**
+
+Ouvre **Share**, crée un lien de validation avec l'accès **Comment & Approve**, puis appuie sur **Send for review**. Cela lance un tour de validation : chaque ligne repasse en Review, et le client reçoit le lien — avec le code d'accès dans le même e-mail, si tu en as activé un.
+
+</li>
+<li>
+
+**Le client valide ligne par ligne**
+
+Sur le site de validation, le client approuve chaque ligne, demande une réécriture ou laisse des commentaires — et tout nouveau commentaire marque automatiquement la ligne en Rewrite. Une fois chaque ligne traitée, il appuie sur **Send responses** et ton équipe reçoit un e-mail récapitulatif.
+
+</li>
+<li>
+
+**Traite les retours et envoie un nouveau tour**
+
+Réécris les lignes marquées dans l'application et appuie de nouveau sur **Send for review**. Chaque tour repart d'une page blanche pour le client — il ne voit que les commentaires du tour en cours — tandis que ton équipe conserve dans l'application l'historique complet des commentaires de tous les tours.
+
+</li>
+<li>
+
+**Approbation finale du document entier**
+
+Quand le client appuie sur **Approve entire document**, toutes les lignes sont approuvées d'un coup et le lien de validation passe en lecture seule. C'est la validation finale — le lien reste en lecture seule pour le client jusqu'à ce que tu lances un nouveau tour.
+
+</li>
+
+</ol>
+</Steps>
+
+## Écosystème de données intégré
+
+Les lignes du Script AV et le découpage technique linéaire sont les mêmes données vues de deux façons. Ajoute une ligne dans le Script AV et un plan apparaît dans le Découpage Technique ; ajoute un plan dans le [Découpage Technique](/fr/shotlist) linéaire et une ligne apparaît dans le Script AV. La réorganisation, les descriptions et les images PreVis circulent instantanément dans les deux sens — les mêmes images PreVis alimentent aussi tes [Storyboards](/fr/storyboards).
+
+<Aside type="tip">
+Supprimer une ligne du Script AV supprime aussi le plan du Découpage Technique — la boîte de dialogue de confirmation te le rappelle avant que tu valides.
+</Aside>
+
+<Aside type="tip" title="Écriture prête pour le hors ligne">
+L'écriture, le chronométrage et les commentaires fonctionnent entièrement hors ligne et se synchronisent à la reconnexion. Seules les actions de partage — créer le lien, envoyer un tour — nécessitent une connexion, et le site de validation lui-même n'est accessible qu'en ligne pour ton client.
+</Aside>
+
+Les Paramètres d'affichage — Show PreVis, le ratio d'aspect PreVis et le format de numérotation des plans — sont partagés avec le Découpage Technique, donc le script correspond toujours au reste de ton projet.
+
+Prêt à écrire ? Commence par [Les essentiels du Script AV](/fr/guides/av-script/essentials), puis apprends la boucle de validation complète dans [Validation client](/fr/guides/av-script/client-review).

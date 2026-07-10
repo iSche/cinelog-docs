@@ -1,0 +1,102 @@
+---
+title: Roteiro AV essencial
+lastUpdated: 2026-07-10
+description: "A tabela do Roteiro AV linha por linha — de onde vêm as linhas, escrita de áudio e GFX, texto rico, cronometragem contra uma meta, configurações de exibição, o layout de celular, exportação em PDF e comportamento offline."
+---
+
+O Roteiro AV é o roteiro de duas colunas para comerciais e outras peças com duração fechada: o que o público ouve à esquerda, o que ele vê à direita, uma linha por plano, com um total acumulado contra a sua duração-alvo. Este guia cobre a mecânica do dia a dia de construir um. Para a visão geral do recurso, veja [Roteiro AV](/pt/avscript); para rodadas de revisão com um cliente, veja [Aprovação do cliente](/pt/guides/av-script/client-review).
+
+Este guia assume [O básico](/pt/guides/introduction). O vocabulário de clicar-tocar-arrastar é o mesmo de qualquer outro lugar do app.
+
+## De onde vêm as linhas
+
+Você não cria linhas AV separadamente — cada linha **é** um plano da Decupagem Linear do projeto, exibida em ordem linear. Cabeçalhos de cena não são renderizados como linhas; a tabela é uma sequência corrida de planos. Planos que existem apenas em um quadro de grade nunca aparecem como linhas AV — o Roteiro AV lê exclusivamente a lista Linear (veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production) para a distinção).
+
+Como as linhas são os planos, as edições se propagam nas duas direções:
+
+- **Add row** em uma tabela vazia cria um primeiro plano diretamente na cena 1. Em uma tabela com linhas, abre o diálogo **Add New Shot** (adicionar novo plano) da Decupagem para você escolher a cena.
+- **Arraste uma linha para reordenar** — a nova ordem persiste como a ordem linear da Decupagem.
+- **Apagar linhas apaga planos.** Selecione as linhas e aperte **Delete selected**; a confirmação avisa: *"This removes the shots from the Shot List too."* (isso remove os planos da Decupagem também). Não existe exclusão só do AV.
+
+Uma tabela vazia diz isso por conta própria: *"No shots yet. Use “Add row”, or add shots in the Shot List — they appear here automatically."* (nenhum plano ainda — use "Add row" ou adicione planos na Decupagem, que eles aparecem aqui automaticamente). Se você já construiu uma decupagem, seu Roteiro AV chega pré-populado no momento em que você o abre. Veja [Decupagem essencial](/pt/guides/shot-list/essentials) para os blocos de construção em nível de plano.
+
+## A tabela
+
+Cinco colunas:
+
+- **Row** (linha) — o número do plano empilhado sobre uma pílula de duração `MM:SS`. Clique no número para mover o plano para outra cena; clique na pílula para definir a duração da linha.
+- **Audio** (áudio) — uma linha de texto por tag de áudio ativada que tem texto (`VO: …`, `SFX: …`), renderizada como texto rico.
+- **Visual** — uma linha de metadados com chips (INT/EXT · tipo de plano · movimento de câmera, cada um clicável de forma independente), a descrição do plano, quaisquer linhas de GFX e uma miniatura de pré-visualização à direita quando Show PreVis está ligado.
+- **Status** — o estado de revisão da linha: Draft (rascunho), Review (revisão), Approved (aprovada) ou Rewrite (reescrita). Você pode sobrescrevê-lo manualmente pelo menu de status (uma confirmação avisa que você está sobrescrevendo), mas os status normalmente são conduzidos pelas rodadas de revisão — veja [Aprovação do cliente](/pt/guides/av-script/client-review).
+- **Comments** (comentários) — uma coluna lateral mostrando o comentário mais recente e a contagem de cada linha; clique nela para abrir o painel da thread da linha.
+
+Dois campos merecem um rótulo de aviso. **INT/EXT é em nível de cena** — mudá-lo pelo chip de uma linha muda para todos os planos daquela cena, aqui e na Decupagem. E a **descrição é a descrição compartilhada do plano** — o mesmo campo que a Decupagem mostra, então reescrevê-la aqui reescreve em todo lugar.
+
+## Escrevendo áudio
+
+Clique na célula de Áudio de uma linha para abrir o editor. Quatro chips de alternância — **VO** (locução em off), **SFX** (efeitos sonoros), **MX** (música), **DIALOGUE** (diálogo) — ficam no topo, e cada tag tem seu próprio texto rico. Comportamento dos chips:
+
+- Toque em um chip **desativado** para ativar a tag e começar a escrever nela.
+- Toque em um chip **ativado mas inativo** para alternar para o texto daquela tag.
+- Toque no chip **ativo** para desligar a tag. O texto dela fica oculto, não apagado — reative o chip e ele volta.
+
+A célula somente leitura renderiza uma linha de texto por tag ativada que tem texto; tags ativadas mas vazias não renderizam nada. Uma única linha pode carregar as quatro — uma locução em off sobre uma deixa de música sobre uma nota de efeitos.
+
+## Sobreposições de GFX
+
+Os grafismos vivem no editor Visual. Abra-o, aperte **+ GFX** e escolha um tipo: **Lower Third** (crédito no terço inferior), **Super** (lettering sobre a imagem), **Full Screen** (cartela em tela cheia), **Bug** (marca fixa no canto) ou **End Card** (cartela final). Cada entrada ganha seu próprio chip e seu próprio texto rico, uma linha pode carregar várias entradas (inclusive duplicatas do mesmo tipo), e as entradas são renderizadas sob a descrição como linhas rotuladas (`SUPER: 30% de desconto esta semana`). Para remover uma, deixe o chip dela ativo e aperte o ✕ que aparece nele.
+
+## Texto rico
+
+Os textos de Áudio e GFX suportam exatamente três formatos: **negrito**, *itálico* e links. Para adicionar um link, selecione o texto e use o botão de link da barra de ferramentas — o diálogo **Add link** recebe uma URL (`https://example.com`). Com o cursor sobre um link existente, o mesmo diálogo abre como **Edit link**, pré-preenchido — aplique uma URL vazia ali para remover o link. Quando alguém clica em um link na tabela, o app pergunta *"Open this link?"* (abrir este link?) antes de lançar o navegador.
+
+A ação **clear** (limpar) da barra de ferramentas (o ícone de backspace) apaga o texto ativo por inteiro — é um botão de recomeçar do zero, não de remover formatação.
+
+## Cronometrando o filme
+
+Cada linha carrega sua própria duração `MM:SS` — clique na pílula sob o número do plano para defini-la. O badge no centro superior mostra o total de todas as linhas.
+
+Clique no badge para definir uma meta: **No target** (sem meta), uma predefinição (15s, 30s, 45s, 60s, 90s) ou **Custom…** para um `MM:SS` exato. Com uma meta definida, o badge lê `total / meta`, e o total fica vermelho no instante em que as linhas somam mais que a meta — sua deixa para enxugar.
+
+## Configurações de exibição
+
+O popup **Display** (desktop) e a bottom sheet de configurações de exibição (celular) expõem as mesmas três opções:
+
+- **Show PreVis** — alterna as miniaturas de pré-visualização na coluna Visual.
+- **PreVis aspect ratio** — o formato de quadro em que as miniaturas são recortadas; só aparece enquanto a pré-visualização está ligada.
+- **Shot numbers** — US (`1A, 1B, 1C`), EU (`1.1, 1.2, 2.1`) ou UK (`1, 2, 3`).
+
+O aspect ratio e o formato de numeração de planos são **compartilhados com a Decupagem** — mudar qualquer um deles em qualquer uma das ferramentas muda nas duas. Veja [Configurações de Exibição](/pt/guides/shot-list/display-settings) para o lado da decupagem dessas configurações.
+
+## No celular
+
+O layout de celular é um card por linha — deslize horizontalmente para se mover entre as linhas, como folhear os [Storyboards](/pt/storyboards). Em cada card:
+
+- **Dê um toque duplo em qualquer bloco para editá-lo** — o número da cena, a duração, o status, o bloco AUDIO, o bloco VISUAL, INT/EXT, tipo de plano, movimento de câmera. Cada um abre um editor em bottom sheet com a mesma semântica do desktop.
+- A pílula flutuante **Scene N** (exibida quando o projeto tem mais de uma cena) pula direto para a primeira linha de uma cena.
+- O **botão de comentários** abre a thread da linha como uma bottom sheet. No celular você pode ler a thread e adicionar novos comentários de nível superior; segure um dos seus próprios comentários para apagá-lo.
+- O slot de pré-visualização do card também funciona como um uploader — toque no placeholder para adicionar uma imagem a um plano que não tem nenhuma.
+
+## Exportando um PDF
+
+Abra **Share** — o diálogo abre na aba **Export** (`Cmd / Ctrl + P` também te leva até lá) — e aperte **Export PDF**. A saída é um documento A4 em retrato: nome do projeto e duração total (com a meta, se definida) no cabeçalho, depois a tabela com as colunas **Row**, **Audio**, **Visual** e **PreVis**. Negrito, itálico e links sobrevivem à exportação — os links são clicáveis no PDF.
+
+Status e comentários deliberadamente **não** entram no PDF. É uma leitura limpa do roteiro, não um registro de revisão — para feedback, envie um link de revisão ([Aprovação do cliente](/pt/guides/av-script/client-review)).
+
+## Comportamento offline
+
+A edição funciona totalmente offline — linhas, durações, áudio, GFX, status e comentários salvam localmente e sincronizam quando você reconecta, como todo o resto no CineLog. O que precisa de conexão: criar, enviar ou revogar links de revisão (são operações de servidor) e o próprio site de revisão.
+
+## Se isso não estiver funcionando
+
+*"Um plano do meu projeto não está aparecendo como linha."* O Roteiro AV mostra apenas a Decupagem Linear. Se o plano vive apenas em um quadro de grade, ele não aparece — e se a linha sumiu, verifique se alguém apagou o plano, já que apagar uma linha e apagar um plano são a mesma coisa.
+
+*"Mudei INT/EXT em uma linha e outras linhas mudaram também."* Esperado — INT/EXT é um campo em nível de cena, então todos os planos daquela cena o acompanham.
+
+*"Reescrevi uma descrição no Roteiro AV e a Decupagem mudou."* Também esperado — é o mesmo campo. O Roteiro AV e a Decupagem são duas visualizações dos mesmos planos.
+
+*"Uma linha virou Rewrite e ninguém tocou no menu de status."* Qualquer comentário ou resposta novos — do cliente no site de revisão ou de um colega no app — viram aquela linha para Rewrite, mesmo que estivesse Approved. Editar o conteúdo de uma linha Approved (duração, áudio, GFX ou descrição) faz o mesmo. Veja [Aprovação do cliente](/pt/guides/av-script/client-review) para o ciclo de vida completo dos status.
+
+*"O total não bate com o que eu espero."* O badge é a soma da duração de todas as linhas — linhas sem duração definida não contribuem em nada. Procure linhas ainda marcando `00:00`. Vermelho só significa que o total excede a sua meta.
+
+*"O PDF exportado está sem os status e comentários."* De propósito — o PDF carrega apenas Row, Audio, Visual e PreVis. Use um link de revisão quando a trilha de feedback importar.

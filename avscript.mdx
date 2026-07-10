@@ -1,0 +1,99 @@
+---
+title: AV Script
+lastUpdated: 2026-07-10
+description: "Write two-column Audio/Visual commercial scripts, time them to the second, and run client review rounds — all in sync with your Shot List."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+The CineLog AV Script is the classic two-column commercial and advertising script: Audio on the left, Visual on the right, one row per beat. Like the Storyboard, it is not a separate dataset — every row **is** a shot in your project's Linear Shot List, kept in sync in both directions. Each project has exactly one AV Script, and the whole tool is built around the client-review loop: write, time, send, collect per-row approvals, and iterate until final sign-off.
+
+## Core Capabilities
+
+<CardGrid>
+<Card title="Two-Column Script Rows">
+  The Audio column carries **VO**, **SFX**, **MX**, and **DIALOGUE** tags, each with its own rich text (bold, italic, and clickable links). The Visual column pairs the shot description — shared with the Shot List — with GFX overlays (**Lower Third**, **Super**, **Full Screen**, **Bug**, **End Card**) and a PreVis image.
+</Card>
+
+<Card title="Time-Aware Writing">
+  Every row carries an MM:SS duration, and the header shows the live running total against your target. Pick a preset spot length (:15, :30, :45, :60, :90) or set a custom target — the total turns red the moment you run over.
+</Card>
+
+<Card title="Client Review Links">
+  Send the script to a client as a review link on share.cinelog.com. Choose **View only** or **Comment & Approve** access, optionally protect the link with an access code, and the reviewer opens it in any browser — no CineLog account needed.
+</Card>
+
+<Card title="Row Status Workflow">
+  Each row moves through **Draft**, **Review**, **Approved**, and **Rewrite**. Clients decide row by row — approve, request a rewrite, or leave a comment — and can approve the entire document in one action when everything looks right.
+</Card>
+
+<Card title="Professional PDF Export">
+  Hit `Cmd / Ctrl + P` to open the PDF export: an A4 two-column layout with row numbers and timings, rich Audio and Visual text with clickable links, and PreVis images. Internal statuses and comments stay out of the export, so the pages are always client-ready.
+</Card>
+</CardGrid>
+
+## Detailed Usage & Workflows
+
+<Steps>
+<ol>
+
+<li>
+
+**Draft your rows**
+
+Click **Add row** to create a beat, or open a project that already has a Linear Shot List — every shot appears as a row automatically. Enable the audio tags each beat needs, write the copy, describe the visual, and layer on GFX.
+
+</li>
+<li>
+
+**Set durations and a target**
+
+Give each row an MM:SS duration and pick a target length from the header badge. The running total updates as you write, so you know immediately when a :30 spot is drifting toward :34.
+
+</li>
+<li>
+
+**Send for review**
+
+Open **Share**, create a review link with **Comment & Approve** access, and hit **Send for review**. This starts a review round: every row resets to Review, and the client receives the link — with the access code in the same email, if you enabled one.
+
+</li>
+<li>
+
+**The client reviews row by row**
+
+On the review site, the client approves each row, requests a rewrite, or leaves comments — and any new comment automatically flags the row for Rewrite. When every row is addressed, they hit **Send responses** and your team gets a summary email.
+
+</li>
+<li>
+
+**Address feedback and send a new round**
+
+Rewrite the flagged rows in the app and hit **Send for review** again. Each round gives the client a clean slate — they see only the current round's comments — while your team keeps the full comment history across every round in-app.
+
+</li>
+<li>
+
+**Final whole-document approval**
+
+When the client hits **Approve entire document**, every row is approved at once and the review link locks read-only. That's the sign-off — the review link stays read-only for the client until you start another round.
+
+</li>
+
+</ol>
+</Steps>
+
+## Integrated Data Ecosystem
+
+The AV Script rows and the Linear Shot List are the same data viewed two ways. Add a row in the AV Script and a shot appears in the Shot List; add a shot in the Linear [Shot List](/shotlist) and a row appears in the AV Script. Reordering, descriptions, and PreVis images flow both ways instantly — the same PreVis images also power your [Storyboards](/storyboards).
+
+<Aside type="tip">
+Deleting an AV Script row deletes the shot from the Shot List too — the confirmation dialog reminds you before you commit.
+</Aside>
+
+<Aside type="tip" title="Offline-Ready Writing">
+Writing, timing, and commenting all work fully offline and sync when you reconnect. Only the sharing actions — creating the link, sending a round — need a connection, and the review website itself is online-only for your client.
+</Aside>
+
+Display Settings — Show PreVis, the PreVis aspect ratio, and the shot numbering format — are shared with the Shot List, so the script always matches the rest of your project.
+
+Ready to write? Start with [AV Script essentials](/guides/av-script/essentials), then learn the full review loop in [Client review](/guides/av-script/client-review).

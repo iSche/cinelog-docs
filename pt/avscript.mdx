@@ -1,0 +1,99 @@
+---
+title: Roteiro AV
+lastUpdated: 2026-07-10
+description: "Escreva roteiros publicitários de duas colunas Áudio/Visual, cronometre-os ao segundo e conduza rodadas de aprovação do cliente — tudo em sincronia com a sua Decupagem."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+O Roteiro AV do CineLog é o clássico roteiro de duas colunas para comerciais e publicidade: Áudio à esquerda, Visual à direita, uma linha por momento do filme. Assim como o Storyboard, ele não é um conjunto de dados separado — cada linha **é** um plano da Decupagem Linear do seu projeto, sincronizado nas duas direções. Cada projeto tem exatamente um Roteiro AV, e a ferramenta inteira é construída em torno do ciclo de aprovação do cliente: escreva, cronometre, envie, colete aprovações linha a linha e itere até a aprovação final.
+
+## Recursos principais
+
+<CardGrid>
+<Card title="Linhas de roteiro em duas colunas">
+  A coluna de Áudio carrega as tags **VO**, **SFX**, **MX** e **DIALOGUE**, cada uma com seu próprio texto rico (negrito, itálico e links clicáveis). A coluna Visual combina a descrição do plano — compartilhada com a Decupagem — com sobreposições de GFX (**Lower Third**, **Super**, **Full Screen**, **Bug**, **End Card**) e uma imagem de pré-visualização.
+</Card>
+
+<Card title="Escrita com controle de tempo">
+  Cada linha carrega uma duração MM:SS, e o cabeçalho mostra o total acumulado em tempo real contra a sua meta. Escolha uma duração de filme predefinida (:15, :30, :45, :60, :90) ou defina uma meta personalizada — o total fica vermelho no instante em que você estoura o tempo.
+</Card>
+
+<Card title="Links de revisão para o cliente">
+  Envie o roteiro para um cliente como um link de revisão em share.cinelog.com. Escolha o acesso **View only** (somente visualização) ou **Comment & Approve** (comentar e aprovar), proteja o link com um código de acesso opcional, e o revisor o abre em qualquer navegador — sem precisar de conta no CineLog.
+</Card>
+
+<Card title="Fluxo de status por linha">
+  Cada linha passa por **Draft** (rascunho), **Review** (revisão), **Approved** (aprovada) e **Rewrite** (reescrita). O cliente decide linha a linha — aprova, pede uma reescrita ou deixa um comentário — e pode aprovar o documento inteiro em uma única ação quando tudo estiver certo.
+</Card>
+
+<Card title="Exportação profissional em PDF">
+  Aperte `Cmd / Ctrl + P` para abrir a exportação em PDF: um layout A4 de duas colunas com números de linha e durações, texto rico de Áudio e Visual com links clicáveis e imagens de pré-visualização. Status internos e comentários ficam fora da exportação, então as páginas estão sempre prontas para o cliente.
+</Card>
+</CardGrid>
+
+## Uso detalhado e fluxos de trabalho
+
+<Steps>
+<ol>
+
+<li>
+
+**Rascunhe suas linhas**
+
+Clique em **Add row** para criar um momento do filme, ou abra um projeto que já tenha uma Decupagem Linear — cada plano aparece como linha automaticamente. Ative as tags de áudio que cada momento precisa, escreva o texto, descreva o visual e adicione GFX por cima.
+
+</li>
+<li>
+
+**Defina durações e uma meta**
+
+Dê a cada linha uma duração MM:SS e escolha uma duração-alvo no badge do cabeçalho. O total acumulado atualiza enquanto você escreve, então você sabe na hora quando um filme de :30 está derivando para :34.
+
+</li>
+<li>
+
+**Envie para revisão**
+
+Abra **Share**, crie um link de revisão com acesso **Comment & Approve** e aperte **Send for review**. Isso inicia uma rodada de revisão: todas as linhas voltam para Review, e o cliente recebe o link — com o código de acesso no mesmo e-mail, se você tiver ativado um.
+
+</li>
+<li>
+
+**O cliente revisa linha a linha**
+
+No site de revisão, o cliente aprova cada linha, pede uma reescrita ou deixa comentários — e qualquer comentário novo automaticamente marca a linha para Rewrite. Quando todas as linhas foram tratadas, ele aperta **Send responses** e seu time recebe um e-mail de resumo.
+
+</li>
+<li>
+
+**Trate o feedback e envie uma nova rodada**
+
+Reescreva as linhas marcadas no app e aperte **Send for review** de novo. Cada rodada dá ao cliente uma página limpa — ele vê apenas os comentários da rodada atual — enquanto seu time mantém dentro do app o histórico completo de comentários de todas as rodadas.
+
+</li>
+<li>
+
+**Aprovação final do documento inteiro**
+
+Quando o cliente aperta **Approve entire document**, todas as linhas são aprovadas de uma vez e o link de revisão trava em somente leitura. Essa é a aprovação final — o link de revisão permanece somente leitura para o cliente até você iniciar outra rodada.
+
+</li>
+
+</ol>
+</Steps>
+
+## Ecossistema integrado de dados
+
+As linhas do Roteiro AV e a Decupagem Linear são os mesmos dados vistos de duas maneiras. Adicione uma linha no Roteiro AV e um plano aparece na Decupagem; adicione um plano na [Decupagem](/pt/shotlist) Linear e uma linha aparece no Roteiro AV. Reordenação, descrições e imagens de pré-visualização fluem nas duas direções instantaneamente — as mesmas imagens de pré-visualização também alimentam seus [Storyboards](/pt/storyboards).
+
+<Aside type="tip">
+Apagar uma linha do Roteiro AV apaga o plano da Decupagem também — o diálogo de confirmação te lembra disso antes de você confirmar.
+</Aside>
+
+<Aside type="tip" title="Escrita pronta para offline">
+Escrever, cronometrar e comentar funcionam totalmente offline e sincronizam quando você reconecta. Apenas as ações de compartilhamento — criar o link, enviar uma rodada — precisam de conexão, e o próprio site de revisão é apenas online para o seu cliente.
+</Aside>
+
+As Configurações de Exibição — Show PreVis, o aspect ratio da pré-visualização e o formato de numeração de planos — são compartilhadas com a Decupagem, então o roteiro sempre bate com o resto do seu projeto.
+
+Pronto para escrever? Comece com [Roteiro AV essencial](/pt/guides/av-script/essentials), depois aprenda o ciclo completo de revisão em [Aprovação do cliente](/pt/guides/av-script/client-review).

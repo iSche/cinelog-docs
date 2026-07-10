@@ -1,0 +1,99 @@
+---
+title: Script AV
+lastUpdated: 2026-07-10
+description: "Scrivi script pubblicitari Audio/Video a due colonne, cronometrali al secondo e gestisci round di revisione con il cliente — tutto in sincronia con la tua Lista delle Inquadrature."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Lo Script AV di CineLog è il classico script a due colonne per spot e pubblicità: Audio a sinistra, Visual a destra, una riga per ogni beat. Come lo Storyboard, non è un dataset separato — ogni riga **è** un'inquadratura della Lista delle Inquadrature Lineare del progetto, sincronizzata in entrambe le direzioni. Ogni progetto ha esattamente uno Script AV, e l'intero strumento è costruito attorno al ciclo di revisione con il cliente: scrivi, cronometra, invia, raccogli le approvazioni riga per riga e itera fino all'approvazione finale.
+
+## Funzionalità principali
+
+<CardGrid>
+<Card title="Righe di script a due colonne">
+  La colonna Audio contiene i tag **VO**, **SFX**, **MX** e **DIALOGUE**, ognuno con il proprio rich text (grassetto, corsivo e link cliccabili). La colonna Visual affianca alla descrizione dell'inquadratura — condivisa con la Lista delle Inquadrature — gli overlay GFX (**Lower Third**, **Super**, **Full Screen**, **Bug**, **End Card**) e un'immagine PreVis.
+</Card>
+
+<Card title="Scrittura con il tempo sotto controllo">
+  Ogni riga ha una durata MM:SS e l'intestazione mostra il totale progressivo in tempo reale rispetto al tuo target. Scegli una durata spot preimpostata (:15, :30, :45, :60, :90) o imposta un target personalizzato — il totale diventa rosso nel momento in cui sfori.
+</Card>
+
+<Card title="Link di revisione per il cliente">
+  Invia lo script al cliente come link di revisione su share.cinelog.com. Scegli l'accesso **View only** (sola visualizzazione) o **Comment & Approve** (commenta e approva), proteggi facoltativamente il link con un codice di accesso, e il revisore lo apre in qualsiasi browser — nessun account CineLog necessario.
+</Card>
+
+<Card title="Flusso di stati per riga">
+  Ogni riga attraversa gli stati **Draft**, **Review**, **Approved** e **Rewrite**. Il cliente decide riga per riga — approva, richiede una riscrittura o lascia un commento — e può approvare l'intero documento con una sola azione quando tutto è a posto.
+</Card>
+
+<Card title="Esportazione PDF professionale">
+  Premi `Cmd / Ctrl + P` per aprire l'esportazione PDF: un layout A4 a due colonne con numeri di riga e durate, testo Audio e Visual formattato con link cliccabili e immagini PreVis. Gli stati interni e i commenti restano fuori dall'esportazione, quindi le pagine sono sempre pronte per il cliente.
+</Card>
+</CardGrid>
+
+## Utilizzo dettagliato e flussi di lavoro
+
+<Steps>
+<ol>
+
+<li>
+
+**Scrivi la bozza delle righe**
+
+Clicca **Add row** (aggiungi riga) per creare un beat, oppure apri un progetto che ha già una Lista delle Inquadrature Lineare — ogni inquadratura appare automaticamente come riga. Attiva i tag audio che servono a ciascun beat, scrivi il copy, descrivi la parte visiva e aggiungi i GFX.
+
+</li>
+<li>
+
+**Imposta le durate e un target**
+
+Assegna a ogni riga una durata MM:SS e scegli una durata target dal badge nell'intestazione. Il totale progressivo si aggiorna mentre scrivi, così sai subito quando uno spot da :30 sta scivolando verso :34.
+
+</li>
+<li>
+
+**Invia in revisione**
+
+Apri **Share**, crea un link di revisione con accesso **Comment & Approve** e premi **Send for review**. Questo avvia un round di revisione: ogni riga torna allo stato Review e il cliente riceve il link — con il codice di accesso nella stessa email, se ne hai attivato uno.
+
+</li>
+<li>
+
+**Il cliente revisiona riga per riga**
+
+Sul sito di revisione, il cliente approva ogni riga, richiede una riscrittura o lascia commenti — e ogni nuovo commento contrassegna automaticamente la riga come Rewrite. Quando tutte le righe sono state gestite, preme **Send responses** e il tuo team riceve un'email di riepilogo.
+
+</li>
+<li>
+
+**Gestisci il feedback e invia un nuovo round**
+
+Riscrivi le righe contrassegnate nell'app e premi di nuovo **Send for review**. Ogni round dà al cliente una tabula rasa — vede solo i commenti del round corrente — mentre il tuo team conserva nell'app l'intera cronologia dei commenti di tutti i round.
+
+</li>
+<li>
+
+**Approvazione finale dell'intero documento**
+
+Quando il cliente preme **Approve entire document**, tutte le righe vengono approvate in una volta e il link di revisione si blocca in sola lettura. Questo è il via libera definitivo — il link di revisione resta in sola lettura per il cliente finché non avvii un altro round.
+
+</li>
+
+</ol>
+</Steps>
+
+## Ecosistema dati integrato
+
+Le righe dello Script AV e la Lista delle Inquadrature Lineare sono gli stessi dati visti in due modi. Aggiungi una riga nello Script AV e un'inquadratura appare nella Lista delle Inquadrature; aggiungi un'inquadratura nella [Lista delle Inquadrature](/it/shotlist) Lineare e una riga appare nello Script AV. Riordino, descrizioni e immagini PreVis fluiscono istantaneamente in entrambe le direzioni — le stesse immagini PreVis alimentano anche i tuoi [Storyboard](/it/storyboards).
+
+<Aside type="tip">
+Eliminare una riga dello Script AV elimina anche l'inquadratura dalla Lista delle Inquadrature — la finestra di conferma te lo ricorda prima di procedere.
+</Aside>
+
+<Aside type="tip" title="Scrittura pronta per l'offline">
+Scrittura, durate e commenti funzionano completamente offline e si sincronizzano quando ti riconnetti. Solo le azioni di condivisione — creare il link, inviare un round — richiedono una connessione, e il sito di revisione stesso funziona solo online per il tuo cliente.
+</Aside>
+
+Le Impostazioni di Visualizzazione — Show PreVis, il rapporto d'aspetto PreVis e il formato di numerazione delle inquadrature — sono condivise con la Lista delle Inquadrature, quindi lo script corrisponde sempre al resto del tuo progetto.
+
+Pronto a scrivere? Inizia con i [Fondamenti dello Script AV](/it/guides/av-script/essentials), poi impara l'intero ciclo di revisione in [Revisione cliente](/it/guides/av-script/client-review).

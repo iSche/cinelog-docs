@@ -1,0 +1,102 @@
+---
+title: Fondamenti dello Script AV
+lastUpdated: 2026-07-10
+description: "La tabella dello Script AV riga per riga — da dove vengono le righe, scrivere audio e GFX, il rich text, le durate rispetto a un target, le impostazioni di visualizzazione, il layout su telefono, l'esportazione PDF e il comportamento offline."
+---
+
+Lo Script AV è lo script a due colonne per spot pubblicitari e altri formati a tempo: ciò che il pubblico sente a sinistra, ciò che vede a destra, una riga per inquadratura, con un totale progressivo rispetto alla durata target. Questa guida copre la meccanica quotidiana per costruirne uno. Per la panoramica della funzionalità vedi [Script AV](/it/avscript); per i round di revisione con un cliente vedi [Revisione cliente](/it/guides/av-script/client-review).
+
+Questa guida assume [Le basi](/it/guides/introduction). Il vocabolario click-tap-drag è lo stesso di ogni altra parte dell'app.
+
+## Da dove vengono le righe
+
+Non crei le righe AV separatamente — ogni riga **è** un'inquadratura della Lista delle Inquadrature Lineare del progetto, mostrata in ordine lineare. Le intestazioni di scena non vengono renderizzate come righe; la tabella è una sequenza piatta di inquadrature. Le inquadrature che esistono solo su una board a griglia non appaiono mai come righe AV — lo Script AV legge esclusivamente la lista Lineare (vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production) per la distinzione).
+
+Poiché le righe sono le inquadrature, le modifiche si propagano in entrambe le direzioni:
+
+- **Add row** (aggiungi riga) su una tabella vuota crea direttamente una prima inquadratura nella scena 1. Su una tabella con righe, apre la finestra Add New Shot della Lista delle Inquadrature così scegli tu la scena.
+- **Trascina una riga per riordinare** — il nuovo ordine viene salvato come ordine lineare della Lista delle Inquadrature.
+- **Eliminare righe elimina inquadrature.** Seleziona le righe e premi **Delete selected**; la conferma ti avvisa: *"This removes the shots from the Shot List too."* (rimuove le inquadrature anche dalla Lista delle Inquadrature). Non esiste un'eliminazione solo-AV.
+
+Una tabella vuota lo dice da sé: *"No shots yet. Use “Add row”, or add shots in the Shot List — they appear here automatically."* Se hai già costruito una lista delle inquadrature, il tuo Script AV è pre-popolato dal momento in cui lo apri. Vedi [Le basi della lista delle inquadrature](/it/guides/shot-list/essentials) per i mattoni a livello di inquadratura.
+
+## La tabella
+
+Cinque colonne:
+
+- **Row** — il numero di inquadratura sopra una pillola di durata `MM:SS`. Clicca il numero per spostare l'inquadratura in un'altra scena; clicca la pillola per impostare la durata della riga.
+- **Audio** — una riga per ogni tag audio abilitato che contiene testo (`VO: …`, `SFX: …`), renderizzata come rich text.
+- **Visual** — una riga meta di chip (INT/EXT · tipo di inquadratura · movimento di camera, ognuno cliccabile indipendentemente), la descrizione dell'inquadratura, le eventuali righe GFX e una miniatura PreVis sulla destra quando Show PreVis è attivo.
+- **Status** — lo stato di revisione della riga: Draft, Review, Approved o Rewrite. Puoi sovrascriverlo manualmente dal menu di stato (una conferma ti avvisa che stai forzando lo stato), ma normalmente gli stati sono guidati dai round di revisione — vedi [Revisione cliente](/it/guides/av-script/client-review).
+- **Comments** — una colonna laterale che mostra l'ultimo commento di ogni riga e il conteggio; cliccala per aprire il pannello del thread della riga.
+
+Due campi meritano un'etichetta di avvertenza. **INT/EXT è a livello di scena** — cambiarlo dal chip di una riga lo cambia per ogni inquadratura di quella scena, qui e nella Lista delle Inquadrature. E la **descrizione è la descrizione condivisa dell'inquadratura** — lo stesso campo che mostra la Lista delle Inquadrature, quindi riformularla qui la riformula ovunque.
+
+## Scrivere l'audio
+
+Clicca la cella Audio di una riga per aprire l'editor. Quattro chip toggle — **VO**, **SFX**, **MX**, **DIALOGUE** — stanno in alto, e ogni tag possiede il proprio rich text. Comportamento dei chip:
+
+- Tocca un chip **disabilitato** per abilitare il tag e iniziare a scriverci.
+- Tocca un chip **abilitato ma inattivo** per passare al testo di quel tag.
+- Tocca il chip **attivo** per disabilitare il tag. Il suo testo viene nascosto, non eliminato — riabilita il chip e torna.
+
+La cella in sola lettura mostra una riga per ogni tag abilitato che contiene testo; i tag abilitati ma vuoti non mostrano nulla. Una singola riga può portarli tutti e quattro — una battuta di voice-over sopra un attacco musicale sopra una nota di effetti.
+
+## Overlay GFX
+
+Le grafiche vivono nell'editor Visual. Aprilo, premi **+ GFX** e scegli un tipo: **Lower Third**, **Super**, **Full Screen**, **Bug** o **End Card**. Ogni voce riceve il proprio chip e il proprio rich text, una riga può contenere più voci (compresi duplicati dello stesso tipo), e le voci vengono mostrate sotto la descrizione come righe etichettate (`SUPER: 30% off this week`). Per rimuoverne una, rendi attivo il suo chip e premi la ✕ che vi appare sopra.
+
+## Rich text
+
+Il testo Audio e GFX supporta esattamente tre formati: **grassetto**, *corsivo* e link. Per aggiungere un link, seleziona il testo e usa il pulsante link della toolbar — la finestra **Add link** accetta un URL (`https://example.com`). Con il cursore su un link esistente, la stessa finestra si apre come **Edit link**, precompilata — applica lì un URL vuoto per rimuovere il link. Quando qualcuno clicca un link nella tabella, l'app chiede *"Open this link?"* prima di lanciare il browser.
+
+L'azione **clear** della toolbar (l'icona backspace) cancella completamente il testo attivo — è un pulsante tabula rasa, non un pulsante rimuovi-formattazione.
+
+## Cronometrare lo spot
+
+Ogni riga porta la propria durata `MM:SS` — clicca la pillola sotto il numero di inquadratura per impostarla. Il badge in alto al centro mostra il totale di tutte le righe.
+
+Clicca il badge per impostare un target: **No target** (nessun target), un preset (15s, 30s, 45s, 60s, 90s) o **Custom…** per un `MM:SS` esatto. Con un target impostato, il badge mostra `totale / target`, e il totale diventa rosso nel momento in cui la somma delle righe supera il target — il tuo segnale per tagliare.
+
+## Impostazioni di Visualizzazione
+
+Il popup **Display** (desktop) e il bottom sheet delle impostazioni di visualizzazione (telefono) espongono le stesse tre opzioni:
+
+- **Show PreVis** — attiva/disattiva le miniature PreVis nella colonna Visual.
+- **PreVis aspect ratio** — la forma del frame a cui vengono ritagliate le miniature; mostrata solo quando PreVis è attivo.
+- **Shot numbers** — US (`1A, 1B, 1C`), EU (`1.1, 1.2, 2.1`) o UK (`1, 2, 3`).
+
+Il rapporto d'aspetto e il formato di numerazione delle inquadrature sono **condivisi con la Lista delle Inquadrature** — cambiarne uno in uno dei due strumenti lo cambia in entrambi. Vedi [Impostazioni di Visualizzazione](/it/guides/shot-list/display-settings) per il lato lista delle inquadrature di queste impostazioni.
+
+## Sul telefono
+
+Il layout su telefono è una card per riga — scorri orizzontalmente per muoverti tra le righe, come sfogliare gli [Storyboard](/it/storyboards). Su ogni card:
+
+- **Doppio tap su qualsiasi blocco per modificarlo** — il numero di scena, la durata, lo stato, il blocco AUDIO, il blocco VISUAL, INT/EXT, il tipo di inquadratura, il movimento di camera. Ognuno apre un editor bottom-sheet con la stessa semantica del desktop.
+- La pillola flottante **Scene N** (mostrata quando il progetto ha più di una scena) salta direttamente alla prima riga di una scena.
+- Il **pulsante commenti** apre il thread della riga come bottom sheet. Sul telefono puoi leggere il thread e aggiungere nuovi commenti di primo livello; tieni premuto un tuo commento per eliminarlo.
+- Lo slot PreVis della card funge anche da uploader — tocca il segnaposto per aggiungere un'immagine a un'inquadratura che non ne ha.
+
+## Esportare un PDF
+
+Apri **Share** — la finestra si apre sulla scheda **Export** (anche `Cmd / Ctrl + P` ti porta lì) — e premi **Export PDF**. Il risultato è un documento A4 verticale: nome del progetto e durata totale (con il target, se impostato) nell'intestazione, poi la tabella con le colonne **Row**, **Audio**, **Visual** e **PreVis**. Grassetto, corsivo e link sopravvivono all'esportazione — i link sono cliccabili nel PDF.
+
+Stati e commenti deliberatamente **non** sono nel PDF. È una lettura pulita dello script, non un verbale di revisione — per il feedback, invia invece un link di revisione ([Revisione cliente](/it/guides/av-script/client-review)).
+
+## Comportamento offline
+
+La modifica funziona completamente offline — righe, durate, audio, GFX, stati e commenti si salvano tutti localmente e si sincronizzano quando ti riconnetti, come tutto il resto in CineLog. Cosa richiede una connessione: creare, inviare o revocare i link di revisione (sono operazioni server), e il sito di revisione stesso.
+
+## Se non funziona
+
+*"Un'inquadratura del mio progetto non appare come riga."* Lo Script AV mostra solo la Lista delle Inquadrature Lineare. Se l'inquadratura vive solo su una board a griglia, non apparirà — e se la riga è svanita, controlla se qualcuno ha eliminato l'inquadratura, dato che eliminare la riga ed eliminare l'inquadratura sono la stessa cosa.
+
+*"Ho cambiato INT/EXT su una riga e sono cambiate anche altre righe."* È atteso — INT/EXT è un campo a livello di scena, quindi ogni inquadratura di quella scena lo segue.
+
+*"Ho riformulato una descrizione nello Script AV e la Lista delle Inquadrature è cambiata."* Atteso anche questo — è lo stesso campo. Lo Script AV e la Lista delle Inquadrature sono due viste delle stesse inquadrature.
+
+*"Una riga è passata a Rewrite e nessuno ha toccato il menu di stato."* Qualsiasi nuovo commento o risposta — dal cliente sul sito di revisione o da un membro del team nell'app — porta quella riga a Rewrite, anche se era Approved. Modificare il contenuto di una riga Approved (durata, audio, GFX o descrizione) fa lo stesso. Vedi [Revisione cliente](/it/guides/av-script/client-review) per il ciclo di vita completo degli stati.
+
+*"Il totale non corrisponde a quello che mi aspetto."* Il badge è la somma delle durate di tutte le righe — le righe senza durata impostata non contribuiscono nulla. Controlla se ci sono righe ancora a `00:00`. Il rosso significa solo che il totale supera il tuo target.
+
+*"Nel PDF esportato mancano gli stati e i commenti."* È voluto — il PDF contiene solo Row, Audio, Visual e PreVis. Usa un link di revisione quando conta la traccia del feedback.

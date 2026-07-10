@@ -1,0 +1,102 @@
+---
+title: Les essentiels du Script AV
+lastUpdated: 2026-07-10
+description: "Le tableau du Script AV ligne par ligne — d'où viennent les lignes, écrire l'audio et les GFX, le texte enrichi, le chronométrage face à une cible, les paramètres d'affichage, la disposition téléphone, l'export PDF et le comportement hors ligne."
+---
+
+Le Script AV est le script à deux colonnes des publicités et autres spots chronométrés : ce que le public entend à gauche, ce qu'il voit à droite, une ligne par plan, avec un total cumulé face à ta durée cible. Ce guide couvre la mécanique quotidienne de sa construction. Pour la vue d'ensemble de la fonctionnalité, voir [Script AV](/fr/avscript) ; pour les tours de validation avec un client, voir [Validation client](/fr/guides/av-script/client-review).
+
+Ce guide suppose [Les bases](/fr/guides/introduction). Le vocabulaire clic-tap-glissement est le même que partout ailleurs dans l'application.
+
+## D'où viennent les lignes
+
+Tu ne crées pas les lignes AV séparément — chaque ligne **est** un plan du découpage technique linéaire du projet, affiché dans l'ordre linéaire. Les en-têtes de scène ne s'affichent pas comme lignes ; le tableau est une suite continue de plans. Les plans qui n'existent que sur un tableau grille n'apparaissent jamais comme lignes AV — le Script AV lit exclusivement la liste Linéaire (voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production) pour la distinction).
+
+Parce que les lignes sont les plans, les modifications s'écrivent dans les deux sens :
+
+- **Add row** sur un tableau vide crée directement un premier plan dans la scène 1. Sur un tableau qui contient déjà des lignes, il ouvre la boîte de dialogue Add New Shot du Découpage Technique pour que tu choisisses la scène.
+- **Fais glisser une ligne pour réorganiser** — le nouvel ordre persiste comme ordre linéaire du Découpage Technique.
+- **Supprimer des lignes supprime des plans.** Sélectionne des lignes et appuie sur **Delete selected** ; la confirmation te prévient : *"This removes the shots from the Shot List too."* Il n'existe pas de suppression limitée à l'AV.
+
+Un tableau vide le dit lui-même : *"No shots yet. Use “Add row”, or add shots in the Shot List — they appear here automatically."* Si tu as déjà construit un découpage technique, ton Script AV est pré-rempli dès que tu l'ouvres. Voir [Les bases du découpage technique](/fr/guides/shot-list/essentials) pour les blocs de construction au niveau du plan.
+
+## Le tableau
+
+Cinq colonnes :
+
+- **Row** — le numéro de plan au-dessus d'une pastille de durée `MM:SS`. Clique sur le numéro pour déplacer le plan vers une autre scène ; clique sur la pastille pour définir la durée de la ligne.
+- **Audio** — une ligne par tag audio activé qui a du texte (`VO: …`, `SFX: …`), rendue en texte enrichi.
+- **Visual** — une ligne méta de puces (INT/EXT · type de plan · mouvement de caméra, chacune cliquable indépendamment), la description du plan, les éventuelles lignes GFX et une vignette PreVis à droite quand Show PreVis est activé.
+- **Status** — l'état de validation de la ligne : Draft, Review, Approved ou Rewrite. Tu peux le forcer manuellement depuis le menu de statut (une confirmation te prévient que tu forces la valeur), mais les statuts sont normalement pilotés par les tours de validation — voir [Validation client](/fr/guides/av-script/client-review).
+- **Comments** — une gouttière qui montre le dernier commentaire et le compteur de chaque ligne ; clique dessus pour ouvrir le panneau de fil de la ligne.
+
+Deux champs méritent un avertissement. **INT/EXT est au niveau de la scène** — le changer depuis la puce d'une ligne le change pour chaque plan de cette scène, ici et dans le Découpage Technique. Et la **description est la description de plan partagée** — le même champ que celui affiché par le Découpage Technique, donc la reformuler ici la reformule partout.
+
+## Écrire l'audio
+
+Clique sur la cellule Audio d'une ligne pour ouvrir l'éditeur. Quatre puces à bascule — **VO** (voix off), **SFX** (effets sonores), **MX** (musique), **DIALOGUE** — se trouvent en haut, et chaque tag possède son propre texte enrichi. Comportement des puces :
+
+- Tape sur une puce **désactivée** pour activer le tag et commencer à y écrire.
+- Tape sur une puce **activée mais inactive** pour passer au texte de ce tag.
+- Tape sur la puce **active** pour désactiver le tag. Son texte est masqué, pas supprimé — réactive la puce et il revient.
+
+La cellule en lecture seule affiche une ligne par tag activé qui a du texte ; les tags activés mais vides n'affichent rien. Une seule ligne peut porter les quatre — une voix off sur un repère musical sur une note d'effets sonores.
+
+## Habillages GFX
+
+Les graphiques vivent dans l'éditeur Visual. Ouvre-le, appuie sur **+ GFX** et choisis un type : **Lower Third** (le synthé), **Super**, **Full Screen**, **Bug** ou **End Card**. Chaque entrée reçoit sa propre puce et son propre texte enrichi, une ligne peut porter plusieurs entrées (y compris des doublons du même type), et les entrées s'affichent sous la description comme des lignes étiquetées (`SUPER: 30% off this week`). Pour en retirer une, rends sa puce active et appuie sur le ✕ qui apparaît dessus.
+
+## Texte enrichi
+
+Le texte Audio et GFX prend en charge exactement trois formats : **gras**, *italique* et liens. Pour ajouter un lien, sélectionne du texte et utilise le bouton lien de la barre d'outils — la boîte de dialogue **Add link** prend une URL (`https://example.com`). Avec le curseur sur un lien existant, la même boîte de dialogue s'ouvre en **Edit link**, préremplie — appliques-y une URL vide pour retirer le lien. Quand quelqu'un clique sur un lien dans le tableau, l'application demande *"Open this link?"* avant de lancer le navigateur.
+
+L'action **clear** de la barre d'outils (l'icône retour arrière) efface entièrement le texte actif — c'est un bouton page blanche, pas un bouton pour retirer le formatage.
+
+## Chronométrer le spot
+
+Chaque ligne porte sa propre durée `MM:SS` — clique sur la pastille sous le numéro de plan pour la définir. Le badge en haut au centre affiche le total de toutes les lignes.
+
+Clique sur le badge pour définir une cible : **No target**, une valeur prédéfinie (15s, 30s, 45s, 60s, 90s) ou **Custom…** pour un `MM:SS` exact. Avec une cible définie, le badge affiche `total / cible`, et le total passe au rouge dès que la somme des lignes dépasse la cible — ton signal pour couper.
+
+## Paramètres d'affichage
+
+Le popup **Display** (bureau) et la feuille inférieure des paramètres d'affichage (téléphone) exposent les trois mêmes options :
+
+- **Show PreVis** — bascule les vignettes PreVis dans la colonne Visual.
+- **PreVis aspect ratio** — le format de cadre auquel les vignettes sont recadrées ; affiché uniquement quand PreVis est activé.
+- **Shot numbers** — US (`1A, 1B, 1C`), EU (`1.1, 1.2, 2.1`) ou UK (`1, 2, 3`).
+
+Le ratio d'aspect et le format de numérotation des plans sont **partagés avec le Découpage Technique** — changer l'un des deux dans l'un ou l'autre outil le change dans les deux. Voir [Paramètres d'affichage](/fr/guides/shot-list/display-settings) pour le côté découpage technique de ces réglages.
+
+## Sur le téléphone
+
+La disposition téléphone est une carte par ligne — balaie horizontalement pour passer d'une ligne à l'autre, comme pour feuilleter les [Storyboards](/fr/storyboards). Sur chaque carte :
+
+- **Double-tape n'importe quel bloc pour l'éditer** — le numéro de scène, la durée, le statut, le bloc AUDIO, le bloc VISUAL, INT/EXT, le type de plan, le mouvement de caméra. Chacun ouvre un éditeur en feuille inférieure avec la même sémantique que sur bureau.
+- La pastille flottante **Scene N** (affichée quand le projet a plus d'une scène) saute directement à la première ligne d'une scène.
+- Le **bouton commentaires** ouvre le fil de la ligne en feuille inférieure. Sur le téléphone, tu peux lire le fil et ajouter de nouveaux commentaires de premier niveau ; appuie longuement sur l'un de tes propres commentaires pour le supprimer.
+- L'emplacement PreVis de la carte fait aussi office de zone de téléversement — tape sur l'emplacement vide pour ajouter une image à un plan qui n'en a pas.
+
+## Exporter un PDF
+
+Ouvre **Share** — la boîte de dialogue s'ouvre sur l'onglet **Export** (`Cmd / Ctrl + P` t'y amène aussi) — et appuie sur **Export PDF**. Le résultat est un document A4 portrait : le nom du projet et la durée totale (avec la cible, si définie) dans l'en-tête, puis le tableau avec les colonnes **Row**, **Audio**, **Visual** et **PreVis**. Le gras, l'italique et les liens survivent à l'export — les liens sont cliquables dans le PDF.
+
+Les statuts et les commentaires sont délibérément **absents** du PDF. C'est une lecture propre du script, pas un dossier de validation — pour les retours, envoie plutôt un lien de validation ([Validation client](/fr/guides/av-script/client-review)).
+
+## Comportement hors ligne
+
+L'édition fonctionne entièrement hors ligne — lignes, durées, audio, GFX, statuts et commentaires sont tous sauvegardés localement et se synchronisent à la reconnexion, comme tout le reste dans CineLog. Ce qui nécessite une connexion : créer, envoyer ou révoquer les liens de validation (ce sont des opérations serveur), et le site de validation lui-même.
+
+## Si ça ne marche pas
+
+*« Un plan de mon projet n'apparaît pas comme ligne. »* Le Script AV montre uniquement le découpage technique linéaire. Si le plan ne vit que sur un tableau grille, il n'apparaîtra pas — et si la ligne a disparu, vérifie si quelqu'un a supprimé le plan, puisque supprimer une ligne et supprimer un plan sont une seule et même chose.
+
+*« J'ai changé INT/EXT sur une ligne et d'autres lignes ont changé aussi. »* Attendu — INT/EXT est un champ au niveau de la scène, donc chaque plan de cette scène le suit.
+
+*« J'ai reformulé une description dans le Script AV et le Découpage Technique a changé. »* Attendu aussi — c'est le même champ. Le Script AV et le Découpage Technique sont deux vues des mêmes plans.
+
+*« Une ligne est passée en Rewrite et personne n'a touché au menu de statut. »* Tout nouveau commentaire ou réponse — du client sur le site de validation ou d'un coéquipier dans l'application — fait passer cette ligne en Rewrite, même si elle était Approved. Modifier le contenu d'une ligne Approved (durée, audio, GFX ou description) fait la même chose. Voir [Validation client](/fr/guides/av-script/client-review) pour le cycle de vie complet des statuts.
+
+*« Le total ne correspond pas à ce que j'attends. »* Le badge est la somme des durées de chaque ligne — les lignes sans durée définie ne comptent pour rien. Cherche les lignes encore à `00:00`. Le rouge signifie simplement que le total dépasse ta cible.
+
+*« Le PDF exporté n'a ni les statuts ni les commentaires. »* C'est voulu — le PDF ne porte que Row, Audio, Visual et PreVis. Utilise un lien de validation quand la trace des retours compte.

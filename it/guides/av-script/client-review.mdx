@@ -1,0 +1,131 @@
+---
+title: Revisione cliente
+lastUpdated: 2026-07-10
+description: "Invia uno Script AV a un cliente per la revisione — link di condivisione e codici di accesso, round di revisione, stati delle righe, cosa vede il cliente, commenti tra i round, l'email di feedback e cosa succede dopo l'approvazione."
+---
+
+Lo [Script AV](/it/avscript) ha un flusso di revisione cliente integrato: invii un link, il cliente approva o richiede riscritture riga per riga, e le sue risposte tornano nell'app come stati delle righe e commenti. Questa guida copre l'intero ciclo — il link, i round, gli stati e cosa vede davvero il tuo cliente.
+
+Questa guida assume i [Fondamenti dello Script AV](/it/guides/av-script/essentials).
+
+## Il link di revisione
+
+Ogni progetto ha uno Script AV e un link di revisione. Apri **Share** nella barra superiore dello Script AV, passa alla scheda **Share link** e vedrai il flusso del link.
+
+Prima di creare il link, scegli le sue opzioni:
+
+- **Livello di accesso** — **View only** (il cliente può leggere lo script ma non rispondere) o **Comment & Approve** (il flusso di revisione completo: approvazione/riscrittura per riga, commenti e approvazione del documento).
+- **Require access code** (richiedi codice di accesso) — una barriera opzionale; vedi la sezione successiva.
+
+Poi premi **Create link**. Il link è un URL stabile su `share.cinelog.com/av/…` — cambiare in seguito il livello di accesso o l'opzione del codice aggiorna lo stesso URL sul posto, quindi un link che hai già inviato via email continua a funzionare con le nuove impostazioni. Il tuo cliente non ha bisogno di un account CineLog; il link stesso è la credenziale.
+
+**Revoke link** invalida l'URL — chiunque lo apra in seguito vede "This review link is invalid or has expired." (il link non è valido o è scaduto). Dopo puoi creare un nuovo link (nuovo URL).
+
+## Il codice di accesso
+
+Attiva **Require access code** e il link si apre su una barriera invece che sullo script: il cliente inserisce un breve codice per entrare.
+
+- Il codice è di **6 caratteri**, senza distinzione tra maiuscole e minuscole.
+- Quando invii il link via email dalla finestra Share, il codice è incluso **nella stessa email**, in un blocco a sé sotto il link — il cliente riceve tutto in un solo messaggio.
+- Il codice è valido per **24 ore dal primo utilizzo**. Dopodiché scade, e il cliente vede un messaggio di codice scaduto alla barriera.
+- Il cliente non può rigenerare il codice da solo. Quando scade, reinvia il link dalla finestra Share — un codice scaduto viene sostituito automaticamente con uno nuovo prima che l'email parta, così l'email porta sempre un codice funzionante. (Anche riaprire la finestra Share rigenera un codice scaduto, ma il cliente conosce il nuovo codice solo quando lo invii o lo condividi.)
+
+Se copi il link e lo invii tu stesso (chat, la tua email), il codice non è allegato — mandalo attraverso un secondo canale, separatamente dal link.
+
+## Avviare un round di revisione
+
+Con un link **Comment & Approve**, inserisci l'email del cliente nella finestra Share e premi **Send for review**. Questo fa due cose insieme:
+
+1. **Invia il link via email** (e il codice di accesso, se attivo) al destinatario.
+2. **Avvia un nuovo round di revisione** — lo stato di ogni riga torna a **Review** e il contatore dei round avanza. Sia la pagina del cliente sia l'email di feedback al team mostrano questo numero di round.
+
+Con un link **View only** il pulsante recita **Send link** e si limita a inviarlo via email — nessun round parte, nessuno stato cambia.
+
+Sul piano gratuito, ogni progetto ha **3 round Send for review**; i piani a pagamento sono illimitati. Solo premere **Send for review** consuma un round — reinviare via email il link di un round esistente, copiarlo o cambiare le opzioni del link non lo fa mai. Se raggiungi il limite, l'app propone un upgrade.
+
+## Gli stati delle righe
+
+Ogni riga porta uno di quattro stati, mostrato nella colonna **Status**:
+
+- **Draft** — non ancora inviata in revisione.
+- **Review** — inviata al cliente, in attesa della sua risposta. È lo stato a cui torna ogni riga quando parte un round.
+- **Approved** — il cliente (o il tuo team) ha approvato la riga.
+- **Rewrite** — modifiche richieste.
+
+Cosa sposta una riga da uno stato all'altro:
+
+- I pulsanti **Approve** e **Rewrite** del cliente sul sito di revisione impostano direttamente Approved e Rewrite.
+- **Qualsiasi nuovo commento o risposta — dal cliente o dal tuo team — porta la riga a Rewrite.** Comprese le righe già Approved: un commento viene trattato come feedback da gestire, quindi l'approvazione viene ritirata.
+- **Modificare il contenuto di una riga Approved** — durata, audio, GFX o descrizione — ritira anch'esso l'approvazione e porta la riga a Rewrite. Il cliente ha approvato ciò che ha visto; cambiarlo invalida quell'approvazione.
+- Il tuo team può **forzare manualmente** lo stato di qualsiasi riga dalla cella di stato. Una finestra di conferma chiede prima che la forzatura abbia effetto.
+
+La barra superiore dell'app mostra un badge a livello di documento derivato dalle righe: un qualsiasi Rewrite rende il documento Rewrite, altrimenti un qualsiasi Review lo rende Review, altrimenti un qualsiasi Draft lo rende Draft; recita Approved solo quando ogni riga è approvata. Se ogni riga è approvata ma il cliente non ha mai approvato l'intero documento, un'icona di avviso ambra appare accanto al badge — il cliente ha approvato riga per riga senza un'approvazione finale del documento in sé.
+
+## Cosa vede il tuo cliente
+
+Il sito di revisione è una singola pagina. L'intestazione mostra il **nome del progetto**, il **numero del round** con la **durata totale** dello script e una pillola di stato per il documento (per esempio "IN REVIEW"). Sotto, le righe — le stesse righe della tua Lista delle Inquadrature Lineare, con gli stessi numeri di inquadratura, durate, audio, visual, GFX e immagini PreVis (GFX e PreVis condividono una colonna che appare solo quando **Show PreVis** è attivo nelle tue impostazioni di visualizzazione).
+
+Su un link **Comment & Approve**, ogni riga ha:
+
+- I toggle **Approve** e **Rewrite**. Uno o l'altro; toccare quello attivo lo annulla e riporta la riga a Review.
+- Un **thread di commenti**, chiuso di default dietro un'etichetta "N comments". Le righe senza commenti mostrano un link **Add comment**. Le risposte vanno a un solo livello di profondità.
+
+Il cliente vede solo **i commenti del round corrente**. I commenti dei round precedenti — compresi i suoi — scompaiono dal sito quando avvii un nuovo round; il tuo team conserva la cronologia completa nell'app (vedi la sezione successiva).
+
+Una riga conta come *gestita* quando il cliente l'ha approvata, ha richiesto una riscrittura o l'ha commentata. Quando ogni riga è gestita, appare un invito **All rows reviewed** (tutte le righe revisionate) che propone l'invio. Due azioni concludono la revisione:
+
+- **Send responses** — invia il feedback del cliente al tuo team. È bloccato finché ogni riga non è gestita; la finestra elenca le righe ancora in attesa.
+- **Approve entire document** — disponibile in qualsiasi momento, indipendentemente dallo stato delle singole righe. Approva ogni riga e l'intero documento in un solo passaggio, e blocca il link di revisione in sola lettura.
+
+Su un link **View only** la pagina mostra un banner "This link is view-only" (questo link è di sola visualizzazione) e nessuno dei controlli — niente toggle, niente campi di scrittura, niente footer.
+
+## Commenti e round
+
+Ogni commento è etichettato con il round in cui è stato scritto. Il sito di revisione mostra al cliente solo il round corrente; l'app mostra al tuo team **tutti i commenti di tutti i round**, quindi nulla di ciò che il cliente ha scritto va perso — un nuovo round fa solo avanzare la conversazione sul lato del cliente.
+
+L'attribuzione funziona così:
+
+- I commenti del cliente mostrano l'indirizzo email a cui è stato inviato il link (o "Client" se il link è stato solo copiato, mai inviato via email).
+- I commenti del team mostrano il nome del membro; i tuoi appaiono come "You".
+
+**Resolve** è un'azione solo per il team nell'app — il sito di revisione non ha un controllo di risoluzione, quindi usala per tracciare internamente quale feedback hai già gestito. Solo l'autore di un commento può eliminarlo, il che significa che i commenti del cliente non possono essere eliminati dall'app in alcun modo.
+
+## L'email di feedback
+
+Quando il cliente preme **Send responses** o **Approve entire document**, CineLog invia un'email al tuo team: *"The client finished an AV Script review."* (il cliente ha concluso una revisione dello Script AV). Va al proprietario del progetto più tutti coloro il cui ruolo concede accesso allo Script AV, e include il numero del round e i conteggi delle righe approvate/da riscrivere.
+
+L'email parte **una volta per round**. Se il cliente continua a fare modifiche dopo l'invio, il sito gli dice che il team è già stato avvisato e che le sue ultime modifiche sono visibili — nessuna email duplicata. Il successivo **Send for review** la riarma per il nuovo round.
+
+## Dopo l'approvazione
+
+Una volta che il cliente approva l'intero documento:
+
+- Il **link di revisione diventa di sola lettura**. Il cliente può ancora aprirlo e leggere tutto — righe e commenti — ma non può più approvare, richiedere riscritture o commentare.
+- **Il tuo team può continuare a modificare** nell'app come al solito; l'approvazione non blocca nulla dal tuo lato.
+- Il successivo **Send for review** riapre la revisione: parte un nuovo round, le righe tornano a Review e il link torna scrivibile.
+
+## Permessi
+
+La condivisione è vincolata dallo stesso permesso che modifica lo script. Creare, aggiornare, inviare e revocare il link di revisione — e avviare i round — richiedono tutti il permesso di **modifica della Lista delle Inquadrature** sul progetto. Visualizzare lo Script AV richiede la visualizzazione della Lista delle Inquadrature, oppure un permesso autonomo di visualizzazione dello Script AV, utile per un ruolo che deve seguire le revisioni del cliente senza vedere il resto della lista delle inquadrature. Ruoli e permessi vivono in [Cast & Troupe](/it/castandcrew).
+
+## Comportamento offline
+
+Modificare le righe e scrivere commenti funziona completamente offline — le modifiche si salvano localmente e si sincronizzano quando ti riconnetti, come tutto il resto in CineLog. La gestione del link no: creare, aggiornare, revocare e inviare il link richiedono tutti una connessione, e il sito di revisione stesso funziona solo online per il tuo cliente.
+
+Una sottigliezza: un commento scritto offline viene etichettato con il round **corrente al momento della sincronizzazione**. Se qualcuno del tuo team invia un nuovo round mentre sei offline, il tuo commento finisce in quel nuovo round.
+
+## Se non funziona
+
+*"Il mio cliente dice che il codice di accesso non funziona."* Probabilmente è scaduto — i codici durano 24 ore dal primo utilizzo. Reinvia il link dalla finestra Share; un nuovo codice viene generato automaticamente e incluso nell'email.
+
+*"Il mio cliente non può commentare o approvare."* Due cause probabili: il link è **View only** (controlla il livello di accesso nella finestra Share — cambiarlo aggiorna lo stesso URL), oppure il documento è già stato approvato, il che blocca il link in sola lettura fino al prossimo **Send for review**.
+
+*"Una riga che avevo approvato è tornata a Rewrite."* È atteso — qualsiasi nuovo commento o risposta porta la riga a Rewrite, e lo stesso fa modificare il contenuto di una riga approvata. Entrambi vengono trattati come "questa riga è cambiata o richiede attenzione dopo il via libera".
+
+*"Ho raggiunto un limite inviando in revisione."* Il piano gratuito include 3 round Send for review per progetto. Reinviare via email il link di un round esistente non conta; avviare nuovi round sì. Passa a un piano a pagamento per round illimitati.
+
+*"Non ho ricevuto l'email di feedback."* Parte una volta per round — se un membro del team l'ha già ricevuta per questo round, non verrà inviata di nuovo fino al prossimo **Send for review**. Controlla anche che il tuo ruolo conceda accesso allo Script AV; l'email va solo al proprietario del progetto e ai membri il cui ruolo lo include.
+
+*"Il cliente dice che mancano delle righe."* Lo Script AV è la Lista delle Inquadrature **Lineare**. Le inquadrature che esistono solo su board a griglia non sono righe AV e non appaiono mai sul sito di revisione.
+
+*"Abbiamo inviato un nuovo round e i commenti del cliente sono scomparsi."* Il sito di revisione mostra solo i commenti del round corrente. Nulla è perso — il tuo team vede la cronologia completa di tutti i round nell'app.

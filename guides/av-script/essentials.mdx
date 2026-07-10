@@ -1,0 +1,102 @@
+---
+title: AV Script essentials
+lastUpdated: 2026-07-10
+description: "The AV Script table row by row — where rows come from, writing audio and GFX, rich text, timing against a target, display settings, the phone layout, PDF export, and offline behavior."
+---
+
+The AV Script is the two-column script for commercials and other timed spots: what the audience hears on the left, what they see on the right, one row per shot, with a running total against your target length. This guide covers the day-to-day mechanics of building one. For the feature overview see [AV Script](/avscript); for review rounds with a client see [Client review](/guides/av-script/client-review).
+
+This guide assumes [The basics](/guides/introduction). The click-tap-drag vocabulary is the same as everywhere else in the app.
+
+## Where rows come from
+
+You don't create AV rows separately — every row **is** a shot in the project's Linear Shot List, shown in linear order. Scene headers don't render as rows; the table is a flat run of shots. Shots that exist only on a grid board never appear as AV rows — the AV Script reads the Linear list exclusively (see [Linear vs Production](/guides/shot-list/linear-vs-production) for the distinction).
+
+Because the rows are the shots, edits write through in both directions:
+
+- **Add row** on an empty table creates a first shot in scene 1 directly. On a table with rows, it opens the Shot List's Add New Shot dialog so you pick the scene.
+- **Drag a row to reorder** — the new order persists as the Shot List's linear order.
+- **Deleting rows deletes shots.** Select rows and press **Delete selected**; the confirmation warns you: *"This removes the shots from the Shot List too."* There is no AV-only delete.
+
+An empty table says so itself: *"No shots yet. Use “Add row”, or add shots in the Shot List — they appear here automatically."* If you've already built a shot list, your AV Script is pre-populated the moment you open it. See [Shot list essentials](/guides/shot-list/essentials) for the shot-level building blocks.
+
+## The table
+
+Five columns:
+
+- **Row** — the shot number stacked over an `MM:SS` duration pill. Click the number to move the shot to another scene; click the pill to set the row's duration.
+- **Audio** — one line per enabled audio tag that has text (`VO: …`, `SFX: …`), rendered as rich text.
+- **Visual** — a meta line of chips (INT/EXT · shot type · camera movement, each independently clickable), the shot description, any GFX lines, and a PreVis thumbnail on the right when Show PreVis is on.
+- **Status** — the row's review state: Draft, Review, Approved, or Rewrite. You can override it manually from the status menu (a confirmation warns that you're overriding), but statuses are normally driven by review rounds — see [Client review](/guides/av-script/client-review).
+- **Comments** — a gutter showing each row's latest comment and count; click it to open the row's thread panel.
+
+Two fields deserve a warning label. **INT/EXT is scene-level** — changing it from a row's chip changes it for every shot in that scene, here and in the Shot List. And the **description is the shared shot description** — the same field the Shot List shows, so rewording it here rewords it everywhere.
+
+## Writing audio
+
+Click a row's Audio cell to open the editor. Four toggle chips — **VO**, **SFX**, **MX**, **DIALOGUE** — sit at the top, and each tag owns its own rich text. Chip behavior:
+
+- Tap a **disabled** chip to enable the tag and start writing in it.
+- Tap an **enabled but inactive** chip to switch to that tag's text.
+- Tap the **active** chip to toggle the tag off. Its text is hidden, not deleted — re-enable the chip and it's back.
+
+The read-only cell renders one line per enabled tag that has text; enabled-but-empty tags render nothing. A single row can carry all four — a voice-over line over a music cue over an effects note.
+
+## GFX overlays
+
+Graphics live in the Visual editor. Open it, press **+ GFX**, and pick a type: **Lower Third**, **Super**, **Full Screen**, **Bug**, or **End Card**. Each entry gets its own chip and its own rich text, a row can carry multiple entries (duplicates of the same type included), and entries render under the description as labeled lines (`SUPER: 30% off this week`). To remove one, make its chip active and press the ✕ that appears on it.
+
+## Rich text
+
+Audio and GFX text supports exactly three formats: **bold**, *italic*, and links. To add a link, select text and use the toolbar's link button — the **Add link** dialog takes a URL (`https://example.com`). With the cursor on an existing link, the same dialog opens as **Edit link**, pre-filled — apply an empty URL there to remove the link. When someone clicks a link in the table, the app asks *"Open this link?"* before launching the browser.
+
+The toolbar's **clear** action (the backspace icon) wipes the active text entirely — it's a blank-slate button, not a remove-formatting button.
+
+## Timing the spot
+
+Every row carries its own `MM:SS` duration — click the pill under the shot number to set it. The badge at the top center shows the total of all rows.
+
+Click the badge to set a target: **No target**, a preset (15s, 30s, 45s, 60s, 90s), or **Custom…** for an exact `MM:SS`. With a target set, the badge reads `total / target`, and the total turns red the moment the rows add up to more than the target — your cue to trim.
+
+## Display settings
+
+The **Display** popup (desktop) and the display-settings bottom sheet (phone) expose the same three options:
+
+- **Show PreVis** — toggles the PreVis thumbnails in the Visual column.
+- **PreVis aspect ratio** — the frame shape thumbnails are cropped to; only shown while PreVis is on.
+- **Shot numbers** — US (`1A, 1B, 1C`), EU (`1.1, 1.2, 2.1`), or UK (`1, 2, 3`).
+
+The aspect ratio and shot-number format are **shared with the Shot List** — changing either one in either tool changes it in both. See [Display Settings](/guides/shot-list/display-settings) for the shot-list side of those settings.
+
+## On the phone
+
+The phone layout is one card per row — swipe horizontally to move between rows, like flipping through [Storyboards](/storyboards). On each card:
+
+- **Double-tap any block to edit it** — the scene number, duration, status, the AUDIO block, the VISUAL block, INT/EXT, shot type, camera movement. Each opens a bottom-sheet editor with the same semantics as desktop.
+- The floating **Scene N** pill (shown when the project has more than one scene) jumps straight to a scene's first row.
+- The **comments button** opens the row's thread as a bottom sheet. On the phone you can read the thread and add new top-level comments; long-press one of your own comments to delete it.
+- The card's PreVis slot doubles as an uploader — tap the placeholder to add an image to a shot that has none.
+
+## Exporting a PDF
+
+Open **Share** — the dialog opens on the **Export** tab (`Cmd / Ctrl + P` gets you there too) — and press **Export PDF**. The output is an A4 portrait document: project name and the total duration (with the target, if set) in the header, then the table with **Row**, **Audio**, **Visual**, and **PreVis** columns. Bold, italic, and links survive the export — links are clickable in the PDF.
+
+Statuses and comments are deliberately **not** in the PDF. It's a clean read of the script, not a review record — for feedback, send a review link instead ([Client review](/guides/av-script/client-review)).
+
+## Offline behavior
+
+Editing works fully offline — rows, durations, audio, GFX, statuses, and comments all save locally and sync when you reconnect, like everything else in CineLog. What needs a connection: creating, sending, or revoking review links (they're server operations), and the review website itself.
+
+## If this isn't working
+
+*"A shot from my project isn't showing up as a row."* The AV Script shows the Linear Shot List only. If the shot lives only on a grid board, it won't appear — and if the row vanished, check whether someone deleted the shot, since row deletion and shot deletion are the same thing.
+
+*"I changed INT/EXT on one row and other rows changed too."* Expected — INT/EXT is a scene-level field, so every shot in that scene follows it.
+
+*"I reworded a description in the AV Script and the Shot List changed."* Also expected — it's the same field. The AV Script and the Shot List are two views of the same shots.
+
+*"A row flipped to Rewrite and nobody touched the status menu."* Any new comment or reply — from the client on the review site or from a teammate in the app — flips that row to Rewrite, even if it was Approved. Editing an Approved row's content (duration, audio, GFX, or description) does the same. See [Client review](/guides/av-script/client-review) for the full status lifecycle.
+
+*"The total doesn't match what I expect."* The badge is the sum of every row's duration — rows with no duration set contribute nothing. Check for rows still reading `00:00`. Red just means the total exceeds your target.
+
+*"The exported PDF is missing the statuses and comments."* By design — the PDF carries Row, Audio, Visual, and PreVis only. Use a review link when the feedback trail matters.

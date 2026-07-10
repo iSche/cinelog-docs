@@ -1,0 +1,102 @@
+---
+title: AV-Skript-Grundlagen
+lastUpdated: 2026-07-10
+description: "Die AV-Skript-Tabelle Zeile für Zeile – woher Zeilen kommen, Audio und GFX schreiben, Rich Text, Timing gegen ein Ziel, Anzeige-Einstellungen, das Smartphone-Layout, PDF-Export und Offline-Verhalten."
+---
+
+Das AV-Skript ist das zweispaltige Skript für Commercials und andere getimte Spots: links, was das Publikum hört, rechts, was es sieht, eine Zeile pro Einstellung, mit einer laufenden Gesamtdauer gegen deine Ziellänge. Dieser Guide behandelt die alltägliche Mechanik beim Aufbau. Für die Funktionsübersicht siehe [AV-Skript](/de/avscript); für Review-Runden mit einem Kunden siehe [Kundenfreigabe](/de/guides/av-script/client-review).
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus. Das Klick-Tipp-Drag-Vokabular ist dasselbe wie überall sonst in der App.
+
+## Woher Zeilen kommen
+
+Du erstellst AV-Zeilen nicht separat – jede Zeile **ist** eine Einstellung in der linearen Einstellungsliste des Projekts, in linearer Reihenfolge angezeigt. Szenen-Header werden nicht als Zeilen dargestellt; die Tabelle ist eine flache Abfolge von Einstellungen. Einstellungen, die nur auf einem Grid-Board existieren, erscheinen nie als AV-Zeilen – das AV-Skript liest ausschließlich die lineare Liste (siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) für den Unterschied).
+
+Weil die Zeilen die Einstellungen sind, schreiben Bearbeitungen in beide Richtungen durch:
+
+- **Add row** auf einer leeren Tabelle erstellt direkt eine erste Einstellung in Szene 1. Auf einer Tabelle mit Zeilen öffnet es den Add-New-Shot-Dialog der Einstellungsliste, damit du die Szene wählst.
+- **Ziehe eine Zeile zum Umordnen** – die neue Reihenfolge wird als lineare Reihenfolge der Einstellungsliste gespeichert.
+- **Zeilen löschen löscht Einstellungen.** Wähle Zeilen aus und drücke **Delete selected**; die Bestätigung warnt dich: *"This removes the shots from the Shot List too."* Ein Löschen nur im AV-Skript gibt es nicht.
+
+Eine leere Tabelle sagt es selbst: *"No shots yet. Use “Add row”, or add shots in the Shot List — they appear here automatically."* Wenn du bereits eine Einstellungsliste gebaut hast, ist dein AV-Skript in dem Moment vorbefüllt, in dem du es öffnest. Siehe [Einstellungslisten-Grundlagen](/de/guides/shot-list/essentials) für die Bausteine auf Einstellungs-Ebene.
+
+## Die Tabelle
+
+Fünf Spalten:
+
+- **Row** — die Einstellungsnummer über einer `MM:SS`-Dauer-Pille. Klicke auf die Nummer, um die Einstellung in eine andere Szene zu verschieben; klicke auf die Pille, um die Dauer der Zeile zu setzen.
+- **Audio** — eine Zeile pro aktiviertem Audio-Tag mit Text (`VO: …`, `SFX: …`), als Rich Text dargestellt.
+- **Visual** — eine Meta-Zeile aus Chips (INT/EXT · Einstellungsgröße · Kamerabewegung, jeweils einzeln klickbar), die Einstellungs-Beschreibung, etwaige GFX-Zeilen und rechts ein PreVis-Thumbnail, wenn Show PreVis an ist.
+- **Status** — der Review-Status der Zeile: Draft, Review, Approved oder Rewrite. Du kannst ihn manuell über das Status-Menü überschreiben (eine Bestätigung warnt dich, dass du überschreibst), aber normalerweise werden die Status von Review-Runden gesteuert – siehe [Kundenfreigabe](/de/guides/av-script/client-review).
+- **Comments** — eine Randspalte, die den letzten Kommentar und die Anzahl pro Zeile zeigt; klicke darauf, um das Thread-Panel der Zeile zu öffnen.
+
+Zwei Felder verdienen einen Warnhinweis. **INT/EXT ist szenenbezogen** – es über den Chip einer Zeile zu ändern, ändert es für jede Einstellung in dieser Szene, hier und in der Einstellungsliste. Und die **Beschreibung ist die geteilte Einstellungs-Beschreibung** – dasselbe Feld, das die Einstellungsliste zeigt; sie hier umzuformulieren, formuliert sie überall um.
+
+## Audio schreiben
+
+Klicke auf die Audio-Zelle einer Zeile, um den Editor zu öffnen. Vier Toggle-Chips – **VO**, **SFX**, **MX**, **DIALOGUE** – sitzen oben, und jeder Tag besitzt seinen eigenen Rich Text. Chip-Verhalten:
+
+- Tippe auf einen **deaktivierten** Chip, um den Tag zu aktivieren und darin zu schreiben.
+- Tippe auf einen **aktivierten, aber inaktiven** Chip, um zum Text dieses Tags zu wechseln.
+- Tippe auf den **aktiven** Chip, um den Tag auszuschalten. Sein Text wird versteckt, nicht gelöscht – aktiviere den Chip wieder und er ist zurück.
+
+Die schreibgeschützte Zelle rendert eine Zeile pro aktiviertem Tag mit Text; aktivierte, aber leere Tags rendern nichts. Eine einzelne Zeile kann alle vier tragen – eine Voice-over-Zeile über einem Musik-Cue über einer Effekt-Notiz.
+
+## GFX-Overlays
+
+Grafiken leben im Visual-Editor. Öffne ihn, drücke **+ GFX** und wähle einen Typ: **Lower Third**, **Super**, **Full Screen**, **Bug** oder **End Card**. Jeder Eintrag bekommt seinen eigenen Chip und seinen eigenen Rich Text, eine Zeile kann mehrere Einträge tragen (Duplikate desselben Typs eingeschlossen), und Einträge werden unter der Beschreibung als beschriftete Zeilen gerendert (`SUPER: 30% off this week`). Zum Entfernen mach den Chip aktiv und drücke das ✕, das darauf erscheint.
+
+## Rich Text
+
+Audio- und GFX-Text unterstützt genau drei Formate: **fett**, *kursiv* und Links. Um einen Link hinzuzufügen, markiere Text und nutze den Link-Button der Werkzeugleiste – der **Add link**-Dialog nimmt eine URL (`https://example.com`). Steht der Cursor auf einem bestehenden Link, öffnet sich derselbe Dialog vorausgefüllt als **Edit link** – wende dort eine leere URL an, um den Link zu entfernen. Klickt jemand auf einen Link in der Tabelle, fragt die App *"Open this link?"*, bevor der Browser startet.
+
+Die **Clear**-Aktion der Werkzeugleiste (das Backspace-Icon) löscht den aktiven Text komplett – sie ist ein Alles-auf-null-Button, kein Formatierung-entfernen-Button.
+
+## Den Spot timen
+
+Jede Zeile trägt ihre eigene `MM:SS`-Dauer – klicke auf die Pille unter der Einstellungsnummer, um sie zu setzen. Das Badge oben in der Mitte zeigt die Summe aller Zeilen.
+
+Klicke auf das Badge, um ein Ziel zu setzen: **No target**, ein Preset (15s, 30s, 45s, 60s, 90s) oder **Custom…** für ein exaktes `MM:SS`. Mit gesetztem Ziel zeigt das Badge `Gesamtdauer / Ziel`, und die Gesamtdauer wird rot, sobald die Zeilen mehr ergeben als das Ziel – dein Signal zu kürzen.
+
+## Anzeige-Einstellungen
+
+Das **Display**-Popup (Desktop) und das Anzeige-Einstellungen-Bottom-Sheet (Smartphone) bieten dieselben drei Optionen:
+
+- **Show PreVis** — schaltet die PreVis-Thumbnails in der Visual-Spalte um.
+- **PreVis aspect ratio** — die Rahmenform, auf die die Thumbnails zugeschnitten werden; nur sichtbar, solange PreVis an ist.
+- **Shot numbers** — US (`1A, 1B, 1C`), EU (`1.1, 1.2, 2.1`) oder UK (`1, 2, 3`).
+
+Das Seitenverhältnis und das Format der Einstellungs-Nummerierung werden **mit der Einstellungsliste geteilt** – eines davon in einem der beiden Tools zu ändern, ändert es in beiden. Siehe [Anzeige-Einstellungen](/de/guides/shot-list/display-settings) für die Einstellungslisten-Seite dieser Optionen.
+
+## Auf dem Smartphone
+
+Das Smartphone-Layout ist eine Karte pro Zeile – wische horizontal, um zwischen Zeilen zu wechseln, wie beim Durchblättern der [Storyboards](/de/storyboards). Auf jeder Karte:
+
+- **Doppeltippe auf einen beliebigen Block, um ihn zu bearbeiten** – die Szenennummer, die Dauer, den Status, den AUDIO-Block, den VISUAL-Block, INT/EXT, Einstellungsgröße, Kamerabewegung. Jeder öffnet einen Bottom-Sheet-Editor mit derselben Semantik wie am Desktop.
+- Die schwebende **Scene N**-Pille (sichtbar, wenn das Projekt mehr als eine Szene hat) springt direkt zur ersten Zeile einer Szene.
+- Der **Kommentar-Button** öffnet den Thread der Zeile als Bottom Sheet. Am Smartphone kannst du den Thread lesen und neue Top-Level-Kommentare hinzufügen; halte einen deiner eigenen Kommentare gedrückt, um ihn zu löschen.
+- Der PreVis-Slot der Karte ist zugleich ein Uploader – tippe auf den Platzhalter, um einer Einstellung ohne Bild eines hinzuzufügen.
+
+## PDF exportieren
+
+Öffne **Share** – der Dialog öffnet sich auf dem **Export**-Tab (`Cmd / Ctrl + P` bringt dich auch dorthin) – und drücke **Export PDF**. Das Ergebnis ist ein A4-Hochformat-Dokument: Projektname und Gesamtdauer (mit Ziel, falls gesetzt) im Header, dann die Tabelle mit den Spalten **Row**, **Audio**, **Visual** und **PreVis**. Fett, kursiv und Links überleben den Export – Links sind in der PDF klickbar.
+
+Status und Kommentare sind bewusst **nicht** in der PDF. Sie ist eine saubere Lesefassung des Skripts, kein Review-Protokoll – für Feedback schick stattdessen einen Review-Link ([Kundenfreigabe](/de/guides/av-script/client-review)).
+
+## Offline-Verhalten
+
+Bearbeiten funktioniert komplett offline – Zeilen, Dauern, Audio, GFX, Status und Kommentare werden alle lokal gespeichert und syncen, sobald du wieder verbunden bist, wie alles andere in CineLog. Was eine Verbindung braucht: Review-Links erstellen, senden oder widerrufen (das sind Server-Operationen) und die Review-Website selbst.
+
+## Falls das nicht funktioniert
+
+*"Eine Einstellung aus meinem Projekt taucht nicht als Zeile auf."* Das AV-Skript zeigt nur die lineare Einstellungsliste. Lebt die Einstellung nur auf einem Grid-Board, erscheint sie nicht – und wenn die Zeile verschwunden ist, prüfe, ob jemand die Einstellung gelöscht hat, denn Zeilen-Löschen und Einstellungs-Löschen sind dasselbe.
+
+*"Ich habe INT/EXT in einer Zeile geändert und andere Zeilen haben sich auch geändert."* Erwartet – INT/EXT ist ein szenenbezogenes Feld, jede Einstellung in dieser Szene folgt ihm.
+
+*"Ich habe eine Beschreibung im AV-Skript umformuliert und die Einstellungsliste hat sich geändert."* Auch erwartet – es ist dasselbe Feld. Das AV-Skript und die Einstellungsliste sind zwei Ansichten derselben Einstellungen.
+
+*"Eine Zeile ist auf Rewrite gesprungen und niemand hat das Status-Menü angefasst."* Jeder neue Kommentar oder jede Antwort – vom Kunden auf der Review-Site oder von einem Teammitglied in der App – schaltet die Zeile auf Rewrite, selbst wenn sie Approved war. Den Inhalt einer Approved-Zeile zu bearbeiten (Dauer, Audio, GFX oder Beschreibung) tut dasselbe. Siehe [Kundenfreigabe](/de/guides/av-script/client-review) für den kompletten Status-Lebenszyklus.
+
+*"Die Gesamtdauer entspricht nicht dem, was ich erwarte."* Das Badge ist die Summe der Dauern aller Zeilen – Zeilen ohne gesetzte Dauer tragen nichts bei. Prüfe auf Zeilen, die noch `00:00` zeigen. Rot heißt nur, dass die Gesamtdauer dein Ziel überschreitet.
+
+*"In der exportierten PDF fehlen die Status und Kommentare."* Absicht – die PDF trägt nur Row, Audio, Visual und PreVis. Nutze einen Review-Link, wenn die Feedback-Spur zählt.

@@ -1,0 +1,99 @@
+---
+title: AV-Skript
+lastUpdated: 2026-07-10
+description: "Schreibe zweispaltige Audio/Visual-Werbeskripte, time sie sekundengenau und führe Kundenfreigabe-Runden durch – alles synchron mit deiner Einstellungsliste."
+---
+import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
+
+Das CineLog AV-Skript ist das klassische zweispaltige Skript für Werbung und Commercials: Audio links, Visual rechts, eine Zeile pro Beat. Wie das Storyboard ist es kein separater Datensatz – jede Zeile **ist** eine Einstellung in der linearen Einstellungsliste deines Projekts, in beide Richtungen synchron gehalten. Jedes Projekt hat genau ein AV-Skript, und das ganze Tool ist um den Kundenfreigabe-Loop herum gebaut: schreiben, timen, senden, Freigaben pro Zeile einsammeln und iterieren bis zum finalen Sign-off.
+
+## Kernfunktionen
+
+<CardGrid>
+<Card title="Zweispaltige Skript-Zeilen">
+  Die Audio-Spalte trägt **VO**-, **SFX**-, **MX**- und **DIALOGUE**-Tags, jeder mit eigenem Rich Text (fett, kursiv und klickbare Links). Die Visual-Spalte kombiniert die Einstellungs-Beschreibung – geteilt mit der Einstellungsliste – mit GFX-Overlays (**Lower Third**, **Super**, **Full Screen**, **Bug**, **End Card**) und einem PreVis-Bild.
+</Card>
+
+<Card title="Zeitbewusstes Schreiben">
+  Jede Zeile trägt eine MM:SS-Dauer, und der Header zeigt die laufende Gesamtdauer gegen dein Ziel. Wähle eine voreingestellte Spotlänge (:15, :30, :45, :60, :90) oder setze ein eigenes Ziel – die Gesamtdauer wird rot, sobald du drüber bist.
+</Card>
+
+<Card title="Review-Links für Kunden">
+  Schicke das Skript als Review-Link auf share.cinelog.com an einen Kunden. Wähle **View only**- oder **Comment & Approve**-Zugriff, schütze den Link optional mit einem Zugangscode, und der Reviewer öffnet ihn in jedem Browser – kein CineLog-Konto nötig.
+</Card>
+
+<Card title="Status-Workflow pro Zeile">
+  Jede Zeile durchläuft **Draft**, **Review**, **Approved** und **Rewrite**. Kunden entscheiden Zeile für Zeile – freigeben, einen Rewrite anfordern oder einen Kommentar hinterlassen – und können das gesamte Dokument mit einer Aktion freigeben, wenn alles passt.
+</Card>
+
+<Card title="Professioneller PDF-Export">
+  Drücke `Cmd / Ctrl + P`, um den PDF-Export zu öffnen: ein zweispaltiges A4-Layout mit Zeilennummern und Timings, Rich Text in Audio und Visual mit klickbaren Links und PreVis-Bildern. Interne Status und Kommentare bleiben aus dem Export draußen – die Seiten sind also immer kundenfertig.
+</Card>
+</CardGrid>
+
+## Detaillierte Nutzung & Workflows
+
+<Steps>
+<ol>
+
+<li>
+
+**Zeilen entwerfen**
+
+Klicke auf **Add row**, um einen Beat zu erstellen, oder öffne ein Projekt, das bereits eine lineare Einstellungsliste hat – jede Einstellung erscheint automatisch als Zeile. Aktiviere die Audio-Tags, die jeder Beat braucht, schreib den Text, beschreibe das Visual und lege GFX darüber.
+
+</li>
+<li>
+
+**Dauern und Ziel setzen**
+
+Gib jeder Zeile eine MM:SS-Dauer und wähle eine Ziellänge über das Badge im Header. Die laufende Gesamtdauer aktualisiert sich beim Schreiben, sodass du sofort weißt, wenn ein :30-Spot Richtung :34 driftet.
+
+</li>
+<li>
+
+**Zum Review senden**
+
+Öffne **Share**, erstelle einen Review-Link mit **Comment & Approve**-Zugriff und drücke **Send for review**. Das startet eine Review-Runde: Jede Zeile wird auf Review zurückgesetzt, und der Kunde erhält den Link – mit dem Zugangscode in derselben E-Mail, falls du einen aktiviert hast.
+
+</li>
+<li>
+
+**Der Kunde reviewt Zeile für Zeile**
+
+Auf der Review-Website gibt der Kunde jede Zeile frei, fordert einen Rewrite an oder hinterlässt Kommentare – und jeder neue Kommentar markiert die Zeile automatisch für Rewrite. Wenn jede Zeile bearbeitet ist, drückt er **Send responses** und dein Team bekommt eine Zusammenfassungs-E-Mail.
+
+</li>
+<li>
+
+**Feedback einarbeiten und neue Runde senden**
+
+Überarbeite die markierten Zeilen in der App und drücke erneut **Send for review**. Jede Runde gibt dem Kunden einen sauberen Stand – er sieht nur die Kommentare der aktuellen Runde – während dein Team die komplette Kommentar-Historie über alle Runden in der App behält.
+
+</li>
+<li>
+
+**Finale Freigabe des gesamten Dokuments**
+
+Wenn der Kunde **Approve entire document** drückt, wird jede Zeile auf einmal freigegeben und der Review-Link wird schreibgeschützt. Das ist der Sign-off – der Review-Link bleibt für den Kunden schreibgeschützt, bis du eine neue Runde startest.
+
+</li>
+
+</ol>
+</Steps>
+
+## Integriertes Daten-Ökosystem
+
+Die AV-Skript-Zeilen und die lineare Einstellungsliste sind dieselben Daten, auf zwei Arten betrachtet. Füge eine Zeile im AV-Skript hinzu und eine Einstellung erscheint in der Einstellungsliste; füge eine Einstellung in der linearen [Einstellungsliste](/de/shotlist) hinzu und eine Zeile erscheint im AV-Skript. Umordnen, Beschreibungen und PreVis-Bilder fließen augenblicklich in beide Richtungen – dieselben PreVis-Bilder speisen auch deine [Storyboards](/de/storyboards).
+
+<Aside type="tip">
+Das Löschen einer AV-Skript-Zeile löscht die Einstellung auch aus der Einstellungsliste – der Bestätigungsdialog erinnert dich daran, bevor du dich festlegst.
+</Aside>
+
+<Aside type="tip" title="Offline-fähiges Schreiben">
+Schreiben, Timing und Kommentieren funktionieren komplett offline und syncen, sobald du wieder verbunden bist. Nur die Sharing-Aktionen – den Link erstellen, eine Runde senden – brauchen eine Verbindung, und die Review-Website selbst ist für deinen Kunden nur online verfügbar.
+</Aside>
+
+Die Anzeige-Einstellungen – Show PreVis, das PreVis-Seitenverhältnis und das Format der Einstellungs-Nummerierung – werden mit der Einstellungsliste geteilt, das Skript passt also immer zum Rest deines Projekts.
+
+Bereit zu schreiben? Starte mit den [AV-Skript-Grundlagen](/de/guides/av-script/essentials) und lerne dann den kompletten Review-Loop in [Kundenfreigabe](/de/guides/av-script/client-review).

@@ -1,0 +1,102 @@
+---
+title: Fundamentos del Guion AV
+lastUpdated: 2026-07-10
+description: "La tabla del Guion AV fila por fila — de dónde salen las filas, escribir audio y GFX, texto enriquecido, cronometrar frente a un objetivo, ajustes de visualización, el diseño en el teléfono, la exportación a PDF y el comportamiento sin conexión."
+---
+
+El Guion AV es el guion a dos columnas para comerciales y otros spots cronometrados: lo que el público oye a la izquierda, lo que ve a la derecha, una fila por plano, con un total acumulado frente a tu duración objetivo. Esta guía cubre la mecánica del día a día para construir uno. Para el resumen de la funcionalidad, ver [Guion AV](/es/avscript); para las rondas de revisión con un cliente, ver [Revisión del cliente](/es/guides/av-script/client-review).
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction). El vocabulario click-tap-drag es el mismo que en el resto de la app.
+
+## De dónde salen las filas
+
+No creas filas AV por separado — cada fila **es** un plano de la Lista de Planos Lineal del proyecto, mostrado en orden lineal. Los encabezados de escena no se renderizan como filas; la tabla es una sucesión plana de planos. Los planos que existen solo en un tablero de cuadrícula nunca aparecen como filas AV — el Guion AV lee exclusivamente la lista Lineal (ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production) para la distinción).
+
+Como las filas son los planos, las ediciones se escriben en ambas direcciones:
+
+- **Add row** en una tabla vacía crea un primer plano directamente en la escena 1. En una tabla con filas, abre el diálogo Add New Shot de la Lista de Planos para que elijas la escena.
+- **Arrastra una fila para reordenar** — el nuevo orden persiste como el orden lineal de la Lista de Planos.
+- **Eliminar filas elimina planos.** Selecciona filas y pulsa **Delete selected**; la confirmación te avisa: *"This removes the shots from the Shot List too."* (esto elimina los planos también de la Lista de Planos). No existe un borrado solo del AV.
+
+Una tabla vacía lo dice ella misma: *"No shots yet. Use “Add row”, or add shots in the Shot List — they appear here automatically."* — aún no hay planos; usa Add row o añade planos en la Lista de Planos y aparecerán aquí automáticamente. Si ya construiste una lista de planos, tu Guion AV está pre-poblado en el momento en que lo abres. Ver [Lo esencial de la lista de planos](/es/guides/shot-list/essentials) para los bloques básicos a nivel de plano.
+
+## La tabla
+
+Cinco columnas:
+
+- **Row** — el número de plano encima de una píldora de duración `MM:SS`. Haz clic en el número para mover el plano a otra escena; haz clic en la píldora para fijar la duración de la fila.
+- **Audio** — una línea por cada etiqueta de audio activada que tenga texto (`VO: …`, `SFX: …`), renderizada como texto enriquecido.
+- **Visual** — una línea de metadatos con chips (INT/EXT · tipo de plano · movimiento de cámara, cada uno clicable de forma independiente), la descripción del plano, las líneas de GFX que haya, y una miniatura PreVis a la derecha cuando Show PreVis está activado.
+- **Status** — el estado de revisión de la fila: Draft, Review, Approved o Rewrite. Puedes sobrescribirlo manualmente desde el menú de estado (una confirmación te avisa de que lo estás sobrescribiendo), pero normalmente los estados los dirigen las rondas de revisión — ver [Revisión del cliente](/es/guides/av-script/client-review).
+- **Comments** — un margen que muestra el último comentario y el recuento de cada fila; haz clic en él para abrir el panel del hilo de la fila.
+
+Dos campos merecen una etiqueta de advertencia. **INT/EXT es a nivel de escena** — cambiarlo desde el chip de una fila lo cambia para todos los planos de esa escena, aquí y en la Lista de Planos. Y la **descripción es la descripción de plano compartida** — el mismo campo que muestra la Lista de Planos, así que reescribirla aquí la reescribe en todas partes.
+
+## Escribir el audio
+
+Haz clic en la celda Audio de una fila para abrir el editor. Cuatro chips conmutables — **VO**, **SFX**, **MX**, **DIALOGUE** — se sitúan en la parte superior, y cada etiqueta tiene su propio texto enriquecido. Comportamiento de los chips:
+
+- Toca un chip **desactivado** para activar la etiqueta y empezar a escribir en ella.
+- Toca un chip **activado pero inactivo** para cambiar al texto de esa etiqueta.
+- Toca el chip **activo** para desactivar la etiqueta. Su texto se oculta, no se elimina — reactiva el chip y estará de vuelta.
+
+La celda de solo lectura renderiza una línea por cada etiqueta activada que tenga texto; las etiquetas activadas pero vacías no renderizan nada. Una sola fila puede llevar las cuatro — una línea de voz en off sobre una entrada musical sobre una nota de efectos.
+
+## Superposiciones GFX
+
+Los gráficos viven en el editor Visual. Ábrelo, pulsa **+ GFX** y elige un tipo: **Lower Third**, **Super**, **Full Screen**, **Bug** o **End Card**. Cada entrada recibe su propio chip y su propio texto enriquecido, una fila puede llevar varias entradas (incluidos duplicados del mismo tipo), y las entradas se renderizan bajo la descripción como líneas etiquetadas (`SUPER: 30% off this week`). Para eliminar una, haz activo su chip y pulsa la ✕ que aparece en él.
+
+## Texto enriquecido
+
+El texto de Audio y GFX admite exactamente tres formatos: **negrita**, *cursiva* y enlaces. Para añadir un enlace, selecciona texto y usa el botón de enlace de la barra de herramientas — el diálogo **Add link** pide una URL (`https://example.com`). Con el cursor sobre un enlace existente, el mismo diálogo se abre como **Edit link**, pre-rellenado — aplica ahí una URL vacía para eliminar el enlace. Cuando alguien hace clic en un enlace en la tabla, la app pregunta *"Open this link?"* (¿abrir este enlace?) antes de lanzar el navegador.
+
+La acción de **borrado** de la barra de herramientas (el icono de retroceso) vacía por completo el texto activo — es un botón de borrón y cuenta nueva, no un botón de quitar formato.
+
+## Cronometrar el spot
+
+Cada fila lleva su propia duración `MM:SS` — haz clic en la píldora bajo el número de plano para fijarla. La insignia en la parte superior central muestra el total de todas las filas.
+
+Haz clic en la insignia para fijar un objetivo: **No target** (sin objetivo), un preajuste (15s, 30s, 45s, 60s, 90s) o **Custom…** para un `MM:SS` exacto. Con un objetivo fijado, la insignia muestra `total / objetivo`, y el total se pone en rojo en el momento en que las filas suman más que el objetivo — tu señal para recortar.
+
+## Ajustes de visualización
+
+El popup **Display** (escritorio) y la hoja inferior de ajustes de visualización (teléfono) exponen las mismas tres opciones:
+
+- **Show PreVis** — alterna las miniaturas PreVis en la columna Visual.
+- **PreVis aspect ratio** — la forma de encuadre a la que se recortan las miniaturas; solo se muestra mientras PreVis está activado.
+- **Shot numbers** — US (`1A, 1B, 1C`), EU (`1.1, 1.2, 2.1`) o UK (`1, 2, 3`).
+
+La relación de aspecto y el formato de numeración de planos se **comparten con la Lista de Planos** — cambiar cualquiera de los dos en cualquiera de las dos herramientas lo cambia en ambas. Ver [Ajustes de Visualización](/es/guides/shot-list/display-settings) para el lado de la lista de planos de esos ajustes.
+
+## En el teléfono
+
+El diseño de teléfono es una tarjeta por fila — desliza horizontalmente para moverte entre filas, como al hojear los [Storyboards](/es/storyboards). En cada tarjeta:
+
+- **Doble toque en cualquier bloque para editarlo** — el número de escena, la duración, el estado, el bloque AUDIO, el bloque VISUAL, INT/EXT, el tipo de plano, el movimiento de cámara. Cada uno abre un editor en hoja inferior con la misma semántica que en escritorio.
+- La píldora flotante **Scene N** (visible cuando el proyecto tiene más de una escena) salta directamente a la primera fila de una escena.
+- El **botón de comentarios** abre el hilo de la fila como una hoja inferior. En el teléfono puedes leer el hilo y añadir nuevos comentarios de primer nivel; mantén pulsado uno de tus propios comentarios para eliminarlo.
+- El hueco PreVis de la tarjeta funciona también como cargador — toca el marcador de posición para añadir una imagen a un plano que no tenga.
+
+## Exportar un PDF
+
+Abre **Share** — el diálogo se abre en la pestaña **Export** (`Cmd / Ctrl + P` también te lleva allí) — y pulsa **Export PDF**. La salida es un documento A4 vertical: el nombre del proyecto y la duración total (con el objetivo, si está fijado) en el encabezado, y luego la tabla con las columnas **Row**, **Audio**, **Visual** y **PreVis**. La negrita, la cursiva y los enlaces sobreviven a la exportación — los enlaces son clicables en el PDF.
+
+Los estados y los comentarios quedan deliberadamente **fuera** del PDF. Es una lectura limpia del guion, no un registro de revisión — para el feedback, envía un enlace de revisión ([Revisión del cliente](/es/guides/av-script/client-review)).
+
+## Comportamiento sin conexión
+
+La edición funciona completamente sin conexión — filas, duraciones, audio, GFX, estados y comentarios se guardan localmente y se sincronizan al reconectar, como todo lo demás en CineLog. Lo que necesita conexión: crear, enviar o revocar enlaces de revisión (son operaciones de servidor), y el propio sitio web de revisión.
+
+## Si esto no funciona
+
+*"Un plano de mi proyecto no aparece como fila."* El Guion AV muestra solo la Lista de Planos Lineal. Si el plano vive solo en un tablero de cuadrícula, no aparecerá — y si la fila desapareció, comprueba si alguien eliminó el plano, ya que eliminar la fila y eliminar el plano son la misma cosa.
+
+*"Cambié INT/EXT en una fila y otras filas cambiaron también."* Esperado — INT/EXT es un campo a nivel de escena, así que todos los planos de esa escena lo siguen.
+
+*"Reescribí una descripción en el Guion AV y la Lista de Planos cambió."* También esperado — es el mismo campo. El Guion AV y la Lista de Planos son dos vistas de los mismos planos.
+
+*"Una fila pasó a Rewrite y nadie tocó el menú de estado."* Cualquier comentario o respuesta nuevos — del cliente en el sitio de revisión o de un compañero en la app — pasa esa fila a Rewrite, incluso si estaba en Approved. Editar el contenido de una fila aprobada (duración, audio, GFX o descripción) hace lo mismo. Ver [Revisión del cliente](/es/guides/av-script/client-review) para el ciclo de vida completo de los estados.
+
+*"El total no coincide con lo que espero."* La insignia es la suma de la duración de cada fila — las filas sin duración fijada no aportan nada. Busca filas que aún marquen `00:00`. El rojo solo significa que el total supera tu objetivo.
+
+*"Al PDF exportado le faltan los estados y los comentarios."* Por diseño — el PDF lleva solo Row, Audio, Visual y PreVis. Usa un enlace de revisión cuando importe el rastro del feedback.

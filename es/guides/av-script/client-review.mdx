@@ -1,0 +1,131 @@
+---
+title: Revisión del cliente
+lastUpdated: 2026-07-10
+description: "Envía un Guion AV a un cliente para revisión — enlaces compartidos y códigos de acceso, rondas de revisión, estados de fila, lo que ve el cliente, comentarios entre rondas, el correo de feedback y qué pasa tras la aprobación."
+---
+
+El [Guion AV](/es/avscript) tiene un flujo de revisión con el cliente incorporado: envías un enlace, el cliente aprueba o pide reescrituras fila por fila, y sus respuestas vuelven a la app como estados de fila y comentarios. Esta guía cubre el ciclo completo — el enlace, las rondas, los estados y lo que tu cliente ve realmente.
+
+Esta guía da por supuesto [Fundamentos del Guion AV](/es/guides/av-script/essentials).
+
+## El enlace de revisión
+
+Cada proyecto tiene un Guion AV y un enlace de revisión. Abre **Share** en la barra superior del Guion AV, cambia a la pestaña **Share link** y verás el flujo del enlace.
+
+Antes de crear el enlace, elige sus opciones:
+
+- **Nivel de acceso** — **View only** (el cliente puede leer el guion pero no responder) o **Comment & Approve** (el flujo de revisión completo: aprobar/reescribir por fila, comentarios y aprobación del documento).
+- **Require access code** (requerir código de acceso) — una barrera opcional; ver la siguiente sección.
+
+Luego pulsa **Create link**. El enlace es una URL estable en `share.cinelog.com/av/…` — cambiar más tarde el nivel de acceso o el interruptor del código actualiza esa misma URL, así que un enlace que ya enviaste por correo sigue funcionando con los nuevos ajustes. Tu cliente no necesita una cuenta de CineLog; el propio enlace es la credencial.
+
+**Revoke link** mata la URL — cualquiera que la abra después verá "This review link is invalid or has expired." (este enlace de revisión no es válido o ha expirado). Después puedes crear un enlace nuevo (nueva URL).
+
+## El código de acceso
+
+Activa **Require access code** y el enlace se abre a una barrera en lugar del guion: el cliente introduce un código corto para entrar.
+
+- El código tiene **6 caracteres** y no distingue mayúsculas de minúsculas.
+- Cuando envías el enlace por correo desde el diálogo Share, el código va incluido **en el mismo correo**, en su propio bloque bajo el enlace — el cliente recibe todo en un solo mensaje.
+- El código es válido durante **24 horas desde el primer uso**. Después expira, y el cliente ve un mensaje de código expirado en la barrera.
+- El cliente no puede renovar el código por sí mismo. Cuando expire, reenvía el enlace desde el diálogo Share — un código expirado se reemplaza automáticamente por uno nuevo antes de que salga el correo, así que el correo siempre lleva un código que funciona. (Reabrir el diálogo Share también renueva un código expirado, pero el cliente solo conoce el nuevo código cuando lo envías o lo compartes.)
+
+Si copias el enlace y lo envías tú mismo (chat, tu propio correo), el código no va adjunto — envíalo por un segundo canal, separado del enlace.
+
+## Iniciar una ronda de revisión
+
+Con un enlace **Comment & Approve**, introduce el correo del cliente en el diálogo Share y pulsa **Send for review**. Esto hace dos cosas a la vez:
+
+1. **Envía el enlace por correo** (y el código de acceso, si está activado) al destinatario.
+2. **Inicia una nueva ronda de revisión** — el estado de todas las filas se restablece a **Review** y el contador de rondas avanza. La página del cliente y el correo de feedback al equipo muestran este número de ronda.
+
+Con un enlace **View only** el botón dice **Send link** y solo lo envía por correo — no se inicia ninguna ronda, no cambia ningún estado.
+
+En el plan gratuito, cada proyecto dispone de **3 rondas de Send for review**; los planes de pago son ilimitados. Solo pulsar **Send for review** consume una ronda — reenviar por correo el enlace de una ronda existente, copiarlo o cambiar las opciones del enlace nunca consume. Si alcanzas el límite, la app te ofrece una mejora de plan.
+
+## Estados de fila
+
+Cada fila lleva uno de cuatro estados, mostrados en la columna **Status**:
+
+- **Draft** — aún no enviada a revisión.
+- **Review** — enviada al cliente, a la espera de su respuesta. Es a lo que se restablece cada fila cuando empieza una ronda.
+- **Approved** — el cliente (o tu equipo) dio el visto bueno a la fila.
+- **Rewrite** — cambios solicitados.
+
+Qué mueve una fila entre ellos:
+
+- Los botones **Approve** y **Rewrite** del cliente en el sitio de revisión fijan Approved y Rewrite directamente.
+- **Cualquier comentario o respuesta nuevos — del cliente o de tu equipo — pasa la fila a Rewrite.** Eso incluye filas previamente aprobadas: un comentario se trata como feedback pendiente de atender, así que la aprobación se retira.
+- **Editar el contenido de una fila aprobada** — su duración, audio, GFX o descripción — también retira la aprobación y la pasa a Rewrite. El cliente aprobó lo que vio; cambiarlo lo invalida.
+- Tu equipo puede **sobrescribir manualmente** el estado de cualquier fila desde la celda de estado. Un diálogo de confirmación pregunta antes de que la sobrescritura surta efecto.
+
+La barra superior de la app muestra una insignia a nivel de documento derivada de las filas: cualquier Rewrite hace que el documento sea Rewrite; si no, cualquier Review lo hace Review; si no, cualquier Draft lo hace Draft; solo dice Approved cuando todas las filas están aprobadas. Si todas las filas están aprobadas pero el cliente nunca aprobó el documento completo, un icono de advertencia ámbar aparece junto a la insignia — el cliente firmó fila por fila sin una aprobación final del documento en sí.
+
+## Lo que ve tu cliente
+
+El sitio de revisión es una sola página. El encabezado muestra el **nombre del proyecto**, el **número de ronda** con la **duración total** del guion, y una píldora de estado para el documento (por ejemplo "IN REVIEW"). Debajo, las filas — las mismas filas que tu Lista de Planos Lineal, con los mismos números de plano, duraciones, audio, visuales, GFX e imágenes PreVis (GFX y PreVis comparten una columna que solo aparece mientras **Show PreVis** está activado en tus ajustes de visualización).
+
+En un enlace **Comment & Approve**, cada fila tiene:
+
+- Conmutadores **Approve** y **Rewrite**. Uno o el otro; tocar el activo lo deshace y devuelve la fila a Review.
+- Un **hilo de comentarios**, plegado por defecto tras un desplegable "N comments". Las filas sin comentarios muestran un enlace **Add comment**. Las respuestas llegan a un nivel de profundidad.
+
+El cliente solo ve **los comentarios de la ronda actual**. Los comentarios de rondas anteriores — incluidos los suyos propios — desaparecen del sitio cuando inicias una nueva ronda; tu equipo conserva el historial completo en la app (ver la siguiente sección).
+
+Una fila cuenta como *atendida* una vez que el cliente la ha aprobado, ha pedido una reescritura o la ha comentado. Cuando todas las filas están atendidas, aparece un aviso **All rows reviewed** (todas las filas revisadas) que ofrece enviar. Dos acciones cierran la revisión:
+
+- **Send responses** — envía el feedback del cliente a tu equipo. Está bloqueado hasta que todas las filas estén atendidas; el diálogo lista las filas que aún faltan.
+- **Approve entire document** — disponible en cualquier momento, sin importar el estado de cada fila. Aprueba todas las filas y el documento completo en un solo paso, y bloquea el enlace de revisión en solo lectura.
+
+En un enlace **View only** la página muestra un banner "This link is view-only" (este enlace es de solo lectura) y ninguno de los controles — sin conmutadores, sin campos de escritura, sin pie.
+
+## Comentarios y rondas
+
+Cada comentario queda etiquetado con la ronda en la que se escribió. El sitio de revisión muestra al cliente solo la ronda actual; la app muestra a tu equipo **todos los comentarios de todas las rondas**, así que nada de lo que el cliente escribió se pierde — una nueva ronda solo hace avanzar la conversación del lado del cliente.
+
+La atribución funciona así:
+
+- Los comentarios del cliente muestran la dirección de correo a la que se envió el enlace (o "Client" si el enlace solo se copió y nunca se envió por correo).
+- Los comentarios del equipo muestran el nombre del miembro; los tuyos aparecen como "You".
+
+**Resolve** es una acción exclusiva del equipo en la app — el sitio de revisión no tiene control de resolución, así que úsala para llevar el registro interno del feedback que ya atendiste. Solo el autor de un comentario puede eliminarlo, lo que significa que los comentarios del cliente no pueden eliminarse desde la app en absoluto.
+
+## El correo de feedback
+
+Cuando el cliente pulsa **Send responses** o **Approve entire document**, CineLog envía un correo a tu equipo: *"The client finished an AV Script review."* (el cliente terminó una revisión del Guion AV). Va al propietario del proyecto más todas las personas cuyo rol concede acceso al Guion AV, e incluye el número de ronda y los recuentos de filas aprobadas y en reescritura.
+
+El correo se dispara **una vez por ronda**. Si el cliente sigue haciendo cambios después de enviar, el sitio le indica que el equipo ya fue notificado y que sus últimos cambios son visibles — sin correos duplicados. El siguiente **Send for review** lo rearma para la nueva ronda.
+
+## Después de la aprobación
+
+Una vez que el cliente aprueba el documento completo:
+
+- El **enlace de revisión pasa a solo lectura**. El cliente aún puede abrirlo y leerlo todo — filas y comentarios — pero ya no puede aprobar, pedir reescrituras ni comentar.
+- **Tu equipo puede seguir editando** en la app con normalidad; la aprobación no bloquea nada de tu lado.
+- El siguiente **Send for review** reabre la revisión: empieza una nueva ronda, las filas se restablecen a Review y el enlace vuelve a ser editable.
+
+## Permisos
+
+Compartir está protegido por el mismo permiso que edita el guion. Crear, actualizar, enviar y revocar el enlace de revisión — e iniciar rondas — requieren el permiso de **edición de la Lista de Planos** en el proyecto. Ver el Guion AV requiere el permiso de vista de la Lista de Planos, o una concesión independiente de vista del Guion AV, útil para un rol que deba seguir las revisiones del cliente sin ver el resto de la lista de planos. Los roles y permisos viven en [Elenco y Equipo](/es/castandcrew).
+
+## Comportamiento sin conexión
+
+Editar filas y escribir comentarios funciona completamente sin conexión — los cambios se guardan localmente y se sincronizan al reconectar, como todo lo demás en CineLog. La gestión del enlace no: crear, actualizar, revocar y enviar el enlace requieren conexión, y el propio sitio web de revisión solo funciona en línea para tu cliente.
+
+Una sutileza: un comentario que escribes sin conexión queda etiquetado con la ronda que sea **actual cuando se sincroniza**. Si alguien de tu equipo envía una nueva ronda mientras estás sin conexión, tu comentario aterriza en esa nueva ronda.
+
+## Si esto no funciona
+
+*"Mi cliente dice que el código de acceso no funciona."* Probablemente expiró — los códigos duran 24 horas desde el primer uso. Reenvía el enlace desde el diálogo Share; se genera un código nuevo automáticamente y se incluye en el correo.
+
+*"Mi cliente no puede comentar ni aprobar."* Dos causas probables: el enlace es **View only** (comprueba el nivel de acceso en el diálogo Share — cambiarlo actualiza la misma URL), o el documento ya fue aprobado, lo que bloquea el enlace en solo lectura hasta el siguiente **Send for review**.
+
+*"Una fila que aprobé volvió a Rewrite."* Esperado — cualquier comentario o respuesta nuevos pasa la fila a Rewrite, y editar el contenido de una fila aprobada hace lo mismo. Ambos se tratan como "esta fila cambió o necesita atención después de la firma".
+
+*"Alcancé un límite al enviar a revisión."* El plan gratuito incluye 3 rondas de Send for review por proyecto. Reenviar por correo el enlace de una ronda existente no cuenta; iniciar rondas nuevas sí. Mejora tu plan para rondas ilimitadas.
+
+*"No recibí el correo de feedback."* Se dispara una vez por ronda — si un compañero ya lo recibió para esta ronda, no se vuelve a enviar hasta el siguiente **Send for review**. Comprueba también que tu rol concede acceso al Guion AV; el correo solo va al propietario del proyecto y a los miembros cuyo rol lo incluye.
+
+*"El cliente dice que faltan filas."* El Guion AV es la Lista de Planos **Lineal**. Los planos que existen solo en tableros de cuadrícula no son filas AV y nunca aparecen en el sitio de revisión.
+
+*"Enviamos una nueva ronda y los comentarios del cliente desaparecieron."* El sitio de revisión muestra solo los comentarios de la ronda actual. No se pierde nada — tu equipo ve el historial completo de todas las rondas en la app.
