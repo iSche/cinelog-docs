@@ -110,6 +110,8 @@ Compartir está protegido por el mismo permiso que edita el guion. Crear, actual
 
 ## Comportamiento sin conexión
 
-Editar filas y escribir comentarios funciona completamente sin conexión — los cambios se guardan localmente y se sincronizan al reconectar, como todo lo demás en CineLog. La gestión del enlace no: crear, actualizar, revocar y enviar el enlace requieren conexión, y el propio sitio web de revisión solo funciona en línea para tu cliente.
+De tu lado, editar filas y escribir comentarios funciona completamente sin conexión — los cambios se guardan localmente y se sincronizan al reconectar, como todo lo demás en CineLog. La gestión del enlace no: crear, actualizar, revocar y enviar el enlace requieren conexión.
+
+**El lado de tu cliente no funciona sin conexión en absoluto.** El sitio web de revisión es una página web corriente: tu cliente necesita conexión a internet para abrir el enlace, leer el guion, comentar y aprobar. Nada de lo que hace se pone en cola ni se guarda sin conexión — si la conexión se corta a mitad de la revisión, su siguiente acción simplemente falla hasta que vuelva a estar en línea.
 
 Una sutileza: un comentario que escribes sin conexión queda etiquetado con la ronda que sea **actual cuando se sincroniza**. Si alguien de tu equipo envía una nueva ronda mientras estás sin conexión, tu comentario aterriza en esa nueva ronda.

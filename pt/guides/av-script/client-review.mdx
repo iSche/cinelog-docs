@@ -110,6 +110,8 @@ O compartilhamento é controlado pela mesma permissão que edita o roteiro. Cria
 
 ## Comportamento offline
 
-Editar linhas e escrever comentários funcionam totalmente offline — as alterações salvam localmente e sincronizam quando você reconecta, como todo o resto no CineLog. O gerenciamento do link, não: criar, atualizar, revogar e enviar o link exigem conexão, e o próprio site de revisão é apenas online para o seu cliente.
+Do seu lado, editar linhas e escrever comentários funcionam totalmente offline — as alterações salvam localmente e sincronizam quando você reconecta, como todo o resto no CineLog. O gerenciamento do link, não: criar, atualizar, revogar e enviar o link exigem conexão.
+
+**O lado do seu cliente não funciona offline de jeito nenhum.** O site de revisão é uma página web comum: seu cliente precisa de conexão com a internet para abrir o link, ler o roteiro, comentar e aprovar. Nada do que ele faz fica em fila ou salvo offline — se a conexão cair no meio da revisão, a próxima ação dele simplesmente falha até ele voltar a ficar online.
 
 Uma sutileza: um comentário que você escreve offline é marcado com a rodada que estiver **atual quando ele sincronizar**. Se alguém do seu time enviar uma nova rodada enquanto você está offline, seu comentário cai nessa nova rodada.

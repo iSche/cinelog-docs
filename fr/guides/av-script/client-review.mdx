@@ -110,6 +110,8 @@ Le partage est contrôlé par la même permission que l'édition du script. Cré
 
 ## Comportement hors ligne
 
-Éditer les lignes et écrire des commentaires fonctionnent entièrement hors ligne — les changements sont sauvegardés localement et se synchronisent à la reconnexion, comme tout le reste dans CineLog. La gestion du lien, non : créer, mettre à jour, révoquer et envoyer le lien exigent tous une connexion, et le site de validation lui-même n'est accessible qu'en ligne pour ton client.
+De ton côté, éditer les lignes et écrire des commentaires fonctionnent entièrement hors ligne — les changements sont sauvegardés localement et se synchronisent à la reconnexion, comme tout le reste dans CineLog. La gestion du lien, non : créer, mettre à jour, révoquer et envoyer le lien exigent tous une connexion.
+
+**Du côté de ton client, rien ne fonctionne hors ligne.** Le site de validation est une page web ordinaire : ton client a besoin d'une connexion internet pour ouvrir le lien, lire le script, commenter et approuver. Rien de ce qu'il fait n'est mis en file d'attente ni sauvegardé hors ligne — si la connexion tombe en pleine validation, sa prochaine action échoue tout simplement jusqu'à ce qu'il soit de nouveau en ligne.
 
 Une subtilité : un commentaire que tu écris hors ligne est étiqueté avec le tour **en cours au moment où il se synchronise**. Si quelqu'un de ton équipe envoie un nouveau tour pendant que tu es hors ligne, ton commentaire atterrit dans ce nouveau tour.

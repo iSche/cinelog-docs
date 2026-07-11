@@ -110,6 +110,8 @@ La condivisione è vincolata dallo stesso permesso che modifica lo script. Crear
 
 ## Comportamento offline
 
-Modificare le righe e scrivere commenti funziona completamente offline — le modifiche si salvano localmente e si sincronizzano quando ti riconnetti, come tutto il resto in CineLog. La gestione del link no: creare, aggiornare, revocare e inviare il link richiedono tutti una connessione, e il sito di revisione stesso funziona solo online per il tuo cliente.
+Dal tuo lato, modificare le righe e scrivere commenti funziona completamente offline — le modifiche si salvano localmente e si sincronizzano quando ti riconnetti, come tutto il resto in CineLog. La gestione del link no: creare, aggiornare, revocare e inviare il link richiedono tutti una connessione.
+
+**Il lato del tuo cliente non funziona offline in alcun modo.** Il sito di revisione è una normale pagina web: il tuo cliente ha bisogno di una connessione a internet per aprire il link, leggere lo script, commentare e approvare. Nulla di ciò che fa viene messo in coda o salvato offline — se la connessione cade a metà revisione, la sua azione successiva semplicemente fallisce finché non torna online.
 
 Una sottigliezza: un commento scritto offline viene etichettato con il round **corrente al momento della sincronizzazione**. Se qualcuno del tuo team invia un nuovo round mentre sei offline, il tuo commento finisce in quel nuovo round.

@@ -110,6 +110,8 @@ Sharing is gated by the same permission that edits the script. Creating, updatin
 
 ## Offline behavior
 
-Editing rows and writing comments work fully offline — changes save locally and sync when you reconnect, like everything else in CineLog. Link management does not: creating, updating, revoking, and sending the link all require a connection, and the review website itself is online-only for your client.
+On your side, editing rows and writing comments work fully offline — changes save locally and sync when you reconnect, like everything else in CineLog. Link management does not: creating, updating, revoking, and sending the link all require a connection.
+
+**Your client's side does not work offline at all.** The review website is an ordinary web page: your client needs an internet connection to open the link, read the script, comment, and approve. Nothing they do is queued or saved offline — if the connection drops mid-review, their next action simply fails until they're back online.
 
 One subtlety: a comment you write offline is tagged with whichever round is **current when it syncs**. If someone on your team sends a new round while you're offline, your comment lands in that new round.
