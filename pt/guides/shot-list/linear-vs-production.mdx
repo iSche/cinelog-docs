@@ -1,7 +1,7 @@
 ---
 title: Visualização Linear vs Visualização Produção
-lastUpdated: 2026-05-23
-description: "Duas visualizações dos mesmos planos — ordem de roteiro vs ordem de dia de filmagem. Cobre a regra de divisão de cena parcial, banners, seleção com escopo de cena, auto-seleção do cabeçalho de cena, sincronização entre visualizações e como o delete difere entre as duas."
+lastUpdated: 2026-07-11
+description: "Duas visualizações dos mesmos planos — ordem de roteiro vs ordem de dia de filmagem. Cobre a regra de divisão de cena parcial, banners, seleção com escopo de cena, seleção do cabeçalho de cena, sincronização entre visualizações e como o delete difere entre as duas."
 ---
 
 Linear e Produção são duas visualizações dos mesmos planos. Linear está em ordem de roteiro — a forma como o diretor e o supervisor de script leem. Produção está em ordem de dia de filmagem — a forma como o 1º AD planeja o cronograma. Todo o resto deste guia é sobre as diferenças.
@@ -10,9 +10,9 @@ Este guia assume [O básico](/pt/guides/introduction) e [Decupagem essencial](/p
 
 ## Trocando de visualização
 
-Alterne no cabeçalho da visualização acima da lista. `Shift + L` alterna o layout de colunas (ajustado ↔ rolagem) — útil quando você quer ver mais colunas de uma vez.
+Use a barra de navegação à esquerda: clique em **Decupagem Linear** para a visualização linear, ou em uma das entradas **Dia de Produção N** abaixo dela para um dia de produção. No celular, use a navegação inferior. `Shift + L` não troca de visualização — ele alterna o layout de colunas (ajustado ↔ rolagem) dentro de qualquer uma das visualizações, útil quando você quer ver mais colunas de uma vez.
 
-Ambas as visualizações mostram os mesmos planos. Edições feitas em uma aparecem imediatamente na outra.
+A Linear mostra todos os planos do projeto; a Produção mostra apenas os planos atribuídos a um dia de filmagem. Para os planos agendados, ambas as visualizações mostram o mesmo plano — edições feitas em uma aparecem imediatamente na outra.
 
 ## A regra de divisão de cena parcial (apenas Produção)
 
@@ -28,21 +28,19 @@ A visualização Produção impõe uma regra de escopo de cena na multi-seleçã
 - Você pode selecionar um ou mais **blocos inteiros de cena** (com seus cabeçalhos).
 - Você **não pode** misturar seleções parciais de cenas diferentes.
 
-Se sua seleção é inválida, o alvo de soltar não abre uma lacuna quando você arrasta — a linha volta para sua posição original quando você solta.
+Enquanto você arrasta, a lacuna de soltar salta para o slot válido mais próximo — uma posição inválida nunca é oferecida, então não há volta ao lugar ao soltar.
 
 **A visualização Linear não tem essa restrição.** Misture livremente.
 
-### Selecionando uma cena inteira (cabeçalho auto-selecionado)
+### Selecionando uma cena inteira
 
-Você não pega o cabeçalho da cena diretamente. Selecione todos os planos abaixo dele — uma vez todos selecionados, o cabeçalho é adicionado à seleção automaticamente. Desselecione qualquer plano e o cabeçalho também é desselecionado. Arraste qualquer linha selecionada e o bloco de cena inteiro se move junto.
-
-Esse é o mecanismo pelo qual "mover uma cena inteira" funciona em qualquer visualização.
+Na visualização Produção, selecione o cabeçalho da cena — isso seleciona a cena inteira. Na visualização Linear, os cabeçalhos de cena não podem ser selecionados; selecione os próprios planos. Arraste qualquer linha selecionada e o bloco de cena inteiro se move junto.
 
 ## Banners
 
 Os banners são linhas que não são planos e que marcam intervalos para refeições, mudanças de locação, encerramentos ou outros marcadores de cronograma. Eles existem apenas na visualização Produção.
 
-- **Adicionar um banner.** Na Produção, `Cmd / Ctrl + N` adiciona um banner em vez de um plano. Ou use a barra de ferramentas.
+- **Adicionar um banner.** Na Produção, `Cmd / Ctrl + N` adiciona um banner em vez de um plano (atalhos de teclado funcionam nos layouts de desktop e tablet, não em celulares). Ou use a ação **+ Adicionar banner** do cronograma da ordem do dia — ela adiciona ao mesmo dia de produção, entre cenas inteiras.
 - **Mover um banner.** Mesma mecânica de arrastar dos planos.
 - **Apagar um banner.** Botão direito → Apagar.
 
@@ -70,8 +68,8 @@ Então "apagar na Linear" significa *remover*; "apagar na Produção" significa 
 
 `Cmd / Ctrl + P` exporta a visualização ativa para PDF. A renderização é local — sem upload, sem renderização do lado do servidor.
 
-- **A partir da Linear** — agrupado por cena, em ordem de roteiro. Útil para o supervisor de script.
-- **A partir da Produção** — agrupado por dia de filmagem, em ordem agendada. Útil para o 1º AD.
+- **A partir da Linear** — um PDF da lista inteira, agrupado por cena em ordem de roteiro. Útil para o supervisor de script.
+- **A partir da Produção** — um PDF de um único dia: digite o número do dia no diálogo de exportação e o PDF conterá apenas os planos daquele dia. Para exportar vários dias, rode a exportação uma vez por dia. Útil para o 1º AD.
 
 Mídia grande nos planos é reduzida antes da exportação.
 

@@ -1,39 +1,39 @@
 ---
 title: Storyboards
-lastUpdated: 2026-06-22
-description: "Planejamento visual de uma cena por vez — frames de pré-visualização por plano, layout linear ou em grade, exportação para PDF. Reordenar um storyboard reordena os planos subjacentes."
+lastUpdated: 2026-07-11
+description: "Planejamento visual do seu projeto inteiro, agrupado por cena — frames de pré-visualização por plano, layout linear ou em grade, exportação para PDF. Reordenar um storyboard reordena os planos subjacentes."
 ---
 
-Um storyboard no CineLog é uma visualização visual dos planos de uma cena, com frames de pré-visualização anexados. Não é uma cópia separada dos dados — ele fica em cima da decupagem, então reordenar um storyboard reordena os planos subjacentes.
+Um storyboard no CineLog é uma visualização visual dos planos do seu projeto inteiro, agrupados por cena, com frames de pré-visualização anexados. Não é uma cópia separada dos dados — ele fica em cima da decupagem, então reordenar um storyboard reordena os planos subjacentes.
 
 Este guia assume [O básico](/pt/guides/introduction).
 
 ## O que é um storyboard
 
-Uma visualização dos planos de uma única cena, mostrando frames de pré-visualização e alguns campos-chave do plano. Não duplica planos; é uma camada sobre a decupagem. Visualizações de Storyboard (layouts salvos) aparecem como sub-entradas sob Storyboard na barra lateral.
+Uma visualização dos planos do seu projeto inteiro, agrupados por cena, mostrando frames de pré-visualização e os principais campos do plano. Ambos os layouts rolam por todas as cenas em uma única visualização contínua, com marcadores de cena entre as cenas — o seletor de cena na barra de ferramentas salta para uma cena em vez de filtrá-la. Não duplica planos; é uma camada sobre a decupagem.
 
 ## Layouts
 
 Dois modos de exibição:
 
-- **Linear** — estilo carrossel, um plano por vez. Bom para apresentações de revisão.
-- **Grade** — múltiplos planos lado a lado. Bom para referência rápida.
+- **Linear** — uma faixa horizontal de painéis de plano lado a lado no desktop e tablet; no celular, um carrossel de tela cheia mostrando um plano por vez. Bom para apresentações de revisão.
+- **Grade** — múltiplos planos lado a lado em uma grade redimensionável. Bom para referência rápida.
 
-Alterne pela barra de ferramentas.
+Alterne pela entrada Storyboard na barra lateral no desktop (Linear é o padrão; escolha "Grid View" para trocar). No celular, use a pílula Linear/Grade na parte inferior da tela.
 
 ## Adicionando frames de pré-visualização
 
-Toque na célula de pré-visualização de um plano. O seletor de mídia abre — mesma gramática de gestos da edição de células em [O básico](/pt/guides/introduction#2-editing-fields). Escolha uma imagem ou frame de vídeo da biblioteca de mídia do projeto.
+Toque em uma célula de pré-visualização vazia de um plano. O seletor de imagens do seu dispositivo abre — galeria de fotos no celular, navegador de arquivos no desktop. As imagens que você seleciona sobem diretamente para aquele plano e aparecem na biblioteca de mídia do projeto sob ele.
 
-Cada frame de pré-visualização é um arquivo da biblioteca de mídia do projeto, anexado àquele plano.
+Os frames pertencem ao seu plano — um frame nunca é compartilhado entre planos, então mudar os frames de um plano nunca afeta outro. Para adicionar, substituir ou remover frames em um plano que já tem pré-visualização, use o diálogo Manage PreVis Files na sobreposição de pré-visualização da decupagem.
 
 ## Reordenando frames
 
-Arraste planos no storyboard para reordenar. A reordenação se aplica aos planos subjacentes na cena pai — não existe "ordem de storyboard" separada que diverge da ordem dos planos. As letras de plano são atualizadas conforme isso.
+No layout em Grade, arraste planos para reordenar — Linear e o carrossel do celular não suportam reordenação por arrastar. A reordenação se aplica aos planos subjacentes — não existe "ordem de storyboard" separada que diverge da ordem dos planos. As letras de plano são atualizadas conforme isso.
 
 ## Configurações de exibição (por storyboard)
 
-Colunas da grade, espaçamento, aspect ratio (16:9, 2.35:1, 4:3). Ajuste pela barra de ferramentas.
+Colunas da grade, espaçamento, aspect ratio (Flexible por padrão — as proporções nativas de cada frame — ou uma proporção fixa como 16:9, 4:3 ou 2.35:1). Ajuste pela barra de ferramentas.
 
 ## Exportar
 

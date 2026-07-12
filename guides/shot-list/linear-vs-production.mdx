@@ -1,7 +1,7 @@
 ---
 title: Linear view vs Production view
-lastUpdated: 2026-05-23
-description: "Two views on the same shots — script order vs shoot-day order. Covers the partial-scene split rule, banners, scene-scoped selection, scene-header auto-selection, cross-view sync, and how delete differs between the two views."
+lastUpdated: 2026-07-11
+description: "Two views on the same shots — script order vs shoot-day order. Covers the partial-scene split rule, banners, scene-scoped selection, scene-header selection, cross-view sync, and how delete differs between the two views."
 ---
 
 Linear and Production are two views of the same shots. Linear is in script order — the way the director and script supervisor read it. Production is in shoot-day order — the way the 1st AD plans the schedule. Everything else in this guide is about the differences.
@@ -10,9 +10,9 @@ This guide assumes [The basics](/guides/introduction) and [Shot list essentials]
 
 ## Switching views
 
-Toggle in the view header above the list. `Shift + L` toggles the column layout (fit ↔ scroll) — useful when you want to see more columns at once.
+Use the left navigation rail: click **Linear Shot List** for the linear view, or one of the **Production day N** entries beneath it for a production day. On phone, use the bottom navigation instead. `Shift + L` doesn't switch views — it toggles the column layout (fit ↔ scroll) within either view, useful when you want to see more columns at once.
 
-Both views show the same shots. Edits made in one show up in the other immediately.
+Linear shows every shot in the project; Production shows only shots assigned to a shoot day. For scheduled shots, both views show the same shot — edits made in one show up in the other immediately.
 
 ## The partial-scene split rule (Production only)
 
@@ -28,21 +28,19 @@ Production view enforces a scene-scope rule on multi-selection to protect the sh
 - You may select one or more **whole** scene blocks (with their headers).
 - You may **not** mix partial selections from different scenes.
 
-If your selection is invalid, the drop target won't open a gap when you drag — the row will spring back to its original position on release.
+While you drag, the drop gap snaps to the nearest valid slot — an invalid position is never offered, so there's no spring-back on release.
 
 **Linear view has no such restriction.** Mix freely.
 
-### Selecting a whole scene (auto-selected header)
+### Selecting a whole scene
 
-You don't grab the scene header directly. Select every shot under it — once they're all selected, the header is added to the selection automatically. Deselect any one shot and the header deselects too. Drag any selected row and the whole scene block moves together.
-
-This is the mechanism by which "move a whole scene" works in either view.
+In Production view, select the scene header — that selects its whole scene. In Linear view, scene headers can't be selected; select the shots themselves instead. Drag any selected row and the whole scene block moves together.
 
 ## Banners
 
 Banners are non-shot rows that mark meal breaks, company moves, wraps, or other schedule markers. They exist only in Production view.
 
-- **Add a banner.** In Production, `Cmd / Ctrl + N` adds a banner instead of a shot. Or use the toolbar.
+- **Add a banner.** In Production, `Cmd / Ctrl + N` adds a banner instead of a shot (keyboard shortcuts work on desktop and tablet layouts, not phones). Or use the call sheet schedule's **+ Add banner** action — it adds to the same production day, between whole scenes.
 - **Move a banner.** Same drag mechanic as shots.
 - **Delete a banner.** Right-click → Delete.
 
@@ -70,8 +68,8 @@ So "delete in Linear" means *remove*; "delete in Production" means *unschedule*.
 
 `Cmd / Ctrl + P` exports the active view to PDF. Rendering is local — no upload, no server-side render.
 
-- **From Linear** — grouped by scene, in script order. Useful for the script supervisor.
-- **From Production** — grouped by shoot day, in scheduled order. Useful for the 1st AD.
+- **From Linear** — one PDF of the whole list, grouped by scene in script order. Useful for the script supervisor.
+- **From Production** — a single-day PDF: enter the day number in the export dialog and the PDF contains only that day's shots. To export several days, run the export once per day. Useful for the 1st AD.
 
 Large media on shots is downsampled before export.
 

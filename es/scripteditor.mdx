@@ -1,6 +1,6 @@
 ---
 title: Editor de Guion
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Edición profesional de guiones con formato Fountain en tiempo real, importación multiformato, analíticas en vivo e integración con la lista de planos."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -11,7 +11,7 @@ El Editor de Guion de CineLog es un sistema profesional de edición de guiones c
 
 <CardGrid>
 <Card title="Guardado continuo y persistente">
-  Despídete del botón "Guardar". El Editor de Guion guarda continua y silenciosamente cada pulsación de tecla en tu dispositivo local en el momento en que la haces, y luego sincroniza en la nube en segundo plano, asegurando que nunca pierdas ni una palabra de inspiración.
+  Despídete del botón "Guardar". El Editor de Guion guarda silenciosamente cada cambio en tu dispositivo local en aproximadamente medio segundo, y luego sincroniza en la nube en segundo plano, asegurando que nunca pierdas ni una palabra de inspiración.
 </Card>
 
 <Card title="Formato Fountain en tiempo real">
@@ -23,7 +23,7 @@ El Editor de Guion de CineLog es un sistema profesional de edición de guiones c
 </Card>
 
 <Card title="Analíticas en vivo">
-  Analíticas de guion en tiempo real. Sigue el número de páginas, estadísticas de personajes, análisis de escenas, recuento de palabras y métricas profesionales mientras escribes.
+  Analíticas de guion en tiempo real. Sigue el número estimado de páginas, el recuento de escenas, el recuento de líneas, el recuento de palabras y el recuento de personajes mientras escribes.
 </Card>
 
 <Card title="Integración con la Lista de Planos">
@@ -52,14 +52,14 @@ Clasificación automática de encabezados de escena (INT./EXT.), nombres de pers
 
 **Controles manuales de anulación**
 
-Control preciso con atajos: **Cmd+1** para Encabezado de Escena, **Cmd+2** para Personaje, **Cmd+3** para Diálogo, **Cmd+4** para Acción, **Cmd+5** para Acotación, **Cmd+6** para Transición, **Cmd+7** para Letra de canción (**Cmd+E** centra el texto).
+Control preciso con atajos: **Cmd+1** para Encabezado de Escena, **Cmd+2** para Personaje, **Cmd+3** para Diálogo, **Cmd+4** para Acción, **Cmd+5** para Acotación, **Cmd+6** para Transición, **Cmd+7** para Letra de canción, **Cmd+E** para elemento de texto centrado.
 
 </li>
 <li>
 
-**Soporte completo de Fountain**
+**Soporte de Fountain**
 
-Especificación completa de Fountain v1.1 con elementos de sintaxis forzada (@Personaje, !Acción, .Escena), formato de texto (\*cursiva\*, \*\*negrita\*\*, \_subrayado\_) y soporte de estructura de documento.
+Soporte básico de Fountain con elementos de sintaxis forzada (@Personaje, !Acción, .Escena) y formato de texto (\*cursiva\*, \*\*negrita\*\*, \_subrayado\_). Las secciones (#), sinopsis (=), notas en línea ([[ ]]), saltos de página (===) y el diálogo dual en paralelo no son compatibles.
 
 </li>
 <li>
@@ -85,7 +85,7 @@ Posicionamiento con precisión de caracteres usando fuente Courier Prime de 12 p
 </Card>
 
 <Card title="Fountain (.fountain)">
-  Soporte de formato nativo con la especificación v1.1 completa, elementos forzados y preservación de comentarios.
+  Soporte de formato nativo con elementos forzados, análisis de la página de título y eliminación de comentarios boneyard.
 </Card>
 
 <Card title="PDF de guion">

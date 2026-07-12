@@ -1,6 +1,6 @@
 ---
 title: The basics
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Four sections covering the app tour and the three things you do over and over again — editing, selecting, dragging. The foundation for every feature guide."
 ---
 
@@ -21,25 +21,26 @@ Four sections: a tour of the app, then the three things you do over and over aga
 
 ### Signing in
 
-Sign-in is email-only. Enter your address, we send a code, you enter the code. No password. If you've never signed in before and don't have any projects yet, the Projects screen prompts you to create one (just a name and a description — the abbreviation badge is generated from the name). Otherwise you land in the project you last had open.
+Sign-in is email-only. Enter your address, we send a code, you enter the code. No password. Every new account starts with a default project ("My First Project"), so you land in a workspace right away — on later launches, in the project you last had open. New productions get their own project via the New Project button (just a name and a description — the abbreviation badge is generated from the name).
 
-Every screen in the app, except sign-in and the project list, lives inside a project.
+The planning tools in the sidebar all live inside a project. Account-level screens — Help & Support, Roadmap, Subscription, Account — sit outside any project, under the More menu.
 
 ### The desktop window
 
 Three regions, top to bottom:
 
-- A thin **title bar** with the connection status dot on the left. Windows users get the standard minimize / maximize / close on the right.
+- A thin **title bar** with the combined connection-and-sync indicator on the left. Windows users get the standard minimize / maximize / close on the right.
 - The **left sidebar** plus the **content area** — sidebar for navigation, content for the work.
 - Floating things: modals, snackbars, the hotkeys dialog.
 
 ### The sidebar
 
-Always present on desktop and tablet. Top to bottom: the project switcher, a list of features, the sync indicator, and the More button.
+Always present on desktop and tablet. Top to bottom: the project switcher, a list of features, and the More button. The sync indicator isn't in the sidebar — it lives in the title bar at the top of the window.
 
 The features:
 
 - **Script Editor** — write the screenplay.
+- **AV Script** — the two-column audio/visual script. Appears only if your role can view it (anyone who can view the Shot List can).
 - **Shot List** — Linear and Production views of every shot, with each Production Day as a sub-entry.
 - **Storyboard** — visual planning, with saved views as sub-entries.
 - **Call Sheets** — daily call sheets, with each Production Day as a sub-entry.
@@ -49,37 +50,39 @@ The features:
 
 ### The project switcher
 
-At the top of the sidebar on desktop, in the top app bar on phone. Shows the current project's name and badge. Click it to switch projects — the overlay (or sheet, on phone) lists the current project, any pending invitations, three recents, a "New Project" button, and a "Show All" link.
+At the top of the sidebar on desktop. Shows the current project's name and badge. Click it to switch projects — the overlay lists the current project, any pending invitations, up to three recent projects, a "New" button, and a "Show all" link.
+
+On phone, the top app bar instead shows a compact badge with the project's abbreviation (e.g. "ST13") and a coloured connection strip — not the project name. Tap it to open the Projects sheet: the full project list plus a create-project button.
 
 Switching projects refreshes the whole sidebar, so the sub-entries you see always belong to the project you're in.
 
 ### Sync vs connection
 
-Two indicators, two different things:
+One indicator in the title bar, two different things:
 
-- The **connection dot** in the title bar is colour-coded — green / orange / red — for the realtime link to the server.
-- The **sync indicator** at the bottom of the sidebar is muted grey and tells you about your local edit queue by icon and label: check + "Synced" (queue empty), spinning sync + "Sync: N pending" or "Syncing…" (changes on the wire), cloud-off + "Offline: N pending" (waiting on connectivity).
+- The **connection half** is a colour-coded dot — green / orange / red — with an "Online", "Connecting", or "Offline" label, for the realtime link to the server.
+- The **sync half**, after a divider, tells you about your local edit queue by icon and label: cloud-check + "Synced" (queue empty), cloud-upload + "N pending" (changes queued — the icon switches to cloud-off while you're disconnected), and "Syncing…" while the connection is coming up with changes queued. Nothing spins; the icons are static.
 
-They can disagree, and that's fine. Red dot + "Synced" = you're disconnected but had nothing pending. Green dot + "Sync: N pending" = you're online and the queue is draining.
+They can disagree, and that's fine. "Offline" + "Synced" = you're disconnected but had nothing pending. "Online" + "N pending" = you're online and the queue is draining.
 
-On phone, both bits of state are folded into the connection badge in the top app bar.
+On phone, only the connection state shows — the green / orange / red strip on the badge in the top app bar. There's no sync-queue indicator on phone; tapping the badge opens the project switcher, not sync details.
 
 ### Offline mode
 
 CineLog is built to keep working offline. The first sign-in needs internet; after that the device is logged in and stays that way. Edits made offline save to the device's local database and queue in the sync indicator until you're online again, at which point they drain to the server automatically.
 
-Your session refreshes itself in the background as it approaches expiry — usually a couple of hours before — so as long as you're online around then, you never see a sign-in prompt. Normal mixed online/offline use means refresh just works.
+Your sign-in has no fixed expiry you'll normally notice. The app renews your session automatically in the background whenever you're online — usually a couple of hours before it would lapse — so normal mixed online/offline use keeps you signed in indefinitely and you never see a sign-in prompt.
 
-If you stay fully offline long enough for the session to lapse — on the order of a month — it expires. The next time the app tries to talk to the server it shows a re-auth dialog. The dialog is blocking but your data stays put: sign back in as the same account and you pick up right where you left off, queued edits and all.
+Staying offline doesn't lock you out either: the app keeps working with your local data no matter how long you're disconnected. Only if a device stays completely offline for about 30 days does the session finally expire. The next time the app reaches the server, it shows the sign-in screen with your email already filled in. Your data stays put: enter the code sent to that email and you pick up right where you left off, queued edits and all.
 
 ### The More menu
 
 Bottom of the sidebar on desktop and tablet; the right-most item on phone's bottom navigation bar. Contents differ by platform:
 
-- **Desktop:** Help & Support, Hotkeys, Roadmap, Theme toggle, Media Explorer, Account, Logout.
-- **Phone:** Script Editor, Updates, Help & Support, Media Explorer, Theme toggle, Account, Logout.
+- **Desktop:** Help & Support, Hotkeys, Roadmap, Subscription, Theme toggle, Media Explorer (only when a project is open), Account, Logout.
+- **Phone:** Script Editor, AV Script (only if your role can view it), Updates, Help & Support, Media Explorer, Theme toggle, Subscription, Account, Log Out. Updates and Media Explorer appear only when a project is open.
 
-Script Editor and Updates are inside the phone More sheet because there's no room for them on the five-slot bottom bar. Hotkeys and Roadmap aren't surfaced on phone at all.
+Script Editor, AV Script, and Updates are inside the phone More sheet because there's no room for them on the five-slot bottom bar. Hotkeys and Roadmap aren't surfaced on phone at all.
 
 Theme toggle is also bound to `Cmd / Ctrl + Shift + M` on desktop.
 
@@ -99,7 +102,7 @@ Five slots in the bottom navigation bar:
 4. Cast & Crew
 5. More
 
-Everything else (Script Editor, Updates, Media Explorer, Account…) is inside the More sheet. The top app bar shows the project name + badge; tap it to switch projects.
+Everything else (Script Editor, AV Script, Updates, Media Explorer, Account…) is inside the More sheet. The top app bar shows the project's abbreviation badge; tap it to switch projects.
 
 ### The hotkeys dialog
 
@@ -115,9 +118,9 @@ Short messages appear at the bottom of the screen when something succeeds, fails
 
 *"My connection dot and the sync indicator disagree."* They measure different things. The dot is the network link; the sync indicator is the local edit queue. Either can be unhealthy alone.
 
-*"Can I use CineLog without internet?"* Yes, after the first sign-in. Offline edits save locally and sync when you reconnect. As your session approaches expiry the app refreshes it automatically if you're online at that moment, so normal mixed online/offline use stays signed in. A device left fully offline long enough — on the order of a month — will need to sign back in.
+*"Can I use CineLog without internet?"* Yes, after the first sign-in. Offline edits save locally and sync when you reconnect. The app renews your session automatically whenever you're online, so normal mixed online/offline use stays signed in. Only a device that stays completely offline for about 30 days needs to sign back in — and being offline never signs you out mid-shoot; the sign-in screen only appears once you reconnect.
 
-*"The app asked me to sign in again on location."* That's the re-auth dialog after a long stretch with no connectivity. Sign back in with the same email; your queued edits stay and sync up.
+*"The app asked me to sign in again on location."* That's the re-auth screen — the regular sign-in screen with your email pre-filled — shown when you're back online after your session expired during a long offline stretch. Sign back in with the same email; your queued edits stay and sync up.
 
 ---
 
@@ -127,28 +130,29 @@ Click a cell. The cell opens for editing. That's it on desktop.
 
 The editor's shape depends on the type of field — a text input for text, a picker for dropdowns, an immediate toggle for checkboxes, a media picker for image cells. It always commits without a Save button.
 
-### Mobile is two taps
+### Phone is two taps
 
-On phone or tablet, tapping a single cell doesn't edit it directly — first you tap the row to expand it, then you tap the field inside the expanded view. That second tap opens a bottom sheet for the field.
+On phone, tapping a single cell doesn't edit it directly — first you tap the row to expand it, then you tap the field inside the expanded view. That second tap opens a bottom sheet for the field.
 
-If you tap a row and nothing seems editable, expand it first.
+On tablet you get the same grid as desktop: tapping a cell opens its editor directly, shown as a dialog near the top of the screen.
+
+If you tap a row on phone and nothing seems editable, expand it first.
 
 ### Autosave
 
 CineLog autosaves on every commit and on a roughly 450 ms debounce while you're typing. There is no Save button anywhere.
 
-Everything you type autosaves on a roughly 450 ms debounce, and closing the editor saves whatever's in it. `Esc` has no special discard behaviour in a text field — there is no "throw away my last keystrokes" gesture.
+There's no cancel gesture either. Closing the editor — with `Enter` or by clicking away — always saves everything you've typed, including anything after the last debounced autosave. Nothing you type in a cell editor is ever discarded.
 
 ### Keyboard inside the editor
 
 - `Enter` commits and closes.
-- Arrow keys move through dropdown options.
-
-(There is no `Esc`-to-discard inside a text field; edits are already autosaved.)
+- `Esc` does nothing while you're typing — close with `Enter` or by clicking outside. Either way, everything is saved.
+- Arrow keys work only in the numeric editors (Day, Scene Number): `↑` / `↓` step the number up or down, and holding the key repeats. Pickers (shot type, lens, and the rest) are click or tap only — no keyboard navigation.
 
 ### If this isn't working
 
-*"I can't edit anything on mobile."* Tap the row to expand it first, then tap the specific field.
+*"I can't edit anything on my phone."* Tap the row to expand it first, then tap the specific field. (On tablet, tap the cell directly, like desktop.)
 
 *"Where's the Save button?"* There isn't one — autosave on every commit, plus a 450 ms debounce while you type.
 
@@ -160,8 +164,10 @@ Selecting a row is how you mark it for moving or for an action that should apply
 
 ### How to enter selection mode
 
-- **Desktop:** `Cmd / Ctrl + Click` on any row.
-- **Mobile:** long-press any row.
+- **Desktop:** `Cmd / Ctrl + Click` on any selectable row.
+- **Mobile:** long-press any selectable row.
+
+Not every row is selectable. In the Linear shot list, scene header rows can't be selected (or dragged). In the Production view, selecting a scene header selects the whole scene — header plus all its shots — and while a selection exists it stays within that one scene: rows in other scenes grey out until you clear the selection (banner rows are exempt).
 
 The first row you select becomes the anchor for range selection (next).
 
@@ -169,7 +175,7 @@ The first row you select becomes the anchor for range selection (next).
 
 Once you're in selection mode:
 
-- **Desktop:** `Cmd / Ctrl + Click` toggles individual rows in or out. A plain click without the modifier replaces the selection with just the clicked row.
+- **Desktop:** a plain click toggles individual rows in or out — click an unselected row to add it, click a selected row to remove it. A click never replaces the selection with just one row; to start over, press `Esc` and `Cmd + Click` the row you want. (The modifier is only needed to enter selection mode.)
 - **Mobile:** plain tap now toggles selection (outside selection mode, the same tap expands the row).
 
 ### Range selection (desktop only)
@@ -199,14 +205,14 @@ Once you have a row (or a multi-selection) marked, drag any one of them to move 
 
 ### What you can drag
 
-Any row, anywhere along its body. There's no separate drag handle. On desktop you'll see the cursor change to `grab` on hover and `grabbing` mid-drag.
+Any selectable row, anywhere along its body — the same rows you can select (so not scene headers in the Linear view, and not rows in other scenes during an active Production-view selection). There's no separate drag handle, and no special hover cursor to look for — the cursor switches to `grabbing` once a drag is underway.
 
 ### Starting the drag
 
-A press alone doesn't start a drag — the pointer or finger has to move a small distance first:
+A press alone doesn't start a drag — and the way in depends on whether the row is already selected:
 
-- **Roughly 8 pixels** for an unselected row. Anything less is treated as a click.
-- **Roughly 3 pixels** for a row that's already part of the selection — the lower threshold makes moving an existing selection feel responsive.
+- **A row that's already in the selection:** just press and move — roughly 3 pixels of movement starts the drag.
+- **An unselected row:** press-and-move alone won't drag it, on desktop or mobile. Long-press it first (click-and-hold on desktop); that selects the row and primes the drag, and the same small movement then starts it.
 
 On mobile there are two ways in:
 
@@ -215,11 +221,11 @@ On mobile there are two ways in:
 
 ### Where you can drop
 
-As you drag, a gap opens between rows at any position where dropping is valid. If you move over a spot and no gap appears, the drop isn't allowed — the row springs back to its original position when you release. The rules for what's valid vary by screen (covered in the feature guides); the gap is the universal "you can drop here" signal.
+As you drag, a gap opens between rows at the nearest position where dropping is valid. If the spot under your pointer isn't allowed, the gap snaps to the closest valid slot instead of disappearing — wherever the gap is showing is where the rows will land when you release. The rules for what's valid vary by screen (covered in the feature guides); watch the gap, not the pointer, to know where the drop will go.
 
 ### Dragging a selection
 
-If you drag a row that's part of the current selection, the entire selection moves together. If you drag a row that *isn't* part of the selection, the drag implicitly drops the selection down to just that single row.
+If you drag a row that's part of the current selection, the entire selection moves together. If you drag a row that *isn't* part of the selection, it's added to the selection and the whole enlarged selection moves with the drag. To move just one row, clear the selection first, then drag that row alone.
 
 That's why selecting first, then dragging, is the predictable workflow — you can confirm what's selected before you commit.
 
@@ -237,13 +243,11 @@ On mobile only, expanded rows collapse back to compact view the moment you enter
 
 ### Cancelling
 
-Release the pointer or lift the finger outside any valid drop gap and the row returns to its starting spot. There's no `Esc`-to-cancel mid-drag.
+Releasing the pointer or lifting the finger always drops the selection at the gap that's showing — there's no release-to-cancel, and nothing springs back. To abandon a drag on desktop, press `Esc` mid-drag: it cancels the drag in place and clears the selection.
 
 ### If this isn't working
 
-*"Drag does nothing."* Either you haven't moved past the small movement threshold, or you're using a two-finger trackpad gesture (which scrolls, not drags).
-
-*"Drag works but my drop is rejected."* The destination isn't a valid target for what you're dragging. The per-feature guides cover the rules.
+*"Drag does nothing."* Either you're pressing-and-moving an unselected row — long-press (click-and-hold) it first — or you're using a two-finger trackpad gesture (which scrolls, not drags).
 
 *"My rows collapsed when I tapped to select."* That's the intentional mobile auto-collapse — it makes drag heights uniform. Your data is intact.
 

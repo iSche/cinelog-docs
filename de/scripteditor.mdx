@@ -1,6 +1,6 @@
 ---
 title: Drehbuch-Editor
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Professionelle Drehbuch-Bearbeitung mit Echtzeit-Fountain-Formatierung, Multiformat-Import, Live-Analytik und Einstellungslisten-Integration."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -11,7 +11,7 @@ Der Drehbuch-Editor von CineLog ist ein professionelles Drehbuch-Bearbeitungssys
 
 <CardGrid>
 <Card title="Kontinuierliches automatisches Speichern">
-  Verabschiede dich vom "Speichern"-Button. Der Drehbuch-Editor speichert jeden einzelnen Tastenanschlag still und kontinuierlich auf deinem lokalen Gerät, sobald du ihn machst, und synchronisiert ihn im Hintergrund mit der Cloud – so verlierst du nie wieder ein Wort an Inspiration.
+  Verabschiede dich vom "Speichern"-Button. Der Drehbuch-Editor speichert jede Änderung still innerhalb von etwa einer halben Sekunde auf deinem lokalen Gerät und synchronisiert sie im Hintergrund mit der Cloud – so verlierst du nie wieder ein Wort an Inspiration.
 </Card>
 
 <Card title="Echtzeit-Fountain-Formatierung">
@@ -23,7 +23,7 @@ Der Drehbuch-Editor von CineLog ist ein professionelles Drehbuch-Bearbeitungssys
 </Card>
 
 <Card title="Live-Analytik">
-  Echtzeit-Drehbuch-Analytik. Verfolge Seitenzahlen, Figurenstatistik, Szenenanalyse, Wortzahlen und professionelle Kennzahlen beim Schreiben.
+  Echtzeit-Drehbuch-Analytik. Verfolge geschätzte Seitenzahlen, Szenenzahlen, Zeilenzahlen, Wortzahlen und Zeichenzahlen beim Schreiben.
 </Card>
 
 <Card title="Einstellungslisten-Integration">
@@ -52,14 +52,14 @@ Automatische Klassifizierung von Szenenüberschriften (INT./EXT.), Figurennamen,
 
 **Manuelle Override-Steuerung**
 
-Präzise Kontrolle mit Hotkeys: **Cmd+1** für Szenenüberschrift, **Cmd+2** für Figur, **Cmd+3** für Dialog, **Cmd+4** für Action, **Cmd+5** für Klammerzusatz, **Cmd+6** für Übergang, **Cmd+7** für Songtext (**Cmd+E** zentriert den Text).
+Präzise Kontrolle mit Hotkeys: **Cmd+1** für Szenenüberschrift, **Cmd+2** für Figur, **Cmd+3** für Dialog, **Cmd+4** für Action, **Cmd+5** für Klammerzusatz, **Cmd+6** für Übergang, **Cmd+7** für Songtext, **Cmd+E** zentriertes-Text-Element.
 
 </li>
 <li>
 
-**Vollständige Fountain-Unterstützung**
+**Fountain-Unterstützung**
 
-Volle Fountain-v1.1-Spezifikation mit erzwungenen Syntax-Elementen (@Character, !Action, .Scene), Textformatierung (\*kursiv\*, \*\*fett\*\*, \_unterstrichen\_) und Unterstützung für Dokumentenstruktur.
+Grundlegende Fountain-Unterstützung mit erzwungenen Syntax-Elementen (@Character, !Action, .Scene) und Textformatierung (\*kursiv\*, \*\*fett\*\*, \_unterstrichen\_). Abschnitte (#), Synopsen (=), Inline-Notizen ([[ ]]), Seitenumbrüche (===) und nebeneinander gesetzte Doppel-Dialoge werden nicht unterstützt.
 
 </li>
 <li>
@@ -85,7 +85,7 @@ Möchtest du Texte aus einer älteren App übernehmen? Klicke auf den **Import**
 </Card>
 
 <Card title="Fountain (.fountain)">
-  Native Format-Unterstützung mit voller v1.1-Spezifikation, erzwungenen Elementen und Erhalt von Kommentaren.
+  Native Format-Unterstützung mit erzwungenen Elementen, Titelseiten-Parsing und Entfernen von Boneyard-Kommentaren.
 </Card>
 
 <Card title="PDF-Drehbücher">

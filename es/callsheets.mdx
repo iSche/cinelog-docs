@@ -1,6 +1,6 @@
 ---
 title: Órdenes de Rodaje
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Genera y gestiona órdenes de rodaje para elenco y equipo con detalles de programación y localización."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -68,11 +68,11 @@ Asegúrate de que todos sepan exactamente qué está pasando. Haz clic en **Expo
 ## Ecosistema de datos integrado
 
 <Aside type="tip">
-El horario de las Órdenes de Rodaje actúa como una ventana bidireccional a tu Lista de Planos. Editar el orden de una escena o una estimación en la Orden de Rodaje _actualiza instantáneamente_ el diseño subyacente de tu Lista de Planos mediante CineSync.
+El horario de las Órdenes de Rodaje se mantiene sincronizado con tu vista Producción. Reordenar una escena o un banner, o editar una estimación, en la Orden de Rodaje es la _misma edición_ que hacerlo en Producción — las dos siempre muestran las mismas escenas y banners en el mismo orden.
 </Aside>
 
 <Aside type="tip" title="Beneficios del enrutamiento de datos">
 -   **Flujo de Elenco y Equipo**: Los nombres del talento, los roles del equipo y los detalles de contacto fluyen estrictamente desde tu hub central de Elenco y Equipo. Asignar a un actor rellena dinámicamente sus datos.
 -   **Garantías de manejo de errores**: Cualquier cuello de botella inválido en el horario muestra avisos visuales nítidos en amarillo/rojo previniendo conflictos en la línea temporal.
--   **Enrutamiento de acceso global**: Cualquier persona que reciba un enlace de Orden de Rodaje es dirigida inteligentemente a crear una cuenta, obteniendo acceso estrictamente a lo que su rol dicta.
+-   **Portal de confirmación**: Cualquier persona que reciba un correo de Orden de Rodaje obtiene un enlace protegido por token que abre un portal con la marca de CineLog donde toca "Confirmar" para acusar recibo — sin necesidad de cuenta.
 </Aside>

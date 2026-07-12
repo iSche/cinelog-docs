@@ -1,6 +1,6 @@
 ---
 title: Les bases
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Quatre sections couvrant le tour de l'application et les trois choses que tu fais encore et encore — éditer, sélectionner, faire glisser. Les fondations de chaque guide de fonctionnalité."
 ---
 
@@ -21,25 +21,26 @@ Quatre sections : un tour de l'application, puis les trois choses que tu fais en
 
 ### Connexion
 
-La connexion est uniquement par e-mail. Saisis ton adresse, nous envoyons un code, tu saisis le code. Pas de mot de passe. Si tu ne t'es jamais connecté auparavant et n'as aucun projet, l'écran Projets t'invite à en créer un (juste un nom et une description — le badge d'abréviation est généré à partir du nom). Sinon tu atterris dans le projet que tu avais ouvert en dernier.
+La connexion est uniquement par e-mail. Saisis ton adresse, nous envoyons un code, tu saisis le code. Pas de mot de passe. Chaque nouveau compte démarre avec un projet par défaut (« My First Project »), donc tu atterris tout de suite dans un espace de travail — aux lancements suivants, dans le projet que tu avais ouvert en dernier. Les nouvelles productions obtiennent leur propre projet via le bouton Nouveau projet (juste un nom et une description — le badge d'abréviation est généré à partir du nom).
 
-Chaque écran de l'application, sauf la connexion et la liste des projets, vit à l'intérieur d'un projet.
+Les outils de planification de la barre latérale vivent tous à l'intérieur d'un projet. Les écrans au niveau du compte — Aide et Support, Feuille de route, Abonnement, Compte — se trouvent en dehors de tout projet, sous le menu Plus.
 
 ### La fenêtre de bureau
 
 Trois régions, de haut en bas :
 
-- Une fine **barre de titre** avec le point de statut de connexion sur la gauche. Les utilisateurs Windows ont les boutons standard réduire / agrandir / fermer sur la droite.
+- Une fine **barre de titre** avec l'indicateur combiné de connexion et de synchronisation sur la gauche. Les utilisateurs Windows ont les boutons standard réduire / agrandir / fermer sur la droite.
 - La **barre latérale gauche** plus la **zone de contenu** — barre latérale pour la navigation, contenu pour le travail.
 - Les éléments flottants : modales, snackbars, boîte de dialogue des raccourcis.
 
 ### La barre latérale
 
-Toujours présente sur bureau et tablette. De haut en bas : le sélecteur de projet, une liste de fonctionnalités, l'indicateur de synchronisation et le bouton Plus.
+Toujours présente sur bureau et tablette. De haut en bas : le sélecteur de projet, une liste de fonctionnalités et le bouton Plus. L'indicateur de synchronisation n'est pas dans la barre latérale — il se trouve dans la barre de titre en haut de la fenêtre.
 
 Les fonctionnalités :
 
 - **Logiciel de Scénario** — écrire le scénario.
+- **Script AV** — le script audio/visuel à deux colonnes. N'apparaît que si ton rôle permet de le voir (toute personne qui peut voir le Découpage Technique le peut).
 - **Découpage Technique** — vues Linéaire et Production de chaque plan, avec chaque Jour de production comme sous-entrée.
 - **Storyboard** — planification visuelle, avec les vues enregistrées comme sous-entrées.
 - **Feuilles de Service** — feuilles de service quotidiennes, avec chaque Jour de production comme sous-entrée.
@@ -49,37 +50,39 @@ Les fonctionnalités :
 
 ### Le sélecteur de projet
 
-En haut de la barre latérale sur bureau, dans la barre supérieure sur téléphone. Affiche le nom et le badge du projet actuel. Clique dessus pour changer de projet — la superposition (ou la feuille, sur téléphone) liste le projet actuel, les invitations en attente, trois récents, un bouton « Nouveau projet » et un lien « Tout afficher ».
+En haut de la barre latérale sur bureau. Affiche le nom et le badge du projet actuel. Clique dessus pour changer de projet — la superposition liste le projet actuel, les invitations en attente, jusqu'à trois projets récents, un bouton « Nouveau » et un lien « Tout afficher ».
+
+Sur téléphone, la barre supérieure affiche à la place un badge compact avec l'abréviation du projet (par ex. « ST13 ») et une bande de connexion colorée — pas le nom du projet. Tape dessus pour ouvrir la feuille Projets : la liste complète des projets plus un bouton de création de projet.
 
 Changer de projet rafraîchit toute la barre latérale, donc les sous-entrées que tu vois appartiennent toujours au projet dans lequel tu es.
 
 ### Synchronisation vs connexion
 
-Deux indicateurs, deux choses différentes :
+Un seul indicateur dans la barre de titre, deux choses différentes :
 
-- Le **point de connexion** dans la barre de titre est codé par couleur — vert / orange / rouge — pour la liaison temps réel au serveur.
-- L'**indicateur de synchronisation** en bas de la barre latérale est gris atténué et t'indique l'état de ta file d'attente d'édition locale par icône et étiquette : coche + « Synchronisé » (file vide), synchronisation rotative + « Synchro : N en attente » ou « Synchronisation… » (changements en cours), cloud-off + « Hors-ligne : N en attente » (en attente de connectivité).
+- La **moitié connexion** est un point codé par couleur — vert / orange / rouge — avec une étiquette « Online », « Connecting » ou « Offline », pour la liaison temps réel au serveur.
+- La **moitié synchronisation**, après un séparateur, t'indique l'état de ta file d'attente d'édition locale par icône et étiquette : cloud-check + « Synchronisé » (file vide), cloud-upload + « N en attente » (changements en file — l'icône passe à cloud-off quand tu es déconnecté), et « Synchronisation… » pendant que la connexion s'établit avec des changements en file. Rien ne tourne ; les icônes sont statiques.
 
-Ils peuvent diverger, et c'est normal. Point rouge + « Synchronisé » = tu es déconnecté mais rien n'était en attente. Point vert + « Synchro : N en attente » = tu es en ligne et la file se vide.
+Ils peuvent diverger, et c'est normal. « Offline » + « Synchronisé » = tu es déconnecté mais rien n'était en attente. « Online » + « N en attente » = tu es en ligne et la file se vide.
 
-Sur téléphone, ces deux éléments d'état sont repliés dans le badge de connexion de la barre supérieure.
+Sur téléphone, seul l'état de connexion s'affiche — la bande verte / orange / rouge sur le badge de la barre supérieure. Il n'y a pas d'indicateur de file de synchronisation sur téléphone ; taper le badge ouvre le sélecteur de projet, pas les détails de synchronisation.
 
 ### Mode hors-ligne
 
 CineLog est conçu pour continuer à fonctionner hors-ligne. La première connexion nécessite Internet ; ensuite l'appareil est connecté et le reste. Les modifications effectuées hors-ligne sont enregistrées dans la base de données locale de l'appareil et mises en file d'attente dans l'indicateur de synchronisation jusqu'à ce que tu sois à nouveau en ligne, moment auquel elles sont automatiquement transférées vers le serveur.
 
-Ta session se rafraîchit en arrière-plan à mesure qu'elle approche de son expiration — généralement quelques heures avant — donc tant que tu es en ligne à ce moment-là, tu ne vois jamais d'invite de connexion. Une utilisation normale mixte en ligne/hors-ligne signifie que le rafraîchissement fonctionne tout simplement.
+Ta connexion n'a pas d'expiration fixe que tu remarquerais normalement. L'application renouvelle ta session automatiquement en arrière-plan chaque fois que tu es en ligne — généralement quelques heures avant qu'elle ne lapse — donc une utilisation normale mixte en ligne/hors-ligne te garde connecté indéfiniment et tu ne vois jamais d'invite de connexion.
 
-Si tu restes complètement hors-ligne assez longtemps pour que la session expire — de l'ordre d'un mois — elle expire. La prochaine fois que l'application essaie de parler au serveur, elle affiche une boîte de dialogue de ré-authentification. La boîte de dialogue est bloquante mais tes données restent en place : reconnecte-toi avec le même compte et tu reprends exactement où tu en étais, modifications en file d'attente comprises.
+Rester hors-ligne ne te verrouille pas non plus : l'application continue de fonctionner avec tes données locales quelle que soit la durée de ta déconnexion. Ce n'est que si un appareil reste complètement hors-ligne pendant environ 30 jours que la session finit par expirer. La prochaine fois que l'application atteint le serveur, elle affiche l'écran de connexion avec ton e-mail déjà rempli. Tes données restent en place : saisis le code envoyé à cet e-mail et tu reprends exactement où tu en étais, modifications en file d'attente comprises.
 
 ### Le menu Plus
 
 Bas de la barre latérale sur bureau et tablette ; élément le plus à droite sur la barre de navigation inférieure du téléphone. Le contenu diffère selon la plateforme :
 
-- **Bureau :** Aide et Support, Raccourcis, Feuille de route, Bascule de thème, Explorateur de Médias, Compte, Déconnexion.
-- **Téléphone :** Logiciel de Scénario, Mises à jour, Aide et Support, Explorateur de Médias, Bascule de thème, Compte, Déconnexion.
+- **Bureau :** Aide et Support, Raccourcis, Feuille de route, Abonnement, Bascule de thème, Explorateur de Médias (uniquement quand un projet est ouvert), Compte, Déconnexion.
+- **Téléphone :** Logiciel de Scénario, Script AV (uniquement si ton rôle permet de le voir), Mises à jour, Aide et Support, Explorateur de Médias, Bascule de thème, Abonnement, Compte, Déconnexion. Les Mises à jour et l'Explorateur de Médias n'apparaissent que quand un projet est ouvert.
 
-Le Logiciel de Scénario et les Mises à jour sont dans la feuille Plus du téléphone parce qu'il n'y a pas de place pour eux sur la barre inférieure à cinq emplacements. Les Raccourcis et la Feuille de route ne sont pas exposés sur téléphone.
+Le Logiciel de Scénario, le Script AV et les Mises à jour sont dans la feuille Plus du téléphone parce qu'il n'y a pas de place pour eux sur la barre inférieure à cinq emplacements. Les Raccourcis et la Feuille de route ne sont pas exposés sur téléphone.
 
 La bascule de thème est aussi liée à `Cmd / Ctrl + Shift + M` sur bureau.
 
@@ -99,7 +102,7 @@ Cinq emplacements dans la barre de navigation inférieure :
 4. Casting et Équipe
 5. Plus
 
-Tout le reste (Logiciel de Scénario, Mises à jour, Explorateur de Médias, Compte…) est dans la feuille Plus. La barre supérieure affiche le nom et le badge du projet ; tape dessus pour changer de projet.
+Tout le reste (Logiciel de Scénario, Script AV, Mises à jour, Explorateur de Médias, Compte…) est dans la feuille Plus. La barre supérieure affiche le badge d'abréviation du projet ; tape dessus pour changer de projet.
 
 ### La boîte de dialogue des raccourcis
 
@@ -115,9 +118,9 @@ De courts messages apparaissent en bas de l'écran lorsque quelque chose réussi
 
 *« Mon point de connexion et l'indicateur de synchronisation sont en désaccord. »* Ils mesurent des choses différentes. Le point est la liaison réseau ; l'indicateur de synchronisation est la file d'attente d'édition locale. Soit l'un soit l'autre peut être en mauvaise santé seul.
 
-*« Puis-je utiliser CineLog sans Internet ? »* Oui, après la première connexion. Les modifications hors-ligne sont enregistrées localement et synchronisées lorsque tu te reconnectes. À mesure que ta session approche de l'expiration, l'application la rafraîchit automatiquement si tu es en ligne à ce moment-là, donc une utilisation normale mixte en ligne/hors-ligne reste connectée. Un appareil laissé complètement hors-ligne assez longtemps — de l'ordre d'un mois — devra se reconnecter.
+*« Puis-je utiliser CineLog sans Internet ? »* Oui, après la première connexion. Les modifications hors-ligne sont enregistrées localement et synchronisées lorsque tu te reconnectes. L'application renouvelle ta session automatiquement chaque fois que tu es en ligne, donc une utilisation normale mixte en ligne/hors-ligne reste connectée. Seul un appareil qui reste complètement hors-ligne pendant environ 30 jours devra se reconnecter — et être hors-ligne ne te déconnecte jamais en plein tournage ; l'écran de connexion n'apparaît qu'une fois que tu te reconnectes.
 
-*« L'application m'a demandé de me reconnecter en tournage. »* C'est la boîte de dialogue de ré-authentification après une longue période sans connectivité. Reconnecte-toi avec le même e-mail ; tes modifications en file d'attente restent et se synchronisent.
+*« L'application m'a demandé de me reconnecter en tournage. »* C'est l'écran de ré-authentification — l'écran de connexion habituel avec ton e-mail pré-rempli — affiché lorsque tu es de nouveau en ligne après que ta session a expiré durant une longue période hors-ligne. Reconnecte-toi avec le même e-mail ; tes modifications en file d'attente restent et se synchronisent.
 
 ---
 
@@ -127,28 +130,29 @@ Clique sur une cellule. La cellule s'ouvre pour l'édition. C'est tout sur burea
 
 La forme de l'éditeur dépend du type de champ — une saisie de texte pour le texte, un sélecteur pour les listes déroulantes, une bascule immédiate pour les cases à cocher, un sélecteur de médias pour les cellules d'image. Il valide toujours sans bouton Sauvegarder.
 
-### Mobile, c'est deux touches
+### Sur téléphone, c'est deux touches
 
-Sur téléphone ou tablette, toucher une seule cellule ne l'édite pas directement — d'abord tu touches la ligne pour l'étendre, puis tu touches le champ dans la vue étendue. Cette deuxième touche ouvre une feuille en bas pour le champ.
+Sur téléphone, toucher une seule cellule ne l'édite pas directement — d'abord tu touches la ligne pour l'étendre, puis tu touches le champ dans la vue étendue. Cette deuxième touche ouvre une feuille en bas pour le champ.
 
-Si tu touches une ligne et que rien ne semble modifiable, étends-la d'abord.
+Sur tablette, tu obtiens la même grille que sur bureau : toucher une cellule ouvre directement son éditeur, affiché sous forme de boîte de dialogue près du haut de l'écran.
+
+Si tu touches une ligne sur téléphone et que rien ne semble modifiable, étends-la d'abord.
 
 ### Sauvegarde automatique
 
 CineLog sauvegarde automatiquement à chaque validation et selon un délai de stabilisation d'environ 450 ms pendant que tu tapes. Il n'y a aucun bouton Sauvegarder nulle part.
 
-Tout ce que tu tapes est sauvegardé automatiquement selon un délai de stabilisation d'environ 450 ms, et fermer l'éditeur enregistre ce qu'il contient. `Esc` n'a aucun comportement d'abandon particulier dans un champ de texte — il n'y a pas de geste « jeter mes dernières frappes ».
+Il n'y a pas non plus de geste d'annulation. Fermer l'éditeur — avec `Enter` ou en cliquant ailleurs — enregistre toujours tout ce que tu as tapé, y compris ce qui suit la dernière sauvegarde automatique. Rien de ce que tu tapes dans un éditeur de cellule n'est jamais abandonné.
 
 ### Clavier à l'intérieur de l'éditeur
 
 - `Enter` valide et ferme.
-- Les touches fléchées se déplacent dans les options déroulantes.
-
-(Il n'y a pas d'`Esc`-pour-abandonner dans un champ de texte ; les modifications sont déjà sauvegardées automatiquement.)
+- `Esc` ne fait rien pendant que tu tapes — ferme avec `Enter` ou en cliquant à l'extérieur. Dans les deux cas, tout est sauvegardé.
+- Les touches fléchées ne fonctionnent que dans les éditeurs numériques (Jour, Numéro de scène) : `↑` / `↓` incrémentent ou décrémentent le nombre, et maintenir la touche répète. Les sélecteurs (type de plan, objectif, et le reste) se font uniquement au clic ou au tap — pas de navigation au clavier.
 
 ### Si ça ne marche pas
 
-*« Je ne peux rien éditer sur mobile. »* Touche la ligne pour l'étendre d'abord, puis touche le champ spécifique.
+*« Je ne peux rien éditer sur mon téléphone. »* Touche la ligne pour l'étendre d'abord, puis touche le champ spécifique. (Sur tablette, touche directement la cellule, comme sur bureau.)
 
 *« Où est le bouton Sauvegarder ? »* Il n'y en a pas — sauvegarde automatique à chaque validation, plus un délai de stabilisation de 450 ms pendant que tu tapes.
 
@@ -160,8 +164,10 @@ Sélectionner une ligne est la façon de la marquer pour la déplacer ou pour un
 
 ### Comment entrer en mode sélection
 
-- **Bureau :** `Cmd / Ctrl + Click` sur n'importe quelle ligne.
-- **Mobile :** appui long sur n'importe quelle ligne.
+- **Bureau :** `Cmd / Ctrl + Click` sur n'importe quelle ligne sélectionnable.
+- **Mobile :** appui long sur n'importe quelle ligne sélectionnable.
+
+Toutes les lignes ne sont pas sélectionnables. Dans le découpage technique linéaire, les lignes d'en-tête de scène ne peuvent pas être sélectionnées (ni glissées). Dans la vue Production, sélectionner un en-tête de scène sélectionne toute la scène — l'en-tête plus tous ses plans — et tant qu'une sélection existe, elle reste dans cette seule scène : les lignes des autres scènes se grisent jusqu'à ce que tu effaces la sélection (les lignes de bannière sont exemptées).
 
 La première ligne que tu sélectionnes devient l'ancrage pour la sélection de plage (suivant).
 
@@ -169,7 +175,7 @@ La première ligne que tu sélectionnes devient l'ancrage pour la sélection de 
 
 Une fois en mode sélection :
 
-- **Bureau :** `Cmd / Ctrl + Click` active ou désactive les lignes individuelles. Un simple clic sans le modificateur remplace la sélection par la seule ligne cliquée.
+- **Bureau :** un simple clic active ou désactive les lignes individuelles — clique sur une ligne non sélectionnée pour l'ajouter, clique sur une ligne sélectionnée pour la retirer. Un clic ne remplace jamais la sélection par une seule ligne ; pour repartir de zéro, appuie sur `Esc` puis `Cmd + Click` sur la ligne que tu veux. (Le modificateur n'est nécessaire que pour entrer en mode sélection.)
 - **Mobile :** un simple tap bascule maintenant la sélection (hors mode sélection, le même tap étend la ligne).
 
 ### Sélection de plage (bureau seulement)
@@ -199,14 +205,14 @@ Une fois que tu as une ligne (ou une multi-sélection) marquée, fais glisser l'
 
 ### Ce que tu peux faire glisser
 
-N'importe quelle ligne, n'importe où le long de son corps. Il n'y a pas de poignée de glissement séparée. Sur bureau, tu verras le curseur changer en `grab` au survol et `grabbing` en cours de glissement.
+N'importe quelle ligne sélectionnable, n'importe où le long de son corps — les mêmes lignes que tu peux sélectionner (donc pas les en-têtes de scène en vue Linéaire, ni les lignes d'autres scènes pendant une sélection active en vue Production). Il n'y a pas de poignée de glissement séparée, ni de curseur de survol particulier à repérer — le curseur passe à `grabbing` une fois qu'un glissement est en cours.
 
 ### Démarrer le glissement
 
-Une pression seule ne démarre pas un glissement — le pointeur ou le doigt doit d'abord se déplacer d'une petite distance :
+Une pression seule ne démarre pas un glissement — et la façon d'y arriver dépend de si la ligne est déjà sélectionnée :
 
-- **Environ 8 pixels** pour une ligne non sélectionnée. Moins est traité comme un clic.
-- **Environ 3 pixels** pour une ligne qui fait déjà partie de la sélection — le seuil plus bas rend le déplacement d'une sélection existante plus réactif.
+- **Une ligne qui fait déjà partie de la sélection :** appuie et déplace simplement — environ 3 pixels de mouvement démarrent le glissement.
+- **Une ligne non sélectionnée :** appuyer-déplacer seul ne la glisse pas, sur bureau comme sur mobile. Fais d'abord un appui long (clic maintenu sur bureau) ; cela sélectionne la ligne et amorce le glissement, et le même petit mouvement le démarre ensuite.
 
 Sur mobile, il y a deux façons d'entrer :
 
@@ -215,11 +221,11 @@ Sur mobile, il y a deux façons d'entrer :
 
 ### Où tu peux déposer
 
-Pendant que tu fais glisser, un espace s'ouvre entre les lignes à n'importe quelle position où le dépôt est valide. Si tu te déplaces sur un endroit et qu'aucun espace n'apparaît, le dépôt n'est pas autorisé — la ligne revient à sa position d'origine quand tu relâches. Les règles de ce qui est valide varient selon l'écran (couvertes dans les guides de fonctionnalités) ; l'espace est le signal universel « tu peux déposer ici ».
+Pendant que tu fais glisser, un espace s'ouvre entre les lignes à la position valide la plus proche. Si l'endroit sous ton pointeur n'est pas autorisé, l'espace se cale sur l'emplacement valide le plus proche au lieu de disparaître — là où l'espace s'affiche est là où les lignes atterriront quand tu relâches. Les règles de ce qui est valide varient selon l'écran (couvertes dans les guides de fonctionnalités) ; regarde l'espace, pas le pointeur, pour savoir où ira le dépôt.
 
 ### Faire glisser une sélection
 
-Si tu fais glisser une ligne qui fait partie de la sélection actuelle, toute la sélection se déplace ensemble. Si tu fais glisser une ligne qui *ne fait pas* partie de la sélection, le glissement réduit implicitement la sélection à cette seule ligne.
+Si tu fais glisser une ligne qui fait partie de la sélection actuelle, toute la sélection se déplace ensemble. Si tu fais glisser une ligne qui *ne fait pas* partie de la sélection, elle est ajoutée à la sélection et toute la sélection agrandie se déplace avec le glissement. Pour déplacer une seule ligne, efface d'abord la sélection, puis fais glisser cette ligne seule.
 
 C'est pourquoi sélectionner d'abord, puis glisser, est le flux de travail prévisible — tu peux confirmer ce qui est sélectionné avant de t'engager.
 
@@ -237,13 +243,11 @@ Sur mobile uniquement, les lignes étendues se replient en vue compacte au momen
 
 ### Annuler
 
-Relâche le pointeur ou lève le doigt en dehors de tout espace de dépôt valide et la ligne revient à sa place initiale. Il n'y a pas d'`Esc`-pour-annuler en cours de glissement.
+Relâcher le pointeur ou lever le doigt dépose toujours la sélection à l'espace affiché — il n'y a pas de relâcher-pour-annuler, et rien ne revient en arrière. Pour abandonner un glissement sur bureau, appuie sur `Esc` en cours de glissement : cela annule le glissement sur place et efface la sélection.
 
 ### Si ça ne marche pas
 
-*« Le glissement ne fait rien. »* Soit tu n'as pas dépassé le petit seuil de mouvement, soit tu utilises un geste à deux doigts sur le trackpad (qui fait défiler, pas glisser).
-
-*« Le glissement fonctionne mais mon dépôt est rejeté. »* La destination n'est pas une cible valide pour ce que tu fais glisser. Les guides par fonctionnalité couvrent les règles.
+*« Le glissement ne fait rien. »* Soit tu appuies-et-déplaces une ligne non sélectionnée — fais d'abord un appui long (clic maintenu) — soit tu utilises un geste à deux doigts sur le trackpad (qui fait défiler, pas glisser).
 
 *« Mes lignes se sont repliées quand j'ai touché pour sélectionner. »* C'est l'auto-réduction mobile intentionnelle — elle rend les hauteurs de glissement uniformes. Tes données sont intactes.
 

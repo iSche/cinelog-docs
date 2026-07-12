@@ -1,6 +1,6 @@
 ---
 title: Feuilles de service
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Feuilles de service quotidiennes dans CineLog — en-tête et heure d'appel, lieux, planning avec cascade temporelle, météo, sections personnel, message équipe en texte riche, envoi et suivi de confirmation, export PDF."
 ---
 
@@ -66,15 +66,15 @@ Pour masquer toute la section des lieux de la feuille de service (par exemple, q
 
 ## Planning
 
-Le planning est la vue Production filtrée à ce jour. Les plans et bannières sur la feuille de service sont les **mêmes objets** que dans Production — les réorganiser ou les éditer ici revient à les réorganiser ou les éditer là-bas. La grammaire des gestes est identique à celle de n'importe où ailleurs dans l'application.
+Le planning est la vue Production filtrée à ce jour. Il liste les scènes et les bannières — pas les plans individuels. Les scènes et bannières sur la feuille de service sont les **mêmes objets** que dans Production — les réorganiser ou les éditer ici revient à les réorganiser ou les éditer là-bas. La grammaire des gestes est identique à celle de n'importe où ailleurs dans l'application.
 
-Trois colonnes : **heure de début** | **scène + plan** | **durée estimée**.
+Trois colonnes : **heure de début** | **scène** | **durée estimée**.
 
 ### Bannières
 
 Les bannières sont des lignes non-plan qui marquent les pauses repas, les déplacements d'équipe, les fins de journée ou d'autres marqueurs de planning. Elles n'existent qu'en vue Production et sur le planning. Ajoute une bannière depuis la barre d'outils (ou `Cmd / Ctrl + N` en Production) ; nomme-la (« Déjeuner », « Déplacement d'équipe »), définis sa durée.
 
-Insérer une bannière en milieu de scène divise la scène environnante à la bannière — voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production) pour le comportement complet de division-et-fusion.
+Les bannières ajoutées depuis le planning se placent entre des scènes entières, donc elles ne peuvent pas diviser une scène ici. Pour diviser une scène avec une bannière, dépose-la entre les plans de la scène dans l'onglet Production — voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production) pour le comportement complet de division-et-fusion ; le planning affiche ensuite la division sous forme de lignes de scène distinctes.
 
 ### La cascade temporelle
 
@@ -84,7 +84,7 @@ Si l'heure de début explicite d'une ligne tombe plus tôt que ce que l'horloge 
 
 ### Réorganiser le planning
 
-Bureau : maintiens l'appui sur une bannière ou une ligne de plan et fais glisser. Mobile : double-tape sur une ligne pour ouvrir la superposition d'édition (pas de glissement en ligne). Les réorganisations persistent jusque dans la vue Production, puisque ce sont les mêmes objets.
+Bureau : maintiens l'appui sur une bannière ou une ligne de scène et fais glisser. Mobile : double-tape sur une ligne pour ouvrir la superposition d'édition (pas de glissement en ligne). Les réorganisations persistent jusque dans la vue Production, puisque ce sont les mêmes objets.
 
 La section planning ne peut pas être masquée — elle est toujours affichée.
 
@@ -150,7 +150,7 @@ La barre d'outils de l'éditeur prend en charge :
 
 - **Gras, italique, souligné.**
 - **Couleur.** Huit échantillons soignés (Blanc, Or, Cuivre, Rose, Lavande, Verre marin, Sauge, Parchemin).
-- **Intégration d'image.** Clique sur le bouton image, choisis une image. Téléverse vers le CDN de CineLog, jusqu'à 2 Mo, JPEG / PNG / WebP uniquement. L'URL de l'image est intégrée dans le message et apparaît dans le corps de l'e-mail.
+- **Intégration d'image.** Clique sur le bouton image, choisis une image. JPEG / PNG / WebP, jusqu'à 1 Mo — l'application redimensionne automatiquement les images volumineuses. L'URL de l'image est intégrée dans le message et apparaît dans le corps de l'e-mail.
 - **Effacer la mise en forme.**
 
 L'e-mail rendu applique le même formatage côté destinataire. Le serveur assainit le message avant l'envoi — seules les balises de formatage autorisées passent.
@@ -214,13 +214,13 @@ Deux façons d'obtenir un PDF, selon le cas d'usage :
 
 ### Export local depuis la barre d'outils
 
-`Cmd / Ctrl + P` ou le bouton d'export dans le menu supérieur ouvre la boîte de dialogue d'export. Tu peux définir les marges de page (haut, bas, gauche, droite en points), puis exporter. Le rendu est local — pas de téléversement, pas de rendu côté serveur — donc fonctionne hors-ligne. Utile quand tu veux un PDF à distribuer en dehors du flux e-mail (Slack, WhatsApp, remise en main propre).
+Le bouton **Exporter** dans le menu supérieur ouvre la boîte de dialogue d'export — il n'y a pas de raccourci clavier ici (l'export `Cmd / Ctrl + P` fonctionne sur le découpage technique, le Storyboard et le Script AV, pas sur les feuilles de service). Tu peux définir les marges de page (haut, bas, gauche, droite en points), puis exporter. Le rendu est local — pas de téléversement, pas de rendu côté serveur — donc fonctionne hors-ligne. Utile quand tu veux un PDF à distribuer en dehors du flux e-mail (Slack, WhatsApp, remise en main propre).
 
 ### PDF par destinataire au moment de l'envoi
 
 Lorsque tu appuies sur Envoyer, le serveur génère un PDF personnalisé pour chaque destinataire avec son heure d'appel mise en surbrillance et ses notes personnelles attachées. Tu ne les déclenches pas directement — c'est un effet secondaire de l'envoi.
 
-Les deux voies d'export respectent les paramètres d'affichage : les sections masquées restent masquées, l'unité de température et le format de l'heure sont appliqués. Les médias volumineux sont sous-échantillonnés.
+Les deux voies d'export respectent les paramètres d'affichage : les sections masquées restent masquées, l'unité de température et le format de l'heure sont appliqués. Le PDF imprime le planning sous forme de lignes de texte avec les heures — il ne contient aucun média de plan, et le casting et l'équipe apparaissent toujours avec des avatars d'initiales, jamais de photos.
 
 Les scripts internationaux (arabe, hébreu, devanagari, CJK, thaï) sont rendus correctement via les replis de police.
 
@@ -250,4 +250,4 @@ L'édition des feuilles de service fonctionne hors-ligne — les modifications s
 
 *« J'ai atteint une limite d'envoi. »* Tu as dépassé 10 envois dans la dernière heure pour cette feuille de service, ou 1000 e-mails dans le dernier mois pour l'espace de travail. Attends ou contacte-nous si tu as besoin d'une limite plus élevée.
 
-*« L'image de mon message équipe ne s'est pas téléversée. »* Vérifie le fichier : moins de 2 Mo, JPEG / PNG / WebP. Les autres formats et les fichiers surdimensionnés sont rejetés.
+*« L'image de mon message équipe ne s'est pas téléversée. »* Vérifie le fichier : JPEG / PNG / WebP, jusqu'à 1 Mo (les images volumineuses sont redimensionnées automatiquement). Les autres formats sont rejetés.

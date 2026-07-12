@@ -1,6 +1,6 @@
 ---
 title: Le basi
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Quattro sezioni che coprono il tour dell'app e le tre cose che fai più e più volte — modificare, selezionare, trascinare. Le fondamenta per ogni guida sulle funzionalità."
 ---
 
@@ -21,25 +21,26 @@ Quattro sezioni: un tour dell'app, poi le tre cose che fai più e più volte —
 
 ### Accesso
 
-L'accesso è solo via email. Inserisci il tuo indirizzo, ti inviamo un codice, lo inserisci. Nessuna password. Se non hai mai effettuato l'accesso prima e non hai ancora progetti, la schermata Progetti ti invita a crearne uno (solo un nome e una descrizione — il badge con l'abbreviazione viene generato dal nome). Altrimenti atterri nel progetto che avevi aperto per ultimo.
+L'accesso è solo via email. Inserisci il tuo indirizzo, ti inviamo un codice, lo inserisci. Nessuna password. Ogni nuovo account inizia con un progetto predefinito ("My First Project"), così atterri subito in un workspace — nei lanci successivi, nel progetto che avevi aperto per ultimo. Le nuove produzioni ottengono il proprio progetto tramite il pulsante Nuovo Progetto (solo un nome e una descrizione — il badge con l'abbreviazione viene generato dal nome).
 
-Ogni schermata dell'app, eccetto l'accesso e la lista dei progetti, vive all'interno di un progetto.
+Gli strumenti di pianificazione nella sidebar vivono tutti all'interno di un progetto. Le schermate a livello di account — Aiuto & Supporto, Roadmap, Abbonamento, Account — si trovano fuori da qualsiasi progetto, sotto il menu Altro.
 
 ### La finestra desktop
 
 Tre regioni, dall'alto verso il basso:
 
-- Una sottile **barra del titolo** con il punto di stato della connessione a sinistra. Gli utenti Windows ottengono i classici minimizza / massimizza / chiudi a destra.
+- Una sottile **barra del titolo** con l'indicatore combinato di connessione e sincronizzazione a sinistra. Gli utenti Windows ottengono i classici minimizza / massimizza / chiudi a destra.
 - La **sidebar sinistra** più l'**area dei contenuti** — sidebar per la navigazione, contenuti per il lavoro.
 - Elementi flottanti: modali, snackbar, la finestra degli hotkey.
 
 ### La sidebar
 
-Sempre presente su desktop e tablet. Dall'alto verso il basso: il selettore di progetto, una lista di funzionalità, l'indicatore di sincronizzazione e il pulsante Altro.
+Sempre presente su desktop e tablet. Dall'alto verso il basso: il selettore di progetto, una lista di funzionalità e il pulsante Altro. L'indicatore di sincronizzazione non è nella sidebar — vive nella barra del titolo in cima alla finestra.
 
 Le funzionalità:
 
 - **Editor di Sceneggiatura** — scrivi la sceneggiatura.
+- **Script AV** — lo script audio/video a due colonne. Appare solo se il tuo ruolo può visualizzarlo (chiunque possa vedere la Lista delle Inquadrature può farlo).
 - **Lista delle Inquadrature** — viste Lineare e Produzione di ogni inquadratura, con ogni Giorno di Produzione come sub-entry.
 - **Storyboard** — pianificazione visiva, con viste salvate come sub-entry.
 - **Ordini del Giorno** — ordini del giorno giornalieri, con ogni Giorno di Produzione come sub-entry.
@@ -49,37 +50,39 @@ Le funzionalità:
 
 ### Il selettore di progetto
 
-In cima alla sidebar su desktop, nella top app bar su telefono. Mostra il nome e il badge del progetto corrente. Cliccalo per cambiare progetto — l'overlay (o sheet, su telefono) elenca il progetto corrente, eventuali inviti in sospeso, tre recenti, un pulsante "Nuovo Progetto" e un link "Mostra Tutti".
+In cima alla sidebar su desktop. Mostra il nome e il badge del progetto corrente. Cliccalo per cambiare progetto — l'overlay elenca il progetto corrente, eventuali inviti in sospeso, fino a tre progetti recenti, un pulsante "Nuovo" e un link "Mostra Tutti".
+
+Su telefono, la top app bar mostra invece un badge compatto con l'abbreviazione del progetto (es. "ST13") e una striscia di connessione colorata — non il nome del progetto. Toccalo per aprire lo sheet Progetti: la lista completa dei progetti più un pulsante per creare un progetto.
 
 Cambiando progetto si aggiorna l'intera sidebar, quindi le sub-entry che vedi appartengono sempre al progetto in cui ti trovi.
 
 ### Sync vs connessione
 
-Due indicatori, due cose diverse:
+Un solo indicatore nella barra del titolo, due cose diverse:
 
-- Il **punto di connessione** nella barra del titolo è color-coded — verde / arancione / rosso — per il collegamento realtime al server.
-- L'**indicatore di sincronizzazione** in fondo alla sidebar è in grigio attenuato e ti dice qualcosa sulla coda locale delle modifiche tramite icona e label: check + "Sincronizzato" (coda vuota), spinning sync + "Sync: N in sospeso" o "Sincronizzando…" (modifiche in transito), cloud-off + "Offline: N in sospeso" (in attesa di connettività).
+- La **metà connessione** è un punto color-coded — verde / arancione / rosso — con una label "Online", "Connecting" o "Offline", per il collegamento realtime al server.
+- La **metà sincronizzazione**, dopo un divisore, ti dice qualcosa sulla coda locale delle modifiche tramite icona e label: cloud-check + "Sincronizzato" (coda vuota), cloud-upload + "N in sospeso" (modifiche accodate — l'icona passa a cloud-off mentre sei disconnesso), e "Sincronizzando…" mentre la connessione si sta ristabilendo con modifiche accodate. Nulla gira; le icone sono statiche.
 
-Possono essere in disaccordo, ed è normale. Punto rosso + "Sincronizzato" = sei disconnesso ma non avevi nulla in sospeso. Punto verde + "Sync: N in sospeso" = sei online e la coda si sta svuotando.
+Possono essere in disaccordo, ed è normale. "Offline" + "Sincronizzato" = sei disconnesso ma non avevi nulla in sospeso. "Online" + "N in sospeso" = sei online e la coda si sta svuotando.
 
-Su telefono, entrambi i bit di stato vengono ripiegati nel badge di connessione nella top app bar.
+Su telefono, mostra solo lo stato di connessione — la striscia verde / arancione / rossa sul badge nella top app bar. Non c'è un indicatore della coda di sincronizzazione su telefono; toccare il badge apre il selettore di progetto, non i dettagli di sincronizzazione.
 
 ### Modalità offline
 
 CineLog è costruito per continuare a funzionare offline. Il primo accesso richiede internet; dopo, il dispositivo è loggato e resta tale. Le modifiche fatte offline vengono salvate nel database locale del dispositivo e accodate nell'indicatore di sincronizzazione finché non sarai online di nuovo, momento in cui vengono trasferite al server automaticamente.
 
-La tua sessione si rinnova da sola in background quando si avvicina la scadenza — di solito un paio d'ore prima — quindi finché sei online in quel momento, non vedi mai un prompt di accesso. Un uso misto online/offline normale significa che il refresh funziona da solo.
+Il tuo accesso non ha una scadenza fissa che noterai normalmente. L'app rinnova la tua sessione automaticamente in background ogni volta che sei online — di solito un paio d'ore prima che scada — quindi un uso misto online/offline normale ti mantiene loggato indefinitamente e non vedi mai un prompt di accesso.
 
-Solo se rimani completamente offline abbastanza a lungo da far decadere la sessione — nell'ordine di un mese — questa scade. La prossima volta che l'app prova a parlare col server mostra una finestra di re-autenticazione. La finestra è bloccante ma i tuoi dati restano al loro posto: accedi di nuovo con lo stesso account e riprendi esattamente da dove avevi lasciato, modifiche in coda comprese.
+Restare offline non ti blocca fuori: l'app continua a funzionare con i tuoi dati locali per quanto a lungo tu sia disconnesso. Solo se un dispositivo rimane completamente offline per circa 30 giorni la sessione scade infine. La prossima volta che l'app raggiunge il server, mostra la schermata di accesso con la tua email già compilata. I tuoi dati restano al loro posto: inserisci il codice inviato a quell'email e riprendi esattamente da dove avevi lasciato, modifiche in coda comprese.
 
 ### Il menu Altro
 
 In fondo alla sidebar su desktop e tablet; l'elemento più a destra nella barra di navigazione inferiore del telefono. I contenuti differiscono per piattaforma:
 
-- **Desktop:** Aiuto & Supporto, Hotkey, Roadmap, Toggle Tema, Esplora Media, Account, Logout.
-- **Telefono:** Editor di Sceneggiatura, Updates, Aiuto & Supporto, Esplora Media, Toggle Tema, Account, Logout.
+- **Desktop:** Aiuto & Supporto, Hotkey, Roadmap, Abbonamento, Toggle Tema, Esplora Media (solo quando un progetto è aperto), Account, Logout.
+- **Telefono:** Editor di Sceneggiatura, Script AV (solo se il tuo ruolo può visualizzarlo), Updates, Aiuto & Supporto, Esplora Media, Toggle Tema, Abbonamento, Account, Logout. Updates ed Esplora Media appaiono solo quando un progetto è aperto.
 
-Editor di Sceneggiatura e Updates si trovano nello sheet Altro del telefono perché non c'è spazio per loro nella barra inferiore a cinque slot. Hotkey e Roadmap non sono esposti su telefono.
+Editor di Sceneggiatura, Script AV e Updates si trovano nello sheet Altro del telefono perché non c'è spazio per loro nella barra inferiore a cinque slot. Hotkey e Roadmap non sono esposti su telefono.
 
 Il Toggle Tema è anche associato a `Cmd / Ctrl + Shift + M` su desktop.
 
@@ -99,7 +102,7 @@ Cinque slot nella barra di navigazione inferiore:
 4. Cast & Troupe
 5. Altro
 
-Tutto il resto (Editor di Sceneggiatura, Updates, Esplora Media, Account…) si trova nello sheet Altro. La top app bar mostra il nome del progetto + badge; toccala per cambiare progetto.
+Tutto il resto (Editor di Sceneggiatura, Script AV, Updates, Esplora Media, Account…) si trova nello sheet Altro. La top app bar mostra il badge con l'abbreviazione del progetto; toccala per cambiare progetto.
 
 ### La finestra degli hotkey
 
@@ -115,9 +118,9 @@ Brevi messaggi appaiono in fondo alla schermata quando qualcosa va a buon fine, 
 
 *"Il mio punto di connessione e l'indicatore di sincronizzazione non sono d'accordo."* Misurano cose diverse. Il punto è il link di rete; l'indicatore di sincronizzazione è la coda locale di modifiche. Uno qualsiasi dei due può non essere in salute da solo.
 
-*"Posso usare CineLog senza internet?"* Sì, dopo il primo accesso. Le modifiche offline si salvano localmente e si sincronizzano quando ti riconnetti. Man mano che la tua sessione si avvicina alla scadenza, l'app la rinnova automaticamente se sei online in quel momento, quindi un uso misto online/offline normale rimane loggato. Un dispositivo lasciato completamente offline abbastanza a lungo — nell'ordine di un mese — dovrà rifare l'accesso.
+*"Posso usare CineLog senza internet?"* Sì, dopo il primo accesso. Le modifiche offline si salvano localmente e si sincronizzano quando ti riconnetti. L'app rinnova la tua sessione automaticamente ogni volta che sei online, quindi un uso misto online/offline normale rimane loggato. Solo un dispositivo che rimane completamente offline per circa 30 giorni deve rifare l'accesso — ed essere offline non ti disconnette mai a metà ripresa; la schermata di accesso appare solo quando ti riconnetti.
 
-*"L'app mi ha chiesto di accedere di nuovo sul set."* Quella è la finestra di re-autenticazione dopo un lungo periodo senza connettività. Accedi di nuovo con la stessa email; le tue modifiche in coda restano e si sincronizzano.
+*"L'app mi ha chiesto di accedere di nuovo sul set."* Quella è la schermata di re-autenticazione — la normale schermata di accesso con la tua email già compilata — mostrata quando torni online dopo che la tua sessione è scaduta durante un lungo periodo offline. Accedi di nuovo con la stessa email; le tue modifiche in coda restano e si sincronizzano.
 
 ---
 
@@ -127,28 +130,29 @@ Clicca una cella. La cella si apre per la modifica. È così su desktop.
 
 La forma dell'editor dipende dal tipo di campo — un input testuale per il testo, un picker per i dropdown, un toggle immediato per le checkbox, un media picker per le celle immagine. Si commita sempre senza un pulsante Salva.
 
-### Su mobile sono due tap
+### Su telefono sono due tap
 
-Su telefono o tablet, toccare una singola cella non la modifica direttamente — prima tocchi la riga per espanderla, poi tocchi il campo all'interno della vista espansa. Quel secondo tap apre un bottom sheet per il campo.
+Su telefono, toccare una singola cella non la modifica direttamente — prima tocchi la riga per espanderla, poi tocchi il campo all'interno della vista espansa. Quel secondo tap apre un bottom sheet per il campo.
 
-Se tocchi una riga e nulla sembra modificabile, espandila prima.
+Su tablet ottieni la stessa griglia del desktop: toccare una cella apre direttamente il suo editor, mostrato come finestra vicino alla parte alta dello schermo.
+
+Se tocchi una riga su telefono e nulla sembra modificabile, espandila prima.
 
 ### Salvataggio automatico
 
 CineLog salva automaticamente a ogni commit e con un debounce di circa 450 ms mentre stai scrivendo. Non c'è un pulsante Salva da nessuna parte.
 
-Tutto ciò che digiti si salva automaticamente con un debounce di circa 450 ms, e chiudere l'editor salva qualunque cosa contenga. `Esc` non ha alcun comportamento speciale di scarto in un campo di testo — non esiste un gesto per "buttare via gli ultimi caratteri".
+Non c'è nemmeno un gesto di annullamento. Chiudere l'editor — con `Enter` o cliccando altrove — salva sempre tutto ciò che hai digitato, incluso qualunque cosa dopo l'ultimo salvataggio automatico con debounce. Nulla di ciò che digiti in un editor di cella viene mai scartato.
 
 ### Tastiera all'interno dell'editor
 
 - `Enter` commita e chiude.
-- I tasti freccia muovono tra le opzioni dei dropdown.
-
-(Non c'è un `Esc`-per-scartare all'interno di un campo di testo; le modifiche sono già salvate automaticamente.)
+- `Esc` non fa nulla mentre stai scrivendo — chiudi con `Enter` o cliccando fuori. In entrambi i casi, tutto viene salvato.
+- I tasti freccia funzionano solo negli editor numerici (Giorno, Numero di Scena): `↑` / `↓` incrementano o decrementano il numero, e tenere premuto il tasto ripete. I picker (tipo di inquadratura, obiettivo e gli altri) sono solo click o tap — nessuna navigazione da tastiera.
 
 ### Se non funziona
 
-*"Non riesco a modificare nulla su mobile."* Tocca prima la riga per espanderla, poi tocca il campo specifico.
+*"Non riesco a modificare nulla sul mio telefono."* Tocca prima la riga per espanderla, poi tocca il campo specifico. (Su tablet, tocca direttamente la cella, come su desktop.)
 
 *"Dov'è il pulsante Salva?"* Non c'è — autosave a ogni commit, più un debounce di 450 ms mentre scrivi.
 
@@ -160,8 +164,10 @@ Selezionare una riga è il modo in cui la marchi per spostarla o per un'azione c
 
 ### Come entrare in modalità selezione
 
-- **Desktop:** `Cmd / Ctrl + Click` su qualsiasi riga.
-- **Mobile:** long-press su qualsiasi riga.
+- **Desktop:** `Cmd / Ctrl + Click` su qualsiasi riga selezionabile.
+- **Mobile:** long-press su qualsiasi riga selezionabile.
+
+Non tutte le righe sono selezionabili. Nella lista delle inquadrature Lineare, le righe di intestazione di scena non possono essere selezionate (né trascinate). Nella vista Produzione, selezionare un'intestazione di scena seleziona l'intera scena — intestazione più tutte le sue inquadrature — e finché una selezione esiste resta all'interno di quella singola scena: le righe di altre scene si attenuano finché non cancelli la selezione (le righe banner sono esenti).
 
 La prima riga che selezioni diventa l'ancora per la selezione di range (vedi sotto).
 
@@ -169,7 +175,7 @@ La prima riga che selezioni diventa l'ancora per la selezione di range (vedi sot
 
 Una volta in modalità selezione:
 
-- **Desktop:** `Cmd / Ctrl + Click` attiva/disattiva le singole righe. Un click semplice senza modificatore sostituisce la selezione con solo la riga cliccata.
+- **Desktop:** un click semplice attiva/disattiva le singole righe — clicca una riga non selezionata per aggiungerla, clicca una riga selezionata per rimuoverla. Un click non sostituisce mai la selezione con una sola riga; per ricominciare, premi `Esc` e fai `Cmd + Click` sulla riga che vuoi. (Il modificatore serve solo per entrare in modalità selezione.)
 - **Mobile:** un tap semplice ora attiva/disattiva la selezione (fuori dalla modalità selezione, lo stesso tap espande la riga).
 
 ### Selezione di range (solo desktop)
@@ -199,14 +205,14 @@ Una volta che hai una riga (o una selezione multipla) marcata, trascina una qual
 
 ### Cosa puoi trascinare
 
-Qualsiasi riga, ovunque lungo il suo corpo. Non c'è una maniglia di drag separata. Su desktop vedrai il cursore cambiare in `grab` al passaggio e `grabbing` durante il drag.
+Qualsiasi riga selezionabile, ovunque lungo il suo corpo — le stesse righe che puoi selezionare (quindi non le intestazioni di scena nella vista Lineare, e non le righe di altre scene durante una selezione attiva in vista Produzione). Non c'è una maniglia di drag separata, e nessun cursore speciale al passaggio da cercare — il cursore passa a `grabbing` una volta che il drag è in corso.
 
 ### Avviare il drag
 
-Una pressione da sola non avvia un drag — il puntatore o il dito devono spostarsi prima di una piccola distanza:
+Una pressione da sola non avvia un drag — e il modo di iniziare dipende dal fatto che la riga sia già selezionata:
 
-- **Circa 8 pixel** per una riga non selezionata. Meno di così viene trattato come un click.
-- **Circa 3 pixel** per una riga che fa già parte della selezione — la soglia più bassa rende lo spostamento di una selezione esistente più reattivo.
+- **Una riga che fa già parte della selezione:** basta premere e muovere — circa 3 pixel di movimento avviano il drag.
+- **Una riga non selezionata:** premere e muovere da solo non la trascina, né su desktop né su mobile. Fai prima long-press (click-and-hold su desktop); questo seleziona la riga e prepara il drag, e lo stesso piccolo movimento lo avvia poi.
 
 Su mobile ci sono due modi:
 
@@ -215,11 +221,11 @@ Su mobile ci sono due modi:
 
 ### Dove puoi rilasciare
 
-Mentre trascini, si apre uno spazio tra le righe in qualsiasi posizione dove il rilascio è valido. Se ti sposti su un punto e non appare alcuno spazio, il rilascio non è permesso — la riga torna alla sua posizione originale al rilascio. Le regole su cosa è valido variano per schermata (coperte nelle guide delle funzionalità); lo spazio è il segnale universale "puoi rilasciare qui".
+Mentre trascini, si apre uno spazio tra le righe nella posizione valida più vicina dove il rilascio è permesso. Se il punto sotto il tuo puntatore non è permesso, lo spazio scatta allo slot valido più vicino invece di scomparire — ovunque lo spazio si mostri è dove le righe atterreranno al rilascio. Le regole su cosa è valido variano per schermata (coperte nelle guide delle funzionalità); guarda lo spazio, non il puntatore, per sapere dove andrà il rilascio.
 
 ### Trascinare una selezione
 
-Se trascini una riga che fa parte della selezione corrente, l'intera selezione si muove insieme. Se trascini una riga che *non* fa parte della selezione, il drag fa implicitamente cadere la selezione su quella singola riga.
+Se trascini una riga che fa parte della selezione corrente, l'intera selezione si muove insieme. Se trascini una riga che *non* fa parte della selezione, questa viene aggiunta alla selezione e l'intera selezione allargata si muove con il drag. Per spostare una sola riga, cancella prima la selezione, poi trascina quella riga da sola.
 
 Ecco perché selezionare prima, poi trascinare, è il flusso prevedibile — puoi confermare cosa è selezionato prima di committare.
 
@@ -237,13 +243,11 @@ Solo su mobile, le righe espanse si ricollassano alla vista compatta nel momento
 
 ### Annullare
 
-Rilascia il puntatore o solleva il dito al di fuori di qualsiasi spazio di rilascio valido e la riga torna al suo punto di partenza. Non c'è `Esc`-per-annullare durante il drag.
+Rilasciare il puntatore o sollevare il dito rilascia sempre la selezione allo spazio che si sta mostrando — non c'è un rilascio-per-annullare, e nulla torna indietro di scatto. Per abbandonare un drag su desktop, premi `Esc` durante il drag: annulla il drag sul posto e cancella la selezione.
 
 ### Se non funziona
 
-*"Il drag non fa nulla."* O non hai superato la piccola soglia di movimento, o stai usando un gesto trackpad a due dita (che fa scroll, non drag).
-
-*"Il drag funziona ma il mio rilascio viene rifiutato."* La destinazione non è un target valido per ciò che stai trascinando. Le guide per ogni feature coprono le regole.
+*"Il drag non fa nulla."* O stai premendo e muovendo una riga non selezionata — fai prima long-press (click-and-hold) — o stai usando un gesto trackpad a due dita (che fa scroll, non drag).
 
 *"Le mie righe sono collassate quando ho toccato per selezionare."* È il collasso automatico intenzionale su mobile — rende uniformi le altezze per il drag. I tuoi dati sono intatti.
 

@@ -1,39 +1,39 @@
 ---
 title: Storyboards
-lastUpdated: 2026-06-22
-description: "Visual planning for one scene at a time — previs frames per shot, linear or grid layout, export to PDF. Reordering a storyboard reorders the underlying shots."
+lastUpdated: 2026-07-11
+description: "Visual planning for your whole project, grouped by scene — previs frames per shot, linear or grid layout, export to PDF. Reordering a storyboard reorders the underlying shots."
 ---
 
-A storyboard in CineLog is a visual view of one scene's shots, with previs frames attached. It isn't a separate copy of the data — it sits on top of the shot list, so reordering a storyboard reorders the underlying shots.
+A storyboard in CineLog is a visual view of your whole project's shots, grouped by scene, with previs frames attached. It isn't a separate copy of the data — it sits on top of the shot list, so reordering a storyboard reorders the underlying shots.
 
 This guide assumes [The basics](/guides/introduction).
 
 ## What a storyboard is
 
-A view of a single scene's shots, showing previs frames and a few key shot fields. It doesn't duplicate shots; it's a layer over the shot list. Storyboard Views (saved layouts) appear as sub-entries under Storyboard in the sidebar.
+A view of your whole project's shots, grouped by scene, showing previs frames and the main shot fields. Both layouts scroll through every scene in one continuous view, with scene markers between scenes — the scene picker in the toolbar jumps to a scene rather than filtering to it. It doesn't duplicate shots; it's a layer over the shot list.
 
 ## Layouts
 
 Two display modes:
 
-- **Linear** — carousel-style, one shot at a time. Good for review presentations.
-- **Grid** — multiple shots side-by-side. Good for at-a-glance reference.
+- **Linear** — a horizontal strip of shot panels side by side on desktop and tablet; on phone, a full-screen carousel showing one shot at a time. Good for review presentations.
+- **Grid** — multiple shots side-by-side in a resizable grid. Good for at-a-glance reference.
 
-Switch from the toolbar.
+Switch from the Storyboard entry in the sidebar on desktop (Linear is the default; pick "Grid View" to switch). On phone, use the Linear/Grid pill at the bottom of the screen.
 
 ## Adding previs frames
 
-Tap the previs cell on a shot. The media picker opens — same gesture grammar as cell editing in [The basics](/guides/introduction#2-editing-fields). Pick an image or video frame from the project's media library.
+Tap an empty previs cell on a shot. Your device's image picker opens — photo gallery on phone, file browser on desktop. The images you select upload directly to that shot, and they appear in the project's media library under it.
 
-Each previs frame is a file from the project's media library, attached to that shot.
+Frames belong to their shot — a frame is never shared across shots, so changing one shot's frames never affects another. To add, replace, or remove frames on a shot that already has previs, use the Manage PreVis Files dialog from the shot list's previs overlay.
 
 ## Reordering frames
 
-Drag shots in the storyboard to reorder. The reorder applies to the underlying shots in the parent scene — there is no separate "storyboard order" that diverges from shot order. Shot letters update accordingly.
+In Grid layout, drag shots to reorder — Linear and the phone carousel don't support drag reordering. The reorder applies to the underlying shots — there is no separate "storyboard order" that diverges from shot order. Shot letters update accordingly.
 
 ## Display settings (per storyboard)
 
-Grid columns, spacing, aspect ratio (16:9, 2.35:1, 4:3). Adjust from the toolbar.
+Grid columns, spacing, aspect ratio (Flexible by default — each frame's native proportions — or a fixed ratio like 16:9, 4:3, or 2.35:1). Adjust from the toolbar.
 
 ## Export
 

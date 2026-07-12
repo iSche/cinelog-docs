@@ -1,6 +1,6 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Tägliche Dispositionen (Dispo) in CineLog – Header und Call-Time, Drehorte, Plan mit Zeit-Kaskade, Wetter, Personensektionen, Rich-Text-Crew-Message, Versand und Bestätigungs-Tracking, PDF-Export."
 ---
 
@@ -66,15 +66,15 @@ Um den gesamten Drehort-Bereich aus der Disposition auszublenden (z.B. wenn der 
 
 ## Plan
 
-Der Plan ist die Drehtage-Ansicht, gefiltert auf diesen Tag. Die Einstellungen und Banner in der Disposition sind die **selben Objekte** wie in der Drehtage-Ansicht – sie hier umzuordnen oder zu bearbeiten ist dasselbe wie sie dort umzuordnen oder zu bearbeiten. Die Gesten-Grammatik ist identisch wie überall sonst in der App.
+Der Plan ist die Drehtage-Ansicht, gefiltert auf diesen Tag. Er listet Szenen und Banner – nicht einzelne Einstellungen. Die Szenen und Banner in der Disposition sind die **selben Objekte** wie in der Drehtage-Ansicht – sie hier umzuordnen oder zu bearbeiten ist dasselbe wie sie dort umzuordnen oder zu bearbeiten. Die Gesten-Grammatik ist identisch wie überall sonst in der App.
 
-Drei Spalten: **Startzeit** | **Szene + Einstellung** | **geschätzte Dauer**.
+Drei Spalten: **Startzeit** | **Szene** | **geschätzte Dauer**.
 
 ### Banner
 
 Banner sind Nicht-Einstellungs-Zeilen, die Essenspausen, Company Moves, Wraps oder andere Plan-Markierungen anzeigen. Sie existieren nur in der Drehtage-Ansicht und im Plan. Füge einen Banner über die Werkzeugleiste hinzu (oder `Cmd / Ctrl + N` in der Drehtage-Ansicht); benenne ihn ("Lunch", "Company Move"), setze seine Dauer.
 
-Einen Banner mitten in einer Szene einzufügen, teilt die umgebende Szene am Banner auf – siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) für das vollständige Split-and-Merge-Verhalten.
+Aus dem Plan hinzugefügte Banner landen zwischen ganzen Szenen, können hier also keine Szene aufteilen. Um eine Szene mit einem Banner aufzuteilen, lege ihn zwischen den Einstellungen der Szene in der Drehtage-Ansicht ab – siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production) für das vollständige Split-and-Merge-Verhalten; der Plan zeigt die Aufteilung dann als separate Szenen-Zeilen.
 
 ### Die Zeit-Kaskade
 
@@ -84,7 +84,7 @@ Wenn die explizite Startzeit einer Zeile früher liegt, als die laufende Uhr sie
 
 ### Plan umordnen
 
-Desktop: Lange auf einen Banner oder eine Einstellungs-Zeile drücken und ziehen. Mobil: Eine Zeile doppeltippen, um das Bearbeitungs-Overlay zu öffnen (kein Inline-Drag). Umordnungen werden zurück in die Drehtage-Ansicht persistiert, da das dieselben Objekte sind.
+Desktop: Lange auf einen Banner oder eine Szenen-Zeile drücken und ziehen. Mobil: Eine Zeile doppeltippen, um das Bearbeitungs-Overlay zu öffnen (kein Inline-Drag). Umordnungen werden zurück in die Drehtage-Ansicht persistiert, da das dieselben Objekte sind.
 
 Der Plan-Bereich kann nicht ausgeblendet werden – er wird immer angezeigt.
 
@@ -150,7 +150,7 @@ Die Editor-Werkzeugleiste unterstützt:
 
 - **Fett, kursiv, unterstrichen.**
 - **Farbe.** Acht kuratierte Farbpaletten (Weiß, Gold, Kupfer, Rosé, Lavendel, Sea Glass, Salbei, Pergament).
-- **Bild einbetten.** Klicke auf den Bild-Button, wähle ein Bild. Hochladen ins CineLog-CDN, bis zu 2 MB, nur JPEG / PNG / WebP. Die Bild-URL wird in die Nachricht eingebettet und erscheint im E-Mail-Body.
+- **Bild einbetten.** Klicke auf den Bild-Button, wähle ein Bild. JPEG / PNG / WebP, bis zu 1 MB – die App verkleinert große Bilder automatisch. Die Bild-URL wird in die Nachricht eingebettet und erscheint im E-Mail-Body.
 - **Formatierung löschen.**
 
 Die gerenderte E-Mail wendet auf der Empfängerseite dieselbe Formatierung an. Der Server bereinigt die Nachricht vor dem Versand – nur die in der Allowlist enthaltenen Formatierungs-Tags kommen durch.
@@ -214,13 +214,13 @@ Zwei Wege, eine PDF zu bekommen, je nach Anwendungsfall:
 
 ### Lokaler Export aus der Werkzeugleiste
 
-`Cmd / Ctrl + P` oder der Export-Button im oberen Menü öffnet den Export-Dialog. Du kannst Seitenränder einstellen (oben, unten, links, rechts in Punkten) und dann exportieren. Das Rendering ist lokal – kein Upload, kein serverseitiges Rendering – also funktioniert es offline. Nützlich, wenn du eine PDF außerhalb des E-Mail-Flows verteilen willst (Slack, WhatsApp, persönliche Übergabe).
+Der **Export**-Button im oberen Menü öffnet den Export-Dialog – hier gibt es kein Tastenkürzel (`Cmd / Ctrl + P`-Export funktioniert auf den Screens Einstellungsliste, Storyboard und AV-Skript, nicht bei Dispositionen). Du kannst Seitenränder einstellen (oben, unten, links, rechts in Punkten) und dann exportieren. Das Rendering ist lokal – kein Upload, kein serverseitiges Rendering – also funktioniert es offline. Nützlich, wenn du eine PDF außerhalb des E-Mail-Flows verteilen willst (Slack, WhatsApp, persönliche Übergabe).
 
 ### Personenbezogene PDFs beim Senden
 
 Wenn du Senden drückst, generiert der Server eine personalisierte PDF für jeden Empfänger mit hervorgehobener Call-Time und angehängten personenbezogenen Notizen. Du triggerst diese nicht direkt – sie sind ein Nebeneffekt des Sendens.
 
-Beide Export-Pfade respektieren Anzeige-Einstellungen: Ausgeblendete Sektionen bleiben ausgeblendet, die Temperatureinheit und das Zeitformat werden angewendet. Große Medien werden downsampelt.
+Beide Export-Pfade respektieren Anzeige-Einstellungen: Ausgeblendete Sektionen bleiben ausgeblendet, die Temperatureinheit und das Zeitformat werden angewendet. Die PDF druckt den Plan als Textzeilen mit Zeiten – sie enthält keine Einstellungs-Medien, und Cast und Crew erscheinen immer mit Initialen-Avataren, nie mit Fotos.
 
 Internationale Schriften (Arabisch, Hebräisch, Devanagari, CJK, Thai) werden über Font-Fallbacks korrekt gerendert.
 
@@ -250,4 +250,4 @@ Das Bearbeiten von Dispositionen funktioniert offline – Änderungen werden in 
 
 *"Ich habe ein Send-Limit erreicht."* Du hast in der letzten Stunde 10 Sends für diese Disposition überschritten oder 1000 E-Mails im letzten Monat für den Workspace. Warte ab oder melde dich, wenn du ein höheres Limit brauchst.
 
-*"Mein Crew-Message-Bild wurde nicht hochgeladen."* Prüfe die Datei: unter 2 MB, JPEG / PNG / WebP. Andere Formate und überdimensionierte Dateien werden abgelehnt.
+*"Mein Crew-Message-Bild wurde nicht hochgeladen."* Prüfe die Datei: JPEG / PNG / WebP, bis zu 1 MB (große Bilder werden automatisch verkleinert). Andere Formate werden abgelehnt.

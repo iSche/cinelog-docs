@@ -1,6 +1,6 @@
 ---
 title: Call Sheets
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Generate and manage call sheets for cast and crew with scheduling and location details."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -68,11 +68,11 @@ Ensure everyone knows exactly what's going on. Click **Export** to format an ind
 ## Integrated Data Ecosystem
 
 <Aside type="tip">
-The Call Sheets schedule acts as a bidirectional viewport of your Shot List. Editing a scene order or estimate in the Call Sheet _instantaneously_ updates your underlying Shot List layout via CineSync.
+The Call Sheets schedule stays in sync with your Production view. Reordering a scene or banner, or editing an estimate, on the Call Sheet is the _same edit_ as making it in Production — the two always show the same scenes and banners in the same order.
 </Aside>
 
 <Aside type="tip" title="Data Routing Benefits">
 -   **Cast and Crew Flows**: Talent names, crew roles, and contact details flow strictly from your central Cast and Crew hub. Assigning an actor dynamically populates their data.
 -   **Error Handling Guarantees**: Any invalid schedule bottleneck displays stark yellow/red UI alerts preventing timeline clashes.
--   **Global Access Routing**: Anyone receiving a Call Sheet link is intelligently funneled to create an account, gaining access strictly to what their role dictates.
+-   **Confirmation Portal**: Anyone receiving a Call Sheet email gets a token-protected link that opens a CineLog-branded portal where they tap "Confirm" to acknowledge receipt — no account required.
 </Aside>

@@ -1,6 +1,6 @@
 ---
 title: O básico
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Quatro seções cobrindo o tour pelo app e as três coisas que você faz repetidamente — editar, selecionar, arrastar. A base para todos os guias de recursos."
 ---
 
@@ -21,25 +21,26 @@ Quatro seções: um tour pelo app e depois as três coisas que você faz repetid
 
 ### Entrando
 
-A entrada é só por e-mail. Você digita o endereço, enviamos um código, você digita o código. Sem senha. Se você nunca entrou antes e ainda não tem projetos, a tela de Projetos pede para você criar um (apenas um nome e uma descrição — o badge de abreviação é gerado a partir do nome). Caso contrário, você cai no último projeto que tinha aberto.
+A entrada é só por e-mail. Você digita o endereço, enviamos um código, você digita o código. Sem senha. Toda conta nova começa com um projeto padrão ("My First Project"), então você cai direto em um workspace — nas próximas vezes, no último projeto que tinha aberto. Novas produções ganham seu próprio projeto pelo botão Novo Projeto (apenas um nome e uma descrição — o badge de abreviação é gerado a partir do nome).
 
-Todas as telas do app, exceto sign-in e a lista de projetos, vivem dentro de um projeto.
+As ferramentas de planejamento na barra lateral vivem todas dentro de um projeto. Telas de nível de conta — Ajuda e Suporte, Roadmap, Assinatura, Conta — ficam fora de qualquer projeto, no menu Mais.
 
 ### A janela do desktop
 
 Três regiões, de cima para baixo:
 
-- Uma **barra de título** fina, com o ponto de status de conexão à esquerda. Usuários de Windows veem os botões padrão de minimizar / maximizar / fechar à direita.
+- Uma **barra de título** fina, com o indicador combinado de conexão-e-sincronização à esquerda. Usuários de Windows veem os botões padrão de minimizar / maximizar / fechar à direita.
 - A **barra lateral esquerda** mais a **área de conteúdo** — barra lateral para navegação, área de conteúdo para o trabalho.
 - Coisas flutuantes: modais, snackbars, o diálogo de atalhos.
 
 ### A barra lateral
 
-Sempre presente no desktop e tablet. De cima para baixo: o seletor de projeto, uma lista de recursos, o indicador de sincronização e o botão Mais.
+Sempre presente no desktop e tablet. De cima para baixo: o seletor de projeto, uma lista de recursos e o botão Mais. O indicador de sincronização não fica na barra lateral — ele vive na barra de título no topo da janela.
 
 Os recursos:
 
 - **Editor de Roteiro** — escreva o roteiro.
+- **Roteiro AV** — o roteiro de duas colunas áudio/visual. Aparece apenas se sua função puder vê-lo (qualquer pessoa que possa ver a Decupagem pode).
 - **Decupagem** — visualizações Linear e Produção de cada plano, com cada Dia de Produção como sub-entrada.
 - **Storyboard** — planejamento visual, com visualizações salvas como sub-entradas.
 - **Ordens do Dia** — ordens do dia diárias, com cada Dia de Produção como sub-entrada.
@@ -49,37 +50,39 @@ Os recursos:
 
 ### O seletor de projeto
 
-No topo da barra lateral no desktop, na barra superior do app no celular. Mostra o nome do projeto atual e o badge. Clique para trocar de projeto — a sobreposição (ou sheet, no celular) lista o projeto atual, convites pendentes, três recentes, um botão "Novo Projeto" e um link "Mostrar Todos".
+No topo da barra lateral no desktop. Mostra o nome do projeto atual e o badge. Clique para trocar de projeto — a sobreposição lista o projeto atual, convites pendentes, até três projetos recentes, um botão "New" e um link "Show all".
+
+No celular, a barra superior do app mostra em vez disso um badge compacto com a abreviação do projeto (ex.: "ST13") e uma faixa de conexão colorida — não o nome do projeto. Toque para abrir o sheet de Projetos: a lista completa de projetos mais um botão de criar projeto.
 
 Trocar de projeto atualiza toda a barra lateral, de modo que as sub-entradas que você vê sempre pertencem ao projeto em que está.
 
 ### Sincronização vs conexão
 
-Dois indicadores, duas coisas diferentes:
+Um indicador na barra de título, duas coisas diferentes:
 
-- O **ponto de conexão** na barra de título é colorido — verde / laranja / vermelho — para o link em tempo real com o servidor.
-- O **indicador de sincronização** na parte inferior da barra lateral é cinza discreto e informa sobre sua fila local de edições por ícone e rótulo: check + "Sincronizado" (fila vazia), sync girando + "Sync: N pendentes" ou "Sincronizando…" (alterações no fio), nuvem cortada + "Offline: N pendentes" (esperando conectividade).
+- A **metade de conexão** é um ponto colorido — verde / laranja / vermelho — com um rótulo "Online", "Conectando" ou "Offline", para o link em tempo real com o servidor.
+- A **metade de sincronização**, após um divisor, informa sobre sua fila local de edições por ícone e rótulo: nuvem-check + "Sincronizado" (fila vazia), nuvem-upload + "N pendentes" (alterações enfileiradas — o ícone muda para nuvem cortada enquanto você está desconectado) e "Sincronizando…" enquanto a conexão está subindo com alterações enfileiradas. Nada gira; os ícones são estáticos.
 
-Eles podem discordar, e tudo bem. Ponto vermelho + "Sincronizado" = você está desconectado mas não havia nada pendente. Ponto verde + "Sync: N pendentes" = você está online e a fila está drenando.
+Eles podem discordar, e tudo bem. "Offline" + "Sincronizado" = você está desconectado mas não havia nada pendente. "Online" + "N pendentes" = você está online e a fila está drenando.
 
-No celular, ambos os estados são dobrados no badge de conexão na barra superior do app.
+No celular, apenas o estado de conexão aparece — a faixa verde / laranja / vermelha no badge na barra superior do app. Não há indicador de fila de sincronização no celular; tocar no badge abre o seletor de projeto, não os detalhes de sincronização.
 
 ### Modo offline
 
 O CineLog é construído para continuar funcionando offline. O primeiro sign-in precisa de internet; depois disso o dispositivo permanece logado. As edições feitas offline são salvas no banco de dados local do dispositivo e entram na fila no indicador de sincronização até você ficar online de novo, momento em que são drenadas para o servidor automaticamente.
 
-Sua sessão se renova sozinha em segundo plano conforme se aproxima da expiração — normalmente algumas horas antes — então, contanto que você esteja online nesse momento, você nunca vê um prompt de sign-in. O uso normal misto online/offline faz com que a renovação simplesmente funcione.
+Sua entrada não tem uma expiração fixa que você normalmente perceba. O app renova sua sessão automaticamente em segundo plano sempre que você está online — normalmente algumas horas antes de ela expirar — então o uso normal misto online/offline mantém você logado indefinidamente e você nunca vê um prompt de sign-in.
 
-Se você ficar totalmente offline por tempo suficiente para a sessão expirar — na ordem de um mês — ela expira. Na próxima vez que o app tentar falar com o servidor, ele exibe um diálogo de re-autenticação. O diálogo é bloqueante, mas seus dados permanecem: entre novamente com a mesma conta e você retoma exatamente onde parou, com as edições enfileiradas e tudo.
+Ficar offline também não te tranca para fora: o app continua funcionando com seus dados locais não importa por quanto tempo você fique desconectado. Só se um dispositivo ficar completamente offline por cerca de 30 dias é que a sessão finalmente expira. Na próxima vez que o app alcançar o servidor, ele mostra a tela de sign-in com seu e-mail já preenchido. Seus dados permanecem: digite o código enviado para esse e-mail e você retoma exatamente onde parou, com as edições enfileiradas e tudo.
 
 ### O menu Mais
 
 No final da barra lateral no desktop e tablet; o item mais à direita na barra de navegação inferior no celular. O conteúdo difere por plataforma:
 
-- **Desktop:** Ajuda e Suporte, Atalhos, Roadmap, alternância de Tema, Explorador de Mídia, Conta, Sair.
-- **Celular:** Editor de Roteiro, Atualizações, Ajuda e Suporte, Explorador de Mídia, alternância de Tema, Conta, Sair.
+- **Desktop:** Ajuda e Suporte, Atalhos, Roadmap, Assinatura, alternância de Tema, Explorador de Mídia (apenas quando um projeto está aberto), Conta, Sair.
+- **Celular:** Editor de Roteiro, Roteiro AV (apenas se sua função puder vê-lo), Atualizações, Ajuda e Suporte, Explorador de Mídia, alternância de Tema, Assinatura, Conta, Sair. Atualizações e Explorador de Mídia aparecem apenas quando um projeto está aberto.
 
-Editor de Roteiro e Atualizações ficam dentro do sheet Mais no celular porque não há espaço na barra inferior de cinco slots. Atalhos e Roadmap não são exibidos no celular.
+Editor de Roteiro, Roteiro AV e Atualizações ficam dentro do sheet Mais no celular porque não há espaço na barra inferior de cinco slots. Atalhos e Roadmap não são exibidos no celular.
 
 A alternância de Tema também está vinculada a `Cmd / Ctrl + Shift + M` no desktop.
 
@@ -99,7 +102,7 @@ Cinco slots na barra de navegação inferior:
 4. Elenco e Equipe
 5. Mais
 
-Tudo o mais (Editor de Roteiro, Atualizações, Explorador de Mídia, Conta…) fica dentro do sheet Mais. A barra superior do app mostra o nome do projeto + badge; toque para trocar de projeto.
+Tudo o mais (Editor de Roteiro, Roteiro AV, Atualizações, Explorador de Mídia, Conta…) fica dentro do sheet Mais. A barra superior do app mostra o badge de abreviação do projeto; toque para trocar de projeto.
 
 ### O diálogo de atalhos
 
@@ -115,9 +118,9 @@ Mensagens curtas aparecem na parte inferior da tela quando algo dá certo, dá e
 
 *"Meu ponto de conexão e o indicador de sincronização discordam."* Eles medem coisas diferentes. O ponto é o link de rede; o indicador de sincronização é a fila local de edições. Qualquer um pode estar com problema isoladamente.
 
-*"Posso usar o CineLog sem internet?"* Sim, depois do primeiro sign-in. As edições offline são salvas localmente e sincronizam quando você reconecta. Conforme sua sessão se aproxima da expiração, o app a renova automaticamente se você estiver online naquele momento, então o uso misto online/offline normal mantém você logado. Um dispositivo deixado totalmente offline por tempo suficiente — na ordem de um mês — precisará entrar novamente.
+*"Posso usar o CineLog sem internet?"* Sim, depois do primeiro sign-in. As edições offline são salvas localmente e sincronizam quando você reconecta. O app renova sua sessão automaticamente sempre que você está online, então o uso misto online/offline normal mantém você logado. Só um dispositivo que fica completamente offline por cerca de 30 dias precisa entrar novamente — e estar offline nunca te desloga no meio da filmagem; a tela de sign-in só aparece quando você reconecta.
 
-*"O app me pediu para entrar de novo na locação."* Esse é o diálogo de re-autenticação depois de um longo período sem conectividade. Entre novamente com o mesmo e-mail; suas edições enfileiradas continuam e sincronizam.
+*"O app me pediu para entrar de novo na locação."* Essa é a tela de re-autenticação — a tela normal de sign-in com seu e-mail pré-preenchido — exibida quando você volta a ficar online depois de sua sessão ter expirado durante um longo período offline. Entre novamente com o mesmo e-mail; suas edições enfileiradas continuam e sincronizam.
 
 ---
 
@@ -129,26 +132,27 @@ A forma do editor depende do tipo de campo — um input de texto para texto, um 
 
 ### No celular são dois toques
 
-No celular ou tablet, tocar em uma única célula não a edita diretamente — primeiro você toca na linha para expandi-la, depois toca no campo dentro da visualização expandida. Esse segundo toque abre um bottom sheet para o campo.
+No celular, tocar em uma única célula não a edita diretamente — primeiro você toca na linha para expandi-la, depois toca no campo dentro da visualização expandida. Esse segundo toque abre um bottom sheet para o campo.
 
-Se você tocar em uma linha e nada parecer editável, expanda-a primeiro.
+No tablet você tem a mesma grade do desktop: tocar em uma célula abre seu editor diretamente, exibido como um diálogo próximo ao topo da tela.
+
+Se você tocar em uma linha no celular e nada parecer editável, expanda-a primeiro.
 
 ### Autosave
 
 O CineLog autosalva a cada commit e em um debounce de aproximadamente 450 ms enquanto você digita. Não existe botão Salvar em lugar nenhum.
 
-Tudo o que você digita é autosalvo em um debounce de aproximadamente 450 ms, e fechar o editor salva o que estiver nele. `Esc` não tem nenhum comportamento especial de descarte em um campo de texto — não existe gesto de "jogar fora minhas últimas teclas".
+Também não há gesto de cancelar. Fechar o editor — com `Enter` ou clicando fora — sempre salva tudo o que você digitou, incluindo qualquer coisa depois do último autosave com debounce. Nada do que você digita em um editor de célula é jamais descartado.
 
 ### Teclado dentro do editor
 
 - `Enter` confirma e fecha.
-- As teclas de seta movem pelas opções do dropdown.
-
-(Não há `Esc` para descartar dentro de um campo de texto; as edições já foram autosalvas.)
+- `Esc` não faz nada enquanto você digita — feche com `Enter` ou clicando fora. De qualquer forma, tudo é salvo.
+- As teclas de seta funcionam apenas nos editores numéricos (Dia, Número da Cena): `↑` / `↓` incrementam ou decrementam o número, e segurar a tecla repete. Os pickers (tipo de plano, lente e o resto) são apenas clique ou toque — sem navegação por teclado.
 
 ### Se isso não estiver funcionando
 
-*"Não consigo editar nada no celular."* Toque na linha para expandi-la primeiro, depois toque no campo específico.
+*"Não consigo editar nada no meu celular."* Toque na linha para expandi-la primeiro, depois toque no campo específico. (No tablet, toque na célula diretamente, como no desktop.)
 
 *"Cadê o botão Salvar?"* Não existe — autosave a cada commit, mais um debounce de 450 ms enquanto você digita.
 
@@ -160,8 +164,10 @@ Selecionar uma linha é como você a marca para mover ou para uma ação que dev
 
 ### Como entrar no modo de seleção
 
-- **Desktop:** `Cmd / Ctrl + Click` em qualquer linha.
-- **Celular:** pressione e segure qualquer linha.
+- **Desktop:** `Cmd / Ctrl + Click` em qualquer linha selecionável.
+- **Celular:** pressione e segure qualquer linha selecionável.
+
+Nem toda linha é selecionável. Na decupagem Linear, as linhas de cabeçalho de cena não podem ser selecionadas (nem arrastadas). Na visualização Produção, selecionar um cabeçalho de cena seleciona a cena inteira — o cabeçalho mais todos os seus planos — e enquanto uma seleção existe ela permanece dentro daquela única cena: linhas de outras cenas ficam acinzentadas até você limpar a seleção (linhas de banner são exceção).
 
 A primeira linha que você seleciona se torna a âncora para seleção por intervalo (a seguir).
 
@@ -169,7 +175,7 @@ A primeira linha que você seleciona se torna a âncora para seleção por inter
 
 Uma vez em modo de seleção:
 
-- **Desktop:** `Cmd / Ctrl + Click` alterna linhas individuais dentro ou fora. Um clique simples sem o modificador substitui a seleção apenas pela linha clicada.
+- **Desktop:** um clique simples alterna linhas individuais dentro ou fora — clique numa linha não selecionada para adicioná-la, clique numa linha selecionada para removê-la. Um clique nunca substitui a seleção por apenas uma linha; para recomeçar, pressione `Esc` e `Cmd + Click` na linha que você quer. (O modificador só é necessário para entrar no modo de seleção.)
 - **Celular:** o toque simples agora alterna a seleção (fora do modo de seleção, o mesmo toque expande a linha).
 
 ### Seleção por intervalo (apenas desktop)
@@ -199,14 +205,14 @@ Uma vez que você tem uma linha (ou uma multi-seleção) marcada, arraste qualqu
 
 ### O que você pode arrastar
 
-Qualquer linha, em qualquer ponto do seu corpo. Não há uma alça de arrastar separada. No desktop você vê o cursor mudar para `grab` no hover e `grabbing` durante o arrastar.
+Qualquer linha selecionável, em qualquer ponto do seu corpo — as mesmas linhas que você pode selecionar (ou seja, não os cabeçalhos de cena na visualização Linear, e não linhas de outras cenas durante uma seleção ativa na visualização Produção). Não há uma alça de arrastar separada, e nenhum cursor especial de hover para procurar — o cursor muda para `grabbing` assim que um arrastar está em andamento.
 
 ### Iniciando o arrastar
 
-Uma pressão sozinha não inicia um arrastar — o ponteiro ou o dedo precisa se mover uma pequena distância primeiro:
+Uma pressão sozinha não inicia um arrastar — e a forma de entrar depende de a linha já estar selecionada:
 
-- **Aproximadamente 8 pixels** para uma linha não selecionada. Algo menor é tratado como um clique.
-- **Aproximadamente 3 pixels** para uma linha que já faz parte da seleção — o limiar menor faz com que mover uma seleção existente pareça responsivo.
+- **Uma linha que já faz parte da seleção:** basta pressionar e mover — aproximadamente 3 pixels de movimento iniciam o arrastar.
+- **Uma linha não selecionada:** só pressionar e mover não a arrasta, no desktop ou no celular. Pressione e segure primeiro (clique e segure no desktop); isso seleciona a linha e prepara o arrastar, e o mesmo pequeno movimento então o inicia.
 
 No celular há duas formas de entrar:
 
@@ -215,11 +221,11 @@ No celular há duas formas de entrar:
 
 ### Onde você pode soltar
 
-Conforme arrasta, uma lacuna se abre entre as linhas em qualquer posição onde soltar é válido. Se você mover sobre um lugar e nenhuma lacuna aparecer, soltar não é permitido — a linha volta à posição original quando você solta. As regras do que é válido variam por tela (cobertas nos guias de recursos); a lacuna é o sinal universal de "você pode soltar aqui".
+Conforme arrasta, uma lacuna se abre entre as linhas na posição válida mais próxima para soltar. Se o ponto sob o seu ponteiro não for permitido, a lacuna salta para o slot válido mais próximo em vez de desaparecer — onde quer que a lacuna esteja aparecendo é onde as linhas vão parar quando você soltar. As regras do que é válido variam por tela (cobertas nos guias de recursos); observe a lacuna, não o ponteiro, para saber para onde o soltar vai.
 
 ### Arrastando uma seleção
 
-Se você arrasta uma linha que faz parte da seleção atual, toda a seleção se move junto. Se você arrasta uma linha que *não* faz parte da seleção, o arrastar implicitamente reduz a seleção àquela linha única.
+Se você arrasta uma linha que faz parte da seleção atual, toda a seleção se move junto. Se você arrasta uma linha que *não* faz parte da seleção, ela é adicionada à seleção e toda a seleção ampliada se move com o arrastar. Para mover apenas uma linha, limpe a seleção primeiro, depois arraste aquela linha sozinha.
 
 É por isso que selecionar primeiro e depois arrastar é o fluxo previsível — você pode confirmar o que está selecionado antes de commitar.
 
@@ -237,13 +243,11 @@ No celular apenas, as linhas expandidas recolhem para a visualização compacta 
 
 ### Cancelando
 
-Solte o ponteiro ou levante o dedo fora de qualquer lacuna válida e a linha volta para sua posição inicial. Não há `Esc` para cancelar no meio do arrastar.
+Soltar o ponteiro ou levantar o dedo sempre solta a seleção na lacuna que está aparecendo — não há cancelar-ao-soltar, e nada volta ao lugar. Para abandonar um arrastar no desktop, pressione `Esc` no meio do arrastar: isso cancela o arrastar no lugar e limpa a seleção.
 
 ### Se isso não estiver funcionando
 
-*"Arrastar não faz nada."* Ou você não passou do pequeno limiar de movimento, ou está usando um gesto de trackpad com dois dedos (que rola, não arrasta).
-
-*"O arrastar funciona mas minha soltura é rejeitada."* O destino não é alvo válido para o que você está arrastando. Os guias por recurso cobrem as regras.
+*"Arrastar não faz nada."* Ou você está pressionando e movendo uma linha não selecionada — pressione e segure (clique e segure) primeiro — ou está usando um gesto de trackpad com dois dedos (que rola, não arrasta).
 
 *"Minhas linhas recolheram quando toquei para selecionar."* Esse é o auto-recolhimento intencional no celular — torna as alturas de arrastar uniformes. Seus dados estão intactos.
 

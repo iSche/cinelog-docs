@@ -1,6 +1,6 @@
 ---
 title: Decupagem essencial
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Construa uma decupagem do zero — três maneiras de adicionar planos, como funciona a numeração, como reordenar e o que é apagado quando você remove um plano ou uma cena."
 ---
 
@@ -12,9 +12,9 @@ Este guia assume [O básico](/pt/guides/introduction). O vocabulário de clicar-
 
 Um projeto novo te dá uma decupagem vazia. Há três formas de preenchê-la:
 
-- **Manualmente, um plano por vez.** Clique no botão `+ Adicionar Plano` no final de qualquer bloco de cena.
-- **Atalho.** `Cmd / Ctrl + N` adiciona um novo plano no final da cena em foco no momento.
-- **Popular a partir do Roteiro.** `Shift + P` (ou o botão da barra de ferramentas) escaneia os cabeçalhos de cena do roteiro importado (linhas como `INT. COZINHA - DIA`) e cria automaticamente um bloco de cena por cabeçalho, cada um com um plano padrão. A saída é tão limpa quanto seu roteiro — cabeçalhos malformados geram cenas malformadas.
+- **Manualmente, um plano por vez.** Clique no botão `Novo Plano` à direita da barra de menu superior (desktop), ou no botão `+` na barra superior do app (celular). Ambos abrem um diálogo perguntando a qual número de cena adicionar o plano.
+- **Atalho.** `Cmd / Ctrl + N` abre o mesmo diálogo de número de cena, pré-preenchido com o maior número de cena. Em uma lista vazia ele pula o diálogo e cria o primeiro plano na cena 1.
+- **Popular a partir do Roteiro.** Abra o Editor de Roteiro e pressione `Shift + P` (ou use o botão Popular dele — o atalho não faz nada na tela da decupagem). Ele escaneia os cabeçalhos de cena do roteiro (linhas como `INT. COZINHA - DIA`) e mostra uma pré-visualização antes de qualquer alteração: Mesclar adiciona apenas as cenas que ainda não estão na sua lista, Substituir limpa a lista e a reconstrói a partir do roteiro. Por padrão ele cria vários planos sugeridos por cena com descrições e tipos de plano; escolha "apenas cenas" para um único plano placeholder por cena. Os nomes de locação dos cabeçalhos são levados para as cenas. No plano gratuito, a população para no limite do projeto de 25 cenas / 50 planos. A saída é tão limpa quanto seu roteiro — cabeçalhos malformados geram cenas malformadas.
 
 A maioria dos projetos começa com Popular a partir do Roteiro como uma primeira passada bruta e depois refina manualmente.
 
@@ -36,7 +36,7 @@ Arraste qualquer plano para movê-lo. O gesto é o arrastar universal de [O bás
 
 - **Dentro de uma cena** — arraste para cima ou para baixo. As letras se recompactam.
 - **Entre cenas** — arraste passando do limite da cena. O número de cena do plano muda para corresponder ao destino; as letras se recompactam tanto na cena de origem quanto na de destino.
-- **No espaço vazio entre duas cenas** — o plano se junta à cena existente mais próxima. Isso não cria uma nova cena; adicione cenas com **+ Adicionar Plano** em um novo bloco ou via Popular a partir do Roteiro.
+- **No espaço vazio entre duas cenas** — o plano se junta ao final da cena acima. Arrastar nunca cria uma nova cena; para criar uma, use o diálogo Novo Plano e digite um número de cena que ainda não existe, ou use Popular a partir do Roteiro.
 
 A visualização Produção adiciona uma regra de escopo de cena para multi-seleções; veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production).
 
@@ -48,11 +48,11 @@ Colunas personalizadas que você adiciona nas [Configurações de Exibição](/p
 
 ## Apagando
 
-Botão direito em um plano → Apagar (desktop), ou swipe / menu overflow (celular). A cascata depende do que você apaga e onde:
+No desktop, abra o diálogo de edição do plano e use o botão `Apagar Plano`, ou selecione a(s) linha(s) e pressione `Delete` / `Backspace` — um botão `Apagar Selecionados` também aparece na barra de seleção. No celular, deslize a linha do plano para revelar a ação de apagar. A cascata depende do que você apaga e onde:
 
 - **Um único plano na visualização Linear** — remove do projeto. Se era o último plano da cena, a cena também vai (não existe estado de cena vazia).
 - **Um único plano na visualização Produção** — remove do cronograma apenas daquele dia. O plano continua existindo na Linear e pode ser reagendado.
-- **Uma cena** (botão direito no cabeçalho da cena) — remove a cena e todos os planos dela, em todo lugar.
+- **Uma cena na visualização Linear** — remove a cena e todos os planos dela, em todo lugar. Apagar uma cena de um dia de Produção a remove apenas do cronograma daquele dia.
 
 O diálogo de confirmação sempre detalha o que está prestes a desaparecer antes de commitar. As semânticas completas de exclusão entre visualizações estão em [Linear vs Produção](/pt/guides/shot-list/linear-vs-production).
 

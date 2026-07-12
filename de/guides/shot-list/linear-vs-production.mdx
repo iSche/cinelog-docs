@@ -1,7 +1,7 @@
 ---
 title: Lineare Ansicht vs Drehtage-Ansicht
-lastUpdated: 2026-05-23
-description: "Zwei Ansichten derselben Einstellungen – Drehbuchreihenfolge vs Drehtag-Reihenfolge. Behandelt die Teilszenen-Split-Regel, Banner, szenen-bezogene Auswahl, automatische Auswahl des Szenen-Headers, Cross-View-Sync und wie sich das Löschen zwischen den beiden Ansichten unterscheidet."
+lastUpdated: 2026-07-11
+description: "Zwei Ansichten derselben Einstellungen – Drehbuchreihenfolge vs Drehtag-Reihenfolge. Behandelt die Teilszenen-Split-Regel, Banner, szenen-bezogene Auswahl, Auswahl des Szenen-Headers, Cross-View-Sync und wie sich das Löschen zwischen den beiden Ansichten unterscheidet."
 ---
 
 Linear und Drehtage sind zwei Ansichten derselben Einstellungen. Linear ist in Drehbuchreihenfolge – so wie Regisseur und Script Supervisor sie lesen. Drehtage ist in Drehtag-Reihenfolge – so wie der 1st AD den Plan macht. Alles andere in diesem Guide handelt von den Unterschieden.
@@ -10,9 +10,9 @@ Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) und [Einstellungsli
 
 ## Ansichten wechseln
 
-Umschalten im Ansicht-Header über der Liste. `Shift + L` schaltet das Spalten-Layout um (fit ↔ scroll) – nützlich, wenn du mehr Spalten auf einmal sehen willst.
+Nutze die linke Navigationsleiste: Klicke auf **Lineare Einstellungsliste** für die lineare Ansicht oder auf einen der **Drehtag N**-Einträge darunter für einen Drehtag. Auf dem Smartphone nutze stattdessen die untere Navigation. `Shift + L` wechselt nicht die Ansicht – es schaltet das Spalten-Layout um (fit ↔ scroll) innerhalb beider Ansichten, nützlich, wenn du mehr Spalten auf einmal sehen willst.
 
-Beide Ansichten zeigen dieselben Einstellungen. Bearbeitungen in einer erscheinen sofort in der anderen.
+Linear zeigt jede Einstellung im Projekt; Drehtage zeigt nur Einstellungen, die einem Drehtag zugewiesen sind. Für eingeplante Einstellungen zeigen beide Ansichten dieselbe Einstellung – Bearbeitungen in einer erscheinen sofort in der anderen.
 
 ## Die Teilszenen-Split-Regel (nur Drehtage)
 
@@ -28,21 +28,19 @@ Die Drehtage-Ansicht erzwingt eine Szenen-Scope-Regel bei Mehrfachauswahl, um di
 - Du kannst einen oder mehrere **ganze** Szenenblöcke (mit ihren Headern) auswählen.
 - Du **kannst keine** Teilauswahlen aus verschiedenen Szenen mischen.
 
-Wenn deine Auswahl ungültig ist, öffnet sich beim Ziehen keine Lücke am Drop-Ziel – die Zeile springt beim Loslassen in ihre ursprüngliche Position zurück.
+Während du ziehst, springt die Drop-Lücke zum nächsten gültigen Slot – eine ungültige Position wird nie angeboten, es gibt also kein Zurückspringen beim Loslassen.
 
 **Die lineare Ansicht hat keine solche Einschränkung.** Mische frei.
 
-### Eine ganze Szene auswählen (auto-ausgewählter Header)
+### Eine ganze Szene auswählen
 
-Du greifst nicht den Szenen-Header direkt. Wähle jede Einstellung darunter aus – sobald alle ausgewählt sind, wird der Header automatisch zur Auswahl hinzugefügt. Wähle eine Einstellung ab und der Header wird auch abgewählt. Ziehe eine beliebige ausgewählte Zeile und der ganze Szenenblock bewegt sich gemeinsam.
-
-Das ist der Mechanismus, durch den "eine ganze Szene verschieben" in beiden Ansichten funktioniert.
+In der Drehtage-Ansicht wähle den Szenen-Header aus – das wählt seine ganze Szene aus. In der linearen Ansicht können Szenen-Header nicht ausgewählt werden; wähle stattdessen die Einstellungen selbst. Ziehe eine beliebige ausgewählte Zeile und der ganze Szenenblock bewegt sich gemeinsam.
 
 ## Banner
 
 Banner sind Nicht-Einstellungs-Zeilen, die Essenspausen, Company Moves, Wraps oder andere Plan-Markierungen anzeigen. Sie existieren nur in der Drehtage-Ansicht.
 
-- **Banner hinzufügen.** In der Drehtage-Ansicht fügt `Cmd / Ctrl + N` einen Banner statt einer Einstellung hinzu. Oder nutze die Werkzeugleiste.
+- **Banner hinzufügen.** In der Drehtage-Ansicht fügt `Cmd / Ctrl + N` einen Banner statt einer Einstellung hinzu (Tastenkürzel funktionieren auf Desktop- und Tablet-Layouts, nicht auf Smartphones). Oder nutze die **+ Banner hinzufügen**-Aktion im Dispositions-Plan – sie fügt zum selben Drehtag hinzu, zwischen ganzen Szenen.
 - **Banner verschieben.** Gleiche Drag-Mechanik wie bei Einstellungen.
 - **Banner löschen.** Rechtsklick → Löschen.
 
@@ -70,8 +68,8 @@ Also bedeutet "Löschen in Linear" *entfernen*; "Löschen in Drehtage" bedeutet 
 
 `Cmd / Ctrl + P` exportiert die aktive Ansicht als PDF. Das Rendering ist lokal – kein Upload, kein serverseitiges Rendering.
 
-- **Aus Linear** — nach Szene gruppiert, in Drehbuchreihenfolge. Nützlich für den Script Supervisor.
-- **Aus Drehtage** — nach Drehtag gruppiert, in geplanter Reihenfolge. Nützlich für den 1st AD.
+- **Aus Linear** — eine PDF der ganzen Liste, nach Szene gruppiert in Drehbuchreihenfolge. Nützlich für den Script Supervisor.
+- **Aus Drehtage** — eine Ein-Tages-PDF: Gib die Tagesnummer im Export-Dialog ein, und die PDF enthält nur die Einstellungen dieses Tages. Um mehrere Tage zu exportieren, führe den Export einmal pro Tag aus. Nützlich für den 1st AD.
 
 Große Medien an Einstellungen werden vor dem Export downsampelt.
 

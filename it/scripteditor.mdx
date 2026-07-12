@@ -1,6 +1,6 @@
 ---
 title: Editor di Sceneggiatura
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Editing professionale di sceneggiature con formattazione Fountain in tempo reale, importazione multi-formato, analytics live e integrazione con la Lista delle Inquadrature."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -11,7 +11,7 @@ L'Editor di Sceneggiatura di CineLog è un sistema professionale di editing per 
 
 <CardGrid>
 <Card title="Salvataggio Continuo e Persistente">
-  Dimentica il pulsante "Salva". L'Editor di Sceneggiatura salva continuamente e silenziosamente ogni singola battitura sul tuo dispositivo locale nel momento esatto in cui la fai, poi sincronizza in cloud in background—garantendo che non perda mai una parola di ispirazione.
+  Dimentica il pulsante "Salva". L'Editor di Sceneggiatura salva silenziosamente ogni modifica sul tuo dispositivo locale entro circa mezzo secondo, poi sincronizza in cloud in background—garantendo che non perda mai una parola di ispirazione.
 </Card>
 
 <Card title="Formattazione Fountain in tempo reale">
@@ -23,7 +23,7 @@ L'Editor di Sceneggiatura di CineLog è un sistema professionale di editing per 
 </Card>
 
 <Card title="Analytics Live">
-  Analytics della sceneggiatura in tempo reale. Tieni traccia di numero di pagine, statistiche dei personaggi, analisi delle scene, conteggio parole e metriche professionali mentre scrivi.
+  Analytics della sceneggiatura in tempo reale. Tieni traccia del numero stimato di pagine, del conteggio di scene, del conteggio di righe, del conteggio parole e del conteggio caratteri mentre scrivi.
 </Card>
 
 <Card title="Integrazione con la Lista delle Inquadrature">
@@ -52,14 +52,14 @@ Classificazione automatica di intestazioni di scena (INT./EXT.), nomi dei person
 
 **Controlli di override manuale**
 
-Controllo preciso con scorciatoie: **Cmd+1** per Intestazione di Scena, **Cmd+2** per Personaggio, **Cmd+3** per Dialogo, **Cmd+4** per Azione, **Cmd+5** per Parentetica, **Cmd+6** per Transizione, **Cmd+7** per Versi (**Cmd+E** centra il testo).
+Controllo preciso con scorciatoie: **Cmd+1** per Intestazione di Scena, **Cmd+2** per Personaggio, **Cmd+3** per Dialogo, **Cmd+4** per Azione, **Cmd+5** per Parentetica, **Cmd+6** per Transizione, **Cmd+7** per Versi, **Cmd+E** per Elemento testo centrato.
 
 </li>
 <li>
 
-**Supporto completo per Fountain**
+**Supporto per Fountain**
 
-Specifica completa Fountain v1.1 con elementi di sintassi forzata (@Personaggio, !Azione, .Scena), formattazione del testo (\*corsivo\*, \*\*grassetto\*\*, \_sottolineato\_) e supporto per la struttura del documento.
+Supporto Fountain di base con elementi di sintassi forzata (@Personaggio, !Azione, .Scena) e formattazione del testo (\*corsivo\*, \*\*grassetto\*\*, \_sottolineato\_). Sezioni (#), sinossi (=), note inline ([[ ]]), interruzioni di pagina (===) e dialogo doppio affiancato non sono supportati.
 
 </li>
 <li>
@@ -85,7 +85,7 @@ Devi importare un testo da un'app più vecchia? Clicca il pulsante **Import** ne
 </Card>
 
 <Card title="Fountain (.fountain)">
-  Supporto nativo del formato con piena specifica v1.1, elementi forzati e preservazione dei commenti.
+  Supporto nativo del formato con elementi forzati, parsing della pagina del titolo e rimozione dei commenti boneyard.
 </Card>
 
 <Card title="Sceneggiature PDF">

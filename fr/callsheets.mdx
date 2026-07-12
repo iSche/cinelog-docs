@@ -1,6 +1,6 @@
 ---
 title: Feuilles de Service
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Génère et gère les feuilles de service pour le casting et l'équipe avec planification et détails de localisation."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -68,11 +68,11 @@ Assure-toi que tout le monde sait exactement ce qui se passe. Clique sur **Expor
 ## Écosystème de données intégré
 
 <Aside type="tip">
-Le planning des Feuilles de Service agit comme une vue bidirectionnelle de ton Découpage Technique. Modifier l'ordre des scènes ou une estimation dans la Feuille de Service met à jour _instantanément_ la mise en page sous-jacente de ton Découpage Technique via CineSync.
+Le planning des Feuilles de Service reste synchronisé avec ta vue Production. Réorganiser une scène ou une bannière, ou modifier une estimation, sur la Feuille de Service est la _même modification_ que la faire en Production — les deux affichent toujours les mêmes scènes et bannières dans le même ordre.
 </Aside>
 
 <Aside type="tip" title="Avantages du routage de données">
 -   **Flux Casting et Équipe** : Les noms des talents, les rôles de l'équipe et les détails de contact proviennent strictement de ton hub central Casting et Équipe. Assigner un acteur remplit dynamiquement ses données.
 -   **Garanties de gestion des erreurs** : Tout goulot d'étranglement de planning invalide affiche des alertes UI jaunes/rouges marquées empêchant les conflits de chronologie.
--   **Routage d'accès global** : Toute personne recevant un lien de Feuille de Service est intelligemment dirigée vers la création d'un compte, gagnant accès strictement à ce que son rôle dicte.
+-   **Portail de confirmation** : Toute personne recevant un e-mail de Feuille de Service reçoit un lien protégé par jeton qui ouvre un portail aux couleurs de CineLog où elle appuie sur « Confirmer » pour accuser réception — aucun compte requis.
 </Aside>

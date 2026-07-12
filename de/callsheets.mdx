@@ -1,6 +1,6 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Erstelle und verwalte Dispositionen (Dispo) für Cast und Crew mit Terminierung und Ortsdetails."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -68,11 +68,11 @@ Sorge dafür, dass jeder weiß, was läuft. Klicke auf **Export**, um eine branc
 ## Integriertes Daten-Ökosystem
 
 <Aside type="tip">
-Der Plan in der Disposition ist ein bidirektionaler Viewport auf deine Einstellungsliste. Eine Szenenreihenfolge oder Schätzung in der Disposition zu bearbeiten, aktualisiert _augenblicklich_ dein zugrundeliegendes Einstellungslisten-Layout via CineSync.
+Der Plan in der Disposition bleibt synchron mit deiner Drehtage-Ansicht. Eine Szene oder ein Banner umzuordnen oder eine Schätzung zu bearbeiten, ist in der Disposition _dieselbe Bearbeitung_ wie in der Drehtage-Ansicht – beide zeigen immer dieselben Szenen und Banner in derselben Reihenfolge.
 </Aside>
 
 <Aside type="tip" title="Vorteile der Daten-Routing">
 -   **Cast & Crew-Flüsse**: Talent-Namen, Crew-Rollen und Kontaktdetails fließen strikt aus deinem zentralen Cast & Crew-Hub. Einen Schauspieler zuzuweisen, füllt seine Daten dynamisch ein.
 -   **Garantien beim Fehler-Handling**: Jeder ungültige Planengpass zeigt deutliche gelbe/rote UI-Warnungen, die Timeline-Konflikte verhindern.
--   **Globales Zugriffs-Routing**: Jeder, der einen Dispositions-Link erhält, wird intelligent zur Kontoerstellung geleitet und erhält strikt nur den Zugriff, den seine Rolle erlaubt.
+-   **Bestätigungs-Portal**: Jeder, der eine Dispositions-E-Mail erhält, bekommt einen token-geschützten Link, der ein CineLog-gebrandetes Portal öffnet, in dem er auf "Bestätigen" tippt, um den Empfang zu quittieren – kein Konto nötig.
 </Aside>

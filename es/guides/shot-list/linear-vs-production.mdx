@@ -1,7 +1,7 @@
 ---
 title: Vista Lineal vs Vista Producción
-lastUpdated: 2026-05-23
-description: "Dos vistas sobre los mismos planos: orden de guion vs orden de día de rodaje. Cubre la regla de división de escena parcial, los banners, la selección con alcance de escena, la auto-selección del encabezado de escena, la sincronización entre vistas, y cómo difiere eliminar entre las dos vistas."
+lastUpdated: 2026-07-11
+description: "Dos vistas sobre los mismos planos: orden de guion vs orden de día de rodaje. Cubre la regla de división de escena parcial, los banners, la selección con alcance de escena, la selección del encabezado de escena, la sincronización entre vistas, y cómo difiere eliminar entre las dos vistas."
 ---
 
 Lineal y Producción son dos vistas de los mismos planos. Lineal está en orden de guion: la forma en que lo leen el director y el supervisor de guion. Producción está en orden de día de rodaje: la forma en que el 1er AD planifica el horario. Todo lo demás en esta guía es sobre las diferencias.
@@ -10,9 +10,9 @@ Esta guía da por supuesto [Lo básico](/es/guides/introduction) y [Lo esencial 
 
 ## Cambiar entre vistas
 
-Alterna en el encabezado de vista sobre la lista. `Shift + L` alterna el diseño de columna (ajustado ↔ desplazamiento), útil cuando quieres ver más columnas a la vez.
+Usa el raíl de navegación izquierdo: haz clic en **Linear Shot List** para la vista lineal, o en una de las entradas **Production day N** debajo para un día de producción. En teléfono, usa la navegación inferior en su lugar. `Shift + L` no cambia de vista — alterna el diseño de columna (ajustado ↔ desplazamiento) dentro de cualquiera de las vistas, útil cuando quieres ver más columnas a la vez.
 
-Ambas vistas muestran los mismos planos. Las ediciones hechas en una aparecen en la otra inmediatamente.
+Lineal muestra cada plano del proyecto; Producción muestra solo los planos asignados a un día de rodaje. Para los planos programados, ambas vistas muestran el mismo plano — las ediciones hechas en una aparecen en la otra inmediatamente.
 
 ## La regla de división de escena parcial (solo Producción)
 
@@ -28,21 +28,19 @@ La vista Producción impone una regla de alcance de escena en la multi-selecció
 - Puedes seleccionar uno o más **bloques de escena enteros** (con sus encabezados).
 - **No** puedes mezclar selecciones parciales de diferentes escenas.
 
-Si tu selección es inválida, el destino del drop no abrirá un hueco al arrastrar — la fila volverá a su posición original al soltar.
+Mientras arrastras, el hueco de drop salta a la ranura válida más cercana — nunca se ofrece una posición inválida, así que no hay vuelta de golpe al soltar.
 
 **La vista Lineal no tiene tal restricción.** Mezcla libremente.
 
-### Seleccionar una escena entera (encabezado auto-seleccionado)
+### Seleccionar una escena entera
 
-No agarras el encabezado de escena directamente. Selecciona todos los planos bajo él — una vez que todos estén seleccionados, el encabezado se añade a la selección automáticamente. Deselecciona cualquier plano y el encabezado se deselecciona también. Arrastra cualquier fila seleccionada y el bloque de escena entero se mueve junto.
-
-Este es el mecanismo por el cual "mover una escena entera" funciona en cualquiera de las vistas.
+En la vista Producción, selecciona el encabezado de escena — eso selecciona su escena entera. En la vista Lineal, los encabezados de escena no se pueden seleccionar; selecciona los planos directamente en su lugar. Arrastra cualquier fila seleccionada y el bloque de escena entero se mueve junto.
 
 ## Banners
 
 Los banners son filas que no son planos y que marcan pausas para comer, traslados de compañía, cierres u otros marcadores de horario. Existen solo en la vista Producción.
 
-- **Añadir un banner.** En Producción, `Cmd / Ctrl + N` añade un banner en lugar de un plano. O usa la barra de herramientas.
+- **Añadir un banner.** En Producción, `Cmd / Ctrl + N` añade un banner en lugar de un plano (los atajos de teclado funcionan en los diseños de escritorio y tablet, no en teléfonos). O usa la acción **+ Add banner** del horario de la orden de rodaje — se añade al mismo día de producción, entre escenas completas.
 - **Mover un banner.** El mismo mecanismo de arrastre que los planos.
 - **Eliminar un banner.** Clic derecho → Eliminar.
 
@@ -70,8 +68,8 @@ Así que "eliminar en Lineal" significa *eliminar*; "eliminar en Producción" si
 
 `Cmd / Ctrl + P` exporta la vista activa a PDF. El renderizado es local — sin subida, sin renderizado del lado del servidor.
 
-- **Desde Lineal** — agrupado por escena, en orden de guion. Útil para el supervisor de guion.
-- **Desde Producción** — agrupado por día de rodaje, en orden programado. Útil para el 1er AD.
+- **Desde Lineal** — un PDF de toda la lista, agrupado por escena en orden de guion. Útil para el supervisor de guion.
+- **Desde Producción** — un PDF de un solo día: introduce el número de día en el diálogo de exportación y el PDF contiene solo los planos de ese día. Para exportar varios días, ejecuta la exportación una vez por día. Útil para el 1er AD.
 
 Los medios grandes en los planos se reducen de calidad antes de exportar.
 

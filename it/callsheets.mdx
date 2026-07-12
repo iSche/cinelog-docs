@@ -1,6 +1,6 @@
 ---
 title: Ordini del Giorno
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Genera e gestisci ordini del giorno per cast e troupe con dettagli su pianificazione e location."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -68,11 +68,11 @@ Assicurati che tutti sappiano esattamente cosa sta succedendo. Clicca **Esporta*
 ## Ecosistema dati integrato
 
 <Aside type="tip">
-La programmazione degli Ordini del Giorno funge da viewport bidirezionale della tua Lista delle Inquadrature. Modificare l'ordine di una scena o una stima nell'Ordine del Giorno aggiorna _istantaneamente_ il layout sottostante della tua Lista delle Inquadrature via CineSync.
+La programmazione degli Ordini del Giorno resta sincronizzata con la tua vista Produzione. Riordinare una scena o un banner, o modificare una stima, nell'Ordine del Giorno è la _stessa modifica_ che faresti in Produzione — le due mostrano sempre le stesse scene e gli stessi banner nello stesso ordine.
 </Aside>
 
 <Aside type="tip" title="Vantaggi del routing dei dati">
 -   **Flussi Cast e Troupe**: Nomi dei talent, ruoli della troupe e dettagli di contatto fluiscono rigorosamente dal tuo hub centrale Cast & Troupe. Assegnare un attore popola dinamicamente i suoi dati.
 -   **Garanzie di gestione errori**: Qualsiasi collo di bottiglia di pianificazione non valido mostra avvisi UI giallo/rosso netti che prevengono conflitti di timeline.
--   **Routing globale degli accessi**: Chiunque riceva un link di un Ordine del Giorno viene indirizzato in modo intelligente alla creazione di un account, ottenendo accesso strettamente a ciò che il suo ruolo prevede.
+-   **Portale di conferma**: Chiunque riceva un'email con un Ordine del Giorno ottiene un link protetto da token che apre un portale con il marchio CineLog dove tocca "Conferma" per confermare la ricezione — nessun account necessario.
 </Aside>

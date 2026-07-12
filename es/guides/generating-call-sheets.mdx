@@ -1,6 +1,6 @@
 ---
 title: Órdenes de rodaje
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Órdenes de rodaje diarias en CineLog: encabezado y hora de convocatoria, localizaciones, horario con cascada de tiempos, meteorología, secciones de personal, mensaje de equipo con texto enriquecido, envío y seguimiento de confirmaciones, exportación a PDF."
 ---
 
@@ -66,15 +66,15 @@ Para ocultar toda la sección de localizaciones de la orden de rodaje (p. ej., c
 
 ## Horario
 
-El horario es la vista Producción filtrada a este día. Los planos y banners en la orden de rodaje son los **mismos objetos** que en Producción: reordenarlos o editarlos aquí es lo mismo que reordenarlos o editarlos allí. La gramática de gestos es idéntica a cualquier otra parte de la app.
+El horario es la vista Producción filtrada a este día. Lista escenas y banners — no planos individuales. Las escenas y banners en la orden de rodaje son los **mismos objetos** que en Producción: reordenarlos o editarlos aquí es lo mismo que reordenarlos o editarlos allí. La gramática de gestos es idéntica a cualquier otra parte de la app.
 
-Tres columnas: **hora de inicio** | **escena + plano** | **duración estimada**.
+Tres columnas: **hora de inicio** | **escena** | **duración estimada**.
 
 ### Banners
 
 Los banners son filas que no son planos y que marcan pausas para comer, traslados de compañía, cierres u otros marcadores de horario. Existen solo en la vista Producción y en el horario. Añade un banner desde la barra de herramientas (o `Cmd / Ctrl + N` en Producción); ponle un nombre ("Comida", "Traslado de compañía"), establece su duración.
 
-Insertar un banner en mitad de una escena divide la escena circundante en el banner — ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production) para el comportamiento completo de división y fusión.
+Los banners añadidos desde el horario aterrizan entre escenas completas, así que aquí no pueden dividir una escena. Para dividir una escena con un banner, suéltalo entre los planos de la escena en la pestaña Producción — ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production) para el comportamiento completo de división y fusión; el horario entonces muestra la división como filas de escena separadas.
 
 ### La cascada de tiempos
 
@@ -84,7 +84,7 @@ Si la hora de inicio explícita de una fila cae antes de lo que el reloj acumula
 
 ### Reordenar el horario
 
-Escritorio: mantén pulsado un banner o una fila de plano y arrástralo. Móvil: toca dos veces una fila para abrir la superposición de edición (no hay arrastre en línea). Los reordenamientos persisten en la vista Producción, ya que son los mismos objetos.
+Escritorio: mantén pulsado un banner o una fila de escena y arrástralo. Móvil: toca dos veces una fila para abrir la superposición de edición (no hay arrastre en línea). Los reordenamientos persisten en la vista Producción, ya que son los mismos objetos.
 
 La sección de horario no se puede ocultar: siempre se muestra.
 
@@ -150,7 +150,7 @@ La barra de herramientas del editor soporta:
 
 - **Negrita, cursiva, subrayado.**
 - **Color.** Ocho colores curados (Blanco, Oro, Cobre, Rosa, Lavanda, Cristal de Mar, Salvia, Pergamino).
-- **Incrustar imagen.** Haz clic en el botón de imagen, elige una imagen. Se sube al CDN de CineLog, hasta 2 MB, solo JPEG / PNG / WebP. La URL de la imagen se incrusta en el mensaje y aparece en el cuerpo del correo.
+- **Incrustar imagen.** Haz clic en el botón de imagen, elige una imagen. JPEG / PNG / WebP, hasta 1 MB — la app redimensiona las imágenes grandes automáticamente. La URL de la imagen se incrusta en el mensaje y aparece en el cuerpo del correo.
 - **Borrar formato.**
 
 El correo renderizado aplica el mismo formato en el lado del destinatario. El servidor sanea el mensaje antes de enviarlo: solo pasan las etiquetas de formato en lista permitida.
@@ -214,13 +214,13 @@ Dos formas de obtener un PDF, según el caso de uso:
 
 ### Exportación local desde la barra de herramientas
 
-`Cmd / Ctrl + P` o el botón de exportación en el menú superior abre el diálogo de exportación. Puedes establecer los márgenes de página (superior, inferior, izquierdo, derecho en puntos), y luego exportar. El renderizado es local — sin subida, sin renderizado del lado del servidor — así que funciona sin conexión. Útil cuando quieres un PDF para distribuir fuera del flujo de correo (Slack, WhatsApp, entrega en persona).
+El botón **Exportar** en el menú superior abre el diálogo de exportación — aquí no hay atajo de teclado (la exportación con `Cmd / Ctrl + P` funciona en las pantallas de la lista de planos, Storyboard y Guion AV, no en las órdenes de rodaje). Puedes establecer los márgenes de página (superior, inferior, izquierdo, derecho en puntos), y luego exportar. El renderizado es local — sin subida, sin renderizado del lado del servidor — así que funciona sin conexión. Útil cuando quieres un PDF para distribuir fuera del flujo de correo (Slack, WhatsApp, entrega en persona).
 
 ### PDFs por destinatario al momento del envío
 
 Cuando pulsas Enviar, el servidor genera un PDF personalizado para cada destinatario con su hora de convocatoria resaltada y sus notas personales adjuntas. No los disparas directamente: son un efecto secundario del envío.
 
-Ambas rutas de exportación respetan los ajustes de visualización: las secciones ocultas siguen ocultas, se aplica la unidad de temperatura y el formato de hora. Los medios grandes se reducen de calidad.
+Ambas rutas de exportación respetan los ajustes de visualización: las secciones ocultas siguen ocultas, se aplica la unidad de temperatura y el formato de hora. El PDF imprime el horario como filas de texto con horas — no incluye ningún medio de plano, y el elenco y el equipo siempre aparecen con avatares de iniciales, nunca fotos.
 
 Los guiones internacionales (árabe, hebreo, devanagari, CJK, tailandés) se renderizan correctamente mediante fuentes alternativas.
 
@@ -250,4 +250,4 @@ La edición de órdenes de rodaje funciona sin conexión: los cambios se guardan
 
 *"Llegué a un límite de envío."* Has excedido 10 envíos en la última hora para esta orden de rodaje, o 1000 correos en el último mes para el espacio de trabajo. Espera o contáctanos si necesitas un límite mayor.
 
-*"Mi imagen del mensaje del equipo no se subió."* Revisa el archivo: menos de 2 MB, JPEG / PNG / WebP. Otros formatos y archivos de tamaño excesivo son rechazados.
+*"Mi imagen del mensaje del equipo no se subió."* Revisa el archivo: JPEG / PNG / WebP, hasta 1 MB (las imágenes grandes se redimensionan automáticamente). Otros formatos son rechazados.

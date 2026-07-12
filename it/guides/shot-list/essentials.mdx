@@ -1,6 +1,6 @@
 ---
 title: Le basi della lista delle inquadrature
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Costruisci una lista delle inquadrature da zero — tre modi per aggiungere inquadrature, come funziona la numerazione, come riordinare e cosa viene eliminato quando rimuovi un'inquadratura o una scena."
 ---
 
@@ -12,9 +12,9 @@ Questa guida assume [Le basi](/it/guides/introduction). Il vocabolario click-tap
 
 Un nuovo progetto ti dà una lista delle inquadrature vuota. Ci sono tre modi per riempirla:
 
-- **Manualmente, un'inquadratura alla volta.** Clicca il pulsante `+ Aggiungi Inquadratura` in fondo a qualsiasi blocco di scena.
-- **Scorciatoia.** `Cmd / Ctrl + N` aggiunge una nuova inquadratura in fondo alla scena attualmente in focus.
-- **Popola da Sceneggiatura.** `Shift + P` (o il pulsante della toolbar) scansiona le intestazioni di scena del copione importato (righe come `INT. CUCINA - GIORNO`) e crea automaticamente un blocco di scena per ogni intestazione, ognuna con un'inquadratura di default. L'output è pulito solo quanto il tuo copione — intestazioni malformate generano scene malformate.
+- **Manualmente, un'inquadratura alla volta.** Clicca il pulsante `Nuova Inquadratura` a destra della barra del menu in alto (desktop), o il pulsante `+` nella top app bar (telefono). Entrambi aprono una finestra che chiede a quale numero di scena aggiungere l'inquadratura.
+- **Scorciatoia.** `Cmd / Ctrl + N` apre la stessa finestra del numero di scena, precompilata con il numero di scena più alto. Su una lista vuota salta la finestra e crea la prima inquadratura nella scena 1.
+- **Popola da Sceneggiatura.** Apri l'Editor di Sceneggiatura e premi `Shift + P` (o usa il suo pulsante Popola — la scorciatoia non fa nulla sulla schermata della lista delle inquadrature). Scansiona le intestazioni di scena del copione (righe come `INT. CUCINA - GIORNO`) e mostra un'anteprima prima che qualcosa cambi: Merge aggiunge solo le scene non ancora nella tua lista, Replace svuota la lista e la ricostruisce dal copione. Di default crea diverse inquadrature suggerite per scena con descrizioni e tipi di inquadratura; scegli "scenes only" per una sola inquadratura segnaposto per scena. I nomi delle location dalle intestazioni vengono riportati sulle scene. Sul piano gratuito, la popolazione si ferma al limite del progetto di 25 scene / 50 inquadrature. L'output è pulito solo quanto il tuo copione — intestazioni malformate generano scene malformate.
 
 La maggior parte dei progetti inizia con Popola da Sceneggiatura come prima passata grezza, poi rifinisce manualmente.
 
@@ -36,7 +36,7 @@ Trascina qualsiasi inquadratura per spostarla. Il gesto è il drag universale da
 
 - **All'interno di una scena** — trascina su o giù. Le lettere si ricompattano.
 - **Tra scene** — trascina oltre il confine di scena. Il numero di scena dell'inquadratura cambia per corrispondere alla destinazione; le lettere si ricompattano sia nella scena di origine che in quella di destinazione.
-- **Nello spazio vuoto tra due scene** — l'inquadratura si unisce alla scena esistente più vicina. Questo non crea una nuova scena; aggiungi scene con **+ Aggiungi Inquadratura** in un nuovo blocco o tramite Popola da Sceneggiatura.
+- **Nello spazio vuoto tra due scene** — l'inquadratura si unisce alla fine della scena sopra. Trascinare non crea mai una nuova scena; per crearne una, usa la finestra Nuova Inquadratura e digita un numero di scena che non esiste ancora, oppure usa Popola da Sceneggiatura.
 
 La vista Produzione aggiunge una regola di scope di scena per le selezioni multiple; vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production).
 
@@ -48,11 +48,11 @@ Le colonne personalizzate che aggiungi nelle [Impostazioni di Visualizzazione](/
 
 ## Eliminare
 
-Tasto destro su un'inquadratura → Elimina (desktop), o swipe / menu overflow (mobile). La cascata dipende da cosa elimini e dove:
+Su desktop, apri la finestra di modifica dell'inquadratura e usa il pulsante `Elimina Inquadratura`, oppure seleziona la/le riga/righe e premi `Delete` / `Backspace` — nella barra di selezione appare anche un pulsante `Elimina Selezionati`. Su mobile, fai swipe sulla riga dell'inquadratura per rivelare l'azione di eliminazione. La cascata dipende da cosa elimini e dove:
 
 - **Una singola inquadratura in vista Lineare** — la rimuove dal progetto. Se era l'ultima inquadratura della sua scena, anche la scena viene rimossa (non c'è uno stato di scena vuota).
 - **Una singola inquadratura in vista Produzione** — la rimuove dalla programmazione solo per quel giorno. L'inquadratura esiste ancora in Lineare e può essere ripianificata.
-- **Una scena** (tasto destro sull'intestazione di scena) — rimuove la scena e ogni inquadratura al suo interno, ovunque.
+- **Una scena in vista Lineare** — rimuove la scena e ogni inquadratura al suo interno, ovunque. Eliminare una scena da un giorno di Produzione la rimuove solo dalla programmazione di quel giorno.
 
 La finestra di conferma esplicita sempre cosa sta per scomparire prima di committare. La semantica completa di eliminazione tra le viste è in [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production).
 

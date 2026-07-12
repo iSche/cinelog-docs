@@ -1,6 +1,6 @@
 ---
 title: Editor de Roteiro
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Edição profissional de roteiros com formatação Fountain em tempo real, importação multi-formato, analytics ao vivo e integração com a decupagem."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -11,7 +11,7 @@ O Editor de Roteiro do CineLog é um sistema profissional de edição de roteiro
 
 <CardGrid>
 <Card title="Salvamento contínuo e persistente">
-  Diga adeus ao botão "Salvar". O Editor de Roteiro salva contínua e silenciosamente cada tecla digitada no seu dispositivo local no momento em que você a pressiona, e depois sincroniza com a nuvem em segundo plano — garantindo que você nunca perca uma palavra de inspiração.
+  Diga adeus ao botão "Salvar". O Editor de Roteiro salva silenciosamente cada alteração no seu dispositivo local em cerca de meio segundo, e depois sincroniza com a nuvem em segundo plano — garantindo que você nunca perca uma palavra de inspiração.
 </Card>
 
 <Card title="Formatação Fountain em tempo real">
@@ -23,7 +23,7 @@ O Editor de Roteiro do CineLog é um sistema profissional de edição de roteiro
 </Card>
 
 <Card title="Analytics ao vivo">
-  Métricas de roteiro em tempo real. Acompanhe contagem de páginas, estatísticas de personagens, análise de cenas, contagem de palavras e métricas profissionais enquanto escreve.
+  Analytics de roteiro em tempo real. Acompanhe estimativas de contagem de páginas, contagem de cenas, contagem de linhas, contagem de palavras e contagem de caracteres enquanto escreve.
 </Card>
 
 <Card title="Integração com a decupagem">
@@ -52,14 +52,14 @@ Classificação automática de cabeçalhos de cena (INT./EXT.), nomes de persona
 
 **Controles manuais de substituição**
 
-Controle preciso com atalhos: **Cmd+1** para Cabeçalho de Cena, **Cmd+2** para Personagem, **Cmd+3** para Diálogo, **Cmd+4** para Ação, **Cmd+5** para Parêntese, **Cmd+6** para Transição, **Cmd+7** para Letra de Música (**Cmd+E** centraliza o texto).
+Controle preciso com atalhos: **Cmd+1** para Cabeçalho de Cena, **Cmd+2** para Personagem, **Cmd+3** para Diálogo, **Cmd+4** para Ação, **Cmd+5** para Parêntese, **Cmd+6** para Transição, **Cmd+7** para Letra de Música, **Cmd+E** para elemento de texto centralizado.
 
 </li>
 <li>
 
-**Suporte completo a Fountain**
+**Suporte a Fountain**
 
-Especificação Fountain v1.1 completa, com elementos de sintaxe forçada (@Personagem, !Ação, .Cena), formatação de texto (\*itálico\*, \*\*negrito\*\*, \_sublinhado\_) e suporte à estrutura de documento.
+Suporte central ao Fountain, com elementos de sintaxe forçada (@Personagem, !Ação, .Cena) e formatação de texto (\*itálico\*, \*\*negrito\*\*, \_sublinhado\_). Seções (#), sinopses (=), notas inline ([[ ]]), quebras de página (===) e diálogo duplo lado a lado não são suportados.
 
 </li>
 <li>
@@ -85,7 +85,7 @@ Precisa trazer o que escreveu de um app antigo? Clique no botão **Importar** na
 </Card>
 
 <Card title="Fountain (.fountain)">
-  Suporte nativo ao formato, com especificação v1.1 completa, elementos forçados e preservação de comentários.
+  Suporte nativo ao formato, com elementos forçados, parsing da página de título e remoção de comentários boneyard.
 </Card>
 
 <Card title="Roteiros em PDF">

@@ -1,39 +1,39 @@
 ---
 title: Storyboard
-lastUpdated: 2026-06-22
-description: "Pianificazione visiva di una scena alla volta — frame di pre-visualizzazione per inquadratura, layout lineare o a griglia, esportazione in PDF. Riordinare uno storyboard riordina le inquadrature sottostanti."
+lastUpdated: 2026-07-11
+description: "Pianificazione visiva dell'intero progetto, raggruppata per scena — frame di pre-visualizzazione per inquadratura, layout lineare o a griglia, esportazione in PDF. Riordinare uno storyboard riordina le inquadrature sottostanti."
 ---
 
-Uno storyboard in CineLog è una vista visiva delle inquadrature di una scena, con frame di pre-visualizzazione allegati. Non è una copia separata dei dati — si sovrappone alla lista delle inquadrature, quindi riordinare uno storyboard riordina le inquadrature sottostanti.
+Uno storyboard in CineLog è una vista visiva delle inquadrature dell'intero progetto, raggruppate per scena, con frame di pre-visualizzazione allegati. Non è una copia separata dei dati — si sovrappone alla lista delle inquadrature, quindi riordinare uno storyboard riordina le inquadrature sottostanti.
 
 Questa guida assume [Le basi](/it/guides/introduction).
 
 ## Cos'è uno storyboard
 
-Una vista delle inquadrature di una singola scena, che mostra frame di pre-visualizzazione e alcuni campi chiave dell'inquadratura. Non duplica le inquadrature; è uno strato sopra la lista delle inquadrature. Le Viste Storyboard (layout salvati) appaiono come sub-entry sotto Storyboard nella sidebar.
+Una vista delle inquadrature dell'intero progetto, raggruppate per scena, che mostra frame di pre-visualizzazione e i principali campi dell'inquadratura. Entrambi i layout scorrono attraverso ogni scena in un'unica vista continua, con marcatori di scena tra le scene — il selettore di scena nella toolbar salta a una scena invece di filtrarla. Non duplica le inquadrature; è uno strato sopra la lista delle inquadrature.
 
 ## Layout
 
 Due modalità di visualizzazione:
 
-- **Lineare** — stile carosello, un'inquadratura alla volta. Buono per le presentazioni di revisione.
-- **Griglia** — più inquadrature affiancate. Buono per il riferimento a colpo d'occhio.
+- **Lineare** — una striscia orizzontale di pannelli di inquadratura affiancati su desktop e tablet; su telefono, un carosello a schermo intero che mostra un'inquadratura alla volta. Buono per le presentazioni di revisione.
+- **Griglia** — più inquadrature affiancate in una griglia ridimensionabile. Buono per il riferimento a colpo d'occhio.
 
-Cambia dalla toolbar.
+Cambia dalla voce Storyboard nella sidebar su desktop (Lineare è quella predefinita; scegli "Grid View" per passare all'altra). Su telefono, usa la pillola Lineare/Griglia in fondo allo schermo.
 
 ## Aggiungere frame di pre-visualizzazione
 
-Tocca la cella di pre-visualizzazione di un'inquadratura. Si apre il media picker — stessa grammatica di gesti dell'editing delle celle in [Le basi](/it/guides/introduction#2-editing-fields). Scegli un'immagine o un frame video dalla media library del progetto.
+Tocca una cella di pre-visualizzazione vuota di un'inquadratura. Si apre il selettore di immagini del tuo dispositivo — galleria fotografica su telefono, browser dei file su desktop. Le immagini che selezioni vengono caricate direttamente su quell'inquadratura, e appaiono nella media library del progetto sotto di essa.
 
-Ogni frame di pre-visualizzazione è un file della media library del progetto, allegato a quell'inquadratura.
+I frame appartengono alla loro inquadratura — un frame non è mai condiviso tra più inquadrature, quindi modificare i frame di un'inquadratura non influisce mai su un'altra. Per aggiungere, sostituire o rimuovere frame su un'inquadratura che ha già una pre-visualizzazione, usa la finestra Manage PreVis Files dall'overlay di pre-visualizzazione della lista delle inquadrature.
 
 ## Riordinare i frame
 
-Trascina le inquadrature nello storyboard per riordinarle. Il riordino si applica alle inquadrature sottostanti nella scena di appartenenza — non c'è un "ordine storyboard" separato che diverga dall'ordine delle inquadrature. Le lettere delle inquadrature si aggiornano di conseguenza.
+Nel layout a Griglia, trascina le inquadrature per riordinarle — la vista Lineare e il carosello su telefono non supportano il riordino tramite trascinamento. Il riordino si applica alle inquadrature sottostanti — non c'è un "ordine storyboard" separato che diverga dall'ordine delle inquadrature. Le lettere delle inquadrature si aggiornano di conseguenza.
 
 ## Impostazioni di visualizzazione (per storyboard)
 
-Colonne della griglia, spaziatura, rapporto d'aspetto (16:9, 2.35:1, 4:3). Regola dalla toolbar.
+Colonne della griglia, spaziatura, rapporto d'aspetto (Flessibile per impostazione predefinita — le proporzioni native di ciascun frame — o un rapporto fisso come 16:9, 4:3 o 2.35:1). Regola dalla toolbar.
 
 ## Esportazione
 

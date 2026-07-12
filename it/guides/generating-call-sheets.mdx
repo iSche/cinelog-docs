@@ -1,6 +1,6 @@
 ---
 title: Ordini del giorno
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Ordini del giorno giornalieri in CineLog — intestazione e orario di call, location, programmazione con cascata temporale, meteo, sezioni personale, messaggio rich-text alla troupe, invio e tracciamento conferme, esportazione PDF."
 ---
 
@@ -66,15 +66,15 @@ Per nascondere l'intera sezione location dall'ordine del giorno (es. quando la l
 
 ## Programmazione
 
-La programmazione è la vista Produzione filtrata su questo giorno. Le inquadrature e i banner sull'ordine del giorno sono gli **stessi oggetti** che in Produzione — riordinarli o modificarli qui è lo stesso che riordinarli o modificarli là. La grammatica dei gesti è identica a ovunque nell'app.
+La programmazione è la vista Produzione filtrata su questo giorno. Elenca scene e banner — non singole inquadrature. Le scene e i banner sull'ordine del giorno sono gli **stessi oggetti** che in Produzione — riordinarli o modificarli qui è lo stesso che riordinarli o modificarli là. La grammatica dei gesti è identica a ovunque nell'app.
 
-Tre colonne: **orario di inizio** | **scena + inquadratura** | **durata stimata**.
+Tre colonne: **orario di inizio** | **scena** | **durata stimata**.
 
 ### Banner
 
 I banner sono righe non-inquadratura che marcano pause pasto, spostamenti di compagnia, wrap o altri marcatori di programmazione. Esistono solo in vista Produzione e nella programmazione. Aggiungi un banner dalla toolbar (o `Cmd / Ctrl + N` in Produzione); dagli un nome ("Pranzo", "Spostamento compagnia"), imposta la sua durata.
 
-Inserire un banner a metà scena suddivide la scena circostante al banner — vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production) per il comportamento completo di suddivisione e fusione.
+I banner aggiunti dalla programmazione si collocano tra scene intere, quindi qui non possono suddividere una scena. Per suddividere una scena con un banner, rilascialo tra le inquadrature della scena nella scheda Produzione — vedi [Lineare vs Produzione](/it/guides/shot-list/linear-vs-production) per il comportamento completo di suddivisione e fusione; la programmazione mostra poi la suddivisione come righe di scena separate.
 
 ### La cascata temporale
 
@@ -84,7 +84,7 @@ Se l'orario di inizio esplicito di una riga cade prima di dove lo collocherebbe 
 
 ### Riordinare la programmazione
 
-Desktop: long-press su un banner o riga inquadratura e trascina. Mobile: doppio tap su una riga per aprire l'overlay di modifica (nessun drag inline). I riordini persistono di nuovo alla vista Produzione, poiché sono gli stessi oggetti.
+Desktop: long-press su un banner o riga di scena e trascina. Mobile: doppio tap su una riga per aprire l'overlay di modifica (nessun drag inline). I riordini persistono di nuovo alla vista Produzione, poiché sono gli stessi oggetti.
 
 La sezione programmazione non può essere nascosta — è sempre mostrata.
 
@@ -150,7 +150,7 @@ La toolbar dell'editor supporta:
 
 - **Grassetto, corsivo, sottolineato.**
 - **Colore.** Otto campioni curati (Bianco, Oro, Rame, Rosa, Lavanda, Vetro di Mare, Salvia, Pergamena).
-- **Embed di immagine.** Clicca il pulsante immagine, scegli un'immagine. Si carica sul CDN di CineLog, fino a 2 MB, solo JPEG / PNG / WebP. L'URL dell'immagine viene incorporato nel messaggio e appare nel corpo dell'email.
+- **Embed di immagine.** Clicca il pulsante immagine, scegli un'immagine. JPEG / PNG / WebP, fino a 1 MB — l'app ridimensiona automaticamente le immagini grandi. L'URL dell'immagine viene incorporato nel messaggio e appare nel corpo dell'email.
 - **Cancella formattazione.**
 
 L'email renderizzata applica la stessa formattazione lato destinatario. Il server sanifica il messaggio prima di inviarlo — solo i tag di formattazione nella allowlist passano.
@@ -214,13 +214,13 @@ Due modi per ottenere un PDF, a seconda dell'uso:
 
 ### Esportazione locale dalla toolbar
 
-`Cmd / Ctrl + P` o il pulsante di esportazione nel menu in alto apre la finestra di esportazione. Puoi impostare i margini della pagina (alto, basso, sinistro, destro in punti), poi esportare. Il rendering è locale — nessun upload, nessun render lato server — quindi funziona offline. Utile quando vuoi un PDF da distribuire fuori dal flusso email (Slack, WhatsApp, consegna a mano).
+Il pulsante **Esporta** nel menu in alto apre la finestra di esportazione — qui non c'è una scorciatoia da tastiera (l'esportazione con `Cmd / Ctrl + P` funziona sulle schermate della lista delle inquadrature, dello Storyboard e dello Script AV, non sugli ordini del giorno). Puoi impostare i margini della pagina (alto, basso, sinistro, destro in punti), poi esportare. Il rendering è locale — nessun upload, nessun render lato server — quindi funziona offline. Utile quando vuoi un PDF da distribuire fuori dal flusso email (Slack, WhatsApp, consegna a mano).
 
 ### PDF per destinatario al momento dell'invio
 
 Quando premi Invia, il server genera un PDF personalizzato per ogni destinatario con il suo orario di call evidenziato e le sue note per persona allegate. Non li attivi direttamente — sono un effetto collaterale dell'invio.
 
-Entrambi i percorsi di esportazione rispettano le impostazioni di visualizzazione: le sezioni nascoste rimangono nascoste, l'unità di temperatura e il formato ora vengono applicati. I media grandi vengono ridimensionati.
+Entrambi i percorsi di esportazione rispettano le impostazioni di visualizzazione: le sezioni nascoste rimangono nascoste, l'unità di temperatura e il formato ora vengono applicati. Il PDF stampa la programmazione come righe di testo con gli orari — non include media delle inquadrature, e cast e troupe appaiono sempre con avatar a iniziali, mai foto.
 
 Le scritture internazionali (Arabo, Ebraico, Devanagari, CJK, Thai) si renderizzano correttamente via font fallback.
 
@@ -250,4 +250,4 @@ Modificare gli ordini del giorno funziona offline — le modifiche si salvano su
 
 *"Ho raggiunto un limite di invio."* Hai superato 10 invii nell'ultima ora per questo ordine del giorno, o 1000 email negli ultimi 30 giorni per il workspace. Aspetta o contattaci se hai bisogno di un limite più alto.
 
-*"L'immagine del messaggio della troupe non si è caricata."* Controlla il file: sotto i 2 MB, JPEG / PNG / WebP. Altri formati e file fuori misura vengono rifiutati.
+*"L'immagine del messaggio della troupe non si è caricata."* Controlla il file: JPEG / PNG / WebP, fino a 1 MB (le immagini grandi vengono ridimensionate automaticamente). Altri formati vengono rifiutati.

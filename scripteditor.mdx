@@ -1,6 +1,6 @@
 ---
 title: Script Editor
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Professional screenplay editing with real-time Fountain formatting, multi-format import, live analytics, and shot list integration."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -11,7 +11,7 @@ CineLog's Script Editor is a professional screenplay editing system built for mo
 
 <CardGrid>
 <Card title="Continuous Persistent Saving">
-  Say goodbye to the "Save" button. The Script Editor continuously and silently saves every single keystroke to your local device the moment you make it, then syncs to the cloud in the background—ensuring you never lose a word of inspiration.
+  Say goodbye to the "Save" button. The Script Editor silently saves every change to your local device within about half a second, then syncs to the cloud in the background—ensuring you never lose a word of inspiration.
 </Card>
 
 <Card title="Real-time Fountain Formatting">
@@ -23,7 +23,7 @@ CineLog's Script Editor is a professional screenplay editing system built for mo
 </Card>
 
 <Card title="Live Analytics">
-  Real-time script analytics. Track page counts, character stats, scene analysis, word counts, and professional metrics as you write.
+  Real-time script analytics. Track estimated page counts, scene counts, line counts, word counts, and character counts as you write.
 </Card>
 
 <Card title="Shot List Integration">
@@ -52,14 +52,14 @@ Automatic classification of scene headings (INT./EXT.), character names, dialogu
 
 **Manual Override Controls**
 
-Precise control with hotkeys: **Cmd+1** Scene Heading, **Cmd+2** Character, **Cmd+3** Dialogue, **Cmd+4** Action, **Cmd+5** Parenthetical, **Cmd+6** Transition, **Cmd+7** Lyrics (**Cmd+E** centers text).
+Precise control with hotkeys: **Cmd+1** Scene Heading, **Cmd+2** Character, **Cmd+3** Dialogue, **Cmd+4** Action, **Cmd+5** Parenthetical, **Cmd+6** Transition, **Cmd+7** Lyrics, **Cmd+E** Centered text element.
 
 </li>
 <li>
 
-**Complete Fountain Support**
+**Fountain Support**
 
-Full Fountain v1.1 specification with forced syntax elements (@Character, !Action, .Scene), text formatting (\*italics\*, \*\*bold\*\*, \_underline\_), and document structure support.
+Core Fountain support with forced syntax elements (@Character, !Action, .Scene) and text formatting (\*italics\*, \*\*bold\*\*, \_underline\_). Sections (#), synopses (=), inline notes ([[ ]]), page breaks (===), and side-by-side dual dialogue are not supported.
 
 </li>
 <li>
@@ -85,11 +85,11 @@ Need to bring in writing from an older app? Click the **Import** button in the S
 </Card>
 
 <Card title="Fountain (.fountain)">
-  Native format support with full v1.1 specification, forced elements, and comment preservation.
+  Native format support with forced elements, title page parsing, and boneyard comment stripping.
 </Card>
 
 <Card title="PDF Scripts">
-  Advanced text extraction with layout preservation using platform-specific libraries and Unicode support.
+  Text extraction from PDF screenplays, with a configuration step for how the text is pulled in.
 </Card>
 
 <Card title="Plain Text (.txt)">
@@ -103,23 +103,19 @@ Need to bring in writing from an older app? Click the **Import** button in the S
 
 ### Real-Time Script Analytics
 
-Professional script metrics updated live as you edit, with industry-standard calculations for accurate production planning.
+A stats sidebar on the desktop editor updates live as you write. It shows five metrics: Pages, Scenes, Lines, Words, and Characters.
 
 <CardGrid>
-<Card title="Page Estimation">
-  Industry-standard page calculation formulas with real-time updates and professional accuracy.
+<Card title="Estimated Page Count">
+  A running page estimate, updated live. Like any page count, it is an estimate until the script is printed.
 </Card>
 
-<Card title="Scene & Character Counts">
-  Live tracking of scenes, unique characters, and dialogue distribution.
+<Card title="Scenes & Lines">
+  Live counts of the scenes in the document and the total number of lines.
 </Card>
 
-<Card title="Element Analysis">
-  Count and analyze action blocks, dialogue lines, transitions, and other script elements for structure review.
-</Card>
-
-<Card title="Word & Character Metrics">
-  Professional writing metrics including total word count and character count.
+<Card title="Words & Characters">
+  Live totals for word count and character count as you type.
 </Card>
 </CardGrid>
 

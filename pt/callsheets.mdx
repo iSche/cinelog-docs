@@ -1,6 +1,6 @@
 ---
 title: Ordens do Dia
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Gere e gerencie ordens do dia para elenco e equipe com agendamento e detalhes de locação."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -68,11 +68,11 @@ Garanta que todos saibam exatamente o que está acontecendo. Clique em **Exporta
 ## Ecossistema integrado de dados
 
 <Aside type="tip">
-O cronograma das Ordens do Dia atua como uma janela bidirecional para a sua decupagem. Editar a ordem ou estimativa de uma cena na Ordem do Dia _instantaneamente_ atualiza o layout da sua decupagem via CineSync.
+O cronograma das Ordens do Dia fica em sincronia com a sua visualização Produção. Reordenar uma cena ou banner, ou editar uma estimativa, na Ordem do Dia é a _mesma edição_ que fazê-la na Produção — as duas sempre mostram as mesmas cenas e banners na mesma ordem.
 </Aside>
 
 <Aside type="tip" title="Benefícios do roteamento de dados">
 -   **Fluxos de Elenco e Equipe**: nomes de elenco, funções de equipe e detalhes de contato fluem estritamente do seu hub central de Elenco e Equipe. Escalar um ator popula seus dados dinamicamente.
 -   **Garantias de tratamento de erros**: qualquer gargalo inválido no cronograma exibe alertas amarelos/vermelhos chamativos na UI, evitando conflitos de timeline.
--   **Roteamento de acesso global**: qualquer pessoa que receba um link de Ordem do Dia é direcionada inteligentemente a criar uma conta, ganhando acesso estritamente ao que sua função permite.
+-   **Portal de confirmação**: qualquer pessoa que receba um e-mail de Ordem do Dia recebe um link protegido por token que abre um portal com a marca CineLog onde ela toca em "Confirmar" para reconhecer o recebimento — sem precisar de conta.
 </Aside>

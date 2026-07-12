@@ -1,6 +1,6 @@
 ---
 title: Shot list essentials
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Build a shot list from scratch — three ways to add shots, how numbering works, how to reorder, and what gets deleted when you remove a shot or a scene."
 ---
 
@@ -12,9 +12,9 @@ This guide assumes [The basics](/guides/introduction). The click-tap-drag vocabu
 
 A new project gives you an empty shot list. There are three ways to fill it:
 
-- **Manually, one shot at a time.** Click the `+ Add Shot` button at the bottom of any scene block.
-- **Hotkey.** `Cmd / Ctrl + N` adds a new shot at the bottom of the currently focused scene.
-- **Populate from Script.** `Shift + P` (or the toolbar button) scans the imported script's scene headings (lines like `INT. KITCHEN - DAY`) and auto-creates one scene block per heading, each with a default shot. The output is only as clean as your script — malformed headings yield malformed scenes.
+- **Manually, one shot at a time.** Click the `New Shot` button on the right of the top menu bar (desktop), or the `+` button in the top app bar (phone). Both open a dialog asking which scene number to add the shot to.
+- **Hotkey.** `Cmd / Ctrl + N` opens the same scene-number dialog, pre-filled with the highest scene number. On an empty list it skips the dialog and creates the first shot in scene 1.
+- **Populate from Script.** Open the Script Editor and press `Shift + P` (or use its Populate button — the hotkey does nothing on the shot list screen). It scans the script's scene headings (lines like `INT. KITCHEN - DAY`) and shows a preview before anything changes: Merge adds only scenes not in your list yet, Replace clears the list and rebuilds it from the script. By default it creates several suggested shots per scene with descriptions and shot types; pick "scenes only" for one placeholder shot per scene instead. Location names from the headings are carried onto the scenes. On the free tier, population stops at the project limit of 25 scenes / 50 shots. The output is only as clean as your script — malformed headings yield malformed scenes.
 
 Most projects start with Populate from Script as a rough first pass, then refine manually.
 
@@ -36,7 +36,7 @@ Drag any shot to move it. The gesture is the universal drag from [The basics](/g
 
 - **Within a scene** — drag up or down. Letters recompact.
 - **Across scenes** — drag past a scene boundary. The shot's scene number changes to match the destination; letters recompact in both source and destination scenes.
-- **Into the gap between two scenes** — the shot joins the nearer existing scene. This does not create a new scene; add scenes with **+ Add Shot** in a new block or via Populate from Script.
+- **Into the gap between two scenes** — the shot joins the end of the scene above. Dragging never creates a new scene; to create one, use the New Shot dialog and type a scene number that doesn't exist yet, or use Populate from Script.
 
 Production view adds a scene-scope rule for multi-selections; see [Linear vs Production](/guides/shot-list/linear-vs-production).
 
@@ -48,11 +48,11 @@ Custom columns you add in [Display Settings](/guides/shot-list/display-settings)
 
 ## Deleting
 
-Right-click a shot → Delete (desktop), or swipe / overflow menu (mobile). The cascade depends on what you delete and where:
+On desktop, open the shot's edit dialog and use the `Delete Shot` button, or select the row(s) and press `Delete` / `Backspace` — a `Delete Selected` button also appears in the selection bar. On mobile, swipe the shot row to reveal the delete action. The cascade depends on what you delete and where:
 
 - **A single shot in Linear view** — removes it from the project. If it was the last shot in its scene, the scene goes too (there's no empty-scene state).
 - **A single shot in Production view** — removes it from the schedule for that day only. The shot still exists in Linear and can be rescheduled.
-- **A scene** (right-click the scene header) — removes the scene and every shot in it, everywhere.
+- **A scene in Linear view** — removes the scene and every shot in it, everywhere. Deleting a scene from a Production day removes it from that day's schedule only.
 
 The confirmation dialog always spells out what's about to disappear before you commit. Full delete semantics across views are in [Linear vs Production](/guides/shot-list/linear-vs-production).
 

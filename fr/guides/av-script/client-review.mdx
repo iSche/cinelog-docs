@@ -1,6 +1,6 @@
 ---
 title: Validation client
-lastUpdated: 2026-07-10
+lastUpdated: 2026-07-11
 description: "Envoie un Script AV à un client pour validation — liens de partage et codes d'accès, tours de validation, statuts de ligne, ce que voit le client, les commentaires à travers les tours, l'e-mail de retours et ce qui se passe après l'approbation."
 ---
 
@@ -28,7 +28,7 @@ Active **Require access code** et le lien s'ouvre sur une barrière au lieu du s
 - Le code fait **6 caractères**, insensible à la casse.
 - Quand tu envoies le lien par e-mail depuis la boîte de dialogue Share, le code est inclus **dans le même e-mail**, dans son propre bloc sous le lien — le client reçoit tout dans un seul message.
 - Le code est valable **24 heures à partir de la première utilisation**. Passé ce délai il expire, et le client voit un message de code expiré à la barrière.
-- Le client ne peut pas renouveler le code lui-même. Quand il expire, renvoie le lien depuis la boîte de dialogue Share — un code expiré est remplacé automatiquement par un nouveau avant le départ de l'e-mail, donc l'e-mail porte toujours un code valide. (Rouvrir la boîte de dialogue Share rafraîchit aussi un code expiré, mais le client ne connaît le nouveau code que lorsque tu l'envoies ou le partages.)
+- Le client ne peut pas renouveler le code lui-même. Quand il expire, rouvre la boîte de dialogue Share — un code expiré est remplacé automatiquement par un nouveau, que tu peux copier pour ton client avec le lien. Renvoyer l'e-mail délivre aussi le nouveau code, mais sur un lien **Comment & Approve** cet appui sur **Send for review** lance un nouveau tour et compte dans les tours de l'offre gratuite (voir ci-dessous) — copier est la solution qui ne consomme pas de tour.
 
 Si tu copies le lien et l'envoies toi-même (chat, ton propre e-mail), le code n'est pas joint — transmets-le par un second canal, séparément du lien.
 
@@ -41,7 +41,7 @@ Avec un lien **Comment & Approve**, saisis l'e-mail du client dans la boîte de 
 
 Avec un lien **View only**, le bouton affiche **Send link** et se contente de l'envoyer par e-mail — aucun tour ne démarre, aucun statut ne change.
 
-Sur l'offre gratuite, chaque projet dispose de **3 tours Send for review** ; les forfaits payants sont illimités. Seul l'appui sur **Send for review** consomme un tour — renvoyer par e-mail le lien d'un tour existant, le copier ou changer les options du lien n'en consomme jamais. Si tu atteins la limite, l'application propose une mise à niveau.
+Sur l'offre gratuite, chaque projet dispose de **3 tours Send for review** ; les forfaits payants sont illimités. **Chaque appui sur Send for review consomme un tour** — y compris renvoyer le lien par e-mail. Copier le lien ou changer les options du lien n'en consomme jamais. Si tu atteins la limite, l'application propose une mise à niveau.
 
 ## Statuts de ligne
 

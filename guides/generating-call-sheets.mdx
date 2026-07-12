@@ -1,6 +1,6 @@
 ---
 title: Call sheets
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, personnel sections, rich-text crew message, sending and confirmation tracking, PDF export."
 ---
 
@@ -66,15 +66,15 @@ To hide the whole locations section from the call sheet (e.g., when the location
 
 ## Schedule
 
-The schedule is the Production view filtered to this day. The shots and banners on the call sheet are the **same objects** as in Production — reordering or editing them here is the same as reordering or editing them there. The gesture grammar is identical to anywhere else in the app.
+The schedule is the Production view filtered to this day. It lists scenes and banners — not individual shots. The scenes and banners on the call sheet are the **same objects** as in Production — reordering or editing them here is the same as reordering or editing them there. The gesture grammar is identical to anywhere else in the app.
 
-Three columns: **start time** | **scene + shot** | **estimated duration**.
+Three columns: **start time** | **scene** | **estimated duration**.
 
 ### Banners
 
 Banners are non-shot rows that mark meal breaks, company moves, wraps, or other schedule markers. They exist only in Production view and on the schedule. Add a banner from the toolbar (or `Cmd / Ctrl + N` in Production); name it ("Lunch", "Company move"), set its duration.
 
-Inserting a banner mid-scene splits the surrounding scene at the banner — see [Linear vs Production](/guides/shot-list/linear-vs-production) for the full split-and-merge behavior.
+Banners added from the schedule land between whole scenes, so they can't split a scene here. To split a scene with a banner, drop it between the scene's shots in the Production tab — see [Linear vs Production](/guides/shot-list/linear-vs-production) for the full split-and-merge behavior; the schedule then shows the split as separate scene rows.
 
 ### The time cascade
 
@@ -84,7 +84,7 @@ If a row's explicit start time lands earlier than the running clock would put it
 
 ### Reordering the schedule
 
-Desktop: long-press a banner or shot row and drag. Mobile: double-tap a row to open the edit overlay (no inline drag). Reorders persist back to the Production view, since these are the same objects.
+Desktop: long-press a banner or scene row and drag. Mobile: double-tap a row to open the edit overlay (no inline drag). Reorders persist back to the Production view, since these are the same objects.
 
 The schedule section can't be hidden — it's always shown.
 
@@ -150,7 +150,7 @@ The editor toolbar supports:
 
 - **Bold, italic, underline.**
 - **Color.** Eight curated swatches (White, Gold, Copper, Rose, Lavender, Sea Glass, Sage, Parchment).
-- **Image embed.** Click the image button, pick an image. Uploads to CineLog's CDN, up to 2 MB, JPEG / PNG / WebP only. The image URL is embedded in the message and appears in the email body.
+- **Image embed.** Click the image button, pick an image. JPEG / PNG / WebP, up to 1 MB — the app resizes large images automatically. The image URL is embedded in the message and appears in the email body.
 - **Clear formatting.**
 
 The rendered email applies the same formatting on the recipient side. The server sanitizes the message before sending — only the allowlisted formatting tags pass through.
@@ -214,13 +214,13 @@ Two ways to get a PDF, depending on the use case:
 
 ### Local export from the toolbar
 
-`Cmd / Ctrl + P` or the export button in the top menu opens the export dialog. You can set page margins (top, bottom, left, right in points), then export. Rendering is local — no upload, no server-side render — so it works offline. Useful when you want a PDF to distribute outside the email flow (Slack, WhatsApp, hand-off in person).
+The **Export** button in the top menu opens the export dialog — there's no keyboard shortcut here (`Cmd / Ctrl + P` export works on the shot list, Storyboard, and AV Script screens, not on call sheets). You can set page margins (top, bottom, left, right in points), then export. Rendering is local — no upload, no server-side render — so it works offline. Useful when you want a PDF to distribute outside the email flow (Slack, WhatsApp, hand-off in person).
 
 ### Per-recipient PDFs at send time
 
 When you press Send, the server generates a personalised PDF for each recipient with their call time highlighted and their per-person notes attached. You don't trigger these directly — they're a side effect of sending.
 
-Both export paths respect display settings: hidden sections stay hidden, the temperature unit and time format are applied. Large media is downsampled.
+Both export paths respect display settings: hidden sections stay hidden, the temperature unit and time format are applied. The PDF prints the schedule as text rows with times — it includes no shot media, and cast and crew always appear with initials avatars, never photos.
 
 International scripts (Arabic, Hebrew, Devanagari, CJK, Thai) render correctly via font fallbacks.
 
@@ -250,4 +250,4 @@ Editing call sheets works offline — changes save to the local database and syn
 
 *"I hit a send limit."* You've exceeded 10 sends in the past hour for this call sheet, or 1000 emails in the past month for the workspace. Wait it out or get in touch if you need a higher limit.
 
-*"My crew message image didn't upload."* Check the file: under 2 MB, JPEG / PNG / WebP. Other formats and oversize files are rejected.
+*"My crew message image didn't upload."* Check the file: JPEG / PNG / WebP, up to 1 MB (large images are resized automatically). Other formats are rejected.

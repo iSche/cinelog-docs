@@ -1,7 +1,7 @@
 ---
 title: Vista Lineare vs Vista Produzione
-lastUpdated: 2026-05-23
-description: "Due viste sulle stesse inquadrature — ordine di sceneggiatura vs ordine giorno di ripresa. Copre la regola di split di scena parziale, banner, selezione scene-scoped, auto-selezione di intestazione scena, sincronizzazione tra viste e come l'eliminazione differisce tra le due viste."
+lastUpdated: 2026-07-11
+description: "Due viste sulle stesse inquadrature — ordine di sceneggiatura vs ordine giorno di ripresa. Copre la regola di split di scena parziale, banner, selezione scene-scoped, selezione di intestazione scena, sincronizzazione tra viste e come l'eliminazione differisce tra le due viste."
 ---
 
 Lineare e Produzione sono due viste delle stesse inquadrature. Lineare è in ordine di sceneggiatura — il modo in cui regista e segretario di edizione la leggono. Produzione è in ordine di giorno di ripresa — il modo in cui l'Aiuto Regista pianifica il programma. Tutto il resto in questa guida riguarda le differenze.
@@ -10,9 +10,9 @@ Questa guida assume [Le basi](/it/guides/introduction) e [Le basi della lista de
 
 ## Cambiare vista
 
-Toggle nell'intestazione della vista sopra la lista. `Shift + L` alterna il layout delle colonne (fit ↔ scroll) — utile quando vuoi vedere più colonne contemporaneamente.
+Usa la barra di navigazione a sinistra: clicca **Linear Shot List** per la vista lineare, o una delle voci **Production day N** sotto di essa per un giorno di produzione. Su telefono, usa invece la navigazione inferiore. `Shift + L` non cambia vista — alterna il layout delle colonne (fit ↔ scroll) all'interno di ciascuna vista, utile quando vuoi vedere più colonne contemporaneamente.
 
-Entrambe le viste mostrano le stesse inquadrature. Le modifiche fatte in una appaiono nell'altra immediatamente.
+Lineare mostra ogni inquadratura del progetto; Produzione mostra solo le inquadrature assegnate a un giorno di ripresa. Per le inquadrature pianificate, entrambe le viste mostrano la stessa inquadratura — le modifiche fatte in una appaiono nell'altra immediatamente.
 
 ## La regola di split di scena parziale (solo Produzione)
 
@@ -28,21 +28,19 @@ La vista Produzione applica una regola di scope di scena alla selezione multipla
 - Puoi selezionare uno o più **interi** blocchi di scena (con le loro intestazioni).
 - **Non puoi** mescolare selezioni parziali da scene diverse.
 
-Se la tua selezione non è valida, il target di rilascio non aprirà uno spazio quando trascini — la riga tornerà alla sua posizione originale al rilascio.
+Mentre trascini, lo spazio di rilascio scatta allo slot valido più vicino — una posizione non valida non viene mai offerta, quindi non c'è ritorno di scatto al rilascio.
 
 **La vista Lineare non ha tale restrizione.** Mischia liberamente.
 
-### Selezionare un'intera scena (intestazione auto-selezionata)
+### Selezionare un'intera scena
 
-Non afferri direttamente l'intestazione di scena. Seleziona ogni inquadratura sotto di essa — una volta che sono tutte selezionate, l'intestazione viene aggiunta automaticamente alla selezione. Deseleziona una qualsiasi inquadratura e anche l'intestazione viene deselezionata. Trascina qualsiasi riga selezionata e l'intero blocco di scena si muove insieme.
-
-Questo è il meccanismo con cui "sposta un'intera scena" funziona in entrambe le viste.
+In vista Produzione, seleziona l'intestazione di scena — questo seleziona l'intera scena. In vista Lineare, le intestazioni di scena non possono essere selezionate; seleziona invece le inquadrature stesse. Trascina qualsiasi riga selezionata e l'intero blocco di scena si muove insieme.
 
 ## Banner
 
 I banner sono righe non-inquadratura che marcano pause pasto, spostamenti di compagnia, wrap o altri marcatori di programmazione. Esistono solo in vista Produzione.
 
-- **Aggiungere un banner.** In Produzione, `Cmd / Ctrl + N` aggiunge un banner invece di un'inquadratura. O usa la toolbar.
+- **Aggiungere un banner.** In Produzione, `Cmd / Ctrl + N` aggiunge un banner invece di un'inquadratura (le scorciatoie da tastiera funzionano sui layout desktop e tablet, non sui telefoni). Oppure usa l'azione **+ Aggiungi banner** della programmazione dell'ordine del giorno — aggiunge allo stesso giorno di produzione, tra scene intere.
 - **Spostare un banner.** Stesso meccanismo di drag delle inquadrature.
 - **Eliminare un banner.** Tasto destro → Elimina.
 
@@ -70,8 +68,8 @@ Quindi "elimina in Lineare" significa *rimuovi*; "elimina in Produzione" signifi
 
 `Cmd / Ctrl + P` esporta la vista attiva in PDF. Il rendering è locale — nessun upload, nessun render lato server.
 
-- **Da Lineare** — raggruppato per scena, in ordine di sceneggiatura. Utile per il segretario di edizione.
-- **Da Produzione** — raggruppato per giorno di ripresa, in ordine programmato. Utile per l'Aiuto Regista.
+- **Da Lineare** — un PDF dell'intera lista, raggruppato per scena in ordine di sceneggiatura. Utile per il segretario di edizione.
+- **Da Produzione** — un PDF di un singolo giorno: inserisci il numero del giorno nella finestra di esportazione e il PDF contiene solo le inquadrature di quel giorno. Per esportare più giorni, esegui l'esportazione una volta per giorno. Utile per l'Aiuto Regista.
 
 I media grandi sulle inquadrature vengono ridimensionati prima dell'esportazione.
 

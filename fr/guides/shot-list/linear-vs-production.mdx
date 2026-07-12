@@ -1,7 +1,7 @@
 ---
 title: Vue Linéaire vs vue Production
-lastUpdated: 2026-05-23
-description: "Deux vues sur les mêmes plans — ordre du scénario vs ordre des jours de tournage. Couvre la règle de division de scène partielle, les bannières, la sélection à portée de scène, l'auto-sélection des en-têtes de scène, la synchronisation entre vues et comment la suppression diffère entre les deux vues."
+lastUpdated: 2026-07-11
+description: "Deux vues sur les mêmes plans — ordre du scénario vs ordre des jours de tournage. Couvre la règle de division de scène partielle, les bannières, la sélection à portée de scène, la sélection des en-têtes de scène, la synchronisation entre vues et comment la suppression diffère entre les deux vues."
 ---
 
 Linéaire et Production sont deux vues des mêmes plans. Linéaire est dans l'ordre du scénario — la façon dont le réalisateur et le superviseur de scénario le lisent. Production est dans l'ordre des jours de tournage — la façon dont le 1er AR planifie le planning. Tout le reste de ce guide concerne les différences.
@@ -10,9 +10,9 @@ Ce guide suppose [Les bases](/fr/guides/introduction) et [Les bases du découpag
 
 ## Changer de vue
 
-Bascule dans l'en-tête de vue au-dessus de la liste. `Shift + L` bascule la disposition des colonnes (ajustée ↔ défilante) — utile quand tu veux voir plus de colonnes à la fois.
+Utilise la barre de navigation gauche : clique sur **Découpage Technique linéaire** pour la vue linéaire, ou sur l'une des entrées **Jour de production N** en dessous pour un jour de production. Sur téléphone, utilise plutôt la navigation inférieure. `Shift + L` ne change pas de vue — il bascule la disposition des colonnes (ajustée ↔ défilante) au sein de l'une ou l'autre vue, utile quand tu veux voir plus de colonnes à la fois.
 
-Les deux vues montrent les mêmes plans. Les modifications faites dans l'une apparaissent dans l'autre immédiatement.
+Linéaire montre chaque plan du projet ; Production ne montre que les plans assignés à un jour de tournage. Pour les plans planifiés, les deux vues montrent le même plan — les modifications faites dans l'une apparaissent dans l'autre immédiatement.
 
 ## La règle de division de scène partielle (Production seulement)
 
@@ -28,21 +28,19 @@ La vue Production applique une règle de portée de scène sur la multi-sélecti
 - Tu peux sélectionner un ou plusieurs **blocs de scène entiers** (avec leurs en-têtes).
 - Tu **ne peux pas** mélanger des sélections partielles de scènes différentes.
 
-Si ta sélection est invalide, la cible de dépôt n'ouvrira pas d'espace quand tu fais glisser — la ligne reviendra à sa position d'origine au relâchement.
+Pendant que tu fais glisser, l'espace de dépôt se cale sur l'emplacement valide le plus proche — une position invalide n'est jamais proposée, donc rien ne revient en arrière au relâchement.
 
 **La vue Linéaire n'a pas de telle restriction.** Mélange librement.
 
-### Sélectionner une scène entière (en-tête auto-sélectionné)
+### Sélectionner une scène entière
 
-Tu n'attrapes pas directement l'en-tête de scène. Sélectionne tous les plans en dessous — une fois qu'ils sont tous sélectionnés, l'en-tête est ajouté à la sélection automatiquement. Désélectionne n'importe quel plan et l'en-tête se désélectionne aussi. Fais glisser n'importe quelle ligne sélectionnée et tout le bloc de scène se déplace ensemble.
-
-C'est le mécanisme par lequel « déplacer une scène entière » fonctionne dans l'une ou l'autre vue.
+En vue Production, sélectionne l'en-tête de scène — cela sélectionne toute sa scène. En vue Linéaire, les en-têtes de scène ne peuvent pas être sélectionnés ; sélectionne plutôt les plans eux-mêmes. Fais glisser n'importe quelle ligne sélectionnée et tout le bloc de scène se déplace ensemble.
 
 ## Bannières
 
 Les bannières sont des lignes non-plan qui marquent les pauses repas, les déplacements d'équipe, les fins de journée ou d'autres marqueurs de planning. Elles n'existent qu'en vue Production.
 
-- **Ajouter une bannière.** En Production, `Cmd / Ctrl + N` ajoute une bannière au lieu d'un plan. Ou utilise la barre d'outils.
+- **Ajouter une bannière.** En Production, `Cmd / Ctrl + N` ajoute une bannière au lieu d'un plan (les raccourcis clavier fonctionnent sur les dispositions bureau et tablette, pas sur téléphone). Ou utilise l'action **+ Ajouter une bannière** du planning de la feuille de service — elle ajoute au même jour de production, entre des scènes entières.
 - **Déplacer une bannière.** Même mécanisme de glissement que les plans.
 - **Supprimer une bannière.** Clic droit → Supprimer.
 
@@ -70,8 +68,8 @@ Donc « supprimer en Linéaire » signifie *retirer* ; « supprimer en Productio
 
 `Cmd / Ctrl + P` exporte la vue active en PDF. Le rendu est local — pas de téléversement, pas de rendu côté serveur.
 
-- **Depuis Linéaire** — groupé par scène, dans l'ordre du scénario. Utile pour le superviseur de scénario.
-- **Depuis Production** — groupé par jour de tournage, dans l'ordre planifié. Utile pour le 1er AR.
+- **Depuis Linéaire** — un seul PDF de toute la liste, groupé par scène dans l'ordre du scénario. Utile pour le superviseur de scénario.
+- **Depuis Production** — un PDF d'un seul jour : saisis le numéro de jour dans la boîte de dialogue d'export et le PDF ne contient que les plans de ce jour. Pour exporter plusieurs jours, lance l'export une fois par jour. Utile pour le 1er AR.
 
 Les médias volumineux sur les plans sont sous-échantillonnés avant l'export.
 

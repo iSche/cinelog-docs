@@ -1,6 +1,6 @@
 ---
 title: Ordens do Dia
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Ordens do dia diárias no CineLog — cabeçalho e hora de apresentação, locações, cronograma com cascata de tempos, clima, seções de pessoal, mensagem rica para a equipe, envio e rastreamento de confirmações, exportação em PDF."
 ---
 
@@ -66,15 +66,15 @@ Para ocultar toda a seção de locações da ordem do dia (ex.: quando a locaç�
 
 ## Cronograma
 
-O cronograma é a visualização Produção filtrada para este dia. Os planos e banners na ordem do dia são os **mesmos objetos** da visualização Produção — reordenar ou editá-los aqui é o mesmo que reordenar ou editá-los lá. A gramática de gestos é idêntica à de qualquer outro lugar do app.
+O cronograma é a visualização Produção filtrada para este dia. Ele lista cenas e banners — não planos individuais. As cenas e banners na ordem do dia são os **mesmos objetos** da visualização Produção — reordenar ou editá-los aqui é o mesmo que reordenar ou editá-los lá. A gramática de gestos é idêntica à de qualquer outro lugar do app.
 
-Três colunas: **hora de início** | **cena + plano** | **duração estimada**.
+Três colunas: **hora de início** | **cena** | **duração estimada**.
 
 ### Banners
 
 Os banners são linhas que não são planos e que marcam intervalos para refeições, mudanças de locação, encerramentos ou outros marcadores de cronograma. Eles existem apenas na visualização Produção e no cronograma. Adicione um banner pela barra de ferramentas (ou `Cmd / Ctrl + N` na Produção); nomeie-o ("Almoço", "Mudança de locação"), defina sua duração.
 
-Inserir um banner no meio de uma cena divide a cena envolvente no banner — veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production) para o comportamento completo de divisão e mesclagem.
+Banners adicionados pelo cronograma ficam entre cenas inteiras, então não podem dividir uma cena aqui. Para dividir uma cena com um banner, solte-o entre os planos da cena na aba Produção — veja [Linear vs Produção](/pt/guides/shot-list/linear-vs-production) para o comportamento completo de divisão e mesclagem; o cronograma então mostra a divisão como linhas de cena separadas.
 
 ### A cascata de tempos
 
@@ -84,7 +84,7 @@ Se a hora de início explícita de uma linha cai antes do que o relógio acumula
 
 ### Reordenando o cronograma
 
-Desktop: pressione e segure um banner ou linha de plano e arraste. Celular: dê um toque duplo em uma linha para abrir a sobreposição de edição (sem arrastar inline). Reordenações persistem de volta à visualização Produção, já que esses são os mesmos objetos.
+Desktop: pressione e segure um banner ou linha de cena e arraste. Celular: dê um toque duplo em uma linha para abrir a sobreposição de edição (sem arrastar inline). Reordenações persistem de volta à visualização Produção, já que esses são os mesmos objetos.
 
 A seção de cronograma não pode ser ocultada — é sempre exibida.
 
@@ -150,7 +150,7 @@ A barra de ferramentas do editor suporta:
 
 - **Negrito, itálico, sublinhado.**
 - **Cor.** Oito amostras curadas (White, Gold, Copper, Rose, Lavender, Sea Glass, Sage, Parchment).
-- **Embed de imagem.** Clique no botão de imagem, escolha uma imagem. Faz upload para o CDN do CineLog, até 2 MB, somente JPEG / PNG / WebP. A URL da imagem é incorporada na mensagem e aparece no corpo do e-mail.
+- **Embed de imagem.** Clique no botão de imagem, escolha uma imagem. JPEG / PNG / WebP, até 1 MB — o app redimensiona imagens grandes automaticamente. A URL da imagem é incorporada na mensagem e aparece no corpo do e-mail.
 - **Limpar formatação.**
 
 O e-mail renderizado aplica a mesma formatação no lado do destinatário. O servidor sanitiza a mensagem antes do envio — somente as tags de formatação na lista de permissões passam.
@@ -214,13 +214,13 @@ Duas formas de obter um PDF, dependendo do caso de uso:
 
 ### Exportação local pela barra de ferramentas
 
-`Cmd / Ctrl + P` ou o botão de exportar no menu superior abre o diálogo de exportação. Você pode definir as margens da página (topo, base, esquerda, direita em pontos) e exportar. A renderização é local — sem upload, sem renderização do lado do servidor — então funciona offline. Útil quando você quer um PDF para distribuir fora do fluxo de e-mail (Slack, WhatsApp, entrega pessoal).
+O botão **Exportar** no menu superior abre o diálogo de exportação — não há atalho de teclado aqui (a exportação com `Cmd / Ctrl + P` funciona nas telas de decupagem, Storyboard e Roteiro AV, não nas ordens do dia). Você pode definir as margens da página (topo, base, esquerda, direita em pontos) e exportar. A renderização é local — sem upload, sem renderização do lado do servidor — então funciona offline. Útil quando você quer um PDF para distribuir fora do fluxo de e-mail (Slack, WhatsApp, entrega pessoal).
 
 ### PDFs por destinatário no momento do envio
 
 Quando você pressiona Enviar, o servidor gera um PDF personalizado para cada destinatário com sua hora de apresentação destacada e suas notas pessoais anexadas. Você não dispara isso diretamente — é um efeito colateral do envio.
 
-Ambos os caminhos de exportação respeitam as configurações de exibição: seções ocultas continuam ocultas, a unidade de temperatura e o formato de hora são aplicados. Mídia grande é reduzida.
+Ambos os caminhos de exportação respeitam as configurações de exibição: seções ocultas continuam ocultas, a unidade de temperatura e o formato de hora são aplicados. O PDF imprime o cronograma como linhas de texto com horários — não inclui mídia de planos, e elenco e equipe sempre aparecem com avatares de iniciais, nunca fotos.
 
 Scripts internacionais (árabe, hebraico, devanágari, CJK, tailandês) renderizam corretamente via fallbacks de fonte.
 
@@ -250,4 +250,4 @@ Editar ordens do dia funciona offline — as alterações são salvas no banco l
 
 *"Bati em um limite de envio."* Você excedeu 10 envios na última hora para esta ordem do dia, ou 1000 e-mails no último mês para o workspace. Espere ou entre em contato se precisar de um limite maior.
 
-*"A imagem da mensagem para a equipe não subiu."* Verifique o arquivo: abaixo de 2 MB, JPEG / PNG / WebP. Outros formatos e arquivos grandes demais são rejeitados.
+*"A imagem da mensagem para a equipe não subiu."* Verifique o arquivo: JPEG / PNG / WebP, até 1 MB (imagens grandes são redimensionadas automaticamente). Outros formatos são rejeitados.

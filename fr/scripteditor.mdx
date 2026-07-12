@@ -1,6 +1,6 @@
 ---
 title: Logiciel de Scénario
-lastUpdated: 2026-06-22
+lastUpdated: 2026-07-11
 description: "Édition professionnelle de scénarios avec formatage Fountain en temps réel, import multi-format, analyses en direct et intégration au découpage technique."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -11,7 +11,7 @@ Le Logiciel de Scénario de CineLog est un système d'édition de scénario prof
 
 <CardGrid>
 <Card title="Sauvegarde continue et persistante">
-  Dis adieu au bouton « Sauvegarder ». Le Logiciel de Scénario sauvegarde silencieusement et en continu chaque frappe sur ton appareil local au moment où tu la fais, puis synchronise vers le cloud en arrière-plan — pour que tu ne perdes jamais un mot d'inspiration.
+  Dis adieu au bouton « Sauvegarder ». Le Logiciel de Scénario sauvegarde silencieusement chaque changement sur ton appareil local en environ une demi-seconde, puis synchronise vers le cloud en arrière-plan — pour que tu ne perdes jamais un mot d'inspiration.
 </Card>
 
 <Card title="Formatage Fountain en temps réel">
@@ -23,7 +23,7 @@ Le Logiciel de Scénario de CineLog est un système d'édition de scénario prof
 </Card>
 
 <Card title="Analyses en direct">
-  Analyses de scénario en temps réel. Suis le nombre de pages, les statistiques de personnages, l'analyse des scènes, le nombre de mots et les métriques professionnelles pendant que tu écris.
+  Analyses de scénario en temps réel. Suis le nombre estimé de pages, le nombre de scènes, le nombre de lignes, le nombre de mots et le nombre de caractères pendant que tu écris.
 </Card>
 
 <Card title="Intégration au Découpage Technique">
@@ -52,14 +52,14 @@ Classification automatique des en-têtes de scène (INT./EXT.), des noms de pers
 
 **Contrôles manuels**
 
-Contrôle précis avec des raccourcis : **Cmd+1** pour En-tête de scène, **Cmd+2** pour Personnage, **Cmd+3** pour Dialogue, **Cmd+4** pour Action, **Cmd+5** pour Parenthèse, **Cmd+6** pour Transition, **Cmd+7** pour Paroles (**Cmd+E** centre le texte).
+Contrôle précis avec des raccourcis : **Cmd+1** pour En-tête de scène, **Cmd+2** pour Personnage, **Cmd+3** pour Dialogue, **Cmd+4** pour Action, **Cmd+5** pour Parenthèse, **Cmd+6** pour Transition, **Cmd+7** pour Paroles, **Cmd+E** pour Élément texte centré.
 
 </li>
 <li>
 
-**Support complet de Fountain**
+**Support de Fountain**
 
-Spécification complète Fountain v1.1 avec éléments de syntaxe forcés (@Personnage, !Action, .Scène), formatage de texte (\*italique\*, \*\*gras\*\*, \_souligné\_) et support de la structure de document.
+Support Fountain de base avec éléments de syntaxe forcés (@Personnage, !Action, .Scène) et formatage de texte (\*italique\*, \*\*gras\*\*, \_souligné\_). Les sections (#), synopsis (=), notes en ligne ([[ ]]), sauts de page (===) et le dialogue double côte à côte ne sont pas pris en charge.
 
 </li>
 <li>
@@ -85,7 +85,7 @@ Besoin d'importer du travail depuis une ancienne application ? Clique sur le bou
 </Card>
 
 <Card title="Fountain (.fountain)">
-  Support du format natif avec spécification complète v1.1, éléments forcés et préservation des commentaires.
+  Support du format natif avec éléments forcés, analyse de la page de titre et suppression des commentaires boneyard.
 </Card>
 
 <Card title="Scénarios PDF">
