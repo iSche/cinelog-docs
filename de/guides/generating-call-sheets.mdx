@@ -195,15 +195,6 @@ Jede Empfängerzeile zeigt:
 
 Lieferung und Bestätigung sind unabhängig: Eine E-Mail kann geliefert werden, ohne bestätigt zu sein (der Empfänger hat nicht geöffnet oder nicht geklickt), oder schnell bestätigt sein (sie waren in der Mail, als sie ankam).
 
-### Rate-Limits
-
-Um Runaway-Sends zu verhindern, erzwingt CineLog zwei Obergrenzen:
-
-- **Pro Disposition:** bis zu 10 Sends pro Stunde.
-- **Pro Workspace:** bis zu 1000 E-Mails pro Monat.
-
-Diese sind großzügig für normale Nutzung; du erreichst sie nur, wenn etwas loopt oder du eine ungewöhnlich große Operation fährst.
-
 ### Erneutes Senden und Bearbeitungen
 
 Du kannst dieselbe Disposition nach dem Bearbeiten erneut senden (eine Drehbuchänderung, ein Crew-Tausch, eine Garderobennotiz). Das neue Senden erstellt einen neuen Batch auf der Sendouts-Seite; vorherige Batches bleiben für den Audit-Trail intakt.
@@ -247,7 +238,5 @@ Das Bearbeiten von Dispositionen funktioniert offline – Änderungen werden in 
 *"Ein Crew-Mitglied sagt, sie haben die Disposition nicht erhalten."* Öffne die Sendouts-Seite für diesen Tag und finde ihre Zeile. **delivered** oder **opened** heißt, sie hat CineLog verlassen und wurde von ihrem Mail-Provider akzeptiert – das Problem ist nachgelagert (Spam-Ordner, Mailbox-Regeln, versehentlich gelöscht). **bounced** oder **failed** heißt, die E-Mail hat sie nie erreicht; prüfe die Adresse in Cast & Crew und sende erneut. **queued** heißt, sie ist noch unterwegs; gib ihr eine Minute.
 
 *"Der Bestätigt-Zähler steigt nicht."* Bestätigung erfordert, dass der Empfänger den Link in der E-Mail klickt. Lieferung allein reicht nicht.
-
-*"Ich habe ein Send-Limit erreicht."* Du hast in der letzten Stunde 10 Sends für diese Disposition überschritten oder 1000 E-Mails im letzten Monat für den Workspace. Warte ab oder melde dich, wenn du ein höheres Limit brauchst.
 
 *"Mein Crew-Message-Bild wurde nicht hochgeladen."* Prüfe die Datei: JPEG / PNG / WebP, bis zu 1 MB (große Bilder werden automatisch verkleinert). Andere Formate werden abgelehnt.

@@ -195,15 +195,6 @@ Chaque ligne de destinataire affiche :
 
 La livraison et la confirmation sont indépendantes : un e-mail peut être livré sans être confirmé (le destinataire ne l'a pas ouvert ou n'a pas encore cliqué), ou confirmé rapidement (il était sur sa messagerie quand il est arrivé).
 
-### Limites de débit
-
-Pour prévenir les envois incontrôlés, CineLog applique deux plafonds :
-
-- **Par feuille de service :** jusqu'à 10 envois par heure.
-- **Par espace de travail :** jusqu'à 1000 e-mails par mois.
-
-Ce sont des limites généreuses pour un usage normal ; tu ne les atteindras que si quelque chose boucle ou si tu fais une opération inhabituellement grande.
-
 ### Renvois et modifications
 
 Tu peux renvoyer la même feuille de service après l'avoir modifiée (un changement de scénario, un changement d'équipe, une note de costumes). Le nouvel envoi crée un lot frais sur la page Envois ; les lots précédents restent intacts pour la traçabilité.
@@ -247,7 +238,5 @@ L'édition des feuilles de service fonctionne hors-ligne — les modifications s
 *« Un membre d'équipe dit qu'il n'a pas reçu la feuille de service. »* Ouvre la page Envois pour ce jour et trouve sa ligne. **livré** ou **ouvert** signifie qu'elle a quitté CineLog et a été acceptée par son fournisseur de messagerie — le problème est en aval (dossier spam, règles de boîte aux lettres, supprimé par accident). **rejeté** ou **échec** signifie que l'e-mail ne lui est jamais parvenu ; vérifie l'adresse dans Casting et Équipe et renvoie. **en file** signifie qu'il est encore en route ; attends une minute.
 
 *« Le décompte des confirmés n'augmente pas. »* La confirmation requiert que le destinataire clique sur le lien dans l'e-mail. La livraison seule ne suffit pas.
-
-*« J'ai atteint une limite d'envoi. »* Tu as dépassé 10 envois dans la dernière heure pour cette feuille de service, ou 1000 e-mails dans le dernier mois pour l'espace de travail. Attends ou contacte-nous si tu as besoin d'une limite plus élevée.
 
 *« L'image de mon message équipe ne s'est pas téléversée. »* Vérifie le fichier : JPEG / PNG / WebP, jusqu'à 1 Mo (les images volumineuses sont redimensionnées automatiquement). Les autres formats sont rejetés.

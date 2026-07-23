@@ -195,15 +195,6 @@ Cada linha de destinatário mostra:
 
 Entrega e confirmação são independentes: um e-mail pode ser entregue sem ser confirmado (o destinatário ainda não abriu ou ainda não clicou), ou confirmado rapidamente (a pessoa estava no e-mail quando chegou).
 
-### Limites de taxa
-
-Para evitar envios descontrolados, o CineLog impõe dois tetos:
-
-- **Por ordem do dia:** até 10 envios por hora.
-- **Por workspace:** até 1000 e-mails por mês.
-
-São generosos para uso normal; você só vai bater neles se algo estiver em loop ou estiver rodando uma operação fora do comum.
-
 ### Reenvios e edições
 
 Você pode reenviar a mesma ordem do dia depois de editá-la (uma mudança de roteiro, troca de equipe, nota de figurino). O novo envio cria um lote novo na página de Envios; lotes anteriores ficam intactos para a trilha de auditoria.
@@ -247,7 +238,5 @@ Editar ordens do dia funciona offline — as alterações são salvas no banco l
 *"Um membro da equipe disse que não recebeu a ordem do dia."* Abra a página de Envios daquele dia e ache a linha dele. **delivered** ou **opened** significa que saiu do CineLog e foi aceito pelo provedor de e-mail dele — o problema é downstream (pasta de spam, regras de caixa, apagado por engano). **bounced** ou **failed** significa que o e-mail nunca chegou; verifique o endereço em Elenco e Equipe e reenvie. **queued** significa que ainda está a caminho; dê um minuto.
 
 *"A contagem de confirmados não está subindo."* A confirmação exige que o destinatário clique no link do e-mail. Só a entrega não basta.
-
-*"Bati em um limite de envio."* Você excedeu 10 envios na última hora para esta ordem do dia, ou 1000 e-mails no último mês para o workspace. Espere ou entre em contato se precisar de um limite maior.
 
 *"A imagem da mensagem para a equipe não subiu."* Verifique o arquivo: JPEG / PNG / WebP, até 1 MB (imagens grandes são redimensionadas automaticamente). Outros formatos são rejeitados.

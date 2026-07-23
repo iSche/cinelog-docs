@@ -142,7 +142,15 @@ Toggle "Profile Pictures" off in display settings if you want all-initials avata
 
 Each section (Locations, Clients, Talent, Crew, Extras) can be hidden from the call sheet via the display settings popup. The toggle hides the section from both the UI and the exported PDF.
 
-## Crew message
+## Production notes
+
+A footer field for production-wide notes, safety reminders, COVID protocols, or anything you want at the bottom of every recipient's PDF. Appears centered, uppercased.
+
+## Distribution
+
+Getting the finished call sheet to the people on it: the shared message that goes out with it, choosing recipients, the send itself, and tracking delivery and confirmations. Editing the sheet's content is covered above; this is the outbound side.
+
+### Crew message
 
 A rich-text block for the message that goes out alongside the call sheet PDF. Same message for all recipients — for individual instructions use per-person notes above.
 
@@ -155,17 +163,9 @@ The editor toolbar supports:
 
 The rendered email applies the same formatting on the recipient side. The server sanitizes the message before sending — only the allowlisted formatting tags pass through.
 
-## Production notes
+### Sending
 
-A footer field for production-wide notes, safety reminders, COVID protocols, or anything you want at the bottom of every recipient's PDF. Appears centered, uppercased.
-
-## Sending and tracking confirmations
-
-When the call sheet is ready, **Send** in the top menu bar opens the send dialog.
-
-### Picking recipients
-
-Two steps:
+When the call sheet is ready, **Send** in the top menu bar opens the send dialog. Two steps:
 
 1. **Recipients.** A list grouped by section (Talent, Crew, Extras, Clients), sorted by department and role. Everyone with a call time on the sheet is preselected by default. Bulk toggles let you select or deselect a whole section at once.
 2. **Message.** Optional additional message specific to this send, layered on top of the crew message.
@@ -194,15 +194,6 @@ Each recipient row shows:
 - **Confirmation timestamp** — once they click their link.
 
 Delivery and confirmation are independent: an email can be delivered without being confirmed (the recipient hasn't opened or hasn't clicked yet), or confirmed quickly (they were on email when it arrived).
-
-### Rate limits
-
-To prevent runaway sends, CineLog enforces two ceilings:
-
-- **Per call sheet:** up to 10 sends per hour.
-- **Per workspace:** up to 1000 emails per month.
-
-These are generous for normal use; you'll only hit them if something's looping or you're running an unusually large operation.
 
 ### Re-sends and edits
 
@@ -247,7 +238,5 @@ Editing call sheets works offline — changes save to the local database and syn
 *"A crew member says they didn't get the call sheet."* Open the Sendouts page for that day and find their row. **delivered** or **opened** means it left CineLog and was accepted by their mail provider — the issue is downstream (spam folder, mailbox rules, deleted by accident). **bounced** or **failed** means the email never reached them; check the address in Cast & Crew and re-send. **queued** means it's still on the way; give it a minute.
 
 *"The confirmed count isn't going up."* Confirmation requires the recipient to click the link in the email. Delivery alone isn't enough.
-
-*"I hit a send limit."* You've exceeded 10 sends in the past hour for this call sheet, or 1000 emails in the past month for the workspace. Wait it out or get in touch if you need a higher limit.
 
 *"My crew message image didn't upload."* Check the file: JPEG / PNG / WebP, up to 1 MB (large images are resized automatically). Other formats are rejected.

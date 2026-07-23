@@ -195,15 +195,6 @@ Ogni riga destinatario mostra:
 
 Consegna e conferma sono indipendenti: un'email può essere consegnata senza essere confermata (il destinatario non l'ha aperta o non ha cliccato ancora), o confermata rapidamente (era sull'email quando è arrivata).
 
-### Limiti di frequenza
-
-Per prevenire invii fuori controllo, CineLog applica due limiti massimi:
-
-- **Per ordine del giorno:** fino a 10 invii all'ora.
-- **Per workspace:** fino a 1000 email al mese.
-
-Questi sono generosi per uso normale; li raggiungerai solo se qualcosa entra in loop o stai gestendo un'operazione insolitamente grande.
-
 ### Reinvii e modifiche
 
 Puoi reinviare lo stesso ordine del giorno dopo averlo modificato (un cambio nel copione, uno scambio di troupe, una nota costume). Il nuovo invio crea un batch fresco sulla pagina Invii; i batch precedenti restano intatti per la cronologia di audit.
@@ -247,7 +238,5 @@ Modificare gli ordini del giorno funziona offline — le modifiche si salvano su
 *"Un membro della troupe dice che non ha ricevuto l'ordine del giorno."* Apri la pagina Invii per quel giorno e trova la sua riga. **consegnato** o **aperto** significa che è uscito da CineLog ed è stato accettato dal suo provider di posta — il problema è a valle (cartella spam, regole della casella, eliminato per errore). **bounced** o **fallito** significa che l'email non l'ha mai raggiunto; controlla l'indirizzo in Cast & Troupe e reinvia. **in coda** significa che è ancora in arrivo; dagli un minuto.
 
 *"Il conteggio confermati non sale."* La conferma richiede che il destinatario clicchi il link nell'email. La consegna da sola non basta.
-
-*"Ho raggiunto un limite di invio."* Hai superato 10 invii nell'ultima ora per questo ordine del giorno, o 1000 email negli ultimi 30 giorni per il workspace. Aspetta o contattaci se hai bisogno di un limite più alto.
 
 *"L'immagine del messaggio della troupe non si è caricata."* Controlla il file: JPEG / PNG / WebP, fino a 1 MB (le immagini grandi vengono ridimensionate automaticamente). Altri formati vengono rifiutati.
