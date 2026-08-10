@@ -11,6 +11,7 @@ The Markdown files hosted here serve as the canonical source of truth for CineLo
 - [Call Sheets](callsheets.mdx) - Automated aggregation of schedules, location logistics, and cast & crew information.
 - [Cast & Crew](castandcrew.mdx) - Centralized roster management, roles, custom roles, cast numbers, and project invitations.
 - [Media Explorer](mediaexplorer.mdx) - Project-based media file management and storage tracking.
+- [Schedule](schedule.mdx) - Stripboard scheduling: scene strips on shooting days, scene parts, cast and locations per strip, PDF export.
 - [Script Breakdown](breakdown.mdx) - Tag cast, props, wardrobe, and other production elements on the script page; export breakdown sheets.
 - [Script Editor](scripteditor.mdx) - Real-time script editing on true US Letter pages, with lock, revisions, and breakdown.
 - [Shot List](shotlist.mdx) - Advanced shot creation (linear, production, and focus views).
@@ -28,4 +29,6 @@ The Markdown files hosted here serve as the canonical source of truth for CineLo
 - [Writing & Formatting Scripts](guides/writing-formatting-scripts.mdx) - Pages, the title page, Fountain formatting, zoom, analytics, and export.
 - [Importing Scripts](guides/importing-scripts.mdx) - The import review: accept or reject every change before it lands.
 - [Script Lock & Revisions](guides/script-lock-and-revisions.mdx) - Locking scene numbers and pages, colored revision rounds, omitted scenes.
+- [Breaking Down the Script](guides/breaking-down-the-script.mdx) - Workflow from a locked script to tagged elements and exported breakdown sheets.
+- [Building the Schedule](guides/building-the-schedule.mdx) - Workflow from broken-down scenes to shooting days, strips, and call sheets.
 - [CineLog in the Browser](guides/cinelog-in-the-browser.mdx) - The web app at app.cinelog.com: one-tab rule, storage warnings, web billing.

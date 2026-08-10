@@ -1,0 +1,87 @@
+---
+title: Breaking down the script
+lastUpdated: 2026-08-10
+description: "A workflow guide to the Script Breakdown: lock your scene numbers, tag elements on the page, let CineLog find your cast, hunt down the unwritten requirements, and hand every department its list."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+For decades, a breakdown meant a printed script, a ruler, and a box of colored pencils. You read every line, and every time the script mentioned a prop, a costume, a vehicle, or a person, you marked it in that department's color. CineLog's Breakdown is the same craft on the same page. You select the words, you pick a category, and the marks stay right there in the script while the elements roll up into one list you can hand to every department.
+
+This guide walks the workflow from a finished script to exported breakdown sheets. The full reference for every control is on the [Script Breakdown](/breakdown) page. If you haven't locked a script before, read [Script lock & revisions](/guides/script-lock-and-revisions) first, because the breakdown starts with a lock.
+
+## Start with a locked script
+
+Open your script and press **Breakdown** in the editor's top menu bar. On the phone it's in the **More** sheet, right under Script Editor.
+
+The first time you open it, CineLog asks to lock your scene numbers. Say yes, because a breakdown pins every element to a scene number, and those numbers need to stop moving. A breakdown that says "the revolver is in scene 12" is worthless the day scene 12 becomes scene 13. From the lock onward, new scenes get letter numbers like 78A and removed scenes become OMITTED instead of disappearing. Your pages keep flowing and you can keep writing. Nothing about the lock stops the writing.
+
+## Tag your first element
+
+Let's take a worked example and carry it through this guide. Say we're breaking down a short film about a photographer named John, and scene 4 reads: "John grabs the revolver from the drawer."
+
+Select the word "revolver" with a drag, or just double-click it. The tag editor opens on its own once the selection settles. On touch devices, select the text and press **Tag** on the small toolbar that appears over it.
+
+The editor shows a grid of twelve categories, an **Element** field pre-filled with your selected text, and a **Qty** field. Pick **Props**, and press **Tag**. That's the whole move. The word stays underlined in purple on the page, and "Revolver" now exists as an element in your project.
+
+Two rules to know about selections. They have to stay within a single line, and they have to land inside a locked scene, so the title page can't be tagged.
+
+If you like the keyboard, you can move really fast here: keys `1` through `9` pick the first nine categories, `Tab` jumps to the Element field with the text selected, and `Enter` saves. Tagging a full scene settles into a rhythm of select, number, Enter.
+
+## One element, many scenes
+
+Now say the revolver comes back in scene 19. Tag it there too. CineLog sees an element named "Revolver" already exists in Props and tells you it will use the existing one. So you get one revolver that appears in two scenes, not two revolvers, and the prop master's list stays honest.
+
+After you tag something, CineLog also looks for the same words in other scenes and offers them all in one dialog. Each hit shows the scene and a snippet, exact matches start checked, and you press **Tag N** to take them all at once. You can rerun that pass any time from the element's menu with **Find similar…**. If you decline a suggestion, CineLog remembers the no and won't offer that spot again.
+
+## The categories are the departments
+
+The twelve categories map to the people who'll read your sheets: Cast, Stunts, two kinds of Extras, Special Effects, Props, Vehicles & Animals, Sound & Music, Wardrobe, Makeup & Hair, Special Equipment, and Production Notes as the catch-all.
+
+The marks on the page follow the classic paper conventions. Most categories underline in their color, Wardrobe gets a circle in the margin, Makeup & Hair gets asterisks around the words, and Special Equipment gets a box. A crew member who learned to break down scripts by hand reads your pages without a legend, because these are the same marks their pencils made.
+
+<Aside type="note">
+The twelve categories are fixed in this version. If something fits nowhere, file it under Production Notes, because a tagged element in the wrong box still beats an untagged one in nobody's box.
+</Aside>
+
+## Cast finds itself
+
+Cast is the one category you mostly don't tag by hand.
+
+Whenever you lock scenes, lock pages, start a revision, or import, CineLog tags each character's first cue in every scene. Those tags arrive confirmed, because a cue is not a guess. When a character's name shows up in action lines, CineLog tags that too, but marks it as awaiting review with a dotted underline, because "JOHN" in a stage direction might be a different John. Untag the wrong ones and they stay gone. The right ones need no action from you, they already count.
+
+CineLog never merges look-alike names on its own. MARIA and MARIE stay separate until you merge them, because only you know whether that's a typo or two people.
+
+Each detected character also gets a numbered **Talent slot** in [Cast & Crew](/castandcrew). CineLog guesses the role from how much the character works. A character in a third or more of your scenes comes in as Principal, three scenes or more as Supporting, and the rest as Day Players. You can change any of that afterwards, and if you already manage your cast list by hand, CineLog notices and leaves your roster alone.
+
+## Hunt the unwritten requirements
+
+Here's where a breakdown stops being clerical work and starts being detective work. The script never lists everything it needs. It hints.
+
+Say a scene reads: "A delivery girl arrives with the groceries." The screenwriter wrote one person. The production needs the person, the grocery bags she carries, the uniform she wears, and maybe the delivery van parked behind her. None of those are words you can select on the page.
+
+That's what **Add new…** at the bottom of every category section is for. It tags a whole scene without underlining any text, so the implied things get counted too. An EXT. STREET - NIGHT scene that will clearly need a rain rig gets one the same way. A good pass here is what separates a breakdown that survives contact with the shoot from one that doesn't, so go scene by scene and keep asking what the page is assuming you'll bring.
+
+## Keep the list clean
+
+The right-hand panel (the **Tags** page on phones) is your element list, grouped by category. Tapping a row jumps the script to its next occurrence, and the arrows step through all of them.
+
+Each element's `⋯` menu carries the housekeeping: **Edit…**, **Find similar…**, **Merge into…**, **Archive**, and **Delete…**. Merge moves every tag onto the element you pick, which is how MARIA and MARIE become one person. Archive takes an element out of every scene but keeps it, which is the safer choice when you're not sure. Delete is for things that never belonged.
+
+Rows can carry warnings, each explained in its tooltip: tags awaiting review, tags sitting in a scene that no longer exists, and tagged text that couldn't be found after edits. A clean panel before export is worth ten minutes, because every warning you clear now is a question nobody asks you on set.
+
+## Where the cast goes next
+
+Cast tagged in the breakdown lands on the scene itself, and everything downstream reads from the scene. **Populate Shot List** on the breakdown toolbar seeds your scenes and shots with their cast. Those same cast numbers fill the strips on the [Schedule](/schedule), and when a call sheet is generated for a shoot day, its Talent section fills with that day's cast in cast-number order. You tag it once, and it shows up everywhere.
+
+## Export the sheets
+
+Press **Export** on the breakdown toolbar. The dialog offers two sheets, and you can take either or both:
+
+- **Breakdown Summary** is one block per scene, with its elements by category, scene notes, and page eighths. This is the sheet a department head reads to prep a day.
+- **Element List** is every element by category, with the scenes it appears in. This is the sheet a department head reads to budget the whole show.
+
+There's also a **Burn in a recipient** option that prints a chosen person's name and a timestamp across every page at low opacity, for when a copy needs to be traceable.
+
+## Now build the schedule
+
+Now that every scene knows its cast and its elements, the strips have something to say. Move on to [Building the schedule](/guides/building-the-schedule) to lay those scenes out into shooting days.

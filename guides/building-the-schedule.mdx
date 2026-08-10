@@ -1,0 +1,64 @@
+---
+title: Building the schedule
+lastUpdated: 2026-08-10
+description: "A workflow guide to the Schedule stripboard: turn scenes into strips, build shooting days by dragging, split scenes into parts, put cast and locations on the strips, and flow each day into its call sheet."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Before software, a shooting schedule was a wooden board full of cardboard strips. Each strip was one scene, printed with its number, its location, its cast, and its length in page eighths, and the AD built the shoot by physically sliding strips between days. The board worked because rearranging it was fast enough to test ten versions of a day before lunch.
+
+CineLog's Schedule is that board. One strip per scene, days stacked down the screen, and drag as the whole interface. This guide walks the workflow from a broken-down script to a finished board and its call sheets. The full reference for every control is on the [Schedule](/schedule) page.
+
+<Aside type="note">
+The Schedule is rolling out gradually. If you don't see it in your navigation yet, it hasn't been switched on for your version, and no setting on your side turns it on early.
+</Aside>
+
+## Where the strips come from
+
+The board is not a separate document you maintain. It's another view of the same production days you build in the [Shot List](/shotlist), so a change in either place is a change in both, instantly and on every device.
+
+That means the way to put your first scenes on the board is to give them shots and days. If you came here straight from the [Breakdown](/guides/breaking-down-the-script), press **Populate Shot List** on the breakdown toolbar first, because that seeds your scenes and shots with their cast, and the strips arrive already knowing who's in them.
+
+Open **Schedule** in the left rail, between Story Board and Call Sheets. On the phone it's in the **More** sheet. At the top of the board sits **Unscheduled**, holding every scene that isn't on a day yet. Below it come the shooting days. If you need somewhere to drag to, **Add Day** on the toolbar opens the next empty day.
+
+## Read a strip before you move it
+
+Each strip shows the scene number, the location, INT or EXT, the time of day, the cast numbers in the scene, the scene's length in page eighths, and its start time and estimated duration. The strips also take the classic board colors from INT/EXT and Day/Night automatically, so a glance down a day tells you what kind of day you've built before you've read a single word.
+
+The eighths are the number to watch. One page of screenplay is about one minute of screen time, and most productions figure about twenty minutes of shooting per eighth, so a day whose strips add up to six pages is a day you should be suspicious of. The day header keeps the running estimate for you.
+
+## Build a day
+
+Press and hold a strip, then drag. Where you drop it is what it means:
+
+- Within a day, you've reordered the day.
+- Past a day header, the scene moves to that day, and it lands where you dropped it.
+- Into Unscheduled, the scene comes off the calendar. Nothing is deleted, so there's no confirmation to click through. Drag it back onto a day to undo.
+
+An Unscheduled scene can also just be tapped: a sheet lists the existing days plus one new one, and you pick where it goes. A day with no strips left disappears, and later days close the gap.
+
+So what makes a good day? The board doesn't decide that for you, but the craft has known the answer for decades. The most expensive thing a production does is a company move, packing every truck and driving to a new location, so you group scenes that share a location onto the same days even when they're forty scenes apart in the story. Then you look at the cast numbers on the strips and try to cluster each actor's scenes into a tight block, because actors are paid by the day whether they work or wait. And you keep an eye on the colors, because a day that mixes day-exterior strips with night work is a day fighting the sun. The drag is cheap. Test versions until the day reads clean.
+
+## Split a scene across days
+
+Sometimes half a scene shoots Tuesday and the other half Thursday, because that's how real productions work. The split is made in the per-day Shot List, by dragging a shot out of its scene block. The board then shows the parts as **1 pt 1** and **1 pt 2**, and each part moves independently like any other strip. When two parts of the same scene end up adjacent on one day again, they merge back into a plain scene by themselves.
+
+## Put cast and locations on the strips
+
+Tap a strip's **cast** cell and you get a switch per numbered cast member. Every toggle saves immediately. This panel is also the one place to take someone out of a scene, and the call sheet honors it, because the Talent section of a day's call sheet is built from exactly this data, in cast-number order.
+
+Tap the **location** cell and you get the location panel: set name, address with autocomplete, note, parking, and nearest hospital. Below the fields, **Use an existing location** lists the sets you've already named. Use it, because ten scenes at the same house should share one entry, and then a correction to its address reaches all ten. The same fields feed the call sheet's Locations block.
+
+Tap **START** or **EST** to edit a scene's start time or estimated duration. Both normally show **Auto**, because times cascade down from the day's call time, and a value you pin gets a **Reset to auto** button when you want the cascade back.
+
+## Mark the non-scene events
+
+**Add Banner** puts a schedule event on a day, like lunch, a company move, or an equipment change. Banners are the same banners you know from the Production view and the call sheet, and tapping one opens the same editor. They live on shooting days, so they can't be dragged into Unscheduled.
+
+## Flow a day into its call sheet
+
+Now that a day holds its scenes, its cast, and its location, the call sheet mostly writes itself. Each day's header shows the shoot date from that day's call sheet, the Talent section fills with the day's cast in cast-number order, the Locations block carries the set with its parking and hospital, and the schedule rows print the same start times and estimates the strips show. The outbound side, sending, confirmations, and per-person call times, is covered in [Call sheets](/guides/generating-call-sheets).
+
+## Export the board
+
+**Export** on the toolbar produces a PDF of the board: a title block with your company branding, then each day's strips with cast, pages, start, and estimate, exactly as the board shows them. The dialog offers page margins and a day range. Unscheduled scenes stay off the PDF, because unscheduled time is not a schedule fact.
