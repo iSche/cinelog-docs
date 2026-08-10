@@ -1,11 +1,11 @@
 ---
 title: Script Editor
-lastUpdated: 2026-07-11
-description: "Professional screenplay editing with real-time Fountain formatting, multi-format import, live analytics, and shot list integration."
+lastUpdated: 2026-08-08
+description: "Professional screenplay editing on true US Letter pages with real-time Fountain formatting, reviewed imports, script lock and colored revisions, breakdown tagging, live analytics, and shot list integration."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-CineLog's Script Editor is a professional screenplay editing system built for modern film production workflows. Import scripts from multiple formats, edit with real-time Fountain syntax support, track analytics, and seamlessly integrate with your shot list—all with industry-standard formatting and collaborative features.
+CineLog's Script Editor is a professional screenplay editing system built for modern film production workflows. You write on real US Letter pages that break exactly where the printed script breaks, import through a change-by-change review, lock scene numbers and track colored revision rounds, tag the [breakdown](/breakdown) directly on the page, and populate the shot list from the script.
 
 ## Core Features
 
@@ -18,12 +18,24 @@ CineLog's Script Editor is a professional screenplay editing system built for mo
   Live formatting as you type. Automatic element classification for scene headings, character names, dialogue, and action with manual override hotkeys for precise control.
 </Card>
 
-<Card title="Multi-Format Import">
-  Import scripts from **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT**, and **RTF** formats with intelligent parsing and format preservation.
+<Card title="True Paged Layout">
+  The editor renders real US Letter pages, 54 lines each, with paragraphs splitting across the seam under **(MORE)** and **(CONT'D)**. The pages on screen, the page counter, and the exported PDF are the same pages. See [Writing & formatting](/guides/writing-formatting-scripts).
+</Card>
+
+<Card title="Reviewed Import">
+  Import **Final Draft (.fdx)**, **Fountain**, **PDF**, **TXT**, and **RTF** files through a review screen that shows every change before it lands. See [Importing scripts](/guides/importing-scripts).
+</Card>
+
+<Card title="Script Lock & Revisions">
+  Lock scene numbers, issue drafts, and track colored revision rounds with asterisked lines, tinted pages, and revised-pages-only export. See [Script lock & revisions](/guides/script-lock-and-revisions).
+</Card>
+
+<Card title="Script Breakdown">
+  Tag cast, props, wardrobe, and nine more categories directly on the script page. Cast flows into Cast & Crew and onto call sheets. See [Script Breakdown](/breakdown).
 </Card>
 
 <Card title="Live Analytics">
-  Real-time script analytics. Track estimated page counts, scene counts, line counts, word counts, and character counts as you write.
+  A stats sidebar tracks the page count in screenplay eighths, plus scenes, lines, words, and characters — and the size of whatever you have selected.
 </Card>
 
 <Card title="Shot List Integration">
@@ -77,7 +89,7 @@ Character-precise positioning with 12-point Courier Prime font, proper margins, 
 
 ### Multi-Format Script Import
 
-Need to bring in writing from an older app? Click the **Import** button in the Script Editor’s top menu bar to import and convert an existing script. Our universal parser intelligently extracts scenes, characters, and dialogue geometry from your original document, applying standard Fountain formatting automatically.
+Need to bring in writing from another app? Click the **Import** button in the Script Editor's top menu bar. The file is parsed and compared with your current script, and a review screen shows every change side by side before anything is applied — you accept or reject them change by change. On a locked script, changes touching issued material wait for your explicit decision. The full walkthrough is in [Importing scripts](/guides/importing-scripts).
 
 <CardGrid>
 <Card title="Final Draft (.fdx)">
@@ -106,8 +118,8 @@ Need to bring in writing from an older app? Click the **Import** button in the S
 A stats sidebar on the desktop editor updates live as you write. It shows five metrics: Pages, Scenes, Lines, Words, and Characters.
 
 <CardGrid>
-<Card title="Estimated Page Count">
-  A running page estimate, updated live. Like any page count, it is an estimate until the script is printed.
+<Card title="Page Count in Eighths">
+  The page count reads in screenplay eighths, like 12 3/8 — the unit schedules speak. It comes from the same pagination the editor renders and the PDF prints, so it is the real count, not an estimate.
 </Card>
 
 <Card title="Scenes & Lines">
@@ -116,6 +128,10 @@ A stats sidebar on the desktop editor updates live as you write. It shows five m
 
 <Card title="Words & Characters">
   Live totals for word count and character count as you type.
+</Card>
+
+<Card title="Selection Stats">
+  Select any stretch of the script and the sidebar adds the selection's character count and its length in page eighths — the quick answer to "how long is this scene".
 </Card>
 </CardGrid>
 

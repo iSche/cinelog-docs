@@ -1,0 +1,79 @@
+---
+title: Script lock & revisions
+lastUpdated: 2026-08-08
+description: "Lock scene numbers, issue drafts, and track colored revision rounds — asterisks on changed lines, revision history on the title page, omitted scenes, and revised-pages-only export."
+---
+
+This guide assumes [The basics](/guides/introduction) and the [Writing & formatting](/guides/writing-formatting-scripts) guide.
+
+Once a script goes out to the crew, it stops being a private draft and becomes a reference document. People schedule against its scene numbers and mark up its pages. From that moment, the numbers have to hold still, and every change has to be visible. That's what the **Lock & Revisions** button in the editor's top menu bar manages. It works in two stages, and you don't have to take both at once.
+
+## Stage 1 — Lock scene numbers
+
+Open the Lock & Revisions menu and choose **Lock scene numbers…**. The dialog spells out the deal: the numbers of all your scenes freeze for breakdown and scheduling. From then on:
+
+- A new scene between 78 and 79 becomes **78A**, so nothing downstream renumbers.
+- Deleting a scene's content marks it **OMITTED** instead of closing the gap. The number stays.
+- Pages keep flowing freely. You can carry on writing, and pagination behaves exactly as before.
+
+This is the lock the [Breakdown](/breakdown) asks for on entry, and it's all most projects need until pages go out.
+
+There is no Unlock. That's deliberate, because in production, renumbering after distribution is a repair job, not an everyday action. If you genuinely need different numbers, importing a file with its own production numbering lets you adopt them, with a confirmation that spells out the consequences. See [Importing scripts](/guides/importing-scripts).
+
+## Stage 2 — Lock pages
+
+When the script is about to be distributed, choose **Lock pages…**. This freezes pagination across the current pages and issues the draft. If you skipped stage 1, this locks scene numbers too.
+
+The dialog has an **Issue as** row with nine color swatches. Leave it on White unless this production has already distributed colored revisions made elsewhere. In that case, pick up from the next unused color.
+
+After Page Lock:
+
+- Page breaks stay where they were issued. New material spills onto lettered **A-pages** instead of re-flowing everything, because the crew's page 40 must stay page 40.
+- The first edit you make raises a prompt: **Edit the White Draft?** The draft has been issued, so normally the next round of changes starts a new color. Pick **Start Blue Revisions** to do it properly, or **Edit anyway** if you're fixing a typo before anyone noticed. One quirk to know: the keystroke that raised the prompt doesn't land, so retype that character after choosing.
+
+## Revision rounds
+
+**New revision…** in the Lock & Revisions menu starts the next round. The colors follow the industry order:
+
+**White, Blue, Pink, Yellow, Green, Goldenrod, Buff, Salmon, Cherry**. After Cherry the cycle repeats as Double Blue, Double Pink, and so on. You can skip ahead if this production has burned colors elsewhere, and you can attach a note to the round.
+
+While a round is open, here is what you see:
+
+- **Asterisks in the right margin**, one per changed line, exactly where a production reader expects them.
+- **A note in the top-right page corner** of each revised page — the color, the date, and the page number, like `BLUE 1/29/26 - 21.`
+- **A wash of the revision color** on the page cards that this round touched. Starting a new round returns last round's pages to plain paper on screen, because the wash means "changed in the current round".
+- **The Lock button itself** takes the color and the round's short name, like "Blue" or "Blue 2".
+- **The title page grows a revision history**, one row per issued round, like "Blue: revised 7/24/26".
+
+Dates follow your date-format preference from the editor's **Display** menu.
+
+### Scenes that want a second look
+
+When an issued scene's content changes, CineLog flags it and puts a mark by its scene number. The flag never clears itself, because the point is that a person confirms the change. When you've looked, right-click the scene and choose **Mark scene reviewed**.
+
+## Omitted scenes
+
+With scene numbers locked, you remove a scene by omitting it. Right-click inside the scene and choose **Omit scene**, or use the same item in the Lock & Revisions menu. The scene's content collapses to a single greyed line reading **OMITTED**, and the number stays in the margin. Every later scene keeps its number, which is the whole point.
+
+Nothing is deleted. **Restore scene** brings the content back exactly as it was.
+
+Two related moves:
+
+- To add a scene right after an omitted one, press Return on the tombstone (or at the start of the next heading). CineLog offers to add a lettered scene between the two, starting with a placeholder heading you type over.
+- On a page-locked script, a page whose content is entirely gone renders as **PAGE 7 OMITTED**, holding its place in the count.
+
+An omitted scene can't be edited until you restore it, and a locked scene's heading can't be deleted. The editor tells you to use Omit Scene instead. Scenes you add after the lock stay freely deletable until they've been issued in a revision.
+
+## Distributing revised pages
+
+When a round is done and pages are locked, the [Export dialog](/guides/writing-formatting-scripts#exporting) gains two PDF options: **Revised pages only** exports the title page plus the pages this round touched, which is the set a production actually distributes. **Revision paper color** fills each revised page with its color. Leave it off when you're printing on real colored stock.
+
+## If this isn't working
+
+*I want to unlock the script.* There's no unlock, by design. Omit what shouldn't shoot, revise what changed, or adopt new numbers through an import.
+
+*The menu warns that scene numbers have lost their heading.* You deleted a heading the registry still tracks. Undo the deletion, or omit the scene properly.
+
+*I chose "Start Blue Revisions" from the edit prompt and my first character is missing.* The prompt consumes the keystroke that raised it. Retype the character.
+
+*I locked pages by accident.* Nothing breaks. Writing continues normally and new material flows onto A-pages. But there's no way back to free-flowing pagination, so treat Lock pages as the moment of distribution.

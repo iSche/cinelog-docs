@@ -1,7 +1,7 @@
 ---
 title: Call sheets
-lastUpdated: 2026-07-11
-description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, personnel sections, rich-text crew message, sending and confirmation tracking, PDF export."
+lastUpdated: 2026-08-08
+description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, auto-populated talent with statuses, rich-text crew message, sending and confirmation tracking, PDF export."
 ---
 
 A call sheet in CineLog is the per-day production plan: the schedule, the location, the people, the weather, and the message that goes out with the email. It's tightly coupled to the rest of the project — the schedule is the same data as Production view for that day, and the personnel come straight from Cast & Crew.
@@ -108,7 +108,15 @@ A quick-reference list in the header's second row showing the day's key roles (D
 
 ### Talent
 
-Three-column table — avatar, name, role. Add talent from the project's contacts. Click any row to add notes or set a call time. Long-press a row to reorder.
+Three-column table — **NAME**, **ROLE**, **CALL**. A new call sheet fills this section for you: it reads which cast are in the scenes scheduled that day, in cast-number order. That's the far end of the pipeline that starts in the [Script Breakdown](/breakdown) — tag the cast once, and each day's sheet calls exactly the people its scenes need. Take someone off a scene and they come off that day's sheet.
+
+Cast numbers come from the slot in [Cast & Crew](/castandcrew) and are read live, so renumbering the cast updates every sheet. A slot with no actor booked yet prints **TBD**, with the character it stands for carried on the role, like "PRINCIPAL - JOHN".
+
+You can still add people by hand, and once a sheet exists its order is yours — CineLog seeds new sheets in cast-number order but never rearranges a sheet you've touched. Click any row to add notes, set a call time, or set a status. Long-press a row to reorder.
+
+### Per-person status
+
+Each person can carry a working status, the same vocabulary a Day Out of Days uses. Talent gets the full set: **Start, Work, Finish, Start/Work, Work/Finish, Hold, Day Off, Travel**. Crew and clients get the shorter set: Start, Work, Finish, Start/Work, Work/Finish.
 
 ### Crew
 

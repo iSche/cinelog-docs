@@ -1,0 +1,63 @@
+---
+title: Importing scripts
+lastUpdated: 2026-08-08
+description: "Import FDX, Fountain, PDF, TXT, and RTF files through a review screen: see every change side by side, accept or reject each one, resolve conflicts with locked material, and adopt scene numbers."
+---
+
+This guide assumes [The basics](/guides/introduction).
+
+CineLog never applies an import blind. It parses the file in memory, compares it with the script you have open, and shows you every difference before anything changes. You decide what lands, row by row if you want to. That matters most on a script that's already locked and distributed, but it's also just a nicer way to bring in a rewrite.
+
+## Starting an import
+
+Click **Import** in the Script Editor's top menu bar. It carries the `Cmd / Ctrl + I` hotkey, which starts an import whenever the shortcut isn't busy italicizing selected text. On the phone it's the import icon in the app bar. The supported formats are **FDX, Fountain, PDF, TXT, and RTF**. A PDF gets one extra step first, a small dialog for how the text is pulled in.
+
+## Importing into a fresh project
+
+If the project still holds the untouched starter script, CineLog skips the ceremony and shows one dialog with the file's title and size, like "46 scenes · 512 lines". **Import** replaces the starter script in one go. **Review first** takes you to the review screen anyway, where each scene collapses to one line with a **Skip / Include** choice, in case you want to leave some scenes behind.
+
+The moment you've typed a single character into the starter script, it stops counting as untouched and every import goes through the full review.
+
+## The review screen
+
+The review screen lists every difference between the file and your current script, grouped with pinned headers and a running counter at the top, like "58 changes · 4 conflicts · 2 unresolved".
+
+On a wide window each row shows three columns: the element type, **In the file**, and **In the editor**. When both sides are a single line, the changed words themselves are highlighted, green for what the file adds and red for what the editor loses. On narrow windows the two sides stack.
+
+Each row carries an **Accept / Reject** control. On an unlocked script every row starts accepted, and an **Accept all** button sits in the top bar. Rows that only report a scene sitting at a different position are informational, because position changes aren't applied automatically.
+
+**Back to editor** cancels the whole staging. Nothing has been applied yet.
+
+## When the script is locked
+
+Rows that touch locked material start with **nothing selected**, and the apply button reads **Resolve N** until every one of them has a decision. That's the point of the lock: changes to issued material need a human yes.
+
+Pressing **Resolve N** offers three ways out: **Review** scrolls you to the first unresolved row, or you can **Accept all remaining** / **Reject all remaining** in one move.
+
+Locked conflicts carry a padlock and a note about the consequence, for example that accepting a deletion marks the scene OMITTED rather than removing it. Omitting is how a locked script sheds scenes, so numbers hold. See [Script lock & revisions](/guides/script-lock-and-revisions).
+
+### Importing into a revision
+
+On a page-locked script, the top bar adds a revision target: start a **new** revision round with the changes, or **merge** them into the current one. Merging into an issued round gets a warning first, because the distributed pages would no longer match what was sent out. You can also skip ahead to a later color if this production has burned colors elsewhere.
+
+## Adopting the file's scene numbers
+
+When your scenes are locked and the file carries real production numbering (letters, gaps, holes rather than a plain 1, 2, 3), the top bar offers a switch: **Use the file's scene numbers**. Banner rows preview the outcome, like "Scene 12 will be renumbered to 14".
+
+Because renumbering a locked script breaks every call sheet and schedule that referenced the old numbers, CineLog confirms it separately and in plain terms. No scene is deleted, omitted scenes keep their tombstones, only the numbers change. This is also the sanctioned way to renumber a locked script, since there is no unlock.
+
+## Applying
+
+The primary button applies your decisions: **Import** on a fresh project, **Apply** otherwise. You get a plain result message, like "Import applied — 12 changes", or "Nothing applied — every change was rejected" if you rejected everything.
+
+Imports ride the editor's own editing pipeline, so breakdown tags, locked pages, and scene history survive an import instead of being orphaned by it.
+
+## If this isn't working
+
+*"Cannot import" with a format list.* The file's extension isn't one of the five supported formats. Export to FDX or Fountain from the other tool and try again.
+
+*"This file is identical to the current script."* There's nothing to review. That's the whole message.
+
+*The Apply button is stuck on "Resolve N".* N rows touching locked material still have neither Accept nor Reject. Use **Resolve N** → **Review** to jump to the first one.
+
+*I don't see "Use the file's scene numbers".* It appears only when your scenes are locked and the file carries production-style numbering. A file numbered 1..n in a plain run has nothing to adopt.

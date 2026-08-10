@@ -1,7 +1,7 @@
 ---
 title: Managing Cast & Crew
-lastUpdated: 2026-06-25
-description: "Add roles and departments, manage workspace contacts, and control access with intent toggles. Crew data flows directly into CineLog call sheets."
+lastUpdated: 2026-08-08
+description: "Add roles and departments, create custom roles, number and link your cast to characters, manage workspace contacts, and control access with intent toggles. Crew data flows directly into CineLog call sheets."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -21,11 +21,30 @@ You can easily add new members directly to your project. CineLog uses a unified 
 1. **Open Cast & Crew:** Navigate to the Cast & Crew module using the left sidebar. Make sure you are on the "Project" tab.
 2. **Add a Role:** Click the **"+ Add Role"** button.
 3. **Select or Create:** The unified dialog will open. You can either search and select an existing person from your Workspace Contacts, or simply type a new name to instantly create a brand new contact.
-4. **Choose a Role:** Select an industry-standard role from the dropdown (e.g., *1st Assistant Director*, *Gaffer*, *Lead Actor*). 
+4. **Choose a Role:** Search the role list and pick one (e.g., *1st Assistant Director*, *Gaffer*, *Lead Actor*).
 5. **Contact Details:** Enter the person's email and phone number. While optional, these are highly recommended if you plan to send them Call Sheets or invite them to the app.
 </Steps>
 
 You can assign multiple roles to a single person if they are wearing many hats on your production!
+
+### Custom roles
+
+When your production has a job the standard list doesn't know, make your own. Type the name into the role search field, and when nothing matches you get the option **Create "…" as a custom role**. A few things to know:
+
+- Custom roles belong to the **workspace**, not the project, so every project in your workspace can use them from then on.
+- They all live in one department called **Custom**, which sorts after the standard departments on the board.
+- Names have to be unique. If the name already exists as a standard or custom role, CineLog tells you which, and you pick the existing one instead.
+- The create option appears on the main **+ Add Role** path. Adding from a specific department's own **+** button offers only that department's roles, because a custom role can't live there.
+- There's no rename or delete for custom roles inside the app yet. Name them the way the call sheet should print them.
+
+### Cast numbers and characters
+
+Cast-group slots (Talent and Background) carry two things crew slots don't: a **cast number** and a **character**.
+
+- The number is what call sheets and the Day Out of Days print next to the actor. Tap the number chip on a slot's **Character** section to set it by hand. Numbers are unique — if 3 is taken, CineLog tells you who has it.
+- **Link…** connects the slot to a character from the [Script Breakdown](/breakdown), and the slot starts reading like a casting sheet: "Jane Doe as MARIA", with "1 · MARIA — Lead" underneath. If there are no characters to link yet, tag the cast in the breakdown first.
+- The breakdown usually does the first pass for you: it creates a vacant, numbered Talent slot per detected character, with a guessed role you can change. See [Script Breakdown](/breakdown).
+- To reorder the cast, press and hold a cast row and drag it. The whole Cast group renumbers to the new order, Talent first, then Background, so the board always reads 1 to N from the top.
 
 ---
 

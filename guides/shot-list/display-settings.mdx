@@ -1,7 +1,7 @@
 ---
 title: Display Settings
-lastUpdated: 2026-07-11
-description: "Column visibility and order, custom columns, shot numbering format, row height — everything that controls how the shot list looks on screen."
+lastUpdated: 2026-08-08
+description: "Column visibility and order, custom columns, shot numbering format, script sidebar width, date format, row height — everything that controls how the shot list looks on screen."
 ---
 
 Display Settings controls how the shot list looks — which columns are visible, in what order, what the shots are numbered as. Settings are project-level and propagate via CineSync, so adjustments made on the desktop appear on the mobile app within seconds.
@@ -24,13 +24,21 @@ Add your own columns from Display Settings by giving each a name. Custom columns
 
 ## Shot numbering format
 
-Three formats are supported:
+Three formats are supported, shown in the overlay with live samples:
 
-- **Alphanumeric** — `1A`, `2C`. Scene + letter.
-- **Decimal** — `1.1`, `2.3`.
-- **Sequential** — `1`, `2`, `47`. Continuous through the project.
+- **US** — `1A`, `1B`, `1C`. Scene + letter.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`. Continuous through the project.
 
-The format is a display preference — it changes how numbers are shown without altering the underlying shots, so you can switch between formats freely and switch back at any time.
+These are the same three formats the AV Script and Storyboard display settings offer, under the same names. The format is a display preference — it changes how numbers are shown without altering the underlying shots, so you can switch between formats freely and switch back at any time.
+
+## Script sidebar, auto-scroll, and dates
+
+Three more rows live in the overlay:
+
+- **Script Width** — how much of the window the script sidebar takes when it's open, from 30% to 50%.
+- **Script Auto-scroll** — whether the script sidebar follows along as you move through the list.
+- **Date Format** — `M/D/Y`, `D/M/Y`, or `Y-M-D`. This one is app-wide: the same setting appears in the Display menus across CineLog, and changing it anywhere changes it everywhere, including exported PDFs that print dates.
 
 ## Row height and display mode
 

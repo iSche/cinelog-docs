@@ -1,0 +1,42 @@
+---
+title: CineLog in the browser
+lastUpdated: 2026-08-08
+description: "Run CineLog at app.cinelog.com — same account, same projects, same sync. What the one-tab rule means, what the storage warnings say, and how subscriptions work outside the app stores."
+---
+
+This guide assumes [The basics](/guides/introduction).
+
+CineLog runs in the browser at [app.cinelog.com](https://app.cinelog.com). It's the same app you install on desktop and mobile, signed in with the same account, showing the same projects, syncing through the same engine. Edits you make in a browser land on your other devices like edits from anywhere else. Offline works too: the browser keeps a local copy of your projects, exactly like the native apps do.
+
+Use it on a machine you can't install on, like a rental workstation or a client's office. A few browser realities are worth knowing.
+
+## One tab at a time
+
+CineLog runs in a single tab. Open a second one and it shows a plain screen instead: "CineLog is already open in another tab." Both tabs would share the same offline database, so running two would let them overwrite each other's changes.
+
+The **Use CineLog here** button hands the session to the new tab, and the other tab steps aside on its own. If the other tab is mid-work, it can decline for the moment, and the screen tells you why: it's still uploading a file, still saving a change, or holding edits it can't preserve through a reload. Give it a moment and try again.
+
+## Closing the tab while saving
+
+If you close or reload the tab while changes are still syncing or a file is uploading, the browser asks whether you really want to leave. Take that prompt seriously for uploads: on the web, an upload's bytes live in the tab, so a reload mid-upload can't be resumed. Edits are cheaper, because anything already synced is safe on the server.
+
+## Storage warnings
+
+Some browser situations can't store data reliably, and CineLog tells you rather than pretending. Two banners exist:
+
+- A red one: "Changes in this browser will be lost when you close the tab." The browser refused local storage entirely, which usually means a private or incognito window. Everything lives in the tab only, so keep it open until syncing finishes.
+- An amber one: "Storage in this browser is unreliable." CineLog can save data, but the browser may clear it at any time. Synced work is safe on the server, edits waiting to sync are not.
+
+If you see either, the fix is the same: use Chrome, Edge, or Firefox outside a private window. In a healthy browser there's no banner at all.
+
+## Subscriptions in the browser
+
+The browser app doesn't sell subscriptions. The subscription page shows "Plans are managed on cinelog.com" with a **See plans** button that takes you to [cinelog.com/pricing](https://cinelog.com/pricing/). Your workspace switches to the new plan as soon as the purchase completes. A subscription bought on the web is also managed on the web, through **Manage on Web** on the same page. The same applies to the Windows and Linux apps, which have no app store either.
+
+## If this isn't working
+
+*Both tabs claim the other is open.* One of them is mid-save. Wait a few seconds and press **Use CineLog here** again in the tab you want.
+
+*I worked offline in a private window and my edits are gone.* That's what the red banner warns about: a private window keeps nothing after the tab closes. Edits that reached the server before you closed it are safe.
+
+*Which browsers are safe to use?* Chrome, Edge, and Firefox, outside a private window. That's the combination CineLog itself recommends in its storage warnings. Other browsers may run fine, but those three are the ones with reliable offline storage.

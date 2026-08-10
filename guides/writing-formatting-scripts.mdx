@@ -1,106 +1,100 @@
 ---
 title: Writing & Formatting Scripts
-lastUpdated: 2026-06-22
-description: "Import FDX, Fountain, PDF, TXT, and RTF scripts into CineLog's editor. Format with Fountain syntax, track analytics, export to PDF, and populate your shot list."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-CineLog's Script Editor is a powerful, professional-grade writing environment built natively into the platform. It supports real-time Fountain formatting, live analytics, and seamless data syncing to the cloud.
-
-Whether you're writing a new script from scratch or importing an existing screenplay, CineLog ensures your formatting always adheres to industry standards.
-
-## Importing an Existing Script
-
-If you've already started writing your screenplay in another software, you can easily import it into CineLog without losing your formatting.
-
-<Steps>
-1. **Open the Script Editor:** Navigate to the Script Editor using the left sidebar.
-2. **Import Document:** Click the **Import** button in the top menu bar and select your script file.
-3. **Automatic Parsing:** CineLog's universal parser will automatically process the file, extract the scenes, and convert the formatting.
-</Steps>
-
-<CardGrid>
-  <Card title="Supported Formats">
-    - **Final Draft (.fdx)**
-    - **Fountain (.fountain)**
-    - **PDF** (Text extraction)
-    - **Plain Text (.txt)**
-    - **Rich Text (.rtf)**
-  </Card>
-</CardGrid>
-
+lastUpdated: 2026-08-08
+description: "Write on real US Letter pages with live Fountain formatting: the title page, how the Return key moves you through elements, page breaks with (MORE) and (CONT'D), zoom, analytics, and export."
 ---
 
-## Live Editing & Formatting
+This guide assumes [The basics](/guides/introduction). Importing has grown its own review screen and its own guide: [Importing scripts](/guides/importing-scripts). Locking and revisions live in [Script lock & revisions](/guides/script-lock-and-revisions).
 
-CineLog uses the **Fountain** markup language under the hood. However, you don't need to know Fountain to write—the editor automatically formats your text as you type.
+The Script Editor writes on real pages. What you see is a stack of US Letter page cards, 12 pt Courier, with the page number in the top-right corner and page breaks falling exactly where they'll fall in print. There is no separate preview mode anymore, because the editor's pages and the exported PDF come from the same layout. The page you're looking at is the page.
 
-### Supported Fountain Elements
+There's no Save button either. Every change is saved to your device within about half a second and synced to the cloud in the background.
 
-CineLog currently supports the core Fountain specification required for professional screenplay editing. You can either type naturally to let the smart detection do the work, or force formatting using Fountain's syntax characters.
+## The title page
 
-- **Scene Headings**: Start a line with standard prefixes (`INT.`, `EXT.`, etc.), or force it by starting the line with a period (`.`).
-- **Action**: Standard text is treated as action. Force it by starting a line with an exclamation point (`!`).
-- **Characters**: Type entirely in UPPERCASE (e.g., `JOHN`), or force it by starting the line with an at-symbol (`@`).
-- **Dialogue**: Simply type immediately following a Character line.
-- **Parentheticals**: Wrap text in parentheses `(like this)`.
-- **Transitions**: Use standard UPPERCASE endings like `CUT TO:`, or force it by starting the line with a right-angle bracket (`>`).
-- **Centered Text**: Wrap text with angle brackets: `> Center this text <`.
-- **Emphasis**: Support for standard markdown-style emphasis:
-  - `*Italics*`
-  - `**Bold**`
-  - `_Underline_`
+Every script starts with a title page, and you edit it in place. It has eight fields: Title, Credit, Author, Source, Contact, Copyright, Draft date, and Notes. Empty fields show a greyed placeholder and print as nothing.
 
-### Currently Unsupported Elements
-We are constantly expanding our Fountain support. At this time, the following advanced Fountain features are **not yet supported** in the live editor:
-- Dual Dialogue (`^`)
-- Boneyards (`/* */`)
-- Sections (`#`) and Synopses (`=`)
-- Inline Notes (`[[ ]]`)
+`Tab` moves to the next field with its value pre-selected, so you can type straight over it. `Shift + Tab` goes back. `Tab` on the last field drops you into the script body. Return inside a field adds a line within that field, and each field has a line budget so the title page always stays exactly one page.
 
-### Manual Override Hotkeys
-If the smart detection guesses incorrectly, or if you want to force a specific formatting style, use the manual override hotkeys:
+A new document arrives with a small starter script and a seeded title page, with your name already in the Author field. Type over any of it.
 
-- <kbd>Cmd</kbd> + <kbd>1</kbd>: Scene Heading
-- <kbd>Cmd</kbd> + <kbd>2</kbd>: Character
-- <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialogue
-- <kbd>Cmd</kbd> + <kbd>4</kbd>: Action
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Parenthetical
-- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transition
-- <kbd>Cmd</kbd> + <kbd>7</kbd>: Lyrics
-- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centered
+## Typing a script
 
-<Aside type="tip">
-**Continuous Saving:** There is no "Save" button in the Script Editor. Every keystroke is silently and continuously saved to your local device and securely synced to the cloud in the background.
-</Aside>
+CineLog uses the **Fountain** conventions under the hood, but you don't need to know Fountain to write. Type naturally and the editor classifies each line as you go.
 
----
+The Return key does most of the moving between elements:
 
-## Live Analytics
+- After a scene heading, Return gives you action.
+- After a character name, Return gives you dialogue.
+- After dialogue, Return gives you **more dialogue**, so a speech grows paragraph by paragraph. To end the speech, press Return again on the empty line, and it becomes action in place. So the way out of a speech is Return, Return.
+- After a transition, Return gives you a scene heading.
+- `Shift + Return` breaks a line inside the same element.
 
-As you write, CineLog calculates professional metrics in real-time, allowing you to gauge the scope and pacing of your script without ever leaving the editor.
+### Fountain elements
 
-Look for the analytics panel to see live updates on:
-- **Page Estimation:** Industry-standard page calculation formulas accurate to professional standards.
-- **Scene & Character Counts:** Total number of scenes and unique speaking characters.
-- **Word Metrics:** Total word count and character count.
+You can also force any element with Fountain's syntax characters:
 
----
+- **Scene headings**: start a line with `INT.` or `EXT.`, or force one with a leading period (`.`).
+- **Action**: standard text is action. Force it with a leading exclamation point (`!`).
+- **Characters**: type the name in UPPERCASE, or force it with a leading at-sign (`@`).
+- **Dialogue**: type on the line after a character name.
+- **Parentheticals**: wrap the text in parentheses `(like this)`.
+- **Transitions**: standard UPPERCASE endings like `CUT TO:`, or force one with a leading `>`.
+- **Centered text**: `> Center this text <`.
+- **Emphasis**: `*italics*`, `**bold**`, `_underline_`.
 
-## Preview & Export
+Not supported in the editor yet: dual dialogue (`^`), boneyards (`/* */`), sections (`#`) and synopses (`=`), and inline notes (`[[ ]]`).
 
-When you are ready to review your final script or share it with others, you can seamlessly transition from the editor to a standardized PDF.
+### Manual override hotkeys
 
-<Steps>
-1. **Preview Mode:** Click the **"Preview & Export"** button in the top menu bar to switch from the continuous scrolling editor to a paginated, print-ready view. The preview mode renders a standard Title Page and accurate page breaks.
-2. **Export:** While in Preview Mode, click the **"Export"** icon.
-3. **Select Format:** Choose the file format you need.
-</Steps>
+When the detection guesses wrong, set the element type yourself:
 
-CineLog currently supports exporting your script in the following formats:
-- **PDF (.pdf):** High-quality, paginated, and industry-formatted document perfect for printing or emailing.
-- **Final Draft (.fdx):** Industry standard XML format, allowing you to seamlessly move your script into Final Draft or other production software.
-- **Fountain (.fountain):** Raw plaintext markup for maximum compatibility.
-- **Plain Text (.txt):** Basic text export for simple reading.
-- **JSON (.json):** Structured data export for integrations and custom tooling.
-- **CSV (.csv):** Tabular breakdown export for spreadsheets and reporting.
+- `Cmd / Ctrl + 1`: Scene Heading
+- `Cmd / Ctrl + 2`: Character
+- `Cmd / Ctrl + 3`: Dialogue
+- `Cmd / Ctrl + 4`: Action
+- `Cmd / Ctrl + 5`: Parenthetical
+- `Cmd / Ctrl + 6`: Transition
+- `Cmd / Ctrl + 7`: Lyrics
+- `Cmd / Ctrl + E`: Centered
+
+## How pages break
+
+A page holds 54 lines, the same count Final Draft paginates. When a paragraph doesn't fit, it splits at the last sentence that fits and the rest continues overleaf, instead of the whole paragraph jumping to the next page. A speech that continues across the break prints **(MORE)** at the bottom and repeats the character name with **(CONT'D)** at the top, and CineLog keeps at least two lines on each side of a split so you never get a stranded line.
+
+The editor, the page counter, and the exported PDF all run on this one layout, so they can't disagree.
+
+## Zoom
+
+The zoom cluster sits in the middle of the top menu bar: minus, the current percentage, plus. Zoom runs from 50% to 200% in 25% steps, and clicking the percentage resets to fit the window width. `Cmd / Ctrl + =` and `Cmd / Ctrl + -` step in and out, `Cmd / Ctrl + 0` fits the width, and `Cmd / Ctrl + scroll` or a pinch does the same on the pointer. Zoom scales the whole page, so lines always wrap at the same characters no matter the level, and the page count never moves because you zoomed.
+
+## Analytics
+
+The analytics sidebar keeps live totals while you write: the page count in screenplay eighths (like 12 3/8), scenes, lines, words, and characters. Select some text and two more rows appear, showing the selection's character count and its size in page eighths. That's the fastest way to answer "how long is this scene", because eighths of a page is the unit the schedule speaks.
+
+## Writing on a phone
+
+The phone editor is a full editor, not a viewer. The script reflows to the screen at a comfortable reading size instead of shrinking a Letter page, and thin dividers labelled **PAGE 7** mark exactly where the printed pages break. The page numbers match the desktop and the PDF, because they come from the same pagination.
+
+## Exporting
+
+Click **Export**, the first button in the top menu bar. Pick a format:
+
+- **PDF Document (.pdf)** — paginated and industry-formatted, breaking exactly where the editor breaks.
+- **Fountain Script (.fountain)** — plain-text markup for maximum compatibility.
+- **Final Draft (.fdx)** — for moving the script into Final Draft or other production software.
+- **Plain Text (.txt)** — a simple reading copy.
+- **JSON Data (.json)** — structured data for integrations and custom tooling.
+- **Scene Report (.csv)** — a tabular scene listing for spreadsheets.
+
+On a locked script with a revision round open, the PDF gains two options: **Revised pages only** exports the title page plus the pages the current round touched, which is the set a production actually distributes, and **Revision paper color** fills each revised page with its revision color. Leave the color off when printing on real colored stock. See [Script lock & revisions](/guides/script-lock-and-revisions).
+
+## If this isn't working
+
+*Where did Preview go?* It's retired. The editor now shows final pages all the time, so there's nothing separate to preview. **Export** opens the format picker directly.
+
+*Return won't take me out of dialogue.* Press it twice: once to open an empty continuation line, once more to turn that line into action.
+
+*The page count looks different from my old draft.* CineLog paginates 54 lines per page with true paragraph splitting, matching Final Draft. Estimates from before v1.5.0 used a looser calculation.
+
+*I can't type into a scene marked OMITTED.* That's an omitted scene on a locked script. Restore it first. See [Script lock & revisions](/guides/script-lock-and-revisions).

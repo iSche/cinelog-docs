@@ -1,21 +1,25 @@
 ---
 title: "Cast & Crew"
-lastUpdated: 2026-06-25
-description: "Manage your film production team with roles, departments, workspace contacts, and role-based access control. Integrates directly with call sheets."
+lastUpdated: 2026-08-08
+description: "Manage your film production team with roles, departments, custom roles, cast numbers, character links, workspace contacts, and role-based access control. Integrates directly with call sheets."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-CineLog's Cast and Crew feature is designed to manage team collaboration securely. Organize your roster using strict industry-standard hierarchies and dynamically control who has access to your sensitive project data.
+CineLog's Cast and Crew feature is designed to manage team collaboration securely. Organize your roster in the industry-standard hierarchy, add your own custom roles where the standard list falls short, number your cast for call sheets, and control who has access to your project data.
 
 ## Core Features
 
 <CardGrid>
 <Card title="Industry Standard Hierarchy">
-  Organizes all members into a rigid, 3-level structure (**Group → Department → Role**) reflecting massive studio productions.
+  Organizes all members into a 3-level structure (**Group → Department → Role**) reflecting how real productions staff. When the standard list doesn't have the role you need, create a custom one — it becomes available across your whole workspace.
 </Card>
 
 <Card title="Intelligent Role Planning">
-  Start delegating unassigned **Vacant Slots** during pre-production without needing to know exactly who you're hiring yet.
+  Start delegating unassigned **Vacant Slots** during pre-production without needing to know exactly who you're hiring yet. The [Script Breakdown](/breakdown) can create numbered Talent slots for your characters automatically.
+</Card>
+
+<Card title="Cast Numbers & Characters">
+  Every Talent slot carries a cast number and can be linked to a character from the breakdown. The numbers print on call sheets, and dragging cast rows renumbers the whole cast in order.
 </Card>
 
 <Card title="Role-Based Access Control">
@@ -41,6 +45,15 @@ Managing a growing crew is chaotic. By establishing a source of truth for Roles 
 **Planning Your Crew (Vacant Slots)**
 
 You don't need a single contact in your rolodex to begin staffing. Add standard industry roles (e.g. "Key Grip") to create a **Vacant Slot**. Once you hire someone, simply assign an existing or newly-invited contact to the slot. The role you assigned is then remembered on that contact for future projects.
+
+If the role you need isn't in the list, type it into the role search field and pick **Create "…" as a custom role**. Custom roles belong to your workspace, so every project in it can use them, and they gather in their own **Custom** department at the end of the board. See [Managing Cast & Crew](/guides/managing-cast-crew) for the details.
+
+</li>
+<li>
+
+**Cast Numbers & Characters**
+
+Talent slots carry a **cast number** — the number the call sheet and the Day Out of Days use. The [Script Breakdown](/breakdown) creates numbered slots for your characters automatically, or you set numbers by hand on the slot's Character section, which also links the slot to a character ("Jane Doe as MARIA"). Press and hold a cast row and drag it to reorder — the whole cast renumbers to match the new order, Talent first, then Background.
 
 </li>
 <li>

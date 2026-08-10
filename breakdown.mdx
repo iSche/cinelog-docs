@@ -1,0 +1,123 @@
+---
+title: Script Breakdown
+lastUpdated: 2026-08-08
+description: "Tag cast, props, wardrobe, and every other production element directly in the script. Elements roll up by category, flow into Cast & Crew and call sheets, and export as breakdown sheets."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+A breakdown is essentially a list of everything the script asks you to bring to set. You read the script line by line, and every time it mentions a prop, a costume, a vehicle, or a person, you mark it. CineLog's Breakdown lets you do that marking directly on the script page, so the tagged words stay underlined right where they live, and the elements roll up into one project-wide list you can hand to every department.
+
+<CardGrid>
+<Card title="Tag on the page">
+  Select any words in the script and file them under one of twelve production categories. The text stays underlined in the category's color, so a second read shows you instantly what's covered.
+</Card>
+
+<Card title="One list per project">
+  Every tag creates or reuses an element. The panel groups them by category, counts the scenes each one appears in, and jumps you to any occurrence.
+</Card>
+
+<Card title="Cast finds itself">
+  CineLog tags each character's first cue in every scene automatically, and creates a numbered Talent slot for them in Cast & Crew. Those cast numbers carry through to call sheets.
+</Card>
+
+<Card title="Breakdown sheets as PDF">
+  Export a per-scene summary, an element list, or both. You can burn in a recipient's name as a watermark before you send a copy out.
+</Card>
+</CardGrid>
+
+## Opening the breakdown
+
+The Breakdown lives inside the Script Editor. On desktop, click **Breakdown** in the editor's top menu bar. It also appears in the left rail as a sub-entry under Script Editor while you're in the editor. On the phone, it's in the **More** sheet, right under Script Editor.
+
+The first time you open it, CineLog asks to lock your scene numbers. That's not busywork. A breakdown pins elements to scene numbers, so those numbers need to stop moving, because a breakdown that says "the revolver is in scene 12" is worthless the day scene 12 becomes scene 13. From the lock onward, new scenes get letter numbers like 78A and removed scenes become OMITTED instead of disappearing. Pages keep flowing freely, and you can carry on writing. The full story is in [Script lock & revisions](/guides/script-lock-and-revisions).
+
+If the script has no scene headings yet, CineLog asks you to add at least one before starting a breakdown.
+
+## Tagging elements
+
+What you do is select the words and pick a category:
+
+- With a mouse, drag across the words. The tag editor opens by itself once the selection settles. Double-clicking a single word tags it too.
+- On touch devices, select the text and a small toolbar appears over it with **Tag** and **Copy**. Press **Tag**.
+
+The tag editor shows a grid of the twelve categories, an **Element** field pre-filled with your selected text, and a **Qty** field. Pick the category, adjust the name if you want, and press **Tag**. If an element with that name already exists in the category, CineLog tells you it will use the existing one, so tagging "revolver" in scene 4 and scene 19 gives you one revolver with two scenes, not two revolvers.
+
+Keyboard users can move fast here: keys `1` through `9` pick the first nine categories, `Tab` jumps to the Element field with the text selected, and `Enter` saves.
+
+Selections have to stay within a single line, and they have to land inside a locked scene. The title page, for example, can't be tagged.
+
+### The twelve categories
+
+| Category | Mark on the page |
+|---|---|
+| Cast | Red underline |
+| Stunts | Orange underline |
+| Extras — Silent | Amber underline |
+| Extras — Atmosphere | Green underline |
+| Special Effects | Blue underline |
+| Props | Purple underline |
+| Vehicles & Animals | Pink underline |
+| Sound & Music | Brown underline |
+| Wardrobe | Circle mark in the margin |
+| Makeup & Hair | Asterisks around the words |
+| Special Equipment | Box mark |
+| Production Notes | Warm grey underline |
+
+The Wardrobe, Makeup & Hair, and Special Equipment marks follow the classic paper-breakdown conventions, so a crew member who learned to break down scripts by hand reads the page without a legend.
+
+### Editing and removing tags
+
+Click any tagged text to reopen the editor on that tag. From there you can rename the element, change its category or quantity, point the tag at a different element, or press **Untag**. When several tags overlap on the same words, a small menu lists them first so you pick the right one.
+
+### Finding the same element elsewhere
+
+After you tag something, CineLog looks for the same words in other scenes and offers them in one dialog: each hit shows the scene and a snippet, exact matches start checked, and you press **Tag N** to take them all at once. You can rerun this any time from an element's menu with **Find similar…**. If you decline a suggestion, CineLog remembers the "no" and won't offer that spot again.
+
+## The elements panel
+
+The right-hand panel (the **Tags** page on phones) is the project's element list, grouped by category. Each row shows the element, its quantity when it's above 1, how many scenes it appears in, and arrows to step through its occurrences. Tapping a row jumps the script to the next occurrence. Hovering a row highlights its text in the script, and hovering tagged text highlights its row.
+
+Rows can carry three warnings, each explained in its tooltip: tags awaiting review (auto-found cast, see below), tags sitting in a scene that no longer exists, and tagged text that could no longer be found after edits.
+
+Every category section ends with **Add new…**, which tags a whole scene without underlining any text. That's for the things the script implies but never spells out, like the rain rig an EXT. STREET - NIGHT scene needs.
+
+Each element's `⋯` menu offers **Edit…**, **Find similar…**, **Merge into…**, **Archive**, and **Delete…**. Merge moves every tag onto the element you pick and deletes the merged one. Archive takes an element out of every scene but keeps it, which is the safer choice when you're not sure. Cast elements add **Link to cast slot…** so you can connect a character to a Talent slot by hand.
+
+## Cast
+
+Cast is the category CineLog works hardest on for you.
+
+Whenever you lock scenes, lock pages, start a revision, or import, CineLog tags each character's first cue in every scene. Those tags arrive confirmed, because a cue is not a guess. When a character's name shows up in action or dialogue prose, CineLog tags that too, but marks it as awaiting review with a dotted underline, because "JOHN" in a stage direction might be a different John. If a suggestion is wrong, untag it and it stays gone. You can also rerun the pass yourself with the sync button on the CAST header.
+
+CineLog never merges look-alike names on its own. MARIA and MARIE stay separate until you merge them, because only you know whether that's a typo or two people. Once you do merge them, the merge sticks through every later pass.
+
+Each detected character also gets a vacant **Talent slot** in [Cast & Crew](/castandcrew), carrying the character's name and a cast number. CineLog guesses the role from how much the character works: a character in a third or more of your scenes comes in as Principal, three scenes or more as Supporting, and the rest as Day Players. You can change any of that afterwards. If you already manage your cast list by hand, CineLog notices and leaves your roster alone.
+
+## Where the cast goes next
+
+Cast tagged in the breakdown lands on the scene itself, and everything downstream reads from the scene. **Populate Shot List** on the breakdown toolbar seeds scenes and shots with their cast. When a call sheet is generated for a shoot day, its Talent section fills with that day's cast in cast-number order. Tag it once, and it shows up everywhere. See [Call sheets](/callsheets) for the far end of that pipeline.
+
+## Exporting breakdown sheets
+
+Press **Export** on the breakdown toolbar. The dialog offers two sheets, and you can take either or both:
+
+- **Breakdown Summary** — one block per scene, with its elements by category. Scene notes and page eighths included.
+- **Element List** — every element by category, with the scenes it appears in.
+
+There's also a **Burn in a recipient** option that prints a chosen person's name and a UTC timestamp across every page at low opacity, for when a copy needs to be traceable. The recipient list comes from the people assigned in Cast & Crew.
+
+Omitted scenes print no block, archived elements come out of the scene boxes but stay on the element list, and dismissed suggestions never appear at all.
+
+## On the phone
+
+The phone breakdown is two swipeable pages, **Script** and **Tags**, with a pill to switch. Once you tap an element with more than one occurrence, the pill grows ▲ and ▼ so you can walk its occurrences without leaving the script. The script reflows to the screen at full reading size, with dividers marking where the printed pages break.
+
+## If this isn't working
+
+*The Breakdown button sends me back to the editor.* You declined the scene-number lock. The breakdown can't pin elements to moving numbers, so locking is the way in.
+
+*I can't tag a selection.* Selections must sit within a single line, inside a locked scene. Across-line selections and title-page text show a message explaining which rule was hit.
+
+*I want my own category.* Not in this version. The twelve categories are fixed, and Production Notes is the catch-all in the meantime.
+
+*A cast suggestion is wrong but there's no "confirm" button on the right ones.* Correct ones need no action, they count already. Review marks are just CineLog being honest about which tags were guesses. Untag the wrong ones and leave the rest.
