@@ -1,6 +1,6 @@
 ---
 title: Ordini del giorno
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Ordini del giorno giornalieri in CineLog — intestazione e orario di call, location, programmazione con cascata temporale, meteo, talent popolati automaticamente con i loro stati, messaggio rich-text alla troupe, invio e tracciamento conferme, esportazione PDF."
 ---
 
@@ -185,11 +185,11 @@ Ogni destinatario riceve:
 - Un PDF personalizzato con il suo orario di call evidenziato.
 - Il messaggio della troupe (rich text) più qualsiasi messaggio opzionale che hai aggiunto.
 - Eventuali note per persona presenti sul foglio, che vengono stampate sul PDF stesso dell'ordine del giorno (fanno parte del foglio che ricevono tutti quelli con quell'orario di call).
-- Un **link di conferma** — un URL univoco protetto da token a `links.cinelog.com/confirm-call-sheet/<token>`. Cliccando il link si apre un portale CineLog-brandizzato dove toccano "Conferma" per riconoscere la ricezione.
+- Un **link di conferma** — un URL univoco protetto da token a `links.cinelog.com/confirm-call-sheet/<token>`. Aprire il link registra la conferma automaticamente — nessun account necessario, niente da toccare.
 
-### Pagina Invii
+### Pagina Confirmations
 
-Apri la pagina **Sendouts** (invii) dal menu in alto dell'ordine del giorno (o naviga a `…/call-sheets/<day>/sendouts`) per vedere chi è stato inviato l'ordine del giorno. I destinatari sono raggruppati per **batch di invio** — ogni pressione di Send crea un nuovo batch, quindi reinviare dopo modifiche preserva l'intera cronologia. Ogni intestazione di batch mostra un conteggio "N / M confermati".
+Apri la pagina **Confirmations** con il pulsante nel menu in alto dell'ordine del giorno (o naviga a `…/call-sheets/<day>/sendouts`) per vedere chi è stato inviato l'ordine del giorno. I destinatari sono raggruppati per **batch di invio** — ogni pressione di Send crea un nuovo batch, quindi reinviare dopo modifiche preserva l'intera cronologia. Ogni intestazione di batch mostra un conteggio "N / M confermati".
 
 Ogni riga destinatario mostra:
 
@@ -205,7 +205,7 @@ Consegna e conferma sono indipendenti: un'email può essere consegnata senza ess
 
 ### Reinvii e modifiche
 
-Puoi reinviare lo stesso ordine del giorno dopo averlo modificato (un cambio nel copione, uno scambio di troupe, una nota costume). Il nuovo invio crea un batch fresco sulla pagina Invii; i batch precedenti restano intatti per la cronologia di audit.
+Puoi reinviare lo stesso ordine del giorno dopo averlo modificato (un cambio nel copione, uno scambio di troupe, una nota costume). Il nuovo invio crea un batch fresco sulla pagina Confirmations; i batch precedenti restano intatti per la cronologia di audit.
 
 ## Esportazione PDF
 
@@ -243,7 +243,7 @@ Modificare gli ordini del giorno funziona offline — le modifiche si salvano su
 
 *"Il meteo non si è caricato."* L'auto-fetch ha bisogno di una location con coordinate. Imposta una location tramite l'autocompletamento Google Places (in modo che lat/lng venga catturata), poi ricarica l'ordine del giorno. Puoi anche inserire il meteo manualmente.
 
-*"Un membro della troupe dice che non ha ricevuto l'ordine del giorno."* Apri la pagina Sendouts per quel giorno e trova la sua riga. **delivered** o **opened** significa che è uscito da CineLog ed è stato accettato dal suo provider di posta — il problema è a valle (cartella spam, regole della casella, eliminato per errore). **bounced** o **failed** significa che l'email non l'ha mai raggiunto; controlla l'indirizzo in Cast & Troupe e reinvia. **queued** significa che è ancora in arrivo; dagli un minuto.
+*"Un membro della troupe dice che non ha ricevuto l'ordine del giorno."* Apri la pagina Confirmations per quel giorno e trova la sua riga. **delivered** o **opened** significa che è uscito da CineLog ed è stato accettato dal suo provider di posta — il problema è a valle (cartella spam, regole della casella, eliminato per errore). **bounced** o **failed** significa che l'email non l'ha mai raggiunto; controlla l'indirizzo in Cast & Troupe e reinvia. **queued** significa che è ancora in arrivo; dagli un minuto.
 
 *"Il conteggio confermati non sale."* La conferma richiede che il destinatario clicchi il link nell'email. La consegna da sola non basta.
 

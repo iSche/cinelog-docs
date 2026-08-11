@@ -1,6 +1,6 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Tägliche Dispositionen (Dispo) in CineLog – Header und Call-Time, Drehorte, Plan mit Zeit-Kaskade, Wetter, automatisch befülltes Talent mit Status, Rich-Text-Crew-Message, Versand und Bestätigungs-Tracking, PDF-Export."
 ---
 
@@ -185,11 +185,11 @@ Jeder Empfänger erhält:
 - Eine personalisierte PDF mit hervorgehobener Call-Time.
 - Die Crew-Message (Rich-Text) plus jede optionale Nachricht, die du hinzugefügt hast.
 - Alle personenbezogenen Notizen auf der Dispo, die auf der Dispositions-PDF selbst gedruckt werden (sie sind Teil der Dispo, die jeder mit dieser Call-Time erhält).
-- Einen **Bestätigungs-Link** — eine eindeutige, token-geschützte URL unter `links.cinelog.com/confirm-call-sheet/<token>`. Beim Klicken öffnet sich ein CineLog-gebrandetes Portal, in dem sie "Bestätigen" antippen, um den Empfang zu bestätigen.
+- Einen **Bestätigungs-Link** — eine eindeutige, token-geschützte URL unter `links.cinelog.com/confirm-call-sheet/<token>`. Das Öffnen des Links erfasst die Bestätigung automatisch – kein Konto nötig, nichts anzutippen.
 
-### Sendouts-Seite
+### Confirmations-Seite
 
-Öffne die **Sendouts**-Seite über das obere Menü der Disposition (oder navigiere zu `…/call-sheets/<day>/sendouts`), um zu sehen, an wen die Disposition gesendet wurde. Empfänger sind nach **Sende-Batch** gruppiert – jedes Drücken von Senden erstellt einen neuen Batch, sodass das erneute Senden nach Änderungen die volle Historie erhält. Jeder Batch-Header zeigt eine "N / M bestätigt"-Zählung.
+Öffne die **Confirmations**-Seite über den Button im oberen Menü der Disposition (oder navigiere zu `…/call-sheets/<day>/sendouts`), um zu sehen, an wen die Disposition gesendet wurde. Empfänger sind nach **Sende-Batch** gruppiert – jedes Drücken von Senden erstellt einen neuen Batch, sodass das erneute Senden nach Änderungen die volle Historie erhält. Jeder Batch-Header zeigt eine "N / M bestätigt"-Zählung.
 
 Jede Empfängerzeile zeigt:
 
@@ -205,7 +205,7 @@ Lieferung und Bestätigung sind unabhängig: Eine E-Mail kann geliefert werden, 
 
 ### Erneutes Senden und Bearbeitungen
 
-Du kannst dieselbe Disposition nach dem Bearbeiten erneut senden (eine Drehbuchänderung, ein Crew-Tausch, eine Garderobennotiz). Das neue Senden erstellt einen neuen Batch auf der Sendouts-Seite; vorherige Batches bleiben für den Audit-Trail intakt.
+Du kannst dieselbe Disposition nach dem Bearbeiten erneut senden (eine Drehbuchänderung, ein Crew-Tausch, eine Garderobennotiz). Das neue Senden erstellt einen neuen Batch auf der Confirmations-Seite; vorherige Batches bleiben für den Audit-Trail intakt.
 
 ## PDF-Export
 
@@ -243,7 +243,7 @@ Das Bearbeiten von Dispositionen funktioniert offline – Änderungen werden in 
 
 *"Wetter wurde nicht geladen."* Das Auto-Fetch braucht einen Drehort mit Koordinaten. Setze einen Drehort über Google Places Autocomplete (damit Lat/Lng erfasst wird), dann lade die Disposition neu. Du kannst Wetter auch manuell eingeben.
 
-*"Ein Crew-Mitglied sagt, sie haben die Disposition nicht erhalten."* Öffne die Sendouts-Seite für diesen Tag und finde ihre Zeile. **delivered** oder **opened** heißt, sie hat CineLog verlassen und wurde von ihrem Mail-Provider akzeptiert – das Problem ist nachgelagert (Spam-Ordner, Mailbox-Regeln, versehentlich gelöscht). **bounced** oder **failed** heißt, die E-Mail hat sie nie erreicht; prüfe die Adresse in Cast & Crew und sende erneut. **queued** heißt, sie ist noch unterwegs; gib ihr eine Minute.
+*"Ein Crew-Mitglied sagt, sie haben die Disposition nicht erhalten."* Öffne die Confirmations-Seite für diesen Tag und finde ihre Zeile. **delivered** oder **opened** heißt, sie hat CineLog verlassen und wurde von ihrem Mail-Provider akzeptiert – das Problem ist nachgelagert (Spam-Ordner, Mailbox-Regeln, versehentlich gelöscht). **bounced** oder **failed** heißt, die E-Mail hat sie nie erreicht; prüfe die Adresse in Cast & Crew und sende erneut. **queued** heißt, sie ist noch unterwegs; gib ihr eine Minute.
 
 *"Der Bestätigt-Zähler steigt nicht."* Bestätigung erfordert, dass der Empfänger den Link in der E-Mail klickt. Lieferung allein reicht nicht.
 

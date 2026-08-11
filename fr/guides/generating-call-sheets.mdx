@@ -1,6 +1,6 @@
 ---
 title: Feuilles de service
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Feuilles de service quotidiennes dans CineLog — en-tête et heure d'appel, lieux, planning avec cascade temporelle, météo, talents auto-remplis avec statuts, message équipe en texte riche, envoi et suivi de confirmation, export PDF."
 ---
 
@@ -185,11 +185,11 @@ Chaque destinataire reçoit :
 - Un PDF personnalisé avec son heure d'appel mise en surbrillance.
 - Le message équipe (texte enrichi) plus tout message optionnel que tu as ajouté.
 - Toutes les notes par personne présentes sur la feuille, qui s'impriment sur le PDF de la feuille de service lui-même (elles font partie de la feuille que reçoit toute personne sur cette heure d'appel).
-- Un **lien de confirmation** — une URL unique protégée par jeton à `links.cinelog.com/confirm-call-sheet/<token>`. Cliquer sur le lien ouvre un portail aux couleurs de CineLog où il touche « Confirmer » pour accuser réception.
+- Un **lien de confirmation** — une URL unique protégée par jeton à `links.cinelog.com/confirm-call-sheet/<token>`. Ouvrir le lien enregistre sa confirmation automatiquement — aucun compte requis, rien à toucher.
 
-### Page Envois
+### Page Confirmations
 
-Ouvre la page **Sendouts** (envois) depuis le menu supérieur de la feuille de service (ou navigue vers `…/call-sheets/<day>/sendouts`) pour voir à qui la feuille de service a été envoyée. Les destinataires sont groupés par **lot d'envoi** — chaque pression sur Send crée un nouveau lot, donc renvoyer après modifications préserve l'historique complet. Chaque en-tête de lot affiche un décompte « N / M confirmés ».
+Ouvre la page **Confirmations** avec le bouton du menu supérieur de la feuille de service (ou navigue vers `…/call-sheets/<day>/sendouts`) pour voir à qui la feuille de service a été envoyée. Les destinataires sont groupés par **lot d'envoi** — chaque pression sur Send crée un nouveau lot, donc renvoyer après modifications préserve l'historique complet. Chaque en-tête de lot affiche un décompte « N / M confirmés ».
 
 Chaque ligne de destinataire affiche :
 
@@ -205,7 +205,7 @@ La livraison et la confirmation sont indépendantes : un e-mail peut être livr�
 
 ### Renvois et modifications
 
-Tu peux renvoyer la même feuille de service après l'avoir modifiée (un changement de scénario, un changement d'équipe, une note de costumes). Le nouvel envoi crée un lot frais sur la page Sendouts ; les lots précédents restent intacts pour la traçabilité.
+Tu peux renvoyer la même feuille de service après l'avoir modifiée (un changement de scénario, un changement d'équipe, une note de costumes). Le nouvel envoi crée un lot frais sur la page Confirmations ; les lots précédents restent intacts pour la traçabilité.
 
 ## Export PDF
 
@@ -243,7 +243,7 @@ L'édition des feuilles de service fonctionne hors-ligne — les modifications s
 
 *« La météo ne s'est pas chargée. »* L'auto-récupération a besoin d'un lieu avec coordonnées. Définis un lieu via l'autocomplétion Google Places (pour que la lat/lng soit capturée), puis recharge la feuille de service. Tu peux aussi saisir la météo manuellement.
 
-*« Un membre d'équipe dit qu'il n'a pas reçu la feuille de service. »* Ouvre la page Sendouts pour ce jour et trouve sa ligne. **delivered** ou **opened** signifie qu'elle a quitté CineLog et a été acceptée par son fournisseur de messagerie — le problème est en aval (dossier spam, règles de boîte aux lettres, supprimé par accident). **bounced** ou **failed** signifie que l'e-mail ne lui est jamais parvenu ; vérifie l'adresse dans Casting et Équipe et renvoie. **queued** signifie qu'il est encore en route ; attends une minute.
+*« Un membre d'équipe dit qu'il n'a pas reçu la feuille de service. »* Ouvre la page Confirmations pour ce jour et trouve sa ligne. **delivered** ou **opened** signifie qu'elle a quitté CineLog et a été acceptée par son fournisseur de messagerie — le problème est en aval (dossier spam, règles de boîte aux lettres, supprimé par accident). **bounced** ou **failed** signifie que l'e-mail ne lui est jamais parvenu ; vérifie l'adresse dans Casting et Équipe et renvoie. **queued** signifie qu'il est encore en route ; attends une minute.
 
 *« Le décompte des confirmés n'augmente pas. »* La confirmation requiert que le destinataire clique sur le lien dans l'e-mail. La livraison seule ne suffit pas.
 

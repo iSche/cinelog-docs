@@ -1,6 +1,6 @@
 ---
 title: Órdenes de Rodaje
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Genera y gestiona órdenes de rodaje para elenco y equipo con programación, talento autorrellenado y detalles de localización."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -74,5 +74,5 @@ El horario de las Órdenes de Rodaje se mantiene sincronizado con tu vista Produ
 <Aside type="tip" title="Beneficios del enrutamiento de datos">
 -   **Flujo de Elenco y Equipo**: Los nombres del talento, los roles del equipo y los detalles de contacto fluyen estrictamente desde tu hub central de Elenco y Equipo. Una orden de rodaje nueva siembra su sección de Talento con el elenco de las escenas planificadas de ese día, en orden de número de elenco — la cadena que empieza etiquetando el elenco en el [Desglose del Guion](/es/breakdown). El equipo recurrente se arrastra desde el día anterior con sus horas de convocatoria.
 -   **Garantías de manejo de errores**: Cualquier cuello de botella inválido en el horario muestra avisos visuales nítidos en amarillo/rojo previniendo conflictos en la línea temporal.
--   **Portal de confirmación**: Cualquier persona que reciba un correo de Orden de Rodaje obtiene un enlace protegido por token que abre un portal con la marca de CineLog donde toca "Confirmar" para acusar recibo — sin necesidad de cuenta.
+-   **Portal de confirmación**: Cualquier persona que reciba un correo de Orden de Rodaje obtiene un enlace protegido por token que abre un portal con la marca de CineLog — abrirlo registra su confirmación automáticamente, sin necesidad de cuenta y sin nada que tocar.
 </Aside>

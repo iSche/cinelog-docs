@@ -1,6 +1,6 @@
 ---
 title: Ordens do Dia
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Ordens do dia diárias no CineLog — cabeçalho e hora de apresentação, locações, cronograma com cascata de tempos, clima, elenco preenchido automaticamente com status, mensagem rica para a equipe, envio e rastreamento de confirmações, exportação em PDF."
 ---
 
@@ -185,11 +185,11 @@ Cada destinatário recebe:
 - Um PDF personalizado com sua hora de apresentação destacada.
 - A mensagem para a equipe (rich text) mais qualquer mensagem opcional que você adicionou.
 - Quaisquer notas por pessoa na ordem do dia, que são impressas no próprio PDF da ordem do dia (fazem parte da ordem do dia que todos naquela hora de apresentação recebem).
-- Um **link de confirmação** — uma URL única protegida por token em `links.cinelog.com/confirm-call-sheet/<token>`. Clicar no link abre um portal com a marca CineLog onde a pessoa toca em "Confirmar" para reconhecer o recebimento.
+- Um **link de confirmação** — uma URL única protegida por token em `links.cinelog.com/confirm-call-sheet/<token>`. Abrir o link registra a confirmação automaticamente — sem precisar de conta, nada para tocar.
 
-### Página de Envios
+### Página de Confirmations
 
-Abra a página de **Sendouts** no menu superior da ordem do dia (ou navegue até `…/call-sheets/<day>/sendouts`) para ver quem recebeu a ordem do dia. Os destinatários são agrupados por **lote de envio** — cada pressão em Enviar cria um novo lote, então reenviar depois de edições preserva o histórico completo. Cada cabeçalho de lote mostra uma contagem "N / M confirmados".
+Abra a página **Confirmations** pelo botão no menu superior da ordem do dia (ou navegue até `…/call-sheets/<day>/sendouts`) para ver quem recebeu a ordem do dia. Os destinatários são agrupados por **lote de envio** — cada pressão em Enviar cria um novo lote, então reenviar depois de edições preserva o histórico completo. Cada cabeçalho de lote mostra uma contagem "N / M confirmados".
 
 Cada linha de destinatário mostra:
 
@@ -205,7 +205,7 @@ Entrega e confirmação são independentes: um e-mail pode ser entregue sem ser 
 
 ### Reenvios e edições
 
-Você pode reenviar a mesma ordem do dia depois de editá-la (uma mudança de roteiro, troca de equipe, nota de figurino). O novo envio cria um lote novo na página de Envios; lotes anteriores ficam intactos para a trilha de auditoria.
+Você pode reenviar a mesma ordem do dia depois de editá-la (uma mudança de roteiro, troca de equipe, nota de figurino). O novo envio cria um lote novo na página Confirmations; lotes anteriores ficam intactos para a trilha de auditoria.
 
 ## Exportação em PDF
 
@@ -243,7 +243,7 @@ Editar ordens do dia funciona offline — as alterações são salvas no banco l
 
 *"O clima não carregou."* O auto-fetch precisa de uma locação com coordenadas. Defina uma locação via autocompletar do Google Places (para que o lat/lng seja capturado), depois recarregue a ordem do dia. Você também pode inserir o clima manualmente.
 
-*"Um membro da equipe disse que não recebeu a ordem do dia."* Abra a página de Envios daquele dia e ache a linha dele. **delivered** ou **opened** significa que saiu do CineLog e foi aceito pelo provedor de e-mail dele — o problema é downstream (pasta de spam, regras de caixa, apagado por engano). **bounced** ou **failed** significa que o e-mail nunca chegou; verifique o endereço em Elenco e Equipe e reenvie. **queued** significa que ainda está a caminho; dê um minuto.
+*"Um membro da equipe disse que não recebeu a ordem do dia."* Abra a página Confirmations daquele dia e ache a linha dele. **delivered** ou **opened** significa que saiu do CineLog e foi aceito pelo provedor de e-mail dele — o problema é downstream (pasta de spam, regras de caixa, apagado por engano). **bounced** ou **failed** significa que o e-mail nunca chegou; verifique o endereço em Elenco e Equipe e reenvie. **queued** significa que ainda está a caminho; dê um minuto.
 
 *"A contagem de confirmados não está subindo."* A confirmação exige que o destinatário clique no link do e-mail. Só a entrega não basta.
 

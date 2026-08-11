@@ -1,6 +1,6 @@
 ---
 title: Call Sheets
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Generate and manage call sheets for cast and crew with scheduling, auto-populated talent, and location details."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -74,5 +74,5 @@ The Call Sheets schedule stays in sync with your Production view. Reordering a s
 <Aside type="tip" title="Data Routing Benefits">
 -   **Cast and Crew Flows**: Talent names, crew roles, and contact details flow strictly from your central Cast and Crew hub. A new sheet seeds its Talent section from the cast in that day's scheduled scenes, in cast-number order — the pipeline that starts with tagging cast in the [Script Breakdown](/breakdown). Recurring crew carry forward from the previous day with their call times.
 -   **Error Handling Guarantees**: Any invalid schedule bottleneck displays stark yellow/red UI alerts preventing timeline clashes.
--   **Confirmation Portal**: Anyone receiving a Call Sheet email gets a token-protected link that opens a CineLog-branded portal where they tap "Confirm" to acknowledge receipt — no account required.
+-   **Confirmation Portal**: Anyone receiving a Call Sheet email gets a token-protected link that opens a CineLog-branded portal — opening it records their confirmation automatically, no account required, nothing to tap.
 </Aside>

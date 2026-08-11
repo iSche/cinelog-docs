@@ -1,6 +1,6 @@
 ---
 title: Órdenes de rodaje
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Órdenes de rodaje diarias en CineLog: encabezado y hora de convocatoria, localizaciones, horario con cascada de tiempos, meteorología, talento autorrellenado con estados, mensaje de equipo con texto enriquecido, envío y seguimiento de confirmaciones, exportación a PDF."
 ---
 
@@ -185,11 +185,11 @@ Cada destinatario recibe:
 - Un PDF personalizado con su hora de convocatoria resaltada.
 - El mensaje del equipo (texto enriquecido) más cualquier mensaje opcional que añadiste.
 - Cualquier nota por persona de la orden, que se imprime en el propio PDF de la orden de rodaje (forman parte de la orden que recibe todo el que está en esa hora de convocatoria).
-- Un **enlace de confirmación** — una URL única protegida por token en `links.cinelog.com/confirm-call-sheet/<token>`. Al hacer clic en el enlace se abre un portal con la marca de CineLog donde tocan "Confirmar" para acusar recibo.
+- Un **enlace de confirmación** — una URL única protegida por token en `links.cinelog.com/confirm-call-sheet/<token>`. Abrir el enlace registra su confirmación automáticamente: sin cuenta, sin nada que tocar.
 
-### Página de Envíos
+### Página de Confirmations
 
-Abre la página de **Envíos** desde el menú superior de la orden de rodaje (o navega a `…/call-sheets/<day>/sendouts`) para ver a quién se le ha enviado la orden de rodaje. Los destinatarios se agrupan por **lote de envío** — cada pulsación de Enviar crea un nuevo lote, así que reenviar después de ediciones preserva todo el historial. Cada encabezado de lote muestra un contador "N / M confirmados".
+Abre la página **Confirmations** con el botón del menú superior de la orden de rodaje (o navega a `…/call-sheets/<day>/sendouts`) para ver a quién se le ha enviado la orden de rodaje. Los destinatarios se agrupan por **lote de envío** — cada pulsación de Enviar crea un nuevo lote, así que reenviar después de ediciones preserva todo el historial. Cada encabezado de lote muestra un contador "N / M confirmados".
 
 Cada fila de destinatario muestra:
 
@@ -205,7 +205,7 @@ Entrega y confirmación son independientes: un correo se puede entregar sin ser 
 
 ### Reenvíos y ediciones
 
-Puedes reenviar la misma orden de rodaje después de editarla (un cambio de guion, un cambio de equipo, una nota de vestuario). El nuevo envío crea un lote fresco en la página de Envíos; los lotes anteriores quedan intactos para el rastro de auditoría.
+Puedes reenviar la misma orden de rodaje después de editarla (un cambio de guion, un cambio de equipo, una nota de vestuario). El nuevo envío crea un lote fresco en la página Confirmations; los lotes anteriores quedan intactos para el rastro de auditoría.
 
 ## Exportación a PDF
 
@@ -243,7 +243,7 @@ La edición de órdenes de rodaje funciona sin conexión: los cambios se guardan
 
 *"El clima no se cargó."* La obtención automática necesita una localización con coordenadas. Establece una localización mediante el autocompletado de Google Places (para que se capturen lat/lng) y luego recarga la orden de rodaje. También puedes introducir el clima manualmente.
 
-*"Un miembro del equipo dice que no recibió la orden de rodaje."* Abre la página de Envíos para ese día y encuentra su fila. **entregado** o **abierto** significa que salió de CineLog y fue aceptado por su proveedor de correo: el problema está aguas abajo (carpeta de spam, reglas del buzón, eliminado por accidente). **rebotado** o **fallido** significa que el correo nunca les llegó; revisa la dirección en Elenco y Equipo y reenvía. **en cola** significa que todavía está en camino; dale un minuto.
+*"Un miembro del equipo dice que no recibió la orden de rodaje."* Abre la página Confirmations para ese día y encuentra su fila. **entregado** o **abierto** significa que salió de CineLog y fue aceptado por su proveedor de correo: el problema está aguas abajo (carpeta de spam, reglas del buzón, eliminado por accidente). **rebotado** o **fallido** significa que el correo nunca les llegó; revisa la dirección en Elenco y Equipo y reenvía. **en cola** significa que todavía está en camino; dale un minuto.
 
 *"El recuento de confirmados no sube."* La confirmación requiere que el destinatario haga clic en el enlace del correo. La entrega sola no es suficiente.
 

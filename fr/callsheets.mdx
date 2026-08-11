@@ -1,6 +1,6 @@
 ---
 title: Feuilles de Service
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Génère et gère les feuilles de service pour le casting et l'équipe avec planification, talents remplis automatiquement et détails de localisation."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -74,5 +74,5 @@ Le planning des Feuilles de Service reste synchronisé avec ta vue Production. R
 <Aside type="tip" title="Avantages du routage de données">
 -   **Flux Casting et Équipe** : Les noms des talents, les rôles de l'équipe et les détails de contact proviennent strictement de ton hub central Casting et Équipe. Une nouvelle feuille remplit sa section Talents à partir du casting des scènes planifiées ce jour-là, dans l'ordre des numéros de casting — la chaîne qui commence par l'étiquetage du casting dans le [Dépouillement du Scénario](/fr/breakdown). L'équipe récurrente est reportée depuis la veille avec ses heures d'appel.
 -   **Garanties de gestion des erreurs** : Tout goulot d'étranglement de planning invalide affiche des alertes UI jaunes/rouges marquées empêchant les conflits de chronologie.
--   **Portail de confirmation** : Toute personne recevant un e-mail de Feuille de Service reçoit un lien protégé par jeton qui ouvre un portail aux couleurs de CineLog où elle appuie sur « Confirmer » pour accuser réception — aucun compte requis.
+-   **Portail de confirmation** : Toute personne recevant un e-mail de Feuille de Service reçoit un lien protégé par jeton qui ouvre un portail aux couleurs de CineLog — l'ouvrir enregistre sa confirmation automatiquement, aucun compte requis, rien à toucher.
 </Aside>

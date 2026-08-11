@@ -1,6 +1,6 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Erstelle und verwalte Dispositionen (Dispo) für Cast und Crew mit Terminierung, automatisch befülltem Talent und Ortsdetails."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -74,5 +74,5 @@ Der Plan in der Disposition bleibt synchron mit deiner Drehtage-Ansicht. Eine Sz
 <Aside type="tip" title="Vorteile der Daten-Routing">
 -   **Cast & Crew-Flüsse**: Talent-Namen, Crew-Rollen und Kontaktdetails fließen strikt aus deinem zentralen Cast & Crew-Hub. Eine neue Dispo befüllt ihren Talent-Bereich aus dem Cast der an diesem Tag geplanten Szenen, in der Reihenfolge der Cast-Nummern – die Pipeline, die mit dem Taggen des Casts im [Drehbuchauszug](/de/breakdown) beginnt. Wiederkehrende Crew wird mit ihren Call-Zeiten vom Vortag übernommen.
 -   **Garantien beim Fehler-Handling**: Jeder ungültige Planengpass zeigt deutliche gelbe/rote UI-Warnungen, die Timeline-Konflikte verhindern.
--   **Bestätigungs-Portal**: Jeder, der eine Dispositions-E-Mail erhält, bekommt einen token-geschützten Link, der ein CineLog-gebrandetes Portal öffnet, in dem er auf "Bestätigen" tippt, um den Empfang zu quittieren – kein Konto nötig.
+-   **Bestätigungs-Portal**: Jeder, der eine Dispositions-E-Mail erhält, bekommt einen token-geschützten Link, der ein CineLog-gebrandetes Portal öffnet – das Öffnen quittiert den Empfang automatisch, kein Konto nötig, nichts anzutippen.
 </Aside>

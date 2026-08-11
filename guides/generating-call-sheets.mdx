@@ -1,6 +1,6 @@
 ---
 title: Call sheets
-lastUpdated: 2026-08-08
+lastUpdated: 2026-08-10
 description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, auto-populated talent with statuses, rich-text crew message, sending and confirmation tracking, PDF export."
 ---
 
@@ -185,11 +185,11 @@ Each recipient gets:
 - A personalised PDF with their call time highlighted.
 - The crew message (rich text) plus any optional message you added.
 - Any per-person notes on the sheet, which print on the call sheet PDF itself (they are part of the sheet everyone on that call time receives).
-- A **confirmation link** — a unique token-protected URL at `links.cinelog.com/confirm-call-sheet/<token>`. Clicking the link opens a CineLog-branded portal where they tap "Confirm" to acknowledge receipt.
+- A **confirmation link** — a unique token-protected URL at `links.cinelog.com/confirm-call-sheet/<token>`. Opening the link records their confirmation automatically — no account required, nothing to tap.
 
-### Sendouts page
+### Confirmations page
 
-Open the **Sendouts** page from the call sheet's top menu (or navigate to `…/call-sheets/<day>/sendouts`) to see who's been sent the call sheet. Recipients are grouped by **send batch** — each press of Send creates a new batch, so re-sending after edits preserves the full history. Each batch header shows an "N / M confirmed" tally.
+Open the **Confirmations** page with the button in the call sheet's top menu (or navigate to `…/call-sheets/<day>/sendouts`) to see who's been sent the call sheet. Recipients are grouped by **send batch** — each press of Send creates a new batch, so re-sending after edits preserves the full history. Each batch header shows an "N / M confirmed" tally.
 
 Each recipient row shows:
 
@@ -205,7 +205,7 @@ Delivery and confirmation are independent: an email can be delivered without bei
 
 ### Re-sends and edits
 
-You can re-send the same call sheet after editing it (a script change, a crew swap, a wardrobe note). The new send creates a fresh batch on the Sendouts page; previous batches stay intact for the audit trail.
+You can re-send the same call sheet after editing it (a script change, a crew swap, a wardrobe note). The new send creates a fresh batch on the Confirmations page; previous batches stay intact for the audit trail.
 
 ## PDF export
 
@@ -243,7 +243,7 @@ Editing call sheets works offline — changes save to the local database and syn
 
 *"Weather didn't load."* The auto-fetch needs a location with coordinates. Set a location via Google Places autocomplete (so the lat/lng is captured), then reload the call sheet. You can also enter weather manually.
 
-*"A crew member says they didn't get the call sheet."* Open the Sendouts page for that day and find their row. **delivered** or **opened** means it left CineLog and was accepted by their mail provider — the issue is downstream (spam folder, mailbox rules, deleted by accident). **bounced** or **failed** means the email never reached them; check the address in Cast & Crew and re-send. **queued** means it's still on the way; give it a minute.
+*"A crew member says they didn't get the call sheet."* Open the Confirmations page for that day and find their row. **delivered** or **opened** means it left CineLog and was accepted by their mail provider — the issue is downstream (spam folder, mailbox rules, deleted by accident). **bounced** or **failed** means the email never reached them; check the address in Cast & Crew and re-send. **queued** means it's still on the way; give it a minute.
 
 *"The confirmed count isn't going up."* Confirmation requires the recipient to click the link in the email. Delivery alone isn't enough.
 
