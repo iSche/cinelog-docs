@@ -1,7 +1,7 @@
 ---
 title: Gestire Cast & Troupe
-lastUpdated: 2026-06-25
-description: "Aggiungi ruoli e dipartimenti, gestisci i contatti del workspace e controlla l'accesso con intent toggle. I dati della troupe fluiscono direttamente negli ordini del giorno di CineLog."
+lastUpdated: 2026-08-08
+description: "Aggiungi ruoli e dipartimenti, crea ruoli personalizzati, numera e collega il tuo cast ai personaggi, gestisci i contatti del workspace e controlla l'accesso con intent toggle. I dati della troupe fluiscono direttamente negli ordini del giorno di CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -19,25 +19,44 @@ Puoi facilmente aggiungere nuovi membri direttamente al tuo progetto. CineLog us
 
 <Steps>
 1. **Apri Cast & Troupe:** Naviga al modulo Cast & Troupe usando la sidebar sinistra. Assicurati di essere nella tab "Progetto".
-2. **Aggiungi un Ruolo:** Clicca il pulsante **"+ Aggiungi Ruolo"**.
+2. **Aggiungi un Ruolo:** Clicca il pulsante **"+ Add Role"**.
 3. **Seleziona o Crea:** Si aprirà la finestra unificata. Puoi cercare e selezionare una persona esistente dai tuoi Contatti del Workspace, oppure semplicemente digitare un nuovo nome per creare istantaneamente un nuovo contatto.
-4. **Scegli un Ruolo:** Seleziona un ruolo standard del settore dal dropdown (es. *Aiuto Regista*, *Gaffer*, *Attore Protagonista*). 
+4. **Scegli un Ruolo:** Cerca nella lista dei ruoli e scegline uno (es. *Aiuto Regista*, *Gaffer*, *Attore Protagonista*).
 5. **Dettagli di contatto:** Inserisci l'email e il numero di telefono della persona. Anche se opzionali, sono fortemente consigliati se prevedi di inviargli Ordini del Giorno o di invitarlo nell'app.
 </Steps>
 
 Puoi assegnare più ruoli a una singola persona se sta indossando più cappelli nella tua produzione!
 
+### Ruoli personalizzati
+
+Quando la tua produzione ha una mansione che la lista standard non conosce, creane una tua. Digita il nome nel campo di ricerca dei ruoli e, quando non c'è nessuna corrispondenza, ottieni l'opzione **Create "…" as a custom role**. Qualche cosa da sapere:
+
+- I ruoli personalizzati appartengono al **workspace**, non al progetto, quindi da quel momento ogni progetto del tuo workspace può usarli.
+- Vivono tutti in un unico dipartimento chiamato **Custom**, che si ordina dopo i dipartimenti standard sulla board.
+- I nomi devono essere unici. Se il nome esiste già come ruolo standard o personalizzato, CineLog ti dice quale, e scegli quello esistente al suo posto.
+- L'opzione di creazione appare nel percorso principale **+ Add Role**. L'aggiunta dal pulsante **+** di un singolo dipartimento offre solo i ruoli di quel dipartimento, perché un ruolo personalizzato non può viverci dentro.
+- Nell'app non c'è ancora modo di rinominare o eliminare i ruoli personalizzati. Dai loro il nome con cui devono essere stampati sull'ordine del giorno.
+
+### Numeri di cast e personaggi
+
+Gli slot del gruppo cast (Talent e Background) portano due cose che gli slot di troupe non hanno: un **numero di cast** e un **personaggio**.
+
+- Il numero è quello che gli ordini del giorno e il Day Out of Days stampano accanto all'attore. Tocca il chip del numero nella sezione **Character** di uno slot per impostarlo a mano. I numeri sono unici — se il 3 è occupato, CineLog ti dice chi ce l'ha.
+- **Link…** collega lo slot a un personaggio dello [Spoglio della Sceneggiatura](/it/breakdown), e lo slot inizia a leggersi come una scheda di casting: "Jane Doe as MARIA", con sotto "1 · MARIA — Lead". Se non ci sono ancora personaggi da collegare, tagga prima il cast nello spoglio.
+- Di solito è lo spoglio a fare la prima passata al posto tuo: crea uno slot Talent vacante e numerato per ogni personaggio rilevato, con un ruolo ipotizzato che puoi cambiare. Vedi [Spoglio della Sceneggiatura](/it/breakdown).
+- Per riordinare il cast, tieni premuta una riga del cast e trascinala. L'intero gruppo Cast si rinumera secondo il nuovo ordine, prima Talent, poi Background, così la board si legge sempre da 1 a N dall'alto.
+
 ---
 
 ## 3. Controllo accessi e inviti
 
-Assegnare un contatto a un ruolo del progetto imposta automaticamente il suo accesso a **in sospeso** e gli invia un'email di invito. Diventa un collaboratore attivo non appena accetta, oppure istantaneamente se collabora già a un altro progetto nel tuo workspace.
+Assegnare un contatto a un ruolo del progetto imposta automaticamente il suo accesso a **pending** e gli invia un'email di invito. Diventa un collaboratore attivo non appena accetta, oppure istantaneamente se collabora già a un altro progetto nel tuo workspace.
 
 Per mantenere qualcuno solo come contatto — nel tuo roster e negli ordini del giorno ma senza accesso all'app — lascia vacante il suo slot di ruolo, oppure disattiva il suo accesso con l'Intent Toggle qui sotto.
 
 ### L'"Intent Toggle"
 
-Clicca sul ruolo di qualsiasi persona nella lista Cast & Troupe del Progetto per aprire la sua **Finestra Dettagli Ruolo**. All'interno troverai il **Modulo di Controllo Accesso**.
+Clicca sul ruolo di qualsiasi persona nella lista Cast & Troupe del Progetto per aprire la sua **Role Details Dialog** (finestra Dettagli Ruolo). All'interno troverai l'**Access Control Form** (modulo di controllo accesso).
 
 In cima a questo modulo c'è l'**Access Intent Toggle**.
 
@@ -45,7 +64,7 @@ In cima a questo modulo c'è l'**Access Intent Toggle**.
 - **OFF (Non consentito):** La persona resta nel tuo roster e negli ordini del giorno ma non può loggarsi nel progetto. Disattivalo per i contatti che non devono avere accesso all'app.
 
 <Aside type="note">
-**Gestione del team:** Chiunque abbia il permesso di **Modifica** per il modulo Cast & Troupe può attivare gli intent di accesso e modificare l'ACL per altri membri del team. Questo ti permette di delegare i compiti di onboarding e sicurezza ai tuoi Production Manager o Coordinatori!
+**Gestione del team:** Chiunque abbia il permesso **Edit** per il modulo Cast & Troupe può attivare gli intent di accesso e modificare l'ACL per altri membri del team. Questo ti permette di delegare i compiti di onboarding e sicurezza ai tuoi Production Manager o Coordinatori!
 </Aside>
 
 ### Controllo accessi basato sui ruoli (RBAC)
@@ -54,4 +73,4 @@ Quando concedi a un utente l'accesso al tuo progetto, cosa può effettivamente *
 
 CineLog usa il **Controllo Accessi Basato sui Ruoli (RBAC)**. I permessi di un utente sono influenzati dal ruolo del settore che gli hai assegnato, con default sensati applicati in base al suo dipartimento e alla posizione nella gerarchia.
 
-Come Proprietario del Progetto, puoi sovrascrivere i permessi di default all'interno della Finestra Dettagli Ruolo, regolando l'accesso View/Edit per i singoli moduli per quella specifica persona.
+Come Proprietario del Progetto, puoi sovrascrivere i permessi di default all'interno del Role Details Dialog, regolando l'accesso View/Edit per i singoli moduli per quella specifica persona.

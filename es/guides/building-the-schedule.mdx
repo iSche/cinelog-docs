@@ -1,0 +1,64 @@
+---
+title: Crear el plan de rodaje
+lastUpdated: 2026-08-10
+description: "Guía de flujo de trabajo del tablero del Plan de Rodaje: convierte escenas en tiras, monta días de rodaje arrastrando, divide escenas en partes, pon elenco y localizaciones en las tiras y haz que cada día fluya hacia su orden de rodaje."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Antes del software, un plan de rodaje era un tablero de madera lleno de tiras de cartón. Cada tira era una escena, impresa con su número, su localización, su elenco y su duración en octavos de página, y el ayudante de dirección montaba el rodaje deslizando físicamente las tiras entre días. El tablero funcionaba porque reorganizarlo era lo bastante rápido como para probar diez versiones de una jornada antes de la comida.
+
+El Plan de Rodaje de CineLog es ese tablero. Una tira por escena, los días apilados por la pantalla y el arrastre como toda la interfaz. Esta guía recorre el flujo de trabajo desde un guion desglosado hasta un tablero terminado y sus órdenes de rodaje. La referencia completa de cada control está en la página [Plan de Rodaje](/es/schedule).
+
+<Aside type="note">
+El Plan de Rodaje se está desplegando de forma gradual. Si todavía no lo ves en tu navegación, es que no está activado para tu versión, y ningún ajuste por tu parte lo activa antes de tiempo.
+</Aside>
+
+## De dónde salen las tiras
+
+El tablero no es un documento aparte que tengas que mantener. Es otra vista de los mismos días de producción que construyes en la [Lista de Planos](/es/shotlist), así que un cambio en cualquiera de los dos sitios es un cambio en ambos, al instante y en todos los dispositivos.
+
+Eso significa que la forma de poner tus primeras escenas en el tablero es darles planos y días. Si has llegado aquí directamente desde el [Desglose](/es/guides/breaking-down-the-script), pulsa antes **Populate Shot List** en la barra de herramientas del desglose, porque eso siembra tus escenas y planos con su elenco, y las tiras llegan sabiendo ya quién está en ellas.
+
+Abre **Schedule** en la barra lateral izquierda, entre Story Board y Órdenes de Rodaje. En teléfono está en el panel **More**. Arriba del tablero está **Unscheduled**, que contiene todas las escenas que aún no están en un día. Debajo vienen los días de rodaje. Si necesitas un sitio al que arrastrar, **Add Day** en la barra de herramientas abre el siguiente día vacío.
+
+## Lee una tira antes de moverla
+
+Cada tira muestra el número de escena, la localización, INT o EXT, el momento del día, los números de elenco de la escena, la duración de la escena en octavos de página y su hora de inicio y duración estimada. Las tiras toman además automáticamente los colores clásicos del tablero a partir de INT/EXT y Día/Noche, así que un vistazo a lo largo de un día te dice qué tipo de jornada has montado antes de haber leído una sola palabra.
+
+Los octavos son la cifra que hay que vigilar. Una página de guion equivale a un minuto de pantalla aproximadamente, y la mayoría de las producciones calculan unos veinte minutos de rodaje por octavo, así que una jornada cuyas tiras sumen seis páginas es una jornada de la que deberías desconfiar. La cabecera del día lleva la estimación acumulada por ti.
+
+## Monta una jornada
+
+Mantén pulsada una tira y arrastra. Donde la sueltes es lo que significa:
+
+- Dentro de un día, has reordenado el día.
+- Más allá de una cabecera de día, la escena se mueve a ese día y aterriza donde la soltaste.
+- Hasta Unscheduled, la escena sale del calendario. No se borra nada, así que no hay confirmación que aceptar. Arrástrala de vuelta a un día para deshacerlo.
+
+Una escena en Unscheduled también se puede tocar sin más: un panel lista los días existentes más uno nuevo, y eliges a dónde va. Un día que se queda sin tiras desaparece, y los días posteriores cierran el hueco.
+
+Entonces, ¿qué hace buena a una jornada? El tablero no lo decide por ti, pero el oficio conoce la respuesta desde hace décadas. Lo más caro que hace una producción es un traslado de compañía, empaquetar todos los camiones y conducir hasta una nueva localización, así que agrupas en los mismos días las escenas que comparten localización aunque estén a cuarenta escenas de distancia en la historia. Luego miras los números de elenco de las tiras e intentas agrupar las escenas de cada actor en un bloque compacto, porque a los actores se les paga por día tanto si trabajan como si esperan. Y no pierdes de vista los colores, porque una jornada que mezcla tiras de exterior día con trabajo de noche es una jornada peleada con el sol. El arrastre es barato. Prueba versiones hasta que la jornada se lea limpia.
+
+## Divide una escena entre días
+
+A veces media escena se rueda el martes y la otra mitad el jueves, porque así funcionan las producciones reales. La división se hace en la Lista de Planos del día, arrastrando un plano fuera de su bloque de escena. El tablero muestra entonces las partes como **1 pt 1** y **1 pt 2**, y cada parte se mueve de forma independiente como cualquier otra tira. Cuando dos partes de la misma escena vuelven a quedar contiguas en un mismo día, se fusionan solas de nuevo en una escena normal.
+
+## Pon elenco y localizaciones en las tiras
+
+Toca la celda de **elenco** de una tira y obtienes un interruptor por cada miembro del elenco numerado. Cada cambio se guarda al momento. Este panel es además el único sitio donde sacar a alguien de una escena, y la orden de rodaje lo respeta, porque la sección Talent de la orden de rodaje de un día se construye exactamente con estos datos, en orden de número de elenco.
+
+Toca la celda de **localización** y obtienes el panel de localización: nombre del set, dirección con autocompletado, nota, aparcamiento y hospital más cercano. Debajo de los campos, **Use an existing location** lista los sets que ya has nombrado. Úsalo, porque diez escenas en la misma casa deberían compartir una única entrada, y así una corrección en su dirección llega a las diez. Los mismos campos alimentan el bloque de Localizaciones de la orden de rodaje.
+
+Toca **START** o **EST** para editar la hora de inicio o la duración estimada de una escena. Normalmente ambos muestran **Auto**, porque los tiempos caen en cascada desde la hora de convocatoria del día, y un valor que fijes recibe un botón **Reset to auto** para cuando quieras recuperar la cascada.
+
+## Marca los eventos que no son escenas
+
+**Add Banner** coloca un evento de horario en un día, como la comida, un traslado de compañía o un cambio de equipo. Los banners son los mismos banners que ya conoces de la vista Producción y de la orden de rodaje, y tocar uno abre el mismo editor. Viven en días de rodaje, así que no se pueden arrastrar a Unscheduled.
+
+## Haz que una jornada fluya hacia su orden de rodaje
+
+Ahora que una jornada tiene sus escenas, su elenco y su localización, la orden de rodaje casi se escribe sola. La cabecera de cada día muestra la fecha de rodaje de la orden de rodaje de ese día, la sección Talent se rellena con el elenco del día en orden de número de elenco, el bloque de Localizaciones lleva el set con su aparcamiento y su hospital, y las filas del horario imprimen las mismas horas de inicio y estimaciones que muestran las tiras. La parte de salida —el envío, las confirmaciones y las horas de convocatoria por persona— está cubierta en [Órdenes de rodaje](/es/guides/generating-call-sheets).
+
+## Exporta el tablero
+
+**Export** en la barra de herramientas produce un PDF del tablero: un bloque de título con la marca de tu empresa y luego las tiras de cada día con elenco, páginas, inicio y estimación, exactamente como las muestra el tablero. El diálogo ofrece márgenes de página y un rango de días. Las escenas de Unscheduled se quedan fuera del PDF, porque el tiempo sin planificar no es un dato del plan.

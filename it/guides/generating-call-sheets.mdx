@@ -1,7 +1,7 @@
 ---
 title: Ordini del giorno
-lastUpdated: 2026-07-11
-description: "Ordini del giorno giornalieri in CineLog — intestazione e orario di call, location, programmazione con cascata temporale, meteo, sezioni personale, messaggio rich-text alla troupe, invio e tracciamento conferme, esportazione PDF."
+lastUpdated: 2026-08-08
+description: "Ordini del giorno giornalieri in CineLog — intestazione e orario di call, location, programmazione con cascata temporale, meteo, talent popolati automaticamente con i loro stati, messaggio rich-text alla troupe, invio e tracciamento conferme, esportazione PDF."
 ---
 
 Un ordine del giorno in CineLog è il piano di produzione giornaliero: la programmazione, la location, le persone, il meteo e il messaggio che viene inviato con l'email. È strettamente accoppiato al resto del progetto — la programmazione è la stessa data di vista Produzione per quel giorno, e il personale viene direttamente da Cast & Troupe. **Ordini del Giorno (O.d.G.)** è il termine italiano standard.
@@ -27,7 +27,7 @@ L'intestazione si estende in alto e porta le informazioni chiave del giorno a co
 
 ### Orario di call generale
 
-Il singolo campo più importante. Imposta l'orario base di inizio della giornata (es. 08:00). Cliccalo per modificarlo. Questo orario ancora la cascata temporale della programmazione (sotto) ed è l'orario di default inviato a ogni destinatario salvo che non abbia un orario di call personale impostato (vedi [Personale](#personnel-sections)).
+Il singolo campo più importante. Imposta l'orario base di inizio della giornata (es. 08:00). Cliccalo per modificarlo. Questo orario ancora la cascata temporale della programmazione (sotto) ed è l'orario di default inviato a ogni destinatario salvo che non abbia un orario di call personale impostato (vedi [Sezioni personale](#sezioni-personale)).
 
 ### Data
 
@@ -45,8 +45,8 @@ Lato destro dell'intestazione. Preso dall'entità progetto — qui non c'è modi
 
 Apri il popup delle impostazioni di visualizzazione dal menu in alto dell'ordine del giorno per attivare:
 
-- **Formato ora** — 12 ore (`8:00 AM`) o 24 ore (`08:00`).
-- **Unità di temperatura** — °F o °C.
+- **Time format** (formato ora) — 12 ore (`8:00 AM`) o 24 ore (`08:00`).
+- **Temperature unit** (unità di temperatura) — °F o °C.
 
 Entrambe le scelte sono per utente e persistono attraverso le sessioni.
 
@@ -108,7 +108,15 @@ Una lista di riferimento rapido nella seconda riga dell'intestazione che mostra 
 
 ### Talent
 
-Tabella a tre colonne — avatar, nome, ruolo. Aggiungi talent dai contatti del progetto. Clicca qualsiasi riga per aggiungere note o impostare un orario di call. Long-press su una riga per riordinare.
+Tabella a tre colonne — **NAME**, **ROLE**, **CALL**. Un nuovo ordine del giorno riempie questa sezione al posto tuo: legge quali membri del cast sono nelle scene programmate quel giorno, in ordine di numero di cast. È l'estremità finale del flusso che comincia nello [Spoglio della Sceneggiatura](/it/breakdown) — tagga il cast una volta, e il foglio di ogni giornata convoca esattamente le persone che servono alle sue scene. Togli qualcuno da una scena ed esce dal foglio di quel giorno.
+
+I numeri di cast vengono dallo slot in [Cast & Troupe](/it/castandcrew) e sono letti live, quindi rinumerare il cast aggiorna ogni foglio. Uno slot senza ancora un attore scritturato stampa **TBD**, con il personaggio che rappresenta riportato nel ruolo, tipo "PRINCIPAL - JOHN".
+
+Puoi comunque aggiungere persone a mano, e una volta che un foglio esiste il suo ordine è tuo — CineLog semina i nuovi fogli in ordine di numero di cast ma non riorganizza mai un foglio che hai toccato. Clicca qualsiasi riga per aggiungere note, impostare un orario di call o impostare uno stato. Long-press su una riga per riordinare.
+
+### Stato per persona
+
+Ogni persona può portare uno stato di lavoro, con lo stesso vocabolario che usa un Day Out of Days. Il Talent ha l'insieme completo: **Start, Work, Finish, Start/Work, Work/Finish, Hold, Day Off, Travel**. Troupe e clienti hanno l'insieme più breve: Start, Work, Finish, Start/Work, Work/Finish.
 
 ### Troupe
 
@@ -148,10 +156,10 @@ Un blocco rich-text per il messaggio che esce insieme al PDF dell'ordine del gio
 
 La toolbar dell'editor supporta:
 
-- **Grassetto, corsivo, sottolineato.**
-- **Colore.** Otto campioni curati (Bianco, Oro, Rame, Rosa, Lavanda, Vetro di Mare, Salvia, Pergamena).
-- **Embed di immagine.** Clicca il pulsante immagine, scegli un'immagine. JPEG / PNG / WebP, fino a 1 MB — l'app ridimensiona automaticamente le immagini grandi. L'URL dell'immagine viene incorporato nel messaggio e appare nel corpo dell'email.
-- **Cancella formattazione.**
+- **Bold, italic, underline.**
+- **Color.** Otto campioni curati (Bianco, Oro, Rame, Rosa, Lavanda, Vetro di Mare, Salvia, Pergamena).
+- **Image embed.** Clicca il pulsante immagine, scegli un'immagine. JPEG / PNG / WebP, fino a 1 MB — l'app ridimensiona automaticamente le immagini grandi. L'URL dell'immagine viene incorporato nel messaggio e appare nel corpo dell'email.
+- **Clear formatting.**
 
 L'email renderizzata applica la stessa formattazione lato destinatario. Il server sanifica il messaggio prima di inviarlo — solo i tag di formattazione nella allowlist passano.
 
@@ -161,7 +169,7 @@ Un campo footer per note a livello produzione, promemoria di sicurezza, protocol
 
 ## Invio e tracciamento conferme
 
-Quando l'ordine del giorno è pronto, **Invia** nella barra in alto apre la finestra di invio.
+Quando l'ordine del giorno è pronto, **Send** (invia) nella barra in alto apre la finestra di invio.
 
 ### Scelta dei destinatari
 
@@ -181,17 +189,17 @@ Ogni destinatario riceve:
 
 ### Pagina Invii
 
-Apri la pagina **Invii** dal menu in alto dell'ordine del giorno (o naviga a `…/call-sheets/<day>/sendouts`) per vedere chi è stato inviato l'ordine del giorno. I destinatari sono raggruppati per **batch di invio** — ogni pressione di Invia crea un nuovo batch, quindi reinviare dopo modifiche preserva l'intera cronologia. Ogni intestazione di batch mostra un conteggio "N / M confermati".
+Apri la pagina **Sendouts** (invii) dal menu in alto dell'ordine del giorno (o naviga a `…/call-sheets/<day>/sendouts`) per vedere chi è stato inviato l'ordine del giorno. I destinatari sono raggruppati per **batch di invio** — ogni pressione di Send crea un nuovo batch, quindi reinviare dopo modifiche preserva l'intera cronologia. Ogni intestazione di batch mostra un conteggio "N / M confermati".
 
 Ogni riga destinatario mostra:
 
-- **Stato di consegna** — uno tra:
-  - **in coda** — passato al provider di posta, non ancora inviato.
-  - **consegnato** — accettato dal server email del destinatario.
-  - **aperto** — il client email del destinatario ha aperto il messaggio.
+- **Delivery status** (stato di consegna) — uno tra:
+  - **queued** — passato al provider di posta, non ancora inviato.
+  - **delivered** — accettato dal server email del destinatario.
+  - **opened** — il client email del destinatario ha aperto il messaggio.
   - **bounced** — il server email del destinatario lo ha rifiutato (indirizzo errato, casella piena).
-  - **fallito** — il provider di posta non ha potuto inviare.
-- **Timestamp di conferma** — una volta che clicca il suo link.
+  - **failed** — il provider di posta non ha potuto inviare.
+- **Confirmation timestamp** — una volta che clicca il suo link.
 
 Consegna e conferma sono indipendenti: un'email può essere consegnata senza essere confermata (il destinatario non l'ha aperta o non ha cliccato ancora), o confermata rapidamente (era sull'email quando è arrivata).
 
@@ -205,7 +213,7 @@ Due modi per ottenere un PDF, a seconda dell'uso:
 
 ### Esportazione locale dalla toolbar
 
-Il pulsante **Esporta** nel menu in alto apre la finestra di esportazione — qui non c'è una scorciatoia da tastiera (l'esportazione con `Cmd / Ctrl + P` funziona sulle schermate della lista delle inquadrature, dello Storyboard e dello Script AV, non sugli ordini del giorno). Puoi impostare i margini della pagina (alto, basso, sinistro, destro in punti), poi esportare. Il rendering è locale — nessun upload, nessun render lato server — quindi funziona offline. Utile quando vuoi un PDF da distribuire fuori dal flusso email (Slack, WhatsApp, consegna a mano).
+Il pulsante **Export** (esporta) nel menu in alto apre la finestra di esportazione — qui non c'è una scorciatoia da tastiera (l'esportazione con `Cmd / Ctrl + P` funziona sulle schermate della lista delle inquadrature, dello Storyboard e dello Script AV, non sugli ordini del giorno). Puoi impostare i margini della pagina (alto, basso, sinistro, destro in punti), poi esportare. Il rendering è locale — nessun upload, nessun render lato server — quindi funziona offline. Utile quando vuoi un PDF da distribuire fuori dal flusso email (Slack, WhatsApp, consegna a mano).
 
 ### PDF per destinatario al momento dell'invio
 
@@ -235,7 +243,7 @@ Modificare gli ordini del giorno funziona offline — le modifiche si salvano su
 
 *"Il meteo non si è caricato."* L'auto-fetch ha bisogno di una location con coordinate. Imposta una location tramite l'autocompletamento Google Places (in modo che lat/lng venga catturata), poi ricarica l'ordine del giorno. Puoi anche inserire il meteo manualmente.
 
-*"Un membro della troupe dice che non ha ricevuto l'ordine del giorno."* Apri la pagina Invii per quel giorno e trova la sua riga. **consegnato** o **aperto** significa che è uscito da CineLog ed è stato accettato dal suo provider di posta — il problema è a valle (cartella spam, regole della casella, eliminato per errore). **bounced** o **fallito** significa che l'email non l'ha mai raggiunto; controlla l'indirizzo in Cast & Troupe e reinvia. **in coda** significa che è ancora in arrivo; dagli un minuto.
+*"Un membro della troupe dice che non ha ricevuto l'ordine del giorno."* Apri la pagina Sendouts per quel giorno e trova la sua riga. **delivered** o **opened** significa che è uscito da CineLog ed è stato accettato dal suo provider di posta — il problema è a valle (cartella spam, regole della casella, eliminato per errore). **bounced** o **failed** significa che l'email non l'ha mai raggiunto; controlla l'indirizzo in Cast & Troupe e reinvia. **queued** significa che è ancora in arrivo; dagli un minuto.
 
 *"Il conteggio confermati non sale."* La conferma richiede che il destinatario clicchi il link nell'email. La consegna da sola non basta.
 

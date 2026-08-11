@@ -1,0 +1,81 @@
+---
+title: Plan de Rodaje
+lastUpdated: 2026-08-08
+description: "Monta el plan de rodaje como un tablero de tiras de escena: arrastra escenas entre días, divide escenas en partes, gestiona elenco y localizaciones por escena y exporta el plan en PDF."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+El Plan de Rodaje se está desplegando de forma gradual. Si todavía no lo ves en tu navegación, es que no está activado para tu versión, y ningún ajuste por tu parte lo activa antes de tiempo.
+</Aside>
+
+El Plan de Rodaje muestra todo tu rodaje como un tablero de tiras de escena, una fila por escena y por día, tal y como ha funcionado siempre un tablero de producción. No es un documento aparte que tengas que mantener: el tablero es otra vista de los mismos días de producción que construyes en la [Lista de Planos](/es/shotlist), así que un cambio en cualquiera de los dos sitios es un cambio en ambos, al instante y en todos los dispositivos.
+
+<CardGrid>
+<Card title="Una tira por escena">
+  Cada tira muestra el número de escena, la localización, INT/EXT, el momento del día, los números de elenco de la escena, la duración de la escena en octavos de página y su hora de inicio y duración estimada.
+</Card>
+
+<Card title="Arrastrar es toda la interfaz">
+  Mantén pulsada cualquier tira y arrástrala: dentro de un día para reordenar, más allá de una cabecera de día para moverla, o hasta Unscheduled para sacarla del calendario.
+</Card>
+
+<Card title="Elenco y localizaciones en la tira">
+  Toca la celda de elenco de una tira para activar o desactivar quién está en la escena. Toca la celda de localización para nombrar el set, con dirección, aparcamiento y hospital más cercano, que se arrastran a la orden de rodaje.
+</Card>
+
+<Card title="Tiras con los colores del tablero">
+  Las tiras toman automáticamente los colores clásicos del tablero a partir de INT/EXT y Día/Noche, así que un vistazo te dice qué tipo de jornada has montado.
+</Card>
+</CardGrid>
+
+## El tablero
+
+**Schedule** está en la barra lateral izquierda entre Story Board y Órdenes de Rodaje. En teléfono está en el panel **More**.
+
+El tablero es una sola lista continua. Arriba del todo está **Unscheduled**, que contiene todas las escenas que aún no están en un día. Debajo vienen los días de rodaje, cada uno abierto por una fila de cabecera que muestra el número de día, su recuento de escenas, el total estimado y la fecha de rodaje de la orden de rodaje de ese día.
+
+Si el tablero está vacío, empieza por la Lista de Planos: asignar planos a un día de producción es lo que crea las filas del plan. **Add Day** en la barra de herramientas abre el siguiente día vacío para que tengas dónde arrastrar, y un día pendiente y vacío se puede descartar con su ✕ o pulsando `Esc`.
+
+## Mover escenas
+
+Mantén pulsada una tira y arrastra. Donde la sueltes es lo que significa:
+
+- Dentro de un día, has reordenado el día.
+- Más allá de una cabecera de día, la escena se mueve a ese día y aterriza donde la soltaste.
+- Hasta Unscheduled, la escena sale del calendario. No se borra nada. La escena, sus planos y todos sus datos se quedan, así que no hay confirmación que aceptar. Arrástrala de vuelta a un día para deshacerlo.
+- Una escena en Unscheduled también se puede tocar sin más: un panel lista los días existentes más uno nuevo, y eliges a dónde va.
+
+Un día que se queda sin tiras desaparece, y los días posteriores cierran el hueco.
+
+## Partes de escena
+
+A veces media escena se rueda el martes y la otra mitad el jueves. Cuando una escena está repartida entre días, sus tiras se leen **1 pt 1** y **1 pt 2**. La división en sí se hace en la Lista de Planos del día, arrastrando un plano fuera de su bloque de escena. El tablero muestra las partes y las mueve de forma independiente, y cuando dos partes de la misma escena vuelven a quedar contiguas en un mismo día, se fusionan solas de nuevo en una escena normal.
+
+## Elenco y localización en una tira
+
+Tocar la celda de **elenco** de una tira abre un panel con un interruptor por cada miembro del elenco numerado. Cada cambio se guarda al momento. Este panel es además el único sitio donde sacar a alguien de una escena, y la orden de rodaje lo respeta: la sección Talent de la orden de rodaje de un día se construye exactamente con estos datos, en orden de número de elenco. Los números de elenco vienen de [Elenco y Equipo](/es/castandcrew), normalmente sembrados por el [Desglose del Guion](/es/breakdown).
+
+Tocar la celda de **localización** abre el panel de localización: nombre del set, dirección con autocompletado, nota, aparcamiento y hospital más cercano. Debajo de los campos, **Use an existing location** lista los sets que ya has nombrado, así que diez escenas en la misma casa comparten una única entrada, y una corrección en su dirección llega a las diez. Los mismos campos alimentan el bloque de Localizaciones de la orden de rodaje.
+
+Tocar **START** o **EST** edita la hora de inicio o la duración estimada de una escena, los mismos valores que imprime el horario de la orden de rodaje. Normalmente los tiempos caen en cascada desde la hora de convocatoria del día, así que ambos muestran **Auto** hasta que fijas uno, y un valor fijado tiene un botón **Reset to auto**.
+
+## Banners
+
+**Add Banner** coloca un evento de horario en un día, como la comida, un traslado de compañía o un cambio de equipo. Los banners son los mismos banners que ya conoces de la vista Producción y de la orden de rodaje, y tocar uno abre el mismo editor. Los banners viven en días de rodaje, así que no se pueden arrastrar a Unscheduled.
+
+## Exportar
+
+**Export** en la barra de herramientas produce un PDF del tablero: un bloque de título con la marca de tu empresa y luego las tiras de cada día con elenco, páginas, inicio y estimación, exactamente como las muestra el tablero. El diálogo ofrece márgenes de página y un rango de días. Las escenas de Unscheduled se quedan fuera del PDF, porque el tiempo sin planificar no es un dato del plan.
+
+## Visualización
+
+El menú **Display** lleva el formato de hora (12 h / 24 h) y el formato de fecha, compartidos con el resto de la app. El botón **Script** abre el panel lateral del guion junto al tablero, el mismo panel que tiene la Lista de Planos.
+
+## Si esto no funciona
+
+*No hay Schedule en mi navegación.* La funcionalidad todavía no está activada para tu versión, o tu rol en el proyecto no incluye acceso a la Lista de Planos, del que depende la visibilidad del Plan de Rodaje.
+
+*Una escena no se divide en el tablero.* Es a propósito. Las tiras son escenas enteras o partes, así que la división se hace en la Lista de Planos del día arrastrando un plano fuera del bloque de escena. El tablero lo recoge de inmediato.
+
+*La celda de elenco muestra un + pero ninguna persona.* Todavía no existe elenco numerado en el proyecto. Añade números de elenco en Elenco y Equipo, o lanza la pasada de elenco del Desglose del Guion para crear plazas de Talent numeradas.

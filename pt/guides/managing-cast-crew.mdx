@@ -1,7 +1,7 @@
 ---
-title: Gerenciando Elenco e Equipe
-lastUpdated: 2026-06-25
-description: "Adicione funções e departamentos, gerencie contatos do workspace e controle acesso com toggles de intenção. Os dados de equipe fluem diretamente para as ordens do dia do CineLog."
+title: Gerenciar elenco e equipe
+lastUpdated: 2026-08-08
+description: "Adicione funções e departamentos, crie funções personalizadas, numere e vincule seu elenco a personagens, gerencie contatos do workspace e controle acesso com toggles de intenção. Os dados de equipe fluem diretamente para as ordens do dia do CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -19,13 +19,32 @@ Você pode adicionar facilmente novos membros diretamente ao seu projeto. O Cine
 
 <Steps>
 1. **Abra Elenco e Equipe:** navegue até o módulo de Elenco e Equipe pela barra lateral esquerda. Certifique-se de estar na aba "Projeto".
-2. **Adicionar uma Função:** clique no botão **"+ Adicionar Função"**.
+2. **Adicionar uma Função:** clique no botão **"+ Add Role"**.
 3. **Selecionar ou Criar:** o diálogo unificado abre. Você pode buscar e selecionar uma pessoa existente nos seus Contatos do Workspace, ou simplesmente digitar um novo nome para criar instantaneamente um contato novo.
-4. **Escolha uma Função:** selecione uma função padrão da indústria no dropdown (ex.: *1º Assistente de Direção*, *Gaffer*, *Ator Principal*).
+4. **Escolha uma Função:** busque na lista de funções e escolha uma (ex.: *1º Assistente de Direção*, *Gaffer*, *Ator Principal*).
 5. **Detalhes de Contato:** insira o e-mail e o telefone da pessoa. Embora opcional, eles são altamente recomendados se você pretende enviar Ordens do Dia ou convidá-la para o app.
 </Steps>
 
 Você pode atribuir múltiplas funções a uma única pessoa caso ela esteja usando muitos chapéus na sua produção!
+
+### Funções personalizadas
+
+Quando sua produção tem um cargo que a lista padrão não conhece, crie o seu. Digite o nome no campo de busca de funções e, quando nada corresponder, você recebe a opção **Create "…" as a custom role**. Algumas coisas para saber:
+
+- Funções personalizadas pertencem ao **workspace**, não ao projeto, então todo projeto do seu workspace pode usá-las a partir dali.
+- Todas ficam em um único departamento chamado **Custom**, que vem depois dos departamentos padrão no quadro.
+- Os nomes precisam ser únicos. Se o nome já existe como função padrão ou personalizada, o CineLog avisa qual é, e você escolhe a existente.
+- A opção de criar aparece no caminho principal **+ Add Role**. Adicionar pelo botão **+** de um departamento específico oferece apenas as funções daquele departamento, porque uma função personalizada não pode ficar ali.
+- Ainda não dá para renomear ou excluir funções personalizadas dentro do app. Dê a elas o nome que deve sair impresso na ordem do dia.
+
+### Números de elenco e personagens
+
+As vagas do grupo Elenco (os departamentos Elenco e Figurantes) carregam duas coisas que as vagas da equipe não têm: um **número de elenco** e um **personagem**.
+
+- O número é o que as ordens do dia e o Day Out of Days imprimem ao lado do ator. Toque no chip de número na seção **Character** da vaga para defini-lo à mão. Os números são únicos — se o 3 já está ocupado, o CineLog diz quem está com ele.
+- **Link…** conecta a vaga a um personagem da [Análise Técnica do Roteiro](/pt/breakdown), e a vaga passa a se ler como uma folha de casting: "Jane Doe como MARIA", com "1 · MARIA — Principal" embaixo. Se ainda não houver personagens para vincular, marque o elenco na análise técnica primeiro.
+- A análise técnica normalmente faz a primeira passada por você: cria uma vaga de elenco em aberto e numerada para cada personagem detectado, com uma função sugerida que você pode mudar. Veja [Análise Técnica do Roteiro](/pt/breakdown).
+- Para reordenar o elenco, pressione e segure uma linha do elenco e arraste. Todo o grupo Elenco é renumerado conforme a nova ordem, primeiro Elenco, depois Figurantes, para que o quadro sempre leia de 1 a N de cima para baixo.
 
 ---
 
@@ -45,7 +64,7 @@ No topo desse formulário está o **Toggle de Intenção de Acesso**.
 - **OFF (Não Permitido):** a pessoa permanece no seu roster e nas ordens do dia, mas não pode entrar no projeto. Desligue para contatos que não devem ter acesso ao app.
 
 <Aside type="note">
-**Gerenciamento de equipe:** qualquer pessoa com permissão de **Editar** no módulo de Elenco e Equipe pode alternar as intenções de acesso e modificar a ACL para outros membros da equipe. Isso permite delegar tarefas de onboarding e segurança aos seus Gerentes ou Coordenadores de Produção!
+**Gerenciamento de equipe:** qualquer pessoa com permissão de **Edit** no módulo de Elenco e Equipe pode alternar as intenções de acesso e modificar a ACL para outros membros da equipe. Isso permite delegar tarefas de onboarding e segurança aos seus Gerentes ou Coordenadores de Produção!
 </Aside>
 
 ### Controle de Acesso Baseado em Função (RBAC)

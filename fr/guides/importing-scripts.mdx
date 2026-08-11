@@ -1,0 +1,63 @@
+---
+title: Importer des scénarios
+lastUpdated: 2026-08-08
+description: "Importe des fichiers FDX, Fountain, PDF, TXT et RTF via un écran de vérification : compare chaque changement côte à côte, accepte ou refuse ligne par ligne, résous les conflits avec le matériel verrouillé et adopte les numéros de scène."
+---
+
+Ce guide suppose que tu as lu [Les bases](/fr/guides/introduction).
+
+CineLog n'applique jamais un import à l'aveugle. Il analyse le fichier en mémoire, le compare au scénario que tu as ouvert et te montre chaque différence avant que quoi que ce soit ne change. C'est toi qui décides de ce qui passe, ligne par ligne si tu veux. Ça compte surtout sur un scénario déjà verrouillé et diffusé, mais c'est aussi tout simplement une meilleure façon de récupérer une réécriture.
+
+## Lancer un import
+
+Clique sur **Import** dans la barre de menu supérieure du Logiciel de Scénario. Le bouton porte le raccourci `Cmd / Ctrl + I`, qui lance un import chaque fois que le raccourci n'est pas occupé à mettre en italique le texte sélectionné. Sur téléphone, c'est l'icône d'import dans la barre d'application. Les formats pris en charge sont **FDX, Fountain, PDF, TXT et RTF**. Un PDF passe d'abord par une étape supplémentaire : une petite boîte de dialogue pour choisir comment le texte est extrait.
+
+## Importer dans un projet neuf
+
+Si le projet contient encore le scénario de démarrage intact, CineLog fait l'économie du cérémonial et affiche une seule boîte de dialogue avec le titre et la taille du fichier, du genre « 46 scenes · 512 lines ». **Import** remplace le scénario de démarrage d'un coup. **Review first** (vérifier d'abord) t'emmène quand même à l'écran de vérification, où chaque scène se réduit à une ligne avec un choix **Skip / Include** (ignorer / inclure), au cas où tu voudrais en laisser certaines de côté.
+
+Dès que tu as tapé un seul caractère dans le scénario de démarrage, il cesse de compter comme intact et chaque import passe par la vérification complète.
+
+## L'écran de vérification
+
+L'écran de vérification liste chaque différence entre le fichier et ton scénario actuel, regroupée sous des en-têtes épinglés, avec un compteur en haut, du genre « 58 changes · 4 conflicts · 2 unresolved ».
+
+Sur une fenêtre large, chaque ligne affiche trois colonnes : le type d'élément, **In the file** (dans le fichier) et **In the editor** (dans l'éditeur). Quand les deux côtés tiennent sur une seule ligne, ce sont les mots modifiés eux-mêmes qui sont surlignés, en vert pour ce que le fichier ajoute et en rouge pour ce que l'éditeur perd. Sur les fenêtres étroites, les deux côtés s'empilent.
+
+Chaque ligne porte un contrôle **Accept / Reject** (accepter / refuser). Sur un scénario non verrouillé, chaque ligne démarre acceptée, et un bouton **Accept all** se trouve dans la barre supérieure. Les lignes qui signalent seulement qu'une scène se trouve à une position différente sont informatives, car les changements de position ne sont pas appliqués automatiquement.
+
+**Back to editor** (retour à l'éditeur) annule toute la préparation. Rien n'a encore été appliqué.
+
+## Quand le scénario est verrouillé
+
+Les lignes qui touchent du matériel verrouillé démarrent avec **rien de sélectionné**, et le bouton d'application affiche **Resolve N** (résoudre N) tant que chacune d'elles n'a pas reçu de décision. C'est tout l'intérêt du verrouillage : les changements sur du matériel déjà diffusé exigent un oui humain.
+
+Appuyer sur **Resolve N** propose trois issues : **Review** te fait défiler jusqu'à la première ligne non résolue, ou bien tu peux **Accept all remaining** / **Reject all remaining** (accepter / refuser tout le reste) en une seule fois.
+
+Les conflits verrouillés portent un cadenas et une note sur la conséquence : par exemple, accepter une suppression marque la scène comme omise (OMITTED) au lieu de la retirer. L'omission, c'est la façon dont un scénario verrouillé se débarrasse de scènes sans casser la numérotation. Voir [Verrouillage et révisions](/fr/guides/script-lock-and-revisions).
+
+### Importer dans une révision
+
+Sur un scénario verrouillé en pages, la barre supérieure ajoute une cible de révision : démarrer un **nouveau** tour de révision avec les changements, ou les **fusionner** dans le tour en cours. Fusionner dans un tour déjà diffusé déclenche d'abord un avertissement, parce que les pages distribuées ne correspondraient plus à ce qui a été envoyé. Tu peux aussi sauter directement à une couleur ultérieure si cette production a déjà consommé des couleurs ailleurs.
+
+## Adopter les numéros de scène du fichier
+
+Quand tes scènes sont verrouillées et que le fichier porte une vraie numérotation de production (lettres, sauts, trous plutôt qu'un simple 1, 2, 3), la barre supérieure propose une bascule : **Use the file's scene numbers** (utiliser les numéros de scène du fichier). Des lignes de bannière donnent un aperçu du résultat, du genre « Scene 12 will be renumbered to 14 ».
+
+Comme renuméroter un scénario verrouillé casse toutes les feuilles de service et tous les plans de travail qui référençaient les anciens numéros, CineLog te le fait confirmer séparément et en termes clairs. Aucune scène n'est supprimée, les scènes omises conservent leur marqueur d'omission, seuls les numéros changent. C'est aussi la façon officielle de renuméroter un scénario verrouillé, puisqu'il n'existe pas de déverrouillage.
+
+## Appliquer
+
+Le bouton principal applique tes décisions : **Import** sur un projet neuf, **Apply** sinon. Tu obtiens un message de résultat sobre, du genre « Import applied — 12 changes », ou « Nothing applied — every change was rejected » si tu as tout refusé.
+
+Les imports passent par le propre pipeline d'édition de l'éditeur : les étiquettes de dépouillement, les pages verrouillées et l'historique des scènes survivent donc à un import au lieu de s'y retrouver orphelins.
+
+## Si ça ne marche pas
+
+*« Cannot import » avec une liste de formats.* L'extension du fichier ne fait pas partie des cinq formats pris en charge. Exporte en FDX ou en Fountain depuis l'autre outil et réessaie.
+
+*« This file is identical to the current script. »* Il n'y a rien à vérifier. C'est tout le message.
+
+*Le bouton Apply reste bloqué sur « Resolve N ».* N lignes touchant du matériel verrouillé n'ont toujours ni Accept ni Reject. Utilise **Resolve N** → **Review** pour sauter à la première.
+
+*Je ne vois pas « Use the file's scene numbers ».* Elle n'apparaît que quand tes scènes sont verrouillées et que le fichier porte une numérotation de type production. Un fichier numéroté 1..n d'une seule traite n'a rien à adopter.

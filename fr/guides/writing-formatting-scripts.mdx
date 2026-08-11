@@ -1,106 +1,100 @@
 ---
 title: Écrire et formater des scénarios
-lastUpdated: 2026-06-22
-description: "Importe des scénarios FDX, Fountain, PDF, TXT et RTF dans le Logiciel de Scénario de CineLog. Formate avec la syntaxe Fountain, suis les analyses, exporte en PDF et remplis ton découpage technique."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-Le Logiciel de Scénario de CineLog est un environnement d'écriture professionnel puissant, intégré nativement à la plateforme. Il prend en charge le formatage Fountain en temps réel, les analyses en direct et une synchronisation transparente des données vers le cloud.
-
-Que tu écrives un nouveau scénario à partir de zéro ou que tu importes un scénario existant, CineLog garantit que ton formatage adhère toujours aux normes de l'industrie.
-
-## Importer un scénario existant
-
-Si tu as déjà commencé à écrire ton scénario dans un autre logiciel, tu peux facilement l'importer dans CineLog sans perdre ton formatage.
-
-<Steps>
-1. **Ouvrir le Logiciel de Scénario :** Navigue vers le Logiciel de Scénario en utilisant la barre latérale gauche.
-2. **Importer un document :** Clique sur le bouton **Importer** dans la barre de menu supérieure et sélectionne ton fichier de scénario.
-3. **Analyse automatique :** L'analyseur universel de CineLog traitera automatiquement le fichier, extraira les scènes et convertira le formatage.
-</Steps>
-
-<CardGrid>
-  <Card title="Formats pris en charge">
-    - **Final Draft (.fdx)**
-    - **Fountain (.fountain)**
-    - **PDF** (extraction de texte)
-    - **Texte brut (.txt)**
-    - **Texte enrichi (.rtf)**
-  </Card>
-</CardGrid>
-
+lastUpdated: 2026-08-08
+description: "Écris sur de vraies pages US Letter avec un formatage Fountain en direct : la page de titre, la façon dont la touche Entrée te fait passer d'un élément à l'autre, les sauts de page avec (MORE) et (CONT'D), le zoom, les analyses et l'export."
 ---
 
-## Édition et formatage en direct
+Ce guide suppose que tu connais [Les bases](/fr/guides/introduction). L'import a désormais son propre écran de vérification et son propre guide : [Importer des scénarios](/fr/guides/importing-scripts). Le verrouillage et les révisions sont traités dans [Verrouillage et révisions](/fr/guides/script-lock-and-revisions).
 
-CineLog utilise le langage de balisage **Fountain** sous le capot. Cependant, tu n'as pas besoin de connaître Fountain pour écrire — l'éditeur formate automatiquement ton texte pendant que tu tapes.
+Le Logiciel de Scénario écrit sur de vraies pages. Ce que tu vois, c'est une pile de cartes au format US Letter, en Courier 12 points, avec le numéro de page dans le coin supérieur droit et des sauts de page qui tombent exactement là où ils tomberont à l'impression. Il n'y a plus de mode aperçu séparé, parce que les pages de l'éditeur et le PDF exporté proviennent de la même mise en page. La page que tu regardes est la page.
 
-### Éléments Fountain pris en charge
+Il n'y a pas non plus de bouton Sauvegarder. Chaque changement est enregistré sur ton appareil en environ une demi-seconde, puis synchronisé vers le cloud en arrière-plan.
 
-CineLog prend actuellement en charge les éléments de base de la spécification Fountain nécessaires à l'édition professionnelle de scénarios. Tu peux soit taper naturellement pour laisser la détection intelligente faire le travail, soit forcer le formatage en utilisant les caractères de syntaxe de Fountain.
+## La page de titre
 
-- **En-têtes de scène** : Commence une ligne avec les préfixes standard (`INT.`, `EXT.`, etc.), ou force-le en commençant la ligne par un point (`.`).
-- **Action** : Le texte standard est traité comme une action. Force-le en commençant une ligne par un point d'exclamation (`!`).
-- **Personnages** : Tape entièrement en MAJUSCULES (par exemple, `JEAN`), ou force-le en commençant la ligne par une arobase (`@`).
-- **Dialogue** : Tape simplement immédiatement après une ligne de Personnage.
-- **Parenthèses** : Enveloppe le texte entre parenthèses `(comme ceci)`.
-- **Transitions** : Utilise les terminaisons MAJUSCULES standard comme `CUT TO:`, ou force-le en commençant la ligne par un chevron droit (`>`).
-- **Texte centré** : Enveloppe le texte avec des chevrons : `> Centrer ce texte <`.
-- **Emphase** : Support pour l'emphase standard de style markdown :
-  - `*Italique*`
-  - `**Gras**`
-  - `_Souligné_`
+Chaque scénario commence par une page de titre, et tu la modifies directement sur place. Elle comporte huit champs : Titre, Crédit, Auteur, Source, Contact, Copyright, Date de version et Notes. Les champs vides affichent un texte indicatif grisé et n'impriment rien.
 
-### Éléments actuellement non pris en charge
-Nous élargissons constamment notre support Fountain. Pour le moment, les fonctionnalités avancées Fountain suivantes ne sont **pas encore prises en charge** dans l'éditeur en direct :
-- Dialogue double (`^`)
-- Boneyards (`/* */`)
-- Sections (`#`) et Synopsis (`=`)
-- Notes en ligne (`[[ ]]`)
+`Tab` passe au champ suivant avec sa valeur présélectionnée, pour que tu puisses taper directement par-dessus. `Shift + Tab` revient en arrière. `Tab` sur le dernier champ te dépose dans le corps du scénario. Entrée à l'intérieur d'un champ ajoute une ligne dans ce champ, et chaque champ dispose d'un quota de lignes pour que la page de titre tienne toujours sur exactement une page.
+
+Un nouveau document arrive avec un petit scénario de départ et une page de titre pré-remplie, ton nom figurant déjà dans le champ Auteur. Tape par-dessus tout ce que tu veux.
+
+## Écrire un scénario
+
+CineLog utilise les conventions **Fountain** sous le capot, mais tu n'as pas besoin de connaître Fountain pour écrire. Tape naturellement : l'éditeur classe chaque ligne au fur et à mesure.
+
+La touche Entrée assure l'essentiel des déplacements entre les éléments :
+
+- Après un en-tête de scène, Entrée donne une action.
+- Après un nom de personnage, Entrée donne un dialogue.
+- Après un dialogue, Entrée donne **encore du dialogue** : une réplique s'étoffe donc paragraphe par paragraphe. Pour terminer la réplique, appuie de nouveau sur Entrée sur la ligne vide, et elle se transforme en action sur place. La sortie d'une réplique, c'est donc Entrée, Entrée.
+- Après une transition, Entrée donne un en-tête de scène.
+- `Shift + Return` casse une ligne à l'intérieur du même élément.
+
+### Éléments Fountain
+
+Tu peux aussi forcer n'importe quel élément avec les caractères de syntaxe de Fountain :
+
+- **En-têtes de scène** : commence une ligne par `INT.` ou `EXT.`, ou force-en un avec un point initial (`.`).
+- **Action** : le texte standard est de l'action. Force-la avec un point d'exclamation initial (`!`).
+- **Personnages** : tape le nom en MAJUSCULES, ou force-le avec une arobase initiale (`@`).
+- **Dialogue** : tape sur la ligne qui suit un nom de personnage.
+- **Parenthèses** : entoure le texte de parenthèses `(comme ceci)`.
+- **Transitions** : terminaisons standard en MAJUSCULES comme `CUT TO:`, ou force-en une avec un `>` initial.
+- **Texte centré** : `> Centrer ce texte <`.
+- **Emphase** : `*italique*`, `**gras**`, `_souligné_`.
+
+Pas encore pris en charge dans l'éditeur : le dialogue double (`^`), les boneyards (`/* */`), les sections (`#`) et synopsis (`=`), et les notes en ligne (`[[ ]]`).
 
 ### Raccourcis de remplacement manuel
-Si la détection intelligente devine mal, ou si tu veux forcer un style de formatage spécifique, utilise les raccourcis de remplacement manuel :
 
-- <kbd>Cmd</kbd> + <kbd>1</kbd> : En-tête de scène
-- <kbd>Cmd</kbd> + <kbd>2</kbd> : Personnage
-- <kbd>Cmd</kbd> + <kbd>3</kbd> : Dialogue
-- <kbd>Cmd</kbd> + <kbd>4</kbd> : Action
-- <kbd>Cmd</kbd> + <kbd>5</kbd> : Parenthèse
-- <kbd>Cmd</kbd> + <kbd>6</kbd> : Transition
-- <kbd>Cmd</kbd> + <kbd>7</kbd> : Paroles
-- <kbd>Cmd</kbd> + <kbd>E</kbd> : Centré
+Quand la détection se trompe, définis toi-même le type d'élément :
 
-<Aside type="tip">
-**Sauvegarde continue :** Il n'y a pas de bouton « Sauvegarder » dans le Logiciel de Scénario. Chaque frappe est silencieusement et continuellement sauvegardée sur ton appareil local et synchronisée en toute sécurité vers le cloud en arrière-plan.
-</Aside>
+- `Cmd / Ctrl + 1` : En-tête de scène
+- `Cmd / Ctrl + 2` : Personnage
+- `Cmd / Ctrl + 3` : Dialogue
+- `Cmd / Ctrl + 4` : Action
+- `Cmd / Ctrl + 5` : Parenthèse
+- `Cmd / Ctrl + 6` : Transition
+- `Cmd / Ctrl + 7` : Paroles
+- `Cmd / Ctrl + E` : Centré
 
----
+## Comment les pages se coupent
 
-## Analyses en direct
+Une page contient 54 lignes, le même nombre que la pagination de Final Draft. Quand un paragraphe ne tient pas, il se coupe à la dernière phrase qui rentre et le reste continue au verso, au lieu que le paragraphe entier saute à la page suivante. Une réplique qui se poursuit après la coupure imprime **(MORE)** en bas et répète le nom du personnage avec **(CONT'D)** en haut, et CineLog conserve au moins deux lignes de chaque côté d'une coupure pour que tu n'aies jamais de ligne isolée.
 
-Pendant que tu écris, CineLog calcule les métriques professionnelles en temps réel, te permettant d'évaluer la portée et le rythme de ton scénario sans jamais quitter l'éditeur.
+L'éditeur, le compteur de pages et le PDF exporté tournent tous sur cette même mise en page : ils ne peuvent donc pas se contredire.
 
-Cherche le panneau d'analyses pour voir les mises à jour en direct sur :
-- **Estimation des pages :** Formules de calcul de pages aux normes de l'industrie précises aux standards professionnels.
-- **Comptage de scènes et personnages :** Nombre total de scènes et de personnages parlants uniques.
-- **Métriques de mots :** Nombre total de mots et nombre de caractères.
+## Zoom
 
----
+Le groupe de zoom se trouve au milieu de la barre de menu supérieure : moins, le pourcentage actuel, plus. Le zoom va de 50 % à 200 % par paliers de 25 %, et cliquer sur le pourcentage réinitialise à la largeur de la fenêtre. `Cmd / Ctrl + =` et `Cmd / Ctrl + -` zooment et dézooment, `Cmd / Ctrl + 0` ajuste à la largeur, et `Cmd / Ctrl + molette` ou un pincement font la même chose au niveau du pointeur. Le zoom met à l'échelle la page entière : les lignes se coupent donc toujours aux mêmes caractères quel que soit le niveau, et le nombre de pages ne bouge jamais parce que tu as zoomé.
 
-## Aperçu et export
+## Analyses
 
-Lorsque tu es prêt à réviser ton scénario final ou à le partager avec d'autres, tu peux passer de l'éditeur à un PDF standardisé de manière transparente.
+La barre latérale d'analyses tient des totaux à jour pendant que tu écris : le nombre de pages en huitièmes de scénario (par exemple 12 3/8), les scènes, les lignes, les mots et les caractères. Sélectionne du texte et deux lignes supplémentaires apparaissent, indiquant le nombre de caractères de la sélection et sa taille en huitièmes de page. C'est le moyen le plus rapide de répondre à « quelle est la longueur de cette scène », parce que le huitième de page est l'unité que parle le plan de travail.
 
-<Steps>
-1. **Mode Aperçu :** Clique sur le bouton **« Aperçu et Export »** dans la barre de menu supérieure pour passer de l'éditeur à défilement continu à une vue paginée prête à imprimer. Le mode aperçu rend une page de titre standard et des sauts de page précis.
-2. **Export :** En mode Aperçu, clique sur l'icône **« Export »**.
-3. **Sélectionner le format :** Choisis le format de fichier dont tu as besoin.
-</Steps>
+## Écrire sur téléphone
 
-CineLog prend actuellement en charge l'export de ton scénario dans les formats suivants :
-- **PDF (.pdf) :** Document de haute qualité, paginé et formaté à l'industrie, parfait pour l'impression ou l'envoi par e-mail.
-- **Final Draft (.fdx) :** Format XML standard de l'industrie, te permettant de déplacer ton scénario vers Final Draft ou d'autres logiciels de production de manière transparente.
-- **Fountain (.fountain) :** Balisage en texte brut pour une compatibilité maximale.
-- **Texte brut (.txt) :** Export de texte basique pour une lecture simple.
-- **JSON (.json) :** Export de données structurées pour les intégrations et l'outillage personnalisé.
-- **CSV (.csv) :** Export de répartition tabulaire pour les feuilles de calcul et les rapports.
+L'éditeur téléphone est un véritable éditeur, pas une visionneuse. Le scénario se recompose à la taille de l'écran dans un corps de lecture confortable au lieu de rétrécir une page Letter, et de fins séparateurs intitulés **PAGE 7** marquent exactement l'endroit où les pages imprimées se coupent. Les numéros de page correspondent à ceux du bureau et du PDF, parce qu'ils proviennent de la même pagination.
+
+## Exporter
+
+Clique sur **Export**, le premier bouton de la barre de menu supérieure. Choisis un format :
+
+- **PDF Document (.pdf)** — paginé et formaté aux normes de l'industrie, avec des coupures exactement là où l'éditeur les place.
+- **Fountain Script (.fountain)** — balisage en texte brut pour une compatibilité maximale.
+- **Final Draft (.fdx)** — pour transférer le scénario vers Final Draft ou un autre logiciel de production.
+- **Plain Text (.txt)** — une simple copie de lecture.
+- **JSON Data (.json)** — données structurées pour les intégrations et l'outillage personnalisé.
+- **Scene Report (.csv)** — une liste de scènes en tableau pour les feuilles de calcul.
+
+Sur un scénario verrouillé avec une série de révisions ouverte, le PDF gagne deux options : **Revised pages only** (pages révisées uniquement) exporte la page de titre plus les pages que la série en cours a touchées, c'est-à-dire l'ensemble qu'une production distribue réellement, et **Revision paper color** (couleur du papier de révision) remplit chaque page révisée de sa couleur de révision. Laisse la couleur désactivée si tu imprimes sur du vrai papier de couleur. Voir [Verrouillage et révisions](/fr/guides/script-lock-and-revisions).
+
+## Si ça ne marche pas
+
+*Où est passé l'Aperçu ?* Il a été retiré. L'éditeur affiche désormais les pages finales en permanence, il n'y a donc plus rien de séparé à prévisualiser. **Export** ouvre directement le sélecteur de format.
+
+*Entrée ne me fait pas sortir du dialogue.* Appuie deux fois : une fois pour ouvrir une ligne de continuation vide, une fois de plus pour transformer cette ligne en action.
+
+*Le nombre de pages diffère de celui de mon ancienne version.* CineLog pagine à 54 lignes par page avec une vraie coupure des paragraphes, comme Final Draft. Les estimations d'avant la v1.5.0 utilisaient un calcul plus approximatif.
+
+*Je ne peux pas taper dans une scène marquée OMITTED.* C'est une scène omise sur un scénario verrouillé. Restaure-la d'abord. Voir [Verrouillage et révisions](/fr/guides/script-lock-and-revisions).

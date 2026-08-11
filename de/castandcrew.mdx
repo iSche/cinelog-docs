@@ -1,21 +1,25 @@
 ---
 title: "Cast & Crew"
-lastUpdated: 2026-06-25
-description: "Verwalte dein Filmproduktions-Team mit Rollen, Abteilungen, Workspace-Kontakten und rollenbasierter Zugriffskontrolle. Integriert sich direkt mit Dispositionen (Dispo)."
+lastUpdated: 2026-08-08
+description: "Verwalte dein Filmproduktions-Team mit Rollen, Abteilungen, eigenen Rollen, Cast-Nummern, Figuren-Verknüpfungen, Workspace-Kontakten und rollenbasierter Zugriffskontrolle. Integriert sich direkt mit Dispositionen (Dispo)."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Die Cast & Crew-Funktion von CineLog ist darauf ausgelegt, Team-Zusammenarbeit sicher zu verwalten. Organisiere dein Team mit strikt branchenüblichen Hierarchien und steuere dynamisch, wer Zugriff auf deine sensiblen Projektdaten hat.
+Die Cast & Crew-Funktion von CineLog ist darauf ausgelegt, Team-Zusammenarbeit sicher zu verwalten. Organisiere dein Team in der branchenüblichen Hierarchie, ergänze eigene Rollen, wo die Standardliste nicht reicht, nummeriere deinen Cast für die Dispositionen und steuere, wer Zugriff auf deine Projektdaten hat.
 
 ## Kernfunktionen
 
 <CardGrid>
 <Card title="Branchenübliche Hierarchie">
-  Organisiert alle Mitglieder in einer strikten 3-stufigen Struktur (**Gruppe → Abteilung → Rolle**), die große Studioproduktionen widerspiegelt.
+  Organisiert alle Mitglieder in einer 3-stufigen Struktur (**Gruppe → Abteilung → Rolle**), die abbildet, wie echte Produktionen besetzt werden. Wenn die Standardliste die Rolle nicht hat, die du brauchst, erstelle eine eigene – sie steht dann in deinem gesamten Workspace zur Verfügung.
 </Card>
 
 <Card title="Intelligente Rollenplanung">
-  Beginne damit, **offene Slots** während der Vorproduktion zu delegieren, ohne genau zu wissen, wen du am Ende einstellst.
+  Beginne damit, **offene Slots** während der Vorproduktion zu delegieren, ohne genau zu wissen, wen du am Ende einstellst. Der [Drehbuchauszug](/de/breakdown) kann nummerierte Talent-Slots für deine Figuren automatisch anlegen.
+</Card>
+
+<Card title="Cast-Nummern & Figuren">
+  Jeder Talent-Slot trägt eine Cast-Nummer und lässt sich mit einer Figur aus dem Drehbuchauszug verknüpfen. Die Nummern werden auf die Dispositionen gedruckt, und das Ziehen von Cast-Zeilen nummeriert den gesamten Cast der Reihe nach neu.
 </Card>
 
 <Card title="Rollenbasierte Zugriffskontrolle">
@@ -41,6 +45,15 @@ Eine wachsende Crew zu verwalten ist chaotisch. Indem du eine zentrale Wahrheit 
 **Crew-Planung (offene Slots)**
 
 Du brauchst keinen einzigen Kontakt in deinem Rolodex, um mit der Besetzung zu beginnen. Füge branchenübliche Rollen hinzu (z.B. "Key Grip"), um einen **offenen Slot** zu erstellen. Sobald du jemanden eingestellt hast, weise einfach einen bestehenden oder neu eingeladenen Kontakt dem Slot zu. Die Rolle, die du zugewiesen hast, wird dann für künftige Projekte auf diesem Kontakt gemerkt.
+
+Wenn die Rolle, die du brauchst, nicht in der Liste steht, tippe sie in das Rollen-Suchfeld und wähle **Create "…" as a custom role**. Eigene Rollen gehören zu deinem Workspace, jedes Projekt darin kann sie also nutzen, und sie sammeln sich in ihrer eigenen Abteilung **Custom** am Ende des Boards. Details in [Cast & Crew verwalten](/de/guides/managing-cast-crew).
+
+</li>
+<li>
+
+**Cast-Nummern & Figuren**
+
+Talent-Slots tragen eine **Cast-Nummer** – die Nummer, die die Disposition und der Day Out of Days verwenden. Der [Drehbuchauszug](/de/breakdown) legt nummerierte Slots für deine Figuren automatisch an, oder du setzt die Nummern von Hand im Character-Bereich des Slots, der den Slot zugleich mit einer Figur verknüpft ("Jane Doe as MARIA"). Drücke lange auf eine Cast-Zeile und ziehe sie, um umzuordnen – der ganze Cast nummeriert sich passend zur neuen Reihenfolge neu, Talent zuerst, dann Background.
 
 </li>
 <li>

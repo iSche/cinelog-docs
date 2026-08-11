@@ -1,6 +1,6 @@
 ---
 title: Einstellungslisten-Grundlagen
-lastUpdated: 2026-07-11
+lastUpdated: 2026-08-08
 description: "Eine Einstellungsliste von Grund auf aufbauen – drei Wege, Einstellungen hinzuzufügen, wie die Nummerierung funktioniert, wie man umordnet und was gelöscht wird, wenn du eine Einstellung oder eine Szene entfernst."
 ---
 
@@ -12,19 +12,19 @@ Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus. Das Klick-T
 
 Ein neues Projekt gibt dir eine leere Einstellungsliste. Es gibt drei Wege, sie zu füllen:
 
-- **Manuell, eine Einstellung nach der anderen.** Klicke auf den `Neue Einstellung`-Button rechts in der oberen Menüleiste (Desktop) oder den `+`-Button in der oberen App-Leiste (Smartphone). Beide öffnen einen Dialog, der fragt, zu welcher Szenennummer die Einstellung hinzugefügt werden soll.
+- **Manuell, eine Einstellung nach der anderen.** Klicke auf den `New Shot`-Button rechts in der oberen Menüleiste (Desktop) oder den `+`-Button in der oberen App-Leiste (Smartphone). Beide öffnen einen Dialog, der fragt, zu welcher Szenennummer die Einstellung hinzugefügt werden soll.
 - **Hotkey.** `Cmd / Ctrl + N` öffnet denselben Szenennummer-Dialog, vorausgefüllt mit der höchsten Szenennummer. Bei einer leeren Liste überspringt er den Dialog und erstellt die erste Einstellung in Szene 1.
-- **Aus Drehbuch befüllen.** Öffne den Drehbuch-Editor und drücke `Shift + P` (oder nutze seinen Befüllen-Button – der Hotkey tut auf dem Einstellungslisten-Screen nichts). Er scannt die Szenenüberschriften des Drehbuchs (Zeilen wie `INT. KITCHEN - DAY`) und zeigt eine Vorschau, bevor sich etwas ändert: Merge fügt nur Szenen hinzu, die noch nicht in deiner Liste sind, Replace leert die Liste und baut sie aus dem Drehbuch neu auf. Standardmäßig erstellt er mehrere vorgeschlagene Einstellungen pro Szene mit Beschreibungen und Einstellungstypen; wähle "scenes only" für stattdessen eine Platzhalter-Einstellung pro Szene. Ortsnamen aus den Überschriften werden auf die Szenen übertragen. Im Free-Tier stoppt die Befüllung beim Projektlimit von 25 Szenen / 50 Einstellungen. Das Ergebnis ist nur so sauber wie dein Drehbuch – fehlerhafte Überschriften ergeben fehlerhafte Szenen.
+- **Populate from Script.** (aus Drehbuch befüllen) Öffne den Drehbuch-Editor und drücke `Shift + P` (oder nutze seinen Populate-Button – der Hotkey tut auf dem Einstellungslisten-Screen nichts). Er scannt die Szenenüberschriften des Drehbuchs (Zeilen wie `INT. KITCHEN - DAY`) und zeigt eine Vorschau, bevor sich etwas ändert: Merge fügt nur Szenen hinzu, die noch nicht in deiner Liste sind, Replace leert die Liste und baut sie aus dem Drehbuch neu auf. Standardmäßig erstellt er mehrere vorgeschlagene Einstellungen pro Szene mit Beschreibungen und Einstellungstypen; wähle "scenes only" für stattdessen eine Platzhalter-Einstellung pro Szene. Ortsnamen aus den Überschriften werden auf die Szenen übertragen. Im Free-Tier stoppt die Befüllung beim Projektlimit von 25 Szenen / 50 Einstellungen. Das Ergebnis ist nur so sauber wie dein Drehbuch – fehlerhafte Überschriften ergeben fehlerhafte Szenen.
 
-Die meisten Projekte starten mit "Aus Drehbuch befüllen" als grobe erste Runde und verfeinern dann manuell.
+Die meisten Projekte starten mit Populate from Script als grobe erste Runde und verfeinern dann manuell.
 
 ## Einstellungs-Nummerierung
 
 Einstellungen werden automatisch nummeriert. Drei Formate sind in den [Anzeige-Einstellungen](/de/guides/shot-list/display-settings) verfügbar:
 
-- **Alphanumerisch** — `1A`, `1B`, `2A`. Szenennummer + Buchstabe pro Einstellung innerhalb der Szene. Standard.
-- **Dezimal** — `1.1`, `1.2`, `2.1`.
-- **Sequenziell** — `1`, `2`, `3`, `47`. Kontinuierlich durch das Projekt.
+- **US** — `1A`, `1B`, `2A`. Szenennummer + Buchstabe pro Einstellung innerhalb der Szene. Standard.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`, `47`. Kontinuierlich durch das Projekt.
 
 Nummern und Buchstaben aktualisieren sich beim Umordnen. Wenn du `1C` an den Anfang seiner Szene verschiebst, liest die Liste kurz C, A, B, bevor sie auf A, B, C neuberechnet. Schreib nicht den Buchstaben einer Einstellung auf und erwarte, dass er über Verschiebungen hinweg stabil bleibt.
 
@@ -36,7 +36,7 @@ Ziehe eine beliebige Einstellung, um sie zu verschieben. Die Geste ist das unive
 
 - **Innerhalb einer Szene** — nach oben oder unten ziehen. Buchstaben werden neu kompaktiert.
 - **Über Szenen hinweg** — über eine Szenengrenze ziehen. Die Szenennummer der Einstellung ändert sich passend zum Ziel; Buchstaben werden in Quell- und Zielszene neu kompaktiert.
-- **In den Zwischenraum zwischen zwei Szenen** — die Einstellung schließt sich dem Ende der Szene darüber an. Ziehen erstellt nie eine neue Szene; um eine zu erstellen, nutze den Neue-Einstellung-Dialog und tippe eine Szenennummer, die noch nicht existiert, oder nutze "Aus Drehbuch befüllen".
+- **In den Zwischenraum zwischen zwei Szenen** — die Einstellung schließt sich dem Ende der Szene darüber an. Ziehen erstellt nie eine neue Szene; um eine zu erstellen, nutze den New-Shot-Dialog und tippe eine Szenennummer, die noch nicht existiert, oder nutze Populate from Script.
 
 Die Drehtage-Ansicht ergänzt eine Szenen-Scope-Regel für Mehrfachauswahlen; siehe [Linear vs Drehtage](/de/guides/shot-list/linear-vs-production).
 
@@ -48,7 +48,7 @@ Benutzerdefinierte Spalten, die du in den [Anzeige-Einstellungen](/de/guides/sho
 
 ## Löschen
 
-Auf dem Desktop öffne den Bearbeitungsdialog der Einstellung und nutze den `Einstellung löschen`-Button, oder wähle die Zeile(n) aus und drücke `Delete` / `Backspace` – ein `Auswahl löschen`-Button erscheint zudem in der Auswahlleiste. Auf dem Smartphone swipe die Einstellungs-Zeile, um die Löschaktion freizulegen. Die Kaskade hängt davon ab, was du wo löschst:
+Auf dem Desktop öffne den Bearbeitungsdialog der Einstellung und nutze den `Delete Shot`-Button, oder wähle die Zeile(n) aus und drücke `Delete` / `Backspace` – ein `Delete Selected`-Button erscheint zudem in der Auswahlleiste. Auf dem Smartphone swipe die Einstellungs-Zeile, um die Löschaktion freizulegen. Die Kaskade hängt davon ab, was du wo löschst:
 
 - **Eine einzelne Einstellung in der linearen Ansicht** — entfernt sie aus dem Projekt. Wenn es die letzte Einstellung in ihrer Szene war, geht die Szene auch (es gibt keinen Leere-Szene-Zustand).
 - **Eine einzelne Einstellung in der Drehtage-Ansicht** — entfernt sie nur aus dem Plan für diesen Tag. Die Einstellung existiert noch in der linearen Ansicht und kann neu eingeplant werden.
@@ -60,6 +60,6 @@ Der Bestätigungsdialog buchstabiert immer aus, was im Begriff ist zu verschwind
 
 *"Meine Einstellungs-Buchstaben haben sich nach dem Ziehen geändert."* Erwartet – Buchstaben werden nach jedem Umordnen neu berechnet, damit sie in Anzeigereihenfolge bleiben.
 
-*"Aus Drehbuch befüllen hat mir ein Chaos an Szenen geliefert."* Öffne das Drehbuch und räume die Szenenüberschriften auf (`INT. / EXT. LOCATION - TIME`), dann lass es erneut laufen.
+*"Populate from Script hat mir ein Chaos an Szenen geliefert."* Öffne das Drehbuch und räume die Szenenüberschriften auf (`INT. / EXT. LOCATION - TIME`), dann lass es erneut laufen.
 
 *"Ich habe die letzte Einstellung in einer Szene gelöscht und die ganze Szene ist verschwunden."* Auch erwartet – es gibt keinen Leere-Szene-Zustand. Um die Szene zu erhalten, lass einen Platzhalter-Shot darin.

@@ -1,0 +1,81 @@
+---
+title: Cronograma
+lastUpdated: 2026-08-08
+description: "Monte o cronograma de filmagem como um quadro de tiras de cena: arraste cenas entre os dias, divida cenas em partes, gerencie elenco e locações por cena e exporte o cronograma em PDF."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+O Cronograma está sendo liberado gradualmente. Se você ainda não o vê na sua navegação, é porque ele não foi ativado para a sua versão, e nenhuma configuração do seu lado o ativa antes da hora.
+</Aside>
+
+O Cronograma mostra toda a sua filmagem como um quadro de produção feito de tiras de cena, uma linha por cena por dia, do jeito que um quadro de produção sempre funcionou. Não é um documento separado que você mantém: o quadro é outra visualização dos mesmos dias de produção que você monta na [Decupagem](/pt/shotlist), então uma alteração em qualquer um dos dois é uma alteração nos dois, instantaneamente e em todos os dispositivos.
+
+<CardGrid>
+<Card title="Uma tira por cena">
+  Cada tira mostra o número da cena, a locação, INT/EXT, a hora do dia, os números de elenco presentes na cena, a duração da cena em oitavos de página e seu horário de início e duração estimada.
+</Card>
+
+<Card title="Arrastar é toda a interface">
+  Pressione e segure qualquer tira e arraste: dentro de um dia para reordenar, para além do cabeçalho de um dia para movê-la, ou para Unscheduled para tirá-la do calendário.
+</Card>
+
+<Card title="Elenco e locações na tira">
+  Toque na célula de elenco de uma tira para alternar quem está na cena. Toque na célula de locação para nomear o set, com endereço, estacionamento e hospital mais próximo, que seguem para a ordem do dia.
+</Card>
+
+<Card title="Tiras com as cores do quadro">
+  As tiras assumem automaticamente as cores clássicas do quadro a partir de INT/EXT e Dia/Noite, então uma olhada já diz que tipo de dia você montou.
+</Card>
+</CardGrid>
+
+## O quadro
+
+**Schedule** fica na barra lateral, entre Story Board e Call Sheets. No celular, ele está no menu **More**.
+
+O quadro é uma única lista contínua. No topo fica **Unscheduled**, que reúne toda cena que ainda não está em um dia. Abaixo vêm os dias de filmagem, cada um aberto por uma linha de cabeçalho que mostra o número do dia, sua contagem de cenas, o total estimado e a data de filmagem vinda da ordem do dia daquele dia.
+
+Se o quadro estiver vazio, comece pela Decupagem: atribuir planos a um dia de produção é o que cria as linhas do cronograma. **Add Day** na barra de ferramentas abre o próximo dia vazio para você ter para onde arrastar, e um dia pendente vazio pode ser descartado pelo ✕ ou pressionando `Esc`.
+
+## Mover cenas
+
+Pressione e segure uma tira e arraste. Onde você a solta é o que define o significado:
+
+- Dentro de um dia, você reordenou o dia.
+- Além do cabeçalho de um dia, a cena vai para aquele dia e cai exatamente onde você a soltou.
+- Em Unscheduled, a cena sai do calendário. Nada é excluído. A cena, seus planos e todos os dados deles permanecem, então não há confirmação para clicar. Arraste-a de volta para um dia para desfazer.
+- Uma cena em Unscheduled também pode simplesmente ser tocada: um painel lista os dias existentes mais um novo, e você escolhe para onde ela vai.
+
+Um dia que fica sem nenhuma tira desaparece, e os dias seguintes fecham a lacuna.
+
+## Partes de cena
+
+Às vezes metade de uma cena é filmada na terça e a outra metade na quinta. Quando uma cena é dividida entre dias, suas tiras aparecem como **1 pt 1** e **1 pt 2**. A divisão em si é feita na Decupagem por dia, arrastando um plano para fora do bloco da cena. O quadro exibe as partes e as move de forma independente, e quando duas partes da mesma cena voltam a ficar adjacentes em um mesmo dia, elas se fundem sozinhas de volta em uma cena simples.
+
+## Elenco e locação em uma tira
+
+Tocar na célula de **elenco** de uma tira abre um painel com um interruptor para cada integrante numerado do elenco. Cada alternância salva na hora. Esse painel também é o único lugar para tirar alguém de uma cena, e a ordem do dia respeita isso: a seção Elenco da ordem do dia de um dia é montada exatamente a partir desses dados, em ordem de número de elenco. Os números de elenco vêm de [Elenco e Equipe](/pt/castandcrew), normalmente criados pela [Análise Técnica](/pt/breakdown).
+
+Tocar na célula de **locação** abre o painel de locação: nome do set, endereço com autocompletar, observação, estacionamento e hospital mais próximo. Abaixo dos campos, **Use an existing location** lista os sets que você já nomeou, então dez cenas na mesma casa compartilham uma única entrada, e uma correção no endereço chega às dez. Os mesmos campos alimentam o bloco Locações da ordem do dia.
+
+Tocar em **START** ou **EST** edita o horário de início ou a duração estimada de uma cena, os mesmos valores que o cronograma da ordem do dia imprime. Os horários normalmente descem em cascata a partir do horário de convocação do dia, então ambos mostram **Auto** até você fixar um, e um valor fixado ganha um botão **Reset to auto**.
+
+## Banners
+
+**Add Banner** coloca um evento de cronograma em um dia, como almoço, uma mudança de locação ou uma troca de equipamento. Os banners são os mesmos que você conhece da visualização Produção e da ordem do dia, e tocar em um abre o mesmo editor. Banners vivem nos dias de filmagem, então não podem ser arrastados para Unscheduled.
+
+## Exportação
+
+**Export** na barra de ferramentas gera um PDF do quadro: um bloco de título com a identidade visual da sua produtora, depois as tiras de cada dia com elenco, páginas, início e estimativa, exatamente como o quadro as mostra. O diálogo oferece margens de página e um intervalo de dias. Cenas não agendadas ficam fora do PDF, porque tempo não agendado não é um fato do cronograma.
+
+## Exibição
+
+O menu **Display** traz o formato de hora (12h / 24h) e o formato de data, compartilhados com o resto do app. O botão **Script** abre o painel lateral do roteiro ao lado do quadro, o mesmo painel que a Decupagem tem.
+
+## Se isso não estiver funcionando
+
+*Não aparece nenhum Cronograma na minha navegação.* O recurso ainda não foi ativado para a sua versão, ou o seu papel no projeto não inclui acesso à Decupagem, do qual a visibilidade do Cronograma depende.
+
+*Uma cena não se divide no quadro.* Isso é intencional. As tiras são cenas inteiras ou partes, então a divisão é feita na Decupagem por dia, arrastando um plano para fora do bloco da cena. O quadro reflete isso imediatamente.
+
+*A célula de elenco mostra um + mas nenhuma pessoa.* Ainda não existe elenco numerado no projeto. Adicione números de elenco em Elenco e Equipe, ou rode a passagem de elenco da Análise Técnica para criar vagas de elenco numeradas.

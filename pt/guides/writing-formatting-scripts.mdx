@@ -1,106 +1,100 @@
 ---
-title: Escrevendo e formatando roteiros
-lastUpdated: 2026-06-22
-description: "Importe roteiros FDX, Fountain, PDF, TXT e RTF para o editor do CineLog. Formate com sintaxe Fountain, acompanhe analytics, exporte para PDF e popule sua decupagem."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-O Editor de Roteiro do CineLog é um ambiente de escrita poderoso e de nível profissional, construído nativamente na plataforma. Ele suporta formatação Fountain em tempo real, analytics ao vivo e sincronização perfeita de dados com a nuvem.
-
-Seja escrevendo um novo roteiro do zero ou importando um já existente, o CineLog garante que sua formatação sempre siga os padrões da indústria.
-
-## Importando um roteiro existente
-
-Se você já começou a escrever seu roteiro em outro software, pode facilmente importá-lo para o CineLog sem perder a formatação.
-
-<Steps>
-1. **Abra o Editor de Roteiro:** navegue até o Editor de Roteiro pela barra lateral esquerda.
-2. **Importar Documento:** clique no botão **Importar** na barra superior e selecione seu arquivo de roteiro.
-3. **Parsing automático:** o parser universal do CineLog processa o arquivo automaticamente, extrai as cenas e converte a formatação.
-</Steps>
-
-<CardGrid>
-  <Card title="Formatos suportados">
-    - **Final Draft (.fdx)**
-    - **Fountain (.fountain)**
-    - **PDF** (extração de texto)
-    - **Texto Simples (.txt)**
-    - **Rich Text (.rtf)**
-  </Card>
-</CardGrid>
-
+title: Escrita e formatação de roteiros
+lastUpdated: 2026-08-08
+description: "Escreva em páginas US Letter reais com formatação Fountain ao vivo: a página de título, como a tecla Return move você entre os elementos, quebras de página com (MORE) e (CONT'D), zoom, analytics e exportação."
 ---
 
-## Edição e formatação ao vivo
+Este guia pressupõe [O básico](/pt/guides/introduction). A importação ganhou sua própria tela de revisão e seu próprio guia: [Importar roteiros](/pt/guides/importing-scripts). Bloqueio e revisões vivem em [Bloqueio e revisões](/pt/guides/script-lock-and-revisions).
 
-O CineLog usa a linguagem de marcação **Fountain** internamente. Mas você não precisa conhecer Fountain para escrever — o editor formata seu texto automaticamente conforme você digita.
+O Editor de Roteiro escreve em páginas reais. O que você vê é uma pilha de cartões de página US Letter, em Courier 12 pt, com o número da página no canto superior direito e as quebras de página caindo exatamente onde vão cair na impressão. Não existe mais um modo de pré-visualização separado, porque as páginas do editor e o PDF exportado saem do mesmo layout. A página que você está olhando é a página.
 
-### Elementos Fountain suportados
+Também não existe botão Salvar. Cada alteração é salva no seu dispositivo em cerca de meio segundo e sincronizada com a nuvem em segundo plano.
 
-O CineLog atualmente suporta a especificação Fountain principal necessária para edição profissional de roteiros. Você pode digitar naturalmente para deixar a detecção inteligente fazer o trabalho, ou forçar a formatação usando os caracteres de sintaxe do Fountain.
+## A página de título
 
-- **Cabeçalhos de cena**: inicie uma linha com prefixos padrão (`INT.`, `EXT.`, etc.), ou force começando a linha com um ponto (`.`).
-- **Ação**: o texto padrão é tratado como ação. Force começando a linha com um ponto de exclamação (`!`).
-- **Personagens**: digite inteiramente em MAIÚSCULAS (ex.: `JOHN`), ou force começando a linha com um arroba (`@`).
-- **Diálogo**: simplesmente digite logo após uma linha de Personagem.
+Todo roteiro começa com uma página de título, e você a edita ali mesmo. Ela tem oito campos: Título, Crédito, Autor, Fonte, Contato, Copyright, Data do draft e Notas. Campos vazios mostram um placeholder acinzentado e não imprimem nada.
+
+`Tab` leva ao próximo campo com o valor já selecionado, então você pode digitar por cima. `Shift + Tab` volta. `Tab` no último campo joga você no corpo do roteiro. Return dentro de um campo adiciona uma linha dentro daquele campo, e cada campo tem um limite de linhas, para que a página de título fique sempre com exatamente uma página.
+
+Um documento novo chega com um pequeno roteiro inicial e uma página de título pré-preenchida, com seu nome já no campo Autor. Digite por cima de qualquer parte.
+
+## Digitando um roteiro
+
+O CineLog usa as convenções do **Fountain** internamente, mas você não precisa conhecer Fountain para escrever. Digite naturalmente e o editor classifica cada linha conforme você avança.
+
+A tecla Return faz a maior parte da movimentação entre os elementos:
+
+- Depois de um cabeçalho de cena, Return dá ação.
+- Depois de um nome de personagem, Return dá diálogo.
+- Depois de diálogo, Return dá **mais diálogo**, então uma fala cresce parágrafo a parágrafo. Para encerrar a fala, pressione Return de novo na linha vazia, e ela vira ação ali mesmo. Ou seja, a saída de uma fala é Return, Return.
+- Depois de uma transição, Return dá um cabeçalho de cena.
+- `Shift + Return` quebra a linha dentro do mesmo elemento.
+
+### Elementos Fountain
+
+Você também pode forçar qualquer elemento com os caracteres de sintaxe do Fountain:
+
+- **Cabeçalhos de cena**: inicie uma linha com `INT.` ou `EXT.`, ou force com um ponto inicial (`.`).
+- **Ação**: o texto padrão é ação. Force com um ponto de exclamação inicial (`!`).
+- **Personagens**: digite o nome em MAIÚSCULAS, ou force com um arroba inicial (`@`).
+- **Diálogo**: digite na linha seguinte a um nome de personagem.
 - **Parênteses**: envolva o texto com parênteses `(assim)`.
-- **Transições**: use finais MAIÚSCULOS padrão como `CUT TO:`, ou force começando a linha com um sinal de maior (`>`).
-- **Texto centralizado**: envolva o texto com sinais de maior e menor: `> Centralizar este texto <`.
-- **Ênfase**: suporte a ênfase no estilo markdown padrão:
-  - `*Itálico*`
-  - `**Negrito**`
-  - `_Sublinhado_`
+- **Transições**: finais MAIÚSCULOS padrão como `CUT TO:`, ou force com um `>` inicial.
+- **Texto centralizado**: `> Centralizar este texto <`.
+- **Ênfase**: `*itálico*`, `**negrito**`, `_sublinhado_`.
 
-### Elementos ainda não suportados
-Estamos expandindo continuamente nosso suporte ao Fountain. No momento, os seguintes recursos avançados do Fountain **ainda não são suportados** no editor ao vivo:
-- Dual Dialogue (`^`)
-- Boneyards (`/* */`)
-- Sections (`#`) e Synopses (`=`)
-- Notas inline (`[[ ]]`)
+Ainda não suportados no editor: diálogo duplo (`^`), boneyards (`/* */`), seções (`#`) e sinopses (`=`), e notas inline (`[[ ]]`).
 
 ### Atalhos de substituição manual
-Se a detecção inteligente errar, ou se você quiser forçar um estilo específico de formatação, use os atalhos de substituição manual:
 
-- <kbd>Cmd</kbd> + <kbd>1</kbd>: Cabeçalho de Cena
-- <kbd>Cmd</kbd> + <kbd>2</kbd>: Personagem
-- <kbd>Cmd</kbd> + <kbd>3</kbd>: Diálogo
-- <kbd>Cmd</kbd> + <kbd>4</kbd>: Ação
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Parêntese
-- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transição
-- <kbd>Cmd</kbd> + <kbd>7</kbd>: Letra de Música
-- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centralizado
+Quando a detecção erra, defina o tipo do elemento você mesmo:
 
-<Aside type="tip">
-**Salvamento contínuo:** não há botão "Salvar" no Editor de Roteiro. Cada tecla é salva silenciosa e continuamente no seu dispositivo local e sincronizada com segurança na nuvem em segundo plano.
-</Aside>
+- `Cmd / Ctrl + 1`: Cabeçalho de Cena
+- `Cmd / Ctrl + 2`: Personagem
+- `Cmd / Ctrl + 3`: Diálogo
+- `Cmd / Ctrl + 4`: Ação
+- `Cmd / Ctrl + 5`: Parêntese
+- `Cmd / Ctrl + 6`: Transição
+- `Cmd / Ctrl + 7`: Letra de Música
+- `Cmd / Ctrl + E`: Centralizado
 
----
+## Como as páginas quebram
 
-## Analytics ao vivo
+Uma página comporta 54 linhas, a mesma contagem que o Final Draft pagina. Quando um parágrafo não cabe, ele se divide na última frase que cabe e o resto continua na página seguinte, em vez de o parágrafo inteiro pular para a próxima página. Uma fala que continua depois da quebra imprime **(MORE)** no rodapé e repete o nome do personagem com **(CONT'D)** no topo, e o CineLog mantém pelo menos duas linhas de cada lado de uma divisão, para você nunca ficar com uma linha solta.
 
-Enquanto você escreve, o CineLog calcula métricas profissionais em tempo real, permitindo que você avalie o escopo e o ritmo do seu roteiro sem nunca sair do editor.
+O editor, o contador de páginas e o PDF exportado rodam todos sobre esse mesmo layout, então eles não têm como discordar.
 
-Procure pelo painel de analytics para ver atualizações ao vivo sobre:
-- **Estimativa de páginas:** fórmulas padrão da indústria para cálculo de páginas, com precisão profissional.
-- **Contagem de cenas e personagens:** número total de cenas e personagens únicos falados.
-- **Métricas de palavras:** contagem total de palavras e contagem de caracteres.
+## Zoom
 
----
+O grupo de zoom fica no meio da barra de menu superior: menos, a porcentagem atual, mais. O zoom vai de 50% a 200% em passos de 25%, e clicar na porcentagem volta para o ajuste à largura da janela. `Cmd / Ctrl + =` e `Cmd / Ctrl + -` aumentam e diminuem, `Cmd / Ctrl + 0` ajusta à largura, e `Cmd / Ctrl + scroll` ou um gesto de pinça fazem o mesmo sobre o ponteiro. O zoom escala a página inteira, então as linhas sempre quebram nos mesmos caracteres, seja qual for o nível, e a contagem de páginas nunca muda porque você deu zoom.
 
-## Pré-visualização e exportação
+## Analytics
 
-Quando estiver pronto para revisar seu roteiro final ou compartilhá-lo com outras pessoas, você pode fazer a transição perfeita do editor para um PDF padronizado.
+A barra lateral de analytics mantém totais ao vivo enquanto você escreve: a contagem de páginas em oitavos de página (como 12 3/8), cenas, linhas, palavras e caracteres. Selecione um trecho de texto e aparecem mais duas linhas, mostrando a contagem de caracteres da seleção e seu tamanho em oitavos de página. Essa é a forma mais rápida de responder "que tamanho tem esta cena", porque oitavos de página é a unidade em que o cronograma fala.
 
-<Steps>
-1. **Modo de Pré-visualização:** clique no botão **"Pré-visualizar e Exportar"** na barra superior para alternar do editor de rolagem contínua para uma visualização paginada e pronta para impressão. O modo de pré-visualização renderiza uma Página de Título padrão e quebras de página precisas.
-2. **Exportar:** no Modo de Pré-visualização, clique no ícone **"Exportar"**.
-3. **Selecione o Formato:** escolha o formato de arquivo que precisar.
-</Steps>
+## Escrevendo no celular
 
-O CineLog atualmente suporta exportar seu roteiro nos seguintes formatos:
-- **PDF (.pdf):** documento paginado de alta qualidade, com formatação da indústria, perfeito para imprimir ou enviar por e-mail.
-- **Final Draft (.fdx):** formato XML padrão da indústria, permitindo mover seu roteiro perfeitamente para o Final Draft ou outros softwares de produção.
-- **Fountain (.fountain):** markup plaintext bruto para máxima compatibilidade.
-- **Texto Simples (.txt):** exportação de texto básica para leitura simples.
-- **JSON (.json):** exportação de dados estruturados para integrações e ferramentas personalizadas.
-- **CSV (.csv):** exportação tabular de breakdown para planilhas e relatórios.
+O editor no celular é um editor completo, não um visualizador. O roteiro reflui para a tela em um tamanho de leitura confortável, em vez de encolher uma página Letter, e divisórias finas rotuladas **PAGE 7** marcam exatamente onde as páginas impressas quebram. Os números de página batem com os do desktop e os do PDF, porque vêm da mesma paginação.
+
+## Exportação
+
+Clique em **Export**, o primeiro botão da barra de menu superior. Escolha um formato:
+
+- **PDF Document (.pdf)** — paginado e com formatação da indústria, quebrando exatamente onde o editor quebra.
+- **Fountain Script (.fountain)** — markup em texto simples para máxima compatibilidade.
+- **Final Draft (.fdx)** — para levar o roteiro para o Final Draft ou outros softwares de produção.
+- **Plain Text (.txt)** — uma cópia simples para leitura.
+- **JSON Data (.json)** — dados estruturados para integrações e ferramentas personalizadas.
+- **Scene Report (.csv)** — uma listagem tabular de cenas para planilhas.
+
+Em um roteiro bloqueado com uma rodada de revisão aberta, o PDF ganha duas opções: **Revised pages only** exporta a página de título mais as páginas que a rodada atual tocou, que é o conjunto que uma produção realmente distribui, e **Revision paper color** preenche cada página revisada com a cor da revisão. Deixe a cor desligada quando for imprimir em papel colorido de verdade. Veja [Bloqueio e revisões](/pt/guides/script-lock-and-revisions).
+
+## Se isso não estiver funcionando
+
+*Para onde foi a Pré-visualização?* Foi aposentada. O editor agora mostra as páginas finais o tempo todo, então não há nada separado para pré-visualizar. **Export** abre direto o seletor de formatos.
+
+*O Return não me tira do diálogo.* Pressione duas vezes: uma para abrir uma linha de continuação vazia, outra para transformar essa linha em ação.
+
+*A contagem de páginas parece diferente do meu draft antigo.* O CineLog pagina 54 linhas por página com divisão real de parágrafos, igual ao Final Draft. Estimativas anteriores à v1.5.0 usavam um cálculo mais frouxo.
+
+*Não consigo digitar em uma cena marcada como OMITIDA.* É uma cena omitida em um roteiro bloqueado. Restaure-a primeiro. Veja [Bloqueio e revisões](/pt/guides/script-lock-and-revisions).

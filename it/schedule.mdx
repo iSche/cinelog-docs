@@ -1,0 +1,81 @@
+---
+title: Piano di Lavorazione
+lastUpdated: 2026-08-08
+description: "Disponi il piano di lavorazione come un tabellone di strisce di scena: trascina le scene tra i giorni, dividi le scene in parti, gestisci cast e location scena per scena ed esporta il piano in PDF."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+Il Piano di Lavorazione viene distribuito gradualmente. Se non lo vedi ancora nella tua navigazione, significa che non è stato attivato per la tua versione, e nessuna impostazione dalla tua parte lo accende in anticipo.
+</Aside>
+
+Il Piano di Lavorazione mostra l'intera lavorazione come un tabellone di strisce di scena, una riga per scena per giorno, esattamente come ha sempre funzionato un tabellone di produzione. Non è un documento separato da mantenere: il tabellone è un'altra vista degli stessi giorni di produzione che costruisci nella [Lista delle Inquadrature](/it/shotlist), quindi una modifica in un punto è una modifica in entrambi, all'istante e su ogni dispositivo.
+
+<CardGrid>
+<Card title="Una striscia per scena">
+  Ogni striscia mostra il numero di scena, la location, INT/EXT, il momento della giornata, i numeri di cast presenti nella scena, la lunghezza della scena in ottavi di pagina, il suo orario di inizio e la durata stimata.
+</Card>
+
+<Card title="Il drag è tutta l'interfaccia">
+  Tieni premuta una striscia e trascinala: dentro un giorno per riordinare, oltre l'intestazione di un giorno per spostarla, o dentro Unscheduled per toglierla dal calendario.
+</Card>
+
+<Card title="Cast e location sulla striscia">
+  Tocca la cella cast di una striscia per attivare o disattivare chi è nella scena. Tocca la cella location per nominare il set, con indirizzo, parcheggio e ospedale più vicino che arrivano fino all'ordine del giorno.
+</Card>
+
+<Card title="Strisce con i colori del tabellone">
+  Le strisce prendono automaticamente i classici colori del tabellone da INT/EXT e Giorno/Notte, così un colpo d'occhio ti dice che tipo di giornata hai costruito.
+</Card>
+</CardGrid>
+
+## Il tabellone
+
+**Schedule** si trova nella barra laterale sinistra tra Storyboard e Ordini del Giorno. Su telefono è nello sheet **More** (altro).
+
+Il tabellone è una lista unica e continua. In cima c'è **Unscheduled**, che raccoglie ogni scena non ancora assegnata a un giorno. Sotto vengono i giorni di ripresa, ciascuno aperto da una riga di intestazione che mostra il numero del giorno, il suo conteggio di scene, il totale stimato e la data di ripresa presa dall'ordine del giorno di quella giornata.
+
+Se il tabellone è vuoto, parti dalla Lista delle Inquadrature: è l'assegnazione delle inquadrature a un giorno di produzione che crea le righe del piano. **Add Day** nella toolbar apre il giorno vuoto successivo così hai un posto dove trascinare, e un giorno in attesa e vuoto si può scartare con la sua ✕ o premendo `Esc`.
+
+## Spostare le scene
+
+Tieni premuta una striscia, poi trascina. Il punto in cui la rilasci è il significato del gesto:
+
+- Dentro un giorno, hai riordinato la giornata.
+- Oltre l'intestazione di un giorno, la scena si sposta in quel giorno e atterra dove l'hai rilasciata.
+- Dentro Unscheduled, la scena esce dal calendario. Non viene eliminato nulla. La scena, le sue inquadrature e tutti i loro dati restano, quindi non c'è nessuna conferma da cliccare. Trascinala di nuovo su un giorno per annullare.
+- Una scena in Unscheduled si può anche semplicemente toccare: uno sheet elenca i giorni esistenti più uno nuovo, e scegli dove metterla.
+
+Un giorno rimasto senza strisce sparisce, e i giorni successivi chiudono il buco.
+
+## Parti di scena
+
+A volte metà scena si gira martedì e l'altra metà giovedì. Quando una scena è divisa tra più giorni, le sue strisce si leggono **1 pt 1** e **1 pt 2**. La divisione vera e propria si fa nella Lista delle Inquadrature del singolo giorno, trascinando un'inquadratura fuori dal suo blocco di scena. Il tabellone mostra le parti e le sposta in modo indipendente, e quando due parti della stessa scena tornano ad essere adiacenti nello stesso giorno, si rifondono da sole in una scena semplice.
+
+## Cast e location su una striscia
+
+Toccare la cella **cast** di una striscia apre un pannello con un interruttore per ogni membro del cast numerato. Ogni toggle si salva immediatamente. Questo pannello è anche l'unico posto in cui togliere qualcuno da una scena, e l'ordine del giorno lo rispetta: la sezione Talent dell'ordine del giorno di una giornata è costruita esattamente su questi dati, in ordine di numero di cast. I numeri di cast vengono da [Cast & Troupe](/it/castandcrew), di solito seminati dallo [Spoglio](/it/breakdown).
+
+Toccare la cella **location** apre il pannello location: nome del set, indirizzo con autocompletamento, nota, parcheggio e ospedale più vicino. Sotto i campi, **Use an existing location** elenca i set che hai già nominato, così dieci scene nella stessa casa condividono una sola voce e una correzione al suo indirizzo raggiunge tutte e dieci. Gli stessi campi alimentano il blocco Location dell'ordine del giorno.
+
+Toccare **START** o **EST** modifica l'orario di inizio o la durata stimata di una scena, gli stessi valori che stampa la programmazione dell'ordine del giorno. Gli orari normalmente scendono a cascata dall'orario di call della giornata, quindi entrambi mostrano **Auto** finché non ne fissi uno, e un valore fissato ha un pulsante **Reset to auto**.
+
+## Banner
+
+**Add Banner** mette un evento di programmazione su un giorno, come il pranzo, uno spostamento di compagnia o un cambio di attrezzatura. I banner sono gli stessi banner che conosci dalla vista Produzione e dall'ordine del giorno, e toccarne uno apre lo stesso editor. I banner vivono sui giorni di ripresa, quindi non possono essere trascinati in Unscheduled.
+
+## Esportazione
+
+**Export** nella toolbar produce un PDF del tabellone: un blocco titolo con il branding della tua compagnia, poi le strisce di ogni giorno con cast, pagine, inizio e stima, esattamente come le mostra il tabellone. La finestra offre i margini di pagina e un intervallo di giorni. Le scene in Unscheduled restano fuori dal PDF, perché il tempo non programmato non è un fatto del piano di lavorazione.
+
+## Visualizzazione
+
+Il menu **Display** porta il formato ora (12h / 24h) e il formato data, condivisi con il resto dell'app. Il pulsante **Script** apre il pannello laterale della sceneggiatura accanto al tabellone, lo stesso pannello che ha la Lista delle Inquadrature.
+
+## Se non funziona
+
+*Non c'è nessun Piano di Lavorazione nella mia navigazione.* La funzionalità non è ancora stata attivata per la tua versione, oppure il tuo ruolo nel progetto non include l'accesso alla Lista delle Inquadrature, che è quello che governa anche la visibilità del Piano di Lavorazione.
+
+*Una scena non si divide sul tabellone.* È voluto. Le strisce sono scene intere o parti, quindi la divisione si fa nella Lista delle Inquadrature del singolo giorno trascinando un'inquadratura fuori dal blocco di scena. Il tabellone la recepisce immediatamente.
+
+*La cella cast mostra un + ma nessuna persona.* Nel progetto non esiste ancora cast numerato. Aggiungi i numeri di cast in Cast & Troupe, oppure lancia la passata cast dello Spoglio per creare slot Talent numerati.

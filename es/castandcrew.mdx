@@ -1,21 +1,25 @@
 ---
 title: "Elenco y Equipo"
-lastUpdated: 2026-06-25
-description: "Gestiona tu equipo de producción cinematográfica con roles, departamentos, contactos del espacio de trabajo y control de acceso basado en roles. Se integra directamente con las órdenes de rodaje."
+lastUpdated: 2026-08-08
+description: "Gestiona tu equipo de producción cinematográfica con roles, departamentos, roles personalizados, números de elenco, enlaces a personajes, contactos del espacio de trabajo y control de acceso basado en roles. Se integra directamente con las órdenes de rodaje."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-La funcionalidad de Elenco y Equipo de CineLog está diseñada para gestionar la colaboración del equipo de forma segura. Organiza tu plantilla usando jerarquías estrictas estándar de la industria y controla dinámicamente quién tiene acceso a los datos sensibles de tu proyecto.
+La funcionalidad de Elenco y Equipo de CineLog está diseñada para gestionar la colaboración del equipo de forma segura. Organiza tu plantilla con la jerarquía estándar de la industria, añade tus propios roles personalizados cuando la lista estándar se quede corta, numera tu elenco para las órdenes de rodaje y controla quién tiene acceso a los datos de tu proyecto.
 
 ## Funcionalidades principales
 
 <CardGrid>
 <Card title="Jerarquía estándar de la industria">
-  Organiza a todos los miembros en una estructura rígida de 3 niveles (**Grupo → Departamento → Rol**) que refleja las grandes producciones de estudio.
+  Organiza a todos los miembros en una estructura de 3 niveles (**Grupo → Departamento → Rol**) que refleja cómo se dota de personal a las producciones reales. Cuando la lista estándar no tiene el rol que necesitas, crea uno personalizado — queda disponible en todo tu espacio de trabajo.
 </Card>
 
 <Card title="Planificación inteligente de roles">
-  Empieza a delegar **Puestos Vacantes** sin asignar durante la preproducción sin necesidad de saber exactamente a quién vas a contratar todavía.
+  Empieza a delegar **Puestos Vacantes** sin asignar durante la preproducción sin necesidad de saber exactamente a quién vas a contratar todavía. El [Desglose del Guion](/es/breakdown) puede crear automáticamente plazas de Talent numeradas para tus personajes.
+</Card>
+
+<Card title="Números de elenco y personajes">
+  Cada plaza de Talent lleva un número de elenco y se puede enlazar con un personaje del desglose. Los números se imprimen en las órdenes de rodaje, y arrastrar filas de elenco renumera todo el elenco en orden.
 </Card>
 
 <Card title="Control de acceso basado en roles">
@@ -41,6 +45,15 @@ Gestionar un equipo en crecimiento es caótico. Al establecer una fuente única 
 **Planificando tu equipo (Puestos Vacantes)**
 
 No necesitas un solo contacto en tu directorio para empezar a planificar al equipo. Añade roles estándar de la industria (p. ej. "Key Grip") para crear un **Puesto Vacante**. Una vez que contrates a alguien, simplemente asigna un contacto existente o recién invitado al puesto. El rol que asignaste queda entonces recordado en ese contacto para futuros proyectos.
+
+Si el rol que necesitas no está en la lista, escríbelo en el campo de búsqueda de roles y elige **Create "…" as a custom role**. Los roles personalizados pertenecen a tu espacio de trabajo, así que todos los proyectos que hay en él pueden usarlos, y se agrupan en su propio departamento **Custom** al final del tablero. Ver [Gestionar elenco y equipo](/es/guides/managing-cast-crew) para los detalles.
+
+</li>
+<li>
+
+**Números de elenco y personajes**
+
+Las plazas de Talent llevan un **número de elenco** — el número que usan la orden de rodaje y el Day Out of Days. El [Desglose del Guion](/es/breakdown) crea automáticamente plazas numeradas para tus personajes, o fijas los números a mano en la sección Character de la plaza, que además enlaza la plaza con un personaje ("Jane Doe as MARIA"). Mantén pulsada una fila de elenco y arrástrala para reordenar — todo el elenco se renumera según el nuevo orden, primero Talent y luego Background.
 
 </li>
 <li>

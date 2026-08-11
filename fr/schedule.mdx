@@ -1,0 +1,81 @@
+---
+title: Plan de Travail
+lastUpdated: 2026-08-08
+description: "Construis ton plan de travail sous forme de tableau de bandes de scènes : fais glisser les scènes d'un jour à l'autre, divise les scènes en parties, gère le casting et les lieux scène par scène, et exporte le plan de travail en PDF."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+Le Plan de Travail est déployé progressivement. Si tu ne le vois pas encore dans ta navigation, c'est qu'il n'a pas été activé pour ta version, et aucun réglage de ton côté ne permet de l'activer en avance.
+</Aside>
+
+Le Plan de Travail affiche tout ton tournage sous forme de tableau de bandes de scènes, une ligne par scène et par jour, comme l'a toujours fait un plan de travail à bandes. Ce n'est pas un document séparé à entretenir : le tableau est une autre vue des mêmes jours de production que tu construis dans le [Découpage Technique](/fr/shotlist), donc une modification d'un côté est une modification des deux, instantanément et sur tous tes appareils.
+
+<CardGrid>
+<Card title="Une bande par scène">
+  Chaque bande affiche le numéro de scène, le lieu, INT/EXT, le moment de la journée, les numéros de casting présents dans la scène, la longueur de la scène en huitièmes de page, son heure de début et sa durée estimée.
+</Card>
+
+<Card title="Le glissement, c'est toute l'interface">
+  Maintiens l'appui sur n'importe quelle bande et fais-la glisser : à l'intérieur d'un jour pour réorganiser, au-delà d'un en-tête de jour pour la déplacer, ou dans Unscheduled (non planifiées) pour la retirer du calendrier.
+</Card>
+
+<Card title="Casting et lieux sur la bande">
+  Touche la cellule cast d'une bande pour cocher qui joue dans la scène. Touche la cellule location pour nommer le décor, avec l'adresse, le stationnement et l'hôpital le plus proche, qui se reportent sur la feuille de service.
+</Card>
+
+<Card title="Des bandes aux couleurs du tableau">
+  Les bandes prennent automatiquement les couleurs classiques du plan de travail selon INT/EXT et Jour/Nuit : un coup d'œil suffit pour voir quel type de journée tu as construit.
+</Card>
+</CardGrid>
+
+## Le tableau
+
+**Schedule** se trouve dans la barre latérale gauche, entre Storyboard et Feuilles de Service. Sur téléphone, c'est dans le panneau **More**.
+
+Le tableau est une seule liste continue. En haut se trouve **Unscheduled**, qui regroupe toutes les scènes pas encore rattachées à un jour. En dessous viennent les jours de tournage, chacun ouvert par une ligne d'en-tête indiquant le numéro du jour, son nombre de scènes, le total estimé et la date de tournage issue de la feuille de service de ce jour-là.
+
+Si le tableau est vide, commence par le Découpage Technique : ce sont les plans affectés à un jour de production qui créent les lignes du plan de travail. **Add Day** dans la barre d'outils ouvre le jour vide suivant pour te donner une cible de dépôt, et un jour vide en attente se referme avec son ✕ ou en appuyant sur `Esc`.
+
+## Déplacer les scènes
+
+Maintiens l'appui sur une bande, puis fais-la glisser. C'est l'endroit où tu la déposes qui donne le sens :
+
+- À l'intérieur d'un jour, tu as réorganisé la journée.
+- Au-delà d'un en-tête de jour, la scène passe à ce jour et se pose exactement là où tu l'as déposée.
+- Dans Unscheduled, la scène sort du calendrier. Rien n'est supprimé. La scène, ses plans et toutes leurs données restent en place, donc il n'y a aucune confirmation à valider. Fais-la glisser à nouveau sur un jour pour annuler.
+- Une scène en Unscheduled peut aussi simplement être touchée : un panneau liste les jours existants plus un nouveau, et tu choisis où elle va.
+
+Un jour qui n'a plus aucune bande disparaît, et les jours suivants comblent le trou.
+
+## Les parties de scène
+
+Il arrive qu'une moitié de scène se tourne le mardi et l'autre le jeudi. Quand une scène est répartie sur plusieurs jours, ses bandes affichent **1 pt 1** et **1 pt 2**. La division elle-même se fait dans le Découpage Technique du jour, en faisant glisser un plan hors de son bloc de scène. Le tableau affiche les parties et les déplace indépendamment, et lorsque deux parties de la même scène redeviennent adjacentes sur un même jour, elles fusionnent d'elles-mêmes en une scène ordinaire.
+
+## Casting et lieu sur une bande
+
+Toucher la cellule **cast** d'une bande ouvre un panneau avec un interrupteur par comédien numéroté. Chaque bascule est enregistrée immédiatement. Ce panneau est aussi le seul endroit pour retirer quelqu'un d'une scène, et la feuille de service le respecte : la section Talent de la feuille de service d'un jour est construite exactement à partir de ces données, dans l'ordre des numéros de casting. Les numéros de casting viennent de [Casting et Équipe](/fr/castandcrew), généralement initialisés par le [Dépouillement du Scénario](/fr/breakdown).
+
+Toucher la cellule **location** ouvre le panneau de lieu : nom du décor, adresse avec autocomplétion, note, stationnement et hôpital le plus proche. Sous les champs, **Use an existing location** liste les décors que tu as déjà nommés, pour que dix scènes tournées dans la même maison partagent une seule entrée et qu'une correction d'adresse atteigne les dix. Ces mêmes champs alimentent le bloc Lieux de la feuille de service.
+
+Toucher **START** (début) ou **EST** (durée estimée) modifie l'heure de début ou la durée estimée d'une scène, les valeurs mêmes qu'imprime le planning de la feuille de service. Les horaires se propagent normalement à partir de l'heure d'appel du jour, donc les deux affichent **Auto** tant que tu n'en fixes pas un, et une valeur fixée dispose d'un bouton **Reset to auto**.
+
+## Les bannières
+
+**Add Banner** place un événement de planning sur un jour : le déjeuner, un déplacement d'équipe, un changement d'équipement. Ce sont les mêmes bannières que celles de la vue Production et de la feuille de service, et en toucher une ouvre le même éditeur. Les bannières vivent sur les jours de tournage : elles ne peuvent donc pas être glissées dans Unscheduled.
+
+## Exporter
+
+**Export** dans la barre d'outils produit un PDF du tableau : un bloc de titre à l'image de ta société de production, puis les bandes de chaque jour avec le casting, les pages, le début et l'estimation, exactement comme le tableau les affiche. La boîte de dialogue propose les marges de page et une plage de jours. Les scènes en Unscheduled restent hors du PDF, parce qu'un temps non planifié n'est pas une donnée de plan de travail.
+
+## Affichage
+
+Le menu **Display** porte le format d'heure (12 h / 24 h) et le format de date, partagés avec le reste de l'application. Le bouton **Script** ouvre le panneau latéral du scénario à côté du tableau, le même que celui du Découpage Technique.
+
+## Si ça ne marche pas
+
+*« Il n'y a pas de Plan de Travail dans ma navigation. »* La fonctionnalité n'a pas encore été activée pour ta version, ou ton rôle sur le projet n'inclut pas l'accès au Découpage Technique, dont dépend la visibilité du Plan de Travail.
+
+*« Une scène refuse de se diviser sur le tableau. »* C'est voulu. Les bandes sont des scènes entières ou des parties : la division se fait dans le Découpage Technique du jour, en faisant glisser un plan hors du bloc de scène. Le tableau la reprend immédiatement.
+
+*« La cellule cast affiche un + mais aucune personne. »* Aucun casting numéroté n'existe encore dans le projet. Ajoute des numéros de casting dans Casting et Équipe, ou lance la passe casting du Dépouillement pour créer des emplacements Talent numérotés.

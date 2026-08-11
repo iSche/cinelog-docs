@@ -1,7 +1,7 @@
 ---
 title: Cast & Crew verwalten
-lastUpdated: 2026-06-25
-description: "Rollen und Abteilungen hinzufügen, Workspace-Kontakte verwalten und Zugriff mit Intent-Toggles steuern. Crew-Daten fließen direkt in CineLog-Dispositionen."
+lastUpdated: 2026-08-08
+description: "Rollen und Abteilungen hinzufügen, eigene Rollen anlegen, deinen Cast nummerieren und mit Figuren verknüpfen, Workspace-Kontakte verwalten und Zugriff mit Intent-Toggles steuern. Crew-Daten fließen direkt in CineLog-Dispositionen."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -21,11 +21,30 @@ Du kannst neue Mitglieder einfach direkt zu deinem Projekt hinzufügen. CineLog 
 1. **Cast & Crew öffnen:** Navigiere über die linke Seitenleiste zum Cast & Crew-Modul. Stelle sicher, dass du auf dem "Projekt"-Tab bist.
 2. **Rolle hinzufügen:** Klicke auf den **"+ Rolle hinzufügen"**-Button.
 3. **Auswählen oder erstellen:** Der einheitliche Dialog öffnet sich. Du kannst entweder eine bestehende Person aus deinen Workspace-Kontakten suchen und auswählen oder einfach einen neuen Namen eintippen, um sofort einen neuen Kontakt zu erstellen.
-4. **Rolle wählen:** Wähle eine branchenübliche Rolle aus dem Dropdown (z.B. *1st Assistant Director*, *Gaffer*, *Lead Actor*). 
+4. **Rolle wählen:** Durchsuche die Rollenliste und wähle eine aus (z.B. *1st Assistant Director*, *Gaffer*, *Lead Actor*).
 5. **Kontaktdetails:** Gib die E-Mail und Telefonnummer der Person ein. Auch wenn optional, sind sie sehr empfehlenswert, wenn du planst, ihnen Dispositionen zu schicken oder sie in die App einzuladen.
 </Steps>
 
 Du kannst einer einzelnen Person mehrere Rollen zuweisen, falls sie in deiner Produktion mehrere Hüte trägt!
+
+### Eigene Rollen
+
+Wenn deine Produktion einen Job hat, den die Standardliste nicht kennt, leg deinen eigenen an. Tippe den Namen in das Rollen-Suchfeld, und wenn nichts passt, bekommst du die Option **Create "…" as a custom role**. Ein paar Dinge dazu:
+
+- Eigene Rollen gehören zum **Workspace**, nicht zum Projekt – jedes Projekt in deinem Workspace kann sie von da an nutzen.
+- Sie leben alle in einer Abteilung namens **Custom**, die auf dem Board nach den Standardabteilungen einsortiert wird.
+- Namen müssen eindeutig sein. Wenn der Name bereits als Standard- oder eigene Rolle existiert, sagt CineLog dir, welche das ist, und du wählst stattdessen die bestehende.
+- Die Anlegen-Option erscheint auf dem Hauptweg **+ Rolle hinzufügen**. Fügst du über den eigenen **+**-Button einer bestimmten Abteilung hinzu, werden nur die Rollen dieser Abteilung angeboten, denn eine eigene Rolle kann dort nicht leben.
+- Ein Umbenennen oder Löschen eigener Rollen gibt es in der App noch nicht. Benenne sie so, wie die Disposition sie drucken soll.
+
+### Cast-Nummern und Figuren
+
+Slots der Cast-Gruppe (Talent und Background) tragen zwei Dinge, die Crew-Slots nicht haben: eine **Cast-Nummer** und eine **Figur**.
+
+- Die Nummer ist das, was Dispositionen und der Day Out of Days neben dem Darsteller drucken. Tippe auf den Nummern-Chip im **Character**-Bereich eines Slots, um sie von Hand zu setzen. Nummern sind eindeutig – wenn die 3 vergeben ist, sagt CineLog dir, wer sie hat.
+- **Link…** verbindet den Slot mit einer Figur aus dem [Drehbuchauszug](/de/breakdown), und der Slot liest sich dann wie ein Besetzungsblatt: "Jane Doe as MARIA", darunter "1 · MARIA — Lead". Wenn es noch keine Figuren zum Verknüpfen gibt, tagge den Cast zuerst im Drehbuchauszug.
+- Den ersten Durchgang macht der Drehbuchauszug meist für dich: Er legt pro erkannter Figur einen freien, nummerierten Talent-Slot mit einer geratenen Rolle an, die du ändern kannst. Siehe [Drehbuchauszug](/de/breakdown).
+- Um den Cast umzuordnen, drücke lange auf eine Cast-Zeile und ziehe sie. Die ganze Cast-Gruppe nummeriert sich auf die neue Reihenfolge um, Talent zuerst, dann Background, sodass das Board von oben immer 1 bis N liest.
 
 ---
 
@@ -41,8 +60,8 @@ Klicke auf die Rolle einer beliebigen Person in der Projekt-Cast & Crew-Liste, u
 
 Oben in diesem Formular ist der **Zugriffs-Intent-Toggle**.
 
-- **EIN (Gewährt/Ausstehend):** Der Standard in dem Moment, in dem du einem Kontakt eine Rolle zuweist. CineLog sendet ihm eine Einladungs-E-Mail, und er tritt bei, sobald er annimmt; falls er bereits an einem anderen Projekt in deinem Workspace mitarbeitet, wird er sofort aufgenommen.
-- **AUS (Nicht erlaubt):** Die Person bleibt auf deiner Liste und deinen Dispositionen, kann sich aber nicht ins Projekt einloggen. Schalte ihn für Kontakte aus, die keinen App-Zugriff haben sollen.
+- **ON (Gewährt/Ausstehend):** Der Standard in dem Moment, in dem du einem Kontakt eine Rolle zuweist. CineLog sendet ihm eine Einladungs-E-Mail, und er tritt bei, sobald er annimmt; falls er bereits an einem anderen Projekt in deinem Workspace mitarbeitet, wird er sofort aufgenommen.
+- **OFF (Nicht erlaubt):** Die Person bleibt auf deiner Liste und deinen Dispositionen, kann sich aber nicht ins Projekt einloggen. Schalte ihn für Kontakte aus, die keinen App-Zugriff haben sollen.
 
 <Aside type="note">
 **Team-Management:** Jeder, der **Edit**-Berechtigung für das Cast & Crew-Modul hat, kann Zugriffs-Intents umschalten und die ACL für andere Teammitglieder ändern. So kannst du Onboarding- und Sicherheitsaufgaben an deine Produktionsleiter oder Koordinatoren delegieren!

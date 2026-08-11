@@ -1,0 +1,79 @@
+---
+title: Sperre & Revisionen
+lastUpdated: 2026-08-08
+description: "Szenennummern sperren, Fassungen ausgeben und farbige Revisionsrunden verfolgen – Sternchen an geänderten Zeilen, Revisionshistorie auf der Titelseite, omittierte Szenen und Export nur der überarbeiteten Seiten."
+---
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) und den Guide [Schreiben & Formatieren](/de/guides/writing-formatting-scripts) voraus.
+
+Sobald ein Drehbuch an die Crew geht, hört es auf, ein privater Entwurf zu sein, und wird zum Referenzdokument. Menschen planen gegen seine Szenennummern und schreiben in seine Seiten. Ab diesem Moment müssen die Nummern stillhalten, und jede Änderung muss sichtbar sein. Genau das verwaltet der Button **Lock & Revisions** in der oberen Menüleiste des Editors. Er arbeitet in zwei Stufen, und du musst nicht beide auf einmal nehmen.
+
+## Stufe 1 — Szenennummern sperren
+
+Öffne das Menü Lock & Revisions und wähle **Lock scene numbers…**. Der Dialog benennt den Handel klar: Die Nummern all deiner Szenen frieren für Drehbuchauszug und Drehplanung ein. Von da an gilt:
+
+- Eine neue Szene zwischen 78 und 79 wird zu **78A**, sodass nachgelagert nichts umnummeriert wird.
+- Den Inhalt einer Szene zu löschen markiert sie als **OMITTED**, statt die Lücke zu schließen. Die Nummer bleibt.
+- Die Seiten fließen weiterhin frei. Du kannst weiterschreiben, und die Paginierung verhält sich genau wie vorher.
+
+Das ist die Sperre, um die der [Drehbuchauszug](/de/breakdown) beim Einstieg bittet, und für die meisten Projekte reicht sie, bis die Seiten rausgehen.
+
+Es gibt kein Entsperren. Das ist Absicht, denn in der Produktion ist Umnummerieren nach der Verteilung eine Reparatur, keine Alltagshandlung. Wenn du wirklich andere Nummern brauchst, kannst du sie übernehmen, indem du eine Datei mit eigener Produktionsnummerierung importierst – mit einer Bestätigung, die die Konsequenzen ausbuchstabiert. Siehe [Drehbücher importieren](/de/guides/importing-scripts).
+
+## Stufe 2 — Seiten sperren
+
+Wenn das Drehbuch kurz vor der Verteilung steht, wähle **Lock pages…**. Das friert die Paginierung über die aktuellen Seiten ein und gibt die Fassung aus. Wenn du Stufe 1 übersprungen hast, sperrt das auch die Szenennummern.
+
+Der Dialog hat eine Zeile **Issue as** (ausgeben als) mit neun Farbfeldern. Lass sie auf White, es sei denn, diese Produktion hat bereits anderswo erstellte farbige Revisionen verteilt. In dem Fall knüpfst du bei der nächsten unbenutzten Farbe an.
+
+Nach Lock pages:
+
+- Seitenumbrüche bleiben, wo sie ausgegeben wurden. Neues Material fließt auf mit Buchstaben versehene **A-Seiten** (A-pages), statt alles neu umzubrechen – denn Seite 40 der Crew muss Seite 40 bleiben.
+- Deine erste Bearbeitung löst eine Nachfrage aus: **Edit the White Draft?** Die Fassung wurde ausgegeben, normalerweise startet die nächste Änderungsrunde also eine neue Farbe. Wähle **Start Blue Revisions**, um es sauber zu machen, oder **Edit anyway**, wenn du einen Tippfehler korrigierst, bevor ihn jemand bemerkt hat. Eine Eigenheit zum Merken: Der Tastenanschlag, der die Nachfrage ausgelöst hat, landet nicht – tippe dieses Zeichen nach deiner Wahl also erneut.
+
+## Revisionsrunden
+
+**New revision…** im Menü Lock & Revisions startet die nächste Runde. Die Farben folgen der Branchenreihenfolge:
+
+**White, Blue, Pink, Yellow, Green, Goldenrod, Buff, Salmon, Cherry**. Nach Cherry wiederholt sich der Zyklus als Double Blue, Double Pink und so weiter. Du kannst vorspringen, falls diese Produktion Farben anderswo verbraucht hat, und du kannst der Runde eine Notiz anhängen.
+
+Solange eine Runde offen ist, siehst du Folgendes:
+
+- **Sternchen am rechten Rand**, eines pro geänderter Zeile, genau dort, wo ein Produktionsleser sie erwartet.
+- **Eine Notiz in der oberen rechten Seitenecke** jeder überarbeiteten Seite – die Farbe, das Datum und die Seitenzahl, etwa `BLUE 1/29/26 - 21.`
+- **Ein Farbschleier der Revisionsfarbe** auf den Seitenkarten, die diese Runde berührt hat. Eine neue Runde zu starten setzt die Seiten der letzten Runde auf dem Bildschirm auf schlichtes Papier zurück, denn der Schleier bedeutet "in der aktuellen Runde geändert".
+- **Der Lock-Button selbst** übernimmt die Farbe und den Kurznamen der Runde, etwa "Blue" oder "Blue 2".
+- **Die Titelseite bekommt eine Revisionshistorie**, eine Zeile pro ausgegebener Runde, etwa "Blue: revised 7/24/26".
+
+Datumsangaben folgen deiner Datumsformat-Einstellung aus dem **Display**-Menü des Editors.
+
+### Szenen, die einen zweiten Blick wollen
+
+Wenn sich der Inhalt einer ausgegebenen Szene ändert, markiert CineLog sie und setzt eine Markierung neben ihre Szenennummer. Die Markierung verschwindet nie von selbst, denn der Punkt ist, dass ein Mensch die Änderung bestätigt. Wenn du hingesehen hast, mache einen Rechtsklick auf die Szene und wähle **Mark scene reviewed**.
+
+## Omittierte Szenen
+
+Mit gesperrten Szenennummern entfernst du eine Szene, indem du sie omittierst. Mache einen Rechtsklick in die Szene und wähle **Omit scene**, oder nutze denselben Eintrag im Menü Lock & Revisions. Der Inhalt der Szene klappt auf eine einzelne graue Zeile mit **OMITTED** zusammen, und die Nummer bleibt am Rand stehen. Jede spätere Szene behält ihre Nummer, und genau darum geht es.
+
+Nichts wird gelöscht. **Restore scene** bringt den Inhalt exakt so zurück, wie er war.
+
+Zwei verwandte Züge:
+
+- Um direkt nach einer omittierten Szene eine Szene einzufügen, drücke auf dem Grabstein Return (oder am Anfang der nächsten Überschrift). CineLog bietet an, eine Buchstaben-Szene zwischen die beiden zu setzen, beginnend mit einer Platzhalter-Überschrift, die du überschreibst.
+- Bei einem seitengesperrten Drehbuch rendert eine Seite, deren Inhalt vollständig weg ist, als **PAGE 7 OMITTED** und hält ihren Platz in der Zählung.
+
+Eine omittierte Szene lässt sich nicht bearbeiten, bis du sie wiederherstellst, und die Überschrift einer gesperrten Szene lässt sich nicht löschen. Der Editor sagt dir, dass du stattdessen Omit Scene nutzen sollst. Szenen, die du nach der Sperre hinzufügst, bleiben frei löschbar, bis sie in einer Revision ausgegeben wurden.
+
+## Überarbeitete Seiten verteilen
+
+Wenn eine Runde fertig ist und die Seiten gesperrt sind, bekommt der [Export-Dialog](/de/guides/writing-formatting-scripts#exportieren) zwei zusätzliche PDF-Optionen: **Revised pages only** exportiert die Titelseite plus die Seiten, die diese Runde berührt hat – genau das Set, das eine Produktion tatsächlich verteilt. **Revision paper color** füllt jede überarbeitete Seite mit ihrer Farbe. Lass sie aus, wenn du auf echtem farbigem Papier druckst.
+
+## Falls das nicht funktioniert
+
+*Ich will das Drehbuch entsperren.* Es gibt kein Entsperren, absichtlich. Omittiere, was nicht gedreht werden soll, überarbeite, was sich geändert hat, oder übernimm neue Nummern über einen Import.
+
+*Das Menü warnt, dass Szenennummern ihre Überschrift verloren haben.* Du hast eine Überschrift gelöscht, die die Registry noch führt. Mach die Löschung rückgängig oder omittiere die Szene ordentlich.
+
+*Ich habe in der Bearbeitungs-Nachfrage "Start Blue Revisions" gewählt und mein erstes Zeichen fehlt.* Die Nachfrage verbraucht den Tastenanschlag, der sie ausgelöst hat. Tippe das Zeichen erneut.
+
+*Ich habe versehentlich Seiten gesperrt.* Es geht nichts kaputt. Das Schreiben läuft normal weiter und neues Material fließt auf A-Seiten. Aber es gibt keinen Weg zurück zu frei fließender Paginierung – behandle Lock pages also als den Moment der Verteilung.

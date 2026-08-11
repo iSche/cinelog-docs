@@ -1,7 +1,7 @@
 ---
 title: Ordini del Giorno
-lastUpdated: 2026-07-11
-description: "Genera e gestisci ordini del giorno per cast e troupe con dettagli su pianificazione e location."
+lastUpdated: 2026-08-08
+description: "Genera e gestisci ordini del giorno per cast e troupe con pianificazione, talent popolati automaticamente e dettagli sulle location."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -58,7 +58,7 @@ Clicca nelle sezioni Talent o Troupe per ridurre la lista esattamente a chi è n
 
 **Esportazione PDF e invio email**
 
-Assicurati che tutti sappiano esattamente cosa sta succedendo. Clicca **Esporta** per formattare un PDF standard del settore con il logo della tua compagnia, oppure premi **Invia** per inviare email tracciate direttamente al team.
+Assicurati che tutti sappiano esattamente cosa sta succedendo. Clicca **Export** (esporta) per formattare un PDF standard del settore con il logo della tua compagnia, oppure premi **Send** (invia) per inviare email tracciate direttamente al team.
 
 </li>
 
@@ -72,7 +72,7 @@ La programmazione degli Ordini del Giorno resta sincronizzata con la tua vista P
 </Aside>
 
 <Aside type="tip" title="Vantaggi del routing dei dati">
--   **Flussi Cast e Troupe**: Nomi dei talent, ruoli della troupe e dettagli di contatto fluiscono rigorosamente dal tuo hub centrale Cast & Troupe. Assegnare un attore popola dinamicamente i suoi dati.
+-   **Flussi Cast e Troupe**: Nomi dei talent, ruoli della troupe e dettagli di contatto fluiscono rigorosamente dal tuo hub centrale Cast & Troupe. Un nuovo foglio popola la sua sezione Talent con il cast delle scene programmate quel giorno, in ordine di numero di cast — il flusso che comincia con il tagging del cast nello [Spoglio della Sceneggiatura](/it/breakdown). La troupe ricorrente viene riportata dal giorno precedente con i suoi orari di call.
 -   **Garanzie di gestione errori**: Qualsiasi collo di bottiglia di pianificazione non valido mostra avvisi UI giallo/rosso netti che prevengono conflitti di timeline.
 -   **Portale di conferma**: Chiunque riceva un'email con un Ordine del Giorno ottiene un link protetto da token che apre un portale con il marchio CineLog dove tocca "Conferma" per confermare la ricezione — nessun account necessario.
 </Aside>

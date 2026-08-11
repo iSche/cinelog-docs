@@ -1,11 +1,11 @@
 ---
 title: Editor di Sceneggiatura
-lastUpdated: 2026-07-11
-description: "Editing professionale di sceneggiature con formattazione Fountain in tempo reale, importazione multi-formato, analytics live e integrazione con la Lista delle Inquadrature."
+lastUpdated: 2026-08-08
+description: "Editing professionale di sceneggiature su vere pagine US Letter con formattazione Fountain in tempo reale, importazioni con revisione, blocco della sceneggiatura e revisioni a colori, spoglio sulla pagina, analytics live e integrazione con la Lista delle Inquadrature."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-L'Editor di Sceneggiatura di CineLog è un sistema professionale di editing per sceneggiature, pensato per i moderni flussi di lavoro nella produzione cinematografica. Importa copioni da formati multipli, scrivi con il supporto in tempo reale della sintassi Fountain, tieni traccia delle analytics e integrati senza soluzione di continuità con la tua Lista delle Inquadrature—tutto con formattazione standard del settore e funzionalità collaborative.
+L'Editor di Sceneggiatura di CineLog è un sistema professionale di editing per sceneggiature, pensato per i moderni flussi di lavoro nella produzione cinematografica. Scrivi su vere pagine US Letter che si spezzano esattamente dove si spezza il copione stampato, importi attraverso una revisione modifica per modifica, blocchi i numeri di scena e tieni traccia dei round di revisione a colori, tagghi lo [spoglio](/it/breakdown) direttamente sulla pagina e popoli la lista delle inquadrature dalla sceneggiatura.
 
 ## Funzionalità principali
 
@@ -18,12 +18,24 @@ L'Editor di Sceneggiatura di CineLog è un sistema professionale di editing per 
   Formattazione live mentre scrivi. Classificazione automatica degli elementi per intestazioni di scena, nomi dei personaggi, dialoghi e azioni, con scorciatoie per override manuale per un controllo preciso.
 </Card>
 
-<Card title="Importazione Multi-Formato">
-  Importa sceneggiature dai formati **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT** e **RTF** con parsing intelligente e preservazione del formato.
+<Card title="Layout a pagine reali">
+  L'editor renderizza vere pagine US Letter, 54 righe ciascuna, con i paragrafi che si dividono a cavallo dell'interruzione sotto **(MORE)** e **(CONT'D)**. Le pagine a schermo, il contatore di pagine e il PDF esportato sono le stesse pagine. Vedi [Scrittura e formattazione](/it/guides/writing-formatting-scripts).
+</Card>
+
+<Card title="Importazione con revisione">
+  Importa file **Final Draft (.fdx)**, **Fountain**, **PDF**, **TXT** e **RTF** attraverso una schermata di revisione che mostra ogni modifica prima che venga applicata. Vedi [Importare sceneggiature](/it/guides/importing-scripts).
+</Card>
+
+<Card title="Blocco e revisioni">
+  Blocca i numeri di scena, distribuisci le bozze e tieni traccia dei round di revisione a colori con righe asteriscate, pagine velate ed esportazione delle sole pagine revisionate. Vedi [Blocco e revisioni](/it/guides/script-lock-and-revisions).
+</Card>
+
+<Card title="Spoglio della Sceneggiatura">
+  Tagga cast, attrezzeria, costumi e altre nove categorie direttamente sulla pagina della sceneggiatura. Il cast confluisce in Cast & Troupe e negli ordini del giorno. Vedi [Spoglio della Sceneggiatura](/it/breakdown).
 </Card>
 
 <Card title="Analytics Live">
-  Analytics della sceneggiatura in tempo reale. Tieni traccia del numero stimato di pagine, del conteggio di scene, del conteggio di righe, del conteggio parole e del conteggio caratteri mentre scrivi.
+  Una sidebar di statistiche tiene traccia del conteggio pagine in ottavi di sceneggiatura, più scene, righe, parole e caratteri — e della dimensione di qualunque cosa tu abbia selezionato.
 </Card>
 
 <Card title="Integrazione con la Lista delle Inquadrature">
@@ -77,7 +89,7 @@ Posizionamento preciso al carattere con font Courier Prime a 12 punti, margini c
 
 ### Importazione multi-formato della sceneggiatura
 
-Devi importare un testo da un'app più vecchia? Clicca il pulsante **Import** nella barra in alto dell'Editor di Sceneggiatura per importare e convertire una sceneggiatura esistente. Il nostro parser universale estrae in modo intelligente scene, personaggi e geometria dei dialoghi dal documento originale, applicando automaticamente la formattazione Fountain standard.
+Devi importare un testo da un'altra app? Clicca il pulsante **Import** nella barra del menu in alto dell'Editor di Sceneggiatura. Il file viene analizzato e confrontato con la tua sceneggiatura attuale, e una schermata di revisione mostra ogni modifica affiancata prima che qualcosa venga applicato — le accetti o le rifiuti una per una. Su una sceneggiatura bloccata, le modifiche che toccano materiale già distribuito attendono una tua decisione esplicita. La procedura completa è in [Importare sceneggiature](/it/guides/importing-scripts).
 
 <CardGrid>
 <Card title="Final Draft (.fdx)">
@@ -89,7 +101,7 @@ Devi importare un testo da un'app più vecchia? Clicca il pulsante **Import** ne
 </Card>
 
 <Card title="Sceneggiature PDF">
-  Estrazione di testo avanzata con preservazione del layout, usando librerie specifiche per piattaforma e supporto Unicode.
+  Estrazione del testo dalle sceneggiature in PDF, con un passaggio di configurazione su come il testo viene estratto.
 </Card>
 
 <Card title="Testo semplice (.txt)">
@@ -103,23 +115,23 @@ Devi importare un testo da un'app più vecchia? Clicca il pulsante **Import** ne
 
 ### Analytics della sceneggiatura in tempo reale
 
-Metriche professionali della sceneggiatura aggiornate live mentre scrivi, con calcoli standard del settore per una pianificazione di produzione accurata.
+Una sidebar di statistiche nell'editor desktop si aggiorna live mentre scrivi. Mostra cinque metriche: Pagine, Scene, Righe, Parole e Caratteri.
 
 <CardGrid>
-<Card title="Stima delle pagine">
-  Formule di calcolo pagine standard del settore con aggiornamenti in tempo reale e precisione professionale.
+<Card title="Conteggio pagine in ottavi">
+  Il conteggio pagine si legge in ottavi di sceneggiatura, tipo 12 3/8 — l'unità in cui parlano i piani di lavorazione. Viene dalla stessa impaginazione che l'editor renderizza e che il PDF stampa, quindi è il conteggio reale, non una stima.
 </Card>
 
-<Card title="Conteggio scene & personaggi">
-  Tracciamento live di scene, personaggi unici e distribuzione dei dialoghi.
+<Card title="Scene & righe">
+  Conteggi live delle scene presenti nel documento e del numero totale di righe.
 </Card>
 
-<Card title="Analisi degli elementi">
-  Conta e analizza blocchi d'azione, righe di dialogo, transizioni e altri elementi del copione per la revisione strutturale.
+<Card title="Parole & caratteri">
+  Totali live di conteggio parole e conteggio caratteri mentre digiti.
 </Card>
 
-<Card title="Metriche parole & caratteri">
-  Metriche di scrittura professionali, tra cui conteggio totale parole e conteggio caratteri.
+<Card title="Statistiche della selezione">
+  Seleziona un tratto qualsiasi della sceneggiatura e la sidebar aggiunge il conteggio caratteri della selezione e la sua lunghezza in ottavi di pagina — la risposta rapida a "quanto è lunga questa scena".
 </Card>
 </CardGrid>
 

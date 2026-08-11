@@ -1,7 +1,7 @@
 ---
-title: Gérer le Casting et l'Équipe
-lastUpdated: 2026-06-25
-description: "Ajoute des rôles et des départements, gère les contacts de l'espace de travail et contrôle l'accès avec les boutons d'intention. Les données de l'équipe alimentent directement les feuilles de service de CineLog."
+title: Gérer casting et équipe
+lastUpdated: 2026-08-08
+description: "Ajoute des rôles et des départements, crée des rôles personnalisés, numérote ton casting et relie-le aux personnages, gère les contacts de l'espace de travail et contrôle l'accès avec les boutons d'intention. Les données de l'équipe alimentent directement les feuilles de service de CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -19,33 +19,52 @@ Tu peux facilement ajouter de nouveaux membres directement à ton projet. CineLo
 
 <Steps>
 1. **Ouvre Casting et Équipe :** Navigue vers le module Casting et Équipe en utilisant la barre latérale gauche. Assure-toi d'être sur l'onglet « Projet ».
-2. **Ajoute un rôle :** Clique sur le bouton **« + Ajouter un rôle »**.
+2. **Ajoute un rôle :** Clique sur le bouton **"+ Add Role"**.
 3. **Sélectionne ou crée :** La boîte de dialogue unifiée s'ouvrira. Tu peux soit rechercher et sélectionner une personne existante dans tes Contacts d'espace de travail, soit simplement taper un nouveau nom pour créer instantanément un nouveau contact.
-4. **Choisis un rôle :** Sélectionne un rôle standard de l'industrie dans la liste déroulante (par exemple, *1er Assistant Réalisateur*, *Chef Électricien*, *Acteur principal*). 
+4. **Choisis un rôle :** Cherche dans la liste des rôles et choisis-en un (par exemple, *1st Assistant Director*, *Gaffer*, *Lead Actor*).
 5. **Détails du contact :** Saisis l'e-mail et le numéro de téléphone de la personne. Bien que facultatifs, ils sont fortement recommandés si tu prévois de lui envoyer des Feuilles de Service ou de l'inviter sur l'application.
 </Steps>
 
 Tu peux assigner plusieurs rôles à une seule personne si elle porte plusieurs casquettes sur ta production !
 
+### Rôles personnalisés
+
+Quand ta production a un poste que la liste standard ne connaît pas, crée le tien. Tape le nom dans le champ de recherche de rôle et, quand rien ne correspond, tu obtiens l'option **Create "…" as a custom role**. Quelques points à connaître :
+
+- Les rôles personnalisés appartiennent à l'**espace de travail**, pas au projet : tous les projets de ton espace de travail peuvent donc les utiliser à partir de ce moment-là.
+- Ils vivent tous dans un seul département appelé **Custom**, qui se classe après les départements standard sur le tableau.
+- Les noms doivent être uniques. Si le nom existe déjà comme rôle standard ou personnalisé, CineLog te dit lequel, et tu choisis le rôle existant à la place.
+- L'option de création apparaît sur le parcours principal **+ Add Role**. L'ajout depuis le bouton **+** propre à un département ne propose que les rôles de ce département, car un rôle personnalisé ne peut pas y vivre.
+- Il n'y a pas encore de renommage ni de suppression des rôles personnalisés dans l'application. Nomme-les tels qu'ils doivent s'imprimer sur la feuille de service.
+
+### Numéros de casting et personnages
+
+Les emplacements du groupe Casting (Talent et Background) portent deux choses que les emplacements d'équipe n'ont pas : un **numéro de casting** et un **personnage**.
+
+- Le numéro est ce que les feuilles de service et le Day Out of Days (tableau de présence des comédiens) impriment à côté du comédien. Touche la puce du numéro dans la section **Character** d'un emplacement pour le définir à la main. Les numéros sont uniques : si le 3 est pris, CineLog te dit qui l'a.
+- **Link…** connecte l'emplacement à un personnage du [Dépouillement du Scénario](/fr/breakdown), et l'emplacement se met à se lire comme une fiche de casting : « Jane Doe as MARIA », avec « 1 · MARIA — Lead » en dessous. S'il n'y a pas encore de personnages à lier, marque d'abord le casting dans le dépouillement.
+- Le dépouillement fait généralement le premier passage pour toi : il crée un emplacement Talent vacant et numéroté pour chaque personnage détecté, avec un rôle deviné que tu peux changer. Voir [Dépouillement du Scénario](/fr/breakdown).
+- Pour réordonner le casting, appuie longuement sur une ligne de casting et fais-la glisser. Tout le groupe Casting est renuméroté selon le nouvel ordre, Talent d'abord, puis Background, pour que le tableau se lise toujours de 1 à N depuis le haut.
+
 ---
 
 ## 3. Contrôle d'accès et invitations
 
-Assigner un contact à un rôle de projet règle automatiquement son accès sur **en attente** et lui envoie un e-mail d'invitation. Il devient un collaborateur actif dès qu'il accepte, ou instantanément s'il collabore déjà sur un autre projet de ton espace de travail.
+Assigner un contact à un rôle de projet règle automatiquement son accès sur **pending** et lui envoie un e-mail d'invitation. Il devient un collaborateur actif dès qu'il accepte, ou instantanément s'il collabore déjà sur un autre projet de ton espace de travail.
 
-Pour garder quelqu'un comme simple contact — sur ton équipe et tes feuilles de service mais sans accès à l'application — laisse son emplacement de rôle vacant, ou désactive son accès avec le bouton d'intention ci-dessous.
+Pour garder quelqu'un comme simple contact — sur ton équipe et tes feuilles de service mais sans accès à l'application — laisse son emplacement de rôle vacant, ou désactive son accès avec l'Intent Toggle (bouton d'intention d'accès) ci-dessous.
 
 ### Le « bouton d'intention »
 
-Clique sur le rôle de n'importe quelle personne dans la liste Casting et Équipe du projet pour ouvrir sa **boîte de dialogue Détails du rôle**. À l'intérieur, tu trouveras le **formulaire de contrôle d'accès**.
+Clique sur le rôle de n'importe quelle personne dans la liste Casting et Équipe du projet pour ouvrir son **Role Details Dialog** (boîte de dialogue Détails du rôle). À l'intérieur, tu trouveras l'**Access Control Form** (formulaire de contrôle d'accès).
 
-En haut de ce formulaire se trouve le **bouton d'intention d'accès**.
+En haut de ce formulaire se trouve l'**Access Intent Toggle**.
 
 - **ACTIVÉ (Accordé/En attente) :** L'état par défaut dès l'instant où tu assignes un contact à un rôle. CineLog lui envoie un e-mail d'invitation et il rejoint dès qu'il accepte ; s'il collabore déjà sur un autre projet de ton espace de travail, il est admis instantanément.
 - **DÉSACTIVÉ (Interdit) :** La personne reste sur ton équipe et tes feuilles de service mais ne peut pas se connecter au projet. Désactive-le pour les contacts qui ne doivent pas avoir accès à l'application.
 
 <Aside type="note">
-**Gestion d'équipe :** Toute personne qui a la permission **Édition** pour le module Casting et Équipe peut basculer les intentions d'accès et modifier l'ACL pour d'autres membres de l'équipe. Cela te permet de déléguer les tâches d'intégration et de sécurité à tes Directeurs de production ou Coordinateurs !
+**Gestion d'équipe :** Toute personne qui a la permission **Edit** pour le module Casting et Équipe peut basculer les intentions d'accès et modifier l'ACL pour d'autres membres de l'équipe. Cela te permet de déléguer les tâches d'intégration et de sécurité à tes Directeurs de production ou Coordinateurs !
 </Aside>
 
 ### Contrôle d'accès basé sur les rôles (RBAC)
@@ -54,4 +73,4 @@ Lorsque tu accordes l'accès à un utilisateur sur ton projet, que peut-il réel
 
 CineLog utilise le **Contrôle d'accès basé sur les rôles (RBAC)**. Les permissions d'un utilisateur sont influencées par le rôle de l'industrie que tu lui as assigné, avec des valeurs par défaut sensées appliquées en fonction de son département et de sa position dans la hiérarchie.
 
-En tant que propriétaire du projet, tu peux remplacer les permissions par défaut dans la boîte de dialogue Détails du rôle, en ajustant l'accès Voir/Éditer pour des modules individuels pour cette personne spécifique.
+En tant que propriétaire du projet, tu peux remplacer les permissions par défaut dans le Role Details Dialog, en ajustant l'accès View/Edit pour des modules individuels pour cette personne spécifique.

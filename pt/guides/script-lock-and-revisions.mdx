@@ -1,0 +1,79 @@
+---
+title: Bloqueio e revisões
+lastUpdated: 2026-08-08
+description: "Bloqueie os números de cena, emita drafts e acompanhe rodadas de revisão coloridas — asteriscos nas linhas alteradas, histórico de revisões na página de título, cenas omitidas e exportação somente das páginas revisadas."
+---
+
+Este guia assume [O básico](/pt/guides/introduction) e o guia [Escrita e formatação](/pt/guides/writing-formatting-scripts).
+
+Assim que um roteiro vai para a equipe, ele deixa de ser um draft privado e vira um documento de referência. As pessoas montam o cronograma a partir dos números de cena dele e fazem marcações nas páginas. A partir desse momento, os números precisam ficar parados e toda alteração precisa ficar visível. É isso que o botão **Lock & Revisions** na barra de menu superior do editor gerencia. Ele funciona em duas etapas, e você não precisa dar as duas de uma vez.
+
+## Etapa 1 — Bloquear números de cena
+
+Abra o menu Lock & Revisions e escolha **Lock scene numbers…**. O diálogo deixa o acordo claro: os números de todas as suas cenas congelam para a análise técnica e o cronograma. A partir daí:
+
+- Uma nova cena entre 78 e 79 vira **78A**, para que nada adiante seja renumerado.
+- Apagar o conteúdo de uma cena a marca como **OMITTED** em vez de fechar o buraco. O número fica.
+- As páginas continuam fluindo livremente. Você pode seguir escrevendo, e a paginação se comporta exatamente como antes.
+
+Esse é o bloqueio que a [Análise Técnica](/pt/breakdown) pede na entrada, e é tudo de que a maioria dos projetos precisa até as páginas saírem.
+
+Não existe Desbloquear. Isso é proposital, porque na produção renumerar depois da distribuição é um trabalho de reparo, não uma ação do dia a dia. Se você realmente precisa de números diferentes, importar um arquivo com a numeração de produção dele permite adotá-los, com uma confirmação que explica as consequências. Veja [Importar roteiros](/pt/guides/importing-scripts).
+
+## Etapa 2 — Bloquear páginas
+
+Quando o roteiro está prestes a ser distribuído, escolha **Lock pages…**. Isso congela a paginação nas páginas atuais e emite o draft. Se você pulou a etapa 1, isso bloqueia os números de cena também.
+
+O diálogo tem uma linha **Issue as** com nove amostras de cor. Deixe em Branco a menos que esta produção já tenha distribuído revisões coloridas feitas em outro lugar. Nesse caso, continue a partir da próxima cor não usada.
+
+Depois do bloqueio de páginas:
+
+- As quebras de página ficam onde foram emitidas. Material novo transborda para **A-pages** (páginas com letra) em vez de refluir tudo, porque a página 40 da equipe precisa continuar sendo a página 40.
+- A primeira edição que você fizer levanta um aviso: **Edit the White Draft?** O draft já foi emitido, então normalmente a próxima rodada de alterações começa uma nova cor. Escolha **Start Blue Revisions** para fazer do jeito certo, ou **Edit anyway** se você está corrigindo um erro de digitação antes que alguém percebesse. Uma peculiaridade que vale saber: a tecla que levantou o aviso não é registrada, então redigite esse caractere depois de escolher.
+
+## Rodadas de revisão
+
+**New revision…** no menu Lock & Revisions inicia a próxima rodada. As cores seguem a ordem da indústria:
+
+**White, Blue, Pink, Yellow, Green, Goldenrod, Buff, Salmon, Cherry**. Depois do Cherry o ciclo se repete como Double Blue, Double Pink e assim por diante. Você pode pular adiante se esta produção já queimou cores em outro lugar, e pode anexar uma nota à rodada.
+
+Enquanto uma rodada está aberta, é isto o que você vê:
+
+- **Asteriscos na margem direita**, um por linha alterada, exatamente onde um leitor de produção espera encontrá-los.
+- **Uma nota no canto superior direito da página** em cada página revisada — a cor, a data e o número da página, como `BLUE 1/29/26 - 21.`
+- **Um fundo na cor da revisão** nos cards de página que esta rodada tocou. Iniciar uma nova rodada devolve as páginas da rodada anterior ao papel comum na tela, porque esse fundo significa "alterado na rodada atual".
+- **O próprio botão Lock** assume a cor e o nome curto da rodada, como "Blue" ou "Blue 2".
+- **A página de título ganha um histórico de revisões**, uma linha por rodada emitida, como "Blue: revised 7/24/26".
+
+As datas seguem sua preferência de formato de data no menu **Display** do editor.
+
+### Cenas que pedem uma segunda olhada
+
+Quando o conteúdo de uma cena já emitida muda, o CineLog a sinaliza e coloca uma marca ao lado do número dela. A sinalização nunca some sozinha, porque a ideia é que uma pessoa confirme a alteração. Depois de olhar, clique com o botão direito na cena e escolha **Mark scene reviewed**.
+
+## Cenas omitidas
+
+Com os números de cena bloqueados, você remove uma cena omitindo-a. Clique com o botão direito dentro da cena e escolha **Omit scene**, ou use o mesmo item no menu Lock & Revisions. O conteúdo da cena se reduz a uma única linha acinzentada com a palavra **OMITTED**, e o número continua na margem. Toda cena posterior mantém seu número, que é justamente o objetivo.
+
+Nada é apagado. **Restore scene** traz o conteúdo de volta exatamente como estava.
+
+Dois movimentos relacionados:
+
+- Para adicionar uma cena logo depois de uma omitida, pressione Return na lápide (ou no início do próximo cabeçalho). O CineLog oferece adicionar uma cena com letra entre as duas, começando com um cabeçalho placeholder que você digita por cima.
+- Em um roteiro com páginas bloqueadas, uma página cujo conteúdo sumiu por inteiro é renderizada como **PAGE 7 OMITTED**, guardando seu lugar na contagem.
+
+Uma cena omitida não pode ser editada até você restaurá-la, e o cabeçalho de uma cena bloqueada não pode ser apagado. O editor manda você usar Omitir Cena no lugar. As cenas que você adiciona depois do bloqueio continuam livremente apagáveis até serem emitidas em uma revisão.
+
+## Distribuir páginas revisadas
+
+Quando uma rodada termina e as páginas estão bloqueadas, o [diálogo de Exportação](/pt/guides/writing-formatting-scripts#exportação) ganha duas opções de PDF: **Revised pages only** exporta a página de título mais as páginas que esta rodada tocou, que é o conjunto que uma produção de fato distribui. **Revision paper color** preenche cada página revisada com a cor dela. Deixe desligado quando você estiver imprimindo em papel colorido de verdade.
+
+## Se isso não estiver funcionando
+
+*Quero desbloquear o roteiro.* Não existe desbloqueio, por decisão de projeto. Omita o que não deve ser filmado, revise o que mudou, ou adote novos números por meio de uma importação.
+
+*O menu avisa que números de cena perderam seu cabeçalho.* Você apagou um cabeçalho que o registro ainda acompanha. Desfaça a exclusão, ou omita a cena do jeito certo.
+
+*Escolhi "Start Blue Revisions" no aviso de edição e meu primeiro caractere sumiu.* O aviso consome a tecla que o levantou. Redigite o caractere.
+
+*Bloqueei as páginas sem querer.* Nada quebra. A escrita continua normalmente e material novo flui para as A-pages. Mas não há caminho de volta para a paginação livre, então trate o Bloquear páginas como o momento da distribuição.

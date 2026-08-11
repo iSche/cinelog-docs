@@ -1,7 +1,7 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-07-11
-description: "Tägliche Dispositionen (Dispo) in CineLog – Header und Call-Time, Drehorte, Plan mit Zeit-Kaskade, Wetter, Personensektionen, Rich-Text-Crew-Message, Versand und Bestätigungs-Tracking, PDF-Export."
+lastUpdated: 2026-08-08
+description: "Tägliche Dispositionen (Dispo) in CineLog – Header und Call-Time, Drehorte, Plan mit Zeit-Kaskade, Wetter, automatisch befülltes Talent mit Status, Rich-Text-Crew-Message, Versand und Bestätigungs-Tracking, PDF-Export."
 ---
 
 Eine Disposition (Dispo) in CineLog ist der tägliche Produktionsplan: der Drehplan, der Drehort, die Personen, das Wetter und die Nachricht, die mit der E-Mail rausgeht. Sie ist eng mit dem Rest des Projekts verknüpft – der Plan ist dieselben Daten wie die Drehtage-Ansicht für diesen Tag, und das Personal kommt direkt aus Cast & Crew.
@@ -27,7 +27,7 @@ Der Header läuft über die Oberseite und trägt die wichtigsten Informationen d
 
 ### Allgemeine Call-Time
 
-Das wichtigste einzelne Feld. Setzt die Basis-Startzeit für den Tag (z.B. 08:00). Klicke darauf, um es zu bearbeiten. Diese Zeit verankert die Zeit-Kaskade des Plans (unten) und ist die Standardzeit, die jedem Empfänger gemailt wird, es sei denn, er hat eine persönliche Call-Time gesetzt (siehe [Personal](#personnel-sections)).
+Das wichtigste einzelne Feld. Setzt die Basis-Startzeit für den Tag (z.B. 08:00). Klicke darauf, um es zu bearbeiten. Diese Zeit verankert die Zeit-Kaskade des Plans (unten) und ist die Standardzeit, die jedem Empfänger gemailt wird, es sei denn, er hat eine persönliche Call-Time gesetzt (siehe [Personal](#personensektionen)).
 
 ### Datum
 
@@ -108,7 +108,15 @@ Eine Schnellreferenz-Liste in der zweiten Header-Zeile, die die wichtigsten Roll
 
 ### Talent
 
-Drei-Spalten-Tabelle – Avatar, Name, Rolle. Füge Talent aus den Kontakten des Projekts hinzu. Klicke in eine beliebige Zeile, um Notizen hinzuzufügen oder eine Call-Time zu setzen. Lange drücken auf eine Zeile, um umzuordnen.
+Drei-Spalten-Tabelle – **NAME**, **ROLE**, **CALL**. Eine neue Disposition füllt diesen Bereich für dich: Sie liest, welcher Cast in den an diesem Tag geplanten Szenen steckt, in der Reihenfolge der Cast-Nummern. Das ist das andere Ende der Pipeline, die im [Drehbuchauszug](/de/breakdown) beginnt – tagge den Cast einmal, und die Dispo jedes Tages ruft genau die Personen, die seine Szenen brauchen. Nimm jemanden aus einer Szene heraus, und er fällt aus der Dispo dieses Tages.
+
+Die Cast-Nummern kommen aus dem Slot in [Cast & Crew](/de/castandcrew) und werden live gelesen – eine Umnummerierung des Casts aktualisiert also jede Dispo. Ein Slot ohne gebuchten Darsteller druckt **TBD**, wobei die Figur, für die er steht, auf der Rolle mitgeführt wird, etwa "PRINCIPAL - JOHN".
+
+Du kannst weiterhin Personen von Hand hinzufügen, und sobald eine Dispo existiert, gehört ihre Reihenfolge dir – CineLog befüllt neue Dispos in der Reihenfolge der Cast-Nummern, ordnet aber nie eine Dispo um, die du angefasst hast. Klicke in eine beliebige Zeile, um Notizen hinzuzufügen, eine Call-Time zu setzen oder einen Status zu setzen. Lange drücken auf eine Zeile, um umzuordnen.
+
+### Personenbezogener Status
+
+Jede Person kann einen Arbeitsstatus tragen – dasselbe Vokabular, das ein Day Out of Days verwendet. Talent bekommt den vollen Satz: **Start, Work, Finish, Start/Work, Work/Finish, Hold, Day Off, Travel**. Crew und Clients bekommen den kürzeren Satz: Start, Work, Finish, Start/Work, Work/Finish.
 
 ### Crew
 
@@ -142,7 +150,15 @@ Schalte "Profilbilder" in den Anzeige-Einstellungen aus, wenn du unabhängig dav
 
 Jede Sektion (Drehorte, Clients, Talent, Crew, Extras) kann über das Anzeige-Einstellungen-Popup aus der Disposition ausgeblendet werden. Der Toggle blendet die Sektion sowohl in der UI als auch in der exportierten PDF aus.
 
-## Crew-Message
+## Produktions-Notizen
+
+Ein Fußnotenfeld für produktionsweite Notizen, Sicherheitserinnerungen, COVID-Protokolle oder alles, was du am unteren Rand der PDF jedes Empfängers haben willst. Erscheint zentriert, in Großbuchstaben.
+
+## Verteilung
+
+Die fertige Disposition zu den Personen darauf bringen: die gemeinsame Nachricht, die mitgeht, die Wahl der Empfänger, das Senden selbst und das Verfolgen von Zustellung und Bestätigungen. Den Inhalt der Dispo zu bearbeiten ist oben behandelt; hier geht es um die ausgehende Seite.
+
+### Crew-Message
 
 Ein Rich-Text-Block für die Nachricht, die zusammen mit der Dispositions-PDF rausgeht. Dieselbe Nachricht für alle Empfänger – für individuelle Anweisungen nutze die personenbezogenen Notizen oben.
 
@@ -155,17 +171,9 @@ Die Editor-Werkzeugleiste unterstützt:
 
 Die gerenderte E-Mail wendet auf der Empfängerseite dieselbe Formatierung an. Der Server bereinigt die Nachricht vor dem Versand – nur die in der Allowlist enthaltenen Formatierungs-Tags kommen durch.
 
-## Produktions-Notizen
+### Senden
 
-Ein Fußnotenfeld für produktionsweite Notizen, Sicherheitserinnerungen, COVID-Protokolle oder alles, was du am unteren Rand der PDF jedes Empfängers haben willst. Erscheint zentriert, in Großbuchstaben.
-
-## Versand und Bestätigungs-Tracking
-
-Wenn die Disposition fertig ist, öffnet **Senden** in der oberen Menüleiste den Versanddialog.
-
-### Empfänger auswählen
-
-Zwei Schritte:
+Wenn die Disposition fertig ist, öffnet **Senden** in der oberen Menüleiste den Versanddialog. Zwei Schritte:
 
 1. **Empfänger.** Eine nach Sektion gruppierte Liste (Talent, Crew, Extras, Clients), sortiert nach Abteilung und Rolle. Jeder mit einer Call-Time auf der Dispo ist standardmäßig vorausgewählt. Mengen-Toggles erlauben dir, eine ganze Sektion auf einmal aus- oder abzuwählen.
 2. **Nachricht.** Optionale zusätzliche Nachricht spezifisch für diesen Versand, oberhalb der Crew-Message geschichtet.

@@ -1,21 +1,25 @@
 ---
 title: "Elenco e Equipe"
-lastUpdated: 2026-06-25
-description: "Gerencie sua equipe de produção com funções, departamentos, contatos do workspace e controle de acesso baseado em função. Integra-se diretamente às ordens do dia."
+lastUpdated: 2026-08-08
+description: "Gerencie sua equipe de produção com funções, departamentos, funções personalizadas, números de elenco, vínculos com personagens, contatos do workspace e controle de acesso baseado em função. Integra-se diretamente às ordens do dia."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-O recurso de Elenco e Equipe do CineLog foi projetado para gerenciar a colaboração em equipe com segurança. Organize seu time usando hierarquias rigorosas padrão da indústria e controle dinamicamente quem tem acesso aos dados sensíveis do seu projeto.
+O recurso de Elenco e Equipe do CineLog foi projetado para gerenciar a colaboração em equipe com segurança. Organize seu time na hierarquia padrão da indústria, crie suas próprias funções personalizadas quando a lista padrão não der conta, numere seu elenco para as ordens do dia e controle quem tem acesso aos dados do seu projeto.
 
 ## Recursos principais
 
 <CardGrid>
 <Card title="Hierarquia padrão da indústria">
-  Organiza todos os membros em uma estrutura rígida de 3 níveis (**Grupo → Departamento → Função**) que reflete as grandes produções de estúdio.
+  Organiza todos os membros em uma estrutura de 3 níveis (**Group → Department → Role**) que reflete como as produções de verdade montam sua equipe. Quando a lista padrão não tem a função que você precisa, crie uma personalizada — ela fica disponível em todo o seu workspace.
 </Card>
 
 <Card title="Planejamento inteligente de funções">
-  Comece a delegar **Vagas em Aberto** ainda na pré-produção, sem precisar saber exatamente quem você vai contratar.
+  Comece a delegar **Vacant Slots** ainda na pré-produção, sem precisar saber exatamente quem você vai contratar. A [Análise Técnica do Roteiro](/pt/breakdown) pode criar automaticamente vagas de elenco numeradas para os seus personagens.
+</Card>
+
+<Card title="Números de elenco e personagens">
+  Toda vaga de elenco tem um número de elenco e pode ser vinculada a um personagem da análise técnica. Os números são impressos nas ordens do dia, e arrastar as linhas do elenco renumera todo o elenco em ordem.
 </Card>
 
 <Card title="Controle de acesso baseado em função">
@@ -40,7 +44,16 @@ Gerenciar uma equipe em crescimento é caótico. Ao estabelecer uma fonte única
 
 **Planejando sua equipe (Vagas em Aberto)**
 
-Você não precisa de um único contato no seu rolodex para começar a montar a equipe. Adicione funções padrão da indústria (ex.: "Chefe de Maquinária") para criar uma **Vaga em Aberto**. Quando contratar alguém, basta atribuir um contato existente ou recém-convidado à vaga. A função que você atribuiu fica então memorizada naquele contato para projetos futuros.
+Você não precisa de um único contato no seu rolodex para começar a montar a equipe. Adicione funções padrão da indústria (ex.: "Chefe de Maquinária") para criar uma **Vacant Slot**. Quando contratar alguém, basta atribuir um contato existente ou recém-convidado à vaga. A função que você atribuiu fica então memorizada naquele contato para projetos futuros.
+
+Se a função que você precisa não está na lista, digite-a no campo de busca de funções e escolha **Create "…" as a custom role**. Funções personalizadas pertencem ao seu workspace, então todo projeto dele pode usá-las, e elas se reúnem em um departamento próprio, **Custom**, no fim do quadro. Veja [Gerenciar elenco e equipe](/pt/guides/managing-cast-crew) para os detalhes.
+
+</li>
+<li>
+
+**Números de elenco e personagens**
+
+As vagas de elenco carregam um **número de elenco** — o número que a ordem do dia e o Day Out of Days usam. A [Análise Técnica do Roteiro](/pt/breakdown) cria automaticamente vagas numeradas para os seus personagens, ou você define os números à mão na seção Personagem da vaga, que também vincula a vaga a um personagem ("Jane Doe como MARIA"). Pressione e segure uma linha do elenco e arraste para reordenar — todo o elenco é renumerado conforme a nova ordem, primeiro Talent, depois Background.
 
 </li>
 <li>

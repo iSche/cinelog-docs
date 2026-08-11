@@ -1,6 +1,6 @@
 ---
 title: Decupagem essencial
-lastUpdated: 2026-07-11
+lastUpdated: 2026-08-08
 description: "Construa uma decupagem do zero — três maneiras de adicionar planos, como funciona a numeração, como reordenar e o que é apagado quando você remove um plano ou uma cena."
 ---
 
@@ -14,7 +14,7 @@ Um projeto novo te dá uma decupagem vazia. Há três formas de preenchê-la:
 
 - **Manualmente, um plano por vez.** Clique no botão `Novo Plano` à direita da barra de menu superior (desktop), ou no botão `+` na barra superior do app (celular). Ambos abrem um diálogo perguntando a qual número de cena adicionar o plano.
 - **Atalho.** `Cmd / Ctrl + N` abre o mesmo diálogo de número de cena, pré-preenchido com o maior número de cena. Em uma lista vazia ele pula o diálogo e cria o primeiro plano na cena 1.
-- **Popular a partir do Roteiro.** Abra o Editor de Roteiro e pressione `Shift + P` (ou use o botão Popular dele — o atalho não faz nada na tela da decupagem). Ele escaneia os cabeçalhos de cena do roteiro (linhas como `INT. COZINHA - DIA`) e mostra uma pré-visualização antes de qualquer alteração: Mesclar adiciona apenas as cenas que ainda não estão na sua lista, Substituir limpa a lista e a reconstrói a partir do roteiro. Por padrão ele cria vários planos sugeridos por cena com descrições e tipos de plano; escolha "apenas cenas" para um único plano placeholder por cena. Os nomes de locação dos cabeçalhos são levados para as cenas. No plano gratuito, a população para no limite do projeto de 25 cenas / 50 planos. A saída é tão limpa quanto seu roteiro — cabeçalhos malformados geram cenas malformadas.
+- **Populate from Script.** Abra o Editor de Roteiro e pressione `Shift + P` (ou use o botão Popular dele — o atalho não faz nada na tela da decupagem). Ele escaneia os cabeçalhos de cena do roteiro (linhas como `INT. COZINHA - DIA`) e mostra uma pré-visualização antes de qualquer alteração: Mesclar adiciona apenas as cenas que ainda não estão na sua lista, Substituir limpa a lista e a reconstrói a partir do roteiro. Por padrão ele cria vários planos sugeridos por cena com descrições e tipos de plano; escolha "apenas cenas" para um único plano placeholder por cena. Os nomes de locação dos cabeçalhos são levados para as cenas. No plano gratuito, a população para no limite do projeto de 25 cenas / 50 planos. A saída é tão limpa quanto seu roteiro — cabeçalhos malformados geram cenas malformadas.
 
 A maioria dos projetos começa com Popular a partir do Roteiro como uma primeira passada bruta e depois refina manualmente.
 
@@ -22,9 +22,9 @@ A maioria dos projetos começa com Popular a partir do Roteiro como uma primeira
 
 Os planos são numerados automaticamente. Três formatos estão disponíveis nas [Configurações de Exibição](/pt/guides/shot-list/display-settings):
 
-- **Alfanumérico** — `1A`, `1B`, `2A`. Número da cena + letra por plano dentro da cena. Padrão.
-- **Decimal** — `1.1`, `1.2`, `2.1`.
-- **Sequencial** — `1`, `2`, `3`, `47`. Contínuo ao longo do projeto.
+- **US** — `1A`, `1B`, `2A`. Número da cena + letra por plano dentro da cena. Padrão.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`, `47`. Contínuo ao longo do projeto.
 
 Números e letras atualizam ao reordenar. Se você move `1C` para o topo da cena, a lista lê brevemente C, A, B antes de recomputar para A, B, C. Não anote a letra de um plano esperando que ela seja estável entre movimentos.
 

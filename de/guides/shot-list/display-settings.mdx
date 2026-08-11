@@ -1,7 +1,7 @@
 ---
 title: Anzeige-Einstellungen
-lastUpdated: 2026-07-11
-description: "Spalten-Sichtbarkeit und -Reihenfolge, benutzerdefinierte Spalten, Format der Einstellungs-Nummerierung, Zeilenhöhe – alles, was steuert, wie die Einstellungsliste auf dem Bildschirm aussieht."
+lastUpdated: 2026-08-08
+description: "Spalten-Sichtbarkeit und -Reihenfolge, benutzerdefinierte Spalten, Format der Einstellungs-Nummerierung, Breite der Drehbuch-Seitenleiste, Datumsformat, Zeilenhöhe – alles, was steuert, wie die Einstellungsliste auf dem Bildschirm aussieht."
 ---
 
 Die Anzeige-Einstellungen steuern, wie die Einstellungsliste aussieht – welche Spalten sichtbar sind, in welcher Reihenfolge, wie die Einstellungen nummeriert werden. Einstellungen sind projektbezogen und propagieren via CineSync, sodass auf dem Desktop vorgenommene Anpassungen innerhalb von Sekunden in der mobilen App erscheinen.
@@ -24,13 +24,21 @@ Füge eigene Spalten aus den Anzeige-Einstellungen hinzu, indem du jeder einen N
 
 ## Format der Einstellungs-Nummerierung
 
-Drei Formate werden unterstützt:
+Drei Formate werden unterstützt, im Overlay mit Live-Beispielen gezeigt:
 
-- **Alphanumerisch** — `1A`, `2C`. Szene + Buchstabe.
-- **Dezimal** — `1.1`, `2.3`.
-- **Sequenziell** — `1`, `2`, `47`. Kontinuierlich durch das Projekt.
+- **US** — `1A`, `1B`, `1C`. Szene + Buchstabe.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`. Kontinuierlich durch das Projekt.
 
-Das Format ist eine Anzeige-Einstellung – es ändert, wie die Nummern dargestellt werden, ohne die zugrunde liegenden Einstellungen zu verändern. Du kannst also frei zwischen den Formaten wechseln und jederzeit wieder zurückwechseln.
+Es sind dieselben drei Formate, die auch die Anzeige-Einstellungen von AV-Skript und Storyboard unter denselben Namen anbieten. Das Format ist eine Anzeige-Einstellung – es ändert, wie die Nummern dargestellt werden, ohne die zugrunde liegenden Einstellungen zu verändern. Du kannst also frei zwischen den Formaten wechseln und jederzeit wieder zurückwechseln.
+
+## Drehbuch-Seitenleiste, Auto-Scroll und Datumsangaben
+
+Drei weitere Zeilen leben im Overlay:
+
+- **Script Width** — wie viel vom Fenster die Drehbuch-Seitenleiste einnimmt, wenn sie offen ist, von 30 % bis 50 %.
+- **Script Auto-scroll** — ob die Drehbuch-Seitenleiste mitläuft, während du dich durch die Liste bewegst.
+- **Date Format** — `M/D/Y`, `D/M/Y` oder `Y-M-D`. Dieses gilt app-weit: Dieselbe Einstellung erscheint in den Anzeige-Menüs überall in CineLog, und sie irgendwo zu ändern ändert sie überall – inklusive exportierter PDFs, die Datumsangaben drucken.
 
 ## Zeilenhöhe und Anzeigemodus
 

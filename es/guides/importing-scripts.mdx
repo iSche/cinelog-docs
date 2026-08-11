@@ -1,0 +1,63 @@
+---
+title: Importar guiones
+lastUpdated: 2026-08-08
+description: "Importa archivos FDX, Fountain, PDF, TXT y RTF a través de una pantalla de revisión: ve cada cambio en paralelo, acepta o rechaza uno a uno, resuelve conflictos con material bloqueado y adopta los números de escena."
+---
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction).
+
+CineLog nunca aplica una importación a ciegas. Analiza el archivo en memoria, lo compara con el guion que tienes abierto y te muestra cada diferencia antes de que cambie nada. Tú decides qué entra, fila por fila si quieres. Eso importa sobre todo en un guion que ya está bloqueado y distribuido, pero además es simplemente una forma más agradable de meter una reescritura.
+
+## Iniciar una importación
+
+Haz clic en **Import** en la barra de menú superior del Editor de Guion. Lleva el atajo `Cmd / Ctrl + I`, que inicia una importación siempre que el atajo no esté ocupado poniendo en cursiva el texto seleccionado. En teléfono es el icono de importar en la barra de la app. Los formatos admitidos son **FDX, Fountain, PDF, TXT y RTF**. Un PDF tiene antes un paso extra, un pequeño diálogo para elegir cómo se extrae el texto.
+
+## Importar a un proyecto nuevo
+
+Si el proyecto todavía contiene el guion inicial sin tocar, CineLog se salta la ceremonia y muestra un solo diálogo con el título y el tamaño del archivo, del tipo "46 scenes · 512 lines". **Import** reemplaza el guion inicial de una vez. **Review first** te lleva igualmente a la pantalla de revisión, donde cada escena se colapsa en una línea con una opción **Skip / Include**, por si quieres dejar algunas escenas fuera.
+
+En cuanto has escrito un solo carácter en el guion inicial, deja de contar como sin tocar y toda importación pasa por la revisión completa.
+
+## La pantalla de revisión
+
+La pantalla de revisión lista cada diferencia entre el archivo y tu guion actual, agrupada con cabeceras fijas y un contador acumulado arriba, del tipo "58 changes · 4 conflicts · 2 unresolved".
+
+En una ventana ancha, cada fila muestra tres columnas: el tipo de elemento, **In the file** y **In the editor**. Cuando ambos lados son una sola línea, se resaltan las palabras concretas que cambian, en verde lo que añade el archivo y en rojo lo que pierde el editor. En ventanas estrechas los dos lados se apilan.
+
+Cada fila lleva un control **Accept / Reject**. En un guion sin bloquear, todas las filas empiezan aceptadas, y hay un botón **Accept all** en la barra superior. Las filas que solo informan de una escena situada en otra posición son informativas, porque los cambios de posición no se aplican automáticamente.
+
+**Back to editor** cancela toda la preparación. Todavía no se ha aplicado nada.
+
+## Cuando el guion está bloqueado
+
+Las filas que tocan material bloqueado empiezan **sin nada seleccionado**, y el botón de aplicar dice **Resolve N** hasta que cada una de ellas tiene una decisión. De eso trata el bloqueo: los cambios sobre material ya emitido necesitan un sí humano.
+
+Pulsar **Resolve N** ofrece tres salidas: **Review** te desplaza hasta la primera fila sin resolver, o puedes hacer **Accept all remaining** / **Reject all remaining** de una sola vez.
+
+Los conflictos con material bloqueado llevan un candado y una nota sobre la consecuencia, por ejemplo que aceptar una eliminación marca la escena como OMITTED en lugar de quitarla. Omitir es la forma en que un guion bloqueado suelta escenas, para que los números se mantengan. Ver [Bloqueo y revisiones](/es/guides/script-lock-and-revisions).
+
+### Importar dentro de una revisión
+
+En un guion con las páginas bloqueadas, la barra superior añade un destino de revisión: iniciar una ronda de revisión **nueva** con los cambios, o **fusionarlos** con la actual. Fusionar dentro de una ronda ya emitida muestra antes un aviso, porque las páginas distribuidas dejarían de coincidir con lo que se envió. También puedes saltar directamente a un color posterior si esta producción ha quemado colores en otro sitio.
+
+## Adoptar los números de escena del archivo
+
+Cuando tus escenas están bloqueadas y el archivo trae una numeración de producción real (letras, saltos, huecos en lugar de un simple 1, 2, 3), la barra superior ofrece un conmutador: **Use the file's scene numbers**. Unas filas de banner previsualizan el resultado, del tipo "Scene 12 will be renumbered to 14".
+
+Como renumerar un guion bloqueado rompe todas las órdenes de rodaje y planes de rodaje que hacían referencia a los números antiguos, CineLog lo confirma por separado y en términos claros. No se borra ninguna escena, las escenas omitidas conservan sus lápidas, solo cambian los números. Esta es además la vía autorizada para renumerar un guion bloqueado, ya que no existe el desbloqueo.
+
+## Aplicar
+
+El botón principal aplica tus decisiones: **Import** en un proyecto nuevo, **Apply** en el resto de casos. Recibes un mensaje de resultado simple, del tipo "Import applied — 12 changes", o "Nothing applied — every change was rejected" si lo rechazaste todo.
+
+Las importaciones viajan por la propia canalización de edición del editor, así que las etiquetas del desglose, las páginas bloqueadas y el historial de escenas sobreviven a una importación en lugar de quedarse huérfanos por ella.
+
+## Si esto no funciona
+
+*"Cannot import" con una lista de formatos.* La extensión del archivo no es uno de los cinco formatos admitidos. Exporta a FDX o Fountain desde la otra herramienta y vuelve a intentarlo.
+
+*"This file is identical to the current script."* No hay nada que revisar. Ese es el mensaje completo.
+
+*El botón Apply se queda en "Resolve N".* N filas que tocan material bloqueado siguen sin tener ni Accept ni Reject. Usa **Resolve N** → **Review** para saltar a la primera.
+
+*No veo "Use the file's scene numbers".* Solo aparece cuando tus escenas están bloqueadas y el archivo trae numeración de estilo producción. Un archivo numerado de 1 a n en una secuencia simple no tiene nada que adoptar.

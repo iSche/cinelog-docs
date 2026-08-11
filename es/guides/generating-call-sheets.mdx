@@ -1,7 +1,7 @@
 ---
 title: Órdenes de rodaje
-lastUpdated: 2026-07-11
-description: "Órdenes de rodaje diarias en CineLog: encabezado y hora de convocatoria, localizaciones, horario con cascada de tiempos, meteorología, secciones de personal, mensaje de equipo con texto enriquecido, envío y seguimiento de confirmaciones, exportación a PDF."
+lastUpdated: 2026-08-08
+description: "Órdenes de rodaje diarias en CineLog: encabezado y hora de convocatoria, localizaciones, horario con cascada de tiempos, meteorología, talento autorrellenado con estados, mensaje de equipo con texto enriquecido, envío y seguimiento de confirmaciones, exportación a PDF."
 ---
 
 Una orden de rodaje en CineLog es el plan de producción por día: el horario, la localización, las personas, el clima y el mensaje que sale con el correo. Está estrechamente acoplada al resto del proyecto: el horario son los mismos datos que la vista Producción para ese día, y el personal viene directamente de Elenco y Equipo.
@@ -27,7 +27,7 @@ El encabezado recorre la parte superior y lleva la información clave del día d
 
 ### Hora general de convocatoria
 
-El campo más importante. Establece la hora base de inicio del día (p. ej., 08:00). Haz clic para editar. Esta hora ancla la cascada de tiempos del horario (más abajo) y es la hora por defecto enviada por correo a cada destinatario a menos que tengan una hora de convocatoria personal establecida (ver [Personal](#personnel-sections)).
+El campo más importante. Establece la hora base de inicio del día (p. ej., 08:00). Haz clic para editar. Esta hora ancla la cascada de tiempos del horario (más abajo) y es la hora por defecto enviada por correo a cada destinatario a menos que tengan una hora de convocatoria personal establecida (ver [Personal](#secciones-de-personal)).
 
 ### Fecha
 
@@ -108,7 +108,15 @@ Una lista de referencia rápida en la segunda fila del encabezado mostrando los 
 
 ### Talento
 
-Tabla de tres columnas: avatar, nombre, rol. Añade talento desde los contactos del proyecto. Haz clic en cualquier fila para añadir notas o establecer una hora de convocatoria. Mantén pulsada una fila para reordenar.
+Tabla de tres columnas: **NAME**, **ROLE**, **CALL**. Una orden de rodaje nueva rellena esta sección por ti: lee qué elenco está en las escenas planificadas de ese día, en orden de número de elenco. Ese es el extremo final de la cadena que empieza en el [Desglose del Guion](/es/breakdown) — etiqueta el elenco una vez y la orden de cada día convoca exactamente a la gente que necesitan sus escenas. Saca a alguien de una escena y sale de la orden de ese día.
+
+Los números de elenco vienen de la plaza en [Elenco y Equipo](/es/castandcrew) y se leen en vivo, así que renumerar el elenco actualiza todas las órdenes. Una plaza sin actor contratado todavía imprime **TBD**, con el personaje al que representa arrastrado en el rol, del tipo "PRINCIPAL - JOHN".
+
+Puedes seguir añadiendo gente a mano y, una vez que una orden existe, su orden es cosa tuya — CineLog siembra las órdenes nuevas por número de elenco pero nunca reorganiza una orden que has tocado. Haz clic en cualquier fila para añadir notas, establecer una hora de convocatoria o fijar un estado. Mantén pulsada una fila para reordenar.
+
+### Estado por persona
+
+Cada persona puede llevar un estado de trabajo, el mismo vocabulario que usa un Day Out of Days. El talento tiene el juego completo: **Start, Work, Finish, Start/Work, Work/Finish, Hold, Day Off, Travel**. El equipo y los clientes tienen el juego corto: Start, Work, Finish, Start/Work, Work/Finish.
 
 ### Equipo
 
@@ -142,7 +150,15 @@ Desactiva "Fotos de perfil" en los ajustes de visualización si quieres avatares
 
 Cada sección (Localizaciones, Clientes, Talento, Equipo, Extras) se puede ocultar de la orden de rodaje mediante el popup de ajustes de visualización. El selector oculta la sección tanto de la interfaz como del PDF exportado.
 
-## Mensaje del equipo
+## Notas de producción
+
+Un campo de pie de página para notas a nivel de producción, recordatorios de seguridad, protocolos COVID o cualquier cosa que quieras al final del PDF de cada destinatario. Aparece centrado, en mayúsculas.
+
+## Distribución
+
+Hacer llegar la orden de rodaje terminada a las personas que aparecen en ella: el mensaje compartido que sale con ella, la elección de destinatarios, el envío en sí y el seguimiento de la entrega y las confirmaciones. La edición del contenido de la orden está cubierta más arriba; esto es el lado de salida.
+
+### Mensaje del equipo
 
 Un bloque de texto enriquecido para el mensaje que sale junto con el PDF de la orden de rodaje. Mismo mensaje para todos los destinatarios — para instrucciones individuales usa las notas por persona de arriba.
 
@@ -155,17 +171,9 @@ La barra de herramientas del editor soporta:
 
 El correo renderizado aplica el mismo formato en el lado del destinatario. El servidor sanea el mensaje antes de enviarlo: solo pasan las etiquetas de formato en lista permitida.
 
-## Notas de producción
+### Envío
 
-Un campo de pie de página para notas a nivel de producción, recordatorios de seguridad, protocolos COVID o cualquier cosa que quieras al final del PDF de cada destinatario. Aparece centrado, en mayúsculas.
-
-## Envío y seguimiento de confirmaciones
-
-Cuando la orden de rodaje esté lista, **Enviar** en la barra de menú superior abre el diálogo de envío.
-
-### Elegir destinatarios
-
-Dos pasos:
+Cuando la orden de rodaje esté lista, **Enviar** en la barra de menú superior abre el diálogo de envío. Dos pasos:
 
 1. **Destinatarios.** Una lista agrupada por sección (Talento, Equipo, Extras, Clientes), ordenada por departamento y rol. Todos los que tienen una hora de convocatoria en la orden están preseleccionados por defecto. Selectores masivos te permiten seleccionar o deseleccionar una sección entera de una vez.
 2. **Mensaje.** Mensaje adicional opcional específico de este envío, en capas sobre el mensaje del equipo.

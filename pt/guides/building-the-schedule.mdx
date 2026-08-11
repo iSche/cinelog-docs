@@ -1,0 +1,64 @@
+---
+title: Montar o cronograma
+lastUpdated: 2026-08-10
+description: "Um guia de fluxo de trabalho para o quadro de produção do Cronograma: transforme cenas em tiras, monte dias de filmagem arrastando, divida cenas em partes, coloque elenco e locações nas tiras e leve cada dia para a sua ordem do dia."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Antes do software, um cronograma de filmagem era um quadro de produção de madeira cheio de tiras de papelão. Cada tira era uma cena, impressa com seu número, sua locação, seu elenco e sua duração em oitavos de página, e o AD (assistente de direção) montava a filmagem deslizando fisicamente as tiras entre os dias. O quadro funcionava porque rearranjá-lo era rápido o bastante para testar dez versões de um dia antes do almoço.
+
+O Cronograma do CineLog é esse quadro. Uma tira por cena, dias empilhados tela abaixo, e arrastar como toda a interface. Este guia percorre o fluxo de trabalho de um roteiro já analisado até um quadro pronto e suas ordens do dia. A referência completa de cada controle está na página [Cronograma](/pt/schedule).
+
+<Aside type="note">
+O Cronograma está sendo liberado gradualmente. Se você ainda não o vê na sua navegação, é porque ele não foi ativado para a sua versão, e nenhuma configuração do seu lado o ativa antes da hora.
+</Aside>
+
+## De onde vêm as tiras
+
+O quadro não é um documento separado que você mantém. Ele é outra visualização dos mesmos dias de produção que você monta na [Decupagem](/pt/shotlist), então uma alteração em qualquer um dos dois é uma alteração nos dois, instantaneamente e em todos os dispositivos.
+
+Ou seja, o jeito de colocar suas primeiras cenas no quadro é dar a elas planos e dias. Se você veio direto da [Análise Técnica](/pt/guides/breaking-down-the-script), pressione **Populate Shot List** na barra de ferramentas da análise técnica antes, porque isso preenche suas cenas e planos com o elenco delas, e as tiras chegam já sabendo quem está nelas.
+
+Abra o **Schedule** na barra lateral, entre Story Board e Call Sheets. No celular, ele está no menu **More**. No topo do quadro fica **Unscheduled**, com toda cena que ainda não está em um dia. Abaixo vêm os dias de filmagem. Se você precisa de um lugar para onde arrastar, **Add Day** na barra de ferramentas abre o próximo dia vazio.
+
+## Leia uma tira antes de movê-la
+
+Cada tira mostra o número da cena, a locação, INT ou EXT, a hora do dia, os números de elenco presentes na cena, a duração da cena em oitavos de página e seu horário de início e duração estimada. As tiras também assumem automaticamente as cores clássicas do quadro a partir de INT/EXT e Dia/Noite, então uma olhada ao longo de um dia já diz que tipo de dia você montou antes de você ler uma única palavra.
+
+Os oitavos são o número a acompanhar. Uma página de roteiro equivale a mais ou menos um minuto de tela, e a maioria das produções calcula cerca de vinte minutos de filmagem por oitavo, então um dia cujas tiras somam seis páginas é um dia do qual você deveria desconfiar. O cabeçalho do dia mantém a estimativa acumulada para você.
+
+## Monte um dia
+
+Pressione e segure uma tira e arraste. Onde você a solta é o que define o significado:
+
+- Dentro de um dia, você reordenou o dia.
+- Além do cabeçalho de um dia, a cena vai para aquele dia e cai exatamente onde você a soltou.
+- Em Unscheduled, a cena sai do calendário. Nada é excluído, então não há confirmação para clicar. Arraste-a de volta para um dia para desfazer.
+
+Uma cena em Unscheduled também pode simplesmente ser tocada: um painel lista os dias existentes mais um novo, e você escolhe para onde ela vai. Um dia que fica sem nenhuma tira desaparece, e os dias seguintes fecham a lacuna.
+
+Então, o que faz um bom dia? O quadro não decide isso por você, mas o ofício sabe a resposta há décadas. A coisa mais cara que uma produção faz é uma mudança de locação, encaixotar todos os caminhões e dirigir até um novo lugar, então você agrupa nos mesmos dias as cenas que compartilham uma locação, mesmo quando elas estão a quarenta cenas de distância na história. Depois você olha os números de elenco nas tiras e tenta juntar as cenas de cada ator em um bloco compacto, porque atores são pagos por diária, trabalhando ou esperando. E você fica de olho nas cores, porque um dia que mistura tiras de exterior/dia com trabalho noturno é um dia brigando com o sol. Arrastar é barato. Teste versões até o dia ficar limpo.
+
+## Divida uma cena entre dias
+
+Às vezes metade de uma cena é filmada na terça e a outra metade na quinta, porque é assim que as produções reais funcionam. A divisão é feita na Decupagem por dia, arrastando um plano para fora do bloco da cena. O quadro então mostra as partes como **1 pt 1** e **1 pt 2**, e cada parte se move de forma independente, como qualquer outra tira. Quando duas partes da mesma cena voltam a ficar adjacentes em um mesmo dia, elas se fundem sozinhas de volta em uma cena simples.
+
+## Coloque elenco e locações nas tiras
+
+Toque na célula de **elenco** de uma tira e você recebe um interruptor para cada integrante numerado do elenco. Cada alternância salva na hora. Esse painel também é o único lugar para tirar alguém de uma cena, e a ordem do dia respeita isso, porque a seção Elenco da ordem do dia de um dia é montada exatamente a partir desses dados, em ordem de número de elenco.
+
+Toque na célula de **locação** e você recebe o painel de locação: nome do set, endereço com autocompletar, observação, estacionamento e hospital mais próximo. Abaixo dos campos, **Use an existing location** lista os sets que você já nomeou. Use esse recurso, porque dez cenas na mesma casa deveriam compartilhar uma única entrada, e aí uma correção no endereço chega às dez. Os mesmos campos alimentam o bloco Locações da ordem do dia.
+
+Toque em **START** ou **EST** para editar o horário de início ou a duração estimada de uma cena. Os dois normalmente mostram **Auto**, porque os horários descem em cascata a partir do horário de convocação do dia, e um valor que você fixa ganha um botão **Reset to auto** para quando você quiser a cascata de volta.
+
+## Marque os eventos que não são cenas
+
+**Add Banner** coloca um evento de cronograma em um dia, como almoço, uma mudança de locação ou uma troca de equipamento. Os banners são os mesmos que você conhece da visualização Produção e da ordem do dia, e tocar em um abre o mesmo editor. Eles vivem nos dias de filmagem, então não podem ser arrastados para Unscheduled.
+
+## Leve um dia para a sua ordem do dia
+
+Agora que um dia contém suas cenas, seu elenco e sua locação, a ordem do dia praticamente se escreve sozinha. O cabeçalho de cada dia mostra a data de filmagem vinda da ordem do dia daquele dia, a seção Elenco é preenchida com o elenco do dia em ordem de número de elenco, o bloco Locações leva o set com seu estacionamento e hospital, e as linhas do cronograma imprimem os mesmos horários de início e estimativas que as tiras mostram. O lado de saída, o envio, as confirmações e os horários de convocação por pessoa, está coberto em [Ordens do Dia](/pt/guides/generating-call-sheets).
+
+## Exporte o quadro
+
+**Export** na barra de ferramentas gera um PDF do quadro: um bloco de título com a identidade visual da sua produtora, depois as tiras de cada dia com elenco, páginas, início e estimativa, exatamente como o quadro as mostra. O diálogo oferece margens de página e um intervalo de dias. Cenas não agendadas ficam fora do PDF, porque tempo não agendado não é um fato do cronograma.

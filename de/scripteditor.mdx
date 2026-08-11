@@ -1,11 +1,11 @@
 ---
 title: Drehbuch-Editor
-lastUpdated: 2026-07-11
-description: "Professionelle Drehbuch-Bearbeitung mit Echtzeit-Fountain-Formatierung, Multiformat-Import, Live-Analytik und Einstellungslisten-Integration."
+lastUpdated: 2026-08-08
+description: "Professionelle Drehbuch-Bearbeitung auf echten US-Letter-Seiten mit Echtzeit-Fountain-Formatierung, geprüften Importen, Drehbuchsperre und farbigen Revisionen, Auszugs-Tagging, Live-Analytik und Einstellungslisten-Integration."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Der Drehbuch-Editor von CineLog ist ein professionelles Drehbuch-Bearbeitungssystem für moderne Filmproduktions-Workflows. Importiere Drehbücher aus verschiedenen Formaten, schreibe mit Echtzeit-Fountain-Unterstützung, verfolge Analysen und integriere alles nahtlos mit deiner Einstellungsliste – mit branchenüblicher Formatierung und kollaborativen Funktionen.
+Der Drehbuch-Editor von CineLog ist ein professionelles Drehbuch-Bearbeitungssystem für moderne Filmproduktions-Workflows. Du schreibst auf echten US-Letter-Seiten, die genau dort umbrechen, wo das gedruckte Drehbuch umbricht, importierst über ein Review Änderung für Änderung, sperrst Szenennummern und verfolgst farbige Revisionsrunden, taggst den [Drehbuchauszug](/de/breakdown) direkt auf der Seite und befüllst die Einstellungsliste aus dem Drehbuch.
 
 ## Kernfunktionen
 
@@ -18,12 +18,24 @@ Der Drehbuch-Editor von CineLog ist ein professionelles Drehbuch-Bearbeitungssys
   Live-Formatierung beim Tippen. Automatische Element-Klassifizierung für Szenenüberschriften, Figurennamen, Dialoge und Action mit manuellen Override-Hotkeys für präzise Kontrolle.
 </Card>
 
-<Card title="Multiformat-Import">
-  Importiere Drehbücher aus **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT** und **RTF** mit intelligentem Parsing und Erhalt der Formatierung.
+<Card title="Echtes Seitenlayout">
+  Der Editor rendert echte US-Letter-Seiten mit je 54 Zeilen, wobei Absätze über die Naht hinweg unter **(MORE)** und **(CONT'D)** getrennt werden. Die Seiten auf dem Bildschirm, der Seitenzähler und die exportierte PDF sind dieselben Seiten. Siehe [Schreiben & Formatieren](/de/guides/writing-formatting-scripts).
+</Card>
+
+<Card title="Geprüfter Import">
+  Importiere **Final Draft (.fdx)**-, **Fountain**-, **PDF**-, **TXT**- und **RTF**-Dateien über einen Review-Screen, der jede Änderung zeigt, bevor sie landet. Siehe [Drehbücher importieren](/de/guides/importing-scripts).
+</Card>
+
+<Card title="Sperre & Revisionen">
+  Sperre Szenennummern, gib Fassungen aus und verfolge farbige Revisionsrunden mit Sternchen an den Zeilen, eingefärbten Seiten und dem Export nur der überarbeiteten Seiten. Siehe [Sperre & Revisionen](/de/guides/script-lock-and-revisions).
+</Card>
+
+<Card title="Drehbuchauszug">
+  Tagge Cast, Requisiten, Kostüm und neun weitere Kategorien direkt auf der Drehbuchseite. Der Cast fließt in Cast & Crew und auf die Dispositionen. Siehe [Drehbuchauszug](/de/breakdown).
 </Card>
 
 <Card title="Live-Analytik">
-  Echtzeit-Drehbuch-Analytik. Verfolge geschätzte Seitenzahlen, Szenenzahlen, Zeilenzahlen, Wortzahlen und Zeichenzahlen beim Schreiben.
+  Eine Statistik-Seitenleiste verfolgt die Seitenzahl in Drehbuch-Achteln, dazu Szenen, Zeilen, Wörter und Zeichen – und die Größe dessen, was du gerade ausgewählt hast.
 </Card>
 
 <Card title="Einstellungslisten-Integration">
@@ -77,7 +89,7 @@ Zeichengenaue Positionierung mit der 12-Punkt-Schrift Courier Prime, ordentliche
 
 ### Multiformat-Drehbuch-Import
 
-Möchtest du Texte aus einer älteren App übernehmen? Klicke auf den **Import**-Button in der oberen Menüleiste des Drehbuch-Editors, um ein bestehendes Drehbuch zu importieren und zu konvertieren. Unser universeller Parser extrahiert intelligent Szenen, Figuren und Dialoggeometrie aus deinem Originaldokument und wendet automatisch standardisierte Fountain-Formatierung an.
+Möchtest du Texte aus einer anderen App übernehmen? Klicke auf den **Import**-Button in der oberen Menüleiste des Drehbuch-Editors. Die Datei wird geparst und mit deinem aktuellen Drehbuch verglichen, und ein Review-Screen zeigt jede Änderung nebeneinander, bevor irgendetwas angewendet wird – du nimmst sie Änderung für Änderung an oder ab. Bei einem gesperrten Drehbuch warten Änderungen, die ausgegebenes Material berühren, auf deine ausdrückliche Entscheidung. Die vollständige Anleitung steht in [Drehbücher importieren](/de/guides/importing-scripts).
 
 <CardGrid>
 <Card title="Final Draft (.fdx)">
@@ -89,7 +101,7 @@ Möchtest du Texte aus einer älteren App übernehmen? Klicke auf den **Import**
 </Card>
 
 <Card title="PDF-Drehbücher">
-  Fortschrittliche Textextraktion mit Layouterhalt unter Nutzung plattformspezifischer Bibliotheken und Unicode-Unterstützung.
+  Textextraktion aus PDF-Drehbüchern, mit einem Konfigurationsschritt dazu, wie der Text herausgezogen wird.
 </Card>
 
 <Card title="Plain Text (.txt)">
@@ -103,23 +115,23 @@ Möchtest du Texte aus einer älteren App übernehmen? Klicke auf den **Import**
 
 ### Drehbuch-Analytik in Echtzeit
 
-Professionelle Drehbuch-Kennzahlen werden live beim Bearbeiten aktualisiert, mit branchenüblichen Berechnungen für eine genaue Produktionsplanung.
+Eine Statistik-Seitenleiste im Desktop-Editor aktualisiert sich live beim Schreiben. Sie zeigt fünf Kennzahlen: Seiten, Szenen, Zeilen, Wörter und Zeichen.
 
 <CardGrid>
-<Card title="Seitenschätzung">
-  Branchenübliche Formeln zur Seitenberechnung mit Echtzeit-Updates und professioneller Genauigkeit.
+<Card title="Seitenzahl in Achteln">
+  Die Seitenzahl liest sich in Drehbuch-Achteln, etwa 12 3/8 – der Einheit, die Drehpläne sprechen. Sie kommt aus derselben Paginierung, die der Editor rendert und die PDF druckt, ist also die echte Zahl und keine Schätzung.
 </Card>
 
-<Card title="Szenen- & Figurenzahlen">
-  Live-Tracking von Szenen, einzigartigen Figuren und Dialogverteilung.
+<Card title="Szenen & Zeilen">
+  Live-Zählungen der Szenen im Dokument und der Gesamtzahl der Zeilen.
 </Card>
 
-<Card title="Element-Analyse">
-  Zähle und analysiere Action-Blöcke, Dialogzeilen, Übergänge und andere Drehbuch-Elemente zur Struktur-Überprüfung.
+<Card title="Wörter & Zeichen">
+  Live-Summen für Wortzahl und Zeichenzahl beim Tippen.
 </Card>
 
-<Card title="Wort- & Zeichen-Kennzahlen">
-  Professionelle Schreibmetriken inklusive Gesamtwortzahl und Zeichenzahl.
+<Card title="Auswahl-Statistik">
+  Wähle einen beliebigen Abschnitt des Drehbuchs aus, und die Seitenleiste ergänzt die Zeichenzahl der Auswahl und ihre Länge in Seitenachteln – die schnelle Antwort auf "Wie lang ist diese Szene?".
 </Card>
 </CardGrid>
 

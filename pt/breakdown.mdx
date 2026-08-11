@@ -1,0 +1,123 @@
+---
+title: Análise Técnica do Roteiro
+lastUpdated: 2026-08-08
+description: "Marque elenco, objetos de cena, figurino e todos os outros elementos de produção diretamente no roteiro. Os elementos se agrupam por categoria, alimentam Elenco e Equipe e as ordens do dia, e são exportados como folhas de análise técnica."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+Uma análise técnica é, no fundo, a lista de tudo o que o roteiro pede que você leve para o set. Você lê o roteiro linha por linha e, toda vez que ele menciona um objeto de cena, um figurino, um veículo ou uma pessoa, você marca. A Análise Técnica do CineLog deixa você fazer essa marcação diretamente na página do roteiro, então as palavras marcadas continuam sublinhadas exatamente onde estão, e os elementos se juntam em uma lista única do projeto que você pode entregar a cada departamento.
+
+<CardGrid>
+<Card title="Marque na página">
+  Selecione quaisquer palavras do roteiro e arquive-as em uma das doze categorias de produção. O texto fica sublinhado na cor da categoria, então uma segunda leitura mostra na hora o que já está coberto.
+</Card>
+
+<Card title="Uma lista por projeto">
+  Cada marcação cria ou reutiliza um elemento. O painel os agrupa por categoria, conta em quantas cenas cada um aparece e leva você a qualquer ocorrência.
+</Card>
+
+<Card title="O elenco se encontra sozinho">
+  O CineLog marca automaticamente a primeira deixa de cada personagem em toda cena e cria uma vaga de elenco numerada para ele em Elenco e Equipe. Esses números de elenco seguem até as ordens do dia.
+</Card>
+
+<Card title="Folhas de análise técnica em PDF">
+  Exporte um resumo por cena, uma lista de elementos ou os dois. Você pode gravar o nome de um destinatário como marca d'água antes de enviar uma cópia.
+</Card>
+</CardGrid>
+
+## Abrindo a análise técnica
+
+A Análise Técnica fica dentro do Editor de Roteiro. No desktop, clique em **Breakdown** na barra de menu superior do editor. Ela também aparece na barra lateral como sub-entrada do Editor de Roteiro enquanto você está no editor. No celular, ela está no sheet **More**, logo abaixo do Editor de Roteiro.
+
+Na primeira vez que você abre, o CineLog pede para bloquear seus números de cena. Isso não é burocracia. Uma análise técnica prende os elementos aos números de cena, então esses números precisam parar de se mexer, porque uma análise técnica que diz "o revólver está na cena 12" não vale nada no dia em que a cena 12 vira cena 13. A partir do bloqueio, cenas novas ganham números com letra, como 78A, e cenas removidas viram OMITIDA em vez de desaparecer. As páginas continuam fluindo livremente, e você pode seguir escrevendo. A história completa está em [Bloqueio e revisões](/pt/guides/script-lock-and-revisions).
+
+Se o roteiro ainda não tem cabeçalhos de cena, o CineLog pede que você adicione pelo menos um antes de começar uma análise técnica.
+
+## Marcando elementos
+
+O que você faz é selecionar as palavras e escolher uma categoria:
+
+- Com o mouse, arraste sobre as palavras. O editor de marcação abre sozinho assim que a seleção se estabiliza. Um duplo clique em uma única palavra também a marca.
+- Em dispositivos de toque, selecione o texto e uma pequena barra de ferramentas aparece sobre ele com **Tag** e **Copy**. Pressione **Tag**.
+
+O editor de marcação mostra uma grade com as doze categorias, um campo **Element** pré-preenchido com o texto selecionado e um campo **Qty**. Escolha a categoria, ajuste o nome se quiser e pressione **Tag**. Se já existe um elemento com esse nome na categoria, o CineLog avisa que vai usar o existente, então marcar "revólver" na cena 4 e na cena 19 dá a você um revólver com duas cenas, não dois revólveres.
+
+Quem usa teclado consegue ir rápido aqui: as teclas `1` a `9` escolhem as nove primeiras categorias, `Tab` pula para o campo Elemento com o texto selecionado e `Enter` salva.
+
+As seleções precisam ficar dentro de uma única linha e precisam cair dentro de uma cena bloqueada. A página de título, por exemplo, não pode ser marcada.
+
+### As doze categorias
+
+| Categoria | Marca na página |
+|---|---|
+| Elenco (Cast) | Sublinhado vermelho |
+| Dublês (Stunts) | Sublinhado laranja |
+| Figurantes — Silenciosos (Extras — Silent) | Sublinhado âmbar |
+| Figurantes — Ambiente (Extras — Atmosphere) | Sublinhado verde |
+| Efeitos Especiais (Special Effects) | Sublinhado azul |
+| Objetos de Cena (Props) | Sublinhado roxo |
+| Veículos e Animais (Vehicles & Animals) | Sublinhado rosa |
+| Som e Música (Sound & Music) | Sublinhado marrom |
+| Figurino (Wardrobe) | Marca circular na margem |
+| Maquiagem e Cabelo (Makeup & Hair) | Asteriscos ao redor das palavras |
+| Equipamento Especial (Special Equipment) | Marca de caixa |
+| Notas de Produção (Production Notes) | Sublinhado cinza-quente |
+
+As marcas de Figurino, Maquiagem e Cabelo e Equipamento Especial seguem as convenções clássicas da análise técnica no papel, então um membro da equipe que aprendeu a fazer análise técnica à mão lê a página sem legenda.
+
+### Editando e removendo marcações
+
+Clique em qualquer texto marcado para reabrir o editor naquela marcação. Dali você pode renomear o elemento, mudar sua categoria ou quantidade, apontar a marcação para outro elemento ou pressionar **Untag**. Quando várias marcações se sobrepõem nas mesmas palavras, um pequeno menu lista todas primeiro para você escolher a certa.
+
+### Encontrando o mesmo elemento em outros lugares
+
+Depois que você marca algo, o CineLog procura as mesmas palavras em outras cenas e as oferece em um único diálogo: cada ocorrência mostra a cena e um trecho, as correspondências exatas já vêm marcadas, e você pressiona **Tag N** para aceitar todas de uma vez. Você pode rodar isso de novo a qualquer momento pelo menu de um elemento, com **Find similar…**. Se você recusar uma sugestão, o CineLog lembra do "não" e não vai oferecer aquele ponto de novo.
+
+## O painel de elementos
+
+O painel da direita (a página **Tags** no celular) é a lista de elementos do projeto, agrupada por categoria. Cada linha mostra o elemento, sua quantidade quando é maior que 1, em quantas cenas ele aparece e setas para percorrer suas ocorrências. Tocar em uma linha leva o roteiro até a próxima ocorrência. Passar o mouse sobre uma linha destaca o texto dela no roteiro, e passar o mouse sobre um texto marcado destaca a linha correspondente.
+
+As linhas podem carregar três avisos, cada um explicado no seu tooltip: marcações aguardando revisão (elenco encontrado automaticamente, veja abaixo), marcações que estão em uma cena que não existe mais e texto marcado que não pôde mais ser encontrado depois de edições.
+
+Toda seção de categoria termina com **Add new…**, que marca uma cena inteira sem sublinhar nenhum texto. Isso é para as coisas que o roteiro sugere mas nunca escreve, como o equipamento de chuva que uma cena EXT. RUA - NOITE exige.
+
+O menu `⋯` de cada elemento oferece **Edit…**, **Find similar…**, **Merge into…**, **Archive** e **Delete…**. Mesclar move todas as marcações para o elemento que você escolher e apaga o elemento mesclado. Arquivar tira um elemento de todas as cenas mas o mantém, o que é a escolha mais segura quando você não tem certeza. Elementos de Elenco ganham também **Link to cast slot…**, para você conectar um personagem a uma vaga de elenco à mão.
+
+## Elenco
+
+Elenco é a categoria em que o CineLog mais trabalha por você.
+
+Sempre que você bloqueia cenas, bloqueia páginas, inicia uma revisão ou importa, o CineLog marca a primeira deixa de cada personagem em toda cena. Essas marcações chegam confirmadas, porque uma deixa não é um palpite. Quando o nome de um personagem aparece no texto de ação ou de diálogo, o CineLog marca também, mas assinala como aguardando revisão, com um sublinhado pontilhado, porque "JOHN" em uma rubrica pode ser outro John. Se uma sugestão estiver errada, desmarque e ela não volta. Você também pode rodar a varredura por conta própria com o botão de sincronizar no cabeçalho CAST.
+
+O CineLog nunca mescla nomes parecidos por conta própria. MARIA e MARIE ficam separadas até você mesclá-las, porque só você sabe se aquilo é um erro de digitação ou duas pessoas. Depois que você mescla, a mesclagem se mantém em todas as varreduras seguintes.
+
+Cada personagem detectado também ganha uma **Talent slot** vazia em [Elenco e Equipe](/pt/castandcrew), com o nome do personagem e um número de elenco. O CineLog adivinha a função pelo tanto que o personagem trabalha: um personagem que está em um terço ou mais das suas cenas entra como Principal, três cenas ou mais como Coadjuvante, e o resto como Diária (Day Player). Você pode mudar tudo isso depois. Se você já gerencia sua lista de elenco à mão, o CineLog percebe e deixa a sua lista em paz.
+
+## Para onde o elenco vai depois
+
+O elenco marcado na análise técnica fica na própria cena, e tudo o que vem depois lê a partir da cena. **Populate Shot List**, na barra de ferramentas da análise técnica, semeia cenas e planos com o elenco delas. Quando uma ordem do dia é gerada para um dia de filmagem, a seção Elenco dela se preenche com o elenco daquele dia, na ordem do número de elenco. Marque uma vez e aparece em todo lugar. Veja [Ordens do Dia](/pt/callsheets) para a ponta final desse fluxo.
+
+## Exportando folhas de análise técnica
+
+Pressione **Export** na barra de ferramentas da análise técnica. O diálogo oferece duas folhas, e você pode levar uma ou as duas:
+
+- **Breakdown Summary** — um bloco por cena, com os elementos dela por categoria. Inclui notas de cena e oitavos de página.
+- **Element List** — todos os elementos por categoria, com as cenas em que aparecem.
+
+Há também a opção **Burn in a recipient**, que imprime o nome de uma pessoa escolhida e um carimbo de data/hora em UTC atravessando cada página com baixa opacidade, para quando uma cópia precisa ser rastreável. A lista de destinatários vem das pessoas atribuídas em Elenco e Equipe.
+
+Cenas omitidas não imprimem bloco, elementos arquivados saem dos quadros de cena mas continuam na lista de elementos, e sugestões recusadas simplesmente não aparecem.
+
+## No celular
+
+A análise técnica no celular são duas páginas deslizáveis, **Script** e **Tags**, com uma pílula para alternar. Assim que você toca em um elemento com mais de uma ocorrência, a pílula ganha ▲ e ▼ para você percorrer as ocorrências sem sair do roteiro. O roteiro se reajusta à tela em tamanho de leitura completo, com divisores marcando onde as páginas impressas quebram.
+
+## Se isso não estiver funcionando
+
+*O botão Análise Técnica me manda de volta para o editor.* Você recusou o bloqueio dos números de cena. A análise técnica não consegue prender elementos a números que se movem, então o bloqueio é a porta de entrada.
+
+*Não consigo marcar uma seleção.* As seleções precisam ficar dentro de uma única linha, dentro de uma cena bloqueada. Seleções que cruzam linhas e texto da página de título mostram uma mensagem explicando qual regra foi violada.
+
+*Quero uma categoria minha.* Não nesta versão. As doze categorias são fixas, e Notas de Produção é a categoria coringa enquanto isso.
+
+*Uma sugestão de elenco está errada, mas não há botão de "confirmar" nas certas.* As certas não precisam de ação, elas já contam. As marcas de revisão são só o CineLog sendo honesto sobre quais marcações foram palpites. Desmarque as erradas e deixe o resto.

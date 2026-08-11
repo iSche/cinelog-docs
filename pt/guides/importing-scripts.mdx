@@ -1,0 +1,63 @@
+---
+title: Importar roteiros
+lastUpdated: 2026-08-08
+description: "Importe arquivos FDX, Fountain, PDF, TXT e RTF por uma tela de revisão: veja cada alteração lado a lado, aceite ou rejeite uma por uma, resolva conflitos com material bloqueado e adote os números de cena."
+---
+
+Este guia assume [O básico](/pt/guides/introduction).
+
+O CineLog nunca aplica uma importação às cegas. Ele lê o arquivo na memória, compara com o roteiro que você tem aberto e mostra cada diferença antes de qualquer alteração. Você decide o que entra, linha por linha se quiser. Isso importa mais em um roteiro que já está bloqueado e distribuído, mas também é simplesmente um jeito melhor de trazer uma reescrita.
+
+## Iniciar uma importação
+
+Clique em **Import** na barra de menu superior do Editor de Roteiro. Ele carrega o atalho `Cmd / Ctrl + I`, que inicia uma importação sempre que o atalho não estiver ocupado colocando o texto selecionado em itálico. No celular, é o ícone de importar na barra do app. Os formatos suportados são **FDX, Fountain, PDF, TXT e RTF**. Um PDF ganha um passo extra antes: um pequeno diálogo sobre como o texto é extraído.
+
+## Importar em um projeto novo
+
+Se o projeto ainda tem o roteiro inicial intocado, o CineLog pula a cerimônia e mostra um único diálogo com o título e o tamanho do arquivo, como "46 scenes · 512 lines". **Import** substitui o roteiro inicial de uma vez. **Review first** leva você para a tela de revisão mesmo assim, onde cada cena se reduz a uma linha com uma escolha **Skip / Include**, caso você queira deixar algumas cenas de fora.
+
+No instante em que você digita um único caractere no roteiro inicial, ele deixa de contar como intocado e toda importação passa pela revisão completa.
+
+## A tela de revisão
+
+A tela de revisão lista cada diferença entre o arquivo e o seu roteiro atual, agrupada com cabeçalhos fixos e um contador corrente no topo, como "58 changes · 4 conflicts · 2 unresolved".
+
+Em uma janela larga, cada linha mostra três colunas: o tipo de elemento, **In the file** e **In the editor**. Quando os dois lados são uma única linha, as próprias palavras alteradas ficam destacadas, verde para o que o arquivo acrescenta e vermelho para o que o editor perde. Em janelas estreitas, os dois lados ficam empilhados.
+
+Cada linha traz um controle **Accept / Reject**. Em um roteiro sem bloqueio, toda linha começa aceita, e um botão **Accept all** fica na barra superior. As linhas que apenas informam que uma cena está em outra posição são informativas, porque mudanças de posição não são aplicadas automaticamente.
+
+**Back to editor** cancela toda a preparação. Nada foi aplicado ainda.
+
+## Quando o roteiro está bloqueado
+
+As linhas que tocam material bloqueado começam com **nada selecionado**, e o botão de aplicar mostra **Resolve N** até que todas elas tenham uma decisão. É esse o propósito do bloqueio: alterações em material já emitido precisam de um sim humano.
+
+Pressionar **Resolve N** oferece três saídas: **Review** rola até a primeira linha não resolvida, ou você pode **Accept all remaining** / **Reject all remaining** de uma vez.
+
+Os conflitos bloqueados trazem um cadeado e uma nota sobre a consequência, por exemplo que aceitar uma exclusão marca a cena como OMITIDA em vez de removê-la. Omitir é como um roteiro bloqueado se livra de cenas, mantendo a numeração. Veja [Bloqueio e revisões](/pt/guides/script-lock-and-revisions).
+
+### Importar dentro de uma revisão
+
+Em um roteiro com páginas bloqueadas, a barra superior acrescenta um destino de revisão: iniciar uma **nova** rodada de revisão com as alterações, ou **mesclá-las** na rodada atual. Mesclar em uma rodada já emitida gera um aviso antes, porque as páginas distribuídas deixariam de corresponder ao que foi enviado. Você também pode pular para uma cor mais adiante se esta produção já queimou cores em outro lugar.
+
+## Adotar os números de cena do arquivo
+
+Quando suas cenas estão bloqueadas e o arquivo traz numeração real de produção (letras, saltos, buracos em vez de um simples 1, 2, 3), a barra superior oferece uma chave: **Use the file's scene numbers**. Linhas de aviso mostram uma prévia do resultado, como "Scene 12 will be renumbered to 14" (a cena 12 será renumerada para 14).
+
+Como renumerar um roteiro bloqueado quebra toda ordem do dia e todo cronograma que se referiam aos números antigos, o CineLog confirma isso separadamente e em termos claros. Nenhuma cena é apagada, as cenas omitidas mantêm suas lápides, só os números mudam. Esse também é o caminho autorizado para renumerar um roteiro bloqueado, já que não existe desbloqueio.
+
+## Aplicar
+
+O botão principal aplica suas decisões: **Import** em um projeto novo, **Apply** nos demais casos. Você recebe uma mensagem de resultado direta, como "Import applied — 12 changes" (importação aplicada — 12 alterações), ou "Nothing applied — every change was rejected" (nada aplicado — todas as alterações foram rejeitadas) se você rejeitou tudo.
+
+As importações passam pelo próprio pipeline de edição do editor, então as marcações da análise técnica, as páginas bloqueadas e o histórico das cenas sobrevivem a uma importação em vez de ficarem órfãos.
+
+## Se isso não estiver funcionando
+
+*"Cannot import" com uma lista de formatos.* A extensão do arquivo não é um dos cinco formatos suportados. Exporte para FDX ou Fountain na outra ferramenta e tente de novo.
+
+*"This file is identical to the current script." (este arquivo é idêntico ao roteiro atual)* Não há nada para revisar. É essa a mensagem inteira.
+
+*O botão Aplicar está travado em "Resolve N".* N linhas que tocam material bloqueado ainda não têm nem Aceitar nem Rejeitar. Use **Resolve N** → **Review** para pular para a primeira.
+
+*Não vejo "Use the file's scene numbers".* Isso aparece só quando suas cenas estão bloqueadas e o arquivo traz numeração no estilo de produção. Um arquivo numerado de 1 a n em sequência simples não tem nada a adotar.

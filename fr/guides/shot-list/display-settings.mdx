@@ -1,7 +1,7 @@
 ---
 title: Paramètres d'affichage
-lastUpdated: 2026-07-11
-description: "Visibilité et ordre des colonnes, colonnes personnalisées, format de numérotation des plans, hauteur de ligne — tout ce qui contrôle l'apparence du découpage technique à l'écran."
+lastUpdated: 2026-08-08
+description: "Visibilité et ordre des colonnes, colonnes personnalisées, format de numérotation des plans, largeur de la barre latérale du scénario, format de date, hauteur de ligne — tout ce qui contrôle l'apparence du découpage technique à l'écran."
 ---
 
 Les paramètres d'affichage contrôlent l'apparence du découpage technique — quelles colonnes sont visibles, dans quel ordre, comment les plans sont numérotés. Les paramètres sont au niveau du projet et se propagent via CineSync, donc les ajustements faits sur le bureau apparaissent sur l'application mobile en quelques secondes.
@@ -10,11 +10,11 @@ Les paramètres d'affichage contrôlent l'apparence du découpage technique — 
 
 ## Visibilité des colonnes
 
-Active ou désactive n'importe quelle colonne depuis la superposition Paramètres d'affichage. Pour des changements rapides sans ouvrir Paramètres d'affichage, les touches numériques `1` à `9` basculent les neuf premières colonnes après les colonnes épinglées Statut, Plan et Jour, directement depuis la vue liste.
+Active ou désactive n'importe quelle colonne depuis la superposition Paramètres d'affichage. Pour des changements rapides sans ouvrir Paramètres d'affichage, les touches numériques `1` à `9` basculent les neuf premières colonnes après les colonnes épinglées Status, Shot et Day (statut, plan, jour), directement depuis la vue liste.
 
 ## Réorganiser les colonnes
 
-Réorganise les colonnes en faisant glisser un en-tête de colonne vers la gauche ou la droite sur le découpage technique principal. Les trois colonnes système épinglées — Statut, Plan et Jour — restent verrouillées aux positions les plus à gauche et ne peuvent pas être déplacées.
+Réorganise les colonnes en faisant glisser un en-tête de colonne vers la gauche ou la droite sur le découpage technique principal. Les trois colonnes système épinglées — Status, Shot et Day — restent verrouillées aux positions les plus à gauche et ne peuvent pas être déplacées.
 
 La superposition Paramètres d'affichage contrôle la visibilité des colonnes, la hauteur de ligne, le format de numérotation et les colonnes personnalisées, pas leur ordre.
 
@@ -24,13 +24,21 @@ Ajoute tes propres colonnes depuis Paramètres d'affichage en donnant un nom à 
 
 ## Format de numérotation des plans
 
-Trois formats sont pris en charge :
+Trois formats sont pris en charge, présentés dans la superposition avec des exemples en direct :
 
-- **Alphanumérique** — `1A`, `2C`. Scène + lettre.
-- **Décimal** — `1.1`, `2.3`.
-- **Séquentiel** — `1`, `2`, `47`. Continu à travers le projet.
+- **US** — `1A`, `1B`, `1C`. Scène + lettre.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`. Continu à travers le projet.
 
-Le format est une préférence d'affichage — il change la façon dont les numéros sont présentés sans modifier les plans sous-jacents, donc tu peux passer librement d'un format à l'autre et revenir en arrière à tout moment.
+Ce sont les trois mêmes formats que proposent les paramètres d'affichage du Script AV et des Storyboards, sous les mêmes noms. Le format est une préférence d'affichage — il change la façon dont les numéros sont présentés sans modifier les plans sous-jacents, donc tu peux passer librement d'un format à l'autre et revenir en arrière à tout moment.
+
+## Barre latérale du scénario, défilement automatique et dates
+
+Trois autres lignes vivent dans la superposition :
+
+- **Script Width** (largeur du scénario) — quelle part de la fenêtre la barre latérale du scénario occupe quand elle est ouverte, de 30 % à 50 %.
+- **Script Auto-scroll** (défilement automatique du scénario) — si la barre latérale du scénario suit ta progression dans la liste.
+- **Date Format** (format de date) — `M/D/Y`, `D/M/Y` ou `Y-M-D`. Celui-ci s'applique à toute l'application : le même réglage apparaît dans les menus Display à travers CineLog, et le modifier n'importe où le modifie partout, y compris dans les PDF exportés qui impriment des dates.
 
 ## Hauteur de ligne et mode d'affichage
 
@@ -42,7 +50,7 @@ Tous les Paramètres d'affichage sont au niveau du projet et se propagent via Ci
 
 ## Si ça ne marche pas
 
-*« Comment réorganiser les colonnes ? »* Fais glisser un en-tête de colonne sur la liste principale. Les colonnes épinglées Statut, Plan et Jour ne peuvent pas être déplacées.
+*« Comment réorganiser les colonnes ? »* Fais glisser un en-tête de colonne sur la liste principale. Les colonnes épinglées Status, Shot et Day ne peuvent pas être déplacées.
 
 *« J'ai changé le format des numéros de plan et les numéros ont l'air différents. »* C'est normal — c'est un réglage purement d'affichage. Reviens au format précédent et la numérotation d'origine réapparaît.
 

@@ -1,0 +1,42 @@
+---
+title: CineLog im Browser
+lastUpdated: 2026-08-08
+description: "CineLog unter app.cinelog.com nutzen – dasselbe Konto, dieselben Projekte, dasselbe Sync. Was die Ein-Tab-Regel bedeutet, was die Speicher-Warnungen sagen und wie Abonnements außerhalb der App-Stores funktionieren."
+---
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus.
+
+CineLog läuft im Browser unter [app.cinelog.com](https://app.cinelog.com). Es ist dieselbe App, die du auf Desktop und Mobil installierst, angemeldet mit demselben Konto, mit denselben Projekten, über dieselbe Engine synchronisiert. Bearbeitungen, die du im Browser machst, landen genauso auf deinen anderen Geräten wie Bearbeitungen von überall sonst. Offline funktioniert ebenfalls: Der Browser hält eine lokale Kopie deiner Projekte, genau wie die nativen Apps.
+
+Nutze es auf einem Rechner, auf dem du nichts installieren kannst, etwa einer gemieteten Workstation oder im Büro eines Kunden. Ein paar Browser-Realitäten sind es wert, sie zu kennen.
+
+## Immer nur ein Tab
+
+CineLog läuft in einem einzelnen Tab. Öffne einen zweiten, und er zeigt stattdessen einen schlichten Bildschirm: "CineLog is already open in another tab." (CineLog ist bereits in einem anderen Tab geöffnet.) Beide Tabs würden sich dieselbe Offline-Datenbank teilen – zwei laufende Tabs könnten sich also gegenseitig die Änderungen überschreiben.
+
+Der Button **Use CineLog here** übergibt die Session an den neuen Tab, und der andere Tab tritt von selbst zurück. Wenn der andere Tab mitten in der Arbeit steckt, kann er im Moment ablehnen, und der Bildschirm sagt dir, warum: Er lädt noch eine Datei hoch, speichert noch eine Änderung oder hält Bearbeitungen, die er über einen Reload nicht bewahren kann. Gib ihm einen Moment und versuch es erneut.
+
+## Den Tab während des Speicherns schließen
+
+Wenn du den Tab schließt oder neu lädst, während Änderungen noch synchronisiert werden oder eine Datei hochlädt, fragt der Browser, ob du wirklich gehen willst. Nimm diese Nachfrage bei Uploads ernst: Im Web leben die Bytes eines Uploads im Tab, ein Reload mitten im Upload lässt sich also nicht fortsetzen. Bearbeitungen sind billiger, denn alles bereits Synchronisierte liegt sicher auf dem Server.
+
+## Speicher-Warnungen
+
+Manche Browser-Situationen können Daten nicht zuverlässig speichern, und CineLog sagt es dir, statt so zu tun als ob. Es gibt zwei Banner:
+
+- Ein rotes: "Changes in this browser will be lost when you close the tab." (Änderungen in diesem Browser gehen verloren, wenn du den Tab schließt.) Der Browser hat lokalen Speicher komplett verweigert, was meist ein privates oder Inkognito-Fenster bedeutet. Alles lebt nur im Tab, lass ihn also offen, bis das Synchronisieren fertig ist.
+- Ein bernsteinfarbenes: "Storage in this browser is unreliable." (Der Speicher in diesem Browser ist unzuverlässig.) CineLog kann Daten speichern, aber der Browser räumt sie möglicherweise jederzeit ab. Synchronisierte Arbeit ist auf dem Server sicher, auf das Sync wartende Bearbeitungen nicht.
+
+Wenn du eines von beiden siehst, ist die Lösung dieselbe: Nutze Chrome, Edge oder Firefox außerhalb eines privaten Fensters. In einem gesunden Browser gibt es überhaupt kein Banner.
+
+## Abonnements im Browser
+
+Die Browser-App verkauft keine Abonnements. Die Abo-Seite zeigt "Plans are managed on cinelog.com" (Pläne werden auf cinelog.com verwaltet) mit einem **See plans**-Button, der dich zu [cinelog.com/pricing](https://cinelog.com/pricing/) bringt. Dein Workspace wechselt auf den neuen Plan, sobald der Kauf abgeschlossen ist. Ein im Web gekauftes Abonnement wird auch im Web verwaltet, über **Manage on Web** auf derselben Seite. Dasselbe gilt für die Windows- und Linux-Apps, die ebenfalls keinen App-Store haben.
+
+## Falls das nicht funktioniert
+
+*Beide Tabs behaupten, der andere sei offen.* Einer von beiden steckt mitten im Speichern. Warte ein paar Sekunden und drücke in dem Tab, den du willst, erneut **Use CineLog here**.
+
+*Ich habe in einem privaten Fenster offline gearbeitet und meine Bearbeitungen sind weg.* Genau davor warnt das rote Banner: Ein privates Fenster behält nichts, nachdem der Tab geschlossen ist. Bearbeitungen, die den Server erreicht haben, bevor du ihn geschlossen hast, sind sicher.
+
+*Welche Browser sind sicher?* Chrome, Edge und Firefox, außerhalb eines privaten Fensters. Das ist die Kombination, die CineLog selbst in seinen Speicher-Warnungen empfiehlt. Andere Browser können problemlos laufen, aber diese drei sind die mit zuverlässigem Offline-Speicher.

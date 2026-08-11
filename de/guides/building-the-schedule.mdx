@@ -1,0 +1,64 @@
+---
+title: Den Drehplan erstellen
+lastUpdated: 2026-08-10
+description: "Ein Workflow-Guide zum Drehplan-Board: aus Szenen Streifen machen, Drehtage per Ziehen bauen, Szenen in Teile aufteilen, Cast und Drehorte auf die Streifen setzen und jeden Tag in seine Disposition fließen lassen."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Vor der Software war ein Drehplan ein Holzbrett voller Pappstreifen. Jeder Streifen war eine Szene, bedruckt mit ihrer Nummer, ihrem Drehort, ihrem Cast und ihrer Länge in Seitenachteln, und der Aufnahmeleiter baute den Dreh, indem er die Streifen physisch zwischen den Tagen hin- und herschob. Das Board funktionierte, weil das Umsortieren schnell genug war, um vor dem Mittagessen zehn Versionen eines Tages durchzuspielen.
+
+Der Drehplan von CineLog ist dieses Board. Ein Streifen pro Szene, Tage untereinander gestapelt, und Ziehen als die ganze Bedienung. Dieser Guide geht den Workflow vom ausgezogenen Drehbuch bis zum fertigen Board und seinen Dispositionen durch. Die vollständige Referenz zu jedem Bedienelement steht auf der Seite [Drehplan](/de/schedule).
+
+<Aside type="note">
+Der Drehplan wird schrittweise ausgerollt. Wenn du ihn noch nicht in deiner Navigation siehst, ist er für deine Version noch nicht freigeschaltet, und keine Einstellung auf deiner Seite schaltet ihn früher frei.
+</Aside>
+
+## Woher die Streifen kommen
+
+Das Board ist kein separates Dokument, das du pflegen musst. Es ist eine weitere Ansicht derselben Drehtage, die du in der [Einstellungsliste](/de/shotlist) aufbaust – eine Änderung an einer Stelle ist eine Änderung an beiden, sofort und auf jedem Gerät.
+
+Das heißt: Der Weg, deine ersten Szenen aufs Board zu bringen, führt darüber, ihnen Einstellungen und Tage zu geben. Wenn du direkt vom [Drehbuchauszug](/de/guides/breaking-down-the-script) hierherkommst, drücke zuerst **Populate Shot List** (Einstellungsliste befüllen) in der Werkzeugleiste des Auszugs, denn das befüllt deine Szenen und Einstellungen mit ihrem Cast, und die Streifen kommen schon mit dem Wissen an, wer in ihnen steckt.
+
+Öffne **Schedule** in der linken Leiste, zwischen Storyboard und Dispositionen. Auf dem Smartphone liegt er im **More**-Sheet. Ganz oben auf dem Board sitzt **Unscheduled** (nicht geplant) mit jeder Szene, die noch auf keinem Tag liegt. Darunter kommen die Drehtage. Wenn du irgendwohin ziehen musst, öffnet **Add Day** in der Werkzeugleiste den nächsten leeren Tag.
+
+## Lies einen Streifen, bevor du ihn verschiebst
+
+Jeder Streifen zeigt die Szenennummer, den Drehort, INT oder EXT, die Tageszeit, die Cast-Nummern in der Szene, die Länge der Szene in Seitenachteln sowie ihre Startzeit und geschätzte Dauer. Die Streifen übernehmen außerdem automatisch die klassischen Board-Farben aus INT/EXT und Tag/Nacht, sodass ein Blick über einen Tag dir sagt, was für einen Tag du gebaut hast, bevor du ein einziges Wort gelesen hast.
+
+Die Achtel sind die Zahl, auf die du achten solltest. Eine Drehbuchseite ist etwa eine Minute Leinwandzeit, und die meisten Produktionen rechnen mit etwa zwanzig Minuten Dreh pro Achtel – ein Tag, dessen Streifen sich auf sechs Seiten summieren, ist also ein Tag, dem du misstrauen solltest. Der Tages-Header führt die laufende Schätzung für dich mit.
+
+## Bau einen Tag
+
+Drücke lange auf einen Streifen und ziehe ihn. Wo du ihn ablegst, ist die Bedeutung:
+
+- Innerhalb eines Tages hast du den Tag umgeordnet.
+- Über einen Tages-Header hinaus wandert die Szene auf diesen Tag und landet dort, wo du sie abgelegt hast.
+- Nach Unscheduled fällt die Szene aus dem Kalender. Nichts wird gelöscht, es gibt also keine Bestätigung wegzuklicken. Zieh sie zurück auf einen Tag, um es rückgängig zu machen.
+
+Eine Szene in Unscheduled kannst du auch einfach antippen: Ein Sheet listet die bestehenden Tage plus einen neuen auf, und du wählst aus, wohin sie geht. Ein Tag, auf dem kein Streifen mehr liegt, verschwindet, und die späteren Tage schließen die Lücke.
+
+Was macht also einen guten Tag aus? Das Board entscheidet das nicht für dich, aber das Handwerk kennt die Antwort seit Jahrzehnten. Das Teuerste, was eine Produktion tut, ist ein Company Move – jeden Truck packen und zu einem neuen Drehort fahren. Also gruppierst du Szenen, die sich einen Drehort teilen, auf dieselben Tage, selbst wenn sie in der Geschichte vierzig Szenen auseinanderliegen. Dann schaust du auf die Cast-Nummern auf den Streifen und versuchst, die Szenen jedes Darstellers in einen engen Block zu bündeln, denn Darsteller werden pro Tag bezahlt, ob sie arbeiten oder warten. Und du behältst die Farben im Auge, denn ein Tag, der Tag-Außen-Streifen mit Nachtarbeit mischt, ist ein Tag im Kampf mit der Sonne. Das Ziehen kostet nichts. Probier Versionen durch, bis der Tag sauber liest.
+
+## Eine Szene über Tage aufteilen
+
+Manchmal wird die eine Hälfte einer Szene am Dienstag gedreht und die andere am Donnerstag, weil echte Produktionen so funktionieren. Die Aufteilung machst du in der tagesbezogenen Einstellungsliste, indem du eine Einstellung aus ihrem Szenenblock ziehst. Das Board zeigt die Teile dann als **1 pt 1** und **1 pt 2**, und jeder Teil bewegt sich unabhängig wie jeder andere Streifen. Wenn zwei Teile derselben Szene an einem Tag wieder nebeneinander landen, führen sie sich von selbst zu einer schlichten Szene zusammen.
+
+## Setz Cast und Drehorte auf die Streifen
+
+Tippe auf die **Cast**-Zelle eines Streifens, und du bekommst einen Schalter pro nummeriertem Cast-Mitglied. Jedes Umschalten speichert sofort. Dieses Panel ist auch die einzige Stelle, an der du jemanden aus einer Szene herausnimmst, und die Disposition hält sich daran, denn der Talent-Bereich der Disposition eines Tages wird aus genau diesen Daten gebaut, in der Reihenfolge der Cast-Nummern.
+
+Tippe auf die **Drehort**-Zelle, und du bekommst das Drehort-Panel: Set-Name, Adresse mit Autocomplete, Notiz, Parken und nächstes Krankenhaus. Unter den Feldern listet **Use an existing location** die Sets auf, die du bereits benannt hast. Nutze es, denn zehn Szenen am selben Haus sollten sich einen Eintrag teilen, und dann erreicht eine Korrektur an seiner Adresse alle zehn. Dieselben Felder speisen den Drehorte-Block der Disposition.
+
+Tippe auf **START** oder **EST**, um die Startzeit oder die geschätzte Dauer einer Szene zu bearbeiten. Beide zeigen normalerweise **Auto**, denn die Zeiten kaskadieren von der Call-Time des Tages herunter, und ein Wert, den du festpinnst, bekommt einen **Reset to auto**-Button, wenn du die Kaskade zurückhaben willst.
+
+## Markier die Nicht-Szenen-Ereignisse
+
+**Add Banner** setzt ein Plan-Ereignis auf einen Tag, etwa Mittagspause, einen Company Move oder einen Equipment-Wechsel. Es sind dieselben Banner, die du aus der Drehtage-Ansicht und der Disposition kennst, und ein Tipp darauf öffnet denselben Editor. Sie leben auf Drehtagen, lassen sich also nicht nach Unscheduled ziehen.
+
+## Lass einen Tag in seine Disposition fließen
+
+Jetzt, wo ein Tag seine Szenen, seinen Cast und seinen Drehort hält, schreibt sich die Disposition größtenteils von selbst. Der Header jedes Tages zeigt das Drehdatum aus der Disposition dieses Tages, der Talent-Bereich füllt sich mit dem Cast des Tages in der Reihenfolge der Cast-Nummern, der Drehorte-Block trägt das Set mit Parken und Krankenhaus, und die Planzeilen drucken dieselben Startzeiten und Schätzungen, die die Streifen zeigen. Die ausgehende Seite – Versand, Bestätigungen und personenbezogene Call-Times – behandelt [Dispositionen](/de/guides/generating-call-sheets).
+
+## Exportiere das Board
+
+**Export** in der Werkzeugleiste erzeugt eine PDF des Boards: ein Titelblock mit deinem Firmen-Branding, dann die Streifen jedes Tages mit Cast, Seiten, Start und Schätzung, genau so, wie das Board sie zeigt. Der Dialog bietet Seitenränder und einen Tagesbereich an. Szenen in Unscheduled bleiben aus der PDF heraus, denn ungeplante Zeit ist keine Drehplan-Tatsache.

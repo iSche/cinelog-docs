@@ -1,0 +1,64 @@
+---
+title: Creare il piano di lavorazione
+lastUpdated: 2026-08-10
+description: "Una guida al flusso di lavoro del tabellone del Piano di Lavorazione: trasforma le scene in strisce, costruisci le giornate di ripresa trascinando, dividi le scene in parti, metti cast e location sulle strisce e fai confluire ogni giornata nel suo ordine del giorno."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Prima del software, un piano di lavorazione era un tabellone di legno pieno di strisce di cartoncino. Ogni striscia era una scena, stampata con il suo numero, la sua location, il suo cast e la sua lunghezza in ottavi di pagina, e l'aiuto regista costruiva la lavorazione facendo scorrere fisicamente le strisce tra i giorni. Il tabellone funzionava perché riorganizzarlo era abbastanza veloce da poter provare dieci versioni di una giornata prima di pranzo.
+
+Il Piano di Lavorazione di CineLog è quel tabellone. Una striscia per scena, i giorni impilati lungo lo schermo, e il drag come unica interfaccia. Questa guida percorre il flusso di lavoro da una sceneggiatura spogliata a un tabellone finito e ai suoi ordini del giorno. Il riferimento completo di ogni comando è nella pagina [Piano di Lavorazione](/it/schedule).
+
+<Aside type="note">
+Il Piano di Lavorazione viene distribuito gradualmente. Se non lo vedi ancora nella tua navigazione, significa che non è stato attivato per la tua versione, e nessuna impostazione dalla tua parte lo accende in anticipo.
+</Aside>
+
+## Da dove arrivano le strisce
+
+Il tabellone non è un documento separato da mantenere. È un'altra vista degli stessi giorni di produzione che costruisci nella [Lista delle Inquadrature](/it/shotlist), quindi una modifica in un punto è una modifica in entrambi, all'istante e su ogni dispositivo.
+
+Questo significa che il modo per mettere le tue prime scene sul tabellone è dare loro inquadrature e giorni. Se sei arrivato qui direttamente dallo [Spoglio](/it/guides/breaking-down-the-script), premi prima **Populate Shot List** nella toolbar dello spoglio, perché è quello che popola scene e inquadrature con il loro cast, e le strisce arrivano già sapendo chi c'è dentro.
+
+Apri **Schedule** nella barra laterale sinistra, tra Storyboard e Ordini del Giorno. Su telefono è nello sheet **More** (altro). In cima al tabellone c'è **Unscheduled**, che raccoglie ogni scena non ancora assegnata a un giorno. Sotto vengono i giorni di ripresa. Se ti serve un posto dove trascinare, **Add Day** nella toolbar apre il giorno vuoto successivo.
+
+## Leggi una striscia prima di spostarla
+
+Ogni striscia mostra il numero di scena, la location, INT o EXT, il momento della giornata, i numeri di cast presenti nella scena, la lunghezza della scena in ottavi di pagina, il suo orario di inizio e la durata stimata. Le strisce prendono anche automaticamente i classici colori del tabellone da INT/EXT e Giorno/Notte, così un colpo d'occhio lungo una giornata ti dice che tipo di giornata hai costruito prima ancora che tu abbia letto una parola.
+
+Gli ottavi sono il numero da tenere d'occhio. Una pagina di sceneggiatura è circa un minuto di durata sullo schermo, e la maggior parte delle produzioni calcola circa venti minuti di ripresa per ottavo, quindi una giornata le cui strisce sommano sei pagine è una giornata di cui dovresti diffidare. L'intestazione del giorno tiene la stima progressiva al posto tuo.
+
+## Costruisci una giornata
+
+Tieni premuta una striscia, poi trascina. Il punto in cui la rilasci è il significato del gesto:
+
+- Dentro un giorno, hai riordinato la giornata.
+- Oltre l'intestazione di un giorno, la scena si sposta in quel giorno e atterra dove l'hai rilasciata.
+- Dentro Unscheduled, la scena esce dal calendario. Non viene eliminato nulla, quindi non c'è nessuna conferma da cliccare. Trascinala di nuovo su un giorno per annullare.
+
+Una scena in Unscheduled si può anche semplicemente toccare: uno sheet elenca i giorni esistenti più uno nuovo, e scegli dove metterla. Un giorno rimasto senza strisce sparisce, e i giorni successivi chiudono il buco.
+
+Che cosa rende buona una giornata, allora? Il tabellone non lo decide al posto tuo, ma il mestiere conosce la risposta da decenni. La cosa più costosa che fa una produzione è uno spostamento di compagnia, impacchettare tutti i camion e guidare fino a una nuova location, quindi raggruppi nelle stesse giornate le scene che condividono una location anche quando nella storia sono a quaranta scene di distanza. Poi guardi i numeri di cast sulle strisce e cerchi di raccogliere le scene di ciascun attore in un blocco compatto, perché gli attori vengono pagati a giornata sia che lavorino sia che aspettino. E tieni d'occhio i colori, perché una giornata che mescola strisce di esterni giorno con lavoro in notturna è una giornata che combatte contro il sole. Il drag costa poco. Prova versioni finché la giornata non si legge pulita.
+
+## Dividere una scena su più giorni
+
+A volte metà scena si gira martedì e l'altra metà giovedì, perché è così che funzionano le produzioni vere. La divisione si fa nella Lista delle Inquadrature del singolo giorno, trascinando un'inquadratura fuori dal suo blocco di scena. Il tabellone mostra poi le parti come **1 pt 1** e **1 pt 2**, e ogni parte si sposta in modo indipendente come qualsiasi altra striscia. Quando due parti della stessa scena tornano ad essere adiacenti nello stesso giorno, si rifondono da sole in una scena semplice.
+
+## Metti cast e location sulle strisce
+
+Tocca la cella **cast** di una striscia e ottieni un interruttore per ogni membro del cast numerato. Ogni toggle si salva immediatamente. Questo pannello è anche l'unico posto in cui togliere qualcuno da una scena, e l'ordine del giorno lo rispetta, perché la sezione Talent dell'ordine del giorno di una giornata è costruita esattamente su questi dati, in ordine di numero di cast.
+
+Tocca la cella **location** e ottieni il pannello location: nome del set, indirizzo con autocompletamento, nota, parcheggio e ospedale più vicino. Sotto i campi, **Use an existing location** elenca i set che hai già nominato. Usalo, perché dieci scene nella stessa casa dovrebbero condividere una sola voce, e allora una correzione al suo indirizzo raggiunge tutte e dieci. Gli stessi campi alimentano il blocco Location dell'ordine del giorno.
+
+Tocca **START** o **EST** per modificare l'orario di inizio o la durata stimata di una scena. Entrambi normalmente mostrano **Auto**, perché gli orari scendono a cascata dall'orario di call della giornata, e un valore che fissi tu riceve un pulsante **Reset to auto** per quando vuoi indietro la cascata.
+
+## Segna gli eventi che non sono scene
+
+**Add Banner** mette un evento di programmazione su un giorno, come il pranzo, uno spostamento di compagnia o un cambio di attrezzatura. I banner sono gli stessi banner che conosci dalla vista Produzione e dall'ordine del giorno, e toccarne uno apre lo stesso editor. Vivono sui giorni di ripresa, quindi non possono essere trascinati in Unscheduled.
+
+## Fai confluire una giornata nel suo ordine del giorno
+
+Ora che una giornata contiene le sue scene, il suo cast e la sua location, l'ordine del giorno praticamente si scrive da solo. L'intestazione di ogni giornata mostra la data di ripresa presa dall'ordine del giorno di quella giornata, la sezione Talent si riempie con il cast del giorno in ordine di numero di cast, il blocco Location porta il set con il suo parcheggio e il suo ospedale, e le righe della programmazione stampano gli stessi orari di inizio e le stesse stime che mostrano le strisce. Il lato in uscita — invio, conferme e orari di call per persona — è trattato in [Ordini del giorno](/it/guides/generating-call-sheets).
+
+## Esporta il tabellone
+
+**Export** nella toolbar produce un PDF del tabellone: un blocco titolo con il branding della tua compagnia, poi le strisce di ogni giorno con cast, pagine, inizio e stima, esattamente come le mostra il tabellone. La finestra offre i margini di pagina e un intervallo di giorni. Le scene in Unscheduled restano fuori dal PDF, perché il tempo non programmato non è un fatto del piano di lavorazione.

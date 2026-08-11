@@ -1,0 +1,42 @@
+---
+title: CineLog no navegador
+lastUpdated: 2026-08-08
+description: "Use o CineLog em app.cinelog.com — mesma conta, mesmos projetos, mesma sincronização. O que significa a regra de uma aba só, o que dizem os avisos de armazenamento e como funcionam as assinaturas fora das lojas de aplicativos."
+---
+
+Este guia assume [O básico](/pt/guides/introduction).
+
+O CineLog roda no navegador em [app.cinelog.com](https://app.cinelog.com). É o mesmo app que você instala no desktop e no celular, com login na mesma conta, mostrando os mesmos projetos, sincronizando pelo mesmo motor. As edições que você faz no navegador chegam aos seus outros dispositivos como edições feitas de qualquer outro lugar. Offline também funciona: o navegador mantém uma cópia local dos seus projetos, exatamente como os apps nativos fazem.
+
+Use no computador em que você não pode instalar nada, como uma estação de trabalho alugada ou o escritório de um cliente. Vale conhecer algumas realidades do navegador.
+
+## Uma aba por vez
+
+O CineLog roda em uma única aba. Abra uma segunda e ela mostra apenas uma tela simples: "CineLog is already open in another tab." (o CineLog já está aberto em outra aba) As duas abas compartilhariam o mesmo banco de dados offline, então rodar duas deixaria uma sobrescrever as alterações da outra.
+
+O botão **Use CineLog here** passa a sessão para a nova aba, e a outra aba sai de cena sozinha. Se a outra aba estiver no meio de um trabalho, ela pode recusar por ora, e a tela diz o motivo: ainda está enviando um arquivo, ainda está salvando uma alteração, ou está segurando edições que não sobreviveriam a um recarregamento. Espere um instante e tente de novo.
+
+## Fechar a aba durante o salvamento
+
+Se você fechar ou recarregar a aba enquanto alterações ainda estão sincronizando ou um arquivo está sendo enviado, o navegador pergunta se você realmente quer sair. Leve esse aviso a sério no caso de envios: na web, os bytes de um envio vivem na aba, então um recarregamento no meio do envio não tem como ser retomado. As edições custam menos, porque tudo o que já sincronizou está seguro no servidor.
+
+## Avisos de armazenamento
+
+Algumas situações de navegador não conseguem armazenar dados de forma confiável, e o CineLog avisa em vez de fingir. Existem duas faixas:
+
+- Uma vermelha: "Changes in this browser will be lost when you close the tab." (as alterações neste navegador serão perdidas ao fechar a aba) O navegador recusou o armazenamento local por completo, o que normalmente significa uma janela privada ou anônima. Tudo vive apenas na aba, então mantenha-a aberta até a sincronização terminar.
+- Uma âmbar: "Storage in this browser is unreliable." (o armazenamento neste navegador não é confiável) O CineLog consegue salvar dados, mas o navegador pode apagá-los a qualquer momento. O trabalho sincronizado está seguro no servidor; as edições esperando para sincronizar, não.
+
+Se você vir qualquer uma das duas, a solução é a mesma: use Chrome, Edge ou Firefox fora de uma janela privada. Em um navegador saudável não aparece faixa nenhuma.
+
+## Assinaturas no navegador
+
+O app no navegador não vende assinaturas. A página de assinatura mostra "Plans are managed on cinelog.com" (os planos são gerenciados em cinelog.com) com um botão **See plans** que leva você para [cinelog.com/pricing](https://cinelog.com/pricing/). Seu workspace muda para o novo plano assim que a compra é concluída. Uma assinatura comprada na web também é gerenciada na web, pelo **Manage on Web** na mesma página. O mesmo vale para os apps de Windows e Linux, que também não têm loja de aplicativos.
+
+## Se isso não estiver funcionando
+
+*As duas abas dizem que a outra está aberta.* Uma delas está no meio de um salvamento. Espere alguns segundos e pressione **Use CineLog here** de novo na aba que você quer usar.
+
+*Trabalhei offline em uma janela privada e minhas edições sumiram.* É exatamente disso que a faixa vermelha avisa: uma janela privada não guarda nada depois que a aba fecha. As edições que chegaram ao servidor antes de você fechar estão seguras.
+
+*Quais navegadores são seguros de usar?* Chrome, Edge e Firefox, fora de uma janela privada. É a combinação que o próprio CineLog recomenda nos seus avisos de armazenamento. Outros navegadores podem funcionar bem, mas esses três são os que têm armazenamento offline confiável.

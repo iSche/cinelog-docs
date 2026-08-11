@@ -1,0 +1,79 @@
+---
+title: Bloqueo y revisiones
+lastUpdated: 2026-08-08
+description: "Bloquea los números de escena, emite borradores y sigue las rondas de revisión por colores: asteriscos en las líneas cambiadas, historial de revisiones en la portada, escenas omitidas y exportación solo de páginas revisadas."
+---
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction) y la guía de [Escritura y formato](/es/guides/writing-formatting-scripts).
+
+En cuanto un guion sale hacia el equipo, deja de ser un borrador privado y se convierte en un documento de referencia. La gente planifica contra sus números de escena y anota sus páginas. A partir de ese momento, los números tienen que quedarse quietos y cada cambio tiene que verse. De eso se ocupa el botón **Lock & Revisions** en la barra de menú superior del editor. Funciona en dos etapas, y no tienes que dar las dos a la vez.
+
+## Etapa 1 — Bloquear los números de escena
+
+Abre el menú Lock & Revisions y elige **Lock scene numbers…**. El diálogo deja claro el trato: los números de todas tus escenas se congelan para el desglose y la planificación. A partir de ahí:
+
+- Una escena nueva entre la 78 y la 79 pasa a ser **78A**, así nada de lo que viene después se renumera.
+- Borrar el contenido de una escena la marca como **OMITTED** en lugar de cerrar el hueco. El número se queda.
+- Las páginas siguen fluyendo libremente. Puedes continuar escribiendo, y la paginación se comporta exactamente igual que antes.
+
+Este es el bloqueo que pide el [Desglose del Guion](/es/breakdown) al entrar, y es todo lo que necesita la mayoría de proyectos hasta que las páginas salen a la calle.
+
+No hay Unlock. Es deliberado, porque en producción renumerar después de haber distribuido es una reparación, no una acción del día a día. Si de verdad necesitas otros números, importar un archivo con su propia numeración de producción te permite adoptarlos, con una confirmación que deja claras las consecuencias. Ver [Importar guiones](/es/guides/importing-scripts).
+
+## Etapa 2 — Bloquear las páginas
+
+Cuando el guion está a punto de distribuirse, elige **Lock pages…**. Eso congela la paginación de las páginas actuales y emite el borrador. Si te saltaste la etapa 1, esto bloquea también los números de escena.
+
+El diálogo tiene una fila **Issue as** con nueve muestras de color. Déjala en White salvo que esta producción ya haya distribuido revisiones de color hechas en otra parte. En ese caso, retoma desde el siguiente color sin usar.
+
+Después del bloqueo de páginas:
+
+- Los saltos de página se quedan donde se emitieron. El material nuevo se desborda hacia **páginas con letra** (A-pages) en lugar de recomponerlo todo, porque la página 40 del equipo tiene que seguir siendo la página 40.
+- La primera edición que hagas levanta un aviso: **Edit the White Draft?** El borrador ya se ha emitido, así que normalmente la siguiente tanda de cambios inicia un nuevo color. Elige **Start Blue Revisions** para hacerlo como toca, o **Edit anyway** si estás corrigiendo una errata antes de que nadie se dé cuenta. Una peculiaridad que conviene saber: la pulsación de tecla que levantó el aviso no llega a escribirse, así que vuelve a teclear ese carácter después de elegir.
+
+## Rondas de revisión
+
+**New revision…** en el menú Lock & Revisions inicia la siguiente ronda. Los colores siguen el orden de la industria:
+
+**White, Blue, Pink, Yellow, Green, Goldenrod, Buff, Salmon, Cherry**. Después de Cherry el ciclo se repite como Double Blue, Double Pink, etc. Puedes saltar hacia delante si esta producción ha quemado colores en otro sitio, y puedes adjuntar una nota a la ronda.
+
+Mientras una ronda está abierta, esto es lo que ves:
+
+- **Asteriscos en el margen derecho**, uno por línea cambiada, exactamente donde los espera quien lee en producción.
+- **Una nota en la esquina superior derecha** de cada página revisada — el color, la fecha y el número de página, del tipo `BLUE 1/29/26 - 21.`
+- **Un tinte del color de la revisión** en las tarjetas de página que ha tocado esta ronda. Iniciar una ronda nueva devuelve las páginas de la ronda anterior a papel liso en pantalla, porque el tinte significa "cambiado en la ronda actual".
+- **El propio botón Lock** toma el color y el nombre corto de la ronda, como "Blue" o "Blue 2".
+- **La portada gana un historial de revisiones**, una fila por ronda emitida, del tipo "Blue: revised 7/24/26".
+
+Las fechas siguen tu preferencia de formato de fecha del menú **Display** del editor.
+
+### Escenas que piden una segunda mirada
+
+Cuando cambia el contenido de una escena ya emitida, CineLog la marca y coloca una señal junto a su número de escena. La señal nunca se quita sola, porque la idea es que una persona confirme el cambio. Cuando la hayas mirado, haz clic derecho en la escena y elige **Mark scene reviewed**.
+
+## Escenas omitidas
+
+Con los números de escena bloqueados, quitas una escena omitiéndola. Haz clic derecho dentro de la escena y elige **Omit scene**, o usa la misma opción en el menú Lock & Revisions. El contenido de la escena se colapsa en una única línea gris que dice **OMITTED**, y el número se queda en el margen. Todas las escenas posteriores conservan su número, que es precisamente el objetivo.
+
+No se borra nada. **Restore scene** devuelve el contenido exactamente como estaba.
+
+Dos movimientos relacionados:
+
+- Para añadir una escena justo después de una omitida, pulsa Return sobre la lápida (o al principio del siguiente encabezado). CineLog te ofrece añadir una escena con letra entre las dos, empezando por un encabezado de marcador de posición que sobrescribes.
+- En un guion con las páginas bloqueadas, una página cuyo contenido ha desaparecido por completo se renderiza como **PAGE 7 OMITTED**, manteniendo su sitio en el recuento.
+
+Una escena omitida no se puede editar hasta que la restauras, y el encabezado de una escena bloqueada no se puede borrar. El editor te dice que uses Omit Scene en su lugar. Las escenas que añadas después del bloqueo se pueden borrar libremente hasta que se hayan emitido en una revisión.
+
+## Distribuir páginas revisadas
+
+Cuando una ronda está terminada y las páginas están bloqueadas, el [diálogo de exportación](/es/guides/writing-formatting-scripts#exportar) gana dos opciones de PDF: **Revised pages only** exporta la portada más las páginas que ha tocado esta ronda, que es el conjunto que una producción distribuye realmente. **Revision paper color** rellena cada página revisada con su color. Déjalo desactivado cuando vayas a imprimir en papel de color real.
+
+## Si esto no funciona
+
+*Quiero desbloquear el guion.* No hay desbloqueo, a propósito. Omite lo que no deba rodarse, revisa lo que haya cambiado o adopta números nuevos mediante una importación.
+
+*El menú avisa de que unos números de escena han perdido su encabezado.* Borraste un encabezado que el registro todavía sigue. Deshaz el borrado, u omite la escena como corresponde.
+
+*Elegí "Start Blue Revisions" en el aviso de edición y me falta el primer carácter.* El aviso se come la pulsación que lo levantó. Vuelve a teclear el carácter.
+
+*He bloqueado las páginas por error.* No se rompe nada. La escritura continúa con normalidad y el material nuevo fluye hacia las A-pages. Pero no hay vuelta atrás a la paginación libre, así que trata Lock pages como el momento de la distribución.

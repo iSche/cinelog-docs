@@ -1,6 +1,6 @@
 ---
-title: Les bases du découpage technique
-lastUpdated: 2026-07-11
+title: Essentiels
+lastUpdated: 2026-08-08
 description: "Construis un découpage technique à partir de zéro — trois façons d'ajouter des plans, comment fonctionne la numérotation, comment réorganiser et ce qui est supprimé quand tu enlèves un plan ou une scène."
 ---
 
@@ -12,19 +12,19 @@ Ce guide suppose [Les bases](/fr/guides/introduction). Le vocabulaire clic-tap-g
 
 Un nouveau projet te donne un découpage technique vide. Il y a trois façons de le remplir :
 
-- **Manuellement, un plan à la fois.** Clique sur le bouton `Nouveau plan` à droite de la barre de menu supérieure (bureau), ou le bouton `+` dans la barre supérieure (téléphone). Les deux ouvrent une boîte de dialogue demandant à quel numéro de scène ajouter le plan.
+- **Manuellement, un plan à la fois.** Clique sur le bouton `New Shot` à droite de la barre de menu supérieure (bureau), ou le bouton `+` dans la barre supérieure (téléphone). Les deux ouvrent une boîte de dialogue demandant à quel numéro de scène ajouter le plan.
 - **Raccourci clavier.** `Cmd / Ctrl + N` ouvre la même boîte de dialogue de numéro de scène, pré-remplie avec le numéro de scène le plus élevé. Sur une liste vide, elle saute la boîte de dialogue et crée le premier plan dans la scène 1.
-- **Remplir depuis le scénario.** Ouvre le Logiciel de Scénario et appuie sur `Shift + P` (ou utilise son bouton Remplir — le raccourci ne fait rien sur l'écran du découpage technique). Il scanne les en-têtes de scène du scénario (lignes comme `INT. CUISINE - JOUR`) et affiche un aperçu avant tout changement : Fusionner n'ajoute que les scènes pas encore dans ta liste, Remplacer efface la liste et la reconstruit à partir du scénario. Par défaut, il crée plusieurs plans suggérés par scène avec descriptions et types de plan ; choisis « scènes uniquement » pour un seul plan-marqueur par scène à la place. Les noms de lieu des en-têtes sont reportés sur les scènes. Sur l'offre gratuite, le remplissage s'arrête à la limite du projet de 25 scènes / 50 plans. Le résultat n'est aussi propre que ton scénario — des en-têtes mal formés donnent des scènes mal formées.
+- **Populate from Script.** (remplir depuis le scénario) Ouvre le Logiciel de Scénario et appuie sur `Shift + P` (ou utilise son bouton Populate — le raccourci ne fait rien sur l'écran du découpage technique). Il scanne les en-têtes de scène du scénario (lignes comme `INT. CUISINE - JOUR`) et affiche un aperçu avant tout changement : Merge (fusionner) n'ajoute que les scènes pas encore dans ta liste, Replace (remplacer) efface la liste et la reconstruit à partir du scénario. Par défaut, il crée plusieurs plans suggérés par scène avec descriptions et types de plan ; choisis « scenes only » (scènes uniquement) pour un seul plan-marqueur par scène à la place. Les noms de lieu des en-têtes sont reportés sur les scènes. Sur l'offre gratuite, le remplissage s'arrête à la limite du projet de 25 scènes / 50 plans. Le résultat n'est jamais plus propre que ton scénario — des en-têtes mal formés donnent des scènes mal formées.
 
-La plupart des projets commencent avec Remplir depuis le scénario comme première passe approximative, puis affinent manuellement.
+La plupart des projets commencent avec Populate from Script comme première passe approximative, puis affinent manuellement.
 
 ## Numérotation des plans
 
 Les plans sont numérotés automatiquement. Trois formats sont disponibles dans les [Paramètres d'affichage](/fr/guides/shot-list/display-settings) :
 
-- **Alphanumérique** — `1A`, `1B`, `2A`. Numéro de scène + lettre par plan dans la scène. Par défaut.
-- **Décimal** — `1.1`, `1.2`, `2.1`.
-- **Séquentiel** — `1`, `2`, `3`, `47`. Continu à travers le projet.
+- **US** — `1A`, `1B`, `2A`. Numéro de scène + lettre par plan dans la scène. Par défaut.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`, `47`. Continu à travers le projet.
 
 Les numéros et lettres se mettent à jour à la réorganisation. Si tu déplaces `1C` en haut de sa scène, la liste lit brièvement C, A, B avant de recalculer en A, B, C. N'écris pas la lettre d'un plan en t'attendant à ce qu'elle soit stable entre les déplacements.
 
@@ -36,7 +36,7 @@ Fais glisser n'importe quel plan pour le déplacer. Le geste est le glissement u
 
 - **Dans une scène** — fais glisser vers le haut ou vers le bas. Les lettres se recompactent.
 - **Entre les scènes** — fais glisser au-delà d'une limite de scène. Le numéro de scène du plan change pour correspondre à la destination ; les lettres se recompactent dans les scènes source et destination.
-- **Dans l'espace vide entre deux scènes** — le plan rejoint la fin de la scène au-dessus. Le glissement ne crée jamais de nouvelle scène ; pour en créer une, utilise la boîte de dialogue Nouveau plan et tape un numéro de scène qui n'existe pas encore, ou utilise Remplir depuis le scénario.
+- **Dans l'espace vide entre deux scènes** — le plan rejoint la fin de la scène au-dessus. Le glissement ne crée jamais de nouvelle scène ; pour en créer une, utilise la boîte de dialogue New Shot et tape un numéro de scène qui n'existe pas encore, ou utilise Populate from Script.
 
 La vue Production ajoute une règle de portée de scène pour les multi-sélections ; voir [Linéaire vs Production](/fr/guides/shot-list/linear-vs-production).
 
@@ -48,7 +48,7 @@ Les colonnes personnalisées que tu ajoutes dans les [Paramètres d'affichage](/
 
 ## Supprimer
 
-Sur bureau, ouvre la boîte de dialogue d'édition du plan et utilise le bouton `Supprimer le plan`, ou sélectionne la ou les lignes et appuie sur `Delete` / `Backspace` — un bouton `Supprimer la sélection` apparaît aussi dans la barre de sélection. Sur mobile, glisse la ligne du plan pour révéler l'action de suppression. La cascade dépend de ce que tu supprimes et où :
+Sur bureau, ouvre la boîte de dialogue d'édition du plan et utilise le bouton `Delete Shot`, ou sélectionne la ou les lignes et appuie sur `Delete` / `Backspace` — un bouton `Delete Selected` apparaît aussi dans la barre de sélection. Sur mobile, glisse la ligne du plan pour révéler l'action de suppression. La cascade dépend de ce que tu supprimes et où :
 
 - **Un seul plan en vue Linéaire** — le retire du projet. Si c'était le dernier plan de sa scène, la scène disparaît aussi (il n'y a pas d'état scène-vide).
 - **Un seul plan en vue Production** — le retire du planning de ce jour seulement. Le plan existe toujours dans Linéaire et peut être replanifié.
@@ -60,6 +60,6 @@ La boîte de dialogue de confirmation énonce toujours ce qui est sur le point d
 
 *« Les lettres de mes plans ont changé après que j'ai fait glisser. »* Attendu — les lettres sont recalculées après chaque réorganisation pour qu'elles restent dans l'ordre d'affichage.
 
-*« Remplir depuis le scénario m'a donné un fouillis de scènes. »* Ouvre le scénario et nettoie les en-têtes de scène (`INT. / EXT. LIEU - HEURE`), puis relance.
+*« Populate from Script m'a donné un fouillis de scènes. »* Ouvre le scénario et nettoie les en-têtes de scène (`INT. / EXT. LIEU - HEURE`), puis relance.
 
 *« J'ai supprimé le dernier plan d'une scène et toute la scène a disparu. »* Aussi attendu — il n'y a pas d'état scène-vide. Pour garder la scène, laisse un plan-marqueur dedans.

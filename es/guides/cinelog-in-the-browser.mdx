@@ -1,0 +1,42 @@
+---
+title: CineLog en el navegador
+lastUpdated: 2026-08-08
+description: "Usa CineLog en app.cinelog.com — la misma cuenta, los mismos proyectos, la misma sincronización. Qué significa la regla de una sola pestaña, qué dicen los avisos de almacenamiento y cómo funcionan las suscripciones fuera de las tiendas de aplicaciones."
+---
+
+Esta guía da por supuesto [Lo básico](/es/guides/introduction).
+
+CineLog funciona en el navegador en [app.cinelog.com](https://app.cinelog.com). Es la misma app que instalas en escritorio y móvil, con la misma cuenta iniciada, mostrando los mismos proyectos y sincronizando con el mismo motor. Las ediciones que haces en un navegador aterrizan en tus demás dispositivos igual que las ediciones hechas desde cualquier otro sitio. El modo offline también funciona: el navegador guarda una copia local de tus proyectos, exactamente igual que las apps nativas.
+
+Úsalo en una máquina en la que no puedes instalar nada, como una estación de trabajo alquilada o la oficina de un cliente. Vale la pena conocer unas cuantas realidades del navegador.
+
+## Una pestaña a la vez
+
+CineLog funciona en una sola pestaña. Abre una segunda y verás en su lugar una pantalla simple: "CineLog is already open in another tab" (CineLog ya está abierto en otra pestaña). Las dos pestañas compartirían la misma base de datos offline, así que tener dos abiertas les permitiría sobrescribirse los cambios entre ellas.
+
+El botón **Use CineLog here** entrega la sesión a la nueva pestaña, y la otra pestaña se aparta sola. Si la otra pestaña está a mitad de trabajo, puede negarse de momento, y la pantalla te dice por qué: todavía está subiendo un archivo, todavía está guardando un cambio o retiene ediciones que no puede conservar a través de una recarga. Dale un momento y vuelve a intentarlo.
+
+## Cerrar la pestaña mientras se guarda
+
+Si cierras o recargas la pestaña mientras todavía se están sincronizando cambios o se está subiendo un archivo, el navegador te pregunta si de verdad quieres salir. Tómate en serio ese aviso en el caso de las subidas: en la web, los bytes de una subida viven en la pestaña, así que una recarga a mitad de subida no se puede reanudar. Las ediciones salen más baratas, porque todo lo que ya está sincronizado está a salvo en el servidor.
+
+## Avisos de almacenamiento
+
+Algunas situaciones del navegador no permiten almacenar datos de forma fiable, y CineLog te lo dice en lugar de fingir. Existen dos banners:
+
+- Uno rojo: "Changes in this browser will be lost when you close the tab" (los cambios en este navegador se perderán al cerrar la pestaña). El navegador ha rechazado el almacenamiento local por completo, lo que normalmente significa una ventana privada o de incógnito. Todo vive solo en la pestaña, así que mantenla abierta hasta que termine la sincronización.
+- Uno ámbar: "Storage in this browser is unreliable" (el almacenamiento en este navegador no es fiable). CineLog puede guardar datos, pero el navegador puede borrarlos en cualquier momento. El trabajo ya sincronizado está a salvo en el servidor; las ediciones que esperan a sincronizarse, no.
+
+Si ves cualquiera de los dos, la solución es la misma: usa Chrome, Edge o Firefox fuera de una ventana privada. En un navegador sano no aparece ningún banner.
+
+## Suscripciones en el navegador
+
+La app del navegador no vende suscripciones. La página de suscripción muestra "Plans are managed on cinelog.com" con un botón **See plans** que te lleva a [cinelog.com/pricing](https://cinelog.com/pricing/). Tu espacio de trabajo cambia al nuevo plan en cuanto se completa la compra. Una suscripción comprada en la web también se gestiona en la web, mediante **Manage on Web** en esa misma página. Lo mismo vale para las apps de Windows y Linux, que tampoco tienen tienda de aplicaciones.
+
+## Si esto no funciona
+
+*Las dos pestañas dicen que la otra está abierta.* Una de ellas está a mitad de guardado. Espera unos segundos y vuelve a pulsar **Use CineLog here** en la pestaña que quieras.
+
+*Trabajé sin conexión en una ventana privada y mis ediciones han desaparecido.* Eso es lo que avisa el banner rojo: una ventana privada no conserva nada después de cerrar la pestaña. Las ediciones que llegaron al servidor antes de cerrarla están a salvo.
+
+*¿Qué navegadores son seguros?* Chrome, Edge y Firefox, fuera de una ventana privada. Esa es la combinación que el propio CineLog recomienda en sus avisos de almacenamiento. Otros navegadores pueden funcionar bien, pero esos tres son los que tienen almacenamiento offline fiable.

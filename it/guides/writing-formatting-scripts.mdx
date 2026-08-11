@@ -1,106 +1,100 @@
 ---
-title: Scrivere e Formattare Sceneggiature
-lastUpdated: 2026-06-22
-description: "Importa sceneggiature FDX, Fountain, PDF, TXT e RTF nell'Editor di CineLog. Formatta con la sintassi Fountain, traccia le analytics, esporta in PDF e popola la tua Lista delle Inquadrature."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-L'Editor di Sceneggiatura di CineLog è un ambiente di scrittura potente, di livello professionale, costruito nativamente nella piattaforma. Supporta formattazione Fountain in tempo reale, analytics live e sincronizzazione fluida dei dati in cloud.
-
-Che tu stia scrivendo una nuova sceneggiatura da zero o importando un copione esistente, CineLog garantisce che la tua formattazione aderisca sempre agli standard del settore.
-
-## Importare una sceneggiatura esistente
-
-Se hai già iniziato a scrivere il tuo copione in un altro software per sceneggiatura, puoi facilmente importarlo in CineLog senza perdere la formattazione.
-
-<Steps>
-1. **Apri l'Editor di Sceneggiatura:** Naviga all'Editor di Sceneggiatura usando la sidebar sinistra.
-2. **Importa Documento:** Clicca il pulsante **Import** nella barra in alto e seleziona il file della tua sceneggiatura.
-3. **Parsing automatico:** Il parser universale di CineLog elaborerà automaticamente il file, estrarrà le scene e convertirà la formattazione.
-</Steps>
-
-<CardGrid>
-  <Card title="Formati supportati">
-    - **Final Draft (.fdx)**
-    - **Fountain (.fountain)**
-    - **PDF** (Estrazione testo)
-    - **Testo semplice (.txt)**
-    - **Rich Text (.rtf)**
-  </Card>
-</CardGrid>
-
+title: Scrittura e formattazione sceneggiature
+lastUpdated: 2026-08-08
+description: "Scrivi su vere pagine US Letter con formattazione Fountain live: la pagina del titolo, come il tasto Invio ti sposta tra gli elementi, le interruzioni di pagina con (MORE) e (CONT'D), zoom, analytics ed esportazione."
 ---
 
-## Editing e formattazione live
+Questa guida assume [Le basi](/it/guides/introduction). L'importazione ha ormai una sua schermata di revisione e una sua guida: [Importare sceneggiature](/it/guides/importing-scripts). Blocco e revisioni si trovano in [Blocco e revisioni](/it/guides/script-lock-and-revisions).
 
-CineLog usa il linguaggio di markup **Fountain** sotto il cofano. Tuttavia, non devi conoscere Fountain per scrivere—l'editor formatta automaticamente il tuo testo mentre lo digiti.
+L'Editor di Sceneggiatura scrive su pagine vere. Quello che vedi è una pila di schede di pagina US Letter, Courier 12 pt, con il numero di pagina nell'angolo in alto a destra e le interruzioni di pagina che cadono esattamente dove cadranno in stampa. Non esiste più una modalità anteprima separata, perché le pagine dell'editor e il PDF esportato vengono dallo stesso layout. La pagina che stai guardando è la pagina.
 
-### Elementi Fountain supportati
+Non c'è nemmeno un pulsante Salva. Ogni modifica viene salvata sul tuo dispositivo entro circa mezzo secondo e sincronizzata in cloud in background.
 
-CineLog attualmente supporta la specifica core di Fountain necessaria per l'editing professionale della sceneggiatura. Puoi scrivere naturalmente per lasciare che il rilevamento intelligente faccia il lavoro, oppure forzare la formattazione usando i caratteri di sintassi di Fountain.
+## La pagina del titolo
 
-- **Intestazioni di Scena**: Inizia una riga con i prefissi standard (`INT.`, `EXT.`, ecc.), oppure forzala iniziando la riga con un punto (`.`).
-- **Azione**: Il testo standard viene trattato come azione. Forzala iniziando una riga con un punto esclamativo (`!`).
-- **Personaggi**: Scrivi interamente in MAIUSCOLO (es. `JOHN`), oppure forzalo iniziando la riga con una chiocciola (`@`).
-- **Dialogo**: Scrivi semplicemente subito dopo una riga di Personaggio.
-- **Parentetiche**: Avvolgi il testo tra parentesi `(come questo)`.
-- **Transizioni**: Usa terminazioni MAIUSCOLE standard come `CUT TO:`, oppure forzale iniziando la riga con una parentesi angolare destra (`>`).
-- **Testo centrato**: Avvolgi il testo con parentesi angolari: `> Centra questo testo <`.
-- **Enfasi**: Supporto per l'enfasi in stile markdown standard:
-  - `*Corsivo*`
-  - `**Grassetto**`
-  - `_Sottolineato_`
+Ogni sceneggiatura inizia con una pagina del titolo, e la modifichi direttamente sul posto. Ha otto campi: Title, Credit, Author, Source, Contact, Copyright, Draft date e Notes. I campi vuoti mostrano un segnaposto grigio e non stampano nulla.
 
-### Elementi attualmente non supportati
-Stiamo costantemente espandendo il nostro supporto a Fountain. In questo momento, le seguenti funzionalità avanzate di Fountain **non sono ancora supportate** nell'editor live:
-- Dialogo Duale (`^`)
-- Boneyard (`/* */`)
-- Sezioni (`#`) e Sinossi (`=`)
-- Note inline (`[[ ]]`)
+`Tab` passa al campo successivo con il suo valore già selezionato, così puoi scriverci sopra direttamente. `Shift + Tab` torna indietro. `Tab` sull'ultimo campo ti fa entrare nel corpo della sceneggiatura. Invio dentro un campo aggiunge una riga all'interno di quel campo, e ogni campo ha un budget di righe così che la pagina del titolo resti sempre esattamente una pagina.
+
+Un documento nuovo arriva con una piccola sceneggiatura di partenza e una pagina del titolo già compilata, con il tuo nome nel campo Author. Scrivici sopra quello che vuoi.
+
+## Digitare una sceneggiatura
+
+CineLog usa le convenzioni **Fountain** sotto il cofano, ma non devi conoscere Fountain per scrivere. Digita naturalmente e l'editor classifica ogni riga man mano.
+
+Il tasto Invio fa gran parte degli spostamenti tra gli elementi:
+
+- Dopo un'intestazione di scena, Invio ti dà azione.
+- Dopo un nome di personaggio, Invio ti dà dialogo.
+- Dopo un dialogo, Invio ti dà **altro dialogo**, così una battuta cresce paragrafo per paragrafo. Per chiudere la battuta, premi di nuovo Invio sulla riga vuota, e quella diventa azione al suo posto. Quindi la via d'uscita da una battuta è Invio, Invio.
+- Dopo una transizione, Invio ti dà un'intestazione di scena.
+- `Shift + Return` spezza una riga all'interno dello stesso elemento.
+
+### Elementi Fountain
+
+Puoi anche forzare qualsiasi elemento con i caratteri di sintassi di Fountain:
+
+- **Intestazioni di scena**: inizia una riga con `INT.` o `EXT.`, oppure forzala con un punto iniziale (`.`).
+- **Azione**: il testo standard è azione. Forzala con un punto esclamativo iniziale (`!`).
+- **Personaggi**: scrivi il nome in MAIUSCOLO, oppure forzalo con una chiocciola iniziale (`@`).
+- **Dialogo**: scrivi sulla riga successiva a un nome di personaggio.
+- **Parentetiche**: avvolgi il testo tra parentesi `(come questo)`.
+- **Transizioni**: terminazioni MAIUSCOLE standard come `CUT TO:`, oppure forzale con un `>` iniziale.
+- **Testo centrato**: `> Centra questo testo <`.
+- **Enfasi**: `*corsivo*`, `**grassetto**`, `_sottolineato_`.
+
+Non ancora supportati nell'editor: dialogo doppio (`^`), boneyard (`/* */`), sezioni (`#`) e sinossi (`=`), e note inline (`[[ ]]`).
 
 ### Scorciatoie di override manuale
-Se il rilevamento intelligente sbaglia, o se vuoi forzare uno stile di formattazione specifico, usa le scorciatoie di override manuale:
 
-- <kbd>Cmd</kbd> + <kbd>1</kbd>: Intestazione di Scena
-- <kbd>Cmd</kbd> + <kbd>2</kbd>: Personaggio
-- <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialogo
-- <kbd>Cmd</kbd> + <kbd>4</kbd>: Azione
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Parentetica
-- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transizione
-- <kbd>Cmd</kbd> + <kbd>7</kbd>: Versi
-- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centrato
+Quando il rilevamento sbaglia, imposta tu stesso il tipo di elemento:
 
-<Aside type="tip">
-**Salvataggio continuo:** Non c'è alcun pulsante "Salva" nell'Editor di Sceneggiatura. Ogni battitura viene salvata silenziosamente e continuamente sul tuo dispositivo locale e sincronizzata in modo sicuro in cloud in background.
-</Aside>
+- `Cmd / Ctrl + 1`: Intestazione di Scena
+- `Cmd / Ctrl + 2`: Personaggio
+- `Cmd / Ctrl + 3`: Dialogo
+- `Cmd / Ctrl + 4`: Azione
+- `Cmd / Ctrl + 5`: Parentetica
+- `Cmd / Ctrl + 6`: Transizione
+- `Cmd / Ctrl + 7`: Versi
+- `Cmd / Ctrl + E`: Centrato
 
----
+## Come si spezzano le pagine
 
-## Analytics Live
+Una pagina contiene 54 righe, lo stesso conteggio con cui impagina Final Draft. Quando un paragrafo non ci sta, si spezza all'ultima frase che ci sta e il resto prosegue sul retro, invece di far saltare l'intero paragrafo alla pagina successiva. Una battuta che continua oltre l'interruzione stampa **(MORE)** in fondo e ripete il nome del personaggio con **(CONT'D)** in cima, e CineLog tiene almeno due righe su ciascun lato di una divisione così non ti ritrovi mai con una riga isolata.
 
-Mentre scrivi, CineLog calcola metriche professionali in tempo reale, permettendoti di valutare la portata e il ritmo della tua sceneggiatura senza mai lasciare l'editor.
+L'editor, il contatore di pagine e il PDF esportato girano tutti su questo unico layout, quindi non possono contraddirsi.
 
-Cerca il pannello analytics per vedere aggiornamenti live su:
-- **Stima delle pagine:** Formule di calcolo pagine standard del settore accurate agli standard professionali.
-- **Conteggio scene & personaggi:** Numero totale di scene e personaggi parlanti unici.
-- **Metriche di parole:** Conteggio totale parole e conteggio caratteri.
+## Zoom
 
----
+Il gruppo dello zoom sta al centro della barra del menu in alto: meno, la percentuale corrente, più. Lo zoom va dal 50% al 200% a passi del 25%, e cliccare sulla percentuale riporta all'adattamento alla larghezza della finestra. `Cmd / Ctrl + =` e `Cmd / Ctrl + -` avanzano di un passo dentro e fuori, `Cmd / Ctrl + 0` adatta alla larghezza, e `Cmd / Ctrl + scroll` o una pinzata fanno lo stesso sul puntatore. Lo zoom scala l'intera pagina, quindi le righe vanno sempre a capo sugli stessi caratteri a qualsiasi livello, e il conteggio delle pagine non si sposta mai perché hai zoomato.
 
-## Anteprima ed Esportazione
+## Analytics
 
-Quando sei pronto a rivedere la tua sceneggiatura finale o a condividerla con altri, puoi passare senza soluzione di continuità dall'editor a un PDF standardizzato.
+La sidebar delle analytics tiene i totali live mentre scrivi: il conteggio pagine in ottavi di sceneggiatura (tipo 12 3/8), scene, righe, parole e caratteri. Seleziona del testo e compaiono altre due righe, che mostrano il conteggio caratteri della selezione e la sua dimensione in ottavi di pagina. È il modo più rapido per rispondere a "quanto è lunga questa scena", perché l'ottavo di pagina è l'unità in cui parla il piano di lavorazione.
 
-<Steps>
-1. **Modalità Anteprima:** Clicca il pulsante **"Anteprima & Esporta"** nella barra in alto per passare dall'editor a scorrimento continuo a una vista paginata e pronta per la stampa. La modalità anteprima rende una Pagina Titolo standard e interruzioni di pagina accurate.
-2. **Esporta:** Mentre sei in Modalità Anteprima, clicca l'icona **"Esporta"**.
-3. **Seleziona Formato:** Scegli il formato file di cui hai bisogno.
-</Steps>
+## Scrivere su telefono
 
-CineLog attualmente supporta l'esportazione della tua sceneggiatura nei seguenti formati:
-- **PDF (.pdf):** Documento di alta qualità, paginato e formattato secondo gli standard del settore, perfetto per la stampa o l'invio via email.
-- **Final Draft (.fdx):** Formato XML standard del settore, che ti permette di trasferire la tua sceneggiatura senza problemi in Final Draft o in altri software di produzione.
-- **Fountain (.fountain):** Markup plaintext raw per la massima compatibilità.
-- **Testo semplice (.txt):** Esportazione testo di base per la semplice lettura.
-- **JSON (.json):** Esportazione dati strutturata per integrazioni e tooling personalizzato.
-- **CSV (.csv):** Esportazione tabellare per fogli di calcolo e reportistica.
+L'editor su telefono è un editor completo, non un visualizzatore. Il testo si riadatta allo schermo a una dimensione di lettura comoda invece di rimpicciolire una pagina Letter, e dei divisori sottili etichettati **PAGE 7** segnano esattamente dove cadono le interruzioni di pagina della versione stampata. I numeri di pagina corrispondono a quelli del desktop e del PDF, perché vengono dalla stessa impaginazione.
+
+## Esportazione
+
+Clicca **Export**, il primo pulsante nella barra del menu in alto. Scegli un formato:
+
+- **PDF Document (.pdf)** — impaginato e formattato secondo gli standard del settore, con interruzioni esattamente dove le fa l'editor.
+- **Fountain Script (.fountain)** — markup in testo semplice per la massima compatibilità.
+- **Final Draft (.fdx)** — per portare la sceneggiatura in Final Draft o in altri software di produzione.
+- **Plain Text (.txt)** — una semplice copia di lettura.
+- **JSON Data (.json)** — dati strutturati per integrazioni e tooling personalizzato.
+- **Scene Report (.csv)** — un elenco tabellare delle scene per i fogli di calcolo.
+
+Su una sceneggiatura bloccata con un round di revisione aperto, il PDF guadagna due opzioni: **Revised pages only** esporta la pagina del titolo più le pagine toccate dal round corrente, che è esattamente l'insieme che una produzione distribuisce davvero, e **Revision paper color** riempie ogni pagina revisionata con il colore della sua revisione. Lascia il colore disattivato quando stampi su carta colorata vera. Vedi [Blocco e revisioni](/it/guides/script-lock-and-revisions).
+
+## Se non funziona
+
+*Dov'è finita l'Anteprima?* È stata ritirata. L'editor mostra ormai sempre le pagine finali, quindi non c'è più nulla di separato da visualizzare in anteprima. **Export** apre direttamente il selettore di formato.
+
+*Invio non mi porta fuori dal dialogo.* Premilo due volte: una per aprire una riga di continuazione vuota, un'altra per trasformare quella riga in azione.
+
+*Il conteggio pagine è diverso da quello della mia vecchia bozza.* CineLog impagina 54 righe per pagina con divisione reale dei paragrafi, in linea con Final Draft. Le stime precedenti alla v1.5.0 usavano un calcolo più approssimativo.
+
+*Non riesco a scrivere in una scena segnata OMITTED.* È una scena omessa su una sceneggiatura bloccata. Ripristinala prima. Vedi [Blocco e revisioni](/it/guides/script-lock-and-revisions).

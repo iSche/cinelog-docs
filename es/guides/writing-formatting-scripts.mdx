@@ -1,106 +1,100 @@
 ---
 title: Escribir y formatear guiones
-lastUpdated: 2026-06-22
-description: "Importa guiones FDX, Fountain, PDF, TXT y RTF al editor de CineLog. Formatea con sintaxis Fountain, sigue las analíticas, exporta a PDF y rellena tu lista de planos."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-El Editor de Guion de CineLog es un entorno de escritura potente y de nivel profesional integrado nativamente en la plataforma. Soporta formato Fountain en tiempo real, analíticas en vivo y sincronización fluida de datos con la nube.
-
-Tanto si escribes un nuevo guion desde cero como si importas un guion existente, CineLog garantiza que tu formato siempre cumpla con los estándares de la industria.
-
-## Importar un guion existente
-
-Si ya empezaste a escribir tu guion en otro software, puedes importarlo fácilmente a CineLog sin perder el formato.
-
-<Steps>
-1. **Abre el Editor de Guion:** Navega al Editor de Guion usando la barra lateral izquierda.
-2. **Importar documento:** Haz clic en el botón **Importar** en la barra de menú superior y selecciona tu archivo de guion.
-3. **Análisis automático:** El analizador universal de CineLog procesará automáticamente el archivo, extraerá las escenas y convertirá el formato.
-</Steps>
-
-<CardGrid>
-  <Card title="Formatos compatibles">
-    - **Final Draft (.fdx)**
-    - **Fountain (.fountain)**
-    - **PDF** (Extracción de texto)
-    - **Texto plano (.txt)**
-    - **Texto enriquecido (.rtf)**
-  </Card>
-</CardGrid>
-
+lastUpdated: 2026-08-08
+description: "Escribe sobre páginas reales de tamaño US Letter con formato Fountain en vivo: la portada, cómo la tecla Return te mueve entre elementos, los saltos de página con (MORE) y (CONT'D), el zoom, las analíticas y la exportación."
 ---
 
-## Edición y formato en vivo
+Esta guía da por supuesto [Lo básico](/es/guides/introduction). La importación tiene ya su propia pantalla de revisión y su propia guía: [Importar guiones](/es/guides/importing-scripts). El bloqueo y las revisiones viven en [Bloqueo y revisiones](/es/guides/script-lock-and-revisions).
 
-CineLog usa el lenguaje de marcado **Fountain** por debajo. Sin embargo, no necesitas saber Fountain para escribir — el editor formatea automáticamente tu texto a medida que escribes.
+El Editor de Guion escribe sobre páginas reales. Lo que ves es una pila de tarjetas de página US Letter, Courier de 12 pt, con el número de página en la esquina superior derecha y los saltos de página cayendo exactamente donde caerán al imprimir. Ya no hay un modo de vista previa aparte, porque las páginas del editor y el PDF exportado salen del mismo diseño. La página que estás mirando es la página.
 
-### Elementos de Fountain compatibles
+Tampoco hay botón Guardar. Cada cambio se guarda en tu dispositivo en aproximadamente medio segundo y se sincroniza con la nube en segundo plano.
 
-CineLog actualmente soporta la especificación principal de Fountain necesaria para la edición profesional de guiones. Puedes escribir con naturalidad para dejar que la detección inteligente haga el trabajo, o forzar el formato usando los caracteres de sintaxis de Fountain.
+## La portada
 
-- **Encabezados de escena**: Empieza una línea con prefijos estándar (`INT.`, `EXT.`, etc.), o fuérzalo empezando la línea con un punto (`.`).
-- **Acción**: El texto estándar se trata como acción. Fuérzalo empezando una línea con un signo de exclamación (`!`).
-- **Personajes**: Escribe completamente en MAYÚSCULAS (p. ej., `JOHN`), o fuérzalo empezando la línea con una arroba (`@`).
-- **Diálogo**: Simplemente escribe inmediatamente después de una línea de Personaje.
-- **Acotaciones**: Envuelve el texto entre paréntesis `(así)`.
-- **Transiciones**: Usa terminaciones estándar en MAYÚSCULAS como `CUT TO:`, o fuérzalo empezando la línea con un símbolo mayor que (`>`).
-- **Texto centrado**: Envuelve el texto entre símbolos angulares: `> Centra este texto <`.
-- **Énfasis**: Soporte para énfasis estándar estilo markdown:
-  - `*Cursiva*`
-  - `**Negrita**`
-  - `_Subrayado_`
+Todo guion empieza con una portada, y la editas ahí mismo. Tiene ocho campos: Title, Credit, Author, Source, Contact, Copyright, Draft date y Notes. Los campos vacíos muestran un marcador de posición en gris y no imprimen nada.
 
-### Elementos actualmente no compatibles
-Estamos ampliando constantemente nuestro soporte de Fountain. En este momento, las siguientes funcionalidades avanzadas de Fountain **aún no son compatibles** en el editor en vivo:
-- Diálogo dual (`^`)
-- Boneyards (`/* */`)
-- Secciones (`#`) y Sinopsis (`=`)
-- Notas en línea (`[[ ]]`)
+`Tab` pasa al siguiente campo con su valor preseleccionado, así que puedes escribir directamente encima. `Shift + Tab` vuelve atrás. `Tab` en el último campo te deja caer en el cuerpo del guion. Return dentro de un campo añade una línea dentro de ese campo, y cada campo tiene un presupuesto de líneas para que la portada se quede siempre en exactamente una página.
 
-### Atajos manuales de anulación
-Si la detección inteligente acierta mal, o si quieres forzar un estilo de formato específico, usa los atajos manuales de anulación:
+Un documento nuevo llega con un pequeño guion inicial y una portada sembrada, con tu nombre ya puesto en el campo Author. Escribe encima de lo que quieras.
 
-- <kbd>Cmd</kbd> + <kbd>1</kbd>: Encabezado de Escena
-- <kbd>Cmd</kbd> + <kbd>2</kbd>: Personaje
-- <kbd>Cmd</kbd> + <kbd>3</kbd>: Diálogo
-- <kbd>Cmd</kbd> + <kbd>4</kbd>: Acción
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Acotación
-- <kbd>Cmd</kbd> + <kbd>6</kbd>: Transición
-- <kbd>Cmd</kbd> + <kbd>7</kbd>: Letra de canción
-- <kbd>Cmd</kbd> + <kbd>E</kbd>: Centrado
+## Teclear un guion
 
-<Aside type="tip">
-**Guardado continuo:** No hay un botón "Guardar" en el Editor de Guion. Cada pulsación de tecla se guarda silenciosa y continuamente en tu dispositivo local y se sincroniza de forma segura con la nube en segundo plano.
-</Aside>
+CineLog usa las convenciones de **Fountain** por debajo, pero no necesitas saber Fountain para escribir. Teclea con naturalidad y el editor clasifica cada línea sobre la marcha.
 
----
+La tecla Return se ocupa de casi todo el movimiento entre elementos:
 
-## Analíticas en vivo
+- Después de un encabezado de escena, Return te da acción.
+- Después de un nombre de personaje, Return te da diálogo.
+- Después de diálogo, Return te da **más diálogo**, así que una intervención crece párrafo a párrafo. Para terminar la intervención, pulsa Return otra vez sobre la línea vacía y esa línea se convierte en acción en el sitio. Así que la salida de una intervención es Return, Return.
+- Después de una transición, Return te da un encabezado de escena.
+- `Shift + Return` rompe una línea dentro del mismo elemento.
 
-Mientras escribes, CineLog calcula métricas profesionales en tiempo real, permitiéndote evaluar el alcance y el ritmo de tu guion sin salir nunca del editor.
+### Elementos de Fountain
 
-Busca el panel de analíticas para ver actualizaciones en vivo sobre:
-- **Estimación de páginas:** Fórmulas estándar de la industria para el cálculo de páginas con precisión profesional.
-- **Recuento de escenas y personajes:** Número total de escenas y personajes únicos con diálogo.
-- **Métricas de palabras:** Recuento total de palabras y recuento de caracteres.
+También puedes forzar cualquier elemento con los caracteres de sintaxis de Fountain:
 
----
+- **Encabezados de escena**: empieza una línea con `INT.` o `EXT.`, o fuerza uno con un punto inicial (`.`).
+- **Acción**: el texto estándar es acción. Fuérzala con una exclamación inicial (`!`).
+- **Personajes**: escribe el nombre en MAYÚSCULAS, o fuérzalo con una arroba inicial (`@`).
+- **Diálogo**: escribe en la línea siguiente a un nombre de personaje.
+- **Acotaciones**: envuelve el texto entre paréntesis `(así)`.
+- **Transiciones**: finales estándar en MAYÚSCULAS como `CUT TO:`, o fuerza una con un `>` inicial.
+- **Texto centrado**: `> Centra este texto <`.
+- **Énfasis**: `*cursiva*`, `**negrita**`, `_subrayado_`.
 
-## Vista previa y exportación
+Todavía no compatibles en el editor: el diálogo dual (`^`), los boneyards (`/* */`), las secciones (`#`) y las sinopsis (`=`), y las notas en línea (`[[ ]]`).
 
-Cuando estés listo para revisar tu guion final o compartirlo con otros, puedes pasar sin fisuras del editor a un PDF estandarizado.
+### Atajos de anulación manual
 
-<Steps>
-1. **Modo Vista Previa:** Haz clic en el botón **"Vista Previa y Exportar"** en la barra de menú superior para cambiar del editor de desplazamiento continuo a una vista paginada lista para impresión. El modo Vista Previa renderiza una Portada estándar y saltos de página precisos.
-2. **Exportar:** Mientras estés en modo Vista Previa, haz clic en el icono **"Exportar"**.
-3. **Selecciona el formato:** Elige el formato de archivo que necesites.
-</Steps>
+Cuando la detección se equivoca, fija tú mismo el tipo de elemento:
 
-CineLog actualmente soporta la exportación de tu guion en los siguientes formatos:
-- **PDF (.pdf):** Documento de alta calidad, paginado y con formato de la industria, perfecto para imprimir o enviar por correo.
-- **Final Draft (.fdx):** Formato XML estándar de la industria, te permite mover sin fisuras tu guion a Final Draft u otro software de producción.
-- **Fountain (.fountain):** Marcado en texto plano para máxima compatibilidad.
-- **Texto plano (.txt):** Exportación básica de texto para lectura simple.
-- **JSON (.json):** Exportación de datos estructurados para integraciones y herramientas personalizadas.
-- **CSV (.csv):** Exportación de desglose tabular para hojas de cálculo e informes.
+- `Cmd / Ctrl + 1`: Encabezado de Escena
+- `Cmd / Ctrl + 2`: Personaje
+- `Cmd / Ctrl + 3`: Diálogo
+- `Cmd / Ctrl + 4`: Acción
+- `Cmd / Ctrl + 5`: Acotación
+- `Cmd / Ctrl + 6`: Transición
+- `Cmd / Ctrl + 7`: Letra de canción
+- `Cmd / Ctrl + E`: Centrado
+
+## Cómo se cortan las páginas
+
+Una página contiene 54 líneas, el mismo recuento con el que pagina Final Draft. Cuando un párrafo no cabe, se parte en la última frase que entra y el resto continúa a la vuelta, en lugar de saltar el párrafo entero a la página siguiente. Una intervención que continúa al otro lado del corte imprime **(MORE)** abajo y repite el nombre del personaje con **(CONT'D)** arriba, y CineLog mantiene al menos dos líneas a cada lado de una partición para que nunca te quede una línea suelta.
+
+El editor, el contador de páginas y el PDF exportado funcionan todos sobre este mismo diseño, así que no pueden discrepar.
+
+## Zoom
+
+El grupo de zoom está en el centro de la barra de menú superior: menos, el porcentaje actual, más. El zoom va del 50 % al 200 % en pasos del 25 %, y hacer clic en el porcentaje lo restablece para ajustarlo al ancho de la ventana. `Cmd / Ctrl + =` y `Cmd / Ctrl + -` acercan y alejan, `Cmd / Ctrl + 0` ajusta al ancho, y `Cmd / Ctrl + scroll` o un pellizco hacen lo mismo sobre el puntero. El zoom escala la página entera, así que las líneas siempre cortan por los mismos caracteres sea cual sea el nivel, y el número de páginas nunca se mueve por haber hecho zoom.
+
+## Analíticas
+
+La barra lateral de analíticas mantiene totales en vivo mientras escribes: el número de páginas en octavos de guion (como 12 3/8), escenas, líneas, palabras y caracteres. Selecciona algo de texto y aparecen dos filas más, que muestran el recuento de caracteres de la selección y su tamaño en octavos de página. Esa es la forma más rápida de responder a "cuánto dura esta escena", porque los octavos de página son la unidad que habla el plan de rodaje.
+
+## Escribir en el teléfono
+
+El editor de teléfono es un editor completo, no un visor. El guion se reajusta a la pantalla a un tamaño de lectura cómodo en lugar de encoger una página Letter, y unos separadores finos etiquetados **PAGE 7** marcan exactamente dónde se cortan las páginas impresas. Los números de página coinciden con los de escritorio y los del PDF, porque salen de la misma paginación.
+
+## Exportar
+
+Haz clic en **Export**, el primer botón de la barra de menú superior. Elige un formato:
+
+- **PDF Document (.pdf)** — paginado y con formato de industria, cortando exactamente donde corta el editor.
+- **Fountain Script (.fountain)** — marcado en texto plano para máxima compatibilidad.
+- **Final Draft (.fdx)** — para llevar el guion a Final Draft u otro software de producción.
+- **Plain Text (.txt)** — una copia de lectura sencilla.
+- **JSON Data (.json)** — datos estructurados para integraciones y herramientas propias.
+- **Scene Report (.csv)** — un listado tabular de escenas para hojas de cálculo.
+
+En un guion bloqueado con una ronda de revisión abierta, el PDF gana dos opciones: **Revised pages only** exporta la portada más las páginas que ha tocado la ronda actual, que es el conjunto que una producción distribuye realmente, y **Revision paper color** rellena cada página revisada con su color de revisión. Deja el color desactivado cuando vayas a imprimir en papel de color real. Ver [Bloqueo y revisiones](/es/guides/script-lock-and-revisions).
+
+## Si esto no funciona
+
+*¿Dónde se ha ido la vista previa?* Se ha retirado. El editor muestra ahora las páginas finales en todo momento, así que no hay nada aparte que previsualizar. **Export** abre directamente el selector de formato.
+
+*Return no me saca del diálogo.* Púlsalo dos veces: una para abrir una línea de continuación vacía y otra más para convertir esa línea en acción.
+
+*El número de páginas se ve distinto al de mi borrador antiguo.* CineLog pagina 54 líneas por página con partición real de párrafos, igual que Final Draft. Las estimaciones anteriores a la v1.5.0 usaban un cálculo más laxo.
+
+*No puedo escribir en una escena marcada como OMITTED.* Es una escena omitida en un guion bloqueado. Restáurala primero. Ver [Bloqueo y revisiones](/es/guides/script-lock-and-revisions).

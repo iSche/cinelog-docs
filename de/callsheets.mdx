@@ -1,7 +1,7 @@
 ---
 title: Dispositionen (Dispo)
-lastUpdated: 2026-07-11
-description: "Erstelle und verwalte Dispositionen (Dispo) für Cast und Crew mit Terminierung und Ortsdetails."
+lastUpdated: 2026-08-08
+description: "Erstelle und verwalte Dispositionen (Dispo) für Cast und Crew mit Terminierung, automatisch befülltem Talent und Ortsdetails."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -58,7 +58,7 @@ Klicke in die Talent- oder Crew-Bereiche, um die Liste auf genau die Personen zu
 
 **PDF-Export und E-Mail-Versand**
 
-Sorge dafür, dass jeder weiß, was läuft. Klicke auf **Export**, um eine branchenübliche PDF mit deinem Firmenlogo zu erstellen, oder drücke **Senden**, um getrackte E-Mail-Sendungen direkt in die Tasche deines Teams zu schicken.
+Sorge dafür, dass jeder weiß, was läuft. Klicke auf **Export**, um eine branchenübliche PDF mit deinem Firmenlogo zu erstellen, oder drücke **Send** (senden), um getrackte E-Mail-Sendungen direkt in die Tasche deines Teams zu schicken.
 
 </li>
 
@@ -72,7 +72,7 @@ Der Plan in der Disposition bleibt synchron mit deiner Drehtage-Ansicht. Eine Sz
 </Aside>
 
 <Aside type="tip" title="Vorteile der Daten-Routing">
--   **Cast & Crew-Flüsse**: Talent-Namen, Crew-Rollen und Kontaktdetails fließen strikt aus deinem zentralen Cast & Crew-Hub. Einen Schauspieler zuzuweisen, füllt seine Daten dynamisch ein.
+-   **Cast & Crew-Flüsse**: Talent-Namen, Crew-Rollen und Kontaktdetails fließen strikt aus deinem zentralen Cast & Crew-Hub. Eine neue Dispo befüllt ihren Talent-Bereich aus dem Cast der an diesem Tag geplanten Szenen, in der Reihenfolge der Cast-Nummern – die Pipeline, die mit dem Taggen des Casts im [Drehbuchauszug](/de/breakdown) beginnt. Wiederkehrende Crew wird mit ihren Call-Zeiten vom Vortag übernommen.
 -   **Garantien beim Fehler-Handling**: Jeder ungültige Planengpass zeigt deutliche gelbe/rote UI-Warnungen, die Timeline-Konflikte verhindern.
 -   **Bestätigungs-Portal**: Jeder, der eine Dispositions-E-Mail erhält, bekommt einen token-geschützten Link, der ein CineLog-gebrandetes Portal öffnet, in dem er auf "Bestätigen" tippt, um den Empfang zu quittieren – kein Konto nötig.
 </Aside>

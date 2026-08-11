@@ -1,0 +1,42 @@
+---
+title: CineLog dans le navigateur
+lastUpdated: 2026-08-08
+description: "Utilise CineLog sur app.cinelog.com — même compte, mêmes projets, même synchronisation. Ce que signifie la règle du seul onglet, ce que disent les avertissements de stockage et comment fonctionnent les abonnements en dehors des app stores."
+---
+
+Ce guide suppose [Les bases](/fr/guides/introduction).
+
+CineLog tourne dans le navigateur, sur [app.cinelog.com](https://app.cinelog.com). C'est la même application que celle que tu installes sur bureau et mobile, avec le même compte, les mêmes projets et le même moteur de synchronisation. Les modifications que tu fais dans un navigateur arrivent sur tes autres appareils comme des modifications faites n'importe où ailleurs. Le hors-ligne fonctionne aussi : le navigateur garde une copie locale de tes projets, exactement comme le font les applications natives.
+
+Utilise-le sur une machine où tu ne peux rien installer, comme un poste de travail loué ou l'ordinateur d'un client. Quelques réalités propres au navigateur méritent d'être connues.
+
+## Un seul onglet à la fois
+
+CineLog ne tourne que dans un seul onglet. Si tu en ouvres un deuxième, il affiche à la place un écran sobre : « CineLog est déjà ouvert dans un autre onglet. » Les deux onglets partageraient la même base de données hors-ligne, donc en faire tourner deux les laisserait écraser mutuellement leurs modifications.
+
+Le bouton **Use CineLog here** (utiliser CineLog ici) transfère la session au nouvel onglet, et l'autre onglet s'efface de lui-même. Si l'autre onglet est en plein travail, il peut refuser sur le moment, et l'écran t'explique pourquoi : il est encore en train de téléverser un fichier, d'enregistrer une modification, ou il retient des modifications qu'il ne pourrait pas conserver au rechargement. Laisse-lui un instant et réessaie.
+
+## Fermer l'onglet pendant une sauvegarde
+
+Si tu fermes ou recharges l'onglet alors que des modifications sont encore en cours de synchronisation ou qu'un fichier est en cours de téléversement, le navigateur te demande si tu veux vraiment quitter. Prends cette invite au sérieux pour les téléversements : sur le web, les octets d'un téléversement vivent dans l'onglet, donc un rechargement en plein téléversement ne peut pas être repris. Les modifications coûtent moins cher, parce que tout ce qui est déjà synchronisé est à l'abri sur le serveur.
+
+## Avertissements de stockage
+
+Certaines situations de navigateur ne permettent pas de stocker les données de façon fiable, et CineLog te le dit plutôt que de faire semblant. Il existe deux bandeaux :
+
+- Un rouge : « Les modifications faites dans ce navigateur seront perdues à la fermeture de l'onglet. » Le navigateur a totalement refusé le stockage local, ce qui veut généralement dire une fenêtre privée ou de navigation incognito. Tout ne vit que dans l'onglet, donc garde-le ouvert jusqu'à la fin de la synchronisation.
+- Un orange : « Le stockage de ce navigateur n'est pas fiable. » CineLog peut enregistrer des données, mais le navigateur peut les effacer à tout moment. Le travail synchronisé est à l'abri sur le serveur, les modifications qui attendent de se synchroniser ne le sont pas.
+
+Si tu vois l'un ou l'autre, la solution est la même : utilise Chrome, Edge ou Firefox en dehors d'une fenêtre privée. Dans un navigateur en bonne santé, il n'y a aucun bandeau.
+
+## Les abonnements dans le navigateur
+
+L'application dans le navigateur ne vend pas d'abonnements. La page Abonnement affiche « Les offres sont gérées sur cinelog.com » avec un bouton **See plans** (voir les offres) qui t'emmène sur [cinelog.com/pricing](https://cinelog.com/pricing/). Ton espace de travail bascule sur la nouvelle offre dès que l'achat est finalisé. Un abonnement acheté sur le web se gère aussi sur le web, via **Manage on Web** (gérer sur le Web) sur la même page. Il en va de même pour les applications Windows et Linux, qui n'ont pas d'app store non plus.
+
+## Si ça ne marche pas
+
+*Les deux onglets prétendent que l'autre est ouvert.* L'un des deux est en pleine sauvegarde. Attends quelques secondes et appuie de nouveau sur **Use CineLog here** dans l'onglet que tu veux garder.
+
+*J'ai travaillé hors-ligne dans une fenêtre privée et mes modifications ont disparu.* C'est exactement ce contre quoi le bandeau rouge met en garde : une fenêtre privée ne conserve rien une fois l'onglet fermé. Les modifications qui ont atteint le serveur avant que tu la fermes sont à l'abri.
+
+*Quels navigateurs puis-je utiliser sans risque ?* Chrome, Edge et Firefox, en dehors d'une fenêtre privée. C'est la combinaison que CineLog recommande lui-même dans ses avertissements de stockage. D'autres navigateurs peuvent très bien fonctionner, mais ces trois-là sont ceux dont le stockage hors-ligne est fiable.

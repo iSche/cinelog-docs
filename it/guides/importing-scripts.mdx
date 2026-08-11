@@ -1,0 +1,63 @@
+---
+title: Importare sceneggiature
+lastUpdated: 2026-08-08
+description: "Importa file FDX, Fountain, PDF, TXT e RTF attraverso una schermata di revisione: vedi ogni modifica affiancata, accettala o rifiutala una per una, risolvi i conflitti con il materiale bloccato e adotta i numeri di scena."
+---
+
+Questa guida assume [Le basi](/it/guides/introduction).
+
+CineLog non applica mai un'importazione alla cieca. Analizza il file in memoria, lo confronta con la sceneggiatura che hai aperta e ti mostra ogni differenza prima che qualcosa cambi. Decidi tu cosa entra, riga per riga se vuoi. Conta soprattutto su una sceneggiatura già bloccata e distribuita, ma è anche semplicemente un modo più civile di far entrare una riscrittura.
+
+## Avviare un'importazione
+
+Clicca **Import** nella barra del menu in alto dell'Editor di Sceneggiatura. Porta con sé la scorciatoia `Cmd / Ctrl + I`, che avvia un'importazione ogni volta che la scorciatoia non è impegnata a mettere in corsivo il testo selezionato. Su telefono è l'icona di importazione nella app bar. I formati supportati sono **FDX, Fountain, PDF, TXT e RTF**. Un PDF richiede prima un passaggio in più, una piccola finestra su come viene estratto il testo.
+
+## Importare in un progetto nuovo
+
+Se il progetto contiene ancora la sceneggiatura di partenza intatta, CineLog salta la cerimonia e mostra un'unica finestra con il titolo e la dimensione del file, tipo "46 scenes · 512 lines". **Import** sostituisce la sceneggiatura di partenza in un colpo solo. **Review first** ti porta comunque alla schermata di revisione, dove ogni scena si riduce a una riga con una scelta **Skip / Include**, nel caso tu voglia lasciarne indietro qualcuna.
+
+Nel momento in cui hai digitato anche un solo carattere nella sceneggiatura di partenza, questa smette di contare come intatta e ogni importazione passa dalla revisione completa.
+
+## La schermata di revisione
+
+La schermata di revisione elenca ogni differenza tra il file e la tua sceneggiatura attuale, raggruppata con intestazioni fisse e un contatore progressivo in cima, tipo "58 changes · 4 conflicts · 2 unresolved".
+
+Su una finestra larga ogni riga mostra tre colonne: il tipo di elemento, **In the file** e **In the editor**. Quando entrambi i lati sono una singola riga, vengono evidenziate le parole cambiate, in verde ciò che il file aggiunge e in rosso ciò che l'editor perde. Su finestre strette i due lati si impilano.
+
+Ogni riga porta un controllo **Accept / Reject**. Su una sceneggiatura non bloccata ogni riga parte accettata, e un pulsante **Accept all** sta nella barra in alto. Le righe che segnalano soltanto una scena in una posizione diversa sono informative, perché i cambi di posizione non vengono applicati automaticamente.
+
+**Back to editor** annulla tutta la preparazione. Non è stato ancora applicato nulla.
+
+## Quando la sceneggiatura è bloccata
+
+Le righe che toccano materiale bloccato partono con **nulla selezionato**, e il pulsante di applicazione recita **Resolve N** finché ognuna di esse non ha una decisione. È questo il senso del blocco: le modifiche al materiale già distribuito richiedono un sì umano.
+
+Premere **Resolve N** offre tre vie d'uscita: **Review** ti porta alla prima riga irrisolta, oppure puoi fare **Accept all remaining** / **Reject all remaining** in un colpo solo.
+
+I conflitti bloccati portano un lucchetto e una nota sulla conseguenza, per esempio che accettare una cancellazione segna la scena OMITTED invece di rimuoverla. L'omissione è il modo in cui una sceneggiatura bloccata si libera delle scene mantenendo i numeri. Vedi [Blocco e revisioni](/it/guides/script-lock-and-revisions).
+
+### Importare dentro una revisione
+
+Su una sceneggiatura con le pagine bloccate, la barra in alto aggiunge una destinazione di revisione: avvia un **nuovo** round di revisione con le modifiche, oppure **fondile** in quello corrente. Fondere in un round già distribuito comporta prima un avviso, perché le pagine distribuite non corrisponderebbero più a quelle inviate. Puoi anche saltare avanti a un colore successivo se questa produzione ha già consumato dei colori altrove.
+
+## Adottare i numeri di scena del file
+
+Quando le tue scene sono bloccate e il file porta una numerazione di produzione vera (lettere, salti, buchi invece di un semplice 1, 2, 3), la barra in alto offre un interruttore: **Use the file's scene numbers**. Delle righe banner anticipano il risultato, tipo "Scene 12 will be renumbered to 14".
+
+Poiché rinumerare una sceneggiatura bloccata rompe ogni ordine del giorno e ogni piano di lavorazione che faceva riferimento ai vecchi numeri, CineLog lo conferma separatamente e in termini espliciti. Nessuna scena viene eliminata, le scene omesse mantengono le loro lapidi, cambiano solo i numeri. Questa è anche la via ufficiale per rinumerare una sceneggiatura bloccata, dal momento che lo sblocco non esiste.
+
+## Applicare
+
+Il pulsante principale applica le tue decisioni: **Import** su un progetto nuovo, **Apply** altrimenti. Ricevi un messaggio di esito semplice, tipo "Import applied — 12 changes", oppure "Nothing applied — every change was rejected" se hai rifiutato tutto.
+
+Le importazioni passano dalla pipeline di editing dell'editor stesso, quindi i tag dello spoglio, le pagine bloccate e la cronologia delle scene sopravvivono a un'importazione invece di restare orfani.
+
+## Se non funziona
+
+*"Cannot import" con una lista di formati.* L'estensione del file non è una dei cinque formati supportati. Esporta in FDX o Fountain dall'altro strumento e riprova.
+
+*"This file is identical to the current script."* Non c'è nulla da rivedere. Il messaggio è tutto qui.
+
+*Il pulsante Apply è fermo su "Resolve N".* N righe che toccano materiale bloccato non hanno ancora né Accept né Reject. Usa **Resolve N** → **Review** per saltare alla prima.
+
+*Non vedo "Use the file's scene numbers".* Appare solo quando le tue scene sono bloccate e il file porta una numerazione in stile produzione. Un file numerato da 1 a n in una sequenza semplice non ha nulla da adottare.

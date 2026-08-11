@@ -1,21 +1,25 @@
 ---
 title: "Casting et Équipe"
-lastUpdated: 2026-06-25
-description: "Gère ton équipe de production cinématographique avec rôles, départements, contacts d'espace de travail et contrôle d'accès basé sur les rôles. S'intègre directement aux feuilles de service."
+lastUpdated: 2026-08-08
+description: "Gère ton équipe de production cinématographique avec rôles, départements, rôles personnalisés, numéros de casting, liens vers les personnages, contacts d'espace de travail et contrôle d'accès basé sur les rôles. S'intègre directement aux feuilles de service."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-La fonctionnalité Casting et Équipe de CineLog est conçue pour gérer la collaboration d'équipe en toute sécurité. Organise ton équipe en utilisant des hiérarchies strictes aux normes de l'industrie et contrôle dynamiquement qui a accès à tes données sensibles de projet.
+La fonctionnalité Casting et Équipe de CineLog est conçue pour gérer la collaboration d'équipe en toute sécurité. Organise ton équipe selon la hiérarchie aux normes de l'industrie, ajoute tes propres rôles personnalisés quand la liste standard ne suffit pas, numérote ton casting pour les feuilles de service et contrôle qui a accès aux données de ton projet.
 
 ## Fonctionnalités principales
 
 <CardGrid>
 <Card title="Hiérarchie aux normes de l'industrie">
-  Organise tous les membres en une structure rigide à 3 niveaux (**Groupe → Département → Rôle**) reflétant les productions de grands studios.
+  Organise tous les membres en une structure à 3 niveaux (**Groupe → Département → Rôle**) qui reflète la façon dont les productions recrutent réellement. Quand la liste standard ne contient pas le rôle dont tu as besoin, crée-en un personnalisé — il devient disponible dans tout ton espace de travail.
 </Card>
 
 <Card title="Planification intelligente des rôles">
-  Commence à déléguer des **emplacements vacants** non assignés pendant la préproduction sans avoir besoin de savoir exactement qui tu embauches.
+  Commence à déléguer des **emplacements vacants** non assignés pendant la préproduction sans avoir besoin de savoir exactement qui tu embauches. Le [Dépouillement du Scénario](/fr/breakdown) peut créer automatiquement des emplacements Talent numérotés pour tes personnages.
+</Card>
+
+<Card title="Numéros de casting et personnages">
+  Chaque emplacement Talent porte un numéro de casting et peut être relié à un personnage issu du dépouillement. Les numéros s'impriment sur les feuilles de service, et faire glisser les lignes du casting renumérote l'ensemble du casting dans l'ordre.
 </Card>
 
 <Card title="Contrôle d'accès basé sur les rôles">
@@ -40,21 +44,30 @@ Gérer une équipe en croissance est chaotique. En établissant une source de v�
 
 **Planifier ton équipe (emplacements vacants)**
 
-Tu n'as pas besoin d'un seul contact dans ton rolodex pour commencer le recrutement. Ajoute des rôles standard de l'industrie (par exemple « Chef machiniste ») pour créer un **emplacement vacant**. Une fois que tu embauches quelqu'un, il suffit d'assigner un contact existant ou nouvellement invité à l'emplacement. Le rôle que tu as assigné est alors mémorisé sur ce contact pour les projets futurs.
+Tu n'as pas besoin d'un seul contact dans ton rolodex pour commencer le recrutement. Ajoute des rôles standard de l'industrie (par exemple « Key Grip ») pour créer un **emplacement vacant**. Une fois que tu embauches quelqu'un, il suffit d'assigner un contact existant ou nouvellement invité à l'emplacement. Le rôle que tu as assigné est alors mémorisé sur ce contact pour les projets futurs.
+
+Si le rôle dont tu as besoin n'est pas dans la liste, tape-le dans le champ de recherche de rôle et choisis **Create "…" as a custom role**. Les rôles personnalisés appartiennent à ton espace de travail : tous les projets qu'il contient peuvent donc les utiliser, et ils se regroupent dans leur propre département **Custom** à la fin du tableau. Voir [Gérer casting et équipe](/fr/guides/managing-cast-crew) pour les détails.
+
+</li>
+<li>
+
+**Numéros de casting et personnages**
+
+Les emplacements Talent portent un **numéro de casting** — celui qu'utilisent la feuille de service et le Day Out of Days (le tableau de présence des comédiens). Le [Dépouillement du Scénario](/fr/breakdown) crée automatiquement des emplacements numérotés pour tes personnages, ou tu définis les numéros à la main dans la section Character de l'emplacement, ce qui relie aussi l'emplacement à un personnage (« Jane Doe as MARIA »). Appuie longuement sur une ligne du casting et fais-la glisser pour la réorganiser — tout le casting se renumérote selon le nouvel ordre, Talent d'abord, puis Background.
 
 </li>
 <li>
 
 **Deux vues des contacts**
 
-Tu travailles sur un téléphone ou un grand écran ? Choisis ta vue. La **vue Casting et Équipe** te donne un tableau de type Kanban représentant les emplacements de département (par exemple, Caméra -> Machinerie -> Chef machiniste). La **vue Contacts** agit comme un rolodex plat et simple de tes contacts, nativement étendu à tout ton espace de travail.
+Tu travailles sur un téléphone ou un grand écran ? Choisis ta vue. La **vue Casting et Équipe** te donne un tableau de type Kanban représentant les emplacements de département (par exemple, Camera -> Grip -> Key Grip). La **vue Contacts** agit comme un rolodex plat et simple de tes contacts, nativement étendu à tout ton espace de travail.
 
 </li>
 <li>
 
 **Accès au projet granulaire et invitations**
 
-Assigner un contact à un rôle de projet lui envoie automatiquement une invitation par e-mail, réglant son accès sur en attente jusqu'à ce qu'il accepte. Il n'obtient que les permissions accordées par son rôle, et CineLog résout intelligemment les remplacements individuels par rapport aux valeurs par défaut du département afin que tu puisses ajuster en toute confiance la portée d'un individu. Utilise le **bouton d'intention** pour désactiver l'accès des contacts qui ne doivent rester que sur les feuilles de service.
+Assigner un contact à un rôle de projet lui envoie automatiquement une invitation par e-mail, réglant son accès sur pending jusqu'à ce qu'il accepte. Il n'obtient que les permissions accordées par son rôle, et CineLog résout intelligemment les remplacements individuels par rapport aux valeurs par défaut du département afin que tu puisses ajuster en toute confiance la portée d'un individu. Utilise l'**Intent Toggle** (bouton d'intention d'accès) pour désactiver l'accès des contacts qui ne doivent rester que sur les feuilles de service.
 
 </li>
 

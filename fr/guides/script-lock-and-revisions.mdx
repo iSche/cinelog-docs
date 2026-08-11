@@ -1,0 +1,79 @@
+---
+title: Verrouillage et révisions
+lastUpdated: 2026-08-08
+description: "Verrouille les numéros de scène, publie des versions et suis les séries de révisions colorées — astérisques sur les lignes modifiées, historique des révisions sur la page de titre, scènes omises et export des pages révisées uniquement."
+---
+
+Ce guide suppose que tu as lu [Les bases](/fr/guides/introduction) et le guide [Écrire et formater](/fr/guides/writing-formatting-scripts).
+
+Dès qu'un scénario part à l'équipe, il cesse d'être une version privée pour devenir un document de référence. On construit le plan de travail sur ses numéros de scène, on annote ses pages. À partir de ce moment, les numéros ne doivent plus bouger et chaque changement doit se voir. C'est ce que gère le bouton **Lock & Revisions** (verrouillage et révisions) de la barre de menu supérieure de l'éditeur. Il fonctionne en deux étapes, et tu n'es pas obligé de les franchir toutes les deux d'un coup.
+
+## Étape 1 — Verrouiller les numéros de scène
+
+Ouvre le menu Lock & Revisions et choisis **Lock scene numbers…** (verrouiller les numéros de scène). La boîte de dialogue est explicite : les numéros de toutes tes scènes se figent pour le dépouillement et le plan de travail. À partir de là :
+
+- Une nouvelle scène insérée entre 78 et 79 devient **78A**, pour que rien ne soit renuméroté en aval.
+- Supprimer le contenu d'une scène la marque **OMITTED** au lieu de refermer le trou. Le numéro reste.
+- Les pages continuent de s'écouler librement. Tu peux continuer à écrire, et la pagination se comporte exactement comme avant.
+
+C'est le verrouillage que le [Dépouillement du Scénario](/fr/breakdown) réclame à l'entrée, et c'est tout ce dont la plupart des projets ont besoin jusqu'à la diffusion des pages.
+
+Il n'existe pas de déverrouillage. C'est délibéré : en production, renuméroter après diffusion est une réparation, pas un geste courant. Si tu as vraiment besoin d'autres numéros, l'import d'un fichier portant sa propre numérotation de production te permet de l'adopter, avec une confirmation qui en détaille les conséquences. Voir [Importer des scénarios](/fr/guides/importing-scripts).
+
+## Étape 2 — Verrouiller les pages
+
+Quand le scénario est sur le point d'être diffusé, choisis **Lock pages…** (verrouiller les pages). Cela fige la pagination sur les pages actuelles et publie la version. Si tu as sauté l'étape 1, cette action verrouille aussi les numéros de scène.
+
+La boîte de dialogue comporte une ligne **Issue as** (publier en) avec neuf pastilles de couleur. Laisse-la sur **White** sauf si cette production a déjà diffusé des révisions colorées faites ailleurs. Dans ce cas, reprends à la première couleur non utilisée.
+
+Après le verrouillage des pages :
+
+- Les sauts de page restent là où ils ont été publiés. Le nouveau matériel déborde sur des **pages lettrées** au lieu de tout faire recouler, parce que la page 40 de l'équipe doit rester la page 40.
+- Ta première modification déclenche une invite : **Edit the White Draft?** (modifier la version Blanche ?) La version a été diffusée, donc la prochaine série de changements ouvre normalement une nouvelle couleur. Choisis **Start Blue Revisions** (démarrer les révisions Bleu) pour faire les choses dans les règles, ou **Edit anyway** (modifier quand même) si tu corriges une coquille avant que personne ne l'ait vue. Une bizarrerie à connaître : la frappe qui a déclenché l'invite ne s'inscrit pas, retape donc ce caractère après ton choix.
+
+## Séries de révisions
+
+**New revision…** (nouvelle révision), dans le menu Lock & Revisions, démarre la série suivante. Les couleurs suivent l'ordre de l'industrie :
+
+**White, Blue, Pink, Yellow, Green, Goldenrod, Buff, Salmon, Cherry**. Après Cherry, le cycle recommence en Double Blue, Double Pink, et ainsi de suite. Tu peux sauter en avant si cette production a déjà brûlé des couleurs ailleurs, et tu peux joindre une note à la série.
+
+Pendant qu'une série est ouverte, voici ce que tu vois :
+
+- **Des astérisques dans la marge de droite**, un par ligne modifiée, exactement là où un lecteur de production les attend.
+- **Une mention dans le coin supérieur droit** de chaque page révisée — la couleur, la date et le numéro de page, comme `BLUE 1/29/26 - 21.`
+- **Un lavis de la couleur de révision** sur les cartes de page touchées par la série. Démarrer une nouvelle série ramène les pages de la série précédente au papier blanc à l'écran, car ce lavis signifie « modifié dans la série en cours ».
+- **Le bouton de verrouillage lui-même** prend la couleur et le nom court de la série, comme « Blue » ou « Blue 2 ».
+- **La page de titre se dote d'un historique des révisions**, une ligne par série publiée, comme « Blue: revised 7/24/26 ».
+
+Les dates suivent ta préférence de format de date, réglée dans le menu **Display** (affichage) de l'éditeur.
+
+### Les scènes qui méritent un second regard
+
+Quand le contenu d'une scène déjà diffusée change, CineLog la signale et place une marque à côté de son numéro de scène. Le signalement ne s'efface jamais tout seul, parce que tout l'intérêt est qu'une personne confirme le changement. Une fois que tu as regardé, fais un clic droit sur la scène et choisis **Mark scene reviewed** (marquer la scène comme relue).
+
+## Scènes omises
+
+Avec les numéros de scène verrouillés, on retire une scène en l'omettant. Fais un clic droit à l'intérieur de la scène et choisis **Omit scene** (omettre la scène), ou utilise la même entrée dans le menu Lock & Revisions. Le contenu de la scène se réduit à une seule ligne grisée portant la mention **OMITTED**, et le numéro reste dans la marge. Toutes les scènes suivantes gardent leur numéro, et c'est précisément le but.
+
+Rien n'est supprimé. **Restore scene** (restaurer la scène) ramène le contenu exactement tel qu'il était.
+
+Deux gestes voisins :
+
+- Pour ajouter une scène juste après une scène omise, appuie sur Return sur la ligne OMITTED (ou au tout début de l'en-tête suivant). CineLog propose d'ajouter une scène lettrée entre les deux, avec un en-tête provisoire que tu remplaces en tapant.
+- Sur un scénario aux pages verrouillées, une page dont tout le contenu a disparu s'affiche en **PAGE 7 OMITTED**, conservant sa place dans le compte.
+
+Une scène omise ne peut pas être éditée tant que tu ne l'as pas restaurée, et l'en-tête d'une scène verrouillée ne peut pas être supprimé. L'éditeur te renvoie vers Omit Scene. Les scènes que tu ajoutes après le verrouillage restent librement supprimables tant qu'elles n'ont pas été diffusées dans une révision.
+
+## Diffuser les pages révisées
+
+Quand une série est terminée et que les pages sont verrouillées, la [boîte de dialogue d'export](/fr/guides/writing-formatting-scripts#exporter) gagne deux options PDF : **Revised pages only** (pages révisées uniquement) exporte la page de titre plus les pages touchées par la série, c'est-à-dire l'ensemble qu'une production diffuse réellement. **Revision paper color** (couleur du papier de révision) remplit chaque page révisée avec sa couleur. Laisse cette option désactivée quand tu imprimes sur du vrai papier de couleur.
+
+## Si ça ne marche pas
+
+*Je veux déverrouiller le scénario.* Il n'y a pas de déverrouillage, c'est voulu. Omets ce qui ne doit pas être tourné, révise ce qui a changé, ou adopte de nouveaux numéros via un import.
+
+*Le menu m'avertit que des numéros de scène ont perdu leur en-tête.* Tu as supprimé un en-tête que le registre suit toujours. Annule la suppression, ou omets la scène proprement.
+
+*J'ai choisi « Start Blue Revisions » dans l'invite de modification et mon premier caractère manque.* L'invite consomme la frappe qui l'a déclenchée. Retape le caractère.
+
+*J'ai verrouillé les pages par erreur.* Rien n'est cassé. L'écriture continue normalement et le nouveau matériel s'écoule sur des pages lettrées. Mais il n'y a pas de retour à une pagination libre : traite donc Lock pages comme le moment de la diffusion.

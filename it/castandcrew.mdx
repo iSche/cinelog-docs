@@ -1,21 +1,25 @@
 ---
 title: "Cast & Troupe"
-lastUpdated: 2026-06-25
-description: "Gestisci il tuo team di produzione cinematografica con ruoli, dipartimenti, contatti del workspace e controllo degli accessi basato sui ruoli. Si integra direttamente con gli ordini del giorno."
+lastUpdated: 2026-08-08
+description: "Gestisci il tuo team di produzione cinematografica con ruoli, dipartimenti, ruoli personalizzati, numeri di cast, collegamenti ai personaggi, contatti del workspace e controllo degli accessi basato sui ruoli. Si integra direttamente con gli ordini del giorno."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-La funzionalità Cast & Troupe di CineLog è progettata per gestire la collaborazione del team in modo sicuro. Organizza il tuo roster utilizzando rigorose gerarchie standard del settore e controlla dinamicamente chi ha accesso ai dati sensibili del tuo progetto.
+La funzionalità Cast & Troupe di CineLog è progettata per gestire la collaborazione del team in modo sicuro. Organizza il tuo roster nella gerarchia standard del settore, aggiungi ruoli personalizzati tuoi dove la lista standard non basta, numera il tuo cast per gli ordini del giorno e controlla chi ha accesso al tuo progetto.
 
 ## Funzionalità principali
 
 <CardGrid>
 <Card title="Gerarchia standard del settore">
-  Organizza tutti i membri in una rigida struttura a 3 livelli (**Gruppo → Dipartimento → Ruolo**) che riflette le produzioni dei grandi studios.
+  Organizza tutti i membri in una struttura a 3 livelli (**Gruppo → Dipartimento → Ruolo**) che riflette il modo in cui le produzioni vere compongono la troupe. Quando la lista standard non ha il ruolo che ti serve, creane uno personalizzato — diventa disponibile in tutto il tuo workspace.
 </Card>
 
 <Card title="Pianificazione intelligente dei ruoli">
-  Inizia a delegare **slot vacanti** non assegnati durante la pre-produzione senza dover sapere esattamente chi assumerai.
+  Inizia a delegare **slot vacanti** non assegnati durante la pre-produzione senza dover sapere esattamente chi assumerai. Lo [Spoglio della Sceneggiatura](/it/breakdown) può creare automaticamente slot Talent numerati per i tuoi personaggi.
+</Card>
+
+<Card title="Numeri di cast & personaggi">
+  Ogni slot Talent porta un numero di cast e può essere collegato a un personaggio dello spoglio. I numeri vengono stampati sugli ordini del giorno, e trascinando le righe del cast si rinumera l'intero cast in ordine.
 </Card>
 
 <Card title="Controllo accessi basato sui ruoli">
@@ -41,6 +45,15 @@ Gestire una troupe in crescita è caotico. Stabilendo una fonte di verità per R
 **Pianifica la tua troupe (slot vacanti)**
 
 Non ti serve nemmeno un contatto nella rolodex per iniziare a fare casting. Aggiungi ruoli standard del settore (es. "Key Grip") per creare uno **slot vacante**. Una volta che assumi qualcuno, basta assegnare un contatto esistente o appena invitato allo slot. Il ruolo che hai assegnato viene quindi memorizzato su quel contatto per i progetti futuri.
+
+Se il ruolo che ti serve non è nella lista, digitalo nel campo di ricerca dei ruoli e scegli **Create "…" as a custom role**. I ruoli personalizzati appartengono al tuo workspace, quindi ogni progetto al suo interno può usarli, e si raccolgono in un dipartimento **Custom** tutto loro in fondo alla board. Vedi [Gestione di Cast e Troupe](/it/guides/managing-cast-crew) per i dettagli.
+
+</li>
+<li>
+
+**Numeri di cast & personaggi**
+
+Gli slot Talent portano un **numero di cast** — il numero che usano l'ordine del giorno e il Day Out of Days. Lo [Spoglio della Sceneggiatura](/it/breakdown) crea automaticamente slot numerati per i tuoi personaggi, oppure imposti i numeri a mano nella sezione Character dello slot, che collega anche lo slot a un personaggio ("Jane Doe as MARIA"). Tieni premuta una riga del cast e trascinala per riordinare — l'intero cast si rinumera secondo il nuovo ordine, prima Talent, poi Background.
 
 </li>
 <li>

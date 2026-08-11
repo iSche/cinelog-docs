@@ -1,11 +1,11 @@
 ---
 title: Logiciel de Scénario
-lastUpdated: 2026-07-11
-description: "Édition professionnelle de scénarios avec formatage Fountain en temps réel, import multi-format, analyses en direct et intégration au découpage technique."
+lastUpdated: 2026-08-08
+description: "Édition professionnelle de scénarios sur de vraies pages US Letter, avec formatage Fountain en temps réel, imports vérifiés, verrouillage du scénario et révisions couleur, étiquetage du dépouillement, analyses en direct et intégration au découpage technique."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-Le Logiciel de Scénario de CineLog est un système d'édition de scénario professionnel conçu pour les flux de travail modernes de production cinématographique. Importe des scénarios depuis plusieurs formats, édite avec un support en temps réel de la syntaxe Fountain, suis les analyses et intègre-toi de manière transparente à ton découpage technique — le tout avec un formatage aux normes de l'industrie et des fonctionnalités collaboratives.
+Le Logiciel de Scénario de CineLog est un système d'édition de scénario professionnel conçu pour les flux de travail modernes de production cinématographique. Tu écris sur de vraies pages US Letter qui se coupent exactement là où le scénario imprimé se coupe, tu importes via une vérification modification par modification, tu verrouilles les numéros de scène et suis des séries de révisions couleur, tu étiquettes le [dépouillement](/fr/breakdown) directement sur la page, et tu remplis le découpage technique depuis le scénario.
 
 ## Fonctionnalités principales
 
@@ -18,12 +18,24 @@ Le Logiciel de Scénario de CineLog est un système d'édition de scénario prof
   Formatage en direct pendant que tu tapes. Classification automatique des éléments pour les en-têtes de scène, les noms de personnages, les dialogues et l'action avec des raccourcis manuels pour un contrôle précis.
 </Card>
 
-<Card title="Import multi-format">
-  Importe des scénarios depuis les formats **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT** et **RTF** avec une analyse intelligente et la préservation du formatage.
+<Card title="Vraie mise en page paginée">
+  L'éditeur restitue de vraies pages US Letter, de 54 lignes chacune, où les paragraphes se coupent de part et d'autre de la jointure sous **(MORE)** et **(CONT'D)**. Les pages à l'écran, le compteur de pages et le PDF exporté sont les mêmes pages. Voir [Écrire et formater](/fr/guides/writing-formatting-scripts).
+</Card>
+
+<Card title="Import vérifié">
+  Importe des fichiers **Final Draft (.fdx)**, **Fountain**, **PDF**, **TXT** et **RTF** via un écran de vérification qui montre chaque modification avant qu'elle ne soit appliquée. Voir [Importer des scénarios](/fr/guides/importing-scripts).
+</Card>
+
+<Card title="Verrouillage et révisions">
+  Verrouille les numéros de scène, publie des versions et suis des séries de révisions couleur avec lignes marquées d'un astérisque, pages teintées et export des pages révisées uniquement. Voir [Verrouillage et révisions](/fr/guides/script-lock-and-revisions).
+</Card>
+
+<Card title="Dépouillement du Scénario">
+  Étiquette le casting, les accessoires, les costumes et neuf autres catégories directement sur la page du scénario. Le casting alimente Casting et Équipe puis les feuilles de service. Voir [Dépouillement du Scénario](/fr/breakdown).
 </Card>
 
 <Card title="Analyses en direct">
-  Analyses de scénario en temps réel. Suis le nombre estimé de pages, le nombre de scènes, le nombre de lignes, le nombre de mots et le nombre de caractères pendant que tu écris.
+  Une barre latérale de statistiques suit le nombre de pages en huitièmes de scénario, ainsi que les scènes, les lignes, les mots et les caractères — et la taille de ce que tu as sélectionné.
 </Card>
 
 <Card title="Intégration au Découpage Technique">
@@ -77,7 +89,7 @@ Positionnement précis au caractère près avec police Courier Prime 12 points, 
 
 ### Import multi-format de scénarios
 
-Besoin d'importer du travail depuis une ancienne application ? Clique sur le bouton **Importer** dans la barre de menu supérieure du Logiciel de Scénario pour importer et convertir un scénario existant. Notre analyseur universel extrait intelligemment les scènes, personnages et structures de dialogue de ton document original, en appliquant automatiquement le formatage Fountain standard.
+Besoin d'importer du travail depuis une autre application ? Clique sur le bouton **Import** dans la barre de menu supérieure du Logiciel de Scénario. Le fichier est analysé et comparé à ton scénario actuel, et un écran de vérification montre chaque modification côte à côte avant que quoi que ce soit ne soit appliqué — tu les acceptes ou les refuses une par une. Sur un scénario verrouillé, les modifications qui touchent du matériel déjà publié attendent ta décision explicite. Le déroulé complet est dans [Importer des scénarios](/fr/guides/importing-scripts).
 
 <CardGrid>
 <Card title="Final Draft (.fdx)">
@@ -89,7 +101,7 @@ Besoin d'importer du travail depuis une ancienne application ? Clique sur le bou
 </Card>
 
 <Card title="Scénarios PDF">
-  Extraction de texte avancée avec préservation de la mise en page, utilisant des bibliothèques spécifiques à la plateforme et support Unicode.
+  Extraction de texte depuis les scénarios PDF, avec une étape de configuration sur la façon dont le texte est récupéré.
 </Card>
 
 <Card title="Texte brut (.txt)">
@@ -103,23 +115,23 @@ Besoin d'importer du travail depuis une ancienne application ? Clique sur le bou
 
 ### Analyses de scénario en temps réel
 
-Métriques professionnelles de scénario mises à jour en direct pendant que tu édites, avec des calculs aux normes de l'industrie pour une planification de production précise.
+Une barre latérale de statistiques dans l'éditeur de bureau se met à jour en direct pendant que tu écris. Elle affiche cinq métriques : Pages, Scènes, Lignes, Mots et Caractères.
 
 <CardGrid>
-<Card title="Estimation des pages">
-  Formules de calcul de pages aux normes de l'industrie avec mises à jour en temps réel et précision professionnelle.
+<Card title="Nombre de pages en huitièmes">
+  Le nombre de pages se lit en huitièmes de scénario, par exemple 12 3/8 — l'unité que parlent les plans de travail. Il provient de la même pagination que celle rendue par l'éditeur et imprimée dans le PDF : c'est donc le nombre réel, pas une estimation.
 </Card>
 
-<Card title="Comptage de scènes et personnages">
-  Suivi en direct des scènes, des personnages uniques et de la distribution des dialogues.
+<Card title="Scènes et lignes">
+  Comptage en direct des scènes du document et du nombre total de lignes.
 </Card>
 
-<Card title="Analyse des éléments">
-  Compte et analyse les blocs d'action, les lignes de dialogue, les transitions et autres éléments du scénario pour la révision structurelle.
+<Card title="Mots et caractères">
+  Totaux en direct du nombre de mots et du nombre de caractères pendant que tu tapes.
 </Card>
 
-<Card title="Métriques de mots et caractères">
-  Métriques d'écriture professionnelles incluant le nombre total de mots et le nombre de caractères.
+<Card title="Statistiques de sélection">
+  Sélectionne n'importe quel passage du scénario et la barre latérale ajoute le nombre de caractères de la sélection et sa longueur en huitièmes de page — la réponse rapide à « quelle est la longueur de cette scène ».
 </Card>
 </CardGrid>
 

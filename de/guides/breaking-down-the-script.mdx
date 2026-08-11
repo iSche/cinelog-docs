@@ -1,0 +1,87 @@
+---
+title: Drehbuchauszug erstellen
+lastUpdated: 2026-08-10
+description: "Ein Workflow-Guide zum Drehbuchauszug: Szenennummern sperren, Elemente auf der Seite taggen, CineLog deinen Cast finden lassen, die ungeschriebenen Anforderungen aufspüren und jeder Abteilung ihre Liste geben."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Jahrzehntelang bedeutete ein Drehbuchauszug: ein gedrucktes Drehbuch, ein Lineal und eine Schachtel Buntstifte. Du hast jede Zeile gelesen, und jedes Mal, wenn das Drehbuch eine Requisite, ein Kostüm, ein Fahrzeug oder eine Person erwähnte, hast du es in der Farbe dieser Abteilung markiert. Der Drehbuchauszug von CineLog ist dasselbe Handwerk auf derselben Seite. Du wählst die Wörter aus, du suchst eine Kategorie, und die Markierungen bleiben genau dort im Drehbuch, während sich die Elemente zu einer Liste sammeln, die du jeder Abteilung in die Hand geben kannst.
+
+Dieser Guide geht den Workflow vom fertigen Drehbuch bis zu exportierten Auszugsblättern durch. Die vollständige Referenz zu jedem Bedienelement steht auf der Seite [Drehbuchauszug](/de/breakdown). Wenn du noch nie ein Drehbuch gesperrt hast, lies zuerst [Sperre & Revisionen](/de/guides/script-lock-and-revisions), denn der Auszug beginnt mit einer Sperre.
+
+## Fang mit einem gesperrten Drehbuch an
+
+Öffne dein Drehbuch und drücke **Breakdown** in der oberen Menüleiste des Editors. Auf dem Smartphone liegt er im **More**-Sheet, direkt unter Drehbuch-Editor.
+
+Wenn du ihn zum ersten Mal öffnest, bittet CineLog dich, deine Szenennummern zu sperren. Sag ja, denn ein Auszug heftet jedes Element an eine Szenennummer, und diese Nummern müssen aufhören, sich zu bewegen. Ein Auszug, der sagt "der Revolver ist in Szene 12", ist an dem Tag wertlos, an dem Szene 12 zu Szene 13 wird. Ab der Sperre bekommen neue Szenen Buchstabennummern wie 78A, und entfernte Szenen werden zu OMITTED, statt zu verschwinden. Deine Seiten fließen weiter und du kannst weiterschreiben. Nichts an der Sperre hält das Schreiben auf.
+
+## Tagge dein erstes Element
+
+Nehmen wir ein durchgehendes Beispiel für diesen Guide. Sagen wir, wir ziehen einen Kurzfilm über einen Fotografen namens John aus, und Szene 4 lautet: "John reißt den Revolver aus der Schublade."
+
+Wähle das Wort "Revolver" per Ziehen aus, oder mach einfach einen Doppelklick darauf. Der Tag-Editor öffnet sich von selbst, sobald die Auswahl steht. Auf Touch-Geräten wählst du den Text aus und drückst **Tag** in der kleinen Werkzeugleiste, die darüber erscheint.
+
+Der Editor zeigt ein Raster aus zwölf Kategorien, ein **Element**-Feld, das mit deinem ausgewählten Text vorbelegt ist, und ein **Qty**-Feld (Menge). Wähle **Props** (Requisiten) und drücke **Tag**. Das ist der ganze Zug. Das Wort bleibt auf der Seite violett unterstrichen, und "Revolver" existiert nun als Element in deinem Projekt.
+
+Zwei Regeln zu Auswahlen: Sie müssen innerhalb einer einzelnen Zeile bleiben und innerhalb einer gesperrten Szene liegen – die Titelseite lässt sich also nicht taggen.
+
+Wenn du die Tastatur magst, kommst du hier richtig schnell voran: Die Tasten `1` bis `9` wählen die ersten neun Kategorien, `Tab` springt mit ausgewähltem Text ins Element-Feld, und `Enter` speichert. Eine ganze Szene zu taggen findet seinen Rhythmus aus Auswählen, Zahl, Enter.
+
+## Ein Element, viele Szenen
+
+Sagen wir, der Revolver kommt in Szene 19 wieder vor. Tagge ihn auch dort. CineLog sieht, dass es unter Props bereits ein Element namens "Revolver" gibt, und sagt dir, dass es das bestehende verwendet. Du bekommst also einen Revolver, der in zwei Szenen vorkommt, nicht zwei Revolver – und die Liste des Requisiteurs bleibt ehrlich.
+
+Nachdem du etwas getaggt hast, sucht CineLog außerdem dieselben Wörter in anderen Szenen und bietet sie alle in einem Dialog an. Jeder Treffer zeigt die Szene und einen Ausschnitt, exakte Treffer sind vorab angehakt, und mit **Tag N** übernimmst du sie alle auf einmal. Diesen Durchlauf kannst du jederzeit über das Menü des Elements mit **Find similar…** erneut starten. Wenn du einen Vorschlag ablehnst, merkt CineLog sich das Nein und bietet diese Stelle nicht noch einmal an.
+
+## Die Kategorien sind die Abteilungen
+
+Die zwölf Kategorien bilden die Menschen ab, die deine Blätter lesen werden: Cast, Stunts, zwei Arten von Extras, Special Effects, Props, Vehicles & Animals, Sound & Music, Wardrobe, Makeup & Hair, Special Equipment und Production Notes als Auffangkorb.
+
+Die Markierungen auf der Seite folgen den klassischen Papierkonventionen. Die meisten Kategorien unterstreichen in ihrer Farbe, Wardrobe bekommt einen Kreis am Rand, Makeup & Hair bekommt Sternchen um die Wörter, und Special Equipment bekommt einen Kasten. Ein Crew-Mitglied, das gelernt hat, Drehbücher von Hand auszuziehen, liest deine Seiten ohne Legende, denn das sind dieselben Markierungen, die ihre Stifte gemacht haben.
+
+<Aside type="note">
+Die zwölf Kategorien sind in dieser Version fest. Wenn etwas nirgendwo passt, leg es unter Production Notes ab – ein getaggtes Element in der falschen Schublade ist immer noch besser als ein ungetaggtes in gar keiner.
+</Aside>
+
+## Der Cast findet sich selbst
+
+Cast ist die eine Kategorie, die du größtenteils nicht von Hand taggst.
+
+Immer wenn du Szenen sperrst, Seiten sperrst, eine Revision startest oder importierst, taggt CineLog in jeder Szene die erste Sprecherzeile jeder Figur. Diese Tags kommen bestätigt an, denn eine Sprecherzeile ist keine Vermutung. Wenn der Name einer Figur in Action-Zeilen auftaucht, taggt CineLog das auch, markiert es aber mit einer gepunkteten Unterstreichung als "wartet auf Prüfung" – denn "JOHN" in einer Regieanweisung könnte ein anderer John sein. Entferne die falschen Tags, und sie bleiben weg. Die richtigen brauchen keine Aktion von dir, sie zählen bereits.
+
+CineLog führt ähnlich aussehende Namen nie von selbst zusammen. MARIA und MARIE bleiben getrennt, bis du sie zusammenführst, denn nur du weißt, ob das ein Tippfehler oder zwei Personen sind.
+
+Jede erkannte Figur bekommt außerdem einen nummerierten **Talent-Slot** in [Cast & Crew](/de/castandcrew). CineLog rät die Rolle daraus, wie viel die Figur arbeitet. Eine Figur in einem Drittel deiner Szenen oder mehr kommt als Principal herein, drei Szenen oder mehr als Supporting, der Rest als Day Player. Alles davon kannst du hinterher ändern, und wenn du deine Cast-Liste bereits von Hand pflegst, merkt CineLog das und lässt dein Ensemble in Ruhe.
+
+## Spür die ungeschriebenen Anforderungen auf
+
+Hier hört ein Drehbuchauszug auf, Schreibtischarbeit zu sein, und wird zur Detektivarbeit. Das Drehbuch listet nie alles auf, was es braucht. Es deutet an.
+
+Sagen wir, eine Szene lautet: "Eine Lieferantin kommt mit den Einkäufen." Die Drehbuchautorin hat eine Person geschrieben. Die Produktion braucht die Person, die Einkaufstüten, die sie trägt, die Uniform, die sie anhat, und vielleicht den Lieferwagen, der hinter ihr parkt. Nichts davon sind Wörter, die du auf der Seite auswählen kannst.
+
+Genau dafür ist **Add new…** am Ende jedes Kategorieabschnitts da. Es taggt eine ganze Szene, ohne Text zu unterstreichen, sodass auch die impliziten Dinge mitgezählt werden. Eine Szene EXT. STRASSE – NACHT, die offensichtlich eine Regenanlage braucht, bekommt sie auf dieselbe Weise. Ein guter Durchgang hier ist das, was einen Auszug, der den Kontakt mit dem Dreh übersteht, von einem unterscheidet, der es nicht tut – geh also Szene für Szene durch und frag dich immer wieder, was die Seite stillschweigend voraussetzt.
+
+## Halte die Liste sauber
+
+Das rechte Panel (die Seite **Tags** auf dem Smartphone) ist deine Elementliste, gruppiert nach Kategorie. Ein Tipp auf eine Zeile springt im Drehbuch zum nächsten Vorkommen, und die Pfeile gehen alle durch.
+
+Das `⋯`-Menü jedes Elements trägt die Aufräumarbeiten: **Edit…**, **Find similar…**, **Merge into…**, **Archive** und **Delete…**. Merge verschiebt jeden Tag auf das Element, das du auswählst – so werden MARIA und MARIE zu einer Person. Archive nimmt ein Element aus jeder Szene heraus, behält es aber, die sicherere Wahl, wenn du unsicher bist. Delete ist für Dinge, die nie dazugehört haben.
+
+Zeilen können Warnungen tragen, jede in ihrem Tooltip erklärt: Tags, die auf Prüfung warten, Tags in einer Szene, die es nicht mehr gibt, und getaggter Text, der nach Bearbeitungen nicht gefunden werden konnte. Ein sauberes Panel vor dem Export ist zehn Minuten wert, denn jede Warnung, die du jetzt beseitigst, ist eine Frage, die dir am Set niemand stellt.
+
+## Wohin der Cast als Nächstes geht
+
+Im Drehbuchauszug getaggter Cast landet auf der Szene selbst, und alles Nachgelagerte liest von der Szene. **Populate Shot List** (Einstellungsliste befüllen) in der Werkzeugleiste des Auszugs befüllt deine Szenen und Einstellungen mit ihrem Cast. Dieselben Cast-Nummern füllen die Streifen im [Drehplan](/de/schedule), und wenn für einen Drehtag eine Disposition erzeugt wird, füllt sich ihr Talent-Bereich mit dem Cast dieses Tages in der Reihenfolge der Cast-Nummern. Du taggst einmal, und es taucht überall auf.
+
+## Exportiere die Blätter
+
+Drücke **Export** in der Werkzeugleiste des Auszugs. Der Dialog bietet zwei Blätter an, und du kannst eines oder beide nehmen:
+
+- **Breakdown Summary** ist ein Block pro Szene, mit den Elementen nach Kategorie, Szenennotizen und Seitenachteln. Das ist das Blatt, das ein Abteilungsleiter liest, um einen Tag vorzubereiten.
+- **Element List** ist jedes Element nach Kategorie, mit den Szenen, in denen es vorkommt. Das ist das Blatt, das ein Abteilungsleiter liest, um die ganze Produktion zu kalkulieren.
+
+Es gibt außerdem die Option **Burn in a recipient**, die den Namen einer ausgewählten Person und einen Zeitstempel mit geringer Deckkraft über jede Seite druckt – für den Fall, dass eine Kopie nachverfolgbar sein muss.
+
+## Jetzt bau den Drehplan
+
+Jetzt, wo jede Szene ihren Cast und ihre Elemente kennt, haben die Streifen etwas zu sagen. Weiter geht es mit [Den Drehplan erstellen](/de/guides/building-the-schedule), um diese Szenen auf Drehtage zu verteilen.

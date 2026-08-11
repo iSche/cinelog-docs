@@ -1,11 +1,11 @@
 ---
 title: Editor de Guion
-lastUpdated: 2026-07-11
-description: "Edición profesional de guiones con formato Fountain en tiempo real, importación multiformato, analíticas en vivo e integración con la lista de planos."
+lastUpdated: 2026-08-08
+description: "Edición profesional de guiones sobre páginas reales US Letter con formato Fountain en tiempo real, importaciones revisadas, bloqueo del guion y revisiones de color, etiquetado del desglose, analíticas en vivo e integración con la lista de planos."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-El Editor de Guion de CineLog es un sistema profesional de edición de guiones construido para los flujos de trabajo modernos de producción cinematográfica. Importa guiones desde múltiples formatos, edita con soporte de sintaxis Fountain en tiempo real, sigue las analíticas e intégralos sin fisuras con tu lista de planos, todo con un formato estándar de la industria y funciones colaborativas.
+El Editor de Guion de CineLog es un sistema profesional de edición de guiones construido para los flujos de trabajo modernos de producción cinematográfica. Escribes sobre páginas reales US Letter que se cortan exactamente donde se corta el guion impreso, importas a través de una revisión cambio a cambio, bloqueas los números de escena y sigues rondas de revisión de color, etiquetas el [desglose](/es/breakdown) directamente sobre la página y rellenas la lista de planos a partir del guion.
 
 ## Funcionalidades principales
 
@@ -18,12 +18,24 @@ El Editor de Guion de CineLog es un sistema profesional de edición de guiones c
   Formato en vivo mientras escribes. Clasificación automática de elementos para encabezados de escena, nombres de personaje, diálogos y acción, con atajos manuales para un control preciso.
 </Card>
 
-<Card title="Importación multiformato">
-  Importa guiones desde **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT** y **RTF**, con análisis inteligente y preservación del formato.
+<Card title="Maquetación paginada real">
+  El editor renderiza páginas reales US Letter, de 54 líneas cada una, con los párrafos partiéndose a ambos lados de la costura bajo **(MORE)** y **(CONT'D)**. Las páginas en pantalla, el contador de páginas y el PDF exportado son las mismas páginas. Ver [Escritura y formato](/es/guides/writing-formatting-scripts).
+</Card>
+
+<Card title="Importación revisada">
+  Importa archivos **Final Draft (.fdx)**, **Fountain**, **PDF**, **TXT** y **RTF** a través de una pantalla de revisión que muestra cada cambio antes de que aterrice. Ver [Importar guiones](/es/guides/importing-scripts).
+</Card>
+
+<Card title="Bloqueo del guion y revisiones">
+  Bloquea los números de escena, emite borradores y sigue rondas de revisión de color con líneas asteriscadas, páginas tintadas y exportación solo de las páginas revisadas. Ver [Bloqueo y revisiones](/es/guides/script-lock-and-revisions).
+</Card>
+
+<Card title="Desglose del Guion">
+  Etiqueta elenco, atrezo, vestuario y nueve categorías más directamente sobre la página del guion. El elenco fluye hacia Elenco y Equipo y hasta las órdenes de rodaje. Ver [Desglose del Guion](/es/breakdown).
 </Card>
 
 <Card title="Analíticas en vivo">
-  Analíticas de guion en tiempo real. Sigue el número estimado de páginas, el recuento de escenas, el recuento de líneas, el recuento de palabras y el recuento de personajes mientras escribes.
+  Una barra lateral de estadísticas sigue el número de páginas en octavos de guion, además de escenas, líneas, palabras y caracteres — y el tamaño de lo que tengas seleccionado.
 </Card>
 
 <Card title="Integración con la Lista de Planos">
@@ -77,7 +89,7 @@ Posicionamiento con precisión de caracteres usando fuente Courier Prime de 12 p
 
 ### Importación de guiones multiformato
 
-¿Necesitas traer escritura desde una app más antigua? Haz clic en el botón **Importar** en la barra de menú superior del Editor de Guion para importar y convertir un guion existente. Nuestro analizador universal extrae de forma inteligente las escenas, los personajes y la geometría de los diálogos de tu documento original, aplicando el formato Fountain estándar automáticamente.
+¿Necesitas traer escritura desde otra app? Haz clic en el botón **Import** en la barra de menú superior del Editor de Guion. El archivo se analiza y se compara con tu guion actual, y una pantalla de revisión muestra cada cambio en paralelo antes de que se aplique nada — los aceptas o los rechazas cambio a cambio. En un guion bloqueado, los cambios que tocan material ya emitido esperan a tu decisión explícita. El recorrido completo está en [Importar guiones](/es/guides/importing-scripts).
 
 <CardGrid>
 <Card title="Final Draft (.fdx)">
@@ -103,23 +115,23 @@ Posicionamiento con precisión de caracteres usando fuente Courier Prime de 12 p
 
 ### Analíticas de guion en tiempo real
 
-Métricas profesionales de guion actualizadas en vivo mientras editas, con cálculos estándar de la industria para una planificación de producción precisa.
+Una barra lateral de estadísticas en el editor de escritorio se actualiza en vivo mientras escribes. Muestra cinco métricas: páginas, escenas, líneas, palabras y caracteres.
 
 <CardGrid>
-<Card title="Estimación de páginas">
-  Fórmulas estándar de la industria para el cálculo de páginas con actualizaciones en tiempo real y precisión profesional.
+<Card title="Número de páginas en octavos">
+  El número de páginas se lee en octavos de guion, como 12 3/8 — la unidad que hablan los planes de rodaje. Sale de la misma paginación que renderiza el editor e imprime el PDF, así que es el recuento real, no una estimación.
 </Card>
 
-<Card title="Recuento de escenas y personajes">
-  Seguimiento en vivo de escenas, personajes únicos y distribución de diálogos.
+<Card title="Escenas y líneas">
+  Recuentos en vivo de las escenas del documento y del número total de líneas.
 </Card>
 
-<Card title="Análisis de elementos">
-  Cuenta y analiza bloques de acción, líneas de diálogo, transiciones y otros elementos del guion para revisar la estructura.
+<Card title="Palabras y caracteres">
+  Totales en vivo de recuento de palabras y de caracteres mientras tecleas.
 </Card>
 
-<Card title="Métricas de palabras y caracteres">
-  Métricas profesionales de escritura incluyendo recuento total de palabras y recuento de caracteres.
+<Card title="Estadísticas de la selección">
+  Selecciona cualquier fragmento del guion y la barra lateral añade el recuento de caracteres de la selección y su duración en octavos de página — la respuesta rápida a "cuánto dura esta escena".
 </Card>
 </CardGrid>
 

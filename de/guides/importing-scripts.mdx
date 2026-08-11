@@ -1,0 +1,63 @@
+---
+title: Drehbücher importieren
+lastUpdated: 2026-08-08
+description: "Importiere FDX-, Fountain-, PDF-, TXT- und RTF-Dateien über einen Review-Screen: sieh jede Änderung nebeneinander, nimm sie einzeln an oder ab, löse Konflikte mit gesperrtem Material und übernimm Szenennummern."
+---
+
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus.
+
+CineLog wendet einen Import nie blind an. Es parst die Datei im Speicher, vergleicht sie mit dem Drehbuch, das du geöffnet hast, und zeigt dir jeden Unterschied, bevor sich etwas ändert. Du entscheidest, was landet – wenn du willst, Zeile für Zeile. Das zählt am meisten bei einem Drehbuch, das bereits gesperrt und verteilt ist, aber es ist auch einfach die angenehmere Art, eine Überarbeitung hereinzuholen.
+
+## Einen Import starten
+
+Klicke auf **Import** in der oberen Menüleiste des Drehbuch-Editors. Er trägt das Kürzel `Cmd / Ctrl + I`, das immer dann einen Import startet, wenn das Kürzel nicht gerade ausgewählten Text kursiv setzt. Auf dem Smartphone ist es das Import-Symbol in der App-Leiste. Die unterstützten Formate sind **FDX, Fountain, PDF, TXT und RTF**. Eine PDF bekommt vorher einen zusätzlichen Schritt: einen kleinen Dialog dazu, wie der Text herausgezogen wird.
+
+## In ein frisches Projekt importieren
+
+Wenn das Projekt noch das unangetastete Start-Drehbuch enthält, spart CineLog sich die Zeremonie und zeigt einen Dialog mit Titel und Größe der Datei, etwa "46 scenes · 512 lines". **Import** ersetzt das Start-Drehbuch in einem Zug. **Review first** (erst reviewen) bringt dich trotzdem auf den Review-Screen, wo jede Szene zu einer Zeile mit einer **Skip / Include**-Wahl zusammenklappt – falls du einige Szenen zurücklassen willst.
+
+In dem Moment, in dem du ein einziges Zeichen in das Start-Drehbuch getippt hast, zählt es nicht mehr als unangetastet, und jeder Import läuft durch das vollständige Review.
+
+## Der Review-Screen
+
+Der Review-Screen listet jeden Unterschied zwischen der Datei und deinem aktuellen Drehbuch, gruppiert mit angehefteten Headern und einem laufenden Zähler oben, etwa "58 changes · 4 conflicts · 2 unresolved".
+
+In einem breiten Fenster zeigt jede Zeile drei Spalten: den Elementtyp, **In the file** (in der Datei) und **In the editor** (im Editor). Wenn beide Seiten eine einzelne Zeile sind, werden die geänderten Wörter selbst hervorgehoben – grün für das, was die Datei hinzufügt, rot für das, was der Editor verliert. In schmalen Fenstern stapeln sich die beiden Seiten.
+
+Jede Zeile trägt ein **Accept / Reject**-Steuerelement. Bei einem nicht gesperrten Drehbuch startet jede Zeile angenommen, und ein **Accept all**-Button sitzt in der oberen Leiste. Zeilen, die nur melden, dass eine Szene an einer anderen Position sitzt, sind rein informativ, denn Positionsänderungen werden nicht automatisch angewendet.
+
+**Back to editor** bricht das ganze Staging ab. Es wurde noch nichts angewendet.
+
+## Wenn das Drehbuch gesperrt ist
+
+Zeilen, die gesperrtes Material berühren, starten mit **nichts ausgewählt**, und der Anwenden-Button liest sich als **Resolve N**, bis jede einzelne davon eine Entscheidung hat. Genau darum geht es bei der Sperre: Änderungen an ausgegebenem Material brauchen ein menschliches Ja.
+
+Ein Druck auf **Resolve N** bietet drei Auswege: **Review** scrollt dich zur ersten offenen Zeile, oder du nimmst mit **Accept all remaining** / **Reject all remaining** die restlichen in einem Zug an oder ab.
+
+Gesperrte Konflikte tragen ein Vorhängeschloss und einen Hinweis auf die Konsequenz – zum Beispiel, dass das Annehmen einer Löschung die Szene als OMITTED markiert, statt sie zu entfernen. Omittieren ist die Art, wie ein gesperrtes Drehbuch Szenen abwirft, damit die Nummern halten. Siehe [Sperre & Revisionen](/de/guides/script-lock-and-revisions).
+
+### In eine Revision importieren
+
+Bei einem seitengesperrten Drehbuch ergänzt die obere Leiste ein Revisionsziel: Starte mit den Änderungen eine **neue** Revisionsrunde oder **führe** sie in die aktuelle ein. Das Einführen in eine bereits ausgegebene Runde bekommt vorher eine Warnung, denn die verteilten Seiten würden nicht mehr zu dem passen, was rausgeschickt wurde. Du kannst auch zu einer späteren Farbe springen, falls diese Produktion Farben anderswo verbraucht hat.
+
+## Die Szenennummern der Datei übernehmen
+
+Wenn deine Szenen gesperrt sind und die Datei echte Produktionsnummerierung trägt (Buchstaben, Lücken, Löcher statt einem schlichten 1, 2, 3), bietet die obere Leiste einen Schalter an: **Use the file's scene numbers** (Szenennummern der Datei verwenden). Banner-Zeilen zeigen das Ergebnis in der Vorschau, etwa "Scene 12 will be renumbered to 14".
+
+Weil das Umnummerieren eines gesperrten Drehbuchs jede Disposition und jeden Drehplan bricht, der sich auf die alten Nummern bezogen hat, bestätigt CineLog das separat und in klaren Worten. Keine Szene wird gelöscht, omittierte Szenen behalten ihre Grabsteine, nur die Nummern ändern sich. Das ist außerdem der vorgesehene Weg, ein gesperrtes Drehbuch umzunummerieren, denn ein Entsperren gibt es nicht.
+
+## Anwenden
+
+Der Hauptbutton wendet deine Entscheidungen an: **Import** bei einem frischen Projekt, sonst **Apply**. Du bekommst eine schlichte Ergebnismeldung, etwa "Import applied — 12 changes", oder "Nothing applied — every change was rejected", wenn du alles abgelehnt hast.
+
+Importe laufen über die eigene Bearbeitungs-Pipeline des Editors, sodass Auszugs-Tags, gesperrte Seiten und Szenenhistorie einen Import überleben, statt von ihm verwaist zu werden.
+
+## Falls das nicht funktioniert
+
+*"Cannot import" mit einer Formatliste.* Die Endung der Datei ist keines der fünf unterstützten Formate. Exportiere im anderen Werkzeug nach FDX oder Fountain und versuch es erneut.
+
+*"This file is identical to the current script."* Es gibt nichts zu reviewen. Das ist die ganze Meldung.
+
+*Der Apply-Button hängt auf "Resolve N".* N Zeilen, die gesperrtes Material berühren, haben weder Accept noch Reject. Nutze **Resolve N** → **Review**, um zur ersten zu springen.
+
+*Ich sehe "Use the file's scene numbers" nicht.* Es erscheint nur, wenn deine Szenen gesperrt sind und die Datei produktionsübliche Nummerierung trägt. Eine Datei, die schlicht von 1 bis n durchnummeriert ist, hat nichts zu übernehmen.

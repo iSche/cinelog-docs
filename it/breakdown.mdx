@@ -1,0 +1,123 @@
+---
+title: Spoglio della Sceneggiatura
+lastUpdated: 2026-08-08
+description: "Tagga cast, attrezzeria, costumi e ogni altro elemento di produzione direttamente nella sceneggiatura. Gli elementi si raggruppano per categoria, confluiscono in Cast & Troupe e negli ordini del giorno, e si esportano come schede di spoglio."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+Uno spoglio è in sostanza la lista di tutto ciò che la sceneggiatura ti chiede di portare sul set. Leggi il copione riga per riga e ogni volta che nomina un oggetto di scena, un costume, un veicolo o una persona, lo marchi. Lo Spoglio di CineLog ti fa fare quella marcatura direttamente sulla pagina della sceneggiatura, così le parole taggate restano sottolineate esattamente dove si trovano, e gli elementi si raccolgono in un'unica lista di progetto che puoi consegnare a ogni reparto.
+
+<CardGrid>
+<Card title="Tagga sulla pagina">
+  Seleziona qualsiasi parola nella sceneggiatura e archiviala sotto una delle dodici categorie di produzione. Il testo resta sottolineato nel colore della categoria, così a una seconda lettura vedi all'istante cosa hai già coperto.
+</Card>
+
+<Card title="Una lista per progetto">
+  Ogni tag crea o riutilizza un elemento. Il pannello li raggruppa per categoria, conta le scene in cui ciascuno compare e ti porta a qualsiasi occorrenza.
+</Card>
+
+<Card title="Il cast si trova da solo">
+  CineLog tagga automaticamente la prima battuta di ogni personaggio in ogni scena e gli crea uno slot Talent numerato in Cast & Troupe. Quei numeri di cast arrivano fino agli ordini del giorno.
+</Card>
+
+<Card title="Schede di spoglio in PDF">
+  Esporta un riepilogo scena per scena, una lista degli elementi, o entrambi. Puoi imprimere il nome di un destinatario come filigrana prima di inviare una copia.
+</Card>
+</CardGrid>
+
+## Aprire lo spoglio
+
+Lo Spoglio vive dentro l'Editor di Sceneggiatura. Su desktop, clicca **Breakdown** nella barra del menu in alto dell'editor. Appare anche nella barra laterale sinistra come sub-entry sotto Editor di Sceneggiatura mentre sei nell'editor. Su telefono si trova nello sheet **More** (altro), subito sotto Script Editor.
+
+La prima volta che lo apri, CineLog ti chiede di bloccare i numeri di scena. Non è burocrazia. Uno spoglio àncora gli elementi ai numeri di scena, quindi quei numeri devono smettere di muoversi, perché uno spoglio che dice "il revolver è nella scena 12" non vale nulla il giorno in cui la scena 12 diventa la scena 13. Dal blocco in poi, le nuove scene ricevono numeri con lettera come 78A e le scene rimosse diventano OMITTED invece di sparire. Le pagine continuano a scorrere liberamente e puoi continuare a scrivere. La storia completa è in [Blocco e revisioni](/it/guides/script-lock-and-revisions).
+
+Se la sceneggiatura non ha ancora intestazioni di scena, CineLog ti chiede di aggiungerne almeno una prima di iniziare uno spoglio.
+
+## Taggare gli elementi
+
+Quello che fai è selezionare le parole e scegliere una categoria:
+
+- Con il mouse, trascina sopra le parole. L'editor dei tag si apre da solo una volta che la selezione si stabilizza. Anche il doppio click su una singola parola la tagga.
+- Su dispositivi touch, seleziona il testo e comparirà sopra una piccola toolbar con **Tag** e **Copy**. Premi **Tag**.
+
+L'editor dei tag mostra una griglia con le dodici categorie, un campo **Element** precompilato con il testo selezionato e un campo **Qty**. Scegli la categoria, correggi il nome se vuoi e premi **Tag**. Se nella categoria esiste già un elemento con quel nome, CineLog ti avvisa che userà quello esistente: così taggare "revolver" nella scena 4 e nella scena 19 ti dà un revolver con due scene, non due revolver.
+
+Chi usa la tastiera qui va veloce: i tasti da `1` a `9` scelgono le prime nove categorie, `Tab` salta al campo Element con il testo selezionato ed `Enter` salva.
+
+Le selezioni devono restare all'interno di una singola riga e devono cadere dentro una scena bloccata. La pagina del titolo, per esempio, non può essere taggata.
+
+### Le dodici categorie
+
+| Categoria | Segno sulla pagina |
+|---|---|
+| Cast | Sottolineatura rossa |
+| Stunt (Stunts) | Sottolineatura arancione |
+| Comparse — Silenti (Extras — Silent) | Sottolineatura ambra |
+| Comparse — Ambiente (Extras — Atmosphere) | Sottolineatura verde |
+| Effetti Speciali (Special Effects) | Sottolineatura blu |
+| Attrezzeria (Props) | Sottolineatura viola |
+| Veicoli & Animali (Vehicles & Animals) | Sottolineatura rosa |
+| Suono & Musica (Sound & Music) | Sottolineatura marrone |
+| Costumi (Wardrobe) | Cerchio a margine |
+| Trucco & Acconciatura (Makeup & Hair) | Asterischi attorno alle parole |
+| Attrezzature Speciali (Special Equipment) | Riquadro |
+| Note di Produzione (Production Notes) | Sottolineatura grigio caldo |
+
+I segni di Costumi, Trucco & Acconciatura e Attrezzature Speciali seguono le convenzioni classiche dello spoglio su carta, così un membro della troupe che ha imparato a spogliare i copioni a mano legge la pagina senza bisogno di una legenda.
+
+### Modificare e rimuovere i tag
+
+Clicca su qualsiasi testo taggato per riaprire l'editor su quel tag. Da lì puoi rinominare l'elemento, cambiarne categoria o quantità, puntare il tag a un elemento diverso, oppure premere **Untag**. Quando più tag si sovrappongono sulle stesse parole, un piccolo menu li elenca prima così scegli quello giusto.
+
+### Trovare lo stesso elemento altrove
+
+Dopo che hai taggato qualcosa, CineLog cerca le stesse parole nelle altre scene e te le propone in un'unica finestra: ogni risultato mostra la scena e uno stralcio, le corrispondenze esatte partono già spuntate, e premi **Tag N** per prenderle tutte in un colpo solo. Puoi rilanciare la ricerca in qualsiasi momento dal menu di un elemento con **Find similar…**. Se rifiuti un suggerimento, CineLog ricorda il "no" e non ti riproporrà più quel punto.
+
+## Il pannello degli elementi
+
+Il pannello di destra (la pagina **Tags** su telefono) è la lista degli elementi del progetto, raggruppata per categoria. Ogni riga mostra l'elemento, la sua quantità quando è maggiore di 1, in quante scene compare e le frecce per scorrere le sue occorrenze. Toccare una riga porta la sceneggiatura all'occorrenza successiva. Passare sopra una riga evidenzia il suo testo nella sceneggiatura, e passare sopra il testo taggato evidenzia la sua riga.
+
+Le righe possono portare tre avvisi, ciascuno spiegato nel suo tooltip: tag in attesa di revisione (cast trovato automaticamente, vedi sotto), tag che si trovano in una scena che non esiste più, e testo taggato che non è stato più ritrovato dopo delle modifiche.
+
+Ogni sezione di categoria si chiude con **Add new…**, che tagga un'intera scena senza sottolineare alcun testo. Serve per le cose che il copione sottintende ma non scrive mai, come l'impianto pioggia che richiede una scena EXT. STRADA - NOTTE.
+
+Il menu `⋯` di ogni elemento offre **Edit…**, **Find similar…**, **Merge into…**, **Archive** e **Delete…**. Merge sposta tutti i tag sull'elemento che scegli ed elimina quello fuso. Archive toglie un elemento da ogni scena ma lo conserva, ed è la scelta più prudente quando non sei sicuro. Gli elementi di categoria Cast aggiungono **Link to cast slot…** così puoi collegare a mano un personaggio a uno slot Talent.
+
+## Cast
+
+Cast è la categoria su cui CineLog lavora di più al posto tuo.
+
+Ogni volta che blocchi le scene, blocchi le pagine, avvii una revisione o importi, CineLog tagga la prima battuta di ogni personaggio in ogni scena. Quei tag arrivano confermati, perché una battuta non è un'ipotesi. Quando il nome di un personaggio compare nell'azione o nella prosa del dialogo, CineLog tagga anche quello, ma lo segna come in attesa di revisione con una sottolineatura tratteggiata, perché "JOHN" in una didascalia potrebbe essere un altro John. Se un suggerimento è sbagliato, togli il tag e resta tolto. Puoi anche rilanciare tu stesso la passata con il pulsante di sincronizzazione sull'intestazione CAST.
+
+CineLog non fonde mai da solo nomi simili. MARIA e MARIE restano separate finché non le fondi tu, perché solo tu sai se è un refuso o se sono due persone. Una volta fuse, la fusione regge in tutte le passate successive.
+
+Ogni personaggio rilevato riceve anche uno **slot Talent** vacante in [Cast & Troupe](/it/castandcrew), con il nome del personaggio e un numero di cast. CineLog indovina il ruolo da quanto lavora il personaggio: un personaggio presente in un terzo o più delle tue scene entra come Principal, da tre scene in su come Supporting, e il resto come Day Player. Puoi cambiare tutto in seguito. Se gestisci già a mano la tua lista cast, CineLog se ne accorge e lascia stare il tuo roster.
+
+## Dove va il cast dopo
+
+Il cast taggato nello spoglio finisce sulla scena stessa, e tutto ciò che sta a valle legge dalla scena. **Populate Shot List** nella toolbar dello spoglio popola scene e inquadrature con il loro cast. Quando viene generato un ordine del giorno per una giornata di ripresa, la sua sezione Talent si riempie con il cast di quel giorno in ordine di numero di cast. Lo taggi una volta e compare ovunque. Vedi [Ordini del giorno](/it/callsheets) per l'estremità finale di questo flusso.
+
+## Esportare le schede di spoglio
+
+Premi **Export** nella toolbar dello spoglio. La finestra offre due schede, e puoi prenderne una o entrambe:
+
+- **Breakdown Summary** — un blocco per scena, con i suoi elementi divisi per categoria. Include note di scena e ottavi di pagina.
+- **Element List** — ogni elemento per categoria, con le scene in cui compare.
+
+C'è anche un'opzione **Burn in a recipient** che stampa il nome di una persona scelta e un timestamp UTC su ogni pagina a bassa opacità, per quando una copia deve essere tracciabile. La lista dei destinatari viene dalle persone assegnate in Cast & Troupe.
+
+Le scene omesse non stampano alcun blocco, gli elementi archiviati escono dai riquadri di scena ma restano nella lista degli elementi, e i suggerimenti rifiutati non compaiono affatto.
+
+## Su telefono
+
+Lo spoglio su telefono è composto da due pagine scorrevoli, **Script** e **Tags**, con una pillola per passare dall'una all'altra. Una volta che tocchi un elemento con più di un'occorrenza, la pillola si allarga con ▲ e ▼ così puoi percorrere le sue occorrenze senza lasciare la sceneggiatura. Il testo si riadatta allo schermo a piena dimensione di lettura, con dei divisori che segnano dove cadono le interruzioni di pagina della versione stampata.
+
+## Se non funziona
+
+*Il pulsante Breakdown mi rimanda all'editor.* Hai rifiutato il blocco dei numeri di scena. Lo spoglio non può ancorare gli elementi a numeri che si muovono, quindi il blocco è la porta d'ingresso.
+
+*Non riesco a taggare una selezione.* Le selezioni devono stare all'interno di una singola riga, dentro una scena bloccata. Le selezioni a cavallo di più righe e il testo della pagina del titolo mostrano un messaggio che spiega quale regola è stata infranta.
+
+*Voglio una categoria mia.* Non in questa versione. Le dodici categorie sono fisse, e nel frattempo Note di Produzione è la categoria jolly.
+
+*Un suggerimento di cast è sbagliato, ma su quelli giusti non c'è un pulsante "conferma".* Quelli giusti non richiedono alcuna azione, contano già. I segni di revisione sono solo CineLog che è onesto su quali tag erano ipotesi. Togli il tag a quelli sbagliati e lascia stare il resto.

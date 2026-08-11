@@ -1,0 +1,123 @@
+---
+title: Dépouillement du Scénario
+lastUpdated: 2026-08-08
+description: "Étiquette les comédiens, les accessoires, les costumes et tous les autres éléments de production directement dans le scénario. Les éléments se regroupent par catégorie, alimentent Casting et Équipe ainsi que les feuilles de service, et s'exportent en fiches de dépouillement."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+Un dépouillement, c'est au fond la liste de tout ce que le scénario te demande d'amener sur le plateau. Tu lis le scénario ligne par ligne et, chaque fois qu'il mentionne un accessoire, un costume, un véhicule ou une personne, tu le marques. Le Dépouillement de CineLog te laisse faire ce marquage directement sur la page du scénario : les mots étiquetés restent soulignés là où ils vivent, et les éléments se regroupent en une seule liste à l'échelle du projet que tu peux remettre à chaque département.
+
+<CardGrid>
+<Card title="Étiqueter sur la page">
+  Sélectionne des mots dans le scénario et classe-les dans l'une des douze catégories de production. Le texte reste souligné dans la couleur de la catégorie : à la relecture, tu vois immédiatement ce qui est couvert.
+</Card>
+
+<Card title="Une seule liste par projet">
+  Chaque étiquette crée un élément ou réutilise un élément existant. Le panneau les groupe par catégorie, compte les scènes où chacun apparaît et t'emmène sur n'importe quelle occurrence.
+</Card>
+
+<Card title="Le casting se trouve tout seul">
+  CineLog étiquette automatiquement la première réplique de chaque personnage dans chaque scène et lui crée un emplacement Talent numéroté dans Casting et Équipe. Ces numéros de casting se retrouvent ensuite sur les feuilles de service.
+</Card>
+
+<Card title="Fiches de dépouillement en PDF">
+  Exporte une synthèse scène par scène, une liste d'éléments, ou les deux. Tu peux incruster le nom d'un destinataire en filigrane avant d'envoyer une copie.
+</Card>
+</CardGrid>
+
+## Ouvrir le dépouillement
+
+Le Dépouillement vit à l'intérieur du Logiciel de Scénario. Sur bureau, clique sur **Breakdown** dans la barre de menu supérieure de l'éditeur. Il apparaît aussi dans le rail de gauche, en sous-entrée du Logiciel de Scénario tant que tu es dans l'éditeur. Sur téléphone, il est dans le panneau **More** (plus), juste sous Logiciel de Scénario.
+
+La première fois que tu l'ouvres, CineLog te demande de verrouiller tes numéros de scène. Ce n'est pas une formalité. Un dépouillement épingle les éléments à des numéros de scène, donc ces numéros doivent cesser de bouger : un dépouillement qui dit « le revolver est dans la scène 12 » ne vaut plus rien le jour où la scène 12 devient la scène 13. À partir du verrouillage, les nouvelles scènes reçoivent des numéros à lettre comme 78A et les scènes retirées deviennent OMITTED au lieu de disparaître. Les pages, elles, continuent de couler librement, et tu peux continuer d'écrire. Toute l'histoire est dans [Verrouillage et révisions du scénario](/fr/guides/script-lock-and-revisions).
+
+Si le scénario n'a pas encore d'en-têtes de scène, CineLog te demande d'en ajouter au moins un avant de commencer un dépouillement.
+
+## Étiqueter les éléments
+
+Ce que tu fais, c'est sélectionner les mots et choisir une catégorie :
+
+- À la souris, fais glisser sur les mots. L'éditeur d'étiquette s'ouvre tout seul une fois la sélection stabilisée. Un double-clic sur un mot unique l'étiquette également.
+- Sur les appareils tactiles, sélectionne le texte : une petite barre d'outils apparaît au-dessus avec **Tag** (étiqueter) et **Copy**. Appuie sur **Tag**.
+
+L'éditeur d'étiquette affiche une grille des douze catégories, un champ **Element** pré-rempli avec le texte sélectionné et un champ **Qty** (quantité). Choisis la catégorie, ajuste le nom si tu veux, et appuie sur **Tag**. Si un élément portant ce nom existe déjà dans la catégorie, CineLog te prévient qu'il utilisera l'existant : étiqueter « revolver » dans la scène 4 puis dans la scène 19 te donne un seul revolver avec deux scènes, pas deux revolvers.
+
+Au clavier, ça va vite : les touches `1` à `9` choisissent les neuf premières catégories, `Tab` saute au champ Element avec le texte sélectionné, et `Enter` enregistre.
+
+Les sélections doivent tenir sur une seule ligne et tomber à l'intérieur d'une scène verrouillée. La page de titre, par exemple, ne peut pas être étiquetée.
+
+### Les douze catégories
+
+| Catégorie | Marque sur la page |
+|---|---|
+| Cast (casting) | Soulignement rouge |
+| Stunts (cascades) | Soulignement orange |
+| Extras — Silent (figurants silhouettes) | Soulignement ambre |
+| Extras — Atmosphere (figurants d'ambiance) | Soulignement vert |
+| Special Effects (effets spéciaux) | Soulignement bleu |
+| Props (accessoires) | Soulignement violet |
+| Vehicles & Animals (véhicules et animaux) | Soulignement rose |
+| Sound & Music (son et musique) | Soulignement brun |
+| Wardrobe (costumes) | Cercle dans la marge |
+| Makeup & Hair (maquillage et coiffure) | Astérisques autour des mots |
+| Special Equipment (matériel spécial) | Encadré |
+| Production Notes (notes de production) | Soulignement gris chaud |
+
+Les marques Wardrobe, Makeup & Hair et Special Equipment suivent les conventions classiques du dépouillement papier : un membre de l'équipe qui a appris à dépouiller à la main lit la page sans légende.
+
+### Modifier et retirer des étiquettes
+
+Clique sur n'importe quel texte étiqueté pour rouvrir l'éditeur sur cette étiquette. De là, tu peux renommer l'élément, changer sa catégorie ou sa quantité, pointer l'étiquette vers un autre élément, ou appuyer sur **Untag** (retirer l'étiquette). Quand plusieurs étiquettes se chevauchent sur les mêmes mots, un petit menu les liste d'abord pour que tu choisisses la bonne.
+
+### Retrouver le même élément ailleurs
+
+Après un étiquetage, CineLog cherche les mêmes mots dans les autres scènes et te les propose dans une seule boîte de dialogue : chaque résultat affiche la scène et un extrait, les correspondances exactes arrivent cochées, et tu appuies sur **Tag N** pour tout prendre d'un coup. Tu peux relancer ça à tout moment depuis le menu d'un élément avec **Find similar…** (trouver les similaires). Si tu refuses une suggestion, CineLog retient le « non » et ne te reproposera plus cet endroit.
+
+## Le panneau des éléments
+
+Le panneau de droite (la page **Tags** sur téléphone) est la liste des éléments du projet, groupée par catégorie. Chaque ligne affiche l'élément, sa quantité quand elle dépasse 1, le nombre de scènes où il apparaît, et des flèches pour parcourir ses occurrences. Toucher une ligne emmène le scénario sur l'occurrence suivante. Survoler une ligne met en évidence son texte dans le scénario, et survoler un texte étiqueté met en évidence sa ligne.
+
+Les lignes peuvent porter trois avertissements, chacun expliqué dans son infobulle : les étiquettes en attente de vérification (casting détecté automatiquement, voir plus bas), les étiquettes posées dans une scène qui n'existe plus, et le texte étiqueté devenu introuvable après des modifications.
+
+Chaque section de catégorie se termine par **Add new…** (ajouter un élément), qui étiquette une scène entière sans souligner le moindre texte. C'est pour ce que le scénario sous-entend sans jamais l'écrire, comme la rampe de pluie qu'exige une scène EXT. STREET - NIGHT.
+
+Le menu `⋯` de chaque élément propose **Edit…**, **Find similar…**, **Merge into…** (fusionner avec), **Archive** et **Delete…**. Fusionner déplace toutes les étiquettes sur l'élément que tu choisis et supprime celui qui est fusionné. Archiver sort un élément de toutes les scènes mais le conserve, ce qui est le choix le plus sûr quand tu hésites. Les éléments de casting ajoutent **Link to cast slot…** (associer à un emplacement Talent) pour relier un personnage à un emplacement Talent à la main.
+
+## Casting
+
+Cast est la catégorie sur laquelle CineLog travaille le plus pour toi.
+
+Chaque fois que tu verrouilles les scènes, verrouilles les pages, démarres une révision ou importes, CineLog étiquette la première réplique de chaque personnage dans chaque scène. Ces étiquettes arrivent confirmées, parce qu'une réplique n'est pas une supposition. Quand le nom d'un personnage apparaît dans l'action ou dans la prose d'un dialogue, CineLog l'étiquette aussi, mais le marque en attente de vérification avec un soulignement pointillé : « JOHN » dans une didascalie peut être un autre John. Si une suggestion est fausse, retire l'étiquette et elle ne revient pas. Tu peux aussi relancer la passe toi-même avec le bouton de synchronisation de l'en-tête CAST.
+
+CineLog ne fusionne jamais de lui-même des noms qui se ressemblent. MARIA et MARIE restent séparés tant que tu ne les fusionnes pas, parce que toi seul sais s'il s'agit d'une faute de frappe ou de deux personnes. Une fois la fusion faite, elle tient à travers toutes les passes suivantes.
+
+Chaque personnage détecté reçoit aussi un **emplacement Talent** vacant dans [Casting et Équipe](/fr/castandcrew), portant le nom du personnage et un numéro de casting. CineLog devine le type de rôle d'après la charge de travail du personnage : un personnage présent dans un tiers ou plus de tes scènes arrive en Principal, trois scènes ou plus en Supporting (second rôle), et le reste en Day Player (rôle à la journée). Tu peux changer tout ça ensuite. Si tu gères déjà ta liste de comédiens à la main, CineLog s'en aperçoit et laisse ton casting tranquille.
+
+## Où va le casting ensuite
+
+Le casting étiqueté dans le dépouillement se pose sur la scène elle-même, et tout ce qui vient après lit depuis la scène. **Populate Shot List** (remplir le découpage technique), dans la barre d'outils du dépouillement, alimente les scènes et les plans avec leur casting. Quand une feuille de service est générée pour un jour de tournage, sa section Talent se remplit avec le casting du jour, dans l'ordre des numéros de casting. Étiquette une fois, et ça ressort partout. Voir [Feuilles de service](/fr/callsheets) pour le bout de la chaîne.
+
+## Exporter les fiches de dépouillement
+
+Appuie sur **Export** dans la barre d'outils du dépouillement. La boîte de dialogue propose deux fiches, et tu peux prendre l'une ou les deux :
+
+- **Breakdown Summary** (synthèse du dépouillement) — un bloc par scène, avec ses éléments par catégorie. Notes de scène et huitièmes de page inclus.
+- **Element List** (liste des éléments) — chaque élément par catégorie, avec les scènes où il apparaît.
+
+Il y a aussi une option **Burn in a recipient** (incruster un destinataire) qui imprime le nom de la personne choisie et un horodatage UTC sur chaque page en faible opacité, pour quand une copie doit être traçable. La liste des destinataires vient des personnes affectées dans Casting et Équipe.
+
+Les scènes omises n'impriment aucun bloc, les éléments archivés sortent des blocs de scène mais restent sur la liste des éléments, et les suggestions écartées n'apparaissent jamais.
+
+## Sur téléphone
+
+Le dépouillement sur téléphone tient en deux pages qu'on fait défiler latéralement, **Script** et **Tags**, avec une pastille pour basculer. Dès que tu touches un élément qui a plus d'une occurrence, la pastille se dote de ▲ et ▼ pour parcourir ses occurrences sans quitter le scénario. Le scénario se réajuste à l'écran en taille de lecture pleine, avec des séparateurs marquant les sauts de page à l'impression.
+
+## Si ça ne marche pas
+
+*Le bouton Breakdown me renvoie à l'éditeur.* Tu as refusé le verrouillage des numéros de scène. Le dépouillement ne peut pas épingler des éléments à des numéros mouvants : le verrouillage est la porte d'entrée.
+
+*Je n'arrive pas à étiqueter une sélection.* Les sélections doivent tenir sur une seule ligne, à l'intérieur d'une scène verrouillée. Les sélections à cheval sur plusieurs lignes et le texte de la page de titre affichent un message expliquant quelle règle a été touchée.
+
+*Je veux ma propre catégorie.* Pas dans cette version. Les douze catégories sont fixes, et Production Notes sert de fourre-tout en attendant.
+
+*Une suggestion de casting est fausse, mais il n'y a pas de bouton « confirmer » sur les bonnes.* Les bonnes ne demandent aucune action, elles comptent déjà. Les marques de vérification, c'est juste CineLog qui est honnête sur les étiquettes qui étaient des suppositions. Retire les mauvaises et laisse le reste.

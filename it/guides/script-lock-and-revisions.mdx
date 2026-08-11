@@ -1,0 +1,79 @@
+---
+title: Blocco e revisioni
+lastUpdated: 2026-08-08
+description: "Blocca i numeri di scena, distribuisci le bozze e tieni traccia dei round di revisione a colori — asterischi sulle righe modificate, cronologia delle revisioni sulla pagina del titolo, scene omesse ed esportazione delle sole pagine revisionate."
+---
+
+Questa guida assume [Le basi](/it/guides/introduction) e la guida [Scrittura e formattazione sceneggiature](/it/guides/writing-formatting-scripts).
+
+Una volta che una sceneggiatura esce verso la troupe, smette di essere una bozza privata e diventa un documento di riferimento. Le persone pianificano sui suoi numeri di scena e annotano le sue pagine. Da quel momento i numeri devono stare fermi, e ogni modifica deve essere visibile. È questo che gestisce il pulsante **Lock & Revisions** nella barra del menu in alto dell'editor. Funziona in due fasi, e non devi affrontarle entrambe insieme.
+
+## Fase 1 — Blocca i numeri di scena
+
+Apri il menu Lock & Revisions e scegli **Lock scene numbers…**. La finestra mette il patto nero su bianco: i numeri di tutte le tue scene si congelano per lo spoglio e la pianificazione. Da quel momento:
+
+- Una nuova scena tra la 78 e la 79 diventa **78A**, così nulla a valle si rinumera.
+- Eliminare il contenuto di una scena la segna **OMITTED** invece di chiudere il buco. Il numero resta.
+- Le pagine continuano a scorrere liberamente. Puoi continuare a scrivere, e l'impaginazione si comporta esattamente come prima.
+
+È questo il blocco che lo [Spoglio](/it/breakdown) chiede all'ingresso, ed è tutto ciò che serve alla maggior parte dei progetti finché le pagine non escono.
+
+Non esiste uno sblocco. È voluto, perché in produzione rinumerare dopo la distribuzione è un intervento di riparazione, non un'azione di tutti i giorni. Se ti servono davvero numeri diversi, importare un file con la propria numerazione di produzione ti permette di adottarli, con una conferma che ne esplicita le conseguenze. Vedi [Importare sceneggiature](/it/guides/importing-scripts).
+
+## Fase 2 — Blocca le pagine
+
+Quando la sceneggiatura sta per essere distribuita, scegli **Lock pages…**. Questo congela l'impaginazione sulle pagine correnti e distribuisce la bozza. Se hai saltato la fase 1, questo blocca anche i numeri di scena.
+
+La finestra ha una riga **Issue as** con nove campioni di colore. Lascialo su White a meno che questa produzione non abbia già distribuito revisioni a colori fatte altrove. In quel caso, riprendi dal primo colore non usato.
+
+Dopo il blocco delle pagine:
+
+- Le interruzioni di pagina restano dove sono state distribuite. Il materiale nuovo trabocca su **pagine A** con lettera invece di far rifluire tutto, perché la pagina 40 della troupe deve restare la pagina 40.
+- La prima modifica che fai solleva un avviso: **Edit the White Draft?** La bozza è stata distribuita, quindi normalmente il round di modifiche successivo avvia un nuovo colore. Scegli **Start Blue Revisions** per farlo come si deve, oppure **Edit anyway** se stai correggendo un refuso prima che qualcuno se ne accorga. Una stranezza da sapere: la battitura che ha sollevato l'avviso non arriva a destinazione, quindi ridigita quel carattere dopo aver scelto.
+
+## Round di revisione
+
+**New revision…** nel menu Lock & Revisions avvia il round successivo. I colori seguono l'ordine standard del settore:
+
+**White, Blue, Pink, Yellow, Green, Goldenrod, Buff, Salmon, Cherry**. Dopo Cherry il ciclo si ripete come Double Blue, Double Pink e così via. Puoi saltare avanti se questa produzione ha già consumato dei colori altrove, e puoi allegare una nota al round.
+
+Mentre un round è aperto, ecco cosa vedi:
+
+- **Asterischi nel margine destro**, uno per ogni riga modificata, esattamente dove se li aspetta chi legge in produzione.
+- **Una nota nell'angolo in alto a destra della pagina** su ogni pagina revisionata — il colore, la data e il numero di pagina, come `BLUE 1/29/26 - 21.`
+- **Una velatura del colore della revisione** sulle schede di pagina che questo round ha toccato. Avviare un nuovo round riporta le pagine del round precedente a carta bianca sullo schermo, perché la velatura significa "modificata nel round corrente".
+- **Il pulsante Lock stesso** prende il colore e il nome breve del round, come "Blue" o "Blue 2".
+- **La pagina del titolo si arricchisce di una cronologia delle revisioni**, una riga per round distribuito, come "Blue: revised 7/24/26".
+
+Le date seguono la tua preferenza di formato data dal menu **Display** dell'editor.
+
+### Scene che chiedono una seconda occhiata
+
+Quando il contenuto di una scena già distribuita cambia, CineLog la segnala e mette un contrassegno accanto al suo numero di scena. Il contrassegno non si cancella mai da solo, perché il punto è che una persona confermi la modifica. Quando hai controllato, fai click destro sulla scena e scegli **Mark scene reviewed**.
+
+## Scene omesse
+
+Con i numeri di scena bloccati, una scena si rimuove omettendola. Fai click destro dentro la scena e scegli **Omit scene**, oppure usa la stessa voce nel menu Lock & Revisions. Il contenuto della scena collassa in un'unica riga grigia che recita **OMITTED**, e il numero resta nel margine. Ogni scena successiva mantiene il suo numero, che è tutto il senso dell'operazione.
+
+Non viene eliminato nulla. **Restore scene** riporta indietro il contenuto esattamente com'era.
+
+Due mosse collegate:
+
+- Per aggiungere una scena subito dopo una omessa, premi Return sulla lapide (o all'inizio dell'intestazione successiva). CineLog propone di aggiungere una scena con lettera tra le due, partendo da un'intestazione segnaposto su cui digitare.
+- Su una sceneggiatura con le pagine bloccate, una pagina il cui contenuto è interamente sparito si renderizza come **PAGE 7 OMITTED**, mantenendo il suo posto nel conteggio.
+
+Una scena omessa non può essere modificata finché non la ripristini, e l'intestazione di una scena bloccata non può essere eliminata. L'editor ti dice di usare Omit Scene al suo posto. Le scene che aggiungi dopo il blocco restano liberamente eliminabili finché non sono state distribuite in una revisione.
+
+## Distribuire le pagine revisionate
+
+Quando un round è concluso e le pagine sono bloccate, la [finestra di esportazione](/it/guides/writing-formatting-scripts#esportazione) guadagna due opzioni PDF: **Revised pages only** esporta la pagina del titolo più le pagine toccate da questo round, che è esattamente l'insieme che una produzione distribuisce davvero. **Revision paper color** riempie ogni pagina revisionata con il suo colore. Lascialo disattivato quando stampi su carta colorata vera.
+
+## Se non funziona
+
+*Voglio sbloccare la sceneggiatura.* Non c'è alcuno sblocco, per scelta. Ometti ciò che non deve essere girato, revisiona ciò che è cambiato, oppure adotta nuovi numeri tramite un'importazione.
+
+*Il menu avvisa che dei numeri di scena hanno perso la loro intestazione.* Hai eliminato un'intestazione che il registro sta ancora tracciando. Annulla l'eliminazione, oppure ometti la scena come si deve.
+
+*Ho scelto "Start Blue Revisions" dall'avviso di modifica e manca il mio primo carattere.* L'avviso consuma la battitura che lo ha sollevato. Ridigita il carattere.
+
+*Ho bloccato le pagine per sbaglio.* Non si rompe nulla. La scrittura continua normalmente e il materiale nuovo scorre sulle pagine A. Ma non c'è modo di tornare a un'impaginazione libera, quindi tratta Lock pages come il momento della distribuzione.

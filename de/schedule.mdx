@@ -1,0 +1,81 @@
+---
+title: Drehplan
+lastUpdated: 2026-08-08
+description: "Lege den Drehplan als Board aus Szenenstreifen an: ziehe Szenen zwischen Tagen, teile Szenen in Teile auf, verwalte Cast und Drehorte pro Szene und exportiere den Drehplan als PDF."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+Der Drehplan wird schrittweise ausgerollt. Wenn du ihn noch nicht in deiner Navigation siehst, ist er für deine Version noch nicht freigeschaltet, und keine Einstellung auf deiner Seite schaltet ihn früher frei.
+</Aside>
+
+Der Drehplan zeigt deinen ganzen Dreh als Board aus Szenenstreifen, eine Zeile pro Szene pro Tag – so, wie ein Produktionsboard immer schon funktioniert hat. Es ist kein separates Dokument, das du pflegen musst: Das Board ist eine weitere Ansicht derselben Drehtage, die du in der [Einstellungsliste](/de/shotlist) aufbaust – eine Änderung an einer Stelle ist eine Änderung an beiden, sofort und auf jedem Gerät.
+
+<CardGrid>
+<Card title="Ein Streifen pro Szene">
+  Jeder Streifen zeigt die Szenennummer, den Drehort, INT/EXT, die Tageszeit, die Cast-Nummern in der Szene, die Länge der Szene in Seitenachteln sowie ihre Startzeit und geschätzte Dauer.
+</Card>
+
+<Card title="Ziehen ist die ganze Bedienung">
+  Drücke lange auf einen beliebigen Streifen und ziehe ihn: innerhalb eines Tages zum Umordnen, über einen Tages-Header hinaus zum Verschieben oder nach Unscheduled, um ihn aus dem Kalender zu nehmen.
+</Card>
+
+<Card title="Cast und Drehorte auf dem Streifen">
+  Tippe auf die Cast-Zelle eines Streifens, um umzuschalten, wer in der Szene ist. Tippe auf die Drehort-Zelle, um das Set zu benennen – mit Adresse, Parken und nächstem Krankenhaus, die bis in die Disposition durchziehen.
+</Card>
+
+<Card title="Board-farbige Streifen">
+  Streifen übernehmen automatisch die klassischen Board-Farben aus INT/EXT und Tag/Nacht, sodass ein Blick genügt, um zu sehen, was für einen Tag du gebaut hast.
+</Card>
+</CardGrid>
+
+## Das Board
+
+**Schedule** sitzt in der linken Leiste zwischen Storyboard und Dispositionen. Auf dem Smartphone liegt er im **More**-Sheet.
+
+Das Board ist eine durchgehende Liste. Ganz oben sitzt **Unscheduled** (nicht geplant) mit jeder Szene, die noch auf keinem Tag liegt. Darunter kommen die Drehtage, jeder eröffnet von einer Header-Zeile mit der Tagesnummer, seiner Szenenzahl, der Gesamtschätzung und dem Drehdatum aus der Disposition dieses Tages.
+
+Wenn das Board leer ist, fang in der Einstellungsliste an: Einstellungen einem Drehtag zuzuweisen ist das, was Drehplan-Zeilen erzeugt. **Add Day** in der Werkzeugleiste öffnet den nächsten leeren Tag, damit du irgendwohin ziehen kannst; ein leerer, noch nicht bestätigter Tag lässt sich mit seinem ✕ oder mit `Esc` verwerfen.
+
+## Szenen verschieben
+
+Drücke lange auf einen Streifen und ziehe ihn. Wo du ihn ablegst, ist die Bedeutung:
+
+- Innerhalb eines Tages hast du den Tag umgeordnet.
+- Über einen Tages-Header hinaus wandert die Szene auf diesen Tag und landet dort, wo du sie abgelegt hast.
+- Nach Unscheduled fällt die Szene aus dem Kalender. Nichts wird gelöscht. Die Szene, ihre Einstellungen und all ihre Daten bleiben, es gibt also keine Bestätigung wegzuklicken. Zieh sie zurück auf einen Tag, um es rückgängig zu machen.
+- Eine Szene in Unscheduled kannst du auch einfach antippen: Ein Sheet listet die bestehenden Tage plus einen neuen auf, und du wählst aus, wohin sie geht.
+
+Ein Tag, auf dem kein Streifen mehr liegt, verschwindet, und die späteren Tage schließen die Lücke.
+
+## Szenenteile
+
+Manchmal wird die eine Hälfte einer Szene am Dienstag gedreht und die andere am Donnerstag. Wenn eine Szene über Tage aufgeteilt ist, lesen sich ihre Streifen als **1 pt 1** und **1 pt 2**. Die Aufteilung selbst machst du in der tagesbezogenen Einstellungsliste, indem du eine Einstellung aus ihrem Szenenblock ziehst. Das Board zeigt die Teile an und verschiebt sie unabhängig voneinander, und wenn zwei Teile derselben Szene an einem Tag wieder nebeneinander landen, führen sie sich von selbst zu einer schlichten Szene zusammen.
+
+## Cast und Drehort auf einem Streifen
+
+Ein Tipp auf die **Cast**-Zelle eines Streifens öffnet ein Panel mit einem Schalter pro nummeriertem Cast-Mitglied. Jedes Umschalten speichert sofort. Dieses Panel ist auch die einzige Stelle, an der du jemanden aus einer Szene herausnimmst, und die Disposition hält sich daran: Der Talent-Bereich der Disposition eines Tages wird aus genau diesen Daten gebaut, in der Reihenfolge der Cast-Nummern. Die Cast-Nummern kommen aus [Cast & Crew](/de/castandcrew), meist angelegt vom [Drehbuchauszug](/de/breakdown).
+
+Ein Tipp auf die **Drehort**-Zelle öffnet das Drehort-Panel: Set-Name, Adresse mit Autocomplete, Notiz, Parken und nächstes Krankenhaus. Unter den Feldern listet **Use an existing location** die Sets auf, die du bereits benannt hast – so teilen sich zehn Szenen am selben Haus einen Eintrag, und eine Korrektur an seiner Adresse erreicht alle zehn. Dieselben Felder speisen den Drehorte-Block der Disposition.
+
+Ein Tipp auf **START** oder **EST** bearbeitet die Startzeit oder die geschätzte Dauer einer Szene – dieselben Werte, die der Dispositionsplan druckt. Zeiten kaskadieren normalerweise von der Call-Time des Tages, beide zeigen also **Auto**, bis du einen Wert festpinnst; ein festgepinnter Wert hat einen **Reset to auto**-Button.
+
+## Banner
+
+**Add Banner** setzt ein Plan-Ereignis auf einen Tag, etwa Mittagspause, einen Company Move oder einen Equipment-Wechsel. Es sind dieselben Banner, die du aus der Drehtage-Ansicht und der Disposition kennst, und ein Tipp darauf öffnet denselben Editor. Banner leben auf Drehtagen, lassen sich also nicht nach Unscheduled ziehen.
+
+## Exportieren
+
+**Export** in der Werkzeugleiste erzeugt eine PDF des Boards: ein Titelblock mit deinem Firmen-Branding, dann die Streifen jedes Tages mit Cast, Seiten, Start und Schätzung, genau so, wie das Board sie zeigt. Der Dialog bietet Seitenränder und einen Tagesbereich an. Szenen in Unscheduled bleiben aus der PDF heraus, denn ungeplante Zeit ist keine Drehplan-Tatsache.
+
+## Anzeige
+
+Das **Display**-Menü trägt das Zeitformat (12 h / 24 h) und das Datumsformat, geteilt mit dem Rest der App. Der **Script**-Button öffnet das Drehbuch-Seitenpanel neben dem Board – dasselbe Panel, das auch die Einstellungsliste hat.
+
+## Falls das nicht funktioniert
+
+*Ich habe keinen Drehplan in meiner Navigation.* Die Funktion ist für deine Version noch nicht freigeschaltet, oder deine Projektrolle schließt den Zugriff auf die Einstellungsliste nicht ein – die Sichtbarkeit des Drehplans folgt ihr.
+
+*Eine Szene lässt sich auf dem Board nicht aufteilen.* Das ist Absicht. Streifen sind ganze Szenen oder Teile, die Aufteilung machst du also in der tagesbezogenen Einstellungsliste, indem du eine Einstellung aus dem Szenenblock ziehst. Das Board übernimmt sie sofort.
+
+*Die Cast-Zelle zeigt ein +, aber keine Personen.* Im Projekt existiert noch kein nummerierter Cast. Vergib Cast-Nummern in Cast & Crew oder lass den Cast-Durchlauf des Drehbuchauszugs laufen, um nummerierte Talent-Slots anzulegen.

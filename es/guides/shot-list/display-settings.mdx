@@ -1,7 +1,7 @@
 ---
 title: Ajustes de Visualización
-lastUpdated: 2026-07-11
-description: "Visibilidad y orden de columnas, columnas personalizadas, formato de numeración de planos, altura de fila: todo lo que controla cómo se ve la lista de planos en pantalla."
+lastUpdated: 2026-08-08
+description: "Visibilidad y orden de columnas, columnas personalizadas, formato de numeración de planos, ancho de la barra lateral del guion, formato de fecha, altura de fila: todo lo que controla cómo se ve la lista de planos en pantalla."
 ---
 
 Los Ajustes de Visualización controlan cómo se ve la lista de planos: qué columnas son visibles, en qué orden, cómo se numeran los planos. Los ajustes son a nivel de proyecto y se propagan vía CineSync, así que los ajustes hechos en el escritorio aparecen en la app móvil en cuestión de segundos.
@@ -24,13 +24,21 @@ Añade tus propias columnas desde Ajustes de Visualización dando un nombre a ca
 
 ## Formato de numeración de planos
 
-Tres formatos son soportados:
+Tres formatos son soportados, mostrados en la superposición con muestras en vivo:
 
-- **Alfanumérico** — `1A`, `2C`. Escena + letra.
-- **Decimal** — `1.1`, `2.3`.
-- **Secuencial** — `1`, `2`, `47`. Continuo a través del proyecto.
+- **US** — `1A`, `1B`, `1C`. Escena + letra.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`. Continuo a través del proyecto.
 
-El formato es una preferencia de visualización: cambia cómo se muestran los números sin alterar los planos subyacentes, así que puedes cambiar entre formatos libremente y volver atrás en cualquier momento.
+Son los mismos tres formatos que ofrecen los ajustes de visualización del Guion AV y del Storyboard, con los mismos nombres. El formato es una preferencia de visualización: cambia cómo se muestran los números sin alterar los planos subyacentes, así que puedes cambiar entre formatos libremente y volver atrás en cualquier momento.
+
+## Barra lateral del guion, auto-scroll y fechas
+
+En la superposición viven tres filas más:
+
+- **Script Width** — cuánto ocupa de la ventana la barra lateral del guion cuando está abierta, del 30 % al 50 %.
+- **Script Auto-scroll** — si la barra lateral del guion te sigue mientras te mueves por la lista.
+- **Date Format** — `M/D/Y`, `D/M/Y` o `Y-M-D`. Este es de toda la app: el mismo ajuste aparece en los menús Display de todo CineLog, y cambiarlo en cualquier sitio lo cambia en todas partes, incluidos los PDF exportados que imprimen fechas.
 
 ## Altura de fila y modo de visualización
 

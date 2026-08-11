@@ -1,11 +1,11 @@
 ---
 title: Editor de Roteiro
-lastUpdated: 2026-07-11
-description: "Edição profissional de roteiros com formatação Fountain em tempo real, importação multi-formato, analytics ao vivo e integração com a decupagem."
+lastUpdated: 2026-08-08
+description: "Edição profissional de roteiros em páginas US Letter reais, com formatação Fountain em tempo real, importações revisadas, bloqueio de roteiro e revisões coloridas, marcação da análise técnica, analytics ao vivo e integração com a decupagem."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
-O Editor de Roteiro do CineLog é um sistema profissional de edição de roteiros, construído para os fluxos de trabalho modernos da produção cinematográfica. Importe roteiros de múltiplos formatos, edite com suporte à sintaxe Fountain em tempo real, acompanhe analytics e integre-se perfeitamente à sua decupagem — tudo com formatação padrão da indústria e recursos colaborativos.
+O Editor de Roteiro do CineLog é um sistema profissional de edição de roteiros, construído para os fluxos de trabalho modernos da produção cinematográfica. Você escreve em páginas US Letter reais, que quebram exatamente onde o roteiro impresso quebra, importa por uma revisão alteração por alteração, bloqueia números de cena e acompanha rodadas de revisão coloridas, marca a [análise técnica](/pt/breakdown) diretamente na página e popula a decupagem a partir do roteiro.
 
 ## Recursos principais
 
@@ -18,12 +18,24 @@ O Editor de Roteiro do CineLog é um sistema profissional de edição de roteiro
   Formatação ao vivo conforme você digita. Classificação automática de elementos para cabeçalhos de cena, nomes de personagens, diálogos e ação, com atalhos de substituição manual para controle preciso.
 </Card>
 
-<Card title="Importação multi-formato">
-  Importe roteiros nos formatos **Final Draft (.fdx)**, **Fountain (.fountain)**, **PDF**, **TXT** e **RTF**, com parsing inteligente e preservação de formatação.
+<Card title="Layout paginado real">
+  O editor renderiza páginas US Letter reais, de 54 linhas cada, com parágrafos que se dividem na emenda sob **(MORE)** e **(CONT'D)**. As páginas na tela, o contador de páginas e o PDF exportado são as mesmas páginas. Veja [Escrita e formatação](/pt/guides/writing-formatting-scripts).
+</Card>
+
+<Card title="Importação revisada">
+  Importe arquivos **Final Draft (.fdx)**, **Fountain**, **PDF**, **TXT** e **RTF** por uma tela de revisão que mostra cada alteração antes de ela ser aplicada. Veja [Importar roteiros](/pt/guides/importing-scripts).
+</Card>
+
+<Card title="Bloqueio de roteiro e revisões">
+  Bloqueie números de cena, emita drafts e acompanhe rodadas de revisão coloridas, com linhas asteriscadas, páginas tingidas e exportação somente das páginas revisadas. Veja [Bloqueio e revisões](/pt/guides/script-lock-and-revisions).
+</Card>
+
+<Card title="Análise Técnica do Roteiro">
+  Marque elenco, objetos de cena, figurino e mais nove categorias diretamente na página do roteiro. O elenco flui para Elenco e Equipe e para as Ordens do Dia. Veja [Análise Técnica do Roteiro](/pt/breakdown).
 </Card>
 
 <Card title="Analytics ao vivo">
-  Analytics de roteiro em tempo real. Acompanhe estimativas de contagem de páginas, contagem de cenas, contagem de linhas, contagem de palavras e contagem de caracteres enquanto escreve.
+  Uma barra lateral de estatísticas acompanha a contagem de páginas em oitavos de página, além de cenas, linhas, palavras e caracteres — e o tamanho do que você tiver selecionado.
 </Card>
 
 <Card title="Integração com a decupagem">
@@ -77,7 +89,7 @@ Posicionamento com precisão de caractere usando fonte Courier Prime 12 pontos, 
 
 ### Importação multi-formato de roteiros
 
-Precisa trazer o que escreveu de um app antigo? Clique no botão **Importar** na barra superior do Editor de Roteiro para importar e converter um roteiro existente. Nosso parser universal extrai inteligentemente cenas, personagens e geometria de diálogo do seu documento original, aplicando a formatação Fountain padrão automaticamente.
+Precisa trazer o que escreveu de outro app? Clique no botão **Import** na barra superior do Editor de Roteiro. O arquivo é analisado e comparado com seu roteiro atual, e uma tela de revisão mostra cada alteração lado a lado antes de qualquer coisa ser aplicada — você aceita ou rejeita alteração por alteração. Em um roteiro bloqueado, as alterações que tocam material já emitido aguardam sua decisão explícita. O passo a passo completo está em [Importar roteiros](/pt/guides/importing-scripts).
 
 <CardGrid>
 <Card title="Final Draft (.fdx)">
@@ -89,7 +101,7 @@ Precisa trazer o que escreveu de um app antigo? Clique no botão **Importar** na
 </Card>
 
 <Card title="Roteiros em PDF">
-  Extração avançada de texto com preservação de layout, usando bibliotecas específicas por plataforma e suporte a Unicode.
+  Extração de texto de roteiros em PDF, com uma etapa de configuração de como o texto é trazido para dentro.
 </Card>
 
 <Card title="Texto Simples (.txt)">
@@ -103,23 +115,23 @@ Precisa trazer o que escreveu de um app antigo? Clique no botão **Importar** na
 
 ### Analytics de roteiro em tempo real
 
-Métricas profissionais de roteiro atualizadas ao vivo enquanto você edita, com cálculos padrão da indústria para um planejamento de produção preciso.
+Uma barra lateral de estatísticas no editor desktop atualiza ao vivo enquanto você escreve. Ela mostra cinco métricas: Páginas, Cenas, Linhas, Palavras e Caracteres.
 
 <CardGrid>
-<Card title="Estimativa de páginas">
-  Fórmulas padrão da indústria para cálculo de páginas, com atualizações em tempo real e precisão profissional.
+<Card title="Contagem de páginas em oitavos">
+  A contagem de páginas é lida em oitavos de página, como 12 3/8 — a unidade em que o cronograma fala. Ela vem da mesma paginação que o editor renderiza e que o PDF imprime, então é a contagem real, não uma estimativa.
 </Card>
 
-<Card title="Contagem de cenas e personagens">
-  Acompanhamento ao vivo de cenas, personagens únicos e distribuição de diálogo.
+<Card title="Cenas e linhas">
+  Contagem ao vivo das cenas do documento e do total de linhas.
 </Card>
 
-<Card title="Análise de elementos">
-  Conte e analise blocos de ação, linhas de diálogo, transições e outros elementos do roteiro para revisão de estrutura.
+<Card title="Palavras e caracteres">
+  Totais ao vivo de contagem de palavras e de caracteres enquanto você digita.
 </Card>
 
-<Card title="Métricas de palavras e caracteres">
-  Métricas profissionais de escrita, incluindo contagem total de palavras e contagem de caracteres.
+<Card title="Estatísticas da seleção">
+  Selecione qualquer trecho do roteiro e a barra lateral acrescenta a contagem de caracteres da seleção e seu tamanho em oitavos de página — a resposta rápida para "que tamanho tem esta cena".
 </Card>
 </CardGrid>
 

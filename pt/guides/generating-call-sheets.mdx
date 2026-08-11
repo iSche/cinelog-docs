@@ -1,7 +1,7 @@
 ---
 title: Ordens do Dia
-lastUpdated: 2026-07-11
-description: "Ordens do dia diárias no CineLog — cabeçalho e hora de apresentação, locações, cronograma com cascata de tempos, clima, seções de pessoal, mensagem rica para a equipe, envio e rastreamento de confirmações, exportação em PDF."
+lastUpdated: 2026-08-08
+description: "Ordens do dia diárias no CineLog — cabeçalho e hora de apresentação, locações, cronograma com cascata de tempos, clima, elenco preenchido automaticamente com status, mensagem rica para a equipe, envio e rastreamento de confirmações, exportação em PDF."
 ---
 
 Uma ordem do dia no CineLog é o plano de produção por dia: o cronograma, a locação, as pessoas, o clima e a mensagem que vai junto com o e-mail. Ela é fortemente acoplada ao resto do projeto — o cronograma é o mesmo dado da visualização Produção daquele dia, e o pessoal vem direto de Elenco e Equipe.
@@ -27,7 +27,7 @@ O cabeçalho roda no topo e carrega as principais informações do dia em um rel
 
 ### Hora de apresentação geral
 
-O campo mais importante. Define a hora base de início do dia (ex.: 08:00). Clique para editar. Esse horário ancora a cascata de tempos do cronograma (abaixo) e é o horário padrão enviado por e-mail a cada destinatário, a menos que ele tenha uma hora de apresentação pessoal definida (veja [Pessoal](#personnel-sections)).
+O campo mais importante. Define a hora base de início do dia (ex.: 08:00). Clique para editar. Esse horário ancora a cascata de tempos do cronograma (abaixo) e é o horário padrão enviado por e-mail a cada destinatário, a menos que ele tenha uma hora de apresentação pessoal definida (veja [Pessoal](#seções-de-pessoal)).
 
 ### Data
 
@@ -45,8 +45,8 @@ Lado direito do cabeçalho. Puxado da entidade do projeto — sem edição separ
 
 Abra o popup de configurações de exibição no menu superior da ordem do dia para alternar:
 
-- **Formato de hora** — 12 horas (`8:00 AM`) ou 24 horas (`08:00`).
-- **Unidade de temperatura** — °F ou °C.
+- **Time format** — 12 horas (`8:00 AM`) ou 24 horas (`08:00`).
+- **Temperature unit** — °F ou °C.
 
 Ambas as escolhas são por usuário e persistem entre sessões.
 
@@ -108,7 +108,15 @@ Uma lista de referência rápida na segunda linha do cabeçalho mostrando as fun
 
 ### Elenco
 
-Tabela de três colunas — avatar, nome, função. Adicione elenco a partir dos contatos do projeto. Clique em qualquer linha para adicionar notas ou definir uma hora de apresentação. Pressione e segure uma linha para reordenar.
+Tabela de três colunas — **NAME**, **ROLE**, **CALL**. Uma nova ordem do dia preenche esta seção para você: ela lê qual elenco está nas cenas agendadas para aquele dia, em ordem de número de elenco. Essa é a ponta final do fluxo que começa na [Análise Técnica do Roteiro](/pt/breakdown) — marque o elenco uma vez, e a ordem do dia de cada dia chama exatamente as pessoas de que suas cenas precisam. Tire alguém de uma cena e ela sai da ordem do dia daquele dia.
+
+Os números de elenco vêm da vaga em [Elenco e Equipe](/pt/castandcrew) e são lidos ao vivo, então renumerar o elenco atualiza todas as ordens do dia. Uma vaga sem ator escalado ainda imprime **TBD**, com o personagem que ela representa carregado na função, como "PRINCIPAL - JOHN".
+
+Você ainda pode adicionar pessoas manualmente e, uma vez que a ordem do dia existe, a ordem dela é sua — o CineLog inicia novas ordens do dia em ordem de número de elenco, mas nunca reorganiza uma que você já tenha mexido. Clique em qualquer linha para adicionar notas, definir uma hora de apresentação ou definir um status. Pressione e segure uma linha para reordenar.
+
+### Status por pessoa
+
+Cada pessoa pode carregar um status de trabalho, o mesmo vocabulário que um Day Out of Days usa. O elenco tem o conjunto completo: **Start, Work, Finish, Start/Work, Work/Finish, Hold, Day Off, Travel**. Equipe e clientes têm o conjunto reduzido: Start, Work, Finish, Start/Work, Work/Finish.
 
 ### Equipe
 
@@ -142,7 +150,15 @@ Desative "Fotos de Perfil" nas configurações de exibição se quiser avatares 
 
 Cada seção (Locações, Clientes, Elenco, Equipe, Figurantes) pode ser ocultada da ordem do dia via o popup de configurações de exibição. O toggle oculta a seção tanto da UI quanto do PDF exportado.
 
-## Mensagem para a equipe
+## Notas de produção
+
+Um campo de rodapé para notas gerais da produção, lembretes de segurança, protocolos de COVID ou qualquer coisa que você queira no fim do PDF de cada destinatário. Aparece centralizado, em maiúsculas.
+
+## Distribuição
+
+Levar a ordem do dia pronta às pessoas que estão nela: a mensagem compartilhada que vai junto, a escolha dos destinatários, o envio em si e o rastreamento de entregas e confirmações. A edição do conteúdo da ordem do dia está coberta acima; esta é a parte de saída.
+
+### Mensagem para a equipe
 
 Um bloco rich-text para a mensagem que vai junto com o PDF da ordem do dia. Mesma mensagem para todos os destinatários — para instruções individuais use as notas por pessoa acima.
 
@@ -155,17 +171,9 @@ A barra de ferramentas do editor suporta:
 
 O e-mail renderizado aplica a mesma formatação no lado do destinatário. O servidor sanitiza a mensagem antes do envio — somente as tags de formatação na lista de permissões passam.
 
-## Notas de produção
+### Envio
 
-Um campo de rodapé para notas gerais da produção, lembretes de segurança, protocolos de COVID ou qualquer coisa que você queira no fim do PDF de cada destinatário. Aparece centralizado, em maiúsculas.
-
-## Enviando e rastreando confirmações
-
-Quando a ordem do dia estiver pronta, **Enviar** no menu superior abre o diálogo de envio.
-
-### Escolhendo destinatários
-
-Duas etapas:
+Quando a ordem do dia estiver pronta, **Send** na barra de menu superior abre o diálogo de envio. Duas etapas:
 
 1. **Destinatários.** Uma lista agrupada por seção (Elenco, Equipe, Figurantes, Clientes), ordenada por departamento e função. Todos com uma hora de apresentação na ordem do dia ficam pré-selecionados por padrão. Toggles em massa permitem selecionar ou desselecionar uma seção inteira de uma vez.
 2. **Mensagem.** Mensagem adicional opcional específica deste envio, colocada sobre a mensagem para a equipe.
@@ -181,7 +189,7 @@ Cada destinatário recebe:
 
 ### Página de Envios
 
-Abra a página de **Envios** no menu superior da ordem do dia (ou navegue até `…/call-sheets/<day>/sendouts`) para ver quem recebeu a ordem do dia. Os destinatários são agrupados por **lote de envio** — cada pressão em Enviar cria um novo lote, então reenviar depois de edições preserva o histórico completo. Cada cabeçalho de lote mostra uma contagem "N / M confirmados".
+Abra a página de **Sendouts** no menu superior da ordem do dia (ou navegue até `…/call-sheets/<day>/sendouts`) para ver quem recebeu a ordem do dia. Os destinatários são agrupados por **lote de envio** — cada pressão em Enviar cria um novo lote, então reenviar depois de edições preserva o histórico completo. Cada cabeçalho de lote mostra uma contagem "N / M confirmados".
 
 Cada linha de destinatário mostra:
 
@@ -205,7 +213,7 @@ Duas formas de obter um PDF, dependendo do caso de uso:
 
 ### Exportação local pela barra de ferramentas
 
-O botão **Exportar** no menu superior abre o diálogo de exportação — não há atalho de teclado aqui (a exportação com `Cmd / Ctrl + P` funciona nas telas de decupagem, Storyboard e Roteiro AV, não nas ordens do dia). Você pode definir as margens da página (topo, base, esquerda, direita em pontos) e exportar. A renderização é local — sem upload, sem renderização do lado do servidor — então funciona offline. Útil quando você quer um PDF para distribuir fora do fluxo de e-mail (Slack, WhatsApp, entrega pessoal).
+O botão **Export** no menu superior abre o diálogo de exportação — não há atalho de teclado aqui (a exportação com `Cmd / Ctrl + P` funciona nas telas de decupagem, Storyboard e Roteiro AV, não nas ordens do dia). Você pode definir as margens da página (topo, base, esquerda, direita em pontos) e exportar. A renderização é local — sem upload, sem renderização do lado do servidor — então funciona offline. Útil quando você quer um PDF para distribuir fora do fluxo de e-mail (Slack, WhatsApp, entrega pessoal).
 
 ### PDFs por destinatário no momento do envio
 
@@ -221,7 +229,7 @@ A edição e o envio de ordens do dia são controlados pelo recurso ACL `call_sh
 
 ## Comportamento offline
 
-Editar ordens do dia funciona offline — as alterações são salvas no banco local e sincronizam quando você reconecta, como tudo no CineLog. **Enviar** requer conectividade (é um fluxo de e-mail de saída). **Exportação local em PDF** funciona offline.
+Editar ordens do dia funciona offline — as alterações são salvas no banco local e sincronizam quando você reconecta, como tudo no CineLog. **Send** requer conectividade (é um fluxo de e-mail de saída). **Exportação local em PDF** funciona offline.
 
 ## Se isso não estiver funcionando
 

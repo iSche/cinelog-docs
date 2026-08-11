@@ -1,6 +1,6 @@
 ---
 title: Lo esencial de la lista de planos
-lastUpdated: 2026-07-11
+lastUpdated: 2026-08-08
 description: "Construir una lista de planos desde cero: tres formas de añadir planos, cómo funciona la numeración, cómo reordenar y qué se elimina cuando borras un plano o una escena."
 ---
 
@@ -14,17 +14,17 @@ Un nuevo proyecto te da una lista de planos vacía. Hay tres formas de rellenarl
 
 - **Manualmente, un plano a la vez.** Haz clic en el botón `New Shot` a la derecha de la barra de menú superior (escritorio), o el botón `+` en la barra superior de la app (teléfono). Ambos abren un diálogo que pregunta a qué número de escena añadir el plano.
 - **Atajo.** `Cmd / Ctrl + N` abre el mismo diálogo de número de escena, prerrellenado con el número de escena más alto. En una lista vacía se salta el diálogo y crea el primer plano en la escena 1.
-- **Poblar desde el Guion.** Abre el Editor de Guion y pulsa `Shift + P` (o usa su botón Poblar — el atajo no hace nada en la pantalla de la lista de planos). Escanea los encabezados de escena del guion (líneas como `INT. COCINA - DÍA`) y muestra una previsualización antes de que nada cambie: Combinar añade solo las escenas que aún no están en tu lista, Reemplazar limpia la lista y la reconstruye desde el guion. Por defecto crea varios planos sugeridos por escena con descripciones y tipos de plano; elige "solo escenas" para un plano de marcador de posición por escena en su lugar. Los nombres de localización de los encabezados se trasladan a las escenas. En el plan gratuito, el poblado se detiene en el límite del proyecto de 25 escenas / 50 planos. El resultado es tan limpio como tu guion: encabezados mal formados producen escenas mal formadas.
+- **Populate from Script.** (poblar desde el guion) Abre el Editor de Guion y pulsa `Shift + P` (o usa su botón Populate — el atajo no hace nada en la pantalla de la lista de planos). Escanea los encabezados de escena del guion (líneas como `INT. COCINA - DÍA`) y muestra una previsualización antes de que nada cambie: Merge (combinar) añade solo las escenas que aún no están en tu lista, Replace (reemplazar) limpia la lista y la reconstruye desde el guion. Por defecto crea varios planos sugeridos por escena con descripciones y tipos de plano; elige "scenes only" (solo escenas) para un plano de marcador de posición por escena en su lugar. Los nombres de localización de los encabezados se trasladan a las escenas. En el plan gratuito, el poblado se detiene en el límite del proyecto de 25 escenas / 50 planos. El resultado es tan limpio como tu guion: encabezados mal formados producen escenas mal formadas.
 
-La mayoría de proyectos empiezan con Poblar desde el Guion como una primera pasada rápida, luego refinan manualmente.
+La mayoría de proyectos empiezan con Populate from Script como una primera pasada rápida, luego refinan manualmente.
 
 ## Numeración de planos
 
 Los planos se numeran automáticamente. Tres formatos están disponibles en [Ajustes de Visualización](/es/guides/shot-list/display-settings):
 
-- **Alfanumérico** — `1A`, `1B`, `2A`. Número de escena + letra por plano dentro de la escena. Por defecto.
-- **Decimal** — `1.1`, `1.2`, `2.1`.
-- **Secuencial** — `1`, `2`, `3`, `47`. Continuo a través del proyecto.
+- **US** — `1A`, `1B`, `2A`. Número de escena + letra por plano dentro de la escena. Por defecto.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`, `47`. Continuo a través del proyecto.
 
 Los números y letras se actualizan al reordenar. Si mueves `1C` a la parte superior de su escena, la lista brevemente lee C, A, B antes de recalcular a A, B, C. No anotes la letra de un plano y esperes que sea estable entre movimientos.
 
@@ -36,7 +36,7 @@ Arrastra cualquier plano para moverlo. El gesto es el arrastre universal de [Lo 
 
 - **Dentro de una escena** — arrastra arriba o abajo. Las letras se recompactan.
 - **A través de escenas** — arrastra más allá de un límite de escena. El número de escena del plano cambia para coincidir con el destino; las letras se recompactan tanto en la escena origen como en la destino.
-- **En el espacio vacío entre dos escenas** — el plano se une al final de la escena de arriba. Arrastrar nunca crea una nueva escena; para crear una, usa el diálogo New Shot y escribe un número de escena que aún no exista, o usa Poblar desde el Guion.
+- **En el espacio vacío entre dos escenas** — el plano se une al final de la escena de arriba. Arrastrar nunca crea una nueva escena; para crear una, usa el diálogo New Shot y escribe un número de escena que aún no exista, o usa Populate from Script.
 
 La vista Producción añade una regla de alcance de escena para multi-selecciones; ver [Lineal vs Producción](/es/guides/shot-list/linear-vs-production).
 
@@ -60,6 +60,6 @@ El diálogo de confirmación siempre detalla lo que está a punto de desaparecer
 
 *"Las letras de mi plano cambiaron después de arrastrar."* Esperado: las letras se recalculan después de cada reordenamiento para que se mantengan en orden de visualización.
 
-*"Poblar desde el Guion me dio un lío de escenas."* Abre el guion y limpia los encabezados de escena (`INT. / EXT. LOCALIZACIÓN - MOMENTO`) y luego reejecuta.
+*"Populate from Script me dio un lío de escenas."* Abre el guion y limpia los encabezados de escena (`INT. / EXT. LOCALIZACIÓN - MOMENTO`) y luego reejecuta.
 
 *"Borré el último plano de una escena y toda la escena desapareció."* También esperado: no hay un estado de escena vacía. Para mantener la escena, deja un plano de marcador de posición en ella.

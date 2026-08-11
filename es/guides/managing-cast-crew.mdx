@@ -1,7 +1,7 @@
 ---
 title: Gestionar Elenco y Equipo
-lastUpdated: 2026-06-25
-description: "Añade roles y departamentos, gestiona contactos del espacio de trabajo y controla el acceso con selectores de intención. Los datos del equipo fluyen directamente a las órdenes de rodaje de CineLog."
+lastUpdated: 2026-08-08
+description: "Añade roles y departamentos, crea roles personalizados, numera y enlaza tu elenco con los personajes, gestiona contactos del espacio de trabajo y controla el acceso con selectores de intención. Los datos del equipo fluyen directamente a las órdenes de rodaje de CineLog."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -21,11 +21,30 @@ Puedes añadir fácilmente nuevos miembros directamente a tu proyecto. CineLog u
 1. **Abre Elenco y Equipo:** Navega al módulo de Elenco y Equipo usando la barra lateral izquierda. Asegúrate de estar en la pestaña "Proyecto".
 2. **Añadir un rol:** Haz clic en el botón **"+ Añadir Rol"**.
 3. **Seleccionar o crear:** Se abrirá el diálogo unificado. Puedes buscar y seleccionar a una persona existente de tus Contactos del espacio de trabajo, o simplemente escribir un nuevo nombre para crear al instante un contacto nuevo.
-4. **Elige un rol:** Selecciona un rol estándar de la industria del desplegable (p. ej., *1er Ayudante de Dirección*, *Gaffer*, *Actor Principal*).
+4. **Elige un rol:** Busca en la lista de roles y elige uno (p. ej., *1er Ayudante de Dirección*, *Gaffer*, *Actor Principal*).
 5. **Detalles de contacto:** Introduce el correo electrónico y el teléfono de la persona. Aunque opcionales, son altamente recomendados si planeas enviarles Órdenes de Rodaje o invitarlos a la app.
 </Steps>
 
 ¡Puedes asignar múltiples roles a una sola persona si llevan muchos sombreros en tu producción!
+
+### Roles personalizados
+
+Cuando tu producción tiene un puesto que la lista estándar no conoce, créalo tú. Escribe el nombre en el campo de búsqueda de roles y, cuando no haya ninguna coincidencia, obtienes la opción **Create "…" as a custom role**. Unas cuantas cosas que conviene saber:
+
+- Los roles personalizados pertenecen al **espacio de trabajo**, no al proyecto, así que a partir de entonces todos los proyectos de tu espacio de trabajo pueden usarlos.
+- Todos viven en un único departamento llamado **Custom**, que se ordena después de los departamentos estándar en el tablero.
+- Los nombres tienen que ser únicos. Si el nombre ya existe como rol estándar o personalizado, CineLog te dice cuál es y eliges el existente en su lugar.
+- La opción de crear aparece en la vía principal de **+ Añadir Rol**. Añadir desde el botón **+** propio de un departamento concreto ofrece solo los roles de ese departamento, porque un rol personalizado no puede vivir ahí.
+- Todavía no hay forma de renombrar ni eliminar roles personalizados dentro de la app. Ponles el nombre tal y como debe imprimirlo la orden de rodaje.
+
+### Números de elenco y personajes
+
+Las plazas del grupo de elenco (Talent y Background) llevan dos cosas que las plazas de equipo no tienen: un **número de elenco** y un **personaje**.
+
+- El número es lo que imprimen las órdenes de rodaje y el Day Out of Days junto al actor. Toca la píldora del número en la sección **Character** de una plaza para fijarlo a mano. Los números son únicos — si el 3 está cogido, CineLog te dice quién lo tiene.
+- **Link…** conecta la plaza con un personaje del [Desglose del Guion](/es/breakdown), y la plaza empieza a leerse como una hoja de casting: "Jane Doe as MARIA", con "1 · MARIA — Lead" debajo. Si todavía no hay personajes que enlazar, etiqueta antes el elenco en el desglose.
+- El desglose suele hacer la primera pasada por ti: crea una plaza de Talent vacante y numerada por cada personaje detectado, con un rol deducido que puedes cambiar. Ver [Desglose del Guion](/es/breakdown).
+- Para reordenar el elenco, mantén pulsada una fila de elenco y arrástrala. Todo el grupo de Elenco se renumera según el nuevo orden, primero Talent y luego Background, así que el tablero siempre se lee de 1 a N de arriba abajo.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Feuilles de Service
-lastUpdated: 2026-07-11
-description: "Génère et gère les feuilles de service pour le casting et l'équipe avec planification et détails de localisation."
+lastUpdated: 2026-08-08
+description: "Génère et gère les feuilles de service pour le casting et l'équipe avec planification, talents remplis automatiquement et détails de localisation."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
 
@@ -58,7 +58,7 @@ Clique dans les sections Talents ou Équipe pour réduire la liste à exactement
 
 **Export PDF et envois par e-mail**
 
-Assure-toi que tout le monde sait exactement ce qui se passe. Clique sur **Exporter** pour formater un PDF aux normes de l'industrie portant le logo de ton entreprise, ou clique sur **Envoyer** pour expédier des envois d'e-mails suivis directement dans la poche de ton équipe.
+Assure-toi que tout le monde sait exactement ce qui se passe. Clique sur **Export** (exporter) pour formater un PDF aux normes de l'industrie portant le logo de ton entreprise, ou clique sur **Send** (envoyer) pour expédier des envois d'e-mails suivis directement dans la poche de ton équipe.
 
 </li>
 
@@ -72,7 +72,7 @@ Le planning des Feuilles de Service reste synchronisé avec ta vue Production. R
 </Aside>
 
 <Aside type="tip" title="Avantages du routage de données">
--   **Flux Casting et Équipe** : Les noms des talents, les rôles de l'équipe et les détails de contact proviennent strictement de ton hub central Casting et Équipe. Assigner un acteur remplit dynamiquement ses données.
+-   **Flux Casting et Équipe** : Les noms des talents, les rôles de l'équipe et les détails de contact proviennent strictement de ton hub central Casting et Équipe. Une nouvelle feuille remplit sa section Talents à partir du casting des scènes planifiées ce jour-là, dans l'ordre des numéros de casting — la chaîne qui commence par l'étiquetage du casting dans le [Dépouillement du Scénario](/fr/breakdown). L'équipe récurrente est reportée depuis la veille avec ses heures d'appel.
 -   **Garanties de gestion des erreurs** : Tout goulot d'étranglement de planning invalide affiche des alertes UI jaunes/rouges marquées empêchant les conflits de chronologie.
 -   **Portail de confirmation** : Toute personne recevant un e-mail de Feuille de Service reçoit un lien protégé par jeton qui ouvre un portail aux couleurs de CineLog où elle appuie sur « Confirmer » pour accuser réception — aucun compte requis.
 </Aside>

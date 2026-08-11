@@ -1,0 +1,87 @@
+---
+title: Dépouillement du scénario
+lastUpdated: 2026-08-10
+description: "Un guide de flux de travail pour le Dépouillement du Scénario : verrouille tes numéros de scène, marque les éléments sur la page, laisse CineLog trouver ton casting, traque les besoins non écrits et remets sa liste à chaque département."
+---
+import { Aside } from '@astrojs/starlight/components';
+
+Pendant des décennies, un dépouillement, c'était un scénario imprimé, une règle et une boîte de crayons de couleur. Tu lisais chaque ligne, et chaque fois que le scénario mentionnait un accessoire, un costume, un véhicule ou une personne, tu le marquais dans la couleur du département concerné. Le Dépouillement de CineLog, c'est le même métier sur la même page. Tu sélectionnes les mots, tu choisis une catégorie, et les marques restent là, dans le scénario, pendant que les éléments se rassemblent dans une liste unique que tu peux remettre à chaque département.
+
+Ce guide suit le flux de travail depuis un scénario terminé jusqu'aux fiches de dépouillement exportées. La référence complète de chaque commande se trouve sur la page [Dépouillement du Scénario](/fr/breakdown). Si tu n'as jamais verrouillé de scénario, lis d'abord [Verrouillage et révisions](/fr/guides/script-lock-and-revisions), parce que le dépouillement commence par un verrouillage.
+
+## Commence par un scénario verrouillé
+
+Ouvre ton scénario et appuie sur **Breakdown** dans la barre de menu supérieure de l'éditeur. Sur téléphone, c'est dans la feuille **More** (plus), juste sous le Logiciel de Scénario.
+
+À la première ouverture, CineLog te demande de verrouiller tes numéros de scène. Dis oui : un dépouillement épingle chaque élément à un numéro de scène, et ces numéros doivent cesser de bouger. Un dépouillement qui dit « le revolver est dans la scène 12 » ne vaut plus rien le jour où la scène 12 devient la scène 13. À partir du verrouillage, les nouvelles scènes reçoivent des numéros à lettre comme 78A, et les scènes retirées deviennent OMITTED au lieu de disparaître. Tes pages continuent de s'enchaîner et tu peux continuer à écrire. Le verrouillage n'arrête rien de l'écriture.
+
+## Marque ton premier élément
+
+Prenons un exemple que l'on gardera tout au long de ce guide. Disons qu'on dépouille un court métrage sur un photographe nommé John, et que la scène 4 dit : « John attrape le revolver dans le tiroir. »
+
+Sélectionne le mot « revolver » par un glissement, ou double-clique simplement dessus. L'éditeur de marquage s'ouvre tout seul une fois la sélection stabilisée. Sur les appareils tactiles, sélectionne le texte et appuie sur **Tag** (étiqueter) dans la petite barre d'outils qui apparaît au-dessus.
+
+L'éditeur affiche une grille de douze catégories, un champ **Element** pré-rempli avec le texte sélectionné et un champ **Qty** (quantité). Choisis **Props** (accessoires) et appuie sur **Tag**. C'est tout le geste. Le mot reste souligné en violet sur la page, et « Revolver » existe désormais comme élément dans ton projet.
+
+Deux règles à connaître sur les sélections : elles doivent tenir sur une seule ligne, et elles doivent tomber à l'intérieur d'une scène verrouillée — la page de titre ne peut donc pas être marquée.
+
+Si tu aimes le clavier, tu peux aller très vite ici : les touches `1` à `9` choisissent les neuf premières catégories, `Tab` saute au champ Element avec le texte sélectionné, et `Enter` enregistre. Dépouiller une scène entière prend vite un rythme : sélectionner, chiffre, Enter.
+
+## Un élément, plusieurs scènes
+
+Disons maintenant que le revolver revient dans la scène 19. Marque-le là aussi. CineLog voit qu'un élément nommé « Revolver » existe déjà dans Props et t'indique qu'il va réutiliser l'existant. Tu obtiens donc un seul revolver présent dans deux scènes, pas deux revolvers, et la liste de l'accessoiriste reste honnête.
+
+Après un marquage, CineLog cherche aussi les mêmes mots dans les autres scènes et te les propose tous dans une seule boîte de dialogue. Chaque occurrence affiche la scène et un extrait, les correspondances exactes arrivent cochées, et tu appuies sur **Tag N** pour toutes les prendre d'un coup. Tu peux relancer cette passe à tout moment depuis le menu de l'élément avec **Find similar…** (trouver les similaires). Si tu refuses une suggestion, CineLog retient le non et ne te reproposera plus cet endroit.
+
+## Les catégories sont les départements
+
+Les douze catégories correspondent aux gens qui liront tes fiches : Cast (casting), Stunts (cascades), deux types d'Extras (figurants), Special Effects (effets spéciaux), Props, Vehicles & Animals (véhicules et animaux), Sound & Music (son et musique), Wardrobe (costumes), Makeup & Hair (maquillage et coiffure), Special Equipment (matériel spécial), et Production Notes (notes de production) comme catégorie fourre-tout.
+
+Les marques sur la page suivent les conventions papier classiques. La plupart des catégories soulignent dans leur couleur, Wardrobe reçoit un cercle dans la marge, Makeup & Hair des astérisques autour des mots, et Special Equipment un encadré. Un membre de l'équipe qui a appris à dépouiller à la main lit tes pages sans légende, parce que ce sont les mêmes marques que celles de ses crayons.
+
+<Aside type="note">
+Les douze catégories sont fixes dans cette version. Si quelque chose n'entre nulle part, classe-le dans Production Notes : un élément marqué dans la mauvaise case vaut toujours mieux qu'un élément non marqué dans aucune case.
+</Aside>
+
+## Le casting se détecte tout seul
+
+Cast est la seule catégorie que tu ne marques presque jamais à la main.
+
+À chaque fois que tu verrouilles les scènes, verrouilles les pages, démarres une révision ou importes, CineLog marque la première réplique de chaque personnage dans chaque scène. Ces marquages arrivent confirmés, parce qu'une réplique n'est pas une supposition. Quand le nom d'un personnage apparaît dans les lignes d'action, CineLog le marque aussi, mais le signale comme en attente de révision avec un soulignement en pointillés, parce que « JOHN » dans une didascalie peut être un autre John. Retire les marquages erronés et ils restent retirés. Les bons ne demandent aucune action de ta part, ils comptent déjà.
+
+CineLog ne fusionne jamais de lui-même des noms qui se ressemblent. MARIA et MARIE restent séparés tant que tu ne les fusionnes pas, parce que toi seul sais s'il s'agit d'une faute de frappe ou de deux personnes.
+
+Chaque personnage détecté reçoit également un **emplacement Talent** numéroté dans [Casting et Équipe](/fr/castandcrew). CineLog devine le type de rôle à partir du volume de travail du personnage. Un personnage présent dans un tiers de tes scènes ou plus arrive en Principal, trois scènes ou plus en Supporting (second rôle), et le reste en Day Player (rôle à la journée). Tu peux modifier tout cela ensuite, et si tu gères déjà ta liste de comédiens à la main, CineLog le remarque et laisse ton casting tranquille.
+
+## Traque les besoins non écrits
+
+C'est ici que le dépouillement cesse d'être un travail de greffe pour devenir un travail d'enquête. Le scénario ne liste jamais tout ce dont il a besoin. Il le suggère.
+
+Disons qu'une scène dit : « Une livreuse arrive avec les courses. » La scénariste a écrit une personne. La production a besoin de la personne, des sacs de courses qu'elle porte, de l'uniforme qu'elle porte, et peut-être du camion de livraison garé derrière elle. Aucun de ces éléments n'est un mot que tu peux sélectionner sur la page.
+
+C'est à ça que sert **Add new…** (ajouter un élément), en bas de chaque section de catégorie. Cela marque une scène entière sans souligner de texte, pour que les choses implicites soient comptées elles aussi. Une scène EXT. RUE - NUIT qui aura manifestement besoin d'une rampe de pluie en reçoit une de la même façon. Une bonne passe ici, c'est ce qui sépare un dépouillement qui survit au contact du tournage d'un dépouillement qui n'y survit pas : avance scène par scène et demande-toi sans cesse ce que la page suppose que tu apporteras.
+
+## Garde la liste propre
+
+Le panneau de droite (la page **Tags** sur téléphone) est ta liste d'éléments, groupée par catégorie. Toucher une ligne fait sauter le scénario à l'occurrence suivante, et les flèches parcourent toutes les occurrences.
+
+Le menu `⋯` de chaque élément porte l'entretien courant : **Edit…**, **Find similar…**, **Merge into…** (fusionner avec), **Archive** et **Delete…**. La fusion déplace tous les marquages sur l'élément que tu choisis, et c'est ainsi que MARIA et MARIE deviennent une seule personne. L'archivage retire un élément de toutes les scènes mais le conserve, ce qui est le choix le plus sûr quand tu hésites. La suppression est réservée à ce qui n'avait rien à faire là.
+
+Les lignes peuvent porter des avertissements, chacun expliqué dans son infobulle : marquages en attente de révision, marquages situés dans une scène qui n'existe plus, et texte marqué introuvable après des modifications. Un panneau propre avant l'export vaut bien dix minutes, parce que chaque avertissement que tu règles maintenant est une question que personne ne te posera sur le plateau.
+
+## Où va le casting ensuite
+
+Le casting marqué au dépouillement se dépose sur la scène elle-même, et tout ce qui suit lit depuis la scène. **Populate Shot List** (remplir le découpage technique), dans la barre d'outils du dépouillement, alimente tes scènes et tes plans avec leur casting. Ces mêmes numéros de comédiens remplissent les bandes du [Plan de Travail](/fr/schedule), et quand une feuille de service est générée pour un jour de tournage, sa section Talent se remplit avec le casting du jour, par ordre de numéro. Tu marques une fois, et ça apparaît partout.
+
+## Exporte les fiches
+
+Appuie sur **Export** dans la barre d'outils du dépouillement. La boîte de dialogue propose deux fiches, et tu peux prendre l'une, l'autre ou les deux :
+
+- **Breakdown Summary** (synthèse du dépouillement) donne un bloc par scène, avec ses éléments par catégorie, les notes de scène et les huitièmes de page. C'est la fiche que lit un chef de département pour préparer une journée.
+- **Element List** (liste des éléments) donne chaque élément par catégorie, avec les scènes où il apparaît. C'est la fiche que lit un chef de département pour budgéter tout le film.
+
+Il y a aussi une option **Burn in a recipient** (incruster un destinataire) qui imprime le nom d'une personne choisie et un horodatage sur chaque page en faible opacité, pour quand une copie doit rester traçable.
+
+## Passe au plan de travail
+
+Maintenant que chaque scène connaît son casting et ses éléments, les bandes ont quelque chose à dire. Enchaîne avec [Construire le plan de travail](/fr/guides/building-the-schedule) pour répartir ces scènes en jours de tournage.

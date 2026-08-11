@@ -1,7 +1,7 @@
 ---
 title: Configurações de Exibição
-lastUpdated: 2026-07-11
-description: "Visibilidade e ordem de colunas, colunas personalizadas, formato de numeração de planos, altura de linha — tudo que controla como a decupagem aparece na tela."
+lastUpdated: 2026-08-08
+description: "Visibilidade e ordem de colunas, colunas personalizadas, formato de numeração de planos, largura da barra lateral do roteiro, formato de data, altura de linha — tudo que controla como a decupagem aparece na tela."
 ---
 
 As Configurações de Exibição controlam como a decupagem aparece — quais colunas são visíveis, em que ordem, como os planos são numerados. As configurações são em nível de projeto e se propagam via CineSync, então ajustes feitos no desktop aparecem no app mobile em segundos.
@@ -24,13 +24,21 @@ Adicione suas próprias colunas pelas Configurações de Exibição dando um nom
 
 ## Formato de numeração de planos
 
-Três formatos são suportados:
+Três formatos são suportados, exibidos na sobreposição com amostras ao vivo:
 
-- **Alfanumérico** — `1A`, `2C`. Cena + letra.
-- **Decimal** — `1.1`, `2.3`.
-- **Sequencial** — `1`, `2`, `47`. Contínuo ao longo do projeto.
+- **US** — `1A`, `1B`, `1C`. Cena + letra.
+- **EU** — `1.1`, `1.2`, `2.1`.
+- **UK** — `1`, `2`, `3`. Contínuo ao longo do projeto.
 
-O formato é uma preferência de exibição — ele muda como os números são mostrados sem alterar os planos subjacentes, então você pode trocar entre os formatos livremente e voltar a qualquer momento.
+São os mesmos três formatos que as configurações de exibição do Roteiro AV e do Storyboard oferecem, com os mesmos nomes. O formato é uma preferência de exibição — ele muda como os números são mostrados sem alterar os planos subjacentes, então você pode trocar entre os formatos livremente e voltar a qualquer momento.
+
+## Barra lateral do roteiro, rolagem automática e datas
+
+Mais três linhas vivem na sobreposição:
+
+- **Script Width** — quanto da janela a barra lateral do roteiro ocupa quando está aberta, de 30% a 50%.
+- **Script Auto-scroll** — se a barra lateral do roteiro acompanha você conforme se move pela lista.
+- **Date Format** — `M/D/Y`, `D/M/Y` ou `Y-M-D`. Esta é para o app inteiro: a mesma configuração aparece nos menus de Exibição em todo o CineLog, e mudá-la em qualquer lugar muda em todos, inclusive nos PDFs exportados que imprimem datas.
 
 ## Altura de linha e modo de exibição
 

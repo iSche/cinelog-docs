@@ -1,0 +1,42 @@
+---
+title: CineLog nel browser
+lastUpdated: 2026-08-08
+description: "Usa CineLog su app.cinelog.com — stesso account, stessi progetti, stessa sincronizzazione. Cosa significa la regola di una sola scheda, cosa dicono gli avvisi sull'archiviazione e come funzionano gli abbonamenti fuori dagli app store."
+---
+
+Questa guida assume [Le basi](/it/guides/introduction).
+
+CineLog gira nel browser su [app.cinelog.com](https://app.cinelog.com). È la stessa app che installi su desktop e mobile, con lo stesso accesso, gli stessi progetti e la stessa sincronizzazione. Le modifiche che fai in un browser arrivano sugli altri tuoi dispositivi come le modifiche fatte da qualsiasi altra parte. Funziona anche offline: il browser tiene una copia locale dei tuoi progetti, esattamente come fanno le app native.
+
+Usalo su una macchina su cui non puoi installare nulla, come una workstation a noleggio o l'ufficio di un cliente. Vale la pena conoscere qualche realtà del browser.
+
+## Una sola scheda alla volta
+
+CineLog gira in una sola scheda. Aprine una seconda e mostrerà invece una schermata semplice: "CineLog is already open in another tab." Entrambe le schede condividerebbero lo stesso database offline, quindi tenerne due aperte permetterebbe loro di sovrascriversi le modifiche a vicenda.
+
+Il pulsante **Use CineLog here** passa la sessione alla nuova scheda, e l'altra scheda si fa da parte da sola. Se l'altra scheda è a metà di un lavoro, può rifiutare per il momento, e la schermata ti dice perché: sta ancora caricando un file, sta ancora salvando una modifica, oppure sta trattenendo modifiche che non riuscirebbe a preservare attraverso un ricaricamento. Dalle un attimo e riprova.
+
+## Chiudere la scheda mentre salva
+
+Se chiudi o ricarichi la scheda mentre delle modifiche si stanno ancora sincronizzando o un file si sta caricando, il browser ti chiede se vuoi davvero uscire. Prendi sul serio quel messaggio per i caricamenti: sul web i byte di un upload vivono nella scheda, quindi un ricaricamento a metà upload non può essere ripreso. Le modifiche costano meno, perché tutto ciò che è già sincronizzato è al sicuro sul server.
+
+## Avvisi sull'archiviazione
+
+Alcune situazioni del browser non permettono di archiviare i dati in modo affidabile, e CineLog te lo dice invece di fingere. Esistono due banner:
+
+- Uno rosso: "Changes in this browser will be lost when you close the tab." Il browser ha rifiutato del tutto l'archiviazione locale, il che di solito significa una finestra privata o in incognito. Tutto vive solo nella scheda, quindi tienila aperta finché la sincronizzazione non è finita.
+- Uno ambra: "Storage in this browser is unreliable." CineLog può salvare i dati, ma il browser potrebbe cancellarli in qualsiasi momento. Il lavoro sincronizzato è al sicuro sul server, le modifiche in attesa di sincronizzazione no.
+
+Se ne vedi uno dei due, il rimedio è lo stesso: usa Chrome, Edge o Firefox fuori da una finestra privata. In un browser in salute non c'è alcun banner.
+
+## Abbonamenti nel browser
+
+L'app nel browser non vende abbonamenti. La pagina dell'abbonamento mostra "Plans are managed on cinelog.com" con un pulsante **See plans** che ti porta su [cinelog.com/pricing](https://cinelog.com/pricing/). Il tuo workspace passa al nuovo piano non appena l'acquisto è completato. Un abbonamento comprato sul web si gestisce anche sul web, tramite **Manage on Web** nella stessa pagina. Lo stesso vale per le app Windows e Linux, che non hanno nemmeno loro un app store.
+
+## Se non funziona
+
+*Entrambe le schede dicono che l'altra è aperta.* Una delle due è a metà di un salvataggio. Aspetta qualche secondo e premi di nuovo **Use CineLog here** nella scheda che vuoi usare.
+
+*Ho lavorato offline in una finestra privata e le mie modifiche sono sparite.* È esattamente ciò di cui avverte il banner rosso: una finestra privata non conserva nulla dopo la chiusura della scheda. Le modifiche che avevano raggiunto il server prima della chiusura sono al sicuro.
+
+*Quali browser sono sicuri da usare?* Chrome, Edge e Firefox, fuori da una finestra privata. È la combinazione che CineLog stesso consiglia nei suoi avvisi sull'archiviazione. Altri browser possono funzionare bene, ma quei tre sono quelli con un'archiviazione offline affidabile.

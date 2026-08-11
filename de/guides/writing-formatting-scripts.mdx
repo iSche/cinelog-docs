@@ -1,106 +1,100 @@
 ---
 title: Drehbücher schreiben & formatieren
-lastUpdated: 2026-06-22
-description: "Importiere FDX-, Fountain-, PDF-, TXT- und RTF-Drehbücher in den Editor von CineLog. Formatiere mit Fountain-Syntax, verfolge Analytik, exportiere als PDF und befülle deine Einstellungsliste."
----
-import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
-
-Der Drehbuch-Editor von CineLog ist eine leistungsstarke, professionelle Schreibumgebung, die nativ in die Plattform integriert ist. Er unterstützt Echtzeit-Fountain-Formatierung, Live-Analytik und nahtloses Daten-Sync zur Cloud.
-
-Ob du ein neues Drehbuch von Grund auf schreibst oder ein bestehendes importierst – CineLog sorgt dafür, dass deine Formatierung immer den Branchenstandards entspricht.
-
-## Ein bestehendes Drehbuch importieren
-
-Falls du dein Drehbuch bereits in einer anderen Software begonnen hast, kannst du es einfach in CineLog importieren, ohne deine Formatierung zu verlieren.
-
-<Steps>
-1. **Drehbuch-Editor öffnen:** Navigiere über die linke Seitenleiste zum Drehbuch-Editor.
-2. **Dokument importieren:** Klicke auf den **Import**-Button in der oberen Menüleiste und wähle deine Drehbuchdatei aus.
-3. **Automatisches Parsing:** Der universelle Parser von CineLog verarbeitet die Datei automatisch, extrahiert die Szenen und konvertiert die Formatierung.
-</Steps>
-
-<CardGrid>
-  <Card title="Unterstützte Formate">
-    - **Final Draft (.fdx)**
-    - **Fountain (.fountain)**
-    - **PDF** (Textextraktion)
-    - **Plain Text (.txt)**
-    - **Rich Text (.rtf)**
-  </Card>
-</CardGrid>
-
+lastUpdated: 2026-08-08
+description: "Schreibe auf echten US-Letter-Seiten mit Live-Fountain-Formatierung: die Titelseite, wie die Return-Taste dich durch die Elemente führt, Seitenumbrüche mit (MORE) und (CONT'D), Zoom, Analytik und Export."
 ---
 
-## Live-Bearbeitung & -Formatierung
+Dieser Guide setzt [Die Grundlagen](/de/guides/introduction) voraus. Der Import hat inzwischen einen eigenen Review-Screen und einen eigenen Guide bekommen: [Drehbücher importieren](/de/guides/importing-scripts). Sperren und Revisionen leben in [Sperre & Revisionen](/de/guides/script-lock-and-revisions).
 
-CineLog verwendet im Hintergrund die Markup-Sprache **Fountain**. Du musst Fountain aber nicht kennen, um zu schreiben – der Editor formatiert deinen Text automatisch beim Tippen.
+Der Drehbuch-Editor schreibt auf echten Seiten. Was du siehst, ist ein Stapel US-Letter-Seitenkarten, 12 pt Courier, mit der Seitenzahl in der oberen rechten Ecke und Seitenumbrüchen genau dort, wo sie im Druck fallen werden. Es gibt keinen separaten Vorschaumodus mehr, denn die Seiten des Editors und die exportierte PDF kommen aus demselben Layout. Die Seite, die du ansiehst, ist die Seite.
 
-### Unterstützte Fountain-Elemente
+Einen Speichern-Button gibt es ebenfalls nicht. Jede Änderung wird innerhalb von etwa einer halben Sekunde auf deinem Gerät gespeichert und im Hintergrund in die Cloud synchronisiert.
 
-CineLog unterstützt aktuell die Kern-Fountain-Spezifikation für professionelle Drehbuch-Bearbeitung. Du kannst entweder natürlich schreiben und die smarte Erkennung die Arbeit machen lassen oder die Formatierung mit Fountain-Syntax-Zeichen erzwingen.
+## Die Titelseite
 
-- **Szenenüberschriften**: Beginne eine Zeile mit Standardpräfixen (`INT.`, `EXT.`, etc.) oder erzwinge sie, indem du die Zeile mit einem Punkt (`.`) beginnst.
-- **Action**: Standardtext wird als Action behandelt. Erzwinge sie, indem du eine Zeile mit einem Ausrufezeichen (`!`) beginnst.
-- **Figuren**: Tippe komplett in GROSSBUCHSTABEN (z.B. `JOHN`) oder erzwinge es, indem du die Zeile mit einem At-Zeichen (`@`) beginnst.
-- **Dialog**: Tippe einfach direkt nach einer Figuren-Zeile.
-- **Parenthetische**: Wickle Text in Klammern `(wie das)`.
-- **Übergänge**: Verwende standardmäßige GROSSBUCHSTABEN-Endungen wie `CUT TO:` oder erzwinge es, indem du die Zeile mit einer spitzen Klammer (`>`) beginnst.
-- **Zentrierter Text**: Wickle Text in spitze Klammern: `> Diesen Text zentrieren <`.
-- **Hervorhebung**: Unterstützung für standardmäßige Markdown-Hervorhebung:
-  - `*Kursiv*`
-  - `**Fett**`
-  - `_Unterstrichen_`
+Jedes Drehbuch beginnt mit einer Titelseite, und du bearbeitest sie direkt an Ort und Stelle. Sie hat acht Felder: Title, Credit, Author, Source, Contact, Copyright, Draft date und Notes. Leere Felder zeigen einen grauen Platzhalter und drucken nichts.
 
-### Aktuell nicht unterstützte Elemente
-Wir erweitern unsere Fountain-Unterstützung kontinuierlich. Aktuell sind die folgenden fortgeschrittenen Fountain-Features im Live-Editor **noch nicht unterstützt**:
-- Dual Dialogue (`^`)
-- Boneyards (`/* */`)
-- Sections (`#`) und Synopses (`=`)
-- Inline Notes (`[[ ]]`)
+`Tab` springt zum nächsten Feld, dessen Wert vorausgewählt ist, sodass du direkt darüber tippen kannst. `Shift + Tab` geht zurück. `Tab` im letzten Feld setzt dich in den Drehbuchtext. Return innerhalb eines Feldes fügt eine Zeile in diesem Feld hinzu, und jedes Feld hat ein Zeilenbudget, damit die Titelseite immer genau eine Seite bleibt.
+
+Ein neues Dokument kommt mit einem kleinen Start-Drehbuch und einer vorbelegten Titelseite an, mit deinem Namen bereits im Author-Feld. Tippe einfach darüber.
+
+## Ein Drehbuch tippen
+
+CineLog nutzt im Hintergrund die **Fountain**-Konventionen, aber du musst Fountain nicht kennen, um zu schreiben. Tippe natürlich, und der Editor klassifiziert jede Zeile im Vorbeigehen.
+
+Die Return-Taste übernimmt das meiste Wandern zwischen den Elementen:
+
+- Nach einer Szenenüberschrift gibt Return dir Action.
+- Nach einem Figurennamen gibt Return dir Dialog.
+- Nach Dialog gibt Return dir **mehr Dialog**, sodass eine Rede Absatz für Absatz wächst. Um die Rede zu beenden, drücke auf der leeren Zeile noch einmal Return, und sie wird an Ort und Stelle zu Action. Der Weg aus einer Rede heraus ist also Return, Return.
+- Nach einem Übergang gibt Return dir eine Szenenüberschrift.
+- `Shift + Return` bricht eine Zeile innerhalb desselben Elements um.
+
+### Fountain-Elemente
+
+Du kannst jedes Element auch mit den Syntaxzeichen von Fountain erzwingen:
+
+- **Szenenüberschriften**: Beginne eine Zeile mit `INT.` oder `EXT.`, oder erzwinge sie mit einem führenden Punkt (`.`).
+- **Action**: Standardtext ist Action. Erzwinge sie mit einem führenden Ausrufezeichen (`!`).
+- **Figuren**: Tippe den Namen in GROSSBUCHSTABEN, oder erzwinge ihn mit einem führenden At-Zeichen (`@`).
+- **Dialog**: Tippe ihn in die Zeile nach einem Figurennamen.
+- **Klammerzusätze**: Setze den Text in Klammern `(wie das)`.
+- **Übergänge**: Standardmäßige GROSSBUCHSTABEN-Endungen wie `CUT TO:`, oder erzwungen mit einem führenden `>`.
+- **Zentrierter Text**: `> Diesen Text zentrieren <`.
+- **Hervorhebung**: `*kursiv*`, `**fett**`, `_unterstrichen_`.
+
+Im Editor noch nicht unterstützt: Doppel-Dialog (`^`), Boneyards (`/* */`), Sections (`#`) und Synopses (`=`) sowie Inline-Notizen (`[[ ]]`).
 
 ### Manuelle Override-Hotkeys
-Wenn die smarte Erkennung falsch rät oder du einen bestimmten Formatierungsstil erzwingen willst, nutze die manuellen Override-Hotkeys:
 
-- <kbd>Cmd</kbd> + <kbd>1</kbd>: Szenenüberschrift
-- <kbd>Cmd</kbd> + <kbd>2</kbd>: Figur
-- <kbd>Cmd</kbd> + <kbd>3</kbd>: Dialog
-- <kbd>Cmd</kbd> + <kbd>4</kbd>: Action
-- <kbd>Cmd</kbd> + <kbd>5</kbd>: Klammerzusatz
-- <kbd>Cmd</kbd> + <kbd>6</kbd>: Übergang
-- <kbd>Cmd</kbd> + <kbd>7</kbd>: Songtext
-- <kbd>Cmd</kbd> + <kbd>E</kbd>: Zentriert
+Wenn die Erkennung falsch rät, setze den Elementtyp selbst:
 
-<Aside type="tip">
-**Kontinuierliches Speichern:** Es gibt keinen "Speichern"-Button im Drehbuch-Editor. Jeder Tastenanschlag wird still und kontinuierlich auf deinem lokalen Gerät gespeichert und im Hintergrund sicher in die Cloud synchronisiert.
-</Aside>
+- `Cmd / Ctrl + 1`: Szenenüberschrift
+- `Cmd / Ctrl + 2`: Figur
+- `Cmd / Ctrl + 3`: Dialog
+- `Cmd / Ctrl + 4`: Action
+- `Cmd / Ctrl + 5`: Klammerzusatz
+- `Cmd / Ctrl + 6`: Übergang
+- `Cmd / Ctrl + 7`: Songtext
+- `Cmd / Ctrl + E`: Zentriert
 
----
+## Wie Seiten umbrechen
 
-## Live-Analytik
+Eine Seite fasst 54 Zeilen – dieselbe Zahl, mit der Final Draft paginiert. Wenn ein Absatz nicht passt, wird er am letzten Satz getrennt, der noch passt, und der Rest läuft auf der nächsten Seite weiter, statt dass der ganze Absatz auf die nächste Seite springt. Eine Rede, die über den Umbruch weitergeht, druckt unten **(MORE)** und wiederholt oben den Figurennamen mit **(CONT'D)**, und CineLog hält auf jeder Seite einer Trennung mindestens zwei Zeilen, sodass nie eine Zeile allein stehen bleibt.
 
-Während du schreibst, berechnet CineLog professionelle Kennzahlen in Echtzeit, damit du Umfang und Pacing deines Drehbuchs einschätzen kannst, ohne den Editor zu verlassen.
+Der Editor, der Seitenzähler und die exportierte PDF laufen alle auf diesem einen Layout, sie können sich also nicht widersprechen.
 
-Schau im Analytik-Panel nach Live-Updates für:
-- **Seitenschätzung:** Branchenübliche Formeln zur Seitenberechnung mit professioneller Genauigkeit.
-- **Szenen- & Figurenzahlen:** Gesamtzahl der Szenen und einzigartiger Sprechfiguren.
-- **Wort-Kennzahlen:** Gesamtwortzahl und Zeichenzahl.
+## Zoom
 
----
+Die Zoom-Gruppe sitzt in der Mitte der oberen Menüleiste: Minus, der aktuelle Prozentwert, Plus. Der Zoom läuft von 50 % bis 200 % in 25-%-Schritten, und ein Klick auf den Prozentwert setzt ihn auf die Fensterbreite zurück. `Cmd / Ctrl + =` und `Cmd / Ctrl + -` stufen hinein und heraus, `Cmd / Ctrl + 0` passt an die Breite an, und `Cmd / Ctrl + Scrollen` oder eine Pinch-Geste tun dasselbe am Zeiger. Der Zoom skaliert die ganze Seite, sodass Zeilen immer an denselben Zeichen umbrechen, egal auf welcher Stufe, und die Seitenzahl bewegt sich nie, weil du gezoomt hast.
 
-## Vorschau & Export
+## Analytik
 
-Wenn du bereit bist, dein endgültiges Drehbuch zu reviewen oder mit anderen zu teilen, kannst du nahtlos vom Editor zu einer standardisierten PDF wechseln.
+Die Analytik-Seitenleiste führt während des Schreibens laufende Summen mit: die Seitenzahl in Drehbuch-Achteln (etwa 12 3/8), Szenen, Zeilen, Wörter und Zeichen. Wähle Text aus, und zwei weitere Zeilen erscheinen mit der Zeichenzahl der Auswahl und ihrer Größe in Seitenachteln. Das ist der schnellste Weg, die Frage "Wie lang ist diese Szene?" zu beantworten, denn Seitenachtel sind die Einheit, die der Drehplan spricht.
 
-<Steps>
-1. **Vorschau-Modus:** Klicke auf den **"Vorschau & Export"**-Button in der oberen Menüleiste, um vom kontinuierlich scrollenden Editor zu einer paginierten, druckfertigen Ansicht zu wechseln. Der Vorschau-Modus rendert eine standardisierte Titelseite und akkurate Seitenumbrüche.
-2. **Export:** Klicke im Vorschau-Modus auf das **"Export"**-Symbol.
-3. **Format auswählen:** Wähle das gewünschte Dateiformat.
-</Steps>
+## Auf dem Smartphone schreiben
 
-CineLog unterstützt aktuell den Export deines Drehbuchs in den folgenden Formaten:
-- **PDF (.pdf):** Hochwertiges, paginiertes und branchenformatiertes Dokument, perfekt zum Drucken oder Mailen.
-- **Final Draft (.fdx):** Branchenstandard-XML-Format, mit dem du dein Drehbuch nahtlos in Final Draft oder andere Produktionssoftware übernehmen kannst.
-- **Fountain (.fountain):** Roher Plaintext-Markup für maximale Kompatibilität.
-- **Plain Text (.txt):** Einfacher Textexport zum reinen Lesen.
-- **JSON (.json):** Strukturierter Datenexport für Integrationen und eigenes Tooling.
-- **CSV (.csv):** Tabellarischer Breakdown-Export für Spreadsheets und Reporting.
+Der Editor auf dem Smartphone ist ein vollwertiger Editor, kein Viewer. Das Drehbuch fließt in angenehmer Lesegröße auf den Bildschirm um, statt eine Letter-Seite zu schrumpfen, und dünne Trennlinien mit der Beschriftung **PAGE 7** markieren genau, wo die gedruckten Seiten umbrechen. Die Seitenzahlen stimmen mit Desktop und PDF überein, denn sie kommen aus derselben Paginierung.
+
+## Exportieren
+
+Klicke auf **Export**, den ersten Button in der oberen Menüleiste. Wähle ein Format:
+
+- **PDF Document (.pdf)** — paginiert und branchenformatiert, mit Umbrüchen genau dort, wo der Editor umbricht.
+- **Fountain Script (.fountain)** — Plaintext-Markup für maximale Kompatibilität.
+- **Final Draft (.fdx)** — um das Drehbuch nach Final Draft oder in andere Produktionssoftware zu übernehmen.
+- **Plain Text (.txt)** — eine einfache Lesekopie.
+- **JSON Data (.json)** — strukturierte Daten für Integrationen und eigenes Tooling.
+- **Scene Report (.csv)** — eine tabellarische Szenenliste für Spreadsheets.
+
+Bei einem gesperrten Drehbuch mit offener Revisionsrunde bekommt die PDF zwei zusätzliche Optionen: **Revised pages only** exportiert die Titelseite plus die Seiten, die die aktuelle Runde berührt hat – genau das Set, das eine Produktion tatsächlich verteilt – und **Revision paper color** füllt jede überarbeitete Seite mit ihrer Revisionsfarbe. Lass die Farbe aus, wenn du auf echtem farbigem Papier druckst. Siehe [Sperre & Revisionen](/de/guides/script-lock-and-revisions).
+
+## Falls das nicht funktioniert
+
+*Wo ist die Vorschau hin?* Sie ist in Rente. Der Editor zeigt jetzt permanent finale Seiten, es gibt also nichts Separates zum Vorschauen. **Export** öffnet direkt die Formatauswahl.
+
+*Return bringt mich nicht aus dem Dialog heraus.* Drücke es zweimal: einmal, um eine leere Fortsetzungszeile zu öffnen, und noch einmal, um diese Zeile in Action zu verwandeln.
+
+*Die Seitenzahl sieht anders aus als in meinem alten Entwurf.* CineLog paginiert mit 54 Zeilen pro Seite und echter Absatztrennung, passend zu Final Draft. Schätzungen vor v1.5.0 nutzten eine grobere Berechnung.
+
+*Ich kann nicht in eine Szene tippen, die als OMITTED markiert ist.* Das ist eine omittierte Szene in einem gesperrten Drehbuch. Stelle sie erst wieder her. Siehe [Sperre & Revisionen](/de/guides/script-lock-and-revisions).

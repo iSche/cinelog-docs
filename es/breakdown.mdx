@@ -1,0 +1,123 @@
+---
+title: Desglose del Guion
+lastUpdated: 2026-08-08
+description: "Etiqueta elenco, atrezo, vestuario y cualquier otro elemento de producción directamente en el guion. Los elementos se agrupan por categoría, fluyen hacia Elenco y Equipo y las órdenes de rodaje, y se exportan como hojas de desglose."
+---
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+Un desglose es, en esencia, la lista de todo lo que el guion te pide llevar al rodaje. Lees el guion línea a línea y, cada vez que menciona un objeto de atrezo, un vestuario, un vehículo o una persona, lo marcas. El Desglose de CineLog te deja hacer ese marcado directamente sobre la página del guion, así las palabras etiquetadas se quedan subrayadas justo donde viven, y los elementos se agrupan en una única lista de todo el proyecto que puedes entregar a cada departamento.
+
+<CardGrid>
+<Card title="Etiqueta sobre la página">
+  Selecciona cualquier palabra del guion y clasifícala en una de las doce categorías de producción. El texto se queda subrayado en el color de la categoría, así que una segunda lectura te muestra al instante qué está cubierto.
+</Card>
+
+<Card title="Una lista por proyecto">
+  Cada etiqueta crea o reutiliza un elemento. El panel los agrupa por categoría, cuenta las escenas en las que aparece cada uno y te lleva a cualquier aparición.
+</Card>
+
+<Card title="El elenco se encuentra solo">
+  CineLog etiqueta automáticamente la primera intervención de cada personaje en cada escena y le crea una plaza de Talent numerada en Elenco y Equipo. Esos números de elenco se arrastran hasta las órdenes de rodaje.
+</Card>
+
+<Card title="Hojas de desglose en PDF">
+  Exporta un resumen por escena, una lista de elementos o ambos. Puedes incrustar el nombre de un destinatario como marca de agua antes de enviar una copia.
+</Card>
+</CardGrid>
+
+## Abrir el desglose
+
+El Desglose vive dentro del Editor de Guion. En escritorio, haz clic en **Breakdown** en la barra de menú superior del editor. También aparece en la barra lateral izquierda como sub-entrada bajo Editor de Guion mientras estás en el editor. En teléfono está en el panel **More**, justo debajo de Editor de Guion.
+
+La primera vez que lo abres, CineLog te pide bloquear los números de escena. No es burocracia. Un desglose fija los elementos a números de escena, así que esos números tienen que dejar de moverse: un desglose que dice "el revólver está en la escena 12" no vale nada el día en que la escena 12 pasa a ser la 13. A partir del bloqueo, las escenas nuevas reciben números con letra como 78A y las escenas eliminadas se convierten en OMITTED en lugar de desaparecer. Las páginas siguen fluyendo libremente y puedes continuar escribiendo. La historia completa está en [Bloqueo y revisiones](/es/guides/script-lock-and-revisions).
+
+Si el guion todavía no tiene encabezados de escena, CineLog te pide añadir al menos uno antes de empezar un desglose.
+
+## Etiquetar elementos
+
+Lo que haces es seleccionar las palabras y elegir una categoría:
+
+- Con ratón, arrastra sobre las palabras. El editor de etiquetas se abre solo en cuanto la selección se asienta. Hacer doble clic en una sola palabra también la etiqueta.
+- En dispositivos táctiles, selecciona el texto y aparecerá encima una pequeña barra con **Tag** y **Copy**. Pulsa **Tag**.
+
+El editor de etiquetas muestra una cuadrícula con las doce categorías, un campo **Element** prerrellenado con el texto que seleccionaste y un campo **Qty**. Elige la categoría, ajusta el nombre si quieres y pulsa **Tag**. Si ya existe un elemento con ese nombre en la categoría, CineLog te avisa de que usará el existente, así que etiquetar "revólver" en la escena 4 y en la 19 te da un revólver con dos escenas, no dos revólveres.
+
+Con teclado se va rápido aquí: las teclas `1` a `9` eligen las primeras nueve categorías, `Tab` salta al campo Element con el texto seleccionado y `Enter` guarda.
+
+Las selecciones tienen que quedarse dentro de una sola línea y caer dentro de una escena bloqueada. La portada, por ejemplo, no se puede etiquetar.
+
+### Las doce categorías
+
+| Categoría | Marca en la página |
+|---|---|
+| Cast (elenco) | Subrayado rojo |
+| Stunts (especialistas) | Subrayado naranja |
+| Extras — Silent (figuración muda) | Subrayado ámbar |
+| Extras — Atmosphere (figuración ambiente) | Subrayado verde |
+| Special Effects (efectos especiales) | Subrayado azul |
+| Props (atrezo) | Subrayado morado |
+| Vehicles & Animals (vehículos y animales) | Subrayado rosa |
+| Sound & Music (sonido y música) | Subrayado marrón |
+| Wardrobe (vestuario) | Círculo al margen |
+| Makeup & Hair (maquillaje y peluquería) | Asteriscos alrededor de las palabras |
+| Special Equipment (equipo especial) | Marca de recuadro |
+| Production Notes (notas de producción) | Subrayado gris cálido |
+
+Las marcas de Wardrobe, Makeup & Hair y Special Equipment siguen las convenciones clásicas del desglose en papel, así que alguien del equipo que aprendió a desglosar guiones a mano lee la página sin necesidad de leyenda.
+
+### Editar y quitar etiquetas
+
+Haz clic en cualquier texto etiquetado para reabrir el editor sobre esa etiqueta. Desde ahí puedes renombrar el elemento, cambiar su categoría o su cantidad, apuntar la etiqueta a otro elemento distinto o pulsar **Untag**. Cuando varias etiquetas se solapan sobre las mismas palabras, un pequeño menú las lista primero para que elijas la correcta.
+
+### Encontrar el mismo elemento en otro sitio
+
+Después de etiquetar algo, CineLog busca las mismas palabras en otras escenas y te las ofrece en un solo diálogo: cada coincidencia muestra la escena y un fragmento, las coincidencias exactas vienen ya marcadas y pulsas **Tag N** para llevártelas todas de una vez. Puedes volver a lanzarlo cuando quieras desde el menú de un elemento con **Find similar…**. Si rechazas una sugerencia, CineLog recuerda el "no" y no volverá a ofrecerte ese sitio.
+
+## El panel de elementos
+
+El panel de la derecha (la página **Tags** en teléfono) es la lista de elementos del proyecto, agrupada por categoría. Cada fila muestra el elemento, su cantidad cuando es mayor que 1, en cuántas escenas aparece y flechas para recorrer sus apariciones. Tocar una fila lleva el guion a la siguiente aparición. Pasar el cursor por una fila resalta su texto en el guion, y pasar el cursor por un texto etiquetado resalta su fila.
+
+Las filas pueden llevar tres avisos, cada uno explicado en su tooltip: etiquetas pendientes de revisión (elenco detectado automáticamente, ver más abajo), etiquetas situadas en una escena que ya no existe y texto etiquetado que ya no se pudo encontrar tras las ediciones.
+
+Cada sección de categoría termina con **Add new…**, que etiqueta una escena entera sin subrayar ningún texto. Eso es para las cosas que el guion da por supuestas pero nunca escribe, como el equipo de lluvia que necesita una escena EXT. CALLE - NOCHE.
+
+El menú `⋯` de cada elemento ofrece **Edit…**, **Find similar…**, **Merge into…**, **Archive** y **Delete…**. Merge mueve todas las etiquetas al elemento que elijas y borra el fusionado. Archive saca un elemento de todas las escenas pero lo conserva, que es la opción más segura cuando no lo tienes claro. Los elementos de Cast añaden **Link to cast slot…** para que puedas conectar a mano un personaje con una plaza de Talent.
+
+## Cast
+
+Cast es la categoría en la que CineLog más trabaja por ti.
+
+Cada vez que bloqueas escenas, bloqueas páginas, inicias una revisión o importas, CineLog etiqueta la primera intervención de cada personaje en cada escena. Esas etiquetas llegan confirmadas, porque una intervención no es una conjetura. Cuando el nombre de un personaje aparece en la acción o dentro del diálogo, CineLog también lo etiqueta, pero lo marca como pendiente de revisión con un subrayado punteado, porque "JOHN" en una acotación podría ser otro John. Si una sugerencia está mal, quítale la etiqueta y se queda fuera. También puedes volver a lanzar la pasada tú mismo con el botón de sincronización de la cabecera CAST.
+
+CineLog nunca fusiona por su cuenta nombres parecidos. MARIA y MARIE siguen separadas hasta que tú las fusionas, porque solo tú sabes si eso es una errata o son dos personas. Una vez las fusionas, la fusión se mantiene en todas las pasadas posteriores.
+
+Cada personaje detectado recibe además una **plaza de Talent** vacante en [Elenco y Equipo](/es/castandcrew), con el nombre del personaje y un número de elenco. CineLog deduce el rol a partir de cuánto trabaja el personaje: un personaje que aparece en un tercio o más de tus escenas entra como Principal, con tres escenas o más como Supporting, y el resto como Day Players. Puedes cambiar todo eso después. Si ya gestionas tu lista de elenco a mano, CineLog se da cuenta y deja tu plantilla en paz.
+
+## A dónde va el elenco después
+
+El elenco etiquetado en el desglose aterriza sobre la escena misma, y todo lo que viene después lee de la escena. **Populate Shot List** en la barra de herramientas del desglose siembra las escenas y los planos con su elenco. Cuando se genera una orden de rodaje para un día de rodaje, su sección Talent se rellena con el elenco de ese día en orden de número de elenco. Etiquétalo una vez y aparece en todas partes. Ver [Órdenes de Rodaje](/es/callsheets) para el extremo final de esa cadena.
+
+## Exportar hojas de desglose
+
+Pulsa **Export** en la barra de herramientas del desglose. El diálogo ofrece dos hojas, y puedes llevarte una o las dos:
+
+- **Breakdown Summary** — un bloque por escena, con sus elementos por categoría. Incluye las notas de escena y los octavos de página.
+- **Element List** — todos los elementos por categoría, con las escenas en las que aparecen.
+
+También hay una opción **Burn in a recipient** que imprime el nombre de una persona elegida y una marca de tiempo UTC en todas las páginas con baja opacidad, para cuando una copia tiene que ser rastreable. La lista de destinatarios viene de las personas asignadas en Elenco y Equipo.
+
+Las escenas omitidas no imprimen bloque, los elementos archivados salen de los recuadros de escena pero se quedan en la lista de elementos, y las sugerencias descartadas no aparecen en absoluto.
+
+## En el teléfono
+
+El desglose en teléfono son dos páginas deslizables, **Script** y **Tags**, con una píldora para cambiar. En cuanto tocas un elemento con más de una aparición, la píldora crece con ▲ y ▼ para que recorras sus apariciones sin salir del guion. El guion se reajusta a la pantalla a tamaño de lectura completo, con separadores que marcan dónde caen los saltos de página impresos.
+
+## Si esto no funciona
+
+*El botón Breakdown me devuelve al editor.* Rechazaste el bloqueo de números de escena. El desglose no puede fijar elementos a números que se mueven, así que bloquear es la puerta de entrada.
+
+*No puedo etiquetar una selección.* Las selecciones deben quedarse dentro de una sola línea y dentro de una escena bloqueada. Las selecciones que cruzan líneas y el texto de la portada muestran un mensaje explicando qué regla se ha incumplido.
+
+*Quiero mi propia categoría.* No en esta versión. Las doce categorías son fijas, y Production Notes es el cajón de sastre mientras tanto.
+
+*Una sugerencia de elenco está mal, pero no hay botón de "confirmar" en las correctas.* Las correctas no necesitan ninguna acción, ya cuentan. Las marcas de revisión son solo CineLog siendo honesto sobre qué etiquetas fueron conjeturas. Quita la etiqueta a las erróneas y deja el resto.
