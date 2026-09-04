@@ -1,6 +1,6 @@
 ---
 title: Media Explorer
-lastUpdated: 2026-06-22
+lastUpdated: 2026-09-04
 description: "Upload, organize, and manage previs images and reference media for your production shots."
 ---
 import { Card, CardGrid, Steps, Aside } from '@astrojs/starlight/components';
@@ -47,11 +47,31 @@ If you lose connection mid-upload, CineLog queues the file. A specialized backgr
 
 #### Full Media Explorer
 
-Accessed via the "MORE" menu in the main project navigation. This is your comprehensive, project-wide file management interface. It includes global filtering (by feature or status), bulk operations (multi-select delete), and overarching storage analytics limits.
+Reached from the **More** menu in the project navigation. This is the project-wide view: everything you've uploaded, filterable by feature or by status, with the storage totals for the project.
+
+Tap a file and it opens full screen, where you can pan and zoom it and arrow between the rest. Selecting is something you ask for rather than something a tap does by accident: hold a card on touch, or `Cmd`-click it on a Mac and `Ctrl`-click on Windows. Once one card is selected the list is in selection mode and a plain tap adds and removes cards, the same as every other list in CineLog. With a selection made, `Delete` or `Backspace` removes the lot.
+
+On desktop there's an **Upload Folder** button beside Upload Files. Point it at a folder and it walks the whole thing, subfolders included, and takes the media it recognises. Anything that isn't an image, a video, an audio file or a PDF is skipped, so a folder with a stray spreadsheet in it still uploads cleanly.
+
+On a phone the upload button asks first: **Files** reaches your file system, **Photo Library** reaches the camera roll and brings those pictures in at their original size rather than resizing them down.
 
 #### Simplified Feature Media Screen
 
-Accessed directly from individual features (e.g., clicking the previs button on a shot). This is a lightweight, focused view pre-filtered to that specific element. You can upload, reorder, or delete files specifically associated with that item without losing context.
+Opened straight from a feature, like the previs button on a shot. It's a light view scoped to that one item, and it splits into two tabs.
+
+**Assigned** shows the files already on this item, in the order you put them, and you can drag to reorder them there. **Library** shows the rest of the project's media so you can attach something you've already uploaded.
+
+Attaching from the Library doesn't move the file or copy it. The same image can sit on shot 3 and shot 7 at once, and a card that's in use more than once says so on its corner, so you can tell a shared reference from a one-off before you delete anything.
+
+Upload works from either tab, and the button says which one you're in: from Library it uploads to the project pool, from Assigned it uploads and attaches in one go.
+
+#### Choosing where a previs comes from
+
+When you add a previs to a shot, CineLog asks where the image should come from before it opens any picker, because the two answers lead to completely different places.
+
+**Upload from Phone** (it reads Tablet or Computer to match what you're on) opens your device's picker for a new file. **Choose from Media Library** opens the project's library instead, so you can attach an image that's already in the project rather than uploading a second copy of it.
+
+The chooser shows up on every platform. Only its dress changes: a sheet from the bottom on a phone, a dialog on a tablet, a small card under the button on desktop.
 
 ## Visual States & Offline Awareness
 

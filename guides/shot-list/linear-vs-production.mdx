@@ -1,6 +1,6 @@
 ---
 title: Linear view vs Production view
-lastUpdated: 2026-07-11
+lastUpdated: 2026-09-04
 description: "Two views on the same shots — script order vs shoot-day order. Covers the partial-scene split rule, banners, scene-scoped selection, scene-header selection, cross-view sync, and how delete differs between the two views."
 ---
 
@@ -40,7 +40,7 @@ In Production view, select the scene header — that selects its whole scene. In
 
 Banners are non-shot rows that mark meal breaks, company moves, wraps, or other schedule markers. They exist only in Production view.
 
-- **Add a banner.** In Production, `Cmd / Ctrl + N` adds a banner instead of a shot (keyboard shortcuts work on desktop and tablet layouts, not phones). Or use the call sheet schedule's **+ Add banner** action — it adds to the same production day, between whole scenes.
+- **Add a banner.** In Production, `Cmd / Ctrl + N` adds a banner instead of a shot (keyboard shortcuts work on desktop and tablet layouts, not phones). On a phone, the `+` in the top app bar does the same thing, so a Production day gives you a banner where a Linear list would have given you a shot. Or use the call sheet schedule's **+ Add banner** action, which adds to the same production day, between whole scenes.
 - **Move a banner.** Same drag mechanic as shots.
 - **Delete a banner.** Right-click → Delete.
 
@@ -72,6 +72,8 @@ So "delete in Linear" means *remove*; "delete in Production" means *unschedule*.
 - **From Production** — a single-day PDF: enter the day number in the export dialog and the PDF contains only that day's shots. To export several days, run the export once per day. Useful for the 1st AD.
 
 Large media on shots is downsampled before export.
+
+Every shot list, storyboard, AV Script and schedule PDF prints when it was made in its header, like `Exported 8/8/26 02:45 PM`, in the same date and time formats the rest of the app is set to. On a set where three versions of the same document are going around, that line is how the crew tells which one is the current one.
 
 ## If this isn't working
 

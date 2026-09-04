@@ -14,7 +14,7 @@ The Markdown files hosted here serve as the canonical source of truth for CineLo
 - [Schedule](schedule.mdx) - Stripboard scheduling: scene strips on shooting days, scene parts, cast and locations per strip, PDF export.
 - [Script Breakdown](breakdown.mdx) - Tag cast, props, wardrobe, and other production elements on the script page; export breakdown sheets.
 - [Script Editor](scripteditor.mdx) - Real-time script editing on true US Letter pages, with lock, revisions, and breakdown.
-- [Shot List](shotlist.mdx) - Advanced shot creation (linear, production, and focus views).
+- [Shot List](shotlist.mdx) - Advanced shot creation (linear and production views).
 - [Storyboards](storyboards.mdx) - Visual planning and customizable PDF exports.
 - [Keyboard Shortcuts](keyboardshortcuts.mdx) - Comprehensive list of global hotkeys and navigation shortcuts.
 

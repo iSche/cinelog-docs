@@ -1,6 +1,6 @@
 ---
 title: Call sheets
-lastUpdated: 2026-08-10
+lastUpdated: 2026-09-04
 description: "Daily call sheets in CineLog — header and call time, locations, schedule with time cascade, weather, auto-populated talent with statuses, rich-text crew message, sending and confirmation tracking, PDF export."
 ---
 
@@ -35,7 +35,9 @@ The production date. Optional — it's pulled from the shot list's Production Da
 
 ### Company branding
 
-The left side of the header carries your company profile (name, address, phone) and logo. Upload the logo once at the workspace level via the company profile dialog; it then appears in every call sheet's header and on emailed PDFs.
+The left side of the header carries your company profile (name, address, phone) and logo. Upload the logo once at the workspace level through the company profile dialog and it appears in every call sheet's header and on emailed PDFs.
+
+A sheet with no company on it is a real sheet. If you haven't set one, that third of the header reads **Add company** rather than sitting there looking broken, and the exported PDF simply leaves the space empty. Clearing the company off a project does the same thing, so removing the wrong letterhead is a real option rather than something you have to work around.
 
 ### Project name
 
@@ -90,13 +92,20 @@ The schedule section can't be hidden — it's always shown.
 
 ## Weather
 
-If the call sheet has a location with coordinates, CineLog fetches the day's weather automatically when you first open the call sheet. The display shows:
+If the call sheet has a location with coordinates, CineLog fetches the day's forecast automatically the first time you open the sheet. Tap the weather block to open the full card.
 
-- Temperature, with the day's high and low
-- Sunrise and sunset
-- Conditions
+The card splits into a **DAY** column and a **NIGHT** column, and each column carries the same four readings:
 
-The temperature unit follows the display setting (°F / °C). To override or manually enter weather (forecast wasn't fetched, or you want to use a different source), tap the weather block and edit. The override is stored on the call sheet and reused on every reload.
+- Temperature, with the feels-like reading under it
+- The conditions, with an icon
+- Precipitation chance, named by type when there is one, like "Rain 40%"
+- Wind speed and direction, with gusts when they're forecast, like "12 mph NW · gusts 24"
+
+Under the two columns sit three readings for the day as a whole: UV index, cloud cover, and humidity. Below those, **SUN** and **MOON**, each with a rise time and a set time, and the moon's phase written under its times.
+
+All of those times follow your 12h / 24h display setting, so a sheet set to 24-hour prints sunrise as 06:14 rather than 6:14 AM. The temperature unit follows the display setting too (°F / °C).
+
+There's no manual weather entry. What the card shows is what the forecast service returned, and the one control on it is **Refresh Weather**, which fetches again for the same location and date. Forecasts reach about ten days out, so a sheet dated further ahead than that shows a note instead of numbers and fills itself in once the date comes into range.
 
 ## Personnel sections
 
@@ -141,6 +150,8 @@ Each person can also have a personal call time that overrides the general call t
 ### Profile pictures
 
 Each person controls their own profile picture from their Account screen — the project owner can't upload one on behalf of a contact. Until someone uploads their own picture, they're shown with a color-coded initials avatar (deterministic from their user ID, so the same person always gets the same colour across every call sheet).
+
+On your own Account screen, tapping your avatar gives you **Change photo**, **Reposition** and **Remove**. Reposition reopens the cropper on the original photo you uploaded rather than on the small version the app draws, so you can reframe the same picture as many times as you like without it getting softer each pass.
 
 For contacts who haven't joined CineLog yet (you've added them to Cast & Crew but they haven't accepted the invite), the initials avatar is the only option. Once they sign in and upload their own picture, it propagates everywhere they're referenced — including past call sheets they were on.
 
@@ -241,7 +252,7 @@ Editing call sheets works offline — changes save to the local database and syn
 
 *"The schedule time is highlighted red / yellow."* Red means the row's start time lands before the previous row finishes (an overlap). Yellow flags a row with a zero-length estimate. Adjust the durations or the start time to reconcile.
 
-*"Weather didn't load."* The auto-fetch needs a location with coordinates. Set a location via Google Places autocomplete (so the lat/lng is captured), then reload the call sheet. You can also enter weather manually.
+*"Weather didn't load."* The auto-fetch needs coordinates, so set the location through the address autocomplete rather than typing it in free-hand, because only the picked result carries a lat/lng. Then reopen the call sheet. If it's still blank, tap the weather block and press **Refresh Weather**. A date more than about ten days out has no forecast yet, and the card says so rather than leaving you guessing.
 
 *"A crew member says they didn't get the call sheet."* Open the Confirmations page for that day and find their row. **delivered** or **opened** means it left CineLog and was accepted by their mail provider — the issue is downstream (spam folder, mailbox rules, deleted by accident). **bounced** or **failed** means the email never reached them; check the address in Cast & Crew and re-send. **queued** means it's still on the way; give it a minute.
 
